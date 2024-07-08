@@ -1,0 +1,66 @@
+@import "konfiguracja-szablonu";
+
+.maly-font {
+  font-size: calc(#{$bazowy-mobilny-rozmiar-czcionki} * 0.7);
+}
+
+.duzy-font {
+  font-size: calc(#{$bazowy-mobilny-rozmiar-czcionki} * 1.3);
+}
+
+
+@media (min-width: 1367px) {
+  .maly-font {
+    font-size: calc(#{$bazowy-rozmiar-czcionki} * 0.7);
+  }
+
+  .duzy-font {
+    font-size: calc(#{$bazowy-rozmiar-czcionki} * 1.3);
+  }
+}
+
+
+.czarno-bialy .wcag-tytul-strony, .czarno-bialy .wcag-glowny-kontener, .czarno-bialy .wcag-stopka, .czarno-bialy .wcag-boczna-belka, .czarno-bialy .wcag-naglowek-mobilny{
+  filter: grayscale(1) invert(1) brightness(2);
+}
+
+.czarno-bialy .wcag-glowny-kontener, .czarno-bialy .wcag-tytul-strony{
+  background: white !important;
+}
+
+.czarno-bialy .wcag-naglowek-mobilny{
+  background: white !important;
+  position: relative;
+  z-index: 2;
+}
+
+.czarno-bialy .wcag-naglowek{
+  background: black !important;
+}
+
+.negatyw .wcag-tytul-strony, .negatyw .wcag-glowny-kontener, .negatyw .wcag-stopka, .negatyw .wcag-boczna-belka, .negatyw .wcag-naglowek-mobilny{
+  filter: invert(1) brightness(2.2);
+}
+
+.negatyw .wcag-glowny-kontener, .negatyw .wcag-tytul-strony{
+  background: white !important;
+}
+
+.negatyw .wcag-naglowek-mobilny{
+  background: white !important;
+  position: relative;
+  z-index: 2;
+}
+
+.negatyw .wcag-naglowek{
+  background: black !important;
+}
+
+.prosty-font, .prosty-font .mat-card {
+  font-family: Arial !important;
+}
+
+.podkreslone-linki a {
+  text-decoration: underline !important;
+}
+

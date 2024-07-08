@@ -1,0 +1,82 @@
+@import "konfiguracja-szablonu";
+
+html {
+  font-size: $bazowy-mobilny-rozmiar-czcionki;
+}
+
+@media (min-width: 1367px) {
+  html {
+    font-size: $bazowy-rozmiar-czcionki;
+  }
+
+  .um-naglowek-a{
+    font-size: 2rem;
+    line-height: 2.3rem;
+  }
+}
+
+body {
+  font-family: 'Roboto Condensed', "Helvetica Neue", sans-serif !important;
+}
+
+@layer utilities {
+  @variants responsive {
+
+    .um-naglowek-a {
+      font-size: 2rem;
+      line-height: 2.3rem;
+      font-weight: bold;
+    }
+
+    .um-kategoria {
+      font-size: 2rem;
+      line-height: 2.3rem;
+      font-weight: normal;
+    }
+
+    .um-aktualnosc {
+      font-size: 1.5rem;
+      line-height: 1.9rem;
+    }
+
+    .um-tytul {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    .um-standard{
+      font-size: 1rem;
+    }
+
+    .um-stopka {
+      font-size: 1.3rem;
+    }
+
+    .um-cookies {
+      font-size: 1.3rem;
+    }
+
+    .um-tytul-mapa {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    .um-opis-mapa-a {
+      font-size: 1.1rem;
+    }
+
+    .um-pomoc {
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .um-stopka-linki {
+      font-size: 1.3rem;
+    }
+
+    .um-tekst-a {
+      font-family: 'Roboto', sans-serif;
+    }
+
+  }
+}

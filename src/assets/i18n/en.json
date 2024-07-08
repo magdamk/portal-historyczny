@@ -1,0 +1,94 @@
+{
+  "codes": {
+    "generyczne": {
+      "przycisk-zamknij": "CLOSE",
+      "przycisk-rozwin": "EXPAND",
+      "strona-startowa": "Home page",
+      "menu": "Menu",
+      "przycisk-usun": "DELETE",
+      "etykieta-wyszukaj": "Search",
+      "etykieta-zamknij": "Close",
+      "etykieta-rozumiem": "I AGREE",
+      "pole-jest-wymagane": "The field is required",
+      "przycisk-zalacznik": "ADD ATTACHMENT",
+      "alt-logo": "Mermaid logo",
+      "aria-logo": "Go to the home page",
+      "poniedzialek": "Monday",
+      "wtorek": "Tuesday",
+      "sroda": "Wednesday",
+      "czwartek": "Thursday",
+      "piatek": "Friday",
+      "sobota": "Saturday",
+      "niedziela": "Sunday",
+      "usun": "Remove",
+      "dodaj-zalacznik": "Add attachment",
+      "wyslij": "Send",
+      "szukaj": "Search",
+      "nie-znaleziono-wynikow": "No results found",
+      "przycisk-wyslij": "SEND",
+      "prosze-czekac": "Please wait...",
+      "komunikat-cookies": "This page uses cookie files. Learn more about the purpose of their use - read our privacy policy. By using the website, you agree to the use of cookie files, in accordance with the current browser settings.",
+      "komunikat-wykorzystania-danych": "Welcome to the map service of Warsaw. The data or information obtained can be used only at your own risk and at your own risk, we do not guarantee the constant availability of these data and their timeliness and truthfulness. Please review the terms of re-use of your data.",
+      "wyslano-pomyslnie": "Message sent",
+      "nieoczekiwany-blad": "An unexpected error occurred. Try again later.",
+      "niepoprawny-link-do-mapy": "Incorrect link to the map. The default map is displayed.",
+      "zamknij": "Close"
+    },
+    "strona-startowa": {
+      "tytul": "The map service of the Capital City of Warsaw contains thematic maps related to the life of the city and its residents.",
+      "wyszukiwarka": "SEARCH FOR ADDRESS, OBJECT OR MAP",
+      "obiekty": "Objects",
+      "ulice": "Streets and addresses",
+      "mapy": "Maps",
+      "etykieta-przejdz-do-mapy": "Go to the map",
+      "etykieta-stworz-mape": "Create your own map",
+      "stworz-mape-tytul": "CREATE YOUR OWN MAP",
+      "stworz-mape-opis": "Compose your own thematic map",
+      "etykieta-rozwin": "Expand",
+      "etykieta-zwin": "Collapse"
+    },
+    "nawigacja": {
+      "etykieta-dostepnosc": "Availability",
+      "powieksz-tekst": "Larger text",
+      "pomniejsz-tekst": "Smaller text",
+      "czano-bialy": "Black - white",
+      "odwroc-kolory": "Invert colors",
+      "podkresl-linki": "Highlight links",
+      "prosta-czcionka": "Simple font",
+      "reset-ustawien": "Reset settings",
+      "etykieta-kontakt": "Contact form",
+      "etykieta-pomoc": "Help",
+      "etykieta-jezyk": "Język polski"
+    },
+    "aktualnosci": {
+      "tytul": "Title",
+      "data": "Date",
+      "tresc": "Content",
+      "etykieta-poprzedni": "Previous news",
+      "etykieta-nastepny": "Next news",
+      "etykieta-archiwum": "News archive",
+      "aktualnosci": "NEWS"
+    },
+    "kontakt": {
+      "kontakt": "Contact",
+      "email": "E-mail (required field)",
+      "formaty-plikow-walidacja": "Incorrect file format (permissible: PDF, ZIP, JPG, PNG).",
+      "email-walidacja": "You must enter a valid e-mail address (e.g. jannowak@jannowak.pl)",
+      "plik-walidacja": "The file size is too large (max. 10 MB)",
+      "tresc-wiadomosci": "Message content (required field)",
+      "liczba-znakow": "Maximum number of characters"
+    },
+    "pomoc": {
+      "pomoc": "Help",
+      "tematy": "HELP TOPICS LIST",
+      "wyszukaj": "SEARCH HELP TOPIC"
+    },
+    "stopka": {
+      "prezydent": "Mayor of the Capital City of Warsaw",
+      "kontakt-admin": "Site administrator"
+    },
+    "main":{
+      "title": "Historical portal"
+    }
+  }
+}

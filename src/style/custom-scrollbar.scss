@@ -1,0 +1,67 @@
+@import "konfiguracja-szablonu";
+
+lib-przewijany-komponent {
+
+  .mat-slider-wrapper {
+    background-color: $miasto-szary!important;
+  }
+
+  .mat-slider-min-value:not(.mat-slider-thumb-label-showing) .mat-slider-thumb {
+    background-color: $miasto-blekit-30p;
+    border-color: $miasto-blekit-30p!important;
+  }
+
+  .mat-slider-min-value .mat-slider-focus-ring {
+    background-color: $miasto-blekit-30p;
+    border-color: $miasto-blekit-30p;
+  }
+
+  .mat-slider-focus-ring {
+    background-color: $miasto-blekit-30p;
+    border-color: $miasto-blekit-30p;
+  }
+
+  .mat-slider-vertical .mat-slider-track-fill {
+    background-color: $miasto-szary-tekst;
+    opacity: 1;
+  }
+
+  .mat-slider-vertical {
+    min-height: unset;
+  }
+}
+
+lib-przewijany-komponent .bialy-slider{
+  .mat-slider-wrapper {
+    background-color: $miasto-bialy!important;
+    .mat-slider-track-background{
+      background-color: white;
+    }
+  }
+
+  .mat-slider-min-value:not(.mat-slider-thumb-label-showing) .mat-slider-thumb {
+    background-color: $miasto-bialy;
+    border-color: $miasto-bialy!important;
+  }
+
+  .mat-slider:not(.mat-slider-disabled) .mat-slider-thumb {
+    background: $miasto-bialy !important;
+  }
+
+  .mat-slider-min-value .mat-slider-focus-ring {
+    background-color: $miasto-bialy;
+    border-color: $miasto-bialy;
+  }
+
+  .mat-slider-focus-ring {
+    background-color: $miasto-bialy;
+    border-color: $miasto-bialy;
+    opacity: 0.5 !important;
+  }
+
+  .mat-slider-vertical .mat-slider-track-fill {
+    background-color: $miasto-bialy;
+    opacity: 1;
+  }
+}
+

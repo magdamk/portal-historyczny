@@ -1,0 +1,26 @@
+@import "konfiguracja-szablonu";
+
+.stylizowany-kursor {
+  position: absolute;
+  width: 4px;
+  left: 0px;
+  z-index: 2;
+  opacity: 1;
+  display: none;
+  animation: blinker 1s linear infinite;
+  background-color: $miasto-pomarancz;
+}
+
+.resizer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: auto !important;
+  visibility: hidden
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0.0;
+  }
+}

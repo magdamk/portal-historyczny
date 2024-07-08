@@ -1,0 +1,93 @@
+{
+  "codes": {
+    "generyczne": {
+      "przycisk-zamknij": "ZAMKNIJ",
+      "przycisk-rozwin": "ROZWIŃ",
+      "strona-startowa": "Strona główna",
+      "menu": "Menu",
+      "przycisk-usun": "USUŃ",
+      "etykieta-wyszukaj": "Wyszukaj",
+      "etykieta-zamknij": "Zamknij",
+      "pole-jest-wymagane": "Pole jest wymagane",
+      "przycisk-zalacznik": "DODAJ ZAŁĄCZNIK",
+      "alt-logo": "Logo Syrenki",
+      "aria-logo": "Przejście do strony głównej",
+      "poniedzialek": "Poniedziałek",
+      "wtorek": "Wtorek",
+      "sroda": "Środa",
+      "czwartek": "Czwartek",
+      "piatek": "Piątek",
+      "sobota": "Sobota ",
+      "niedziela": "Niedziela",
+      "usun": "Usuń",
+      "dodaj-zalacznik": "Dodaj załącznik",
+      "wyslij": "Wyślij",
+      "szukaj": "Szukaj",
+      "nie-znaleziono-wynikow": "Nie znaleziono wyników",
+      "przycisk-wyslij": "WYŚLIJ",
+      "prosze-czekac": "Proszę czekać...",
+      "komunikat-cookies": "Ta strona używa plików cookies. Dowiedz się więcej o celu ich używania - przeczytaj naszą politykę prywatności. Korzystając ze strony wyrażasz zgodę na używanie plików cookie, zgodnie z aktualnymi ustawieniami przeglądarki.",
+      "wyslano-pomyslnie": "Wysłano pomyślnie",
+      "nieoczekiwany-blad": "Wystąpił nieoczekiwany błąd. Spróbuj ponownie później.",
+      "niepoprawny-link-do-mapy": "Niepoprawny link do mapy. Wyświetlono domyślną mapę.",
+      "zamknij": "Zamknij"
+    },
+    "strona-startowa": {
+      "tytul": "Serwis mapowy m.st. Warszawy składa się z map tematycznych, związanych z życiem miasta i jego mieszkańców.",
+      "wyszukiwarka": "WYSZUKAJ ADRES, OBIEKT LUB MAPĘ",
+      "obiekty": "Obiekty",
+      "ulice": "Ulice i adresy",
+      "mapy": "Mapy",
+      "etykieta-przejdz-do-mapy": "Przejdź do mapy",
+      "etykieta-stworz-mape": "Stwórz własną mapę",
+      "stworz-mape-tytul": "STWÓRZ WŁASNĄ MAPĘ",
+      "stworz-mape-opis": "Skomponuj własną mapę tematyczną",
+      "etykieta-rozwin": "Rozwiń",
+      "etykieta-zwin": "Zwiń"
+    },
+    "nawigacja": {
+      "etykieta-dostepnosc": "Ułatwienia dostępności",
+      "powieksz-tekst": "Powiększ tekst",
+      "pomniejsz-tekst": "Pomniejsz tekst",
+      "czano-bialy": "Czarno - biały",
+      "odwroc-kolory": "Odwróć kolory",
+      "podkresl-linki": "Podkreśl linki",
+      "prosta-czcionka": "Prosta czcionka",
+      "reset-ustawien": "Reset ustawień",
+      "etykieta-kontakt": "Formularz kontaktowy",
+      "etykieta-pomoc": "Pomoc",
+      "etykieta-jezyk": "English"
+    },
+    "aktualnosci": {
+      "tytul": "Tytuł",
+      "data": "Data",
+      "tresc": "Treść",
+      "etykieta-poprzedni": "Poprzednia aktualność",
+      "etykieta-nastepny": "Następna aktualność",
+      "etykieta-archiwum": "Archiwum aktualności",
+      "aktualnosci": "AKTUALNOŚCI"
+    },
+    "kontakt": {
+      "kontakt": "Kontakt",
+      "email": "E-mail (pole wymagane)",
+      "formaty-plikow-walidacja": "Niepoprawny format plików (dopuszczalne: PDF, ZIP, JPG, PNG).",
+      "email-walidacja": "Nieprawidłowy adres e-mail (np. jannowak@jannowak.pl)",
+      "plik-walidacja": "Rozmiar plików jest zbyt duży (max. 10 MB)",
+      "tresc-wiadomosci": "Treść wiadomości (pole wymagane)",
+      "liczba-znakow": "Maksymalna liczba znaków "
+    },
+    "pomoc": {
+      "pomoc": "Pomoc",
+      "tematy": "LISTA TEMATÓW POMOCY",
+      "wyszukaj": "WYSZUKAJ TEMAT POMOCY"
+    },
+    "stopka": {
+      "prezydent": "Prezydent m.st. Warszawy",
+      "kontakt-admin": "Administrator serwisu"
+    },
+    "main":{
+      "title": "Portal historyczny"
+    }
+
+  }
+}

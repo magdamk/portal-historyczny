@@ -30,3 +30,5 @@ ng add @angular/material
 npm install -D tailwinds postcss autoprefixer  
 npx tailwindcss init   
 ng generate module app-routing --flat
+npm install dotenv --save
+npm install @ngx-translate/core @ngx-translate/http-loader
