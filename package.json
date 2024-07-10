@@ -23,8 +23,11 @@
     "@ngrx/store": "^16.3.0",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
+    "@types/proj4": "^2.5.2",
+    "angular-hammer": "^2.2.0",
     "dayjs": "^1.11.11",
     "dotenv": "^16.4.5",
+    "proj4": "^2.5.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"

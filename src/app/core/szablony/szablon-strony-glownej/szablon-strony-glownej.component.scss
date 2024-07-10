@@ -1,4 +1,4 @@
-@import "../../../../../style/konfiguracja-szablonu";
+@import "../../../../style/konfiguracja-szablonu.scss";
 
 $min-content-height: calc(100vh - #{$main-naglowek-wysokosc} - #{$stopka-wysokosc});
 
@@ -103,8 +103,12 @@ $min-content-height: calc(100vh - #{$main-naglowek-wysokosc} - #{$stopka-wysokos
   color: $miasto-czarny;
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @layer utilities {
-  @layer responsive {
+  // @layer responsive {
 
     .logo {
       width: $szerokosc-logo;
@@ -145,12 +149,17 @@ $min-content-height: calc(100vh - #{$main-naglowek-wysokosc} - #{$stopka-wysokos
       padding-left: 0px;
       padding-right: 100px;
     }
-
+    .um-tytul {
+      font-size: 1.3rem;
+      font-weight: bold;
+      font-family: 'Roboto Condensed', "Helvetica Neue", sans-serif !important;
+    }
     .tlo-desktop {
-      background-image: url("../../../../../assets/images/bg.png");
-      background-position: top center;
+      background-image: url("../../../../assets/images/bg.png");
+      background-position: top right;
       background-size: 100% auto;
       background-repeat: no-repeat;
+      background-attachment: fixed;
     }
 
     .aside {
@@ -164,5 +173,5 @@ $min-content-height: calc(100vh - #{$main-naglowek-wysokosc} - #{$stopka-wysokos
       min-width: 250px;
       height: 100vh;
     }
-  }
+  // }
 }

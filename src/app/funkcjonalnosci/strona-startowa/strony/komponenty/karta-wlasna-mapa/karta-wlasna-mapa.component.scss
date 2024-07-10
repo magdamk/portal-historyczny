@@ -1,0 +1,41 @@
+@import "../../../../../../style/konfiguracja-szablonu";
+@import "../../../../../../style/typografia-szablonu";
+
+$karta-mapy-wysokosc: 270px;
+$karta-mapy-tytul-wysokosc: 90px;
+$karta-mapy-opis-tresc-wysokosc: 90px;
+$karta-mapy-przycisk-wysokosc: calc(#{$karta-mapy-wysokosc} - #{$karta-mapy-opis-tresc-wysokosc} - #{$karta-mapy-opis-tresc-wysokosc});
+
+.karta-mapy {
+  height: auto;
+  background: $miasto-blekit;
+  cursor: pointer;
+}
+
+.tytul {
+  height: $karta-mapy-tytul-wysokosc;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: $miasto-bialy;
+  text-align: center;
+  font-weight: bold;
+}
+
+.opis {
+  height: calc(#{$karta-mapy-wysokosc} - #{$karta-mapy-tytul-wysokosc});
+  color: $miasto-bialy;
+}
+
+.opis-tresc{
+  font-size: 1.5rem;
+  max-height: 80px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.opis-przycisk{
+  height: $karta-mapy-przycisk-wysokosc;
+}

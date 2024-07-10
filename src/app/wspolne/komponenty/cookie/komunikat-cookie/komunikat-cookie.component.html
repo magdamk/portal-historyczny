@@ -1,8 +1,8 @@
-<div class="komunikat-cookie fixed flex flex-col um-desktop::flex-row justify-between" *ngIf="!ukryty">
-  <div class="um-cookies komunikat px-8 flex items-center justify-center w-full um-desktop::w-auto  mt-4 um-desktop::mt-0">
+<div class="komunikat-cookie fixed flex flex-col um-desktop:flex-row justify-between" *ngIf="!ukryty">
+  <div class="um-cookies komunikat px-8 flex items-center justify-center w-full um-desktop:w-auto  mt-4 um-desktop:mt-0">
     {{'codes.generyczne.komunikat-cookies' | translate}}
   </div>
-  <div class="przycisk px-8 flex items-center justify-center w-full um-desktop::w-auto my-4 um-desktop::my-0">
+  <div class="przycisk px-8 flex items-center justify-center w-full um-desktop:w-auto my-4 um-desktop::my-0">
     <app-przycisk-prostokatny label="{{'codes.generyczne.zamknij' |translate}}" typ="PRIMARY" (click)="zamknij()">
     </app-przycisk-prostokatny>
   </div>

@@ -36,6 +36,9 @@
 .aktualnosci-padding{
   padding: 15px 24px;
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer utilities {
   @variants responsive {

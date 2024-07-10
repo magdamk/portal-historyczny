@@ -1,0 +1,18 @@
+<app-glowna-wyszukiwarka *ngIf="!wyborMapyDoPorownania"
+
+
+></app-glowna-wyszukiwarka>
+<div class="mt-8 grid grid-cols-2 gap-4 um-desktop:grid-cols-3 um-desktop-s:grid-cols-4 um-desktop:gap-8">
+  <div *ngFor="let mapa of zbiorKategoriiMap?.wyroznioneMapy?.grupyMap">
+    <app-karta-mapy [zmianaMapy]="zmianaMapy || wyborMapyDoPorownania" (mapaWybrana)="wybranoMape($event)" [mapa]="mapa"></app-karta-mapy>
+  </div>
+  <app-karta-wlasna-mapa [wyborMapyDoPorownania]="wyborMapyDoPorownania" (mapaWybrana)="wybranoMape($event)" class="hidden um-desktop:flex"></app-karta-wlasna-mapa>
+</div>
+
+<div class="lista-kategorii" *ngFor="let kategoria of zbiorKategoriiMap?.kategorieTematyczne">
+  <app-kategorie-map
+    (mapaWybrana)="wybranoMape($event)"
+    [zmianaMapy]="zmianaMapy || wyborMapyDoPorownania"
+    [kategoriiMap]="kategoria">
+  </app-kategorie-map>
+</div>

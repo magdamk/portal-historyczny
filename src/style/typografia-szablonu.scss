@@ -1,5 +1,7 @@
 @import "konfiguracja-szablonu";
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 html {
   font-size: $bazowy-mobilny-rozmiar-czcionki;
 }
@@ -20,7 +22,7 @@ body {
 }
 
 @layer utilities {
-  @layer components {
+  @variants responsive {
 
     .um-naglowek-a {
       font-size: 2rem;

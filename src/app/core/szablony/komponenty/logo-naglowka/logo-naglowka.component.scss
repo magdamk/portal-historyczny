@@ -1,8 +1,11 @@
-
+@tailwind utilities;
 .logo{
   //max-height: 111px;
 }
-
+.logo-margins{
+  margin-top: 22px;
+  margin-bottom: 0px;
+}
 
 @layer utilities {
   @variants responsive {

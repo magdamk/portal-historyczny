@@ -1,0 +1,22 @@
+@import "../../../../../../style/konfiguracja-szablonu.scss";
+
+$kategoria-mapy-naglowek-wysokosc: 100px;
+
+.kategoria-map {
+  border-bottom: 1px solid black;
+}
+
+.kategoria-naglowek {
+  cursor: pointer;
+  height: $kategoria-mapy-naglowek-wysokosc;
+}
+
+.kategoria-ikona {
+  width: 3rem !important;
+  color: $miasto-blekit;
+}
+
+.kategoria-przycisk-zwijania {
+  margin-right: 30px;
+  touch-action: auto !important;
+}

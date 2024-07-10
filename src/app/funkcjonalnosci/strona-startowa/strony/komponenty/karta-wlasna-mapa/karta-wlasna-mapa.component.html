@@ -1,0 +1,18 @@
+<div class="karta-mapy h-full w-full"
+     (click)="klikEnter()"
+     (keyup.enter)="klikEnter()" tabindex="0">
+  <div class="tytul flex justify-center items-center uppercase p-2">
+    <span class="um-tytul-mapa">{{'codes.strona-startowa.stworz-mape-tytul' | translate}}</span>
+  </div>
+  <div class="opis">
+    <div class="opis-tresc um-aktualnosc text-center px-4 overflow-ellipsis overflow-hidden ...">
+      {{'codes.strona-startowa.stworz-mape-opis' | translate}}
+    </div>
+    <div class="opis-przycisk flex w-full justify-center items-center">
+      <app-przycisk-okragly *ngIf="!wyborMapyDoPorownania" typ="BASIC" ikona="plus" link="/mapa"
+                            label="{{'codes.strona-startowa.etykieta-stworz-mape' | translate}}"></app-przycisk-okragly>
+      <app-przycisk-okragly *ngIf="wyborMapyDoPorownania" typ="BASIC" ikona="plus" (click)="wybranoMape()"
+                            label="{{'codes.strona-startowa.etykieta-stworz-mape' | translate}}"></app-przycisk-okragly>
+    </div>
+  </div>
+</div>

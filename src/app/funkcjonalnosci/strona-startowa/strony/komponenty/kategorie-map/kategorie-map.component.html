@@ -1,0 +1,24 @@
+<div class="kategoria-map">
+  <div class="kategoria-naglowek justify-between items-center flex" (click)= "zmienWidocznosc()">
+    <span class="tytul um-kategoria">{{kategoriiMap!.nazwa}}</span>
+    <button class="kategoria-przycisk-zwijania" *ngIf="!zawartoscWidoczna"
+            matTooltip="{{'codes.strona-startowa.etykieta-rozwin' | translate}}"
+            attr.aria-label="{{'codes.strona-startowa.etykieta-rozwin' | translate}}"
+            matTooltipDisabled="{{!czyTrybDesktop}}">
+      <mat-icon class="kategoria-ikona" svgIcon="strzalka-w-dol"></mat-icon>
+    </button>
+    <button class="kategoria-przycisk-zwijania" *ngIf="zawartoscWidoczna"
+            attr.aria-label="{{'codes.strona-startowa.etykieta-zwin' | translate}}"
+            matTooltip="{{'codes.strona-startowa.etykieta-zwin' | translate}}"
+            matTooltipDisabled="{{!czyTrybDesktop}}">
+      <mat-icon class="kategoria-ikona" svgIcon="strzalka-w-gore"></mat-icon>
+    </button>
+  </div>
+  <div class="tab-zawartosc mb-16" *ngIf="zawartoscWidoczna" >
+    <div class="grid grid-cols-2 gap-4 um-desktop:grid-cols-3 um-desktop-s:grid-cols-4 um-desktop:gap-8">
+      <div *ngFor="let mapa of kategoriiMap!.grupyMap">
+        <app-karta-mapy (mapaWybrana)="wybranoMape($event)" [zmianaMapy]="zmianaMapy" [mapa]="mapa"></app-karta-mapy>
+      </div>
+    </div>
+  </div>
+</div>
