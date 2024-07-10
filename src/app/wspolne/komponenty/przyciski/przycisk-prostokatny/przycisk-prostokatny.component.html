@@ -1,0 +1,7 @@
+<button type="button"
+        class="uppercase flex justify-center items-center px-10 w-full"
+        [disabled]="disabled"
+        attr.aria-label="{{label}}"
+        [ngClass]="{'primary': typ==='PRIMARY', 'basic': typ==='BASIC'}">
+  {{label}}
+</button>

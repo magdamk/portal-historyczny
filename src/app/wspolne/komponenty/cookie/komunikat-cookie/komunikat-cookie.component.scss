@@ -1,0 +1,11 @@
+@import "../../../../../style/konfiguracja-szablonu";
+
+.komunikat-cookie{
+  bottom: 0;
+  min-height: $stopka-prawa-autorskie-wysokosc;
+  width: 100%;
+  background-color: $miasto-czarny;
+  color: $miasto-bialy;
+  border-top: 1px solid $miasto-bialy;
+  z-index: 10000;
+}

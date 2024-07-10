@@ -1,0 +1,28 @@
+@import "../../../../../style/konfiguracja-szablonu";
+
+$wysokosc-przycisku: 38px;
+
+button {
+  height: $wysokosc-przycisku;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.basic {
+  border: 2px solid $miasto-blekit;
+  background-color: $miasto-bialy;
+  color: $miasto-blekit;
+  font-weight: bold;
+}
+
+.basic:disabled{
+  border: 2px solid $miasto-szary-tekst;
+  color: $miasto-szary-tekst;
+}
+
+.primary {
+  border: 2px solid $miasto-bialy;
+  background-color: $miasto-czarny;
+  color: $miasto-bialy;
+  font-weight: bold;
+}

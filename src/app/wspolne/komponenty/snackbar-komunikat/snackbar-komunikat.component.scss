@@ -1,0 +1,16 @@
+.komunikat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .kontener-ikon {
+    margin-right: 30px;
+    .ikona-stanu {
+      display: flex;
+    }
+  }
+
+  .zamknij {
+    cursor: pointer;
+  }
+}

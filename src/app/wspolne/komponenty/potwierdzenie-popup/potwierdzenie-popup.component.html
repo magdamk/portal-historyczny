@@ -1,0 +1,6 @@
+<h2 *ngIf="data.tytul" mat-dialog-title> {{ data.tytul | translate }} </h2>
+<h4 mat-dialog-content class="whitespace-pre-wrap"> {{data.tresc | translate }} </h4>
+<div mat-dialog-actions class="flex flex-row justify-around">
+  <button mat-raised-button color="primary" class="w-1/3" [mat-dialog-close]="true"> {{ data.zatwierdzPrzyciskEtykieta | translate }} </button>
+  <button mat-raised-button color="primary" class="w-1/3" [mat-dialog-close]="false">{{ data.anulujPrzyciskEtykieta | translate }}</button>
+</div>

@@ -1,0 +1,8 @@
+<span class="komunikat">
+  <div class="kontener-ikon">
+    <mat-icon class="ikona-stanu" *ngIf="data.typ==='SUCCESS'" svgIcon="komunikat-pozytywny"></mat-icon>
+    <mat-icon class="ikona-stanu" *ngIf="data.typ==='ERROR'" svgIcon="komunikat-negatywny"></mat-icon>
+  </div>
+  <span>{{ data.tekst }}</span>
+  <mat-icon class="zamknij" (click)="zamknij()">close</mat-icon>
+</span>
