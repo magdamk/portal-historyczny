@@ -1,0 +1,15 @@
+<div class="aktualnosci-kontener" *ngIf="$listaZarchiwuzowanychAktualnosci">
+  <div  *ngFor="let aktualnosc of $listaZarchiwuzowanychAktualnosci | async">
+    <mat-card class="my-4 text-xs rounded-sm">
+      <mat-card-title>
+        <div class="flex text-base">
+          <p class="font-bold text-left w-3/4 um-tytul">{{jezyk === 'pl' ? aktualnosc.tytul : aktualnosc.tytulEn}}</p>
+          <p class="font-bold text-right w-1/4 capitalize color-grey um-tytul"> {{aktualnosc.dataUtworzenia | formatujDate:jezyk}}</p>
+        </div>
+      </mat-card-title>
+      <mat-card-content class="mt-2  text-xs break-words um-standard"
+                        [innerHTML]="jezyk === 'pl' ? aktualnosc.tresc : aktualnosc.trescEn">
+      </mat-card-content>
+      </mat-card>
+    </div>
+</div>

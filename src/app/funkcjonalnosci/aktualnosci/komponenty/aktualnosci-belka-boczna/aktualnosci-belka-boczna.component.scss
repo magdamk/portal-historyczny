@@ -1,0 +1,58 @@
+@import "../../../../../style/konfiguracja-szablonu";
+
+.belka-aktualnosci{
+  position: relative;
+  background: $miasto-blekit;
+  overflow: hidden;
+}
+
+.aktualnosci{
+  height: calc(100% - 140px);
+  -ms-overflow-style: none; /* IE 11 */
+  scrollbar-width: none; /* Firefox 64 */
+  lib-przewijany-komponent{
+    width: 100%;
+  }
+}
+
+
+.tresc{
+  display: flex;
+  height: calc(100% - 100px);
+  border-top: 4px solid white;
+  border-bottom: 4px solid white;
+}
+
+.tresc-zawartosc{
+}
+
+.nawigacja{
+  position: absolute;
+  bottom: 66px;
+  width: 100%;
+  left: 0
+}
+
+.aktualnosci-padding{
+  padding: 15px 24px;
+}
+
+@layer utilities {
+  @variants responsive {
+
+    .tytul-komponentu{
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    .tytul-komponentu-desktop{
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+
+    .aktualnosci-padding-desktop{
+      padding: 29px 38px 29px 48px !important;
+    }
+
+  }
+}

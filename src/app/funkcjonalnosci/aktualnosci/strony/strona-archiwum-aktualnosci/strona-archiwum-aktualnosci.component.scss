@@ -1,0 +1,20 @@
+@import 'src/style/konfiguracja-szablonu.scss';
+
+.aktualnosci-kontener {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto Condensed";
+}
+
+.color-grey {
+  color: $miasto-szary-tekst
+}
+
+mat-card-title{
+  font-family: "Roboto Condensed";
+}
+
+mat-card-content{
+  font-family: "Roboto Condensed";
+}
+

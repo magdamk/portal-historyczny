@@ -8,6 +8,9 @@ import { FormatujDatePipe } from './pipes/formatuj-date.pipe';
   declarations: [
     FormatujDatePipe
   ],
+  exports: [
+    FormatujDatePipe
+  ],
   imports: [
     CommonModule
   ]

@@ -9,6 +9,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { WspolneModule } from './wspolne/wspolne.module';
 import { StoreModule } from '@ngrx/store';
+import { AktualnosciBelkaBocznaComponent } from './funkcjonalnosci/komponenty/aktualnosci-belka-boczna/aktualnosci-belka-boczna.component';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
@@ -24,6 +25,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 @NgModule({
   declarations: [
     AppComponent,
+    AktualnosciBelkaBocznaComponent,
   ],
   imports: [
     AppRoutingModule,

@@ -1,0 +1,35 @@
+<div class="aktualnosci-padding um-desktop::aktualnosci-padding-desktop belka-aktualnosci text-white w-full h-full p-4">
+  <div class="aktualnosci">
+    <div class="tytul-komponentu um-desktop::tytul-komponentu-desktop text-center um-desktop::text-right mb-4">
+      <h2 class="uppercase um-desktop::um-tytul um-naglowek-a">{{'codes.aktualnosci.aktualnosci' | translate}}</h2>
+    </div>
+    <div *ngIf="listaAktualnosci" class="tresc py-8">
+      <!-- <lib-przewijany-komponent #przeijanyKomponent [stylBialy]="true"> -->
+      <div>
+        <div class="tresc-data flex um-aktualnosc">
+          <mat-icon svgIcon="kalendarz" class="mr-4"></mat-icon>
+          <p class="capitalize">{{ listaAktualnosci[aktualnyIndex]?.dataUtworzenia | formatujDate:jezyk}}</p>
+        </div>
+        <div class="tresc-tytul um-desktop::pb-16 pb-10 pt-6 um-naglowek-a break-words">
+          {{jezyk === 'pl' ? listaAktualnosci[aktualnyIndex]?.tytul : listaAktualnosci[aktualnyIndex]?.tytulEn}}
+        </div>
+
+        <div class="tresc-zawartosc um-aktualnosc break-words"
+             [innerHTML]="jezyk === 'pl' ? listaAktualnosci[aktualnyIndex]?.tresc : listaAktualnosci[aktualnyIndex]?.trescEn ">
+        </div>
+      </div>
+      <!-- </lib-przewijany-komponent> -->
+    </div>
+  </div>
+  <div class="nawigacja flex justify-center">
+    <app-przycisk-okragly ikona="lewa-strzalka" (click)="poprzednia()"
+                          label="{{'codes.aktualnosci.etykieta-poprzedni' | translate}}">
+    </app-przycisk-okragly>
+    <app-przycisk-okragly style="margin: 0 16px" ikona="archiwum" link="/aktualnosci" (click)="przekierujDoArchiwum()"
+                          label="{{'codes.aktualnosci.etykieta-archiwum' | translate}}">
+    </app-przycisk-okragly>
+    <app-przycisk-okragly ikona="prawa-strzalka" (click)="nastepna()"
+                          label="{{'codes.aktualnosci.etykieta-nastepny' | translate}}">
+    </app-przycisk-okragly>
+  </div>
+</div>
