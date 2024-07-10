@@ -20,7 +20,7 @@ body {
 }
 
 @layer utilities {
-  @variants responsive {
+  @layer components {
 
     .um-naglowek-a {
       font-size: 2rem;

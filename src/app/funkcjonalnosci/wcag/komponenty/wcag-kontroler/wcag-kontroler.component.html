@@ -1,0 +1,32 @@
+<div class="wcag-button" [ngClass]="{'show-left': menuPosition=='LEFT', 'show-right': menuPosition=='RIGHT'}">
+  <button class="flex items-center justify-center"
+          aria-label="Example icon-button with a menu"
+          matTooltip="{{'codes.nawigacja.etykieta-dostepnosc' | translate}}"
+          (click)="pokazUkryjMenu()">
+    <mat-icon class="ikona-oko" svgIcon="oko"></mat-icon>
+  </button>
+  <div class="wcag-menu um-tekst-a flex flex-col pr-2" *ngIf="menuVisible">
+    <button class="flex items-stretch p-3" (click)="powiekrzCzcionke()">
+      <mat-icon class="ikony-wcag" [svgIcon]="UM_IKONY.wcagPowiekszTekst"></mat-icon>
+      <span class="whitespace-nowrap">{{'codes.nawigacja.powieksz-tekst' | translate}}</span></button>
+    <button class="flex items-stretch p-3" (click)="zmniejszCzcionke()">
+      <mat-icon class="ikony-wcag" [svgIcon]="UM_IKONY.wcagPomniejszTekst"></mat-icon>
+      <span class="whitespace-nowrap">{{'codes.nawigacja.pomniejsz-tekst' | translate}}</span></button>
+    <button class="flex items-stretch p-3" (click)="setCzarnoBialy()">
+      <mat-icon class="ikony-wcag" [svgIcon]="UM_IKONY.wcagCzarnoBialy"></mat-icon>
+      <span class="whitespace-nowrap">{{'codes.nawigacja.czano-bialy' | translate}}</span></button>
+    <button class="flex items-stretch p-3" (click)="setNegatyw()">
+      <mat-icon class="ikony-wcag" [svgIcon]="UM_IKONY.wcagOdwrocKolory"></mat-icon>
+      <span class="whitespace-nowrap">{{'codes.nawigacja.odwroc-kolory' | translate}}</span></button>
+    <button class="flex items-stretch p-3" (click)="setPodkreslenieLinkow()">
+      <mat-icon class="ikony-wcag" [svgIcon]="UM_IKONY.wcagPodkreslLinki"></mat-icon>
+      <span class="whitespace-nowrap">{{'codes.nawigacja.podkresl-linki' | translate}}</span></button>
+    <button class="flex items-stretch p-3" (click)="setProstaCzcionka()">
+      <mat-icon class="ikony-wcag" [svgIcon]="UM_IKONY.wcagProstaCzcionka"></mat-icon>
+      <span class="whitespace-nowrap">{{'codes.nawigacja.prosta-czcionka' | translate}}</span></button>
+    <button class="flex items-stretch p-3" (click)="reset()">
+      <mat-icon class="ikony-wcag" [svgIcon]="UM_IKONY.wcagResetUstawien"></mat-icon>
+      <span class="whitespace-nowrap">{{'codes.nawigacja.reset-ustawien' | translate}}</span></button>
+  </div>
+</div>
+

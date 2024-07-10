@@ -1,0 +1,16 @@
+
+.logo{
+  //max-height: 111px;
+}
+
+
+@layer utilities {
+  @variants responsive {
+    .logo-margins{
+      margin-top: 22px;
+      margin-bottom: 0px;
+    }
+  }
+}
+
+

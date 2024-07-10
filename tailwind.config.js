@@ -20,10 +20,10 @@ module.exports = {
       }
     },
     screens: {
-      'um-desktop:': '900px',
-      'um-desktop-s:': '1367px',
-      'um-desktop-m:': '1600px',
-      'um-desktop-l:': '1920px'
+      'um-desktop': '900px',
+      'um-desktop-s': '1367px',
+      'um-desktop-m': '1600px',
+      'um-desktop-l': '1920px'
     }
   },
   variants: {

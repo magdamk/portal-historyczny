@@ -1,0 +1,18 @@
+@import "../../../../../style/konfiguracja-szablonu";
+
+button{
+  height: 31px;
+  width: 50px;
+  background: $miasto-blekit;
+  color: $miasto-bialy;
+  border-radius: 16px;
+  margin-right: 8px;
+  line-height: 16px;
+}
+
+button mat-icon{
+  width: 21px !important;
+  max-height: 16px;
+}
+
+

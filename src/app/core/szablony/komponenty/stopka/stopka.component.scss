@@ -1,0 +1,19 @@
+@import "../../../../../style/konfiguracja-szablonu";
+
+$stopka-prawa-autorskie-wysokosc: 100px;
+
+.stopka-linki{
+  height: calc(100% - #{$stopka-prawa-autorskie-wysokosc});
+}
+
+.stopka-link {
+  display: list-item;
+  list-style: disc outside;
+  margin-left: 20px;
+}
+
+.stopka-prawa-autorskie {
+  color: $miasto-bialy;
+  height: $stopka-prawa-autorskie-wysokosc;
+  border-top: 1px solid white;
+}

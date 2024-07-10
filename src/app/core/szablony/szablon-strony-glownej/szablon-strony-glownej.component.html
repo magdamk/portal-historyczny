@@ -1,0 +1,61 @@
+<app-wcag-wykonawca></app-wcag-wykonawca>
+<div class="flex">
+  <div class="main um-desktop::tlo-desktop w-full flex-1" #main>
+    <header class="flex1 flex flex-col main-header">
+      <!-------------------------------------Mogilny nagłówek z nawigacją------------------------------------------------->
+      <div class="wcag-naglowek-mobilny mobile-nav w-full flex um-desktop::hidden justify-between">
+        <app-wcag-kontroler class="mobile-wcag-controller" [menuPosition]="'RIGHT'"></app-wcag-kontroler>
+        <button class="aside-show-button" attr.aria-label="{{'codes.generyczne.przycisk-rozwin' | translate}}"
+                (click)="rozwinBocznaNawigacje()">
+          <mat-icon class="menu-mobilne-otworz-ikona" matTooltip="{{'codes.generyczne.menu' | translate}}" svgIcon="menu-mobilne"></mat-icon>
+        </button>
+      </div>
+      <!-------------------------------------Logo i tytuł Strony---------------------------------------------------------->
+      <div class="wcag-naglowek flex flex-col um-desktop::flex-row justify-between h-full">
+        <div class="wcag-logo um-desktop::logo flex justify-center h-full ">
+          <app-logo-naglowka></app-logo-naglowka>
+        </div>
+        <div
+          class="wcag-tytul-strony um-desktop::tytul-strony col-span-1 um-desktop::col-span-5 flex items-center justify-center">
+          <h1 class="um-tytul text-center px-4 um-desktop::tytyl-padding">
+            {{tytulStrony | translate}}
+          </h1>
+        </div>
+      </div>
+    </header>
+    <!---------------------------------------Kontener treść strony-------------------------------------------------------->
+    <div class="wcag-glowny-kontener main-content py-8 px-8 um-desktop-m::main-content-paddings um-desktop::small-content-paddings um-desktop-l::large-content-paddings">
+      <div class="">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+    <!---------------------------------------Footer----------------------------------------------------------------------->
+    <div class="wcag-stopka main-footer flex bg-black">
+      <app-stopka class="flex-grow"></app-stopka>
+    </div>
+  </div>
+  <div class="wcag-boczna-belka aside hidden um-desktop::aside-zmniejszony um-desktop-s::aside um-desktop::flex flex-col"
+       [ngClass]="{'boczna-nawigacja-zawsze-widoczna': bocznaNawigazjaRozwinieta}">
+    <!---------------------------------------Nawigacja boczna belka------------------------------------------------------->
+    <div class="aside-header w-full">
+      <app-wcag-kontroler class="desktop-wcag-controller hidden um-desktop::flex"></app-wcag-kontroler>
+      <app-wcag-kontroler class="mobile-aside-wcag-controller flex um-desktop::hidden"
+                          menuPosition="RIGHT"></app-wcag-kontroler>
+      <div class="flex-growth flex items-center justify-center h-full">
+        <app-przycisk-pokaz-kontakt></app-przycisk-pokaz-kontakt>
+        <app-przycisk-pokaz-pomoc style="margin-left: 16px; margin-right: 16px"></app-przycisk-pokaz-pomoc>
+        <app-przycisk-zmien-jezyk></app-przycisk-zmien-jezyk>
+      </div>
+      <button class="aside-close-button um-desktop::hidden"
+              attr.aria-label="{{'codes.generyczne.przycisk-zamknij' | translate}}" (click)="zwinBocznaNawigacje()">
+        <mat-icon class="menu-mobilne-ikona" svgIcon="zamknij"></mat-icon>
+      </button>
+    </div>
+    <!---------------------------------------Aktualności------------------------------------------------------------------>
+    <div class="aside-content w-full">
+      <ng-template libKomponentHost="">
+      </ng-template>
+    </div>
+  </div>
+</div>
+<!-- <app-komunikat-cookie></app-komunikat-cookie> -->

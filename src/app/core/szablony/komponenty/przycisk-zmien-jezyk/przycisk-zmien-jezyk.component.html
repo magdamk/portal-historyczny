@@ -1,0 +1,8 @@
+<app-przycisk-mydlo ikona="en" *ngIf="(zmianaJezykaSubject | async) ==='pl'"
+                    (click)="zmienJezyk()"
+                    label="{{'codes.nawigacja.etykieta-jezyk' | translate}}">
+</app-przycisk-mydlo>
+<app-przycisk-mydlo ikona="pl" *ngIf="(zmianaJezykaSubject | async) ==='en'"
+                    (click)="zmienJezyk()"
+                    label="{{'codes.nawigacja.etykieta-jezyk' | translate}}">
+</app-przycisk-mydlo>
