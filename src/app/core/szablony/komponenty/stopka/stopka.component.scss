@@ -1,11 +1,15 @@
 @import "../../../../../style/konfiguracja-szablonu";
 
 $stopka-prawa-autorskie-wysokosc: 100px;
-
+// *{
+//   font-family: 'Roboto Condensed', "Helvetica Neue", sans-serif;
+// }
 .stopka-linki{
   height: calc(100% - #{$stopka-prawa-autorskie-wysokosc});
 }
-
+.roboto{
+  font-family: 'Roboto Condensed';
+}
 .stopka-link {
   display: list-item;
   list-style: disc outside;

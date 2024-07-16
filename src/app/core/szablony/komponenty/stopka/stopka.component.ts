@@ -2,7 +2,8 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Observable, Subscription} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {TlumaczeniaService} from '../../../tlumaczenia/serwisy/tlumaczenia.service';
-// import {ControllerStronyCmsOpenService, StronaCmsListaDto} from "../../../../../../build/openapi_modul_mapowy_public";
+import {ControllerStronyCmsOpenService} from "../../../api/controller-strony-cms-open.service"
+import { StronaCmsListaDto} from "../../../modele/strona-cms-lista-dto";
 
 /**
  * Komponent stopki dla szablonu strony startowej
@@ -14,7 +15,7 @@ import {TlumaczeniaService} from '../../../tlumaczenia/serwisy/tlumaczenia.servi
 })
 export class StopkaComponent implements OnInit, OnDestroy {
 
-  // $stronyCms = new Observable<StronaCmsListaDto[] | undefined>();
+  $stronyCms = new Observable<StronaCmsListaDto[] | undefined>();
   subskrybcja = new Subscription();
 
   /**
@@ -23,7 +24,7 @@ export class StopkaComponent implements OnInit, OnDestroy {
    * @param tlumaczeniaSerwis serwis tlumaczen
    */
   constructor(
-    // private cmsService: ControllerStronyCmsOpenService,
+    private cmsService: ControllerStronyCmsOpenService,
     private tlumaczeniaSerwis: TlumaczeniaService) {
   }
 
@@ -46,7 +47,7 @@ export class StopkaComponent implements OnInit, OnDestroy {
    * Funkcja wczytywania listy tematów pomocy
    */
   wczytajListeStron(): void {
-    // this.$stronyCms = this.cmsService.pobierzListeStronOpen('STRONA_STARTOWA', '')
-    //   .pipe(map(val => val.content));
+    this.$stronyCms = this.cmsService.pobierzListeStronOpen('STRONA_STARTOWA', '')
+      .pipe(map(val => val.content));
   }
 }

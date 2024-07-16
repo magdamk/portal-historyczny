@@ -11,10 +11,10 @@ import {
 } from '@angular/core';
 import {Subscription} from 'rxjs';
 import {BelkaBocznaKomponent} from '../../../wspolne/interfejsy/belka-boczna-komponent';
-// import {AktualnosciBelkaBocznaComponent} from '../../../../funkcjonalnosci/aktualnosci/komponenty/aktualnosci-belka-boczna/aktualnosci-belka-boczna.component';
+import {AktualnosciBelkaBocznaComponent} from '../../../funkcjonalnosci/aktualnosci/komponenty/aktualnosci-belka-boczna/aktualnosci-belka-boczna.component';
 import {NavigationEnd, Router} from '@angular/router';
 import {SzablonyService} from '../serwisy/szablony.service';
-// import {KomponentHostDirective} from "@modul-mapowy";
+import {KomponentHostDirective} from '../../../wspolne/dyrektywy/komponent-host.directive';
 
 /**
  * Komponent szablonu strony startowej
@@ -25,7 +25,7 @@ import {SzablonyService} from '../serwisy/szablony.service';
   styleUrls: ['./szablon-strony-glownej.component.scss']
 })
 export class SzablonStronyGlownejComponent implements OnInit, AfterViewInit, OnDestroy {
-  // @ViewChild(KomponentHostDirective, {static: true}) appKomponentHost!: KomponentHostDirective;
+  @ViewChild(KomponentHostDirective, {static: true}) appKomponentHost!: KomponentHostDirective;
   @ViewChild('main') glownyKontener!: ElementRef;
 
 
@@ -79,7 +79,7 @@ export class SzablonStronyGlownejComponent implements OnInit, AfterViewInit, OnD
    * Cykl życia komponentu renderowanie widoku
    */
   ngAfterViewInit(): void {
-    // this.zaladujKomponentBelkiBocznej(AktualnosciBelkaBocznaComponent);
+    this.zaladujKomponentBelkiBocznej(AktualnosciBelkaBocznaComponent);
   }
 
   /**
@@ -93,7 +93,7 @@ export class SzablonStronyGlownejComponent implements OnInit, AfterViewInit, OnD
    * Funkcja zwija belkę boczną
    */
   zwinBocznaNawigacje(): void {
-    // this.zaladujKomponentBelkiBocznej(AktualnosciBelkaBocznaComponent);
+    this.zaladujKomponentBelkiBocznej(AktualnosciBelkaBocznaComponent);
     this.szablonyService.zwinBelkeBoczna();
   }
 
@@ -105,7 +105,7 @@ export class SzablonStronyGlownejComponent implements OnInit, AfterViewInit, OnD
     if (komponent !== undefined) {
       this.zaladujKomponentBelkiBocznej(komponent);
     } else {
-      // this.zaladujKomponentBelkiBocznej(AktualnosciBelkaBocznaComponent);
+      this.zaladujKomponentBelkiBocznej(AktualnosciBelkaBocznaComponent);
     }
   }
 
@@ -114,13 +114,13 @@ export class SzablonStronyGlownejComponent implements OnInit, AfterViewInit, OnD
    * @param komponent - komponent powinien implementować interfejs BelkaBocznaKomponent
    */
   private zaladujKomponentBelkiBocznej(komponent: Type<BelkaBocznaKomponent>): void {
-    // if (!this.appKomponentHost) {
-    //   return;
-    // }
+    if (!this.appKomponentHost) {
+      return;
+    }
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(komponent);
-    // const viewContainerRef = this.appKomponentHost.viewContainerRef;
-    // viewContainerRef.clear();
-    // const componentRef = viewContainerRef.createComponent<BelkaBocznaKomponent>(componentFactory);
+    const viewContainerRef = this.appKomponentHost.viewContainerRef;
+    viewContainerRef.clear();
+    const componentRef = viewContainerRef.createComponent<BelkaBocznaKomponent>(componentFactory);
   }
 
   /**

@@ -19,6 +19,7 @@ import { KomunikatCookieComponent } from './komponenty/cookie/komunikat-cookie/k
 import { InformacjaPopupComponent } from './komponenty/informacja-popup/informacja-popup.component';
 import { PotwierdzeniePopupComponent } from './komponenty/potwierdzenie-popup/potwierdzenie-popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { KomponentHostDirective } from './dyrektywy/komponent-host.directive';
 @NgModule({
   declarations: [
     IkonySvgComponent,
@@ -32,6 +33,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     KomunikatCookieComponent,
     InformacjaPopupComponent,
     PotwierdzeniePopupComponent,
+    KomponentHostDirective,
   ],
   imports: [
     CommonModule,
@@ -55,7 +57,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     OdkazHtmlPipe,
     StylizowanyKursorDirective,
     SnackbarKomunikatComponent,
-    PotwierdzeniePopupComponent
+    PotwierdzeniePopupComponent,
+    KomponentHostDirective
   ]
 })
 export class WspolneModule { }

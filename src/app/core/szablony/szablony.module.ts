@@ -12,6 +12,7 @@ import { PrzyciskZmienJezykComponent } from './komponenty/przycisk-zmien-jezyk/p
 import { WspolneModule } from 'src/app/wspolne/wspolne.module';
 import { PrzyciskPokazKontaktComponent } from './komponenty/przycisk-pokaz-kontakt/przycisk-pokaz-kontakt.component';
 import { PrzyciskPokazPomocComponent } from './komponenty/przycisk-pokaz-pomoc/przycisk-pokaz-pomoc.component';
+import { AktualnosciModule } from 'src/app/funkcjonalnosci/aktualnosci/aktualnosci.module';
 
 @NgModule({
   declarations: [
@@ -27,12 +28,18 @@ import { PrzyciskPokazPomocComponent } from './komponenty/przycisk-pokaz-pomoc/p
   ],
   imports: [
     CommonModule,
-    MatTooltipModule,
-    MatIconModule,
-    RouterModule,
-    TranslateModule.forChild(),
     WcagModule,
-    WspolneModule
+    RouterModule,
+    AktualnosciModule,
+    WspolneModule,
+    // PomocModule,
+    MatIconModule,
+    MatTooltipModule,
+    // ModulMapowyModule,
+    WspolneModule,
+    // ZmianaMapyModule,
+    // WyborMapyModule,
+    TranslateModule.forChild()
   ]
 })
 export class SzablonyModule { }

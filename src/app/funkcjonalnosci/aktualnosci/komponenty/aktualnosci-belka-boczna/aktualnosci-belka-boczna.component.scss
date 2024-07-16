@@ -1,5 +1,7 @@
-@import "../../../../../style/konfiguracja-szablonu";
-
+@import "../../../../../style/konfiguracja-szablonu.scss";
+*{
+  font-family: 'Roboto Condensed', "Helvetica Neue", sans-serif !important;
+}
 .belka-aktualnosci{
   position: relative;
   background: $miasto-blekit;
@@ -36,10 +38,8 @@
 .aktualnosci-padding{
   padding: 15px 24px;
 }
-@tailwind base;
-@tailwind components;
 @tailwind utilities;
-
+// @tailwind variants;
 @layer utilities {
   @variants responsive {
 
