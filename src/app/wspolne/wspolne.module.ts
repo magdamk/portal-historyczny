@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
 import { ObserversModule } from '@angular/cdk/observers';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { TranslateModule } from "@ngx-translate/core";
-import { MatSliderModule } from '@angular/material/slider';
+// import { MatSliderModule } from '@angular/material/slider';
 import { StylizowanyKursorDirective } from './dyrektywy/stylizowany-kursor.directive';
 import { SnackbarKomunikatComponent } from './komponenty/snackbar-komunikat/snackbar-komunikat.component';
 import { PrzyciskIkonaComponent } from './komponenty/przyciski/przycisk-ikona/przycisk-ikona.component';
@@ -20,6 +20,10 @@ import { InformacjaPopupComponent } from './komponenty/informacja-popup/informac
 import { PotwierdzeniePopupComponent } from './komponenty/potwierdzenie-popup/potwierdzenie-popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { KomponentHostDirective } from './dyrektywy/komponent-host.directive';
+// import { PrzewijanyKomponentComponent } from './components/przewijany-komponent/przewijany-komponent.component';
+// import { MatSliderChange, MatSliderModule } from '@angular/material/slider';
+import { MatLegacySliderModule } from '@angular/material/legacy-slider';
+import { PrzewijanyKomponentComponent } from './komponenty/przewijany-komponent/przewijany-komponent.component';
 @NgModule({
   declarations: [
     IkonySvgComponent,
@@ -34,17 +38,19 @@ import { KomponentHostDirective } from './dyrektywy/komponent-host.directive';
     InformacjaPopupComponent,
     PotwierdzeniePopupComponent,
     KomponentHostDirective,
+    PrzewijanyKomponentComponent,
   ],
   imports: [
     CommonModule,
     MatTooltipModule,
     MatIconModule,
     RouterModule,
-    MatSliderModule,
+    // MatSliderModule,
     ObserversModule,
     MatDialogModule,
     TranslateModule,
     MatSnackBarModule,
+    MatLegacySliderModule
     // ModulMapowyModule
   ],
   exports: [
@@ -58,7 +64,9 @@ import { KomponentHostDirective } from './dyrektywy/komponent-host.directive';
     StylizowanyKursorDirective,
     SnackbarKomunikatComponent,
     PotwierdzeniePopupComponent,
-    KomponentHostDirective
+    KomponentHostDirective,
+    PrzewijanyKomponentComponent,
+    MatLegacySliderModule
   ]
 })
 export class WspolneModule { }

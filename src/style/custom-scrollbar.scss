@@ -1,6 +1,6 @@
 @import "konfiguracja-szablonu";
 
-lib-przewijany-komponent {
+app-przewijany-komponent {
 
   .mat-slider-wrapper {
     background-color: $miasto-szary!important;
@@ -31,7 +31,7 @@ lib-przewijany-komponent {
   }
 }
 
-lib-przewijany-komponent .bialy-slider{
+app-przewijany-komponent .bialy-slider{
   .mat-slider-wrapper {
     background-color: $miasto-bialy!important;
     .mat-slider-track-background{

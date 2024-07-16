@@ -1,1 +1,3 @@
-<p>strona-cms works!</p>
+<ng-container *ngIf="$stronaCms | async as strona">
+  <div *ngIf="strona.tresc" [innerHTML]="strona.tresc | odkazHtml"></div>
+</ng-container>

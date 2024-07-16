@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs';
 import { TlumaczeniaService } from '../../../../core/tlumaczenia/serwisy/tlumaczenia.service';
 import { AktualnosciListaDto } from '../../../../core/modele/aktualnosci-lista-dto';
 // import {  ControllerAktualnosciOpenService} from '../../../../../../build/openapi_modul_mapowy_public';
-// import {PrzewijanyKomponentComponent} from '@modul-mapowy';
+import {PrzewijanyKomponentComponent} from '../../../../wspolne/komponenty/przewijany-komponent/przewijany-komponent.component';
 
 /**
  * Komponent aktualności
@@ -17,7 +17,7 @@ import { AktualnosciListaDto } from '../../../../core/modele/aktualnosci-lista-d
 })
 export class AktualnosciBelkaBocznaComponent implements OnInit {
 
-  // @ViewChild('przeijanyKomponent') przewijanyKomponent: PrzewijanyKomponentComponent
+  @ViewChild('przewijanyKomponent') przewijanyKomponent: PrzewijanyKomponentComponent|undefined;
 
   jezyk: string|undefined;
   listaAktualnosci = new Array<AktualnosciListaDto>();

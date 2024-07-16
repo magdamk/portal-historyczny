@@ -1,0 +1,20 @@
+<div class="flex flex-row items-center w-full h-full">
+  <div #component (cdkObserveContent)="ustawWidocznoscSuwaka($event)" (scroll)="przewijanie()"
+       class="przewijany-kontener overflow-y-scroll flex-grow w-full">
+    <ng-content></ng-content>
+  </div>
+  <div class="padding-05"
+       [class.bialy-slider]="stylBialy"
+       [class.hidden]="(czySuwakWidoczny$ | async) === false" [style.height]="wysokoscSuwaka + '%'"
+       (click)="blokujEmitowanieClick($event)">
+    <mat-slider #suwak
+                (input)="zmianaSuwaka($event)"
+                aria-label="unit(s)"
+                class="h-full"
+                color="primary"
+                invert max="100"
+                min="0"
+                vertical>
+    </mat-slider>
+  </div>
+</div>

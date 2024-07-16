@@ -1,0 +1,15 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+.przewijany-kontener{
+  scrollbar-width: none;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+.padding-05 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
