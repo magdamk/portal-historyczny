@@ -103,8 +103,8 @@ $min-content-height: calc(100vh - #{$main-naglowek-wysokosc} - #{$stopka-wysokos
   color: $miasto-czarny;
 }
 
-@tailwind base;
-@tailwind components;
+// @tailwind base;
+// @tailwind components;
 @tailwind utilities;
 
 @layer utilities {

@@ -36,6 +36,7 @@
             "outputPath": "dist/portal-historyczny",
             "index": "src/index.html",
             "main": "src/main.ts",
+            "aot": false,
             "polyfills": [
               "zone.js"
             ],
@@ -43,7 +44,14 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/custom-project/assets",
+                "output": "/assets/"
+              },
+              "src/assets/i18n/pl.json",
+               "src/assets/i18n/en.json"
             ],
             "styles": [
               "@angular/material/prebuilt-themes/deeppurple-amber.css",
@@ -57,15 +65,21 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumError": "3mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "5kb",
+                  "maximumError": "10kb"
                 }
               ],
-              "outputHashing": "all"
+              "optimization": false,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": false,
+              "vendorChunk": false,
+              "buildOptimizer": false
             },
             "development": {
               "buildOptimizer": false,
@@ -74,6 +88,7 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+
             }
           },
           "defaultConfiguration": "production"
@@ -89,12 +104,6 @@
             }
           },
           "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "portal-historyczny:build"
-          }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",

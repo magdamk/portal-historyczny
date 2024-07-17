@@ -14,9 +14,11 @@ import { TylkoDektopDirective } from './core/responsywnosc/dyrektywy/tylko-dekto
 import { TylkoMobileDirective } from './core/responsywnosc/dyrektywy/tylko-mobile.directive';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
-
+// export function HttpLoaderFactory(http: HttpClient): TranslateLoader {
+//   return new TranslateHttpLoader(http, './assets/modul-mapowy/i18n/', '.json');
+// }
 // @Injectable()
 // export class MyHammerConfig extends HammerGestureConfig {
 //     overrides = <any> {
