@@ -4,7 +4,7 @@ import {
   HttpResponse, HttpEvent, HttpParameterCodec
 } from '@angular/common/http';
 import { CustomHttpParameterCodec } from './encoder';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 import { AktualnosciListaDto } from '../modele/aktualnosci-lista-dto';
 import { JsonObjectContainerAktualnosciSzczegolyDto } from '../modele/json-object-container-aktualnosci-szczegoly-dto';
@@ -19,13 +19,14 @@ import { AKTUALNOSCI, ARCHIWUM } from '../../../assets/data/info'
   providedIn: 'root'
 })
 export class ControllerAktualnosciService {
+  constructor(private http: HttpClient) { }
 
-  getArchiwum(): AktualnosciListaDto[] {
-    return ARCHIWUM;
+  getArchiwum(): Observable<AktualnosciListaDto[]> {
+    return this.http.get<AktualnosciListaDto[]>('./assets/data/archiwum.json');
   }
 
-  getAktualnosci(): AktualnosciListaDto[] {
-    return AKTUALNOSCI;
+  getAktualnosci(): Observable<AktualnosciListaDto[]> {
+    return this.http.get<AktualnosciListaDto[]>('./assets/data/aktualnosci.json');
   }
 
 

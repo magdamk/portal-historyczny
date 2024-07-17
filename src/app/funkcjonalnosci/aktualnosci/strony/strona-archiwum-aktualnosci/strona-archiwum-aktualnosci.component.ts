@@ -59,7 +59,7 @@ export class StronaArchiwumAktualnosciComponent implements OnInit {
    */
   private wczytajListeAktualnosc() {
     // this.$listaZarchiwuzowanychAktualnosci = this.aktualnosciService.pobierzListeZarchiwizowanychAktualnosci().pipe(map(val => val));
-    this.lista = this.aktualnosciService.getArchiwum();
+    this.aktualnosciService.getArchiwum().subscribe((val)=>this.lista=val);
   //    [
   //     {
   //         "uuid": "846ab2ce-81cf-4c6a-9914-fb94e575aa80",

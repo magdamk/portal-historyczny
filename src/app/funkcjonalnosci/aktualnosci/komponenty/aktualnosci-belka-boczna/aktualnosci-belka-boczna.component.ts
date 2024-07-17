@@ -92,7 +92,7 @@ export class AktualnosciBelkaBocznaComponent implements OnInit {
    */
   private wczytajListeAktualnosc() {
     // this.aktualnosciService.pobierzOkreslonaListeAktualnosci().subscribe((val) => this.listaAktualnosci = val);
-    this.listaAktualnosci=this.aktualnosciService.getAktualnosci();
+    this.aktualnosciService.getAktualnosci().subscribe((val)=>this.listaAktualnosci=val);
     //   this.listaAktualnosci=[
     //     {
     //         "uuid": "6efe2ab0-2fde-4030-b132-f442437be8aa",
