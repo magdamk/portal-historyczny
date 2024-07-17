@@ -13,7 +13,6 @@ import { JsonObjectContainerAktualnosciSzczegolyDto } from '../modele/json-objec
 import { BASE_PATH, COLLECTION_FORMATS } from './variables';
 import { Configuration } from './configuration';
 
-import { AKTUALNOSCI, ARCHIWUM } from '../../../assets/data/info'
 
 @Injectable({
   providedIn: 'root'

@@ -1,6 +1,8 @@
 <img class="logo h-28 mb-6 um-desktop:mb-0 um-desktop:logo-margins"
-     alt="{{'codes.generyczne.alt-logo' | translate}}"
-     matTooltip="{{'codes.generyczne.strona-startowa' | translate}}"
-     attr.aria-label="{{'codes.generyczne.aria-logo' | translate}}"
+     alt="{{'codes.generyczne.alt-logo-'+instytucjaLogo | translate}}"
+     matTooltip="{{'codes.generyczne.strona-startowa-'+instytucjaLogo | translate}}"
+     attr.aria-label="{{'codes.generyczne.aria-logo-'+instytucjaLogo | translate}}"
      (keyup.enter)="klikEnter()"
-     routerLink="/" [src]="syrenkaUrl" />
+     [width]="width"
+     [height]="height"
+     [routerLink]="instytucjaPath" [src]="syrenkaUrl" />

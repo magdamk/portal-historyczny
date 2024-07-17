@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {TYP_FILTRA, WcagUstawieniaService} from '../../../../funkcjonalnosci/wcag/serwisy/wcag-ustawienia.service';
 import {LANGS, TlumaczeniaService} from '../../../tlumaczenia/serwisy/tlumaczenia.service';
 import {WcagUstawieniaModel} from '../../../../funkcjonalnosci/wcag/modele/wcag-ustawienia-model';
@@ -14,10 +14,14 @@ import {Router} from "@angular/router";
 })
 export class LogoNaglowkaComponent implements OnInit {
 
+@Input() instytucjaLogo:string='';
+@Input() instytucjaPath:string='';
+@Input() width:string='56';
+@Input() height:string='112';
   wcagUstawienia: WcagUstawieniaModel;
   jezykUstawienia: string;
   syrenkaUrl = '';
-
+toolTip:string='';
   /**
    * Kostruktor
    * @param wcagService - serwis wcag
@@ -48,7 +52,8 @@ export class LogoNaglowkaComponent implements OnInit {
    * Ustawia logo zależnie od wybranej opcji wcag
    */
   private ustawLogo(): void {
-    let syrenkaUrl = 'assets/images/main-logo/logo_';
+    // let syrenkaUrl = 'assets/images/main-logo/logo_';
+    let syrenkaUrl = 'assets/images/'+this.instytucjaLogo+'-logo/logo_';
     if (this.wcagUstawienia.filtr === TYP_FILTRA.BRAK) {
       syrenkaUrl += 'kolorowe_';
     } else if (this.wcagUstawienia.filtr === TYP_FILTRA.CZARNO_BIALA) {
@@ -62,10 +67,12 @@ export class LogoNaglowkaComponent implements OnInit {
       syrenkaUrl += 'eng.svg';
     }
     this.syrenkaUrl = syrenkaUrl;
+    this.toolTip='codes.generyczne.strona-startowa-'+this.instytucjaLogo;
   }
 
   klikEnter():void{
-    this.router.navigate(['/']);
+    // this.router.navigate(['/']);
+    this.router.navigate([this.instytucjaPath]);
   }
 
 }
