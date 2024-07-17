@@ -31,7 +31,7 @@ import { Configuration }                                     from './configurati
 })
 export class ControllerStronyCmsOpenService {
 
-    protected basePath = 'http://testmapa.um.warszawa.pl/api/modul-mapowy';
+    protected basePath = 'https://testmapa.um.warszawa.pl/api/modul-mapowy';
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
     public encoder: HttpParameterCodec;
