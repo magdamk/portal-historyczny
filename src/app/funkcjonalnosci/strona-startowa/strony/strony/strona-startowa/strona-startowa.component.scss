@@ -1,6 +1,13 @@
+@import "../../../../../../style/konfiguracja-szablonu.scss";
+
 p{
   font-size: 3rem;
 }
 *{
   font-family: 'Roboto Condensed', "Helvetica Neue", sans-serif !important;
+  // background-color: chartreuse;
+
+}
+width-green{
+  max-width: calc(100% - $pasek-lewy-szerokosc);
 }

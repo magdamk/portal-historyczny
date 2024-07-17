@@ -18,7 +18,12 @@ $min-content-height: calc(100vh - #{$main-naglowek-wysokosc} - #{$stopka-wysokos
   width: 0; /* Remove scrollbar space */
   background: transparent; /* Optional: just make scrollbar invisible */
 }
-
+.background{
+  background-color: aquamarine;
+}
+.background-main{
+  background-color: plum;
+}
 .main-header {
 }
 
@@ -28,6 +33,7 @@ $min-content-height: calc(100vh - #{$main-naglowek-wysokosc} - #{$stopka-wysokos
 
 .main-content {
   min-height: $min-content-height;
+display: flex;
 }
 
 .aside-header {
@@ -125,7 +131,7 @@ $min-content-height: calc(100vh - #{$main-naglowek-wysokosc} - #{$stopka-wysokos
       --x2:calc(100 / 370);
       --w2:calc(var(--w1) * var(--x1));
       --w3:calc(var(--w1) * var(--x2));
-      padding-left: var(--w2); //227px !important;
+      // padding-left: var(--w2); //227px !important;
       padding-right: var(--w3); //100px !important;
       padding-top: 0;
       padding-bottom: 100px;
@@ -172,6 +178,9 @@ $min-content-height: calc(100vh - #{$main-naglowek-wysokosc} - #{$stopka-wysokos
       flex: 0 0 $pasek-boczny-szrokosc - 100;
       min-width: 250px;
       height: 100vh;
+    }
+    .lewa-strona{
+      width: $pasek-lewy-szerokosc;
     }
   }
 }
