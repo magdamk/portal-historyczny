@@ -16,7 +16,7 @@
 
 <div class="aktualnosci-kontener" *ngIf="lista">
   <div  *ngFor="let aktualnosc of lista">
-    <mat-card class="my-4 text-xs rounded-sm">
+    <mat-card class="my-4 text-xs rounded-sm p-2 um-desktop:p-5">
       <mat-card-title>
         <div class="flex text-base">
           <p class="font-bold text-left w-3/4 um-tytul">{{jezyk === 'pl' ? aktualnosc.tytul : aktualnosc.tytulEn}}</p>

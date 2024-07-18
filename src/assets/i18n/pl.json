@@ -71,10 +71,10 @@
       "tytul": "Tytuł",
       "data": "Data",
       "tresc": "Treść",
-      "etykieta-poprzedni": "Poprzednia aktualność",
-      "etykieta-nastepny": "Następna aktualność",
-      "etykieta-archiwum": "Archiwum aktualności",
-      "aktualnosci": "AKTUALNOŚCI"
+      "etykieta-poprzedni": "Poprzednia",
+      "etykieta-nastepny": "Następna",
+      "etykieta-archiwum": "Archiwum",
+      "aktualnosci": "HISTORIA"
     },
     "kontakt": {
       "kontakt": "Kontakt",

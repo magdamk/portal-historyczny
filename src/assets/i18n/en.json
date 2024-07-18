@@ -73,10 +73,10 @@
       "tytul": "Title",
       "data": "Date",
       "tresc": "Content",
-      "etykieta-poprzedni": "Previous news",
-      "etykieta-nastepny": "Next news",
-      "etykieta-archiwum": "News archive",
-      "aktualnosci": "NEWS"
+      "etykieta-poprzedni": "Previous",
+      "etykieta-nastepny": "Next",
+      "etykieta-archiwum": "Archive",
+      "aktualnosci": "HISTORY"
     },
     "kontakt": {
       "kontakt": "Contact",
