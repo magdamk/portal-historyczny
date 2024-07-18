@@ -87,7 +87,7 @@ const routes: Routes = [
         useValue: (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) =>
         {
           window.open((route.data as any).externalUrl,'_blank');
-          window.location.href = '/';
+          window.location.href = '';
         }
     }]
 })
