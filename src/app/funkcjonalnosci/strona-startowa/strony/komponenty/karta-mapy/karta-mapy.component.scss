@@ -89,7 +89,7 @@ $karta-mapy-przycisk-wysokosc: 90px;
 @tailwind utilities;
 
 @layer utilities {
-  @layer responsive {
+  @variants responsive {
     .miniaturka-desktop {
       height: calc(#{$karta-mapy-przycisk-wysokosc} + #{$karta-mapy-opis-tresc-wysokosc});
     }

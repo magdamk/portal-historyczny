@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { SzablonyService } from '../../../../../core/szablony/serwisy/szablony.service';
-// import { ControllerKategorieMapOpenService } from "../../../../../core/api/controller-kategorie-map-open.service";
+// import { ControllerKategorieMapService } from "../../../../../core/api/controller-kategorie-map-open.service";
 import { MapaSzczegolyDto } from '../../../../../core/modele/mapa-szczegoly-dto';
 import { TypMapyObiektDto } from '../../../../../core/modele/typ-mapy-obiekt-dto';
 import { ZbiorKategoriiMapOpenDto } from '../../../../../core/modele/zbior-kategorii-map-open-dto';
@@ -10,6 +10,7 @@ import { ResposnsywnoscUtils } from "../../../../../core/responsywnosc/utils/res
 import { WyborMapyEvent } from '../../komponenty/karta-mapy/karta-mapy.component';
 import WersjaEnum = MapaSzczegolyDto.WersjaEnum;
 import { KomunikatyProviderService } from '../../../../../wspolne/serwisy/komunikaty-provider.service';
+import { ControllerKategorieMapService } from 'src/app/core/api/controller-kategorie-map.service';
 
 
 /**
@@ -42,6 +43,7 @@ export class StronaStartowaComponent implements OnInit, AfterViewInit, OnDestroy
   constructor(private szablonyService: SzablonyService,
     private tlumaczeniaService: TlumaczeniaService,
     private komunikaty: KomunikatyProviderService,
+    private serviceKategoriiMap: ControllerKategorieMapService
     // private serviceKategoriiMap: ControllerKategorieMapOpenService
   ) {
   }
@@ -74,6 +76,12 @@ export class StronaStartowaComponent implements OnInit, AfterViewInit, OnDestroy
    */
   private pobierzListeKategoriiMap(): void {
     let wersja = ResposnsywnoscUtils.czyTrybDesktop() ? WersjaEnum.Desktopowa : WersjaEnum.Mobilna;
+    this.serviceKategoriiMap.getKategorieMap()
+      .subscribe((result: any) => {
+        if (result.content) {
+          this.zbiorKategoriiMap = result.content;
+        }
+      });
     // this.serviceKategoriiMap.pobierzListeKategorieMapDlaPortalu(wersja)
     //   .subscribe((result: any) => {
     //     if (result.content) {

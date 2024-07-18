@@ -1,0 +1,551 @@
+{
+  "content": {
+      "wyroznioneMapy": {
+          "uuid": "e30f8b9c-8d7d-64b2-e053-1110c80a4e9e",
+          "nazwa": "Featured maps",
+          "numerWTabeli": 0,
+          "typ": {
+              "obiektEnum": "WYROZNIONE_MAPY",
+              "tlumaczenie": "Highlighted maps"
+          },
+          "grupyMap": [
+              {
+                  "nazwaMapy": "WARSAW REMEMBERED",
+                  "typ": {
+                      "obiektEnum": "MAPA",
+                      "tlumaczenie": "Map"
+                  },
+                  "adresUrl": null,
+                  "opisKafelka": "We invite you....",
+                  "status": "OPUBLIKOWANA",
+                  "wersja": "OBIE",
+                  "dostepnoscDlaWersjiDesktopowej": true,
+                  "dostepnoscDlaWersjiResponsywnej": true,
+                  "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/wawzap.png",
+                  "numerWTabeli": 1,
+                  "uuidMapy": "cfa5eca1-b68d-4b84-a8bf-2dc33879aa20"
+              },
+              {
+                  "nazwaMapy": "Lindley's plans",
+                  "typ": null,
+                  "adresUrl": null,
+                  "opisKafelka": "Lindley's plans....",
+                  "status": "OPUBLIKOWANA",
+                  "wersja": "OBIE",
+                  "dostepnoscDlaWersjiDesktopowej": true,
+                  "dostepnoscDlaWersjiResponsywnej": true,
+                  "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/planyL.png",
+                  "numerWTabeli": 2,
+                  "uuidMapy": "ad28f9d8-5e08-4385-a3ea-d340ec5d2d3e"
+              },
+              {
+                  "nazwaMapy": "The first days of the uprising",
+                  "typ": null,
+                  "adresUrl": null,
+                  "opisKafelka": "On August 1, 1944, the uprising broke out. Heroic fighting against the Germans took place for 63 days.",
+                  "status": "OPUBLIKOWANA",
+                  "wersja": "OBIE",
+                  "dostepnoscDlaWersjiDesktopowej": true,
+                  "dostepnoscDlaWersjiResponsywnej": true,
+                  "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/pw03view.jpg",
+                  "numerWTabeli": 3,
+                  "uuidMapy": "917b68ff-3463-4747-91a9-75076a43163c"
+              }
+          ]
+      },
+      "kategorieTematyczne": [
+          {
+              "uuid": "338ac088-2aed-4538-a81c-373301525098",
+              "nazwa": "Historical topics",
+              "numerWTabeli": 1,
+              "typ": {
+                  "obiektEnum": "KATEGORIA_TEMATYCZNA",
+                  "tlumaczenie": "Kategoria tematyczna"
+              },
+              "grupyMap": [
+                  {
+                      "nazwaMapy": "Jednostki Urzędu m.st. Warszawy",
+                      "typ": null,
+                      "adresUrl": null,
+                      "opisKafelka": "Sprawdź, gdzie jest najbliższy urząd",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "OBIE",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": "https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_administracja.png",
+                      "numerWTabeli": 1,
+                      "uuidMapy": "5ee0c8fd-ef99-471c-a599-2c78bf66f39a"
+                  },
+                  {
+                      "nazwaMapy": "Nieruchomości miejskie",
+                      "typ": null,
+                      "adresUrl": null,
+                      "opisKafelka": "Nieruchomości miejskie na sprzedaż i wynajem",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "DESKTOPOWA",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": "https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_nieruchomosci.png",
+                      "numerWTabeli": 2,
+                      "uuidMapy": "c10468d7-7e2b-4cb0-a657-e10a59e3bb00"
+                  },
+                  {
+                      "nazwaMapy": "Nauka i badania",
+                      "typ": null,
+                      "adresUrl": null,
+                      "opisKafelka": "Mapa uczelni i jednostek naukowych",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "OBIE",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": " https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_nauka_badania.png",
+                      "numerWTabeli": 3,
+                      "uuidMapy": "c3373daf-e4b2-47c5-aa2c-639c1f6a0ab2"
+                  },
+                  {
+                      "nazwaMapy": "Miejsca handlowe",
+                      "typ": null,
+                      "adresUrl": null,
+                      "opisKafelka": "Mapa stanowisk handlowych oraz targowisk",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "OBIE",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": "https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_handel.png",
+                      "numerWTabeli": 4,
+                      "uuidMapy": "23032696-0462-4458-befd-8636bbc2ef8b"
+                  },
+                  {
+                      "nazwaMapy": "Rejestr cen",
+                      "typ": {
+                          "obiektEnum": "MAPA",
+                          "tlumaczenie": "Mapa"
+                      },
+                      "adresUrl": null,
+                      "opisKafelka": "Mapa Rejestru Cen Nieruchomości",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "OBIE",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": " https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_n_rejestr_cen.png",
+                      "numerWTabeli": 5,
+                      "uuidMapy": "ad28f9d8-5e08-4385-a3ea-d340ec5d2d3e"
+                  },
+                  {
+                      "nazwaMapy": "Miejskie Centra Biznesu",
+                      "typ": null,
+                      "adresUrl": null,
+                      "opisKafelka": "Miejskie Centra Biznesu",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "OBIE",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": "https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_mcb.png",
+                      "numerWTabeli": 6,
+                      "uuidMapy": "f1a9b082-61a9-48e1-9a77-39f7ab1e7cec"
+                  }
+              ]
+          },
+          {
+              "uuid": "82154485-8f5a-4273-98d5-b554a1b4db8b",
+              "nazwa": "Historical mages of maps and plans",
+              "numerWTabeli": 2,
+              "typ": {
+                  "obiektEnum": "KATEGORIA_TEMATYCZNA",
+                  "tlumaczenie": "Kategoria tematyczna"
+              },
+              "grupyMap": [
+                  {
+                      "nazwaMapy": "Przedszkola",
+                      "typ": null,
+                      "adresUrl": null,
+                      "opisKafelka": "Znajdź przedszkole, punkt przedszkolny lub zespół wychowania przedszkolnego",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "OBIE",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": "https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_przedszkola.png",
+                      "numerWTabeli": 1,
+                      "uuidMapy": "5ade25a4-8b6c-455e-b24c-b62b283893a5"
+                  },
+                  {
+                      "nazwaMapy": "Szkoły podstawowe",
+                      "typ": null,
+                      "adresUrl": null,
+                      "opisKafelka": "Sprawdź obwody i lokalizacje szkół podstawowych",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "OBIE",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": "https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_szkoly_podstawowe.png",
+                      "numerWTabeli": 2,
+                      "uuidMapy": "a13112c9-9eda-42c4-9539-4f4045ef571e"
+                  },
+                  {
+                      "nazwaMapy": "Szkoły ponadpodstawowe",
+                      "typ": null,
+                      "adresUrl": null,
+                      "opisKafelka": "Znajdź liceum, technikum lub szkołę branżową I stopnia",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "OBIE",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": "https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_szkoly_ponadpodstawowe.png",
+                      "numerWTabeli": 3,
+                      "uuidMapy": "637d25e9-c27e-4d1a-a92d-b6bf1e438659"
+                  },
+                  {
+                      "nazwaMapy": "Kształcenie dla dorosłych",
+                      "typ": null,
+                      "adresUrl": null,
+                      "opisKafelka": "Znajdź placówkę edukacyjną dla dorosłych",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "OBIE",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": "https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_ksztalcenie_dorosli.png",
+                      "numerWTabeli": 4,
+                      "uuidMapy": "9ffc6a40-03c8-46cb-8786-67894c3c7008"
+                  },
+                  {
+                      "nazwaMapy": "Pomoc psychologiczno-pedagogiczna ",
+                      "typ": null,
+                      "adresUrl": null,
+                      "opisKafelka": "Sprawdź lokalizacje poradni psychologiczno-pedagogicznych i granice terenów ich działania",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "OBIE",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": "https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_pomoc_psycholog.png",
+                      "numerWTabeli": 5,
+                      "uuidMapy": "e2efeadc-65ac-4d88-a487-30f305e901da"
+                  },
+                  {
+                      "nazwaMapy": "Kształcenie specjalne",
+                      "typ": null,
+                      "adresUrl": null,
+                      "opisKafelka": "Znajdź jednostki ze specjalną organizacją i specjalnymi metodami pracy z uczniem",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "OBIE",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": "https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_ksztalcenie_specjalne.png",
+                      "numerWTabeli": 6,
+                      "uuidMapy": "dcd03467-2b99-4ce8-ba06-764d66c2cc65"
+                  },
+                  {
+                      "nazwaMapy": "Szkoły artystyczne",
+                      "typ": null,
+                      "adresUrl": null,
+                      "opisKafelka": "Sprawdź, gdzie są szkoły artystyczne",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "OBIE",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": "https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_szkoly_artystyczne.png",
+                      "numerWTabeli": 7,
+                      "uuidMapy": "ed68703d-0703-4a8b-9afa-01e54e6bc2db"
+                  },
+                  {
+                      "nazwaMapy": "Bursy, internaty i schroniska",
+                      "typ": null,
+                      "adresUrl": null,
+                      "opisKafelka": "Bursy, internaty i schroniska",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "OBIE",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": " https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_bursy.png",
+                      "numerWTabeli": 8,
+                      "uuidMapy": "d7811b26-6068-4d71-8233-a09793a58513"
+                  },
+                  {
+                      "nazwaMapy": "Edukacja pozaszkolna",
+                      "typ": null,
+                      "adresUrl": "https://mapum2.um.warszawa.pl/portal/apps/webappviewer/index.html?id=2db96c17de814751943369c03e402349",
+                      "opisKafelka": "Mapa pozaszkolnych placówek oświatowych",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "OBIE",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": "https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_pozaszkolne.png",
+                      "numerWTabeli": 9,
+                      "uuidMapy": "755fd633-8e36-48df-b866-6c415391fc59"
+                  },
+                  {
+                      "nazwaMapy": "Uczelnie",
+                      "typ": null,
+                      "adresUrl": null,
+                      "opisKafelka": "Sprawdź lokalizacje uczelni i akademików",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "OBIE",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": "https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_uczelnie.png",
+                      "numerWTabeli": 10,
+                      "uuidMapy": "dc0f48ab-2086-4856-a991-2b8ed848321c"
+                  },
+                  {
+                      "nazwaMapy": "Klimatyczna mapa szkół",
+                      "typ": {
+                          "obiektEnum": "SERWIS_ZEWNETRZNY",
+                          "tlumaczenie": "Serwis Zewnętrzny"
+                      },
+                      "adresUrl": "https://mapa.um.warszawa.pl/klimatyczna-mapa-szkol/",
+                      "opisKafelka": "Dowiedz się więcej o dodatkowych działaniach i udogodnieniach w szkołach ponadpodstawowych.  ",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "OBIE",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": "https://testmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_klimat_szkol.png",
+                      "numerWTabeli": 11,
+                      "uuidMapy": "9978b34f-9a9e-4797-bd75-daa80d6a469f"
+                  }
+              ]
+          },
+          {
+              "uuid": "ce2f588b-0008-49db-a6ea-a6dd3170c919",
+              "nazwa": "On the trails of history",
+              "numerWTabeli": 3,
+              "typ": {
+                  "obiektEnum": "KATEGORIA_TEMATYCZNA",
+                  "tlumaczenie": "Kategoria tematyczna"
+              },
+              "grupyMap": [
+                  {
+                      "nazwaMapy": "Ewidencja gruntów i budynków",
+                      "typ": null,
+                      "adresUrl": null,
+                      "opisKafelka": "Mapa z granicami działek oraz obrysami budynków pochodzącymi z bazy EGiB",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "OBIE",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": "https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_g_ewidencja.png",
+                      "numerWTabeli": 1,
+                      "uuidMapy": "391c3906-3a4b-455c-88f0-7dcd739b786b"
+                  },
+                  {
+                      "nazwaMapy": "Elementy mapy zasadniczej",
+                      "typ": {
+                          "obiektEnum": "MAPA",
+                          "tlumaczenie": "Mapa"
+                      },
+                      "adresUrl": null,
+                      "opisKafelka": "Elementy mapy zasadniczej",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "OBIE",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": "https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_g_elementy_zasadniczej.png",
+                      "numerWTabeli": 2,
+                      "uuidMapy": "f0e244d2-0c08-4054-a3d8-93a8f09a090b"
+                  },
+                  {
+                      "nazwaMapy": "Własność",
+                      "typ": null,
+                      "adresUrl": null,
+                      "opisKafelka": "Mapa własności",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "DESKTOPOWA",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": "https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_g_wlasnosc.png",
+                      "numerWTabeli": 3,
+                      "uuidMapy": "eccc5593-e72c-4812-b244-a0045cc41ab9"
+                  },
+                  {
+                      "nazwaMapy": "Zagospodarowanie przestrzenne",
+                      "typ": {
+                          "obiektEnum": "MAPA",
+                          "tlumaczenie": "Mapa"
+                      },
+                      "adresUrl": null,
+                      "opisKafelka": "Zagospodarowanie przestrzenne",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "OBIE",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": "https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_g_plany_zagospodarowania.png",
+                      "numerWTabeli": 4,
+                      "uuidMapy": "5f6be1e0-022a-477d-bcce-07fb72293af8"
+                  },
+                  {
+                      "nazwaMapy": "Decyzje administracyjne",
+                      "typ": {
+                          "obiektEnum": "MAPA",
+                          "tlumaczenie": "Mapa"
+                      },
+                      "adresUrl": null,
+                      "opisKafelka": "Decyzje administracyjne",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "OBIE",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": "https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_g_decyzje.png",
+                      "numerWTabeli": 5,
+                      "uuidMapy": "e09b363e-7e90-48b1-8024-5726235d6bc5"
+                  },
+                  {
+                      "nazwaMapy": "Nazewnictwo ulic, placów...",
+                      "typ": null,
+                      "adresUrl": "https://ulice.um.warszawa.pl/",
+                      "opisKafelka": "Nazewnictwo ulic, placów i innych obiektów m.st. Warszawy",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "DESKTOPOWA",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": "https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_ulice.png",
+                      "numerWTabeli": 6,
+                      "uuidMapy": "03968e6a-814f-4389-9146-7cc78124a62e"
+                  },
+                  {
+                      "nazwaMapy": "Serwis adresów w m.st. Warszawa",
+                      "typ": null,
+                      "adresUrl": "https://adresy.um.warszawa.pl/",
+                      "opisKafelka": "Serwis adresów w m.st. Warszawa",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "DESKTOPOWA",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": "https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_adresy.png",
+                      "numerWTabeli": 7,
+                      "uuidMapy": "e1ef67d3-8809-450a-86a3-3f6ccb373119"
+                  },
+                  {
+                      "nazwaMapy": "Ochrona zabytków",
+                      "typ": null,
+                      "adresUrl": null,
+                      "opisKafelka": "Ochrona zabytków",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "OBIE",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": "https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_zabytki.png",
+                      "numerWTabeli": 8,
+                      "uuidMapy": "c70ee36b-a41c-41f0-b44f-4393f7f6d7b4"
+                  },
+                  {
+                      "nazwaMapy": "Zagrożenie powodziowe",
+                      "typ": null,
+                      "adresUrl": null,
+                      "opisKafelka": "Zagrożenie powodziowe",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "OBIE",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": "https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_g_zagrozenie_powodziowe.png",
+                      "numerWTabeli": 9,
+                      "uuidMapy": "b307f2d7-4444-4e98-8160-00c0f7a18304"
+                  },
+                  {
+                      "nazwaMapy": "Strefy ograniczeń",
+                      "typ": null,
+                      "adresUrl": null,
+                      "opisKafelka": "Strefy ograniczeń",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "OBIE",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": "https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_g_strefy_ograniczen.png",
+                      "numerWTabeli": 10,
+                      "uuidMapy": "857c7726-e660-4679-82a0-861b0b808ec5"
+                  },
+                  {
+                      "nazwaMapy": "Ewidencja Dróg i Obiektów Mostowych",
+                      "typ": null,
+                      "adresUrl": null,
+                      "opisKafelka": "Ewidencja Dróg I Obiektów Mostowych (eDIOM)",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "DESKTOPOWA",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": "https://smapa.um.warszawa.pl/mapaApp/Styles/Img/warstwy/b_inne/mapa_ediom.png",
+                      "numerWTabeli": 11,
+                      "uuidMapy": "e2cdcba6-b980-476a-ab28-c1455a98f631"
+                  }
+              ]
+          },
+          {
+              "uuid": "1f1f9513-4dde-4392-a503-4ddbba8dd98d",
+              "nazwa": "External services",
+              "numerWTabeli": 4,
+              "typ": {
+                  "obiektEnum": "KATEGORIA_TEMATYCZNA",
+                  "tlumaczenie": "Kategoria tematyczna"
+              },
+              "grupyMap": [
+                  {
+                      "nazwaMapy": "Drogi i transport publiczny",
+                      "typ": null,
+                      "adresUrl": null,
+                      "opisKafelka": "Drogi i transport publiczny",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "OBIE",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": "https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_transport_publ.png",
+                      "numerWTabeli": 1,
+                      "uuidMapy": "6f9bc429-1cf0-46f1-804c-756f36b11458"
+                  },
+                  {
+                      "nazwaMapy": "Ogólnodostępne stacje ładowania pojazdów elektrycznych (wersja testowa)",
+                      "typ": null,
+                      "adresUrl": null,
+                      "opisKafelka": "Ogólnodostępne stacje ładowania pojazdów elektrycznych (wersja testowa)",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "DESKTOPOWA",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": "https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_eipa.png",
+                      "numerWTabeli": 2,
+                      "uuidMapy": "c85a4bd6-1ef1-4464-ba5c-f67f1b49093f"
+                  },
+                  {
+                      "nazwaMapy": "Bezpieczeństwo",
+                      "typ": null,
+                      "adresUrl": null,
+                      "opisKafelka": "Bezpieczeństwo",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "OBIE",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": "https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_bezpieczenstwo.png",
+                      "numerWTabeli": 3,
+                      "uuidMapy": "2072aea6-0438-485c-bdea-98e9787a7bbb"
+                  },
+                  {
+                      "nazwaMapy": "Rowery",
+                      "typ": null,
+                      "adresUrl": null,
+                      "opisKafelka": "Rowery",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "OBIE",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": "https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_rowery.png",
+                      "numerWTabeli": 4,
+                      "uuidMapy": "eb6bd046-8ae5-4f8a-992a-0af91f0260a1"
+                  },
+                  {
+                      "nazwaMapy": "Strefa Czystego Transportu (SCT)",
+                      "typ": {
+                          "obiektEnum": "MAPA",
+                          "tlumaczenie": "Mapa"
+                      },
+                      "adresUrl": null,
+                      "opisKafelka": "Obszar Strefy Czystego Transportu",
+                      "status": "OPUBLIKOWANA",
+                      "wersja": "OBIE",
+                      "dostepnoscDlaWersjiDesktopowej": false,
+                      "dostepnoscDlaWersjiResponsywnej": false,
+                      "sciezkaDoPlikuZGrafika": "https://testsmapa.um.warszawa.pl/pliki/mapy_grafika/mapa_sct.png",
+                      "numerWTabeli": 5,
+                      "uuidMapy": "1ea56230-612b-4bb8-b8b0-8abc7fba2513"
+                  }
+              ]
+          }
+
+      ]
+  }
+}
