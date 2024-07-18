@@ -1,0 +1,10 @@
+<div class="kontakt-dialog p-8">
+  <app-przycisk-ikona class="przycisk-zamknij"
+                      ikona="zamknij"
+                      typ="przezroczysty"
+                      label="{{'codes.generyczne.etykieta-zamknij' | translate}}"
+                      (click)="zamknijDialog()">
+  </app-przycisk-ikona>
+  <app-kontakt-formularz (poWyslaniu)="zamknijDialog()"></app-kontakt-formularz>
+</div>
+

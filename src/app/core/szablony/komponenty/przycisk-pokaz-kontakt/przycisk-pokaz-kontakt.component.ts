@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
-// import {KontaktDialogComponent} from '../../../../funkcjonalnosci/kontakt/komponenty/kontakt-dialog/kontakt-dialog.component';
+import {KontaktDialogComponent} from '../../../../funkcjonalnosci/kontakt/komponenty/kontakt-dialog/kontakt-dialog.component';
 import {SzablonyService} from '../../serwisy/szablony.service';
-// import {KontaktBelkaBocznaComponent} from '../../../../funkcjonalnosci/kontakt/komponenty/kontakt-belka-boczna/kontakt-belka-boczna.component';
+import {KontaktBelkaBocznaComponent} from '../../../../funkcjonalnosci/kontakt/komponenty/kontakt-belka-boczna/kontakt-belka-boczna.component';
 
 /**
  * Komponent przycisku kontaktu
@@ -28,17 +28,17 @@ export class PrzyciskPokazKontaktComponent {
    * Funkcja wywołuje formularz kontaktowy w oknie
    */
   pokazKontaktDialog(): void {
-    // const dialogRef = this.dialog.open(KontaktDialogComponent, {
-    //   width: '642px',
-    //   panelClass: 'um-dialog'
-    // });
+    const dialogRef = this.dialog.open(KontaktDialogComponent, {
+      width: '642px',
+      panelClass: 'um-dialog'
+    });
   }
 
   /**
    * Funkcja wywołuje formularz kontaktowy na belce bocznej
    */
   pokazKontaktBelkaBoczna(): void {
-    // this.szablonyService.ustawKomponentBelkiBocznej(KontaktBelkaBocznaComponent);
+    this.szablonyService.ustawKomponentBelkiBocznej(KontaktBelkaBocznaComponent);
   }
 
 }

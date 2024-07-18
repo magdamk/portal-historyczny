@@ -1,0 +1,10 @@
+<div class="kontakt-belka-boczna p-4">
+  <app-przycisk-ikona
+    class="przycisk-zamknij"
+    typ="przezroczysty"
+    ikona="ukryj"
+    (click)="zamknijKontakt()">
+  </app-przycisk-ikona>
+  <app-kontakt-formularz (poWyslaniu)="zamknijKontakt()"></app-kontakt-formularz>
+</div>
+

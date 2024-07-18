@@ -1,0 +1,63 @@
+<form class="kontakt-form" [formGroup]="form">
+  <div class="w-full um-naglowek-a">
+    Kontakt
+  </div>
+  <div class="w-full mt-8">
+    <div class="mb-8">
+      <input placeholder="E-mail" (keyup)="usunWiodacaSpacje($event)"
+             aria-label="E-mail"
+             formControlName="email" value="" class="um-input w-full mb-2">
+      <div class="blad-walidacji" *ngIf="form.controls['email'].errors?.['required'] && !form.untouched">
+        E-mail
+      </div>
+      <div class="blad-walidacji" *ngIf="form.controls['email'].errors?.['email'] && !form.untouched">
+        Pole jest wymagane, podaj porawny adres e-mail.
+      </div>
+    </div>
+    <div>
+      <textarea placeholder="Treść wiadomości"
+                aria-label="Treść wiadomości"
+                formControlName="wiadomosc"
+                maxlength="4000"
+                (keyup)="usunWiodacaSpacje($event)"
+                (input)="zmianaWiadomosci($event)"
+                style="height: 302px"
+                class="w-full um-textarea"></textarea>
+      <div class="blad-walidacji" *ngIf="form.controls['wiadomosc'].errors?.['required'] && !form.untouched">
+        Pole jest wymagane
+      </div>
+    </div>
+    <div class="licznik text-right mb-2">Maksymalna liczba znaków<span class="liczba-znakow">
+      {{wiadomoscLiczbaZnakow}}</span> <span>/4000</span>
+    </div>
+     <!-- <div class="w-full mt-8 mb-8" *ngIf="dostepnyBiezacyWidokMapy">
+      <mat-checkbox color="primary"
+                    formControlName="dolaczBiezacyWidokMapy">{{'codes.kontakt.dolacz-biezacy-widok-mapy' | translate}}
+      </mat-checkbox>
+    </div> -->
+   <!-- <div>
+      <div *ngFor="let plik of zaladowanePliki" class="w-full">
+        <span><span class="nazwa-pliku overflow-ellipsis">{{plik.name}}</span><span
+          class="ml-2">({{plik.size | zamienNaKBMB}})</span></span>
+        <button type="button" attr.aria-label="{{'codes.generyczne.usun' | translate}}"
+                class="ml-2 cursor-pointer" (click)="usunPlik(plik)">x
+        </button>
+      </div>
+      <div class="blad-walidacji" *ngIf="form.controls['pliki'].invalid">{{'codes.kontakt.plik-walidacja' |
+        translate}}
+      </div>
+      <div class="blad-walidacji" *ngIf="czyNiepoprawnyFormat">
+        {{ 'codes.kontakt.formaty-plikow-walidacja' | translate }}
+      </div>
+    </div> -->
+  </div>
+  <div class="przyciski">
+    <!-- <lib-upload-pliku class="przycisk" label="{{'codes.generyczne.dodaj-zalacznik' | translate}}"
+                      [disabled]="zaladowanePliki.length>=2"
+                      [typyPlikowMime]="'application/zip,application/pdf,image/jpeg,image/png'"
+                      (zaladowanoPlik)="dodajPlik($event)"></lib-upload-pliku> -->
+    <app-przycisk-prostokatny class="przycisk"
+                              label="Wyślij" (click)="addWiadomosc()"
+                              [disabled]="form.status==='INVALID' || czyNiepoprawnyFormat"></app-przycisk-prostokatny>
+  </div>
+</form>

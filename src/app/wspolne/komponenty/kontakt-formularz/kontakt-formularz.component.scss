@@ -1,0 +1,51 @@
+@import "../../../../style/konfiguracja-szablonu";
+
+.kontakt-form{
+  background: white;
+}
+
+.licznik{
+  color: $miasto-czarny;
+
+  .liczba-znakow{
+    margin-left: 10px;
+  }
+}
+
+.nazwa-pliku{
+  color: $miasto-blekit;
+  font-weight: bold;
+}
+
+.blad-walidacji{
+  color: $miasto-kolor-blad;
+}
+
+.przyciski{
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  .przycisk{
+    width: 100%;
+  }
+
+  app-przycisk-prostokatny{
+    margin-top: 15px;
+  }
+}
+
+
+@media (min-width: $prog-przelaczenia) {
+  .przyciski{
+    flex-direction: row;
+    justify-content: space-between;
+
+    .przycisk{
+      width: auto;
+    }
+
+    app-przycisk-prostokatny{
+      margin-top: 0;
+    }
+  }
+}

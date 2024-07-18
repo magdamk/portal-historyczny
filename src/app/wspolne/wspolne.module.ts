@@ -24,6 +24,13 @@ import { KomponentHostDirective } from './dyrektywy/komponent-host.directive';
 // import { MatSliderChange, MatSliderModule } from '@angular/material/slider';
 import { MatLegacySliderModule } from '@angular/material/legacy-slider';
 import { PrzewijanyKomponentComponent } from './komponenty/przewijany-komponent/przewijany-komponent.component';
+import { KontaktFormularzComponent } from './komponenty/kontakt-formularz/kontakt-formularz.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { ZamienNaKbMbPipe } from './pipes/zamien-na-kb-mb.pipe';
 @NgModule({
   declarations: [
     IkonySvgComponent,
@@ -39,6 +46,8 @@ import { PrzewijanyKomponentComponent } from './komponenty/przewijany-komponent/
     PotwierdzeniePopupComponent,
     KomponentHostDirective,
     PrzewijanyKomponentComponent,
+    KontaktFormularzComponent,
+    ZamienNaKbMbPipe,
   ],
   imports: [
     CommonModule,
@@ -50,7 +59,13 @@ import { PrzewijanyKomponentComponent } from './komponenty/przewijany-komponent/
     MatDialogModule,
     TranslateModule,
     MatSnackBarModule,
-    MatLegacySliderModule
+    MatLegacySliderModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatCheckboxModule,
+    FormsModule,
+    MatSelectModule,
+    MatInputModule
     // ModulMapowyModule
   ],
   exports: [
@@ -66,7 +81,9 @@ import { PrzewijanyKomponentComponent } from './komponenty/przewijany-komponent/
     PotwierdzeniePopupComponent,
     KomponentHostDirective,
     PrzewijanyKomponentComponent,
-    MatLegacySliderModule
+    MatLegacySliderModule,
+    ZamienNaKbMbPipe,
+    KontaktFormularzComponent
   ]
 })
 export class WspolneModule { }

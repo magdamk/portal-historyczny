@@ -20,9 +20,8 @@ module.exports = {
       }
     },
     screens: {
-      'um-mobile':'0px',
       'um-desktop': '900px',
-      'um-desktop-s': '1367px',
+      'um-desktop-s': '1366px',
       'um-desktop-m': '1600px',
       'um-desktop-l': '1920px'
     }
