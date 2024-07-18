@@ -27,19 +27,19 @@
 
     <!---------------------------------------Kontener treść strony-------------------------------------------------------->
     <div
-      class="wcag-glowny-kontener main-content py-8 px-8 um-desktop-m:main-content-paddings um-desktop:small-content-paddings um-desktop-l:large-content-paddings um-desktop:flex-col um-desktop-s:flex-row um-desktop-s:flex-initial">
+      class="wcag-glowny-kontener main-content py-8 px-8 um-desktop:small-content-paddings flex-col-reverse um-desktop-s:flex-row um-desktop-m:main-content-paddings  um-desktop-l:large-content-paddings ">
       <!---------------------------------------Lewa strona----------------------------------------------------------------->
-      <div class="um-desktop-s:lewa-strona um-desktop:flex-1,w-full justify-items-center px-3">
+      <div class="um-desktop-s:lewa-strona w-full px-3">
         <div
-          class="flex um-desktop:flex-row um-desktop:w-full um-desktop:justify-between um-desktop-s:flex-col">
-          <app-logo-naglowka class="um-desktop-s:mt-20" instytucjaLogo="dsh" instytucjaPath="dsh" width="140"
+          class="flex flex-row flex-1 w-full um-desktop-s:flex-col">
+          <app-logo-naglowka class="w-3/4 um-desktop:w-full um-desktop-s:mt-20" instytucjaLogo="dsh" instytucjaPath="dsh" width="140"
             height="30"></app-logo-naglowka>
-          <app-logo-naglowka class="um-desktop-s:mt-20" instytucjaLogo="ahm" instytucjaPath="ahm" width="160" height="30"></app-logo-naglowka>
-          <app-logo-naglowka class="um-desktop-s:mt-20" instytucjaLogo="mw" instytucjaPath="mw" width="140"
+          <app-logo-naglowka class="w-3/4 um-desktop:w-full um-desktop-s:mt-20" instytucjaLogo="ahm" instytucjaPath="ahm" width="160" height="30"></app-logo-naglowka>
+          <app-logo-naglowka class="w-3/4 um-desktop:w-full um-desktop-s:mt-20" instytucjaLogo="mw" instytucjaPath="mw" width="140"
             height="30"></app-logo-naglowka>
         </div>
       </div>
-      <div class="flex">
+      <div class="">
         <router-outlet></router-outlet>
       </div>
     </div>
