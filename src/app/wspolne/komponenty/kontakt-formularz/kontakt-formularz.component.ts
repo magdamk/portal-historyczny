@@ -121,7 +121,7 @@ export class KontaktFormularzComponent {
     this.wiadomoscLiczbaZnakow = event.target.value.length;
   }
   addWiadomosc() {
-    console.log(this.form.get('email')?.value);
+    // console.log(this.form.get('email')?.value);
     let email = this.form.get('email')?.value;
     let tresc = 'Klimatyczna mapa szkół <br />' + this.form.get('wiadomosc')?.value
     this.kontaktService.addEmail({

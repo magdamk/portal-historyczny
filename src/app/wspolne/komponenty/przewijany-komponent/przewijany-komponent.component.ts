@@ -168,7 +168,7 @@ export class PrzewijanyKomponentComponent implements AfterViewInit {
    */
   ustawWidocznoscSuwaka(zmiana: any | null): void {
     let maxLiczbaTestow = 0;
-    console.log(zmiana);
+    // console.log(zmiana);
     const czyWidoczny = this.czySuwakPotrzebny()
     this.czySuwakWidoczny$.next(czyWidoczny);
     this.zmianaWidocznosci.emit(czyWidoczny);
@@ -176,7 +176,7 @@ export class PrzewijanyKomponentComponent implements AfterViewInit {
       const czyWidoczny = this.czySuwakPotrzebny();
       if (czyWidoczny || maxLiczbaTestow > 1000) {
         if (czyWidoczny) {
-        console.log('suwak test: ',czyWidoczny );
+        // console.log('suwak test: ',czyWidoczny );
         clearInterval(interval);
         this.czySuwakWidoczny$.next(czyWidoczny);
         this.zmianaWidocznosci.emit(czyWidoczny);

@@ -12,10 +12,10 @@ export class ResposnsywnoscUtils {
    */
   static czyTrybDesktop(): boolean {
     if (window.innerWidth > RESPONSYWNOSC.progPrzelaczenia) {
-      console.log("desktop");
+      // console.log("desktop");
       return true;
     }
-    console.log("mobile");
+    // console.log("mobile");
     return false;
   }
 

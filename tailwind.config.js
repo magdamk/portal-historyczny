@@ -1,6 +1,6 @@
 require('dotenv').config();
 const optymalizuj = process.env.OPTYMALIZUJ_CSS ? (process.env.OPTYMALIZUJ_CSS == 'false' ? false : true) : false
-console.log('OPTYMALIZUJ_CSS', optymalizuj);
+// console.log('OPTYMALIZUJ_CSS', optymalizuj);
 module.exports = {
   purge: {
     enabled: optymalizuj,

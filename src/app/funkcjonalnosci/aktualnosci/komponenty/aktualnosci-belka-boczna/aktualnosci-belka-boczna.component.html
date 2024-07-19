@@ -3,7 +3,7 @@
     <div class="tytul-komponentu um-desktop:tytul-komponentu-desktop text-center um-desktop:text-right mb-4">
       <h2 class="uppercase um-desktop:um-tytul um-naglowek-a">{{'codes.aktualnosci.aktualnosci' | translate}}</h2>
     </div>
-    <div *ngIf="listaAktualnosci" class="tresc py-8">
+    <div *ngIf="listaAktualnosci.length>0" class="tresc py-8">
       <app-przewijany-komponent #przewijanyKomponent [stylBialy]="true">
       <div>
         <div class="tresc-data flex um-aktualnosc">

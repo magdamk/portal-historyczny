@@ -26,7 +26,7 @@ export class AppComponent {
    * Funkcja przy starcie, dodaje do logów informacje owersji.
    */
   private wypiszWersjeAplikacji() {
-    console.log(this.wersjaAplikacji);
+    // console.log(this.wersjaAplikacji);
   }
 
   /**
@@ -38,7 +38,7 @@ export class AppComponent {
     const lang = urlParams.get('lang');
     if (lang) {
       this.tlumaczeniaService.init(lang);
-      console.log(lang);
+      // console.log(lang);
       return;
     }
     this.tlumaczeniaService.init(LANGS.PL);
