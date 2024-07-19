@@ -1,0 +1,23 @@
+@import "../../../../../style/konfiguracja-szablonu";
+
+.strona-komunikatu{
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../../../../assets/images/tlo1bc.png");
+  background-size: cover;
+}
+
+.komunikat-rozmycie{
+  background: $miasto-blekit;
+  opacity: 0.5;
+}
+
+.komunikat{
+  background: $miasto-szary-tlo;
+  opacity: 1;
+  z-index: 1;
+}
+
+.komunikat-ikona{
+  color: $miasto-blekit;
+}

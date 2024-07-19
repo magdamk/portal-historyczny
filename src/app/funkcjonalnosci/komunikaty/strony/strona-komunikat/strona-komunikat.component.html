@@ -1,0 +1,17 @@
+<div class="strona-komunikatu flex justify-center items-center">
+  <div class="komunikat-rozmycie w-full h-full absolute"></div>
+  <div class="komunikat w-11/12 um-desktop::w-1/4">
+    <div class="komunikat-ikona w-full flex justify-center mt-8 mb-4">
+      <span class="material-icons">info</span>
+    </div>
+    <div *ngIf="daneKomunikatu" class="w-full text-center break-words px-8 um-tekst-a">
+      <div [innerHTML]="tresc"></div>
+    </div>
+    <div *ngIf="!daneKomunikatu" class="w-full text-center um-tekst-a">
+      {{'codes.generyczne.prosze-czekac' | translate}}
+    </div>
+    <div class="w-full flex mt-8 mb-8 justify-center">
+      <app-przycisk-prostokatny *ngIf="!daneKomunikatu?.zablokowany" typ="BASIC" label="Zamknij" (click)="zamknij()"></app-przycisk-prostokatny>
+    </div>
+  </div>
+</div>

@@ -11,11 +11,8 @@
       "grupyMap": [
         {
           "nazwaMapy": "WARSZAWA ZAPAMIĘTANA",
-          "typ": {
-            "obiektEnum": "MAPA",
-            "tlumaczenie": "Mapa"
-          },
-          "adresUrl": null,
+          "typ": "SERWIS_ZEWNETRZNY",
+          "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
           "opisKafelka": "Zapraszamy na wirtualną wycieczkę po dawnej Warszawie. Przedstawiamy stolicę we wspomnieniach wybranych z ponad 6tysięcy relacji i setek archiwalnych zdjęć znaszych zbiorów. Mapa pozwala odwiedzić miejsca tworzące historię Warszawy -miasta, jakie zapamiętali jego mieszkańcy.",
           "status": "OPUBLIKOWANA",
           "wersja": "OBIE",
@@ -27,8 +24,8 @@
         },
         {
           "nazwaMapy": "PLANY LINDLEYA",
-          "typ": null,
-          "adresUrl": null,
+          "typ": "SERWIS_ZEWNETRZNY",
+          "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
           "opisKafelka": "Plany miasta z przełomu XIX i XX z zasobów Archiwum Państwowego w Warszawie.",
           "status": "OPUBLIKOWANA",
           "wersja": "OBIE",
@@ -40,8 +37,8 @@
         },
         {
           "nazwaMapy": "Pierwsze dni powstania",
-          "typ": null,
-          "adresUrl": null,
+          "typ": "SERWIS_ZEWNETRZNY",
+          "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
           "opisKafelka": "1 sierpnia 1944 r. wybuchło powstanie. Przez 63 dni prowadzono heroiczne walki z Niemcami.",
           "status": "OPUBLIKOWANA",
           "wersja": "OBIE",
@@ -65,11 +62,8 @@
         "grupyMap": [
           {
             "nazwaMapy": "WARSZAWA ZAPAMIĘTANA",
-            "typ": {
-              "obiektEnum": "MAPA",
-              "tlumaczenie": "Mapa"
-            },
-            "adresUrl": null,
+            "typ": "SERWIS_ZEWNETRZNY",
+            "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
             "opisKafelka": "Zapraszamy na wirtualną wycieczkę po dawnej Warszawie. Przedstawiamy stolicę we wspomnieniach wybranych z ponad 6tysięcy relacji i setek archiwalnych zdjęć znaszych zbiorów. Mapa pozwala odwiedzić miejsca tworzące historię Warszawy -miasta, jakie zapamiętali jego mieszkańcy.",
             "status": "OPUBLIKOWANA",
             "wersja": "OBIE",
@@ -81,8 +75,8 @@
           },
           {
             "nazwaMapy": "WARSZAWA MIĘDZYWOJENNA",
-            "typ": null,
-            "adresUrl": null,
+            "typ": "SERWIS_ZEWNETRZNY",
+            "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
             "opisKafelka": "Plany i mapy z okresu. Ciekawe miejsca powiązane z okresem międzywojennym.",
             "status": "OPUBLIKOWANA",
             "wersja": "DESKTOPOWA",
@@ -94,8 +88,8 @@
           },
           {
             "nazwaMapy": "ODBUDOWA WARSZAWY",
-            "typ": null,
-            "adresUrl": null,
+            "typ": "SERWIS_ZEWNETRZNY",
+            "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
             "opisKafelka": "Cały naród buduje swoją stolicę. Krótka historia zniszczeń i odbudowy Warszawy na mapie.",
             "status": "OPUBLIKOWANA",
             "wersja": "OBIE",
@@ -107,8 +101,8 @@
           },
           {
             "nazwaMapy": "STAN WOJENNY",
-            "typ": null,
-            "adresUrl": null,
+            "typ": "SERWIS_ZEWNETRZNY",
+            "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
             "opisKafelka": "Stan wprowadzony 13 grudnia 1981 roku na terenie całej PRL niezgodnie z Konstytucją.",
             "status": "OPUBLIKOWANA",
             "wersja": "OBIE",
@@ -131,8 +125,8 @@
         "grupyMap": [
           {
             "nazwaMapy": "PLANY LINDLEYA",
-            "typ": null,
-            "adresUrl": null,
+            "typ": "SERWIS_ZEWNETRZNY",
+            "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
             "opisKafelka": "Plany miasta z przełomu XIX i XX z zasobów Archiwum Państwowego w Warszawie.",
             "status": "OPUBLIKOWANA",
             "wersja": "OBIE",
@@ -144,8 +138,8 @@
           },
           {
             "nazwaMapy": "PLAN LE ROUGE’A",
-            "typ": null,
-            "adresUrl": null,
+            "typ": "SERWIS_ZEWNETRZNY",
+            "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
             "opisKafelka": "Plan Le Rouge’aw skali ok. 1:6900 z 1768 roku - obraz miasta z epoki saskiej.",
             "status": "OPUBLIKOWANA",
             "wersja": "OBIE",
@@ -157,8 +151,8 @@
           },
           {
             "nazwaMapy": "FOTOPLAN 1945r.",
-            "typ": null,
-            "adresUrl": null,
+            "typ": "SERWIS_ZEWNETRZNY",
+            "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
             "opisKafelka": "Warszawa po wojnie. Fotoplan opracowany na podstawie zdjęć wykonanych w czerwcu 1945 r.",
             "status": "OPUBLIKOWANA",
             "wersja": "OBIE",
@@ -170,8 +164,8 @@
           },
           {
             "nazwaMapy": "PLAN 1939r.",
-            "typ": null,
-            "adresUrl": null,
+            "typ": "SERWIS_ZEWNETRZNY",
+            "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
             "opisKafelka": "Plan z lat 1936-1940 w skali 1:1000 pozyskany poprzez Biuro Architektury.",
             "status": "OPUBLIKOWANA",
             "wersja": "OBIE",
@@ -194,8 +188,8 @@
         "grupyMap": [
           {
             "nazwaMapy": "STAN WOJENNY RELACJE MIESZKAŃCÓW WARSZAWY",
-            "typ": null,
-            "adresUrl": null,
+            "typ": "SERWIS_ZEWNETRZNY",
+            "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
             "opisKafelka": "",
             "status": "OPUBLIKOWANA",
             "wersja": "OBIE",
@@ -207,11 +201,8 @@
           },
           {
             "nazwaMapy": "WYBORY 4 CZERWCA 1989",
-            "typ": {
-              "obiektEnum": "MAPA",
-              "tlumaczenie": "Mapa"
-            },
-            "adresUrl": null,
+            "typ": "SERWIS_ZEWNETRZNY",
+            "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
             "opisKafelka": "Elementy mapy zasadniczej",
             "status": "OPUBLIKOWANA",
             "wersja": "OBIE",
@@ -223,8 +214,8 @@
           },
           {
             "nazwaMapy": "JAN ROZMARYNOWSKI O WARSZAWIE",
-            "typ": null,
-            "adresUrl": null,
+            "typ": "SERWIS_ZEWNETRZNY",
+            "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
             "opisKafelka": "",
             "status": "OPUBLIKOWANA",
             "wersja": "DESKTOPOWA",
@@ -236,8 +227,8 @@
           },
           {
             "nazwaMapy": "BAJKI I LEGENDY WARSZAWY",
-            "typ": null,
-            "adresUrl": null,
+            "typ": "SERWIS_ZEWNETRZNY",
+            "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
             "opisKafelka": "Miejsca związane ze znanymi i mniej znanymi legendami i bajkami o Warszawie.",
             "status": "OPUBLIKOWANA",
             "wersja": "DESKTOPOWA",
@@ -247,7 +238,6 @@
             "numerWTabeli": 3,
             "uuidMapy": "eccc5593-e72c-4812-b244-a0045cc41ab9"
           }
-
         ]
       },
       {
@@ -258,9 +248,7 @@
           "obiektEnum": "KATEGORIA_TEMATYCZNA",
           "tlumaczenie": "Kategoria tematyczna"
         },
-        "grupyMap": [
-
-        ]
+        "grupyMap": []
       }
     ]
   }
