@@ -3,7 +3,8 @@ import { Router } from '@angular/router';
 import { KategoriaGrupaMapOpenDto } from "../../../../../core/modele/kategoria-grupa-map-open-dto";
 import { TypMapyObiektDto } from "../../../../../core/modele/typ-mapy-obiekt-dto";
 import { ZmianaMapyUtils } from "../../../../../core/modele/zmiana-mapy-utils";
-import { ResposnsywnoscUtils } from "../../../../../core/responsywnosc/utils/resposnsywnosc-utils";
+// import { ResposnsywnoscUtils } from "../../../../../core/responsywnosc/utils/resposnsywnosc-utils";
+import { ResponsywnoscUtils } from '@modul-mapowy';
 
 export interface WyborMapyEvent {
   url?: string;
@@ -85,7 +86,7 @@ export class KartaMapyComponent implements OnInit {
    * Funkcja obsługuje tapnięcie na kafelku mapy
    */
   tap(event: any) {
-    if (ResposnsywnoscUtils.czyTrybDesktop()) {
+    if (ResponsywnoscUtils.czyTrybDesktop()) {
       return;
     }
 

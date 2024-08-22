@@ -1,18 +1,17 @@
 import { AfterViewInit, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { SzablonyService } from '../../../../../core/szablony/serwisy/szablony.service';
-// import { ControllerKategorieMapService } from "../../../../../core/api/controller-kategorie-map-open.service";
 import { MapaSzczegolyDto } from '../../../../../core/modele/mapa-szczegoly-dto';
 import { TypMapyObiektDto } from '../../../../../core/modele/typ-mapy-obiekt-dto';
 import { ZbiorKategoriiMapOpenDto } from '../../../../../core/modele/zbior-kategorii-map-open-dto';
 import { TlumaczeniaService } from "../../../../../core/tlumaczenia/serwisy/tlumaczenia.service";
 import { Subscription } from "rxjs";
-import { ResposnsywnoscUtils } from "../../../../../core/responsywnosc/utils/resposnsywnosc-utils";
+import { ResponsywnoscUtils } from '@modul-mapowy';
+// import { ResposnsywnoscUtils } from "../../../../../core/responsywnosc/utils/resposnsywnosc-utils";
 import { WyborMapyEvent } from '../../komponenty/karta-mapy/karta-mapy.component';
 import WersjaEnum = MapaSzczegolyDto.WersjaEnum;
 import { KomunikatyProviderService } from '../../../../../wspolne/serwisy/komunikaty-provider.service';
 import { ControllerKategorieMapService } from 'src/app/core/api/controller-kategorie-map.service';
-
-
+import { ModulMapowyComponent } from '@modul-mapowy';
 /**
  * Komponent strona startowa
  */
@@ -44,7 +43,6 @@ export class StronaStartowaComponent implements OnInit, AfterViewInit, OnDestroy
     private tlumaczeniaService: TlumaczeniaService,
     private komunikaty: KomunikatyProviderService,
     private serviceKategoriiMap: ControllerKategorieMapService
-    // private serviceKategoriiMap: ControllerKategorieMapOpenService
   ) {
   }
 
@@ -75,7 +73,7 @@ export class StronaStartowaComponent implements OnInit, AfterViewInit, OnDestroy
    * Funkcja do pobierania listy kategorii map
    */
   private pobierzListeKategoriiMap(): void {
-    let wersja = ResposnsywnoscUtils.czyTrybDesktop() ? WersjaEnum.Desktopowa : WersjaEnum.Mobilna;
+    let wersja = ResponsywnoscUtils.czyTrybDesktop() ? WersjaEnum.Desktopowa : WersjaEnum.Mobilna;
     this.serviceKategoriiMap.getKategorieMap()
       .subscribe((result: any) => {
         if (result.content) {

@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -123,6 +126,39 @@
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        }
+      }
+    },
+    "modul-mapowy": {
+      "projectType": "library",
+      "root": "projects/modul-mapowy",
+      "sourceRoot": "projects/modul-mapowy/src",
+      "prefix": "hmap",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/modul-mapowy/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/modul-mapowy/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/modul-mapowy/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/modul-mapowy/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
           }
         }
       }

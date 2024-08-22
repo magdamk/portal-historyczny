@@ -32,3 +32,8 @@ npx tailwindcss init
 ng generate module app-routing --flat
 npm install dotenv --save
 npm install @ngx-translate/core @ngx-translate/http-loader
+
+
+ng new libs --no-create-application
+cd libs
+ng generate library modul-mapowy

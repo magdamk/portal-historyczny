@@ -1,7 +1,8 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {KategoriaMapOpenDto} from '../../../../../core/modele/kategoria-map-open-dto';
 import {WyborMapyEvent} from '../karta-mapy/karta-mapy.component';
-import {ResposnsywnoscUtils} from '../../../../../core/responsywnosc/utils/resposnsywnosc-utils';
+// import {ResposnsywnoscUtils} from '../../../../../core/responsywnosc/utils/resposnsywnosc-utils';
+import { ResponsywnoscUtils } from '@modul-mapowy';
 
 /**
  * Komponent kategoria mapy
@@ -20,7 +21,7 @@ export class KategorieMapComponent {
   zmianaMapy = false;
 
   zawartoscWidoczna = false;
-  czyTrybDesktop = ResposnsywnoscUtils.czyTrybDesktop();
+  czyTrybDesktop = ResponsywnoscUtils.czyTrybDesktop();
 
   @Output()
   mapaWybrana = new EventEmitter<WyborMapyEvent>();

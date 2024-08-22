@@ -22,7 +22,11 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@modul-mapowy/*": ["../libs/dist/modul-mapowy/*"],
+      "@modul-mapowy": ["../libs/dist/modul-mapowy"]
+    },
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
