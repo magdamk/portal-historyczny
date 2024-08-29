@@ -1,10 +1,10 @@
 <form class="kontakt-form" [formGroup]="form">
   <div class="w-full um-naglowek-a">
-    Kontakt
+    {{'codes.kontakt.kontakt' | translate}}
   </div>
   <div class="w-full mt-8">
     <div class="mb-8">
-      <input placeholder="E-mail" (keyup)="usunWiodacaSpacje($event)"
+      <input placeholder="{{'codes.kontakt.email' | translate}}" (keyup)="usunWiodacaSpacje($event)"
              aria-label="E-mail"
              formControlName="email" value="" class="um-input w-full mb-2">
       <div class="blad-walidacji" *ngIf="form.controls['email'].errors?.['required'] && !form.untouched">
@@ -15,7 +15,7 @@
       </div>
     </div>
     <div>
-      <textarea placeholder="Treść wiadomości"
+      <textarea placeholder="{{'codes.kontakt.tresc-wiadomosci' | translate}}"
                 aria-label="Treść wiadomości"
                 formControlName="wiadomosc"
                 maxlength="4000"
@@ -27,7 +27,7 @@
         Pole jest wymagane
       </div>
     </div>
-    <div class="licznik text-right mb-2">Maksymalna liczba znaków<span class="liczba-znakow">
+    <div class="licznik text-right mb-2">{{'codes.kontakt.liczba-znakow' | translate}}<span class="liczba-znakow">
       {{wiadomoscLiczbaZnakow}}</span> <span>/4000</span>
     </div>
      <!-- <div class="w-full mt-8 mb-8" *ngIf="dostepnyBiezacyWidokMapy">
@@ -57,7 +57,7 @@
                       [typyPlikowMime]="'application/zip,application/pdf,image/jpeg,image/png'"
                       (zaladowanoPlik)="dodajPlik($event)"></lib-upload-pliku> -->
     <app-przycisk-prostokatny class="przycisk"
-                              label="Wyślij" (click)="addWiadomosc()"
+                              label="{{'codes.generyczne.wyslij' | translate}}" (click)="addWiadomosc()"
                               [disabled]="form.status==='INVALID' || czyNiepoprawnyFormat"></app-przycisk-prostokatny>
   </div>
 </form>

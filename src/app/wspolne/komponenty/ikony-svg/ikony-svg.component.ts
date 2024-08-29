@@ -19,6 +19,7 @@ export const UM_IKONY = {
   kalendarz: 'kalendarz',
   menuMobilne: 'menu-mobilne',
   zamknij: 'zamknij',
+  ukryj:'ukryj',
   plus: 'plus',
   wcagCzarnoBialy: 'wcag-czarno-bialy',
   wcagOdwrocKolory: 'wcag-odwroc-kolory',
@@ -63,6 +64,7 @@ export class IkonySvgComponent{
     iconRegistry.addSvgIcon('kalendarz', sanitizer.bypassSecurityTrustResourceUrl('assets/ikony/kalendarz.svg'));
     iconRegistry.addSvgIcon('menu-mobilne', sanitizer.bypassSecurityTrustResourceUrl('assets/ikony/hamburger_new.svg'));
     iconRegistry.addSvgIcon('zamknij', sanitizer.bypassSecurityTrustResourceUrl('assets/ikony/zamknij_menu.svg'));
+    iconRegistry.addSvgIcon('ukryj', sanitizer.bypassSecurityTrustResourceUrl('assets/ikony/ukryj.svg'));
     iconRegistry.addSvgIcon('zmien-mape', sanitizer.bypassSecurityTrustResourceUrl('assets/ikony/zmien_mape.svg'));
     iconRegistry.addSvgIcon('plus', sanitizer.bypassSecurityTrustResourceUrl('assets/ikony/plus.svg'));
     // wcag
