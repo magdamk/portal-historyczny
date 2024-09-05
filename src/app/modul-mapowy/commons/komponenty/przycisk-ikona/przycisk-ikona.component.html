@@ -1,0 +1,6 @@
+<button class="przycisk-ikona" [mmIkonaSvg]="ikona" [matTooltip]="label" attr.aria-label="{{label}}"
+        [ngClass]="[typ]"
+        [tabindex]="tabIndex"
+        [class.disabled]="disabled" (click)="onClick.emit($event)">
+</button>
+

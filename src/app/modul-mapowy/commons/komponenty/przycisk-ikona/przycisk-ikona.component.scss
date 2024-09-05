@@ -1,0 +1,105 @@
+@import "../../../../../style/mm-style/konfiguracja-szablonu.scss";
+
+.przycisk-ikona {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 24%;
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.przycisk-ikona.czarny {
+  background: $miasto-czarny;
+  color: $miasto-bialy;
+  fill: $miasto-bialy;
+}
+
+.przycisk-ikona.bialy {
+  background: $miasto-bialy;
+  color: $miasto-blekit;
+  fill: $miasto-blekit;
+}
+
+.przycisk-ikona.bialy-z-borderem{
+  background: $miasto-bialy;
+  color: $miasto-blekit;
+  fill: $miasto-blekit;
+  border: 2px solid $miasto-blekit;
+  .object{
+    fill: $miasto-blekit;
+  }
+}
+
+.przycisk-ikona.bialy-pomarancz {
+  background: $miasto-bialy;
+  color: $miasto-pomarancz;
+  fill: $miasto-pomarancz;
+}
+
+.przycisk-ikona.czarno-bialy {
+  background: $miasto-bialy;
+  color: $miasto-czarny;
+  fill: $miasto-czarny;
+}
+
+.przycisk-ikona.bialo-czarny {
+  background: $miasto-czarny;
+  color: $miasto-bialy;
+  fill: $miasto-bialy;
+}
+
+.przycisk-ikona.blekitny {
+  background: $miasto-blekit;
+  color: $miasto-bialy;
+  fill: $miasto-bialy;
+}
+
+.przycisk-ikona.pomaranczowy {
+  background: $miasto-pomarancz;
+  color: $miasto-bialy;
+  fill: $miasto-bialy;
+}
+
+.przycisk-ikona.przezroczysty {
+  background: transparent;
+  color: $miasto-blekit;
+  fill: $miasto-blekit;
+}
+
+.przycisk-ikona.disabled {
+  background: $miasto-szary;
+  color: $miasto-bialy;
+  fill: $miasto-bialy;
+}
+
+.przycisk-ikona.blekitny-okragly{
+  border-radius: 60%;
+  background: $miasto-blekit;
+  color: $miasto-bialy;
+  fill: $miasto-bialy;
+  border: 1px solid $miasto-bialy;
+}
+
+.przycisk-ikona.szary-tlo {
+  background: $miasto-szary-tlo;
+  color: $miasto-blekit;
+  fill: $miasto-blekit;
+}
+
+.gradient{
+  background: linear-gradient(to bottom right, #C1009B, #FEC51E);
+  color: $miasto-bialy;
+  fill: $miasto-bialy;
+}
+
+.przycisk-ikona:hover {
+  cursor: pointer;
+}
+
