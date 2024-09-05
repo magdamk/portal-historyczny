@@ -7,10 +7,10 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./funkcjonalnosci/strona-startowa/strona-startowa.module').then((m) => m.StronaStartowaModule),
   },
-  // {
-  //   path: 'mapa',
-  //   loadChildren: () => import('./funkcjonalnosci/mapa/map.module').then((m) => m.MapModule),
-  // },
+  {
+    path: 'mapa',
+    loadChildren: () => import('./funkcjonalnosci/map/map.module').then((m) => m.MapModule),
+  },
   {
     path: 'komunikat',
     loadChildren: () => import('./funkcjonalnosci/komunikaty/komunikaty.module').then((m) => m.KomunikatyModule)
