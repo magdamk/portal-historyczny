@@ -1,0 +1,159 @@
+@import "../konfiguracja-szablonu";
+
+lib-ns-legenda,
+lib-informacje-o-mapie,
+lib-ns-dokonaj-pomiaru,
+lib-ns-porownaj-mapy,
+lib-ns-pasek-czasu,
+lib-ns-przejdz-do-wspolrzednych,
+lib-ns-dodaj-usluge-zewnetrzna,
+lib-ns-analizy-przestrzenne,
+lib-wyszukiwarka-grobow,
+lib-ns-selekcja {
+  top: 0;
+  left: 0;
+  position: absolute;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background: $miasto-szary-tlo;
+  z-index: 1;
+  .kontener-narzedzia {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    padding: 20px 20px;
+    .zamknij {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 61px;
+      height: 61px;
+    }
+    .kontroler {
+      position: absolute;
+      top: calc(1 * #{$legenda-kontrolki-romiar});
+      right: -$legenda-kontrolki-romiar;
+      width: $legenda-kontrolki-romiar;
+      height: $legenda-kontrolki-romiar;
+      z-index: $obszar-boczny-z-index-start;
+      cursor: pointer;
+      fill: $miasto-bialy;
+      .ikona {
+        display: inline-block;
+        padding: 25%;
+        width: 100%;
+        height: 100%;
+        background: $miasto-szary
+      }
+    }
+
+    .kontroler.widoczna {
+      box-shadow: 5px 5px 10px -5px rgba(0, 0, 0, 0.56);
+      transition: box-shadow 0.1s;
+      .ikona {
+        background: $miasto-blekit
+      }
+    }
+
+    .kontroler.poz-1 {
+      top: calc(1 * #{$legenda-kontrolki-romiar});
+    }
+
+    .kontroler.poz-2 {
+      top: calc(2 * #{$legenda-kontrolki-romiar});
+    }
+
+    .kontroler.poz-3 {
+      top: calc(3 * #{$legenda-kontrolki-romiar});
+    }
+
+    .kontroler.poz-4 {
+      top: calc(4 * #{$legenda-kontrolki-romiar});
+    }
+
+    .kontroler.poz-5 {
+      top: calc(5 * #{$legenda-kontrolki-romiar});
+    }
+
+    .kontroler.poz-6 {
+      top: calc(6 * #{$legenda-kontrolki-romiar});
+    }
+
+    .kontroler.poz-7 {
+      top: calc(7 * #{$legenda-kontrolki-romiar});
+    }
+
+    .kontroler.poz-8 {
+      top: calc(8 * #{$legenda-kontrolki-romiar});
+    }
+
+    .kontroler.poz-9 {
+      top: calc(9 * #{$legenda-kontrolki-romiar});
+    }
+
+    .kontroler.poz-10 {
+      top: calc(10 * #{$legenda-kontrolki-romiar});
+    }
+  }
+}
+
+@media (min-width: $prog-przelaczenia) {
+  lib-ns-legenda,
+  lib-informacje-o-mapie,
+  lib-ns-dokonaj-pomiaru,
+  lib-ns-pasek-czasu,
+  lib-ns-porownaj-mapy,
+  lib-ns-przejdz-do-wspolrzednych,
+  lib-ns-dodaj-usluge-zewnetrzna,
+  lib-ns-analizy-przestrzenne,
+  lib-wyszukiwarka-grobow,
+  lib-ns-selekcja {
+    .kontener-narzedzia {
+
+      .kontroler {
+        top: calc(2 * #{$legenda-kontrolki-romiar});
+      }
+
+      .kontroler.poz-1 {
+        top: calc(2 * #{$legenda-kontrolki-romiar});
+      }
+
+      .kontroler.poz-2 {
+        top: calc(3 * #{$legenda-kontrolki-romiar});
+      }
+
+      .kontroler.poz-3 {
+        top: calc(4 * #{$legenda-kontrolki-romiar});
+      }
+
+      .kontroler.poz-4 {
+        top: calc(5 * #{$legenda-kontrolki-romiar});
+      }
+
+      .kontroler.poz-5 {
+        top: calc(6 * #{$legenda-kontrolki-romiar});
+      }
+
+      .kontroler.poz-6 {
+        top: calc(7 * #{$legenda-kontrolki-romiar});
+      }
+
+      .kontroler.poz-7 {
+        top: calc(8 * #{$legenda-kontrolki-romiar});
+      }
+
+      .kontroler.poz-8 {
+        top: calc(9 * #{$legenda-kontrolki-romiar});
+      }
+
+      .kontroler.poz-9 {
+        top: calc(10 * #{$legenda-kontrolki-romiar});
+      }
+
+      .kontroler.poz-10 {
+        top: calc(11 * #{$legenda-kontrolki-romiar});
+      }
+    }
+  }
+}

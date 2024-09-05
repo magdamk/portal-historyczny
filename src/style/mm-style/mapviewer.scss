@@ -1,0 +1,35 @@
+.serwis-mapowy {
+
+  .omv2_scaleText {
+    display: none !important;
+    font-size: 1rem !important;
+    font-family: inherit !important;
+    font-weight: normal !important;
+  }
+
+  .omv2_scaleBar {
+    display: none !important;
+  }
+
+  .pasek-stanu {
+
+    .omv2_scaleText {
+      display: inline-block !important;
+    }
+
+    .omv2_scaleBar {
+      display: inline-block !important;
+    }
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  // Obejście błędnego ustawiania z-index dla warstw podkładowych MapViewer.js
+  #tilelayer_podklad_1{
+    z-index: -1 !important;
+  }
+
+}

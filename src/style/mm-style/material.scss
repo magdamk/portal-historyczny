@@ -1,0 +1,158 @@
+@import "konfiguracja-szablonu";
+.serwis-mapowy {
+
+}
+
+.modul-mapowy-dialog mat-dialog-container {
+  position: relative;
+  padding: 0 !important;
+  max-height: 80vh;
+  .mat-button-focus-overlay{
+    display: none !important;
+  }
+}
+
+.komunikaty-sukces {
+  background: lightgreen;
+  color: black;
+}
+
+.komunikaty-blad {
+  background: palevioletred;
+  color: black;
+}
+
+lib-przewijany-komponent {
+
+  .mat-slider-vertical {
+    width: 24px;
+  }
+
+  .mat-slider-vertical .mat-slider-wrapper {
+    left: 12px;
+  }
+
+}
+
+.transparent .mat-dialog-container {
+  box-shadow: none;
+  background: rgba(0, 0, 0, 0.0);
+}
+
+.zakladki-z-mapami {
+  .mat-tab-body-wrapper {
+    height: 100%;
+    overflow: inherit;
+    position: inherit;
+    .mat-tab-body {
+      position: absolute;
+      overflow: hidden;
+    }
+    .mat-tab-body.mat-tab-body-active {
+      overflow: inherit;
+      position: inherit;
+      z-index: 100;
+    }
+  }
+}
+
+.selekcja-atrybuty {
+  [mat-sort-header].cdk-program-focused .mat-sort-header-container {
+    border-bottom: none !important;
+  }
+}
+
+.kontener-narzedzia, .miasto-zakladki {
+  font-family: inherit;
+
+  .mat-ink-bar {
+    display: none;
+  }
+
+  .mat-tab-header {
+    border-bottom-width: 2px;
+    border-color: $miasto-blekit;
+  }
+
+  .mat-tab-label-container {
+    border-color: $miasto-blekit;
+  }
+
+  .mat-tab-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    opacity: 1;
+    line-height: initial;
+    .mat-tab-label-content {
+      color: $miasto-blekit;
+    }
+  }
+
+  .mat-tab-label.cdk-keyboard-focused{
+    border: 2px solid black !important;
+  }
+
+  .mat-tab-label.mat-tab-label-active {
+    background: $miasto-blekit !important;
+    border-color: $miasto-blekit;
+
+    .mat-tab-label-content {
+      color: $miasto-bialy;
+    }
+  }
+
+  .mat-pseudo-checkbox {
+    border-width: 1px;
+    border-radius: 0;
+    width: 20px;
+    height: 20px;
+  }
+
+  .mat-primary .mat-pseudo-checkbox-checked {
+    background: none;
+  }
+
+  .mat-pseudo-checkbox.mat-pseudo-checkbox-checked {
+    border: 1px solid $miasto-szary;
+  }
+
+  .mat-pseudo-checkbox-checked::after {
+    color: $miasto-blekit;
+    left: 5px;
+    top: 5px;
+    border-bottom: 1px solid currentColor;
+    border-left: 1px solid currentColor;
+  }
+}
+
+.input-bez-gwiadki {
+  .mat-placeholder-required {
+    display: none !important;
+  }
+}
+
+/**
+  Listy rozwijane
+ */
+.serwis-mapowy-select {
+
+  .mat-select {
+    .mat-option-text, .mat-select-min-line {
+      font-family: "Roboto Condensed";
+      font-size: 1.2rem;
+    }
+  }
+
+  .mat-option-text, .mat-select-min-line {
+    font-family: "Roboto Condensed";
+    font-size: 1.2rem;
+  }
+
+  .mat-select.mat-select-disabled {
+    .mat-option-text, .mat-select-min-line {
+      color: $miasto-szary;
+      fill: $miasto-szary;
+    }
+  }
+}

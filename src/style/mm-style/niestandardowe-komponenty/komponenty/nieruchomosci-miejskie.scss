@@ -1,0 +1,22 @@
+lib-wyszukiwarka-nieruchomosci-miejskich {
+  table {
+    border-collapse: separate !important;
+  }
+
+  th.mat-header-cell {
+    border-bottom: 2px solid $miasto-blekit;
+    border-bottom-width: 2px !important;
+    border-top: 2px solid $miasto-blekit;
+    border-top-width: 2px !important;
+  }
+
+  .kontener-narzedzia {
+    .mat-tab-header {
+      border: none;
+    }
+  }
+
+  .mat-tab-body-wrapper{
+    height: 100%;
+  }
+}

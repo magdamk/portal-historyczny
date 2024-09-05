@@ -1,0 +1,48 @@
+// Definicje kolorów przenieść do zewnętrznego pliku
+$miasto-czarny: black;
+$miasto-bialy: white;
+$miasto-bialy-przezroczysty: rgba(255, 255, 255, 0.9);
+$miasto-pomarancz: #FF9900;
+$miasto-blekit: #0099CC;
+$miasto-blekit-przezroczyty: rgba(0, 153, 204, 0.1);
+$miasto-blekit-przezroczyty2: rgb(224, 240, 245);
+$miasto-bordery: rgba(249, 249, 249, 1);
+$miasto-szary: #737373;
+$miasto-szary-tlo: #F9F9F9;
+$miasto-czerwony: #CC3333;
+$miasto-zielony: #4EA059;
+$miasto-kolor-blad: #CC3333;
+$miasto-granat-shadow: #00000078;
+
+
+//Bazowy font
+$bazowy-rozmiar-czcionki: 16px;
+$bazowy-mobilny-rozmiar-czcionki:12px;
+
+// Definicje szablonu
+$pasek-narzedzi-wysokosc: 62px;
+$pasek-stanu-wysokosc: 50px;
+$legenda-szerokosc: 450px;
+$legenda-kontrolki-romiar: 62px;
+$wyszukiwarka-mapowa-szerokosc: 561px;
+$wyszukiwarka-dzialek-wysokosc: 498px;
+$wyszukiwarka-obiektow-wysokosc: 529px;
+$wyszukiwarka-domyslna-obiektow-wysokosc: 62px;
+$wyszukiwarka-mapowa-wysokosc: 416px;
+$wyszukiwarka-mapowa-kontrolki-romiar: 62px;
+$wyszukiwarka-mapowa-kontrolki-romiar-maly: 18px;
+$wyszukiwarka-mapowa-przycisk-wysokosc: 38px;
+$wyszukiwarka-mapowa-przycisk-szerokosc: 183px;
+$wyszukiwarka-zaawansowana-wysokosc: 584px;
+$wyszukiwarka-zaawansowana-szerokosc: 1170px;
+$wyszukiwarka-nieruchomosci: 471px;
+
+
+$obszar-widoku-z-index-start: 10;
+$obszar-boczny-z-index-start: 10;
+$obszar-zawsze-widoczny-z-index-start: 1000;
+
+// Responsywnosc
+
+$prog-przelaczenia: 900px
+

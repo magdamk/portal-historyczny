@@ -1,0 +1,269 @@
+@import "../../../../style/konfiguracja-szablonu";
+
+.serwis-mapowy {
+  width: 100%;
+  height: 100%;
+  min-height: 600px;
+
+  .pasek-narzedzi {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: $pasek-narzedzi-wysokosc;
+    background: $miasto-czarny;
+
+    .sekcja-lewa {
+      height: 100%;
+      width: calc(100% - #{$legenda-kontrolki-romiar});
+      display: flex;
+
+      .strona-startowa-przycisk {
+        display: inline-block;
+        height: $pasek-narzedzi-wysokosc;
+        width: $pasek-narzedzi-wysokosc;
+      }
+
+      .zmien-mape-przycisk {
+        height: 100%;
+        width: calc(100% - #{$legenda-kontrolki-romiar});
+      }
+
+      lib-kontroler-narzedzi-podstawowych {
+        height: 100%;
+      }
+    }
+  }
+
+  .kontener {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    overflow-x: hidden;
+    height: calc(100% - #{$pasek-narzedzi-wysokosc});
+
+    .belka-boczna {
+      position: absolute;
+      height: 100%;
+      width: calc(100% - #{$legenda-kontrolki-romiar});
+      left: calc(-100% + #{$legenda-kontrolki-romiar});
+      transition: margin-left 0.2s;
+      background: $miasto-szary-tlo;
+
+      > lib-belka-boczna-narzedzia-sekcja {
+        display: block;
+        width: 100%;
+        height: 100%;
+        &.hidden{
+          display: none;
+        }
+      }
+
+      .belka-boczna-kontroler-widocznosci {
+        position: absolute;
+        top: 0;
+        right: -$legenda-kontrolki-romiar;
+        width: $legenda-kontrolki-romiar;
+        height: $legenda-kontrolki-romiar;
+        z-index: $obszar-boczny-z-index-start + 4;
+        box-shadow: 5px 5px 10px -5px rgba(0, 0, 0, 0.56);
+      }
+    }
+
+    .obszar-widokow {
+      width: 100%;
+    }
+
+    .belka-boczna.pokaz {
+      left: 0;
+      transition: margin-left 0.2s;
+    }
+
+    .belka-boczna.hidden {
+      display: none;
+    }
+
+    .przyciski {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      z-index: $obszar-widoku-z-index-start + 3;
+      transition: margin-right 0.2s;
+    }
+
+    .przyciski.pokaz {
+      margin-right: calc(100% - #{$legenda-kontrolki-romiar});
+      transition: margin-right 0.2s;
+      z-index: 5 * $obszar-widoku-z-index-start + 10;
+    }
+
+    .ukryty {
+      display: none;
+    }
+
+    .przycisk-wyszukaj {
+      border: 1px solid $miasto-szary;
+      width: $wyszukiwarka-mapowa-kontrolki-romiar;
+      height: $wyszukiwarka-mapowa-kontrolki-romiar;
+      border-right: none;
+    }
+
+    .przycisk-pokaz {
+      border: 1px solid $miasto-szary;
+      width: $wyszukiwarka-mapowa-kontrolki-romiar;
+      height: $wyszukiwarka-mapowa-kontrolki-romiar;
+      border-right: none;
+      border-top: none;
+    }
+
+    .wyszukiwarka-mapowa-kontener {
+      display: flex;
+      flex-direction: row;
+      position: absolute;
+      width: calc(100% - #{$legenda-kontrolki-romiar});
+      height: $legenda-kontrolki-romiar;
+      right: 0;
+      z-index: $obszar-widoku-z-index-start + 3;
+      margin-right: -100%;
+      transition: margin-right 0.2s;
+    }
+
+    .wyszukiwarka-mapowa-kontener.pokaz {
+      height: 100%;
+      margin-right: 0;
+      z-index: 5 * $obszar-widoku-z-index-start + 10;
+      transition: margin-right 0.2s;
+    }
+
+    .wyszukiwarka-mobilna {
+      position: absolute;
+      z-index: 60;
+      height: 100%;
+    }
+  }
+
+  .kontener.pelen-ekran {
+    height: 100%;
+  }
+
+  .pasek-stanu {
+    width: 100%;
+    height: $pasek-stanu-wysokosc;
+    border-top: 1px solid $miasto-bordery
+  }
+
+}
+
+.mala-wysokosc {
+  height: auto !important;
+}
+
+.display-none {
+  display: none !important;
+}
+
+@media (min-width: $prog-przelaczenia) {
+
+  .serwis-mapowy {
+    min-height: unset;
+
+    .pasek-narzedzi {
+      //border-bottom: 1px solid $miasto-bordery;
+
+      .strona-startowa-przycisk {
+        //height: calc(#{$pasek-narzedzi-wysokosc} - 1px) !important;
+      }
+
+      .sekcja-lewa {
+        width: auto;
+
+        .zmien-mape-przycisk {
+          width: auto;
+        }
+      }
+    }
+
+    .kontener {
+      height: calc(100% - #{$pasek-narzedzi-wysokosc} - #{$pasek-stanu-wysokosc});
+
+      .belka-boczna {
+        position: relative;
+        display: flex;
+        left: 0;
+        margin-left: -$legenda-szerokosc;
+        width: $legenda-szerokosc;
+        box-shadow: 5px -2px 10px -7px rgba(0, 0, 0, 0.56);
+
+        > lib-belka-boczna-narzedzia-sekcja {
+          width: $legenda-szerokosc;
+        }
+      }
+
+      .belka-boczna.pokaz {
+        margin-left: 0;
+        transition: margin-left 0.2s;
+      }
+
+      .przyciski {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        z-index: 5 * $obszar-widoku-z-index-start + 10;
+        transition: margin-right 0.2s;
+      }
+
+      .przyciski.pokaz {
+        margin-right: $wyszukiwarka-mapowa-szerokosc;
+        transition: margin-right 0.2s;
+      }
+
+      .ukryty {
+        display: none;
+      }
+
+      .przycisk-wyszukaj {
+        width: $wyszukiwarka-mapowa-kontrolki-romiar;
+        height: $wyszukiwarka-mapowa-kontrolki-romiar;
+        border: 1px solid $miasto-szary;
+        border-right: none;
+      }
+
+      .wyszukiwarka-mapowa-kontener {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        width: $wyszukiwarka-mapowa-szerokosc;
+        height: auto;
+        right: 0;
+        z-index: $obszar-widoku-z-index-start + 3;
+        margin-right: -$wyszukiwarka-mapowa-szerokosc;
+        transition: margin-right 0.2s;
+      }
+
+      .wyszukiwarka-mapowa-kontener.pokaz {
+        margin-right: 0;
+        height: auto;
+        z-index: 5 * $obszar-widoku-z-index-start + 10;
+        transition: margin-right 0.2s;
+      }
+
+      .wyszukiwanie-zaawansowane {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        z-index: $obszar-zawsze-widoczny-z-index-start + 20;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+    }
+
+    .kontener.pelen-ekran {
+      height: calc(100% - #{$pasek-stanu-wysokosc});
+    }
+  }
+}

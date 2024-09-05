@@ -1,0 +1,69 @@
+@import '../../../../node_modules/@circlon/angular-tree-component/css/angular-tree-component.css';
+@import "tree/tree-node";
+@import "tree/tree-expander";
+@import "material";
+@import "mapviewer";
+@import "narzedzia/belka-boczna";
+@import "niestandardowe-komponenty/niestandardowe-komponenty";
+@import "ngx-slider";
+
+.serwis-mapowy {
+  @import "typografia";
+}
+
+.serwis-mapowy, .kontakt-dialog, .modul-mapowy-dialog {
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .zaznaczony-url {
+    color: $miasto-blekit !important;
+    text-decoration: underline !important;
+  }
+
+  .zaznaczony-img{
+    max-width: 100% !important;
+  }
+
+  .dane-obiektu{
+    a{
+      color: $miasto-blekit;
+    };
+  }
+}
+
+.tooltip-legenda {
+  background: white;
+  font-size: 1rem !important;
+  color: $miasto-czarny !important;
+  border-radius: 0 !important;
+  border: 2px solid $miasto-blekit !important;
+}
+
+.omv2_progDiv {
+  display: none !important;
+}
+
+input::placeholder{
+  color: #737373;
+}
+
+textarea::placeholder{
+  color: #737373;
+}
+
+mat-select:focus-visible {
+  outline: 2px auto;
+  border:  2px solid $miasto-czarny;
+}
+
+.mat-icon-button:focus-visible {
+  outline: 2px auto;
+  border:  2px solid $miasto-czarny;
+}
+
+.mat-sort-header-container:focus-visible {
+  outline: 2px auto;
+  border:  2px solid $miasto-czarny;
+}

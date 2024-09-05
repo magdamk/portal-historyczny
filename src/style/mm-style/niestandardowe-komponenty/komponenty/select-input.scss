@@ -1,0 +1,124 @@
+@import "../../../style/konfiguracja-szablonu";
+
+.large-select.mat-select-panel {
+  display: flex;
+  max-height: 260px;
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid $miasto-szary;
+
+  mat-option {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: $bazowy-rozmiar-czcionki;
+    color: $miasto-blekit
+  }
+}
+
+.large-select-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid $miasto-szary;
+  border-bottom: 1px solid $miasto-szary;
+
+  .ikona {
+    width: $bazowy-rozmiar-czcionki;
+    fill: $miasto-blekit;
+  }
+
+  .mat-select {
+    height: 100%;
+
+    .mat-select-trigger {
+      height: 100%;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      font-size: $bazowy-rozmiar-czcionki;
+      font-weight: bold;
+      text-transform: uppercase;
+
+      .mat-select-arrow-wrapper {
+        opacity: 0;
+      }
+
+      .mat-select-value {
+        color: $miasto-blekit
+      }
+    }
+  }
+}
+
+.large-select-input.without-top-border {
+  border-top: none;
+}
+
+.normal-select.mat-select-panel {
+  display: flex;
+  max-height: 260px;
+  border-radius: 0;
+  box-shadow: none;
+  border: 1px solid $miasto-szary;
+
+  mat-option {
+    color: $miasto-blekit;
+    font-size: $bazowy-rozmiar-czcionki;
+  }
+}
+
+.normal-select-input {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-top: 1px solid $miasto-szary;
+  border-bottom: 1px solid $miasto-szary;
+
+  .ikona {
+    width: $bazowy-rozmiar-czcionki;
+    fill: $miasto-blekit;
+  }
+
+  .mat-select {
+    height: 100%;
+
+    .mat-select-trigger {
+      height: 100%;
+      font-size: $bazowy-rozmiar-czcionki;
+
+      .mat-select-arrow-wrapper {
+        opacity: 0;
+      }
+
+      .mat-select-value {
+        color: $miasto-blekit
+      }
+    }
+  }
+}
+
+.normal-select-input.without-top-border {
+  border-top: none;
+}
+
+.mat-sort-header-content {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.mat-sort-header-container {
+  border-bottom: 0 !important;
+}
+
+lib-select-input {
+  mat-select:focus {
+    background: $miasto-szary-tlo;
+  }
+}
