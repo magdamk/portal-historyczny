@@ -1,6 +1,6 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-import {StronaArchiwumAktualnosciComponent} from './strony/strona-archiwum-aktualnosci/strona-archiwum-aktualnosci.component';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { StronaArchiwumAktualnosciComponent } from './strony/strona-archiwum-aktualnosci/strona-archiwum-aktualnosci.component';
 
 const routes: Routes = [
   {

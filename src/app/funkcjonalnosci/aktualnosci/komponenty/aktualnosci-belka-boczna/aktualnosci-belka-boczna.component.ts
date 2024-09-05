@@ -6,8 +6,7 @@ import { TlumaczeniaService } from '../../../../core/tlumaczenia/serwisy/tlumacz
 import { AktualnosciListaDto } from '../../../../core/modele/aktualnosci-lista-dto';
 // import { ControllerAktualnosciOpenService } from '../../../../core/api/controller-aktualnosci-open.service';
 import { ControllerAktualnosciService } from 'src/app/core/api/controller-aktualnosci.service';
-import { PrzewijanyKomponentComponent } from '../../../../wspolne/komponenty/przewijany-komponent/przewijany-komponent.component';
-
+import { PrzewijanyKomponentComponent } from 'src/app/wspolne/komponenty/przewijany-komponent/przewijany-komponent.component';
 /**
  * Komponent aktualności
  */
@@ -45,8 +44,9 @@ export class AktualnosciBelkaBocznaComponent implements OnInit {
   ngOnInit(): void {
     this.subskrybcja = this.tlumaczeniaSerwis.getZmianaJezykaSubject().subscribe((val) => {
       this.jezyk = val;
-      this.wczytajListeAktualnosc();
+
     });
+    this.wczytajListeAktualnosc();
   }
 
   /**
@@ -92,7 +92,7 @@ export class AktualnosciBelkaBocznaComponent implements OnInit {
    */
   private wczytajListeAktualnosc() {
     // this.aktualnosciService.pobierzOkreslonaListeAktualnosci().subscribe((val) => this.listaAktualnosci = val);
-    this.aktualnosciService.getAktualnosci().subscribe((val)=>this.listaAktualnosci=val);
+    this.aktualnosciService.getAktualnosci().subscribe((val) => this.listaAktualnosci = val);
 
   }
 

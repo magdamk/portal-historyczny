@@ -54,19 +54,21 @@ export class SzablonyService {
    * Funkcja pozwala pobrać obiekt śledzenia dla komponentu belki bocznej
    */
   getZmianaZawartosciBelkiBocznejSubject(): BehaviorSubject<Type<BelkaBocznaKomponent> | undefined> {
+    console.log('szablony service, getZmianaZawartosciBelkiBocznejSubject');
     return this.zmianaZawartosciBelkiBocznejSubject$;
   }
 
   // --------------------------------Szablon rozwiniecie belki bocznej -------------------------------
   /**
-   * Funckaj zwija belke boczną
+   * Funckja zwija belke boczną
    */
   zwinBelkeBoczna(): void {
+    console.log('szablony service, zwijam belkę boczną');
     this.zmianaRozwinieciaBelkiBocznejSubject$.next(false);
   }
 
   /**
-   * Funckaj rozwija belkę boczną
+   * Funckja rozwija belkę boczną
    */
   rozwinBelkeBoczna(): void {
     this.zmianaRozwinieciaBelkiBocznejSubject$.next(true);

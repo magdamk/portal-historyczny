@@ -13,7 +13,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {FormsModule} from '@angular/forms';
 import {WynikWyszukiwaniaComponent} from './komponenty/wynik-wyszukiwania/wynik-wyszukiwania.component';
 import {MatDividerModule} from '@angular/material/divider';
-import {ModulMapowyModule} from '@modul-mapowy';
+// import {ModulMapowyModule} from '@modul-mapowy';
 
 /**
  * Definicja modułu
@@ -36,7 +36,7 @@ import {ModulMapowyModule} from '@modul-mapowy';
     FormsModule,
     TranslateModule.forChild(),
     MatDividerModule,
-    ModulMapowyModule,
+    // ModulMapowyModule,
     WspolneModule,
   ],
   exports: [

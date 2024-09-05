@@ -1,8 +1,8 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {KategoriaMapOpenDto} from '../../../../../core/modele/kategoria-map-open-dto';
 import {WyborMapyEvent} from '../karta-mapy/karta-mapy.component';
-// import {ResposnsywnoscUtils} from '../../../../../core/responsywnosc/utils/resposnsywnosc-utils';
-import { ResponsywnoscUtils } from '@modul-mapowy';
+import {ResponsywnoscUtils} from '../../../../../core/responsywnosc/utils/resposnsywnosc-utils';
+// import { ResponsywnoscUtils } from '@modul-mapowy';
 
 /**
  * Komponent kategoria mapy

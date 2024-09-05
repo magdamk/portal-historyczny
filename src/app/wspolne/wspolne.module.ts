@@ -19,7 +19,6 @@ import { KomunikatCookieComponent } from './komponenty/cookie/komunikat-cookie/k
 import { InformacjaPopupComponent } from './komponenty/informacja-popup/informacja-popup.component';
 import { PotwierdzeniePopupComponent } from './komponenty/potwierdzenie-popup/potwierdzenie-popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { KomponentHostDirective } from './dyrektywy/komponent-host.directive';
 // import { PrzewijanyKomponentComponent } from './components/przewijany-komponent/przewijany-komponent.component';
 // import { MatSliderChange, MatSliderModule } from '@angular/material/slider';
 import { MatLegacySliderModule } from '@angular/material/legacy-slider';
@@ -31,6 +30,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ZamienNaKbMbPipe } from './pipes/zamien-na-kb-mb.pipe';
+import { KomponentHostDirective } from './dyrektywy/komponent-host.directive';
 @NgModule({
   declarations: [
     IkonySvgComponent,
@@ -42,9 +42,9 @@ import { ZamienNaKbMbPipe } from './pipes/zamien-na-kb-mb.pipe';
     PrzyciskProstokatnyComponent,
     PrzyciskOkraglyComponent,
     KomunikatCookieComponent,
+    KomponentHostDirective,
     InformacjaPopupComponent,
     PotwierdzeniePopupComponent,
-    KomponentHostDirective,
     PrzewijanyKomponentComponent,
     KontaktFormularzComponent,
     ZamienNaKbMbPipe,
@@ -79,11 +79,11 @@ import { ZamienNaKbMbPipe } from './pipes/zamien-na-kb-mb.pipe';
     StylizowanyKursorDirective,
     SnackbarKomunikatComponent,
     PotwierdzeniePopupComponent,
-    KomponentHostDirective,
     PrzewijanyKomponentComponent,
     MatLegacySliderModule,
     ZamienNaKbMbPipe,
-    KontaktFormularzComponent
+    KontaktFormularzComponent,
+    KomponentHostDirective
   ]
 })
 export class WspolneModule { }

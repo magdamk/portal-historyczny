@@ -1,10 +1,7 @@
-import {Directive, ViewContainerRef} from '@angular/core';
+import { Directive, ViewContainerRef } from '@angular/core';
 
-/**
- * Dyrektywa ładująca komponenty
- */
 @Directive({
-  selector: '[komponentHost]'
+  selector: '[appKomponentHost]'
 })
 export class KomponentHostDirective {
 

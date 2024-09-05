@@ -18,7 +18,7 @@ export class StronaArchiwumAktualnosciComponent implements OnInit {
 
   jezyk: string | undefined;
   // $listaZarchiwuzowanychAktualnosci = new Observable<AktualnosciListaDto[] | undefined>();
-  lista = new Array<AktualnosciListaDto>();
+  $lista = new Observable<AktualnosciListaDto[] | undefined>();
   subskrybcja = new Subscription();
 
   /**
@@ -59,7 +59,7 @@ export class StronaArchiwumAktualnosciComponent implements OnInit {
    */
   private wczytajListeAktualnosc() {
     // this.$listaZarchiwuzowanychAktualnosci = this.aktualnosciService.pobierzListeZarchiwizowanychAktualnosci().pipe(map(val => val));
-    this.aktualnosciService.getArchiwum().subscribe((val)=>this.lista=val);
+   this.$lista =  this.aktualnosciService.getArchiwum().pipe(map(val=>val));
 
   }
 }

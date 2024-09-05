@@ -13,6 +13,7 @@ import { WspolneModule } from 'src/app/wspolne/wspolne.module';
 import { PrzyciskPokazKontaktComponent } from './komponenty/przycisk-pokaz-kontakt/przycisk-pokaz-kontakt.component';
 import { PrzyciskPokazPomocComponent } from './komponenty/przycisk-pokaz-pomoc/przycisk-pokaz-pomoc.component';
 import { AktualnosciModule } from 'src/app/funkcjonalnosci/aktualnosci/aktualnosci.module';
+// import { ModulMapowyModule } from '@modul-mapowy';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,6 @@ import { AktualnosciModule } from 'src/app/funkcjonalnosci/aktualnosci/aktualnos
     MatIconModule,
     MatTooltipModule,
     // ModulMapowyModule,
-    WspolneModule,
     // ZmianaMapyModule,
     // WyborMapyModule,
     TranslateModule.forChild()

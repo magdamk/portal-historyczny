@@ -88,3 +88,6 @@ canvas, img, svg, iframe{
   color: $miasto-kolor-blad !important;
   border: 2px solid $miasto-kolor-blad !important;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

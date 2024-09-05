@@ -6,7 +6,7 @@ import {StronaStartowaRoutingModule} from './strona-startowa-routing.module';
 import {KontaktModule} from '../kontakt/kontakt.module';
 import {WspolneModule} from '../../wspolne/wspolne.module';
 import {StronyModule} from './strony/strony.module';
-import {ModulMapowyModule} from "@modul-mapowy"
+// import {ModulMapowyModule} from "@modul-mapowy"
 import {HammerModule} from '@angular/platform-browser';
 
 /**
@@ -24,7 +24,7 @@ import {HammerModule} from '@angular/platform-browser';
     StronyModule,
     WcagModule,
     HammerModule,
-    ModulMapowyModule
+    // ModulMapowyModule
   ],
 })
 export class StronaStartowaModule {
