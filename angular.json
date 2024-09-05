@@ -34,12 +34,14 @@
       "prefix": "app",
       "architect": {
         "build": {
+
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/portal-historyczny",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "aot": false,
+            "aot": true,
+            "preserveSymlinks": true,
             "polyfills": [
               "zone.js"
             ],
@@ -57,7 +59,6 @@
                "src/assets/i18n/en.json"
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -73,16 +74,16 @@
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "5kb",
-                  "maximumError": "10kb"
+                  "maximumError": "11kb"
                 }
               ],
-              "optimization": false,
+              "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
               "namedChunks": false,
               "extractLicenses": false,
               "vendorChunk": false,
-              "buildOptimizer": false
+              "buildOptimizer": true
             },
             "development": {
               "buildOptimizer": false,
@@ -122,43 +123,9 @@
               "src/assets"
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
             "scripts": []
-          }
-        }
-      }
-    },
-    "modul-mapowy": {
-      "projectType": "library",
-      "root": "projects/modul-mapowy",
-      "sourceRoot": "projects/modul-mapowy/src",
-      "prefix": "hmap",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "projects/modul-mapowy/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/modul-mapowy/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/modul-mapowy/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "tsConfig": "projects/modul-mapowy/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
           }
         }
       }
