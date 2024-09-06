@@ -1,6 +1,6 @@
-import {Directive, OnDestroy, OnInit, TemplateRef, ViewContainerRef} from '@angular/core';
-import {fromEvent, Subscription} from 'rxjs';
-import {ResponsywnoscUtils} from '../utils/resposnsywnosc-utils';
+import { Directive, OnDestroy, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
+import { fromEvent, Subscription } from 'rxjs';
+import { ResponsywnoscUtils } from '../utils/resposnsywnosc-utils';
 
 /**
  * Dyrektywa usuwa obiekty jeżeli tryb wyświetlania inny niż mobile
@@ -20,7 +20,7 @@ export class TylkoMobileDirective implements OnInit, OnDestroy {
    * @param templateRef
    */
   constructor(private viewContainer: ViewContainerRef,
-              private templateRef: TemplateRef<any>) {
+    private templateRef: TemplateRef<any>) {
   }
 
   /**

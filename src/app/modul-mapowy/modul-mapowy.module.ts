@@ -8,8 +8,9 @@ import { TlumaczeiaModulMapowyAdapter, DomyslnyTlumaczeniaModulMapowyAdapter } f
 import { IkonaSvgDirective } from './commons/directives/ikona-svg.directive';
 import { RouterModule } from '@angular/router';
 import { PasekStanuComponent } from './serwis-mapowy/komponenty/dolna-belka/pasek-stanu/pasek-stanu.component';
-import { TylkoDesktopDirective } from '../core/responsywnosc/dyrektywy/tylko-desktop.directive';
-import { TylkoMobileDirective } from '../core/responsywnosc/dyrektywy/tylko-mobile.directive';
+import { TylkoMobileDirective } from './mm-core/responsywnosc/dyrektywy/tylko-mobile.directive';
+import { TylkoDesktopDirective } from './mm-core/responsywnosc/dyrektywy/tylko-desktop.directive';
+import { WidokMapyNarzedziaSekcjaComponent } from './serwis-mapowy/komponenty/mapa/widok-mapy-narzedzia-sekcja/widok-mapy-narzedzia-sekcja.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { TylkoMobileDirective } from '../core/responsywnosc/dyrektywy/tylko-mobi
     SerwisMapowyComponent,
     PasekStanuComponent,
     TylkoDesktopDirective,
-    TylkoMobileDirective
+    TylkoMobileDirective,
+    WidokMapyNarzedziaSekcjaComponent
   ],
   imports: [
     CommonModule,

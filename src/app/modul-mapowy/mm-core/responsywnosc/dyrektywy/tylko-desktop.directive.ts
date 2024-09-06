@@ -1,6 +1,6 @@
-import {Directive, OnDestroy, OnInit, TemplateRef, ViewContainerRef} from '@angular/core';
-import {ResponsywnoscUtils} from '../utils/resposnsywnosc-utils';
-import {fromEvent, Subscription} from 'rxjs';
+import { Directive, OnDestroy, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
+import { ResponsywnoscUtils } from '../utils/resposnsywnosc-utils';
+import { fromEvent, Subscription } from 'rxjs';
 
 /**
  * Dyrektywa usuwa obiekty jeżeli tryb wyświetlania inny niż desktop
@@ -19,7 +19,7 @@ export class TylkoDesktopDirective implements OnInit, OnDestroy {
    * @param templateRef
    */
   constructor(private viewContainer: ViewContainerRef,
-              private templateRef: TemplateRef<any>) {
+    private templateRef: TemplateRef<any>) {
   }
 
   /**
