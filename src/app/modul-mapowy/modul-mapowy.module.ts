@@ -11,6 +11,9 @@ import { PasekStanuComponent } from './serwis-mapowy/komponenty/dolna-belka/pase
 import { TylkoMobileDirective } from './mm-core/responsywnosc/dyrektywy/tylko-mobile.directive';
 import { TylkoDesktopDirective } from './mm-core/responsywnosc/dyrektywy/tylko-desktop.directive';
 import { WidokMapyNarzedziaSekcjaComponent } from './serwis-mapowy/komponenty/mapa/widok-mapy-narzedzia-sekcja/widok-mapy-narzedzia-sekcja.component';
+import { WidokMapyComponent } from './serwis-mapowy/komponenty/mapa/widok-mapy/widok-mapy.component';
+import { InformacjeOObiekcieComponent } from './serwis-mapowy/komponenty/mapa/informacje-o-obiekcie/informacje-o-obiekcie.component';
+import { DomyslnaKonfiguracjaModulMapowyAdapter, KonfiguracjaModulMapowyAdapter } from './mm-core/providers/konfiguracja-adapter';
 
 
 @NgModule({
@@ -19,7 +22,9 @@ import { WidokMapyNarzedziaSekcjaComponent } from './serwis-mapowy/komponenty/ma
     PasekStanuComponent,
     TylkoDesktopDirective,
     TylkoMobileDirective,
-    WidokMapyNarzedziaSekcjaComponent
+    WidokMapyNarzedziaSekcjaComponent,
+    WidokMapyComponent,
+    InformacjeOObiekcieComponent
   ],
   imports: [
     CommonModule,
@@ -36,6 +41,7 @@ import { WidokMapyNarzedziaSekcjaComponent } from './serwis-mapowy/komponenty/ma
   ],
   providers: [
     { provide: TlumaczeiaModulMapowyAdapter, useClass: DomyslnyTlumaczeniaModulMapowyAdapter },
+    { provide: KonfiguracjaModulMapowyAdapter, useClass: DomyslnaKonfiguracjaModulMapowyAdapter },
   ]
 })
 export class ModulMapowyModule { }

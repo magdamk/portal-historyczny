@@ -1,6 +1,6 @@
 import {ElementRef, Injectable, OnDestroy} from '@angular/core';
 import {Store} from '@ngrx/store';
-import {InterfejsUzytkownikaStan} from '../../stan/interfejs-uzytkownika/interfejs-uzytkownika.reducer';
+// import {InterfejsUzytkownikaStan} from '../../stan/interfejs-uzytkownika/interfejs-uzytkownika.reducer';
 import {Subscription} from 'rxjs';
 
 /**
@@ -34,10 +34,10 @@ export class AktualizacjaKomponentuService implements OnDestroy {
    * Funkcja subskrybująca stan interfejsu
    */
   private subskrybujStanInterfejsu() {
-    this.subskrybcja$ = this.store.select('modulMapowy', 'interfejsUzytkownika')
-      .subscribe((stan: InterfejsUzytkownikaStan) => {
-        this.mozliwoscWymuszonejAktualizacji = stan.mozliwoscWymuszonejAktualizacji;
-      });
+    // this.subskrybcja$ = this.store.select('modulMapowy', 'interfejsUzytkownika')
+    //   .subscribe((stan: InterfejsUzytkownikaStan) => {
+    //     this.mozliwoscWymuszonejAktualizacji = stan.mozliwoscWymuszonejAktualizacji;
+    //   });
   }
 
   /**
