@@ -1,0 +1,22 @@
+.pasek-stanu {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: aquamarine;
+  align-items: center;
+  div {
+    padding: 0 20px;
+
+    span {
+      padding-left: 20px;
+    }
+  }
+
+  .wspolrzedne {
+    width: 520px;
+  }
+
+  .pasek-skali{
+    //width: 100px;
+  }
+}
