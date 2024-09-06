@@ -6,21 +6,31 @@ import { CommonsModule } from "./commons/commons.module";
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TlumaczeiaModulMapowyAdapter, DomyslnyTlumaczeniaModulMapowyAdapter } from '../core/providers/tlumaczenia-modul-mapowy-adapter';
 import { IkonaSvgDirective } from './commons/directives/ikona-svg.directive';
+import { RouterModule } from '@angular/router';
+import { PasekStanuComponent } from './serwis-mapowy/komponenty/dolna-belka/pasek-stanu/pasek-stanu.component';
+import { TylkoDesktopDirective } from '../core/responsywnosc/dyrektywy/tylko-desktop.directive';
+import { TylkoMobileDirective } from '../core/responsywnosc/dyrektywy/tylko-mobile.directive';
 
 
 @NgModule({
   declarations: [
-    SerwisMapowyComponent
+    SerwisMapowyComponent,
+    PasekStanuComponent,
+    TylkoDesktopDirective,
+    TylkoMobileDirective
   ],
   imports: [
     CommonModule,
-    MatTooltipModule,
     CommonsModule,
+    MatTooltipModule,
+    RouterModule,
     TranslateModule,
   ],
   exports: [
     SerwisMapowyComponent,
-    IkonaSvgDirective
+    IkonaSvgDirective,
+    TylkoDesktopDirective,
+    TylkoMobileDirective
   ],
   providers: [
     { provide: TlumaczeiaModulMapowyAdapter, useClass: DomyslnyTlumaczeniaModulMapowyAdapter },
