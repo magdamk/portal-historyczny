@@ -2,6 +2,7 @@ import {OknoInformacyjneWarstwy} from './okno-informacyjne-warstwy';
 import {TlumaczeniaNazw} from './tlumaczenia-nazw';
 // import {InformacjeOObiekcie} from '../utils/obiekty-mapy-utils';
 import {KeyStringObject} from './key-string-object';
+import { InformacjeOObiekcie } from '../utils/obiekty-mapy-utils';
 
 export const FUNKCJE_DODATKOWE = {
   NIERUCHOMOSCI: 'NIERUCHOMOSCI',
@@ -71,6 +72,6 @@ export interface SzczegolyWarstwy {
   dynamicTileLayer?: boolean;
   antyaliasing?: boolean;
   typGeometrii?: string;
-  // obiekty?: InformacjeOObiekcie[];
+  obiekty?: InformacjeOObiekcie[];
   uslugiZewnetrzne?: UslugiZewnetrzne;
 }
