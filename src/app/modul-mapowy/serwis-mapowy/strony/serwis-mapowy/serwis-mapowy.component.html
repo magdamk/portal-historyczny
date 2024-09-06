@@ -2,16 +2,22 @@
   <div class="pasek-narzedzi">
     <div class="sekcja-lewa">
       <div class="strona-startowa-przycisk">
-        <mm-przycisk-ikona [typ]="PRZYCISK_IKONA_TYP.BLEKITNY" [routerLink]="['/']"
-                            tabindex="-1"
-                            label="{{'codes.generyczne.strona-startowa-main' | translate}}"
-                            ikona="strona_startowa"></mm-przycisk-ikona>
+        <mm-przycisk-ikona [typ]="PRZYCISK_IKONA_TYP.BLEKITNY" [routerLink]="['/']" tabindex="-1"
+          label="{{'codes.generyczne.strona-startowa-main' | translate}}" ikona="strona_startowa"></mm-przycisk-ikona>
       </div>
       <div class="zmien-mape-przycisk">
       </div>
     </div>
   </div>
-  <div class="pasek-stanu" *tylkoDesktop>
+  <div class="kontener">
+    <div class="obszar-widokow">
+      <mm-widok-mapy-narzedzia-sekcja
+
+      >
+      </mm-widok-mapy-narzedzia-sekcja>
+    </div>
+  </div>
+  <div class="pasek-stanu" *mmTylkoDesktop>
     <mm-pasek-stanu></mm-pasek-stanu>
   </div>
 </div>

@@ -1,0 +1,57 @@
+@import "../../../../../../style/mm-style/mm-konfiguracja-szablonu.scss";
+
+.widok-mapy-narzedzia-sekcja {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  .mapa {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .inne {
+    display: none;
+    height: $wyszukiwarka-nieruchomosci;
+    width: 100%;
+  }
+}
+
+.widok-mapy-narzedzia-sekcja.wspoldzielone {
+  .mapa {
+    height: calc(100% - #{$wyszukiwarka-nieruchomosci});
+  }
+
+  .inne {
+    display: block;
+    position: relative;
+    height: $wyszukiwarka-nieruchomosci;
+    .widok-mapy-belka-dolna-kontroler-widocznosci {
+      position: absolute;
+      bottom: 100%;
+      right: 0;
+      width: $legenda-kontrolki-romiar;
+      height: $legenda-kontrolki-romiar;
+      z-index: 20;
+      transform: rotate(-90deg);
+    }
+
+    .narzedzia {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.widok-mapy-narzedzia-sekcja.pasek-dolny-zwiniety {
+  .mapa {
+    height: 100% !important;
+  }
+
+  .inne {
+    height: 0 !important;
+    .narzedzia {
+      overflow: hidden;
+    }
+  }
+}
+
