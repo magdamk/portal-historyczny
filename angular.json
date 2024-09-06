@@ -59,7 +59,7 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/styles/mm-style/style.scss"
+              "src/style/mm-style/mm-style.scss"
             ],
             "scripts": []
           },
@@ -123,7 +123,7 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/styles/mm-style/style.scss"
+              "src/style/mm-style/mm-style.scss"
             ],
             "scripts": []
           }

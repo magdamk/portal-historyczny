@@ -1,4 +1,4 @@
-@import '../../../../node_modules/@circlon/angular-tree-component/css/angular-tree-component.css';
+// @import '../../../../node_modules/@circlon/angular-tree-component/css/angular-tree-component.css';
 @import "tree/tree-node";
 @import "tree/tree-expander";
 @import "material";
@@ -8,7 +8,7 @@
 @import "ngx-slider";
 
 .serwis-mapowy {
-  @import "typografia";
+  @import "mm-typografia";
 }
 
 .serwis-mapowy, .kontakt-dialog, .modul-mapowy-dialog {
