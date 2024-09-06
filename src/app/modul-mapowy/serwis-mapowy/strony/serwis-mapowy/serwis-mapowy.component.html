@@ -2,7 +2,7 @@
   <div class="pasek-narzedzi">
     <div class="sekcja-lewa">
       <div class="strona-startowa-przycisk">
-        <mm-przycisk-ikona [typ]="PRZYCISK_IKONA_TYP.BLEKITNY"
+        <mm-przycisk-ikona [typ]="PRZYCISK_IKONA_TYP.BLEKITNY" [routerLink]="['/']"
                             tabindex="-1"
                             label="{{'codes.generyczne.strona-startowa-main' | translate}}"
                             ikona="strona_startowa"></mm-przycisk-ikona>
@@ -10,5 +10,8 @@
       <div class="zmien-mape-przycisk">
       </div>
     </div>
+  </div>
+  <div class="pasek-stanu" *tylkoDesktop>
+    <mm-pasek-stanu></mm-pasek-stanu>
   </div>
 </div>
