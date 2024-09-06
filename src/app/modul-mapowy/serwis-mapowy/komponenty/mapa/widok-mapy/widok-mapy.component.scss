@@ -1,0 +1,43 @@
+@import "../../../../../../style/mm-style/mm-konfiguracja-szablonu.scss";
+
+.mapa {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+
+  .widok-mapy {
+    width: 100%;
+    height: 100%;
+  }
+
+  .podklady {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    z-index: $obszar-widoku-z-index-start+4;
+    width: auto;
+    max-width: calc(100% - 124px);
+  }
+
+  .sterowanie-mapy {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    z-index: $obszar-widoku-z-index-start+3;
+  }
+}
+
+@media (min-width: $prog-przelaczenia) {
+  .mapa {
+    .podklady {
+      bottom: 30px;
+      left: 65px;
+    }
+
+    .podklady.prawa{
+      left: auto;
+      right: 90px;
+    }
+  }
+}
