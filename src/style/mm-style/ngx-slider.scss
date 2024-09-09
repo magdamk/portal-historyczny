@@ -1,37 +1,37 @@
 .serwis-mapowy {
 
-  .ngx-slider.animate .ngx-slider-pointer, .ngx-slider .ngx-slider-pointer.ngx-slider-active {
-    width: 22px;
-    height: 22px;
-    top: -10px;
-    background-color: $miasto-blekit;
+  // .ngx-slider.animate .ngx-slider-pointer, .ngx-slider .ngx-slider-pointer.ngx-slider-active {
+  //   width: 22px;
+  //   height: 22px;
+  //   top: -10px;
+  //   background-color: $miasto-blekit;
 
-  }
+  // }
 
-  .ngx-slider.animate .ngx-slider-pointer:after {
-    background: none;
-  }
+  // .ngx-slider.animate .ngx-slider-pointer:after {
+  //   background: none;
+  // }
 
-  .ngx-slider .ngx-slider-pointer.ngx-slider-active:after {
-    background: none;
-  }
+  // .ngx-slider .ngx-slider-pointer.ngx-slider-active:after {
+  //   background: none;
+  // }
 
-  .ngx-slider .ngx-slider-bar {
-    height: 2px;
-    background-color: $miasto-szary;
-  }
+  // .ngx-slider .ngx-slider-bar {
+  //   height: 2px;
+  //   background-color: $miasto-szary;
+  // }
 
-  .ngx-slider .ngx-slider-inner-tooltip {
-    display: none;
-  }
+  // .ngx-slider .ngx-slider-inner-tooltip {
+  //   display: none;
+  // }
 
-  .ngx-slider.animate .ngx-slider-pointer {
-    transition: none;
-  }
+  // .ngx-slider.animate .ngx-slider-pointer {
+  //   transition: none;
+  // }
 
-  .ngx-slider .ngx-slider-tick-legend {
-    font-size: 1.3rem;
-    width: 200px;
-    max-width: 200px;
-  }
+  // .ngx-slider .ngx-slider-tick-legend {
+  //   font-size: 1.3rem;
+  //   width: 200px;
+  //   max-width: 200px;
+  // }
 }

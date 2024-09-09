@@ -3,4 +3,13 @@
   <div class="widok-mapy" *ngIf="mapa && grupyWarstwPodkladowych?.length" mmOracleMaps
     (mapaUtworzonaZmiana)="widokMapyUtworzony($event)">
   </div>
+  <div class="podklady" [class.prawa]="lokalizacjaMapPodkladowych!=='LEWA'"
+    *ngIf="grupyWarstwPodkladowych?.length && zmianaMapPodkladowychWidocna">
+    <mm-kontroler-warstw-podkladowych
+      [grupyWarstwPodkladowych]="grupyWarstwPodkladowych"
+      [mapa]="mapa"
+      [lokalizacjaMapPodkladowych]="lokalizacjaMapPodkladowych"
+      (zmianaPodkladu)="przelaczonoMapePodkladowa($event)">
+    </mm-kontroler-warstw-podkladowych>
+  </div>
 </div>

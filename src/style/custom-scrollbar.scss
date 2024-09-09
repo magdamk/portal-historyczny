@@ -1,14 +1,14 @@
-@import "konfiguracja-szablonu";
+@import "./konfiguracja-szablonu.scss";
 
-app-przewijany-komponent {
+mm-przewijany-komponent {
 
   .mat-slider-wrapper {
-    background-color: $miasto-szary!important;
+    background-color: $miasto-szary !important;
   }
 
   .mat-slider-min-value:not(.mat-slider-thumb-label-showing) .mat-slider-thumb {
     background-color: $miasto-blekit-30p;
-    border-color: $miasto-blekit-30p!important;
+    border-color: $miasto-blekit-30p !important;
   }
 
   .mat-slider-min-value .mat-slider-focus-ring {
@@ -19,6 +19,8 @@ app-przewijany-komponent {
   .mat-slider-focus-ring {
     background-color: $miasto-blekit-30p;
     border-color: $miasto-blekit-30p;
+    opacity: 1 !important;
+    transform:scale(0.5);
   }
 
   .mat-slider-vertical .mat-slider-track-fill {
@@ -31,17 +33,18 @@ app-przewijany-komponent {
   }
 }
 
-app-przewijany-komponent .bialy-slider{
+mm-przewijany-komponent .bialy-slider {
   .mat-slider-wrapper {
-    background-color: $miasto-bialy!important;
-    .mat-slider-track-background{
+    background-color: $miasto-bialy !important;
+
+    .mat-slider-track-background {
       background-color: white;
     }
   }
 
   .mat-slider-min-value:not(.mat-slider-thumb-label-showing) .mat-slider-thumb {
     background-color: $miasto-bialy;
-    border-color: $miasto-bialy!important;
+    border-color: $miasto-bialy !important;
   }
 
   .mat-slider:not(.mat-slider-disabled) .mat-slider-thumb {
@@ -64,4 +67,3 @@ app-przewijany-komponent .bialy-slider{
     opacity: 1;
   }
 }
-

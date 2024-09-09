@@ -29,17 +29,24 @@ import { PobieranieDanychModulMapowyAdapter, DomyslnyPobieranieDanychAdapter } f
 import { PomocModulMapowyAdapter, DomyslnaPomocModulMapowyAdapter } from './mm-core/providers/pomoc-adapter';
 // import { UslugiZewnetrzneModulMapowyAdapter, DomyslneUslugiZewnetrzneAdapter } from './mm-core/providers/uslugi-zewnetrzne-adapter';
 import { WyszukiwarkaModulMapowyAdapter, DomyslnyWszukiwarkaAdapter } from './mm-core/providers/wyszukiwarka-adapter';
+import { KontrolerWarstwPodkladowychComponent } from './serwis-mapowy/komponenty/mapa/kontroler-warstw-podkladowych/kontroler-warstw-podkladowych.component';
+import { WyborTlumaczeniaPipe } from './serwis-mapowy/pipes/wybor-tlumaczenia.pipe';
+import { PrzewijanyKomponentComponent } from './commons/komponenty/przewijany-komponent/przewijany-komponent.component';
+import { MatLegacySliderModule } from '@angular/material/legacy-slider';
 
 
 @NgModule({
   declarations: [
     SerwisMapowyComponent,
     PasekStanuComponent,
+    // PrzewijanyKomponentComponent,
     TylkoDesktopDirective,
     TylkoMobileDirective,
     WidokMapyNarzedziaSekcjaComponent,
     WidokMapyComponent,
-    InformacjeOObiekcieComponent
+    InformacjeOObiekcieComponent,
+    KontrolerWarstwPodkladowychComponent,
+    WyborTlumaczeniaPipe
   ],
   imports: [
     CommonModule,
@@ -53,6 +60,8 @@ import { WyszukiwarkaModulMapowyAdapter, DomyslnyWszukiwarkaAdapter } from './mm
     SerwisMapowyComponent,
     IkonaSvgDirective,
     OracleMapsModule,
+    MatLegacySliderModule,
+    PrzewijanyKomponentComponent,
     TylkoDesktopDirective,
     TylkoMobileDirective
   ],

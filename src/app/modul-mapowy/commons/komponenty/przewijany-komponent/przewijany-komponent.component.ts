@@ -13,7 +13,7 @@ import {BehaviorSubject} from 'rxjs';
 import {DOWN_ARROW, hasModifierKey, UP_ARROW} from "@angular/cdk/keycodes";
 
 @Component({
-  selector: 'app-przewijany-komponent',
+  selector: 'mm-przewijany-komponent',
   templateUrl: './przewijany-komponent.component.html',
   styleUrls: ['./przewijany-komponent.component.scss']
 })
@@ -161,28 +161,27 @@ export class PrzewijanyKomponentComponent implements AfterViewInit {
       Math.round(wartoscPolozenia.value *
         (this.componentRef.nativeElement.scrollHeight - this.componentRef.nativeElement.offsetHeight) / 100);
   }
-
   /**
    * Metoda ustawiająca widoczność suwaka
    * @param zmiana - wydarzenie zmiany kontentu
    */
   ustawWidocznoscSuwaka(zmiana: any | null): void {
-    let maxLiczbaTestow = 0;
+    // let maxLiczbaTestow = 0;
     // console.log(zmiana);
     const czyWidoczny = this.czySuwakPotrzebny()
     this.czySuwakWidoczny$.next(czyWidoczny);
     this.zmianaWidocznosci.emit(czyWidoczny);
     const interval = setInterval(() => {
       const czyWidoczny = this.czySuwakPotrzebny();
-      if (czyWidoczny || maxLiczbaTestow > 1000) {
-        if (czyWidoczny) {
+      // if (czyWidoczny || maxLiczbaTestow > 1000) {
+        // if (czyWidoczny) {
         // console.log('suwak test: ',czyWidoczny );
-        clearInterval(interval);
+        // clearInterval(interval);
         this.czySuwakWidoczny$.next(czyWidoczny);
         this.zmianaWidocznosci.emit(czyWidoczny);
-      }
-      maxLiczbaTestow++;
-    }}, 200)
+      // }
+      // maxLiczbaTestow++;
+    }, 200)
   }
 
   /**

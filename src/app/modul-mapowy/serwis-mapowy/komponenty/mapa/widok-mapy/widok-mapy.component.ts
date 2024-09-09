@@ -437,6 +437,15 @@ export class WidokMapyComponent implements OnInit, OnDestroy {
       }));
   }
 
+ /**
+   * Funkcja nasluchuje czy zostala przelaczona warstwa podkladowa
+   * @param warstwa
+   */
+ przelaczonoMapePodkladowa(warstwa: GrupaWarstwPodkladowych): void {
+  this.przelaczWarstwePodkladowaWWidokuMapy(warstwa);
+  this.mapaService.aktualizacjaWarstwyPodkladowej(this.mapa!);
+}
+
 
   /**
      * Funkcja wymusza aktualizacje komponentu

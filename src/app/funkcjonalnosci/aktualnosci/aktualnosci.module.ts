@@ -8,6 +8,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from "@angular/material/card";
 import { DataCzasModule } from "../../core/data-czas/data-czas.module";
+import { ModulMapowyModule } from 'src/app/modul-mapowy/modul-mapowy.module';
 // import { ModulMapowyModule } from '@modul-mapowy';
 
 /**
@@ -29,7 +30,7 @@ import { DataCzasModule } from "../../core/data-czas/data-czas.module";
     AktualnosciRoutingModule,
     MatCardModule,
     DataCzasModule,
-    // ModulMapowyModule
+    ModulMapowyModule
   ]
 })
 export class AktualnosciModule {

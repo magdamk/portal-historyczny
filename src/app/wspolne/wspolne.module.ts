@@ -21,8 +21,8 @@ import { PotwierdzeniePopupComponent } from './komponenty/potwierdzenie-popup/po
 import { MatDialogModule } from '@angular/material/dialog';
 // import { PrzewijanyKomponentComponent } from './components/przewijany-komponent/przewijany-komponent.component';
 // import { MatSliderChange, MatSliderModule } from '@angular/material/slider';
-import { MatLegacySliderModule } from '@angular/material/legacy-slider';
-import { PrzewijanyKomponentComponent } from './komponenty/przewijany-komponent/przewijany-komponent.component';
+// import { MatLegacySliderModule } from '@angular/material/legacy-slider';
+// import { PrzewijanyKomponentComponent } from './komponenty/przewijany-komponent/przewijany-komponent.component';
 import { KontaktFormularzComponent } from './komponenty/kontakt-formularz/kontakt-formularz.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
@@ -46,7 +46,7 @@ import { ModulMapowyModule } from '../modul-mapowy/modul-mapowy.module';
     KomponentHostDirective,
     InformacjaPopupComponent,
     PotwierdzeniePopupComponent,
-    PrzewijanyKomponentComponent,
+    // PrzewijanyKomponentComponent,
     KontaktFormularzComponent,
     ZamienNaKbMbPipe,
   ],
@@ -60,7 +60,7 @@ import { ModulMapowyModule } from '../modul-mapowy/modul-mapowy.module';
     MatDialogModule,
     TranslateModule,
     MatSnackBarModule,
-    MatLegacySliderModule,
+    // MatLegacySliderModule,
     MatFormFieldModule,
     ReactiveFormsModule,
     MatCheckboxModule,
@@ -80,8 +80,8 @@ import { ModulMapowyModule } from '../modul-mapowy/modul-mapowy.module';
     StylizowanyKursorDirective,
     SnackbarKomunikatComponent,
     PotwierdzeniePopupComponent,
-    PrzewijanyKomponentComponent,
-    MatLegacySliderModule,
+    // PrzewijanyKomponentComponent,
+    // MatLegacySliderModule,
     ZamienNaKbMbPipe,
     KontaktFormularzComponent,
     KomponentHostDirective

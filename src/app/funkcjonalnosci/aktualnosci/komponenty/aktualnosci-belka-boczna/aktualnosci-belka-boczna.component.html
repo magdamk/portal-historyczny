@@ -4,7 +4,7 @@
       <h2 class="uppercase um-desktop:um-tytul um-naglowek-a">{{'codes.aktualnosci.aktualnosci' | translate}}</h2>
     </div>
     <div *ngIf="listaAktualnosci.length>0" class="tresc py-8">
-      <app-przewijany-komponent #przewijanyKomponent [stylBialy]="true">
+      <mm-przewijany-komponent #przewijanyKomponent [stylBialy]="true">
       <div>
         <div class="tresc-data flex um-aktualnosc">
           <mat-icon svgIcon="kalendarz" class="mr-4"></mat-icon>
@@ -18,7 +18,7 @@
              [innerHTML]="jezyk === 'pl' ? listaAktualnosci[aktualnyIndex]!.tresc : listaAktualnosci[aktualnyIndex]!.trescEn ">
         </div>
       </div>
-      </app-przewijany-komponent>
+      </mm-przewijany-komponent>
     </div>
   </div>
   <div class="nawigacja flex justify-center">

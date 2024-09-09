@@ -6,7 +6,8 @@ import { TlumaczeniaService } from '../../../../core/tlumaczenia/serwisy/tlumacz
 import { AktualnosciListaDto } from '../../../../core/modele/aktualnosci-lista-dto';
 // import { ControllerAktualnosciOpenService } from '../../../../core/api/controller-aktualnosci-open.service';
 import { ControllerAktualnosciService } from 'src/app/core/api/controller-aktualnosci.service';
-import { PrzewijanyKomponentComponent } from 'src/app/wspolne/komponenty/przewijany-komponent/przewijany-komponent.component';
+import { PrzewijanyKomponentComponent } from 'src/app/modul-mapowy/commons/komponenty/przewijany-komponent/przewijany-komponent.component';
+// import { PrzewijanyKomponentComponent } from 'src/app/wspolne/komponenty/przewijany-komponent/przewijany-komponent.component';
 /**
  * Komponent aktualności
  */
