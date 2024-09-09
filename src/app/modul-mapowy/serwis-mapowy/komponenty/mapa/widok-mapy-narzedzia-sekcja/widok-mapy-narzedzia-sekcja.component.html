@@ -1,5 +1,8 @@
-<div class="widok-mapy-narzedzia-sekcja"
-  >
-  <p>widok-mapy-narzedzia-sekcja works!</p>
-  <mm-widok-mapy></mm-widok-mapy>
+<div class="widok-mapy-narzedzia-sekcja">
+  <mm-widok-mapy (inicjalizacjaMapy)="inicjalizacjaMapy($event)"
+    *ngIf="mapa"
+    [mapa]="mapa"
+    [synchronizujZoomISrodek]="false"
+    [grupyWarstwPodkladowych]="grupyWarstwPodkladowych">
+  </mm-widok-mapy>
 </div>

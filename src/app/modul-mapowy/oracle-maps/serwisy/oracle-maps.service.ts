@@ -10,7 +10,7 @@ export const MAPVIEWER_KONFIGURACJA = {
   ZASOBY_SCIEZKA: '/jslib/v2',
   WARSTWY_PODKLADOWE_SCIEZKA: '/mcserver',
   WARSTWY_DYNAMICZNE_SCIEZKA: '/omserver',
-  BIBLIOTEKA_JS_PATH: 'https://testmapa.um.warszawa.pl/mapviewer/jslib/v2/oraclemapsv2_svg.js'
+  BIBLIOTEKA_JS_PATH: '/jslib/v2/oraclemapsv2_svg.js'
 };
 
 /**
@@ -64,6 +64,7 @@ export class OracleMapsService {
    * Funkcja dezaktywuje bibliotekę mapviewer
    */
   zniszczBiblioteke(): void {
+    console.log('oracle-maps service, zniszczBiblioteke');
     this.ladowanieBiblitekiSubject.next(false);
   }
 
@@ -71,6 +72,7 @@ export class OracleMapsService {
    * Funkcja pozwala pobrać event załadowania biblioteki
    */
   pobierzLadowanieBibliotekiSubject(): BehaviorSubject<boolean> {
+    console.log('oracle-maps service, pobierzLadowanieBibliotekiSubject');
     return this.ladowanieBiblitekiSubject;
   }
 

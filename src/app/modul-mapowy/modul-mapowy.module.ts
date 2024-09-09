@@ -15,6 +15,20 @@ import { WidokMapyComponent } from './serwis-mapowy/komponenty/mapa/widok-mapy/w
 import { InformacjeOObiekcieComponent } from './serwis-mapowy/komponenty/mapa/informacje-o-obiekcie/informacje-o-obiekcie.component';
 import { DomyslnaKonfiguracjaModulMapowyAdapter, KonfiguracjaModulMapowyAdapter } from './mm-core/providers/konfiguracja-adapter';
 import { GrupyWarstwPodkladowychModulMapowyAdapter, DomyslneGrupyWarstwPodkladowychAdapter } from './mm-core/providers/grupy-warstw-podkladowych-adapter';
+import { OracleMapsModule } from './oracle-maps/oracle-maps.module';
+import { DomyslnyDostepneWarstwyAdapter, DostepneWarstwyModulMapowyAdapter } from './mm-core/providers/dostepne-warstwy-adapter';
+import { MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+import { KomunikatyModulMapowyAdapter, DomyslneKomunikatyModulMapowyAdapter } from '../core/adaptery/komunikaty-adapter';
+import { KontaktZAdministratoremModulMapowyAdapter, DomyslnyKontaktZAdministratoremAdapter } from '../core/adaptery/kontakt-z-administratorem-adapter';
+// import { AnalizyPrzestrzenneModulMapowyAdapter, DomyslneAnalizyPrzstrzenneAdapter } from './mm-core/providers/analizy-przestrzenne-adapter';
+// import { CmentarzeModulMapowyAdapter, DomyslneCmentarzeAdapter } from './mm-core/providers/cmentarze-adapter';
+import { MapyModulMapowyAdapter, DomyslneMapyModulMapowyAdapter } from './mm-core/providers/mapy-adapter';
+import { MultimediaIZalacznikiModulMapowyAdapter, DomyslnyMultimediaIZalacznikiAdapter } from './mm-core/providers/multimedia-i-zalaczniki-adapter';
+// import { PasekCzasuModulMapowyAdapter, DomyslnyPasekCzasuModulMapowyAdapter } from './mm-core/providers/pasek-czasu-adapter';
+import { PobieranieDanychModulMapowyAdapter, DomyslnyPobieranieDanychAdapter } from './mm-core/providers/pobieranie-danych-adapter';
+import { PomocModulMapowyAdapter, DomyslnaPomocModulMapowyAdapter } from './mm-core/providers/pomoc-adapter';
+// import { UslugiZewnetrzneModulMapowyAdapter, DomyslneUslugiZewnetrzneAdapter } from './mm-core/providers/uslugi-zewnetrzne-adapter';
+import { WyszukiwarkaModulMapowyAdapter, DomyslnyWszukiwarkaAdapter } from './mm-core/providers/wyszukiwarka-adapter';
 
 
 @NgModule({
@@ -31,19 +45,38 @@ import { GrupyWarstwPodkladowychModulMapowyAdapter, DomyslneGrupyWarstwPodkladow
     CommonModule,
     CommonsModule,
     MatTooltipModule,
+    OracleMapsModule,
     RouterModule,
     TranslateModule,
   ],
   exports: [
     SerwisMapowyComponent,
     IkonaSvgDirective,
+    OracleMapsModule,
     TylkoDesktopDirective,
     TylkoMobileDirective
   ],
   providers: [
-    { provide: TlumaczeiaModulMapowyAdapter, useClass: DomyslnyTlumaczeniaModulMapowyAdapter },
-    { provide: KonfiguracjaModulMapowyAdapter, useClass: DomyslnaKonfiguracjaModulMapowyAdapter },
-    { provide: GrupyWarstwPodkladowychModulMapowyAdapter, useClass: DomyslneGrupyWarstwPodkladowychAdapter },
+    {provide: TlumaczeiaModulMapowyAdapter, useClass: DomyslnyTlumaczeniaModulMapowyAdapter},
+    {provide: DostepneWarstwyModulMapowyAdapter, useClass: DomyslnyDostepneWarstwyAdapter},
+    {provide: MapyModulMapowyAdapter, useClass: DomyslneMapyModulMapowyAdapter},
+    {provide: GrupyWarstwPodkladowychModulMapowyAdapter, useClass: DomyslneGrupyWarstwPodkladowychAdapter},
+    {provide: KomunikatyModulMapowyAdapter, useClass: DomyslneKomunikatyModulMapowyAdapter},
+    {provide: KontaktZAdministratoremModulMapowyAdapter, useClass: DomyslnyKontaktZAdministratoremAdapter},
+    {provide: KonfiguracjaModulMapowyAdapter, useClass: DomyslnaKonfiguracjaModulMapowyAdapter},
+    {provide: WyszukiwarkaModulMapowyAdapter, useClass: DomyslnyWszukiwarkaAdapter},
+    {provide: MultimediaIZalacznikiModulMapowyAdapter, useClass: DomyslnyMultimediaIZalacznikiAdapter},
+    {provide: PobieranieDanychModulMapowyAdapter, useClass: DomyslnyPobieranieDanychAdapter},
+    // {provide: CmentarzeModulMapowyAdapter, useClass: DomyslneCmentarzeAdapter},
+    // {provide: NieruchomosciModulMapowyAdapter, useClass: DomyslneNieruchomosciAdapter},
+    // {provide: UslugiZewnetrzneModulMapowyAdapter, useClass: DomyslneUslugiZewnetrzneAdapter},
+    // {provide: PasekCzasuModulMapowyAdapter, useClass: DomyslnyPasekCzasuModulMapowyAdapter},
+    {provide: PomocModulMapowyAdapter, useClass: DomyslnaPomocModulMapowyAdapter},
+    // {provide: AnalizyPrzestrzenneModulMapowyAdapter, useClass: DomyslneAnalizyPrzstrzenneAdapter},
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {disableClose: true, hasBackdrop: true}},
+    // { provide: TlumaczeiaModulMapowyAdapter, useClass: DomyslnyTlumaczeniaModulMapowyAdapter },
+    // { provide: KonfiguracjaModulMapowyAdapter, useClass: DomyslnaKonfiguracjaModulMapowyAdapter },
+    // { provide: GrupyWarstwPodkladowychModulMapowyAdapter, useClass: DomyslneGrupyWarstwPodkladowychAdapter },
   ]
 })
 export class ModulMapowyModule { }

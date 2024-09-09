@@ -1,11 +1,11 @@
 import { Injectable, NgModule } from '@angular/core';
-import {BrowserModule, HAMMER_GESTURE_CONFIG, HammerGestureConfig, HammerModule} from '@angular/platform-browser';
+import { BrowserModule, HAMMER_GESTURE_CONFIG, HammerGestureConfig, HammerModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
-import {JezykInterceptor} from './core/interceptory/jezyk.interceptor';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
+import { JezykInterceptor } from './core/interceptory/jezyk.interceptor';
 // import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { WspolneModule } from './wspolne/wspolne.module';
@@ -48,16 +48,16 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     WspolneModule,
   ],
 
-  providers: [ {
+  providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: JezykInterceptor,
     multi: true,
   },
-  // {
-  //   provide: HAMMER_GESTURE_CONFIG,
-  //   useClass: MyHammerConfig,
-  // },
-],
+    // {
+    //   provide: HAMMER_GESTURE_CONFIG,
+    //   useClass: MyHammerConfig,
+    // },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

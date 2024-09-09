@@ -70,13 +70,14 @@ export class OracleMapsDirective implements AfterViewInit, OnInit, OnDestroy {
    * Funkcja ładująca mapę
    */
   private zaladujMape(): void {
+    console.log('oracle-maps directive zaladujMape');
     OM.gv.setResourcePath(this.konfiguracja.pobierzMapViewerUrl() + MAPVIEWER_KONFIGURACJA.ZASOBY_SCIEZKA);
     OM.gv.setLogLevel('severe');
     const myUniverse = new OM.universe.Universe(
       {
         srid: 2178,
         bounds: new OM.geometry.Rectangle(7489860.71, 5773789.51, 7518549.17, 5803861.96, 2178),
-        numberOfZoomLevels: 19
+        numberOfZoomLevels: 18
       });
     this.kontenerMapy = this.el.nativeElement;
     this.mapView = new OM.Map(this.kontenerMapy, {
@@ -88,7 +89,7 @@ export class OracleMapsDirective implements AfterViewInit, OnInit, OnDestroy {
     });
     this.mapView.enableZoomAnimation(false);
     this.mapView.setZoomLevelRange(0, 18);
-    this.mapView.init();
+    console.log('oracle-maps directive zaladujMape',this.mapView);
     this.mapaUtworzonaZmiana.emit(this.mapView);
   }
 }

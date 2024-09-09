@@ -13,7 +13,7 @@ export class MapaUtils {
    */
   static utworPustaMape(nazwa: string): Mapa {
     return {
-      uuid: uuidv4(),
+      uuid: '1111',
       nazwa: {pl: nazwa, en: ''},
       opisWPortaluMapowym: {pl: '', en: ''},
       srodekMapyY: undefined,

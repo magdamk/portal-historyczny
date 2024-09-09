@@ -33,7 +33,7 @@ import { WidokMapyMapaSzczegolyDto } from '../modele/widok-mapy-mapa-szczegoly-d
 })
 export class ControllerMapyOpenService {
 
-    protected basePath = 'http://localhost:7002/modul-mapowy';
+    protected basePath = 'https://testmapa.um.warszawa.pl/api/modul-mapowy';
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
     public encoder: HttpParameterCodec;

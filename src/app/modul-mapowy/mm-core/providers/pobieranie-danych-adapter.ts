@@ -1,5 +1,5 @@
-import {Observable} from 'rxjs';
-import {GeoJson} from '../../serwis-mapowy/utils/obiekty-mapy-utils';
+import { Observable } from 'rxjs';
+import { GeoJson } from '../../serwis-mapowy/utils/obiekty-mapy-utils';
 
 export interface PobieranieDanych {
   format: string;

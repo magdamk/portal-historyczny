@@ -19,7 +19,7 @@ export interface MultimediaIZalacznikiAdapter {
    * @param zrodloMVC
    * @param idObiektu
    */
-  pobierzZalaczniki(nazwaMVC: string, zrodloMVC: string, idObiektu: string): Observable<ListaPlikow>;
+  // pobierzZalaczniki(nazwaMVC: string, zrodloMVC: string, idObiektu: string): Observable<ListaPlikow>;
 
   /**
    * Funkcja pobiera multimedia

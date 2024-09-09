@@ -29,7 +29,7 @@ import { Configuration }                                     from './configurati
 })
 export class ControllerDostepnoscSerwisuOpenService {
 
-    protected basePath = 'http://localhost:7002/modul-mapowy';
+    protected basePath = 'http://testmapa.um.warszawa.pl/api/modul-mapowy';
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
     public encoder: HttpParameterCodec;

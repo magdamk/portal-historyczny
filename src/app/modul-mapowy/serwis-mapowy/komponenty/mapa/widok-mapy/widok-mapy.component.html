@@ -1,8 +1,6 @@
 <div class="mapa">
   <div #pasekSkali></div>
-  <div class="widok-mapy" *ngIf="mapa && grupyWarstwPodkladowych?.length"
-  mmOracleMaps
-
-    >
+  <div class="widok-mapy" *ngIf="mapa && grupyWarstwPodkladowych?.length" mmOracleMaps
+    (mapaUtworzonaZmiana)="widokMapyUtworzony($event)">
   </div>
 </div>

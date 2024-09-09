@@ -1,13 +1,14 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {WcagModule} from '../wcag/wcag.module';
-import {SzablonyModule} from '../../core/szablony/szablony.module';
-import {StronaStartowaRoutingModule} from './strona-startowa-routing.module';
-import {KontaktModule} from '../kontakt/kontakt.module';
-import {WspolneModule} from '../../wspolne/wspolne.module';
-import {StronyModule} from './strony/strony.module';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { WcagModule } from '../wcag/wcag.module';
+import { SzablonyModule } from '../../core/szablony/szablony.module';
+import { StronaStartowaRoutingModule } from './strona-startowa-routing.module';
+import { KontaktModule } from '../kontakt/kontakt.module';
+import { WspolneModule } from '../../wspolne/wspolne.module';
+import { StronyModule } from './strony/strony.module';
 // import {ModulMapowyModule} from "@modul-mapowy"
-import {HammerModule} from '@angular/platform-browser';
+import { HammerModule } from '@angular/platform-browser';
+import { ModulMapowyModule } from 'src/app/modul-mapowy/modul-mapowy.module';
 
 /**
  * Definicja modułu
@@ -24,7 +25,7 @@ import {HammerModule} from '@angular/platform-browser';
     StronyModule,
     WcagModule,
     HammerModule,
-    // ModulMapowyModule
+    ModulMapowyModule
   ],
 })
 export class StronaStartowaModule {

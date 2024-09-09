@@ -186,7 +186,7 @@ export class DomyslnaKonfiguracjaModulMapowyAdapter extends KonfiguracjaModulMap
    * Funkcja zwraca adres serwera mapviewer
    */
   pobierzMapViewerUrl(): string {
-    return 'https://mapviewer.um-warszawa.corp.nekken.pl/mapviewer';
+    return 'https://testmapa.um.warszawa.pl/mapviewer';
   }
 
   /**

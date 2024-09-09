@@ -41,6 +41,7 @@ export class TlumaczeniaService {
    */
   spawdzPoprawnoscJezyka() {
     if (this.zmianaJezykaSubject$.getValue() !== this.translate.currentLang) {
+      console.log('tłumaczenia serwis: ', this.translate.currentLang);
       this.zmianaJezykaSubject$.next(this.translate.currentLang);
     }
   }

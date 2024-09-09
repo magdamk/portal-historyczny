@@ -1,6 +1,7 @@
 import {MatSnackBar} from '@angular/material/snack-bar';
-import {TlumaczeniaService} from '../tlumaczenia/serwisy/tlumaczenia.service';
+// import {TlumaczeniaService} from '../tlumaczenia/serwisy/tlumaczenia.service';
 import {Injectable} from '@angular/core';
+import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/mm-tlumaczenia.service';
 
 /**
  * Obiekt zawierający ustawienia komunikatu
