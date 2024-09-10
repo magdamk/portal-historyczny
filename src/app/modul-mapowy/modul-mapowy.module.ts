@@ -33,6 +33,9 @@ import { KontrolerWarstwPodkladowychComponent } from './serwis-mapowy/komponenty
 import { WyborTlumaczeniaPipe } from './serwis-mapowy/pipes/wybor-tlumaczenia.pipe';
 import { PrzewijanyKomponentComponent } from './commons/komponenty/przewijany-komponent/przewijany-komponent.component';
 import { MatLegacySliderModule } from '@angular/material/legacy-slider';
+import { SterowanieMapyComponent } from './serwis-mapowy/komponenty/mapa/sterowanie-mapy/sterowanie-mapy.component';
+import { MapaSpinnerComponent } from './serwis-mapowy/komponenty/mapa/mapa-spinner/mapa-spinner.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -40,17 +43,20 @@ import { MatLegacySliderModule } from '@angular/material/legacy-slider';
     SerwisMapowyComponent,
     PasekStanuComponent,
     // PrzewijanyKomponentComponent,
+    SterowanieMapyComponent,
     TylkoDesktopDirective,
     TylkoMobileDirective,
     WidokMapyNarzedziaSekcjaComponent,
     WidokMapyComponent,
     InformacjeOObiekcieComponent,
     KontrolerWarstwPodkladowychComponent,
-    WyborTlumaczeniaPipe
+    WyborTlumaczeniaPipe,
+    MapaSpinnerComponent,
   ],
   imports: [
     CommonModule,
     CommonsModule,
+    MatProgressSpinnerModule,
     MatTooltipModule,
     OracleMapsModule,
     RouterModule,
@@ -66,23 +72,23 @@ import { MatLegacySliderModule } from '@angular/material/legacy-slider';
     TylkoMobileDirective
   ],
   providers: [
-    {provide: TlumaczeiaModulMapowyAdapter, useClass: DomyslnyTlumaczeniaModulMapowyAdapter},
-    {provide: DostepneWarstwyModulMapowyAdapter, useClass: DomyslnyDostepneWarstwyAdapter},
-    {provide: MapyModulMapowyAdapter, useClass: DomyslneMapyModulMapowyAdapter},
-    {provide: GrupyWarstwPodkladowychModulMapowyAdapter, useClass: DomyslneGrupyWarstwPodkladowychAdapter},
-    {provide: KomunikatyModulMapowyAdapter, useClass: DomyslneKomunikatyModulMapowyAdapter},
-    {provide: KontaktZAdministratoremModulMapowyAdapter, useClass: DomyslnyKontaktZAdministratoremAdapter},
-    {provide: KonfiguracjaModulMapowyAdapter, useClass: DomyslnaKonfiguracjaModulMapowyAdapter},
-    {provide: WyszukiwarkaModulMapowyAdapter, useClass: DomyslnyWszukiwarkaAdapter},
-    {provide: MultimediaIZalacznikiModulMapowyAdapter, useClass: DomyslnyMultimediaIZalacznikiAdapter},
-    {provide: PobieranieDanychModulMapowyAdapter, useClass: DomyslnyPobieranieDanychAdapter},
+    { provide: TlumaczeiaModulMapowyAdapter, useClass: DomyslnyTlumaczeniaModulMapowyAdapter },
+    { provide: DostepneWarstwyModulMapowyAdapter, useClass: DomyslnyDostepneWarstwyAdapter },
+    { provide: MapyModulMapowyAdapter, useClass: DomyslneMapyModulMapowyAdapter },
+    { provide: GrupyWarstwPodkladowychModulMapowyAdapter, useClass: DomyslneGrupyWarstwPodkladowychAdapter },
+    { provide: KomunikatyModulMapowyAdapter, useClass: DomyslneKomunikatyModulMapowyAdapter },
+    { provide: KontaktZAdministratoremModulMapowyAdapter, useClass: DomyslnyKontaktZAdministratoremAdapter },
+    { provide: KonfiguracjaModulMapowyAdapter, useClass: DomyslnaKonfiguracjaModulMapowyAdapter },
+    { provide: WyszukiwarkaModulMapowyAdapter, useClass: DomyslnyWszukiwarkaAdapter },
+    { provide: MultimediaIZalacznikiModulMapowyAdapter, useClass: DomyslnyMultimediaIZalacznikiAdapter },
+    { provide: PobieranieDanychModulMapowyAdapter, useClass: DomyslnyPobieranieDanychAdapter },
     // {provide: CmentarzeModulMapowyAdapter, useClass: DomyslneCmentarzeAdapter},
     // {provide: NieruchomosciModulMapowyAdapter, useClass: DomyslneNieruchomosciAdapter},
     // {provide: UslugiZewnetrzneModulMapowyAdapter, useClass: DomyslneUslugiZewnetrzneAdapter},
     // {provide: PasekCzasuModulMapowyAdapter, useClass: DomyslnyPasekCzasuModulMapowyAdapter},
-    {provide: PomocModulMapowyAdapter, useClass: DomyslnaPomocModulMapowyAdapter},
+    { provide: PomocModulMapowyAdapter, useClass: DomyslnaPomocModulMapowyAdapter },
     // {provide: AnalizyPrzestrzenneModulMapowyAdapter, useClass: DomyslneAnalizyPrzstrzenneAdapter},
-    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {disableClose: true, hasBackdrop: true}},
+    { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { disableClose: true, hasBackdrop: true } },
     // { provide: TlumaczeiaModulMapowyAdapter, useClass: DomyslnyTlumaczeniaModulMapowyAdapter },
     // { provide: KonfiguracjaModulMapowyAdapter, useClass: DomyslnaKonfiguracjaModulMapowyAdapter },
     // { provide: GrupyWarstwPodkladowychModulMapowyAdapter, useClass: DomyslneGrupyWarstwPodkladowychAdapter },
