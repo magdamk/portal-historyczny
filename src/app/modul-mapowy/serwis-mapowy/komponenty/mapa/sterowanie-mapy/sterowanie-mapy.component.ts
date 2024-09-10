@@ -10,13 +10,13 @@ import { MapaSpinnerComponent } from '../mapa-spinner/mapa-spinner.component';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
-import { InterfejsUzytkownikaStan } from '../../../../stan/interfejs-uzytkownika/interfejs-uzytkownika.reducer';
-// import {SterowanieMapyService} from '../../../serwisy/sterowanie-mapy.service';
+// import { InterfejsUzytkownikaStan } from '../../../../stan/interfejs-uzytkownika/interfejs-uzytkownika.reducer';
 import { debounceTime, tap } from 'rxjs/operators';
-import { NarzedziaState } from '../../../../stan/narzedzia/narzedzia.reducer';
-import { NARZEDZIA_STERUJACE_ID } from '../../../../stan/narzedzia/narzedzia.const';
-import { KomunikatyModulMapowyAdapter } from 'src/app/modul-mapowy/mm-core/providers/komunikaty-adapter';
+// import { NarzedziaState } from '../../../../stan/narzedzia/narzedzia.reducer';
+// import { NARZEDZIA_STERUJACE_ID } from '../../../../stan/narzedzia/narzedzia.const';
+import { DomyslneKomunikatyModulMapowyAdapter, KomunikatyModulMapowyAdapter } from 'src/app/modul-mapowy/mm-core/providers/komunikaty-adapter';
 import { AktualizacjaKomponentuService } from 'src/app/modul-mapowy/commons/serwisy/aktualizacja-komponentu.service';
+import { SterowanieMapyService } from '../../../serwisy/sterowanie-mapy.service';
 
 declare var OM: OM;
 
@@ -30,7 +30,8 @@ export interface LokalizacjaUzytkownikaEvent {
 @Component({
   selector: 'mm-sterowanie-mapy',
   templateUrl: './sterowanie-mapy.component.html',
-  styleUrls: ['./sterowanie-mapy.component.scss']
+  styleUrls: ['./sterowanie-mapy.component.scss'],
+  providers:[{ provide: KomunikatyModulMapowyAdapter, useClass: DomyslneKomunikatyModulMapowyAdapter },]
 })
 export class SterowanieMapyComponent implements OnInit, OnDestroy {
 
@@ -47,12 +48,12 @@ export class SterowanieMapyComponent implements OnInit, OnDestroy {
   markerUzytkownika?: MapMarker;
 
   spinnerRef?: MatDialogRef<MapaSpinnerComponent>;
-  interfejsUzytkownika$: Observable<InterfejsUzytkownikaStan>;
-  narzedzia$: Observable<NarzedziaState>;
+  // interfejsUzytkownika$: Observable<InterfejsUzytkownikaStan>;
+  // narzedzia$: Observable<NarzedziaState>;
 
   lokalizacjaUzytkownikaSubscription?: Subscription;
 
-  subbscriptions$ = new Subscription();
+  subscriptions$ = new Subscription();
   marginesDolnyWlaczony = false;
 
   /**
@@ -66,8 +67,9 @@ export class SterowanieMapyComponent implements OnInit, OnDestroy {
     private komunikaty: KomunikatyModulMapowyAdapter,
     private aktualizacjaKomponentu: AktualizacjaKomponentuService,
     private eref: ElementRef) {
-    this.interfejsUzytkownika$ = store.select('modulMapowy', 'interfejsUzytkownika');
-    this.narzedzia$ = store.select('modulMapowy', 'narzedzia');
+      console.log('sterowanie-mapy konstruktor',this.mapView);
+    // this.interfejsUzytkownika$ = store.select('modulMapowy', 'interfejsUzytkownika');
+    // this.narzedzia$ = store.select('modulMapowy', 'narzedzia');
   }
 
   /**
@@ -76,10 +78,10 @@ export class SterowanieMapyComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.przygotujWarstweDlaLokalizacjiUzytkowika();
     this.obslugaSpinnera();
-    this.subbscriptions$.add(this.sterowanieMapy.pobierszSubjectZmianyLokalizacjiUzytkownika().subscribe(punkt => {
+    this.subscriptions$.add(this.sterowanieMapy.pobierszSubjectZmianyLokalizacjiUzytkownika().subscribe(punkt => {
       this.ustawPozycjeUzytkonikaWWidokuMapy(punkt);
     }));
-    this.subbscriptions$.add(this.sterowanieMapy.pobierzSubjectWidocznosciSpinner().subscribe(widoczny => {
+    this.subscriptions$.add(this.sterowanieMapy.pobierzSubjectWidocznosciSpinner().subscribe(widoczny => {
       this.ustawWidocznoscSpinnera(widoczny);
     }));
     if (this.udostepnionaLokalizacja) {
@@ -92,17 +94,17 @@ export class SterowanieMapyComponent implements OnInit, OnDestroy {
    * Cykl życia komponentu niszczenie
    */
   ngOnDestroy(): void {
-    this.subbscriptions$.unsubscribe();
+    this.subscriptions$.unsubscribe();
   }
 
   /**
    * Funkcja ustawia margines dla przycisków w przypadku widocznej wyszukiwarki nieruchomości
    */
   private ustawMarginesDolny() {
-    this.subbscriptions$.add(this.narzedzia$.subscribe(stan => {
-      this.marginesDolnyWlaczony = stan.narzedziaSterujace[0].id === NARZEDZIA_STERUJACE_ID.NIERUCHOMOSCI;
-    }
-    ));
+    // this.subbscriptions$.add(this.narzedzia$.subscribe(stan => {
+    //   this.marginesDolnyWlaczony = stan.narzedziaSterujace[0].id === NARZEDZIA_STERUJACE_ID.NIERUCHOMOSCI;
+    // }
+    // ));
   }
 
 
@@ -110,7 +112,7 @@ export class SterowanieMapyComponent implements OnInit, OnDestroy {
    * Funkcja zarządza spinnerem mapy
    */
   obslugaSpinnera() {
-    this.subbscriptions$.add(this.pobierzZdarzeniaZoom()
+    this.subscriptions$.add(this.pobierzZdarzeniaZoom()
       .pipe(tap(wlaczenieSpinnera => {
         if (!wlaczenieSpinnera) {
           this.ukryjSpinner();
@@ -221,7 +223,7 @@ export class SterowanieMapyComponent implements OnInit, OnDestroy {
       this.markerUzytkownika = new OM.MapMarker({
         id: 'marker-uzytkownika',
         renderingStyle: new OM.style.Marker({
-          src: 'assets/modul-mapowy/ikony/lokalizacja_uzytkownika.svg',
+          src: 'assets/ikony/lokalizacja_uzytkownika.svg',
           width: 20,
           height: 20,
           styleName: ''
@@ -240,7 +242,7 @@ export class SterowanieMapyComponent implements OnInit, OnDestroy {
     const marker = new OM.MapMarker({
       id: 'marker-uzytkownika',
       renderingStyle: new OM.style.Marker({
-        src: 'assets/modul-mapowy/ikony/moja_lokalizacja.svg',
+        src: 'assets/ikony/moja_lokalizacja.svg',
         width: 40,
         height: 50,
         yOffset: -25,
