@@ -1,0 +1,49 @@
+<div class="aktywator-narzedzi-mobilnych">
+  <mm-przycisk-ikona ikona="menu" [typ]="PRZYCISK.BIALO_CZARNY" *ngIf="!oknoWidoczne"
+                      (click)="zmienStanOkna()"></mm-przycisk-ikona>
+  <mm-przycisk-ikona ikona="zamknij" [typ]="PRZYCISK.BIALO_CZARNY" *ngIf="oknoWidoczne"
+                      (click)="zmienStanOkna()"></mm-przycisk-ikona>
+</div>
+<div class="okno-narzedzi-mobilnych" [class.widoczne]="oknoWidoczne">
+  <div>
+    <div class="funkcje-pomocnicze">
+      <mm-przycisk-mydlo ikona="letter"
+                          (click)="pokazFormlarzKontaktuZAdministratorem()"
+                          label="{{'codes.modul-mapowy.generyczne.formularz-kontaktowy' | translate}}"></mm-przycisk-mydlo>
+      <mm-przycisk-mydlo ikona="pomoc" (click)="pokazFormularzPomocy()"
+                          label="{{'codes.modul-mapowy.generyczne.pomoc' | translate}}"></mm-przycisk-mydlo>
+      <mm-przycisk-mydlo ikona="en" *ngIf="aktualnyJezyk==='pl'"
+                          (click)="zmienJezyk()"
+                          label="{{'codes.modul-mapowy.generyczne.jezyk-angielski' | translate}}">
+      </mm-przycisk-mydlo>
+      <mm-przycisk-mydlo ikona="pl" *ngIf="aktualnyJezyk ==='en'"
+                          (click)="zmienJezyk()"
+                          label="{{'codes.modul-mapowy.generyczne.jezyk-angielski' | translate}}">
+      </mm-przycisk-mydlo>
+    </div>
+    <div class="narzedzia-zawansowane">
+      <!-- <div class="dokonaj-pomiaru"
+           (click)="uruchomNarzedzie(NARZEDZIA_IDENTYFIKATORY.DOKONAJ_POMIARU)">
+        <span class="naglowek-b">{{'codes.menu.zmierz-funkcja-eksperymentalna' | translate}}</span>
+        <mm-przycisk-ikona ikona="dokonaj_pomiaru" [typ]="PRZYCISK.CZARNY"></mm-przycisk-ikona>
+      </div>
+      <div class="przejdz-do-wpolzednych"
+           (click)="uruchomNarzedzie(NARZEDZIA_IDENTYFIKATORY.PRZEJDZ_DO_WSPOLRZEDNYCH)">
+        <span class="naglowek-b">{{'codes.obsluga-narzedzi.przejdz-do-wspolrzednych' | translate}}</span>
+        <mm-przycisk-ikona ikona="przejdz_do_wspolrzednych" [typ]="PRZYCISK.CZARNY"></mm-przycisk-ikona>
+      </div> -->
+    </div>
+    <div class="narzedzia-podstawowe">
+      <mm-przycisk-ikona ikona="informacje"
+                          label="{{'codes.modul-mapowy.generyczne.informacje' | translate}}"
+                          (click)="uruchomNarzedzieInfomracjiOMapie()"
+                          [typ]="PRZYCISK.CZARNY"></mm-przycisk-ikona>
+      <mm-przycisk-ikona *ngIf="czyUdostepnianieWidoczne"
+                          ikona="udostepnij"
+                          (click)="pokarzFormularzUdostepniania()"
+                          label="{{'codes.modul-mapowy.obsluga-narzedzi.udostepnij' | translate}}"
+                          [typ]="PRZYCISK.CZARNY"></mm-przycisk-ikona>
+    </div>
+  </div>
+  <ng-template mmKomponentHost></ng-template>
+</div>

@@ -1,0 +1,64 @@
+@import "../../../../../../style/mm-style/mm-konfiguracja-szablonu.scss";
+
+.aktywator-narzedzi-mobilnych {
+  height: $legenda-kontrolki-romiar;
+  width: $legenda-kontrolki-romiar;
+}
+
+.okno-narzedzi-mobilnych {
+  position: absolute;
+  top: $legenda-kontrolki-romiar;
+  left: 0;
+  width: 100%;
+  min-height: calc(100% - #{$pasek-narzedzi-wysokosc});
+  background: black;
+  z-index: 900;
+  display: none;
+  padding: 50px 50px 0px 50px;
+  .funkcje-pomocnicze {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+    mm-przycisk-mydlo {
+      margin-right: 10px;
+    }
+  }
+
+  .narzedzia-zawansowane {
+    .dokonaj-pomiaru, .przejdz-do-wpolzednych {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 0;
+      border-top: 1px solid $miasto-szary;
+      span {
+        color: $miasto-bialy;
+      }
+      mm-przycisk-ikona {
+        height: $legenda-kontrolki-romiar;
+        width: $legenda-kontrolki-romiar;
+      }
+    }
+    .przejdz-do-wpolzednych {
+      border-bottom: 1px solid $miasto-szary;
+    }
+  }
+
+  .narzedzia-podstawowe {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 0px 0px 0px;
+    mm-przycisk-ikona {
+      height: 50px;
+      width: 50px;
+    }
+  }
+}
+
+.okno-narzedzi-mobilnych.widoczne {
+  display: block;
+}

@@ -15,13 +15,12 @@
         [grupyWarstwPodkladowych]="grupyWarstwPodkladowych">
       </mm-kontroler-narzedzi-podstawowych>
     </div> -->
+    <mm-mobilny-kontroler-narzedzi [mapa]="mapa" *mmTylkoMobile></mm-mobilny-kontroler-narzedzi>
     <mm-kontroler-funkcji-dodatkowych *mmTylkoDesktop></mm-kontroler-funkcji-dodatkowych>
   </div>
   <div class="kontener">
     <div class="obszar-widokow">
-      <mm-widok-mapy-narzedzia-sekcja
-        [mapa]="mapa"
-        [grupyWarstwPodkladowych]="grupyWarstwPodkladowych">
+      <mm-widok-mapy-narzedzia-sekcja [mapa]="mapa" [grupyWarstwPodkladowych]="grupyWarstwPodkladowych">
       </mm-widok-mapy-narzedzia-sekcja>
     </div>
   </div>
