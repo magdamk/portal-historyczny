@@ -1,6 +1,6 @@
-import {MatSnackBar} from '@angular/material/snack-bar';
-import {TlumaczeniaService} from '../tlumaczenia/serwisy/tlumaczenia.service';
-import {Injectable} from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { TlumaczeniaService } from '../tlumaczenia/serwisy/tlumaczenia.service';
+import { Injectable } from '@angular/core';
 
 /**
  * Obiekt zawierający ustawienia komunikatu
@@ -69,7 +69,7 @@ export class DomyslneKomunikatyModulMapowyAdapter extends KomunikatyModulMapowyA
    * @param opcje
    */
   pokazKomunikatBledu(wiadomoscLubKlucz: string, opcje?: OpcjeKomunikatu): void {
-    this.snackBar.open(this.tlumaczeniaSerwis.przetlumacz(wiadomoscLubKlucz), '', {...opcje, panelClass: 'komunikaty-blad'});
+    this.snackBar.open(this.tlumaczeniaSerwis.przetlumacz(wiadomoscLubKlucz), '', { ...opcje, panelClass: 'komunikaty-blad' });
   }
 
   /**
@@ -78,7 +78,7 @@ export class DomyslneKomunikatyModulMapowyAdapter extends KomunikatyModulMapowyA
    * @param opcje
    */
   pokazPomyslnyKomunikat(wiadomoscLubKlucz: string, opcje?: OpcjeKomunikatu): void {
-    this.snackBar.open(this.tlumaczeniaSerwis.przetlumacz(wiadomoscLubKlucz), '', {...opcje, panelClass: 'komunikaty-sukces'});
+    this.snackBar.open(this.tlumaczeniaSerwis.przetlumacz(wiadomoscLubKlucz), '', { ...opcje, panelClass: 'komunikaty-sukces' });
   }
 
 }

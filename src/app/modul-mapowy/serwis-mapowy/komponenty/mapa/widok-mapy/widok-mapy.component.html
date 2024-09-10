@@ -12,4 +12,15 @@
       (zmianaPodkladu)="przelaczonoMapePodkladowa($event)">
     </mm-kontroler-warstw-podkladowych>
   </div>
+  <div class="sterowanie-mapy">
+    <mm-sterowanie-mapy *ngIf="mapView!"
+                         [sterowanieMapyWidoczne]="sterowanieMapyWidoczne"
+                         [udostepnionaLokalizacja]="mapa?.udostepnionaLokalizacja"
+                         [mapView]="mapView">
+    </mm-sterowanie-mapy>
+  </div>
+  <mm-klikalnosc-na-mapie *ngIf="mapView && mapa && generowanieZdarzenMyszy"
+                           [mapView]="mapView"
+                           [mapa]="mapa"
+  ></mm-klikalnosc-na-mapie>
 </div>

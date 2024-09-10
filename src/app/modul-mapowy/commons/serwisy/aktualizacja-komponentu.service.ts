@@ -1,5 +1,5 @@
 import {ElementRef, Injectable, OnDestroy} from '@angular/core';
-import {Store} from '@ngrx/store';
+// import {Store} from '@ngrx/store';
 // import {InterfejsUzytkownikaStan} from '../../stan/interfejs-uzytkownika/interfejs-uzytkownika.reducer';
 import {Subscription} from 'rxjs';
 
@@ -19,7 +19,9 @@ export class AktualizacjaKomponentuService implements OnDestroy {
    * Konstruktor
    * @param store - serwis zarządzania stanem
    */
-  constructor(private store: Store<{ modulMapowy: any }>) {
+  constructor(
+    // private store: Store<{ modulMapowy: any }>
+  ) {
     this.subskrybujStanInterfejsu();
   }
 

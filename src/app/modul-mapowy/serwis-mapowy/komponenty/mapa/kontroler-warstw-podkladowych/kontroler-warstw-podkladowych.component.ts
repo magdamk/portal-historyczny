@@ -1,9 +1,6 @@
 import { Component, ElementRef, EventEmitter, HostListener, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { GrupaWarstwPodkladowych } from '../../../modele/grupa-warstw-podkladowych';
-// import {PRZYCISK_IKONA_TYP} from '../../../../wspolne/komponenty/przycisk-ikona/przycisk-ikona.component';
 import { Subscription } from "rxjs";
-// import {GlobalneZdarzeniaService} from '../../../serwisy/globalne-zdarzenia.service';
-// import {TlumaczeniaService} from "../../../../core/tlumaczenia/serwisy/tlumaczenia.service";
 import { Mapa } from '../../../modele/mapa';
 import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/mm-tlumaczenia.service';
 import { PRZYCISK_IKONA_TYP } from 'src/app/modul-mapowy/commons/komponenty/przycisk-ikona/przycisk-ikona.component';

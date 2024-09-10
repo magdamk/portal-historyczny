@@ -28,7 +28,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ZamienNaKbMbPipe } from './pipes/zamien-na-kb-mb.pipe';
 import { KomponentHostDirective } from './dyrektywy/komponent-host.directive';
 import { ModulMapowyModule } from '../modul-mapowy/modul-mapowy.module';

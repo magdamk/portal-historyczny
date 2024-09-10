@@ -29,7 +29,8 @@ export const UM_IKONY = {
   wcagProstaCzcionka: 'wcag-prosta-czcionka',
   wcagResetUstawien: 'wcag-reset-ustawien',
   komunikatNegatywny: 'komunikat_negatywny',
-  komunikatPozytywny: 'komunikat_pozytywny'
+  komunikatPozytywny: 'komunikat_pozytywny',
+  wyznaczLokalizajce: 'wyznacz_lokalizacje'
 }
 
 /**
@@ -77,6 +78,7 @@ export class IkonySvgComponent{
     iconRegistry.addSvgIcon('wcag-reset-ustawien', sanitizer.bypassSecurityTrustResourceUrl('assets/ikony/wcag_reset_ustawien.svg'));
     iconRegistry.addSvgIcon('komunikat-negatywny', sanitizer.bypassSecurityTrustResourceUrl('assets/ikony/komunikat_negatywny.svg'));
     iconRegistry.addSvgIcon('komunikat-pozytywny', sanitizer.bypassSecurityTrustResourceUrl('assets/ikony/komunikat_pozytywny.svg'));
+    iconRegistry.addSvgIcon('wyznacz_lokalizacje', sanitizer.bypassSecurityTrustResourceUrl('assets/ikony/wyznacz_lokalizacje.svg'));
   }
 
 }

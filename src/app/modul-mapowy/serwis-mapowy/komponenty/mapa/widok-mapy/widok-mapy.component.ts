@@ -4,7 +4,7 @@ import { Map } from '../../../../oracle-maps/types/map';
 import { OM } from '../../../../oracle-maps/types/om';
 import { ScaleBar } from 'src/app/modul-mapowy/oracle-maps/types/scale-bar';
 import { debounceTime, Observable, Subscription, throttleTime } from 'rxjs';
-import { MapaService } from '../../../serwisy/mapa.service';
+import { AktualizacjaZoomISrodkaEvent, MapaService } from '../../../serwisy/mapa.service';
 import { AktualizacjaKomponentuService } from 'src/app/modul-mapowy/commons/serwisy/aktualizacja-komponentu.service';
 import { KonfiguracjaModulMapowyAdapter } from 'src/app/modul-mapowy/mm-core/providers/konfiguracja-adapter';
 import { GrupaWarstwPodkladowych } from '../../../modele/grupa-warstw-podkladowych';
@@ -60,21 +60,21 @@ export class WidokMapyComponent implements OnInit, OnDestroy {
    * Cykl życia komponentu inicjalizacja
    */
   ngOnInit(): void {
-    console.log('widok mapy on init:', this.mapaService.mapaZaladowane);
-    // this.konfigurujSynchronizacjeMap();
-    // this.subskryocje$.add(this.mapaService.pobierzSubjectAktualizacjiWarstwy().subscribe(mapa => {
-    //   if (mapa && this.mapa && mapa.uuid === this.mapa.uuid) {
-    //     this.mapa = mapa;
-    //     this.aktualizujWarstwyWWidokuMapy(this.mapa);
-    //     //TODO Po aktualizacja komponentu mapy rerenderowanie mapy przy zmianie warstwy tail nie jest już konieczne
-    //     //TODO jezeli problem nie wróci to funkcja do usunięcia
-    //     // this.rerenderujMapeJezeliPosiadaWarstweTail(this.mapa.warstwy);
-    //   }
-    // }));
-    // this.subskryocje$.add(this.mapaService.pobierzSubjectUsuwaniaWarstwy().subscribe(warstwa => {
-    //   if (warstwa?.uuidMapy === this.mapa?.uuid)
-    //     this.usunWarstweZWidokuMapy(warstwa?.warstwa);
-    // }));
+    console.log('widok mapy on init:');
+    this.konfigurujSynchronizacjeMap();
+    this.subskryocje$.add(this.mapaService.pobierzSubjectAktualizacjiWarstwy().subscribe(mapa => {
+      if (mapa && this.mapa && mapa.uuid === this.mapa.uuid) {
+        this.mapa = mapa;
+        this.aktualizujWarstwyWWidokuMapy(this.mapa);
+        //TODO Po aktualizacja komponentu mapy rerenderowanie mapy przy zmianie warstwy tail nie jest już konieczne
+        //TODO jezeli problem nie wróci to funkcja do usunięcia
+        // this.rerenderujMapeJezeliPosiadaWarstweTail(this.mapa.warstwy);
+      }
+    }));
+    this.subskryocje$.add(this.mapaService.pobierzSubjectUsuwaniaWarstwy().subscribe(warstwa => {
+      if (warstwa?.uuidMapy === this.mapa?.uuid)
+        this.usunWarstweZWidokuMapy(warstwa?.warstwa);
+    }));
   }
 
   /**
@@ -109,8 +109,9 @@ export class WidokMapyComponent implements OnInit, OnDestroy {
       console.log('widok-mapy inicjuj mape', this.mapView);
       this.zarejestrujObslugeZdarzenMapy();
       this.wymusAktualizacjeKomponentu();
-      // this.dodajTekstLicencji();
+      this.dodajTekstLicencji();
       this.mapaService.aktualizujWarstwe(this.mapa);
+      this.wymusAktualizacjeKomponentu();
     }
   }
 
@@ -211,7 +212,22 @@ export class WidokMapyComponent implements OnInit, OnDestroy {
     return 0;
   }
 
-
+  /**
+   * Funkcja usuwa rekursywnie warstwy z mapy
+   * @param warstwa - warstwa
+   */
+  private usunWarstweZWidokuMapy(warstwa: Warstwa | undefined): void {
+    if (warstwa?.typWyswietlania === TypWyswietlania.WARSTWA) {
+      const warstwaMapy = this.mapView?.getLayerByName(warstwa.uuidMapa);
+      if (warstwaMapy) {
+        this.mapView?.removeLayer(warstwaMapy);
+      }
+    } else if (warstwa?.typWyswietlania === TypWyswietlania.KATALOG) {
+      warstwa?.warstwy?.forEach(w => {
+        this.usunWarstweZWidokuMapy(w);
+      });
+    }
+  }
 
   /**
    * Funkcja dodaje obsługe podstawowych zdarzeń mapy
@@ -437,21 +453,124 @@ export class WidokMapyComponent implements OnInit, OnDestroy {
       }));
   }
 
- /**
-   * Funkcja nasluchuje czy zostala przelaczona warstwa podkladowa
-   * @param warstwa
-   */
- przelaczonoMapePodkladowa(warstwa: GrupaWarstwPodkladowych): void {
-  this.przelaczWarstwePodkladowaWWidokuMapy(warstwa);
-  this.mapaService.aktualizacjaWarstwyPodkladowej(this.mapa!);
-}
+  /**
+    * Funkcja nasluchuje czy zostala przelaczona warstwa podkladowa
+    * @param warstwa
+    */
+  przelaczonoMapePodkladowa(warstwa: GrupaWarstwPodkladowych): void {
+    this.przelaczWarstwePodkladowaWWidokuMapy(warstwa);
+    this.mapaService.aktualizacjaWarstwyPodkladowej(this.mapa!);
+  }
 
+    /**
+   * Funkcja konfiguruje funckjonalność synchronizacji map
+   */
+    private konfigurujSynchronizacjeMap() {
+      if (this.synchronizujZoomISrodek) {
+        this.subskryocje$.add(this.mapaService.pobierzSubjectAktualizacjiZoomISrodek()
+          .subscribe((event) => {
+            if (event && event.srodek && event.identyfikatorMapy !== this.mapa?.uuid && this.czyZoomISrodekDoAktualizacji(event)) {
+              this.mapView?.setMapCenterAndZoomLevel(event.srodek,
+                event.zoom ? event.zoom : 0, false
+              );
+            }
+          }));
+      }
+    }
+
+  /**
+   * Funkcja sprawdza czy nowy wartości zoom i położenie środka są inne niż aktualne
+   * @param zoomISrodek - parametry wejściowe
+   */
+  private czyZoomISrodekDoAktualizacji(zoomISrodek: AktualizacjaZoomISrodkaEvent): boolean {
+    const srodek = this.mapView?.getMapCenter();
+    return this.mapView?.getMapZoomLevel() !== zoomISrodek.zoom ||
+      srodek?.getX() !== zoomISrodek.srodek?.x ||
+      srodek?.getY() !== zoomISrodek.srodek?.y;
+  }
+  /**
+   * funkcja aktualizuje widocznosc i kolejnosc warstw tematycznych
+   * @param mapa - obiekt wapy w warstwami
+   */
+  private aktualizujWarstwyWWidokuMapy(mapa?: Mapa): void {
+    if (mapa) {
+      KolekcjeUtils.forEachRevers(mapa?.warstwy, (w) => {
+        this.aktualizujWarstweWWidokuMapy(w);
+      });
+    }
+    this.przeniesWarstweNaWierzch('warstwa-markerow');
+  }
+
+  /**
+   * Funkcja rekursywnie aktualizuje warstwy
+   * @param warstwa - warstwa lub katalog
+   */
+  private aktualizujWarstweWWidokuMapy(warstwa: Warstwa): void {
+    if (warstwa.usunieta) {
+      return;
+    }
+    switch (warstwa.typWyswietlania) {
+      case TypWyswietlania.KATALOG : {
+        KolekcjeUtils.forEachRevers(warstwa.warstwy, (w) => {
+          this.aktualizujWarstweWWidokuMapy(w);
+        });
+        break;
+      }
+      case TypWyswietlania.WARSTWA : {
+        this.ustawParametryWarstwyWwidoku(warstwa);
+        break;
+      }
+    }
+  }
+
+
+  /**
+   * Funkcja ustawia z index oraz widocznosc warstwy
+   * @param warstwa - warstwa
+   */
+  private ustawParametryWarstwyWwidoku(warstwa: Warstwa): void {
+    if (!warstwa.szczegolyWarstwy?.zrodloMVC || !warstwa.szczegolyWarstwy?.nazwaMVC) {
+      return;
+    }
+    let layer = this.mapView?.getLayerByName(warstwa.uuidMapa);
+    if (!layer) {
+      layer = this.zaladujWarstweTematyczna(warstwa);
+      layer?.bringToTop();
+    }
+    if (layer) {
+      const widoczna = Boolean(warstwa.parametrySterujace?.widoczna && warstwa.parametrySterujace?.aktywna && !warstwa.parametrySterujace?.konflikt && !warstwa.parametrySterujace.pozaZakresemPrzestrzennym);
+      layer.setVisible(widoczna);
+      const opacity = Math.round((1 - warstwa.szczegolyWarstwy.przezroczystosc) * 10) / 10;
+      layer.setOpacity(opacity);
+      layer.bringToTop();
+    }
+  }
 
   /**
      * Funkcja wymusza aktualizacje komponentu
      */
   private wymusAktualizacjeKomponentu() {
     this.aktualizacjaKomponentuService.wymusAktualizacjeKomponentu(this.eRef);
+  }
+
+  /**
+   * Funkcja dodaje do mapy tekst licencji
+   */
+  private dodajTekstLicencji() {
+    if (!this.licencjaWidoczna) {
+      return;
+    }
+    const licencjaTekst = new OM.control.MapDecoration(
+      `<span>Właściciel Portalu - © Prezydent M. St. Warszawy</span>`, {
+        contentStyle: {
+          'font-size': '16px',
+          'font-family': 'Roboto Condensed'
+        },
+        draggable: false
+      });
+    licencjaTekst?.setPosition(10, (this.mapView as any).$oracleMapDiv[0].clientHeight - 50);
+    licencjaTekst?.setVisible(true);
+    this.mapView?.addMapDecoration(licencjaTekst);
   }
 
 }

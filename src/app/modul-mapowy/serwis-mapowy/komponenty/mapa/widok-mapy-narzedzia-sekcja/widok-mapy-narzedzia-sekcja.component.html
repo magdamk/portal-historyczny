@@ -1,8 +1,10 @@
 <div class="widok-mapy-narzedzia-sekcja">
+  <div class="mapa" *mmRerender="rerenderuj">
   <mm-widok-mapy (inicjalizacjaMapy)="inicjalizacjaMapy($event)"
     *ngIf="mapa"
     [mapa]="mapa"
     [synchronizujZoomISrodek]="false"
     [grupyWarstwPodkladowych]="grupyWarstwPodkladowych">
   </mm-widok-mapy>
+</div>
 </div>
