@@ -36,6 +36,8 @@ import { MatLegacySliderModule } from '@angular/material/legacy-slider';
 import { SterowanieMapyComponent } from './serwis-mapowy/komponenty/mapa/sterowanie-mapy/sterowanie-mapy.component';
 import { MapaSpinnerComponent } from './serwis-mapowy/komponenty/mapa/mapa-spinner/mapa-spinner.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { KlikalnoscNaMapieComponent } from './serwis-mapowy/komponenty/mapa/klikalnosc-na-mapie/klikalnosc-na-mapie.component';
+import { RerenderDirective } from './commons/directives/rerender.directive';
 
 
 @NgModule({
@@ -52,6 +54,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     KontrolerWarstwPodkladowychComponent,
     WyborTlumaczeniaPipe,
     MapaSpinnerComponent,
+    KlikalnoscNaMapieComponent,
   ],
   imports: [
     CommonModule,
@@ -67,9 +70,11 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     IkonaSvgDirective,
     OracleMapsModule,
     MatLegacySliderModule,
+    MatProgressSpinnerModule,
     PrzewijanyKomponentComponent,
     TylkoDesktopDirective,
-    TylkoMobileDirective
+    TylkoMobileDirective,
+    RerenderDirective
   ],
   providers: [
     { provide: TlumaczeiaModulMapowyAdapter, useClass: DomyslnyTlumaczeniaModulMapowyAdapter },
@@ -89,9 +94,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     { provide: PomocModulMapowyAdapter, useClass: DomyslnaPomocModulMapowyAdapter },
     // {provide: AnalizyPrzestrzenneModulMapowyAdapter, useClass: DomyslneAnalizyPrzstrzenneAdapter},
     { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { disableClose: true, hasBackdrop: true } },
-    // { provide: TlumaczeiaModulMapowyAdapter, useClass: DomyslnyTlumaczeniaModulMapowyAdapter },
-    // { provide: KonfiguracjaModulMapowyAdapter, useClass: DomyslnaKonfiguracjaModulMapowyAdapter },
-    // { provide: GrupyWarstwPodkladowychModulMapowyAdapter, useClass: DomyslneGrupyWarstwPodkladowychAdapter },
   ]
 })
 export class ModulMapowyModule { }
