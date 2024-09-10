@@ -1,9 +1,6 @@
-import {ChangeDetectionStrategy, Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
-// import {AktualizacjaZoomISrodkaEvent, AktualizujPozycjeKursoraEvent, MapaService} from '../../../serwisy/mapa.service';
-import {Subscription} from 'rxjs';
-// import {KonwerterGeometriUtils} from '../../../utils/konwerter-geometri-utils';
-import {auditTime} from 'rxjs/operators';
-// import {WysokoscService} from '../../../serwisy/wysokosc.service';
+import { ChangeDetectionStrategy, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { auditTime } from 'rxjs/operators';
 import { KonwerterGeometriUtils } from 'src/app/core/modele/konwerter-geometri-utils';
 import { AktualizacjaZoomISrodkaEvent, AktualizujPozycjeKursoraEvent, MapaService } from '../../../serwisy/mapa.service';
 import { WysokoscService } from '../../../serwisy/wysokosc.service';

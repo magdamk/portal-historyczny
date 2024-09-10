@@ -80,7 +80,7 @@ export class WysokoscService {
       this.canvas = document.createElement('canvas');
       this.canvas.height = img.height;
       this.canvas.width = img.width;
-      const ctx = this.canvas.getContext('2d');
+      const ctx = this.canvas.getContext('2d', { willReadFrequently: true });
       ctx.drawImage(img, 0, 0);
     };
   }
