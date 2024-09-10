@@ -76,3 +76,18 @@ $serwis-mapowy-web-theme: mat-light-theme((
   border-radius: 0;
   padding: 0;
 }
+
+.transparent .mat-dialog-container {
+  box-shadow: none !important;
+  background: rgba(0, 0, 0, 0.0) !important;
+}
+
+.transparent {
+  box-shadow: none !important;
+  background: rgba(0, 0, 0, 0.0) !important;
+}
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  background-color: rgba(0, 0, 0, 0.0) !important;
+  box-shadow: none !important;
+}

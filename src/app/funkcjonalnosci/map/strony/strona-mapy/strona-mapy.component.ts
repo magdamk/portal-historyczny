@@ -100,6 +100,7 @@ export class StronaMapyComponent implements OnInit, OnDestroy {
         .subscribe(response => {
           if (response.content?.definicjaMapy) {
             this.mapa = response.content.definicjaMapy;
+            console.log('strona mapy definicja mapy: ', response.content.definicjaMapy);
             this.ustawParametryStartoweMapy(response.content.definicjaMapy);
             this.pobierzKomunikatIWyswietl();
             this.pokazKomunikatOBrakujacychWarstwach(response.content?.definicjaMapy);
