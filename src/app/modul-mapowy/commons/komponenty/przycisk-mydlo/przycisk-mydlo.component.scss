@@ -1,0 +1,21 @@
+@import "../../../../../style/mm-style/mm-konfiguracja-szablonu.scss";
+
+button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 31px;
+  width: 50px;
+  background: $miasto-blekit;
+  color: $miasto-bialy;
+  fill: $miasto-bialy;
+  border-radius: 16px;
+  margin-right: 8px;
+}
+
+button span{
+  width: 21px;
+  height: 17px;
+}
+
+

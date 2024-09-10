@@ -6,6 +6,7 @@ import { MatLegacySliderModule } from '@angular/material/legacy-slider';
 import { IkonaSvgDirective } from './directives/ikona-svg.directive';
 import { PrzewijanyKomponentComponent } from './komponenty/przewijany-komponent/przewijany-komponent.component';
 import { RerenderDirective } from './directives/rerender.directive';
+import { PrzyciskMydloComponent } from './komponenty/przycisk-mydlo/przycisk-mydlo.component';
 
 
 
@@ -14,7 +15,8 @@ import { RerenderDirective } from './directives/rerender.directive';
     PrzyciskIkonaComponent,
     IkonaSvgDirective,
     PrzewijanyKomponentComponent,
-    RerenderDirective
+    RerenderDirective,
+    PrzyciskMydloComponent
   ],
   imports: [
     CommonModule,
@@ -25,6 +27,7 @@ import { RerenderDirective } from './directives/rerender.directive';
     IkonaSvgDirective,
     MatLegacySliderModule,
     PrzyciskIkonaComponent,
+    PrzyciskMydloComponent,
     PrzewijanyKomponentComponent,
     RerenderDirective
   ]

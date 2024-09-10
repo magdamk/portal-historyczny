@@ -1,0 +1,16 @@
+<div class="funkcje-pomocnicze">
+  <mm-przycisk-mydlo ikona="letter"
+                      (click)="pokazFormularzKontaktowy()"
+                      label="{{'codes.modul-mapowy.generyczne.formularz-kontaktowy' | translate}}"></mm-przycisk-mydlo>
+  <mm-przycisk-mydlo ikona="pomoc"
+                      (click)="pokazPomocDialog()"
+                      label="{{'codes.modul-mapowy.generyczne.pomoc' | translate}}"></mm-przycisk-mydlo>
+  <mm-przycisk-mydlo ikona="en" *ngIf="(zmianaJezykaSubject | async) ==='pl'"
+                      (click)="zmienJezyk()"
+                      label="{{'codes.modul-mapowy.generyczne.jezyk-angielski' | translate}}">
+  </mm-przycisk-mydlo>
+  <mm-przycisk-mydlo ikona="pl" *ngIf="(zmianaJezykaSubject | async) ==='en'"
+                      (click)="zmienJezyk()"
+                      label="{{'codes.modul-mapowy.generyczne.jezyk-angielski' | translate}}">
+  </mm-przycisk-mydlo>
+</div>

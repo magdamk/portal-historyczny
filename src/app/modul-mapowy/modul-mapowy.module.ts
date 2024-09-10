@@ -38,6 +38,7 @@ import { MapaSpinnerComponent } from './serwis-mapowy/komponenty/mapa/mapa-spinn
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { KlikalnoscNaMapieComponent } from './serwis-mapowy/komponenty/mapa/klikalnosc-na-mapie/klikalnosc-na-mapie.component';
 import { RerenderDirective } from './commons/directives/rerender.directive';
+import { KontrolerFunkcjiDodatkowychComponent } from './serwis-mapowy/komponenty/gorna-belka/kontroler-funkcji-dodatkowych/kontroler-funkcji-dodatkowych.component';
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import { RerenderDirective } from './commons/directives/rerender.directive';
     WyborTlumaczeniaPipe,
     MapaSpinnerComponent,
     KlikalnoscNaMapieComponent,
+    KontrolerFunkcjiDodatkowychComponent,
   ],
   imports: [
     CommonModule,
