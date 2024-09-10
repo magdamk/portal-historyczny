@@ -40,7 +40,8 @@ export class WidokMapyNarzedziaSekcjaComponent implements OnInit, OnDestroy {
    * @param narzedziaSerwis
    * @param changeDetector
    */
-  constructor(private store: Store<{ modulMapowy: any }>,
+  constructor(
+    // private store: Store<{ modulMapowy: any }>,
               private mapaService: MapaService,
               private konfiguracja: KonfiguracjaModulMapowyAdapter) {
     // this.widokAdministratora = this.konfiguracja.widokAdministratora();

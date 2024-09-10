@@ -76,6 +76,7 @@ export class SterowanieMapyComponent implements OnInit, OnDestroy {
    * Cykl życia komponentu inicjalizacja
    */
   ngOnInit(): void {
+    console.log('sterowanie-mapy ngOnInit',this.mapView);
     this.przygotujWarstweDlaLokalizacjiUzytkowika();
     this.obslugaSpinnera();
     this.subscriptions$.add(this.sterowanieMapy.pobierszSubjectZmianyLokalizacjiUzytkownika().subscribe(punkt => {
@@ -156,15 +157,15 @@ export class SterowanieMapyComponent implements OnInit, OnDestroy {
           this.sterowanieMapy.ustawLokalizacjeUzytkonika(pozycja);
           this.ustawPozycjeUzytkonikaWWidokuMapy(pozycja);
         } else {
-          this.komunikaty.pokazKomunikatBledu('codes.obsluga-map.brak-obslugi-lokalizacji', {
+          this.komunikaty.pokazKomunikatBledu('codes.modul-mapowy.obsluga-map.brak-obslugi-lokalizacji', {
             duration: 5000,
             verticalPosition: 'top'
           });
         }
       },
-        error => this.komunikaty.pokazKomunikatBledu('codes.obsluga-map.blad-pobrania-lokalizacja', { duration: 5000 }));
+        error => this.komunikaty.pokazKomunikatBledu('codes.modul-mapowy.obsluga-map.blad-pobrania-lokalizacja', { duration: 5000 }));
     } else {
-      this.komunikaty.pokazKomunikatBledu('codes.obsluga-map.brak-obslugi-lokalizacji', {
+      this.komunikaty.pokazKomunikatBledu('codes.modul-mapowy.obsluga-map.brak-obslugi-lokalizacji', {
         duration: 5000,
         verticalPosition: 'top'
       });
