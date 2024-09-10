@@ -1,0 +1,37 @@
+@import "../../../../../../style/mm-style/mm-konfiguracja-szablonu.scss";
+
+.sterowanie-mapy {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50px;
+  justify-content: center;
+  > div {
+    display: block;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+}
+
+.sterowanie-mapy.margines-dolny {
+  margin-bottom: 40px;
+}
+
+.moja-pozycja span{
+  display: inline-block;
+  height: 51px;
+  width: 51px;
+  fill: $miasto-blekit;
+  stroke: $miasto-blekit;
+}
+
+.srodek-mapy span, .przybliz span, .oddal span{
+  display: inline-block;
+  height: 43px;
+  width: 43px;
+  padding: 24%;
+  background: $miasto-blekit;
+  fill: $miasto-bialy;
+  stroke: $miasto-bialy;
+  border-radius: 60%;
+  border: 1px solid $miasto-bialy;
+}
