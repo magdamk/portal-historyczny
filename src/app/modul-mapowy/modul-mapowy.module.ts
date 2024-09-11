@@ -40,6 +40,8 @@ import { KlikalnoscNaMapieComponent } from './serwis-mapowy/komponenty/mapa/klik
 import { RerenderDirective } from './commons/directives/rerender.directive';
 import { KontrolerFunkcjiDodatkowychComponent } from './serwis-mapowy/komponenty/gorna-belka/kontroler-funkcji-dodatkowych/kontroler-funkcji-dodatkowych.component';
 import { MobilnyKontrolerNarzedziComponent } from './serwis-mapowy/komponenty/gorna-belka/mobilny-kontroler-narzedzi/mobilny-kontroler-narzedzi.component';
+import { BocznaBelkaKontenerComponent } from './serwis-mapowy/komponenty/boczna-belka/boczna-belka-kontener/boczna-belka-kontener.component';
+import { PrzyciskIkonaComponent } from './commons/komponenty/przycisk-ikona/przycisk-ikona.component';
 
 
 @NgModule({
@@ -59,6 +61,7 @@ import { MobilnyKontrolerNarzedziComponent } from './serwis-mapowy/komponenty/go
     KlikalnoscNaMapieComponent,
     KontrolerFunkcjiDodatkowychComponent,
     MobilnyKontrolerNarzedziComponent,
+    BocznaBelkaKontenerComponent,
   ],
   imports: [
     CommonModule,
@@ -76,6 +79,7 @@ import { MobilnyKontrolerNarzedziComponent } from './serwis-mapowy/komponenty/go
     MatLegacySliderModule,
     MatProgressSpinnerModule,
     PrzewijanyKomponentComponent,
+    PrzyciskIkonaComponent,
     TylkoDesktopDirective,
     TylkoMobileDirective,
     RerenderDirective

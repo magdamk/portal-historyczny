@@ -70,6 +70,7 @@ $serwis-mapowy-web-theme: mat-light-theme((
 
 .um-dialog{
   border-radius: 0;
+  overflow-y: auto;
 }
 
 .um-dialog .mat-dialog-container{

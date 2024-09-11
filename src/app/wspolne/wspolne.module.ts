@@ -12,7 +12,6 @@ import { TranslateModule } from "@ngx-translate/core";
 // import { MatSliderModule } from '@angular/material/slider';
 import { StylizowanyKursorDirective } from './dyrektywy/stylizowany-kursor.directive';
 import { SnackbarKomunikatComponent } from './komponenty/snackbar-komunikat/snackbar-komunikat.component';
-import { PrzyciskIkonaComponent } from './komponenty/przyciski/przycisk-ikona/przycisk-ikona.component';
 import { PrzyciskProstokatnyComponent } from './komponenty/przyciski/przycisk-prostokatny/przycisk-prostokatny.component';
 import { PrzyciskOkraglyComponent } from './komponenty/przyciski/przycisk-okragly/przycisk-okragly.component';
 import { KomunikatCookieComponent } from './komponenty/cookie/komunikat-cookie/komunikat-cookie.component';
@@ -39,7 +38,6 @@ import { ModulMapowyModule } from '../modul-mapowy/modul-mapowy.module';
     PrzyciskMydloComponent,
     StylizowanyKursorDirective,
     SnackbarKomunikatComponent,
-    PrzyciskIkonaComponent,
     PrzyciskProstokatnyComponent,
     PrzyciskOkraglyComponent,
     KomunikatCookieComponent,
@@ -74,7 +72,6 @@ import { ModulMapowyModule } from '../modul-mapowy/modul-mapowy.module';
     KomunikatCookieComponent,
     PrzyciskProstokatnyComponent,
     PrzyciskMydloComponent,
-    PrzyciskIkonaComponent,
     IkonySvgComponent,
     OdkazHtmlPipe,
     StylizowanyKursorDirective,

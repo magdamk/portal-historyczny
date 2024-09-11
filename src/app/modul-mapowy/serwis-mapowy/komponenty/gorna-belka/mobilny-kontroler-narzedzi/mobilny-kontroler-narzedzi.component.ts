@@ -42,8 +42,7 @@ export class MobilnyKontrolerNarzedziComponent implements OnInit, OnDestroy {
 
   // NARZEDZIA_IDENTYFIKATORY = NARZEDZIA_STERUJACE_ID;
 
-  @Input()
-  mapa?: Mapa;
+  @Input() mapa?: Mapa;
 
   oknoWidoczne = false;
 

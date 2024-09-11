@@ -18,6 +18,8 @@ import {
 import {KontaktZAdministratoremProviderService} from './serwisy/kontakt-z-administratorem-provider.service';
 import {KomunikatyProviderService} from "../../wspolne/serwisy/komunikaty-provider.service";
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { KomunikatyModulMapowyAdapter } from 'src/app/modul-mapowy/mm-core/providers/komunikaty-adapter';
+import { ModulMapowyModule } from 'src/app/modul-mapowy/modul-mapowy.module';
 
 /**
  * Definicja modułu
@@ -37,11 +39,11 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatTooltipModule,
-    // ModulMapowyModule
+    ModulMapowyModule
   ],
   providers: [
     {provide: KontaktZAdministratoremModulMapowyAdapter, useClass: KontaktZAdministratoremProviderService},
-    // {provide: KomunikatyModulMapowyAdapter, useClass: KomunikatyProviderService},
+    {provide: KomunikatyModulMapowyAdapter, useClass: KomunikatyProviderService},
   ]
 
 })
