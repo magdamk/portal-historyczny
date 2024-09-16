@@ -1,5 +1,6 @@
 <ng-container>
   <ng-container *ngFor="let widok of listaWidokow;trackBy: trackByFn; let i = index; ">
+    {{listaWidokow.length}}
     <mm-os-przegladanie
       *ngIf="widok.id===WIDOKI_ID.PRZEGLADANIE"
       [style.zIndex]="widok.id===topId ? widok.zIndex+1 : widok.zIndex"
@@ -31,6 +32,7 @@
       [obszarWidoczny]="widok.id===topId"
       [style.zIndex]="widok.id===topId ? widok.zIndex+1 : widok.zIndex"
       [mapa]="mapa">
+      {{listaWidokow.length}}
     </mm-os-info>
   </ng-container>
 </ng-container>

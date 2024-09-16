@@ -1,15 +1,15 @@
 <div *ngIf="sterowanieMapyWidoczne" class="sterowanie-mapy"
   [class.margines-dolny]="marginesDolnyWlaczony">
   <div class="moja-pozycja" tabindex="0" (keyup.enter)="mojaLokalizacja()" (click)="mojaLokalizacja()">
-    <span mmIkonaSvg="wyznacz_lokalizacje" matTooltip="{{'codes.modul-mapowy.obsluga-map.wyznacz-lokalizacje' | translate}}"></span>
+    <span mmIkonaSvg="wyznacz_lokalizacje" matTooltipPosition="left" matTooltip="{{'codes.modul-mapowy.obsluga-map.wyznacz-lokalizacje' | translate}}"></span>
   </div>
   <div class="srodek-mapy" *mmTylkoDesktop tabindex="0" (keyup.enter)="srodekMapy()" (click)="srodekMapy()">
-    <span mmIkonaSvg="srodek_mapy" matTooltip="{{'codes.modul-mapowy.obsluga-map.pelny-zasieg-mapy' | translate}}"></span>
+    <span mmIkonaSvg="srodek_mapy" matTooltipPosition="left" matTooltip="{{'codes.modul-mapowy.obsluga-map.pelny-zasieg-mapy' | translate}}"></span>
   </div>
   <div class="przybliz" *mmTylkoDesktop tabindex="0" (keyup.enter)="przybliz()" (click)="przybliz()">
-    <span mmIkonaSvg="przybliz" matTooltip="{{'codes.modul-mapowy.obsluga-map.przybliz' | translate}}"></span>
+    <span mmIkonaSvg="przybliz" matTooltipPosition="left" matTooltip="{{'codes.modul-mapowy.obsluga-map.przybliz' | translate}}"></span>
   </div>
   <div class="oddal" *mmTylkoDesktop tabindex="0" (keyup.enter)="oddal()" (click)="oddal()">
-    <span mmIkonaSvg="oddal" matTooltip="{{'codes.modul-mapowy.obsluga-map.oddal' | translate}}"></span>
+    <span mmIkonaSvg="oddal" matTooltipPosition="left" matTooltip="{{'codes.modul-mapowy.obsluga-map.oddal' | translate}}"></span>
   </div>
 </div>

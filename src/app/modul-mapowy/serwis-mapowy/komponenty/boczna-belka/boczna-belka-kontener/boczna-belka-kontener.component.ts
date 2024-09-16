@@ -46,13 +46,13 @@ export class BocznaBelkaKontenerComponent implements OnInit, OnChanges, OnDestro
   ngOnInit(): void {
     this.subscriptions$.add(this.widok$.subscribe((stan) => {
       this.topId = stan.top;
-      stan.widoki.forEach((w)=>this.listaWidokow!.push(w));
-      this.topWidok = stan.widok;
+      this.listaWidokow = stan.widoki,
+        this.topWidok = stan.widok;
       // console.log(stan);
     }));
-    console.log('belka-boczna-kontener',this.topId);
-    console.log('belka-boczna-kontener',this.listaWidokow);
-    console.log('belka-boczna-kontener',this.topWidok);
+    console.log('belka-boczna-kontener', this.topId);
+    console.log('belka-boczna-kontener', this.listaWidokow);
+    console.log('belka-boczna-kontener', this.topWidok);
     // this.store.dispatch(ObszaryActions.uruchomObszar({identyfikator:OBSZARY_STERUJACE_ID.TEMATY}));
     // this.store.dispatch(ObszaryActions.uruchomObszar({identyfikator:OBSZARY_STERUJACE_ID.SZLAKI}));
   }
@@ -61,7 +61,7 @@ export class BocznaBelkaKontenerComponent implements OnInit, OnChanges, OnDestro
    * @param changes
    */
   ngOnChanges(changes: SimpleChanges): void {
-
+    console.log('belka-boczna-kontener', this.listaWidokow);
   }
 
   /**

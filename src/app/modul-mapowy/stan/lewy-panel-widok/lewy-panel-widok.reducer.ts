@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import { DEFINICJA_WIDOKOW, WIDOKI_ID } from "./lewy-panel-widok.const";
+import { DEFINICJA_WIDOKOW, WIDOKI_ARR, WIDOKI_ID } from "./lewy-panel-widok.const";
 import { LewyPanelWidokActions } from "./lewy-panel-widok.actions";
 
 export interface Widok {
@@ -15,14 +15,14 @@ export interface Widok {
 
 export const LewyPanelWidokInitialState: WidokState = {
   top: WIDOKI_ID.INFO,
-  widok: DEFINICJA_WIDOKOW.get(WIDOKI_ID.INFO)!,
-  widoki: DEFINICJA_WIDOKOW
+  widok: DEFINICJA_WIDOKOW.get(WIDOKI_ID.TAGI)!,
+  widoki: WIDOKI_ARR
 };
 
 export interface WidokState {
   top: string,
   widok: Widok,
-  widoki: any
+  widoki: Widok[]
 }
 
 export const lewyPanelWidokReducer = createReducer(
