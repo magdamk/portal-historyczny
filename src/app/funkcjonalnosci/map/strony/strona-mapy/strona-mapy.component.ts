@@ -218,4 +218,5 @@ export class StronaMapyComponent implements OnInit, OnDestroy {
   zapisMapyPrywatnej() {
     this.zmianaNaMapie = false;
   }
+
 }

@@ -5,14 +5,11 @@ import { TypMapyObiektDto } from '../../../../../core/modele/typ-mapy-obiekt-dto
 import { ZbiorKategoriiMapOpenDto } from '../../../../../core/modele/zbior-kategorii-map-open-dto';
 import { TlumaczeniaService } from "../../../../../core/tlumaczenia/serwisy/tlumaczenia.service";
 import { Subscription } from "rxjs";
-// import { ResponsywnoscUtils } from '@modul-mapowy';
-// import { ResponsywnoscUtils } from "../../../../../core/responsywnosc/utils/resposnsywnosc-utils";
 import { WyborMapyEvent } from '../../komponenty/karta-mapy/karta-mapy.component';
 import WersjaEnum = MapaSzczegolyDto.WersjaEnum;
 import { KomunikatyProviderService } from '../../../../../wspolne/serwisy/komunikaty-provider.service';
 import { ControllerKategorieMapService } from 'src/app/core/api/controller-kategorie-map.service';
-import { ResponsywnoscUtils } from 'src/app/modul-mapowy/mm-core/responsywnosc/utils/resposnsywnosc-utils';
-// import { ModulMapowyComponent } from '@modul-mapowy';
+import { ResponsywnoscUtils } from 'src/app/modul-mapowy/mm-core/responsywnosc/utils/responsywnosc-utils';
 /**
  * Komponent strona startowa
  */

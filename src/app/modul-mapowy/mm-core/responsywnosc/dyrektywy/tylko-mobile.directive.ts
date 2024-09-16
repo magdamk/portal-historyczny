@@ -1,6 +1,6 @@
 import { Directive, OnDestroy, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
 import { fromEvent, Subscription } from 'rxjs';
-import { ResponsywnoscUtils } from '../utils/resposnsywnosc-utils';
+import { ResponsywnoscUtils } from '../utils/responsywnosc-utils';
 
 /**
  * Dyrektywa usuwa obiekty jeżeli tryb wyświetlania inny niż mobile

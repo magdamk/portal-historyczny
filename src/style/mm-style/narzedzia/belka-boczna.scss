@@ -1,5 +1,10 @@
 @import "../mm-konfiguracja-szablonu";
 
+mm-os-przegladanie,
+mm-os-szlaki,
+mm-os-tematy,
+mm-os-info,
+mm-os-tagi,
 lib-ns-legenda,
 lib-informacje-o-mapie,
 lib-ns-dokonaj-pomiaru,
@@ -18,11 +23,13 @@ lib-ns-selekcja {
   width: 100%;
   background: $miasto-szary-tlo;
   z-index: 1;
+
   .kontener-narzedzia {
     height: 100%;
     width: 100%;
     position: relative;
     padding: 20px 20px;
+
     .zamknij {
       position: absolute;
       top: 0;
@@ -30,6 +37,7 @@ lib-ns-selekcja {
       width: 61px;
       height: 61px;
     }
+
     .kontroler {
       position: absolute;
       top: calc(1 * #{$legenda-kontrolki-romiar});
@@ -39,6 +47,7 @@ lib-ns-selekcja {
       z-index: $obszar-boczny-z-index-start;
       cursor: pointer;
       fill: $miasto-bialy;
+
       .ikona {
         display: inline-block;
         padding: 25%;
@@ -51,6 +60,7 @@ lib-ns-selekcja {
     .kontroler.widoczna {
       box-shadow: 5px 5px 10px -5px rgba(0, 0, 0, 0.56);
       transition: box-shadow 0.1s;
+
       .ikona {
         background: $miasto-blekit
       }
@@ -99,6 +109,12 @@ lib-ns-selekcja {
 }
 
 @media (min-width: $prog-przelaczenia) {
+
+  mm-os-przegladanie,
+  mm-os-szlaki,
+  mm-os-tematy,
+  mm-os-info,
+  mm-os-tagi,
   lib-ns-legenda,
   lib-informacje-o-mapie,
   lib-ns-dokonaj-pomiaru,

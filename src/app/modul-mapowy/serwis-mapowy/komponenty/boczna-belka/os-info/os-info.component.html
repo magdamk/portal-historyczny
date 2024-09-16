@@ -1,0 +1,15 @@
+<div class="kontener-narzedzia">
+  <div *ngIf="mapa" class="info" [class.hidden]="!obszarWidoczny" >
+    <div class="tytul naglowek-a">
+      <p>info works!</p>
+      {{mapa.nazwa | wyborTlumaczenia:aktualnyJezyk}}
+    </div>
+  </div>
+  <div class="kontroler poz-5" [tabindex]="0" [class.widoczna]="obszarWidoczny"
+  (keyup.enter)="przeniesNaWierzch()"
+  (click)="przeniesNaWierzch()"
+  matTooltipPosition="right"
+    matTooltip="{{'codes.modul-mapowy.belka-boczna.tematy' | translate}}">
+    <span mmIkonaSvg="info24" class="ikona"></span>
+  </div>
+</div>

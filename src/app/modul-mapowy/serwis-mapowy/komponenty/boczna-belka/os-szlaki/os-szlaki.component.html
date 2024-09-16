@@ -1,0 +1,16 @@
+<div class="kontener-narzedzia">
+
+  <div class="szlaki" [class.hidden]="!obszarWidoczny">
+    <div class="tytul naglowek-a" [class.hidden]="!obszarWidoczny">
+      <p>os-szlaki works!</p>
+
+    </div>
+  </div>
+  <div class="kontroler poz-3" [tabindex]="0" [class.widoczna]="obszarWidoczny"
+  (keyup.enter)="przeniesNaWierzch()"
+  (click)="przeniesNaWierzch()"
+  matTooltipPosition="right"
+    matTooltip="{{'codes.modul-mapowy.belka-boczna.szlaki' | translate}}">
+    <span mmIkonaSvg="szlaki24" class="ikona"></span>
+  </div>
+</div>

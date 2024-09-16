@@ -1,0 +1,18 @@
+<div class="kontener-narzedzia">
+
+  <div class="tagi" [class.hidden]="!obszarWidoczny" >
+    <div class="tytul naglowek-a" [class.hidden]="!obszarWidoczny">
+      <p>os-tagi works!</p>
+
+    </div>
+  </div>
+  <div class="kontroler poz-4"
+  [class.widoczna]="obszarWidoczny"
+      [tabindex]="1"
+      (keyup.enter)="przeniesNaWierzch()"
+      (click)="przeniesNaWierzch()"
+      matTooltipPosition="right"
+      matTooltip="{{'codes.modul-mapowy.belka-boczna.tagi' | translate}}">
+    <span mmIkonaSvg="tagi24" class="ikona"></span>
+  </div>
+</div>

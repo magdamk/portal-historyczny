@@ -7,7 +7,7 @@ import { GlobalneZdarzeniaService } from "../../../serwisy/globalne-zdarzenia.se
 import { Point } from "../../../../oracle-maps/types/point";
 import { Punkt } from "../../../modele/punkt";
 import { KlikniecieNaMapieEvent, MapaService, TYPY_ZDARZEN_MYSZY } from "../../../serwisy/mapa.service";
-import { ResponsywnoscUtils } from 'src/app/modul-mapowy/mm-core/responsywnosc/utils/resposnsywnosc-utils';
+import { ResponsywnoscUtils } from 'src/app/modul-mapowy/mm-core/responsywnosc/utils/responsywnosc-utils';
 import { AktualizacjaKomponentuService } from 'src/app/modul-mapowy/commons/serwisy/aktualizacja-komponentu.service';
 import { KonfiguracjaModulMapowyAdapter } from 'src/app/modul-mapowy/mm-core/providers/konfiguracja-adapter';
 

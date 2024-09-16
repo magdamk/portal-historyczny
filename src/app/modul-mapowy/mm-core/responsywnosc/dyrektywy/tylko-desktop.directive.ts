@@ -1,5 +1,5 @@
 import { Directive, OnDestroy, OnInit, TemplateRef, ViewContainerRef } from '@angular/core';
-import { ResponsywnoscUtils } from '../utils/resposnsywnosc-utils';
+import { ResponsywnoscUtils } from '../utils/responsywnosc-utils';
 import { fromEvent, Subscription } from 'rxjs';
 
 /**

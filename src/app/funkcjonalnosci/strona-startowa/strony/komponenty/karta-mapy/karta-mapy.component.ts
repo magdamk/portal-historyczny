@@ -3,9 +3,7 @@ import { Router } from '@angular/router';
 import { KategoriaGrupaMapOpenDto } from "../../../../../core/modele/kategoria-grupa-map-open-dto";
 import { TypMapyObiektDto } from "../../../../../core/modele/typ-mapy-obiekt-dto";
 import { ZmianaMapyUtils } from "../../../../../core/modele/zmiana-mapy-utils";
-import { ResponsywnoscUtils } from 'src/app/modul-mapowy/mm-core/responsywnosc/utils/resposnsywnosc-utils';
-// import { ResponsywnoscUtils } from "../../../../../core/responsywnosc/utils/resposnsywnosc-utils";
-// import { ResponsywnoscUtils } from '@modul-mapowy';
+import { ResponsywnoscUtils } from 'src/app/modul-mapowy/mm-core/responsywnosc/utils/responsywnosc-utils';
 
 export interface WyborMapyEvent {
   url?: string;

@@ -9,7 +9,7 @@
       </div>
 
     </div>
-    <!-- <div class="narzedzia-podstawowe" *libTylkoDektop>
+    <!-- <div class="narzedzia-podstawowe" *mmTylkoDesktop>
       <mm-kontroler-narzedzi-podstawowych
         [mapa]="mapa"
         [grupyWarstwPodkladowych]="grupyWarstwPodkladowych">
@@ -19,6 +19,24 @@
     <mm-kontroler-funkcji-dodatkowych *mmTylkoDesktop></mm-kontroler-funkcji-dodatkowych>
   </div>
   <div class="kontener">
+
+    <div class="belka-boczna"
+      [class.hidden]="interfejsUzytkownikaStan.belkaBocznaLewa.ukryta"
+      [class.pokaz]="!interfejsUzytkownikaStan.belkaBocznaLewa.zwinieta">
+      <div class="belka-boczna-kontroler-widocznosci" (click)="zmienStanPaskaBocznego()">
+        <mm-przycisk-ikona *ngIf="!interfejsUzytkownikaStan.belkaBocznaLewa.zwinieta"
+          label="{{'codes.modul-mapowy.generyczne.ukryj' | translate}}" ikona="ukryj"></mm-przycisk-ikona>
+        <mm-przycisk-ikona *ngIf="interfejsUzytkownikaStan.belkaBocznaLewa.zwinieta"
+          label="{{'codes.modul-mapowy.generyczne.pokaz' | translate}}" ikona="pokaz"></mm-przycisk-ikona>
+      </div>
+      <mm-boczna-belka-kontener
+        [mapy]="mapy"
+        [mapa]="mapa"
+        [class.hidden]="interfejsUzytkownikaStan.belkaBocznaLewa.zwinieta"
+        (zmianaStanuNarzedzia)="pokazPasekBoczny()"
+        >
+      </mm-boczna-belka-kontener>
+    </div>
     <div class="obszar-widokow">
       <mm-widok-mapy-narzedzia-sekcja [mapa]="mapa" [grupyWarstwPodkladowych]="grupyWarstwPodkladowych">
       </mm-widok-mapy-narzedzia-sekcja>

@@ -5,7 +5,7 @@ import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/mm-tlumacze
 import { Mapa } from '../../modele/mapa';
 import { ParametryStartoweMapy } from '../../modele/parametry-startowe-mapy';
 import { GrupaWarstwPodkladowych } from '../../modele/grupa-warstw-podkladowych';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { GrupyWarstwPodkladowychModulMapowyAdapter } from 'src/app/modul-mapowy/mm-core/providers/grupy-warstw-podkladowych-adapter';
 import { KonfiguracjaModulMapowyAdapter } from 'src/app/modul-mapowy/mm-core/providers/konfiguracja-adapter';
@@ -13,6 +13,10 @@ import { MapaService } from '../../serwisy/mapa.service';
 import { ObiektyMapyService } from '../../serwisy/obiekty-mapy.service';
 import { KonwerterGeometriUtils } from '../../utils/konwerter-geometri-utils';
 import { WarstwaUtils } from '../../utils/warstwa-utils';
+import { InterfejsUzytkownikaInitialState, InterfejsUzytkownikaStan, WYSZUKIWARKI } from 'src/app/modul-mapowy/stan/interfejs-uzytkownika/interfejs-uzytkownika.reducer';
+import { InterfejsUzytkownikaActions } from 'src/app/modul-mapowy/stan/interfejs-uzytkownika/interfejs-uzytkownika.actions';
+// import { OBSZARY_STERUJACE_ID } from 'src/app/modul-mapowy/stan/obszary/obszary.const';
+// import { ObszaryActions } from 'src/app/modul-mapowy/stan/obszary/obszary.actions';
 
 @Component({
   selector: 'mm-serwis-mapowy',
@@ -20,13 +24,15 @@ import { WarstwaUtils } from '../../utils/warstwa-utils';
   styleUrls: ['./serwis-mapowy.component.scss']
 })
 export class SerwisMapowyComponent implements OnInit {
+  // OBSZARY_IDENTYFIKATORY = OBSZARY_STERUJACE_ID;
+  interfejsUzytkownika$: Observable<InterfejsUzytkownikaStan>;
+  interfejsUzytkownikaStan: InterfejsUzytkownikaStan;
 
   PRZYCISK_IKONA_TYP = PRZYCISK_IKONA_TYP;
   @Input() uuidMapy?: string;
   @Input() mapa?: Mapa;
   @Input() parametryStartoweMapy?: ParametryStartoweMapy;
-  @Output()
-  zmianaZoomISrodek = new EventEmitter();
+  @Output() zmianaZoomISrodek = new EventEmitter();
 
   @Output() zmianaWarstw = new EventEmitter();
 
@@ -37,7 +43,6 @@ export class SerwisMapowyComponent implements OnInit {
 
   mapy: Mapa[] = [];
   grupyWarstwPodkladowych: GrupaWarstwPodkladowych[] = [];
-
   subskrypcje$ = new Subscription();
 
   /**
@@ -51,8 +56,8 @@ export class SerwisMapowyComponent implements OnInit {
     private tlumaczenia: TlumaczeniaService,
     private obiektyMapySerwis: ObiektyMapyService,
     private store: Store<{ modulMapowy: any }>) {
-    // this.interfejsUzytkownika$ = store.select('modulMapowy', 'interfejsUzytkownika');
-    // this.interfejsUzytkownikaStan = InterfejsUzytkownikaInitialState;
+    this.interfejsUzytkownika$ = store.select('modulMapowy', 'interfejsUzytkownika');
+    this.interfejsUzytkownikaStan = InterfejsUzytkownikaInitialState;
   }
 
   /**
@@ -63,7 +68,7 @@ export class SerwisMapowyComponent implements OnInit {
     this.aktualizacjazoomISrodek();
     this.aktualizujWarstwy();
     this.aktualizacjaMapy();
-    // this.aktualizujStanInterfejsuUzytkownika();
+    this.aktualizujStanInterfejsuUzytkownika();
     // this.obslugaWyboruMapyDoPorownania();
     this.tlumaczenia.spawdzPoprawnoscJezyka();
   }
@@ -76,10 +81,10 @@ export class SerwisMapowyComponent implements OnInit {
     this.subskrypcje$.unsubscribe();
     this.obiektyMapySerwis.resetujStan();
     this.mapaSerwis.resetujStan();
-    // this.store.dispatch(NarzedziaActions.reset());
+    // this.store.dispatch(ObszaryActions.reset());
     // this.store.dispatch(WyszukiwarkaActions.reset());
     // this.store.dispatch(WyszukiwarkaZaawansowanaActions.reset());
-    // this.store.dispatch(InterfejsUzytkownikaActions.reset());
+    this.store.dispatch(InterfejsUzytkownikaActions.reset());
   }
 
 
@@ -92,20 +97,20 @@ export class SerwisMapowyComponent implements OnInit {
     });
   }
 
-    /**
-   * Funkcja aktywuje obserwowanie zmian srodka o zoom mapy
-   */
-    private aktualizacjazoomISrodek(): void {
-      this.subskrypcje$.add(this.mapaSerwis.pobierzSubjectAktualizacjiZoomISrodek().subscribe(zoomISrodek => {
-        if (zoomISrodek?.srodek && zoomISrodek?.zoom) {
-          this.zmianaZoomISrodek.emit({
-            x: zoomISrodek.srodek.getX(),
-            y: zoomISrodek.srodek.getY(),
-            zoom: zoomISrodek.zoom
-          });
-        }
-      }));
-    }
+  /**
+ * Funkcja aktywuje obserwowanie zmian srodka o zoom mapy
+ */
+  private aktualizacjazoomISrodek(): void {
+    this.subskrypcje$.add(this.mapaSerwis.pobierzSubjectAktualizacjiZoomISrodek().subscribe(zoomISrodek => {
+      if (zoomISrodek?.srodek && zoomISrodek?.zoom) {
+        this.zmianaZoomISrodek.emit({
+          x: zoomISrodek.srodek.getX(),
+          y: zoomISrodek.srodek.getY(),
+          zoom: zoomISrodek.zoom
+        });
+      }
+    }));
+  }
   /**
    * Funkcja aktywuje obserwowanie zmian warstw mapy
    */
@@ -180,4 +185,48 @@ export class SerwisMapowyComponent implements OnInit {
     }
   }
 
+
+  /**
+    * Funkcja aktualizuje lokalny stan interfejsu uzytkownika
+    */
+  private aktualizujStanInterfejsuUzytkownika() {
+    this.interfejsUzytkownika$.subscribe(stan => {
+      this.interfejsUzytkownikaStan = {
+        ...stan,
+        belkaGorna: { ...stan.belkaGorna, ukryta: stan.belkaGorna.ukryta },
+        wyszukiwarka: { ...stan.wyszukiwarka, ukryta: stan.wyszukiwarka.ukryta }
+      };
+    });
+  }
+
+
+  /**
+   * Funkcja zmienia stan legendy zwija/rozwija
+   */
+  zmienStanPaskaBocznego(): void {
+    console.log('zmienStanPaskaBocznego');
+    this.store.dispatch(InterfejsUzytkownikaActions.odwrocRozwiniecieLewaBelka());
+  }
+
+  /**
+   * Funkcja rozsuwa pasek boczny
+   */
+  pokazPasekBoczny(): void {
+    console.log('pokazPasekBoczny');
+    this.store.dispatch(InterfejsUzytkownikaActions.rozwinLewaBelke());
+  }
+
+  /**
+   * Funkcja aktywująca okienko domyślnej wyszukiwarki lub chowająca wyszukiwarkę
+   */
+  aktywujWyszukiwarkeDomyslna() {
+    this.store.dispatch(InterfejsUzytkownikaActions.rozwinWyszukiwarke({ aktywna: WYSZUKIWARKI.DOMYSLNA }));
+  }
+
+  /**
+   * Funkcja ukrywająca wyszukiwarkę
+   */
+  schowajWyszukiwarke() {
+    this.store.dispatch(InterfejsUzytkownikaActions.zwinWyszukiwarke());
+  }
 }

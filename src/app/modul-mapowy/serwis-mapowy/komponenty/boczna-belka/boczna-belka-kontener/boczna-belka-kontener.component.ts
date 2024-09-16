@@ -1,10 +1,80 @@
-import { Component } from '@angular/core';
 
+import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { Mapa } from '../../../modele/mapa';
+import { Observable, Subscription } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { Widok } from 'src/app/modul-mapowy/stan/lewy-panel-widok/lewy-panel-widok.reducer';
+import { WIDOKI_ID } from 'src/app/modul-mapowy/stan/lewy-panel-widok/lewy-panel-widok.const';
+// import {NarzedziaState, NarzedzieSterujace} from '../../../../stan/narzedzia/narzedzia.reducer';
+// import {NARZEDZIA_STERUJACE_ID} from '../../../../stan/narzedzia/narzedzia.const';
+
+export const POZ_ZNACZNIK_BELKA_BOCZNA = ['poz-1', 'poz-2', 'poz-3', 'poz-4', 'poz-5', 'poz-6', 'poz-7', 'poz-8', 'poz-9', 'poz-10'];
+
+/**
+ * Komponent belki bocznej
+ */
 @Component({
-  selector: 'app-boczna-belka-kontener',
+  selector: 'mm-boczna-belka-kontener',
   templateUrl: './boczna-belka-kontener.component.html',
-  styleUrls: ['./boczna-belka-kontener.component.scss']
+  styleUrls: ['./boczna-belka-kontener.component.scss'],
 })
-export class BocznaBelkaKontenerComponent {
+export class BocznaBelkaKontenerComponent implements OnInit, OnChanges, OnDestroy {
+
+  WIDOKI_ID = WIDOKI_ID;
+
+  @Input() mapy?: Mapa[];
+  @Input() mapa?: Mapa;
+
+  subscriptions$ = new Subscription();
+
+
+  // widokNaWierzchu$: Observable<Widok>;
+  widok$: Observable<{ top: string, widok: Widok, widoki: Widok[] }>;
+  listaWidokow: Widok[] = [];
+  topId: string = '';
+  topWidok: Widok | undefined;
+  /**
+   * Konstruktor
+   */
+  constructor(private store: Store<{ modulMapowy: any }>) {
+    this.widok$ = store.select('modulMapowy', 'widoki');
+  }
+
+  /**
+   * Cykl życia komponentu inicjalizacja
+   */
+  ngOnInit(): void {
+    this.subscriptions$.add(this.widok$.subscribe((stan) => {
+      this.topId = stan.top;
+      stan.widoki.forEach((w)=>this.listaWidokow!.push(w));
+      this.topWidok = stan.widok;
+      // console.log(stan);
+    }));
+    console.log('belka-boczna-kontener',this.topId);
+    console.log('belka-boczna-kontener',this.listaWidokow);
+    console.log('belka-boczna-kontener',this.topWidok);
+    // this.store.dispatch(ObszaryActions.uruchomObszar({identyfikator:OBSZARY_STERUJACE_ID.TEMATY}));
+    // this.store.dispatch(ObszaryActions.uruchomObszar({identyfikator:OBSZARY_STERUJACE_ID.SZLAKI}));
+  }
+  /**
+   * Cykl życia komponentu zmiana danych
+   * @param changes
+   */
+  ngOnChanges(changes: SimpleChanges): void {
+
+  }
+
+  /**
+   * Cykl życia komponentu niszczenie
+   */
+  ngOnDestroy(): void {
+    this.subscriptions$.unsubscribe();
+  }
+
+
+  trackByFn(index: number, item: Widok) {
+    return item.id;
+  }
+
 
 }

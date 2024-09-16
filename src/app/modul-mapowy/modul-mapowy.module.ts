@@ -42,6 +42,15 @@ import { KontrolerFunkcjiDodatkowychComponent } from './serwis-mapowy/komponenty
 import { MobilnyKontrolerNarzedziComponent } from './serwis-mapowy/komponenty/gorna-belka/mobilny-kontroler-narzedzi/mobilny-kontroler-narzedzi.component';
 import { BocznaBelkaKontenerComponent } from './serwis-mapowy/komponenty/boczna-belka/boczna-belka-kontener/boczna-belka-kontener.component';
 import { PrzyciskIkonaComponent } from './commons/komponenty/przycisk-ikona/przycisk-ikona.component';
+import { StoreModule } from '@ngrx/store';
+import { interfejsUzytkowikaReducer } from './stan/interfejs-uzytkownika/interfejs-uzytkownika.reducer';
+import { OsPrzegladanieComponent } from './serwis-mapowy/komponenty/boczna-belka/os-przegladanie/os-przegladanie.component';
+import { OsTematyComponent } from './serwis-mapowy/komponenty/boczna-belka/os-tematy/os-tematy.component';
+import { OsSzlakiComponent } from './serwis-mapowy/komponenty/boczna-belka/os-szlaki/os-szlaki.component';
+import { OsTagiComponent } from './serwis-mapowy/komponenty/boczna-belka/os-tagi/os-tagi.component';
+import { OsInfoComponent } from './serwis-mapowy/komponenty/boczna-belka/os-info/os-info.component';
+import { lewyPanelWidokReducer } from './stan/lewy-panel-widok/lewy-panel-widok.reducer';
+
 
 
 @NgModule({
@@ -62,6 +71,11 @@ import { PrzyciskIkonaComponent } from './commons/komponenty/przycisk-ikona/przy
     KontrolerFunkcjiDodatkowychComponent,
     MobilnyKontrolerNarzedziComponent,
     BocznaBelkaKontenerComponent,
+    OsPrzegladanieComponent,
+    OsTematyComponent,
+    OsSzlakiComponent,
+    OsTagiComponent,
+    OsInfoComponent
   ],
   imports: [
     CommonModule,
@@ -71,6 +85,11 @@ import { PrzyciskIkonaComponent } from './commons/komponenty/przycisk-ikona/przy
     OracleMapsModule,
     RouterModule,
     TranslateModule,
+    StoreModule.forFeature('modulMapowy', {
+      interfejsUzytkownika: interfejsUzytkowikaReducer,
+      widoki: lewyPanelWidokReducer
+    }
+    ),
   ],
   exports: [
     SerwisMapowyComponent,
@@ -82,7 +101,8 @@ import { PrzyciskIkonaComponent } from './commons/komponenty/przycisk-ikona/przy
     PrzyciskIkonaComponent,
     TylkoDesktopDirective,
     TylkoMobileDirective,
-    RerenderDirective
+    RerenderDirective,
+
   ],
   providers: [
     { provide: TlumaczeiaModulMapowyAdapter, useClass: DomyslnyTlumaczeniaModulMapowyAdapter },

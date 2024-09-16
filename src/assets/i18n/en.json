@@ -576,6 +576,13 @@
         "tresc-wiadomosci": "Message content (required field)",
         "liczba-znakow": "Maximum number of characters",
         "dolacz-biezacy-widok-mapy": "Attach the current map view"
+      },
+      "belka-boczna":{
+        "przegladaj-w-obszarze": "Explore",
+        "tematy":"Explore historic themes",
+        "szlaki":"Explore historic trails",
+        "tagi":"Explore by tags",
+        "info":"Information"
       }
     }
   }

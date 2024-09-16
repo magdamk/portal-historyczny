@@ -1,0 +1,21 @@
+.kontener-narzedzia {
+  .info {
+    height: 100%;
+    width: 100%;
+
+    .szlaki {
+      min-height: 80px;
+      max-height: 90px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      -webkit-line-clamp: 2;
+
+      &.hidden {
+        display: none;
+      }
+    }
+  }
+}
