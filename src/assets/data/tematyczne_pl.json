@@ -76,7 +76,7 @@
           {
             "nazwaMapy": "WARSZAWA MIĘDZYWOJENNA",
             "typ": "SERWIS_ZEWNETRZNY",
-            "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
+            "adresUrl": "",
             "opisKafelka": "Plany i mapy z okresu. Ciekawe miejsca powiązane z okresem międzywojennym.",
             "status": "OPUBLIKOWANA",
             "wersja": "DESKTOPOWA",
@@ -84,7 +84,7 @@
             "dostepnoscDlaWersjiResponsywnej": false,
             "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/saski.jpg",
             "numerWTabeli": 2,
-            "uuidMapy": "c10468d7-7e2b-4cb0-a657-e10a59e3bb00"
+            "uuidMapy": "bbf024f0-bbdb-4a3b-8c93-b9555d94142e"
           },
           {
             "nazwaMapy": "ODBUDOWA WARSZAWY",
@@ -119,7 +119,7 @@
         "nazwa": "Historyczne wizerunki map i planów",
         "numerWTabeli": 2,
         "typ": {
-          "obiektEnum": "KATEGORIA_TEMATYCZNA",
+          "obiektEnum": "KATEGORIA_MAPY_PLANY",
           "tlumaczenie": "Kategoria tematyczna"
         },
         "grupyMap": [
@@ -182,7 +182,7 @@
         "nazwa": "Szlakami historii",
         "numerWTabeli": 3,
         "typ": {
-          "obiektEnum": "KATEGORIA_TEMATYCZNA",
+          "obiektEnum": "KATEGORIA_SZLAKI",
           "tlumaczenie": "Kategoria tematyczna"
         },
         "grupyMap": [

@@ -67,4 +67,4 @@ export const DEFINICJA_WIDOKOW = new Map<string, Widok>([
   [WIDOKI_ID.INFO, WIDOK_INFO]
 ]);
 
-export const WIDOKI_ARR = [ WIDOK_PRZEGLADANIE, WIDOK_TEMATY, WIDOK_SZLAKI, WIDOK_TAGI, WIDOK_INFO];
+export const WIDOKI_ARR:Widok[] = Array.from(DEFINICJA_WIDOKOW.values());

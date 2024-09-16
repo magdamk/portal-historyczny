@@ -13,7 +13,8 @@ import { JsonObjectContainerAktualnosciSzczegolyDto } from '../modele/json-objec
 import { BASE_PATH, COLLECTION_FORMATS } from './variables';
 import { Configuration } from './configuration';
 import { ZbiorKategoriiMapOpenDto } from '../modele/zbior-kategorii-map-open-dto';
-import { TlumaczeniaService } from '../tlumaczenia/serwisy/tlumaczenia.service';
+import { TlumaczeniaService } from '../tlumaczenia/serwisy/mm-tlumaczenia.service';
+// import { TlumaczeniaService } from '../tlumaczenia/serwisy/tlumaczenia.service';
 
 
 @Injectable({
@@ -23,6 +24,7 @@ export class ControllerKategorieMapService {
   constructor(private http: HttpClient,private tlumaczeniaService:TlumaczeniaService) { }
 
   getKategorieMap(): Observable<ZbiorKategoriiMapOpenDto[]> {
+    console.log(this.tlumaczeniaService.pobierzAktualnyJezyk());
     if (this.tlumaczeniaService.pobierzAktualnyJezyk()!=='pl'){
     return this.http.get<ZbiorKategoriiMapOpenDto[]>('./assets/data/tematyczne_en.json')}
     else {

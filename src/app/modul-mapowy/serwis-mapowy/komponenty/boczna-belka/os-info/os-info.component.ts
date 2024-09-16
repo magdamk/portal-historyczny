@@ -16,11 +16,9 @@ export class OsInfoComponent implements OnInit {
   widokIdentyfikator = WIDOKI_ID.INFO;
 
   @Input() widok?: Widok;
-
-  @Input()
-  mapa?: Mapa;
-
-  @Input() obszarWidoczny?:boolean | undefined;
+  @Input() mapa?: Mapa;
+  @Input() obszarWidoczny?: boolean | undefined;
+  @Input() rodzaj?: string ='';
 
   aktualnyJezyk = 'pl';
 
@@ -29,7 +27,7 @@ export class OsInfoComponent implements OnInit {
     private store: Store<{ modulMapowy: any }>) {
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.subscription$.add(this.tlumaczenia.getZmianaJezykaSubject().subscribe(jezyk => {
       this.aktualnyJezyk = jezyk;
     }));
@@ -43,11 +41,11 @@ export class OsInfoComponent implements OnInit {
     this.subscription$.unsubscribe();
   }
 
-   /**
-   * Funkcja przenosi narzędzie na wierzch
-   */
-   przeniesNaWierzch(): void {
-    this.store.dispatch(LewyPanelWidokActions.pokazObszar({widokId: this.widokIdentyfikator}));
+  /**
+  * Funkcja przenosi narzędzie na wierzch
+  */
+  przeniesNaWierzch(): void {
+    this.store.dispatch(LewyPanelWidokActions.pokazObszar({ widokId: this.widokIdentyfikator }));
     // this.pobierzObszarySerwis().dispatch(InterfejsUzytkownikaActions.rozwinLewaBelke());
   }
 

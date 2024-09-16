@@ -5,6 +5,8 @@ import { Observable, Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { Widok } from 'src/app/modul-mapowy/stan/lewy-panel-widok/lewy-panel-widok.reducer';
 import { WIDOKI_ID } from 'src/app/modul-mapowy/stan/lewy-panel-widok/lewy-panel-widok.const';
+import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/mm-tlumaczenia.service';
+import { RODZAJ_MAPY } from '../../../modele/rodzajMapy';
 // import {NarzedziaState, NarzedzieSterujace} from '../../../../stan/narzedzia/narzedzia.reducer';
 // import {NARZEDZIA_STERUJACE_ID} from '../../../../stan/narzedzia/narzedzia.const';
 
@@ -21,7 +23,7 @@ export const POZ_ZNACZNIK_BELKA_BOCZNA = ['poz-1', 'poz-2', 'poz-3', 'poz-4', 'p
 export class BocznaBelkaKontenerComponent implements OnInit, OnChanges, OnDestroy {
 
   WIDOKI_ID = WIDOKI_ID;
-
+  RODZAJ_MAPY = RODZAJ_MAPY;
   @Input() mapy?: Mapa[];
   @Input() mapa?: Mapa;
 
@@ -36,7 +38,7 @@ export class BocznaBelkaKontenerComponent implements OnInit, OnChanges, OnDestro
   /**
    * Konstruktor
    */
-  constructor(private store: Store<{ modulMapowy: any }>) {
+  constructor(private tlumaczenia: TlumaczeniaService, private store: Store<{ modulMapowy: any }>) {
     this.widok$ = store.select('modulMapowy', 'widoki');
   }
 

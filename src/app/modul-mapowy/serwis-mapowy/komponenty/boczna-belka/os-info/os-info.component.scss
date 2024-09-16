@@ -6,18 +6,34 @@
     width: 100%;
 
     .tytul {
+      color: $miasto-pomarancz;
       min-height: 80px;
-      max-height: 90px;
-      text-overflow: ellipsis;
-      overflow: hidden;
+      // max-height: 90px;
+      // text-overflow: ellipsis;
+      // overflow: hidden;
       display: -webkit-box;
       -webkit-box-orient: vertical;
-      -webkit-line-clamp: 3;
-      -webkit-line-clamp: 2;
+      // -webkit-line-clamp: 3;
+      // -webkit-line-clamp: 2;
 
       &.hidden {
         display: none;
       }
+    }
+
+    .rodzaj-mapy {
+      padding: 10px;
+      color: $miasto-pomarancz;
+      border-bottom: 1px solid #D1D5DB;
+      span{
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+    }
+    .opis{
+      margin-top: 20px;
+      font-size: 1.3rem;
+      line-height: 2rem;
     }
   }
 

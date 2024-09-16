@@ -575,12 +575,16 @@
         "liczba-znakow": "Maksymalna liczba znaków",
         "dolacz-biezacy-widok-mapy": "Dołącz bieżący widok mapy"
       },
-      "belka-boczna":{
+      "belka-boczna": {
         "przegladaj-w-obszarze": "Przeglądaj w widocznym obszarze",
-        "tematy":"Przeglądaj tematy historyczne",
-        "szlaki":"Przeglądaj szlaki historii",
-        "tagi":"Przeglądaj tagi",
-        "info":"Panel informacyjny"
+        "tematy": "Przeglądaj tematy historyczne",
+        "szlaki": "Przeglądaj szlaki historii",
+        "tagi": "Przeglądaj tagi",
+        "info": "Panel informacyjny",
+        "temat": "Tematy",
+        "szlak": "Szlaki",
+        "mapa_plan": "Mapy, plany",
+        "liczba-obiektow": "Liczba obiektów: "
       }
     }
   }

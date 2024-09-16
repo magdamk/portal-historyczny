@@ -15,6 +15,8 @@ import { KonwerterGeometriUtils } from '../../utils/konwerter-geometri-utils';
 import { WarstwaUtils } from '../../utils/warstwa-utils';
 import { InterfejsUzytkownikaInitialState, InterfejsUzytkownikaStan, WYSZUKIWARKI } from 'src/app/modul-mapowy/stan/interfejs-uzytkownika/interfejs-uzytkownika.reducer';
 import { InterfejsUzytkownikaActions } from 'src/app/modul-mapowy/stan/interfejs-uzytkownika/interfejs-uzytkownika.actions';
+import { LewyPanelWidokActions } from 'src/app/modul-mapowy/stan/lewy-panel-widok/lewy-panel-widok.actions';
+import { WIDOKI_ID } from 'src/app/modul-mapowy/stan/lewy-panel-widok/lewy-panel-widok.const';
 // import { OBSZARY_STERUJACE_ID } from 'src/app/modul-mapowy/stan/obszary/obszary.const';
 // import { ObszaryActions } from 'src/app/modul-mapowy/stan/obszary/obszary.actions';
 
@@ -25,6 +27,7 @@ import { InterfejsUzytkownikaActions } from 'src/app/modul-mapowy/stan/interfejs
 })
 export class SerwisMapowyComponent implements OnInit {
   // OBSZARY_IDENTYFIKATORY = OBSZARY_STERUJACE_ID;
+  WIDOKI_IDENTYFIKATORY = WIDOKI_ID;
   interfejsUzytkownika$: Observable<InterfejsUzytkownikaStan>;
   interfejsUzytkownikaStan: InterfejsUzytkownikaStan;
 
@@ -65,7 +68,7 @@ export class SerwisMapowyComponent implements OnInit {
    */
   ngOnInit(): void {
     this.zaladujWarstwyPodkladowe();
-    this.aktualizacjazoomISrodek();
+    this.aktualizacjaZoomISrodek();
     this.aktualizujWarstwy();
     this.aktualizacjaMapy();
     this.aktualizujStanInterfejsuUzytkownika();
@@ -81,7 +84,7 @@ export class SerwisMapowyComponent implements OnInit {
     this.subskrypcje$.unsubscribe();
     this.obiektyMapySerwis.resetujStan();
     this.mapaSerwis.resetujStan();
-    // this.store.dispatch(ObszaryActions.reset());
+    this.store.dispatch(LewyPanelWidokActions.reset());
     // this.store.dispatch(WyszukiwarkaActions.reset());
     // this.store.dispatch(WyszukiwarkaZaawansowanaActions.reset());
     this.store.dispatch(InterfejsUzytkownikaActions.reset());
@@ -100,7 +103,7 @@ export class SerwisMapowyComponent implements OnInit {
   /**
  * Funkcja aktywuje obserwowanie zmian srodka o zoom mapy
  */
-  private aktualizacjazoomISrodek(): void {
+  private aktualizacjaZoomISrodek(): void {
     this.subskrypcje$.add(this.mapaSerwis.pobierzSubjectAktualizacjiZoomISrodek().subscribe(zoomISrodek => {
       if (zoomISrodek?.srodek && zoomISrodek?.zoom) {
         this.zmianaZoomISrodek.emit({

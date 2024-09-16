@@ -24,7 +24,7 @@
         },
         {
           "nazwaMapy": "Lindley's plans",
-           "typ": "SERWIS_ZEWNETRZNY",
+          "typ": "SERWIS_ZEWNETRZNY",
           "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
           "opisKafelka": "City plans from the turn of the 19th and 20th century from the resources of the State Archives in Warsaw.",
           "status": "OPUBLIKOWANA",
@@ -62,8 +62,8 @@
         "grupyMap": [
           {
             "nazwaMapy": "WARSAW REMEMBERED",
-             "typ": "SERWIS_ZEWNETRZNY",
-          "adresUrl": "",
+            "typ": "SERWIS_ZEWNETRZNY",
+            "adresUrl": "",
             "opisKafelka": "We invite you for a virtual tour of old Warsaw. We present the capital in memories selected from over 6,000 reports and hundreds of archival photos from known collections. The map allows you to visit places that create the history of Warsaw - the city as remembered by its inhabitants.",
             "status": "OPUBLIKOWANA",
             "wersja": "OBIE",
@@ -76,7 +76,7 @@
           {
             "nazwaMapy": "INTERWAR WARSAW",
             "typ": "SERWIS_ZEWNETRZNY",
-          "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
+            "adresUrl": "",
             "opisKafelka": "Plans and maps from the period. Interesting places related to the interwar period.",
             "status": "OPUBLIKOWANA",
             "wersja": "DESKTOPOWA",
@@ -84,12 +84,12 @@
             "dostepnoscDlaWersjiResponsywnej": false,
             "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/saski.jpg",
             "numerWTabeli": 2,
-            "uuidMapy": "c10468d7-7e2b-4cb0-a657-e10a59e3bb00"
+            "uuidMapy": "bbf024f0-bbdb-4a3b-8c93-b9555d94142e"
           },
           {
             "nazwaMapy": "REBUILDING WARSAW",
             "typ": "SERWIS_ZEWNETRZNY",
-          "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
+            "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
             "opisKafelka": "The whole nation is building its capital. A short history of the destruction and reconstruction of Warsaw on a map.",
             "status": "OPUBLIKOWANA",
             "wersja": "OBIE",
@@ -102,7 +102,7 @@
           {
             "nazwaMapy": "MARTIAL LAW",
             "typ": "SERWIS_ZEWNETRZNY",
-          "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
+            "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
             "opisKafelka": "The state was introduced on December 13, 1981 throughout the Polish People's Republic, contrary to the Constitution.",
             "status": "OPUBLIKOWANA",
             "wersja": "OBIE",
@@ -125,8 +125,8 @@
         "grupyMap": [
           {
             "nazwaMapy": "Lindley's plans",
-             "typ": "SERWIS_ZEWNETRZNY",
-          "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
+            "typ": "SERWIS_ZEWNETRZNY",
+            "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
             "opisKafelka": "City plans from the turn of the 19th and 20th century from the resources of the State Archives in Warsaw.",
             "status": "OPUBLIKOWANA",
             "wersja": "OBIE",
@@ -139,7 +139,7 @@
           {
             "nazwaMapy": "LE ROUGE'S PLAN",
             "typ": "SERWIS_ZEWNETRZNY",
-          "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
+            "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
             "opisKafelka": "Le Rouge's plan on a scale of approx. 1:6900 from 1768 - an image of the city from the Saxon era.",
             "status": "OPUBLIKOWANA",
             "wersja": "OBIE",
@@ -152,7 +152,7 @@
           {
             "nazwaMapy": "PHOTO PLAN 1945",
             "typ": "SERWIS_ZEWNETRZNY",
-          "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
+            "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
             "opisKafelka": "Warsaw after the war. A photo plan based on photos taken in June 1945.",
             "status": "OPUBLIKOWANA",
             "wersja": "OBIE",
@@ -164,8 +164,8 @@
           },
           {
             "nazwaMapy": "PLAN 1939r.",
-             "typ": "SERWIS_ZEWNETRZNY",
-          "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
+            "typ": "SERWIS_ZEWNETRZNY",
+            "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
             "opisKafelka": "Plan from 1936-1940 on a scale of 1:1000 obtained through the Architecture Office.",
             "status": "OPUBLIKOWANA",
             "wersja": "OBIE",
@@ -188,8 +188,8 @@
         "grupyMap": [
           {
             "nazwaMapy": "MARTIAL LAW REPORTS FROM WARSAW RESIDENTS",
-             "typ": "SERWIS_ZEWNETRZNY",
-          "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
+            "typ": "SERWIS_ZEWNETRZNY",
+            "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
             "opisKafelka": "Mapa z granicami działek oraz obrysami budynków pochodzącymi z bazy EGiB",
             "status": "OPUBLIKOWANA",
             "wersja": "OBIE",
@@ -202,7 +202,7 @@
           {
             "nazwaMapy": "ELECTIONS OF JUNE 4, 1989",
             "typ": "SERWIS_ZEWNETRZNY",
-          "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
+            "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
             "opisKafelka": "",
             "status": "OPUBLIKOWANA",
             "wersja": "OBIE",
@@ -214,8 +214,8 @@
           },
           {
             "nazwaMapy": "JAN ROZMARYNOWSKI ABOUT WARSAW",
-             "typ": "SERWIS_ZEWNETRZNY",
-          "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
+            "typ": "SERWIS_ZEWNETRZNY",
+            "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
             "opisKafelka": "",
             "status": "OPUBLIKOWANA",
             "wersja": "DESKTOPOWA",
@@ -227,8 +227,8 @@
           },
           {
             "nazwaMapy": "FABLES AND LEGENDS OF WARSAW",
-             "typ": "SERWIS_ZEWNETRZNY",
-          "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
+            "typ": "SERWIS_ZEWNETRZNY",
+            "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
             "opisKafelka": "Places related to known and less known legends and fairy tales about Warsaw.",
             "status": "OPUBLIKOWANA",
             "wersja": "OBIE",
@@ -238,7 +238,6 @@
             "numerWTabeli": 4,
             "uuidMapy": "5f6be1e0-022a-477d-bcce-07fb72293af8"
           }
-
         ]
       },
       {
@@ -249,9 +248,7 @@
           "obiektEnum": "KATEGORIA_TEMATYCZNA",
           "tlumaczenie": "Kategoria tematyczna"
         },
-        "grupyMap": [
-
-        ]
+        "grupyMap": []
       }
     ]
   }

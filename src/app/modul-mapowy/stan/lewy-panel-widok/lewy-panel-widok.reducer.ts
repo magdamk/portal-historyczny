@@ -27,5 +27,8 @@ export interface WidokState {
 
 export const lewyPanelWidokReducer = createReducer(
   LewyPanelWidokInitialState,
-  on(LewyPanelWidokActions.pokazObszar, (state, { widokId }) => state = { ...state,top: widokId, widok: DEFINICJA_WIDOKOW.get(widokId)! })
+  on(LewyPanelWidokActions.pokazObszar, (state, { widokId }) => state = { ...state,top: widokId, widok: DEFINICJA_WIDOKOW.get(widokId)! }),
+  on(LewyPanelWidokActions.reset, (state) => {
+    return LewyPanelWidokInitialState
+  })
 )

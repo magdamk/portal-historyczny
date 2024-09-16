@@ -2,7 +2,14 @@
 
   <div *ngIf="mapa" class="tematy" [class.hidden]="!obszarWidoczny" >
     <div class="tytul naglowek-a">
-      <p>os-tematy works!</p>
+      {{'codes.modul-mapowy.belka-boczna.tematy' | translate}}
+    </div>
+    <div class="lista-kategorii" *ngFor="let temat of zbiorTematow">
+      <!-- {{mapa.opisWPortaluMapowym | wyborTlumaczenia:aktualnyJezyk}} -->
+      {{temat.nazwaMapy}}
+      <!-- <app-kategorie-map (mapaWybrana)="wybranoMape($event)" [zmianaMapy]="zmianaMapy || wyborMapyDoPorownania"
+        [kategoriiMap]="kategoria">
+      </app-kategorie-map> -->
     </div>
   </div>
   <div class="kontroler poz-2"

@@ -58,11 +58,13 @@ export class TlumaczeniaService {
    * Funkcja pozwala przełączyć się pomiędzy językami
    */
   przelaczJezyk(): void {
+    console.log(this.translate?.currentLang);
     if (this.translate?.currentLang === LANGS.PL) {
       this.zmienJezyk(LANGS.EN);
       return;
     }
     this.zmienJezyk(LANGS.PL);
+    console.log(this.translate?.currentLang);
   }
 
   /**
