@@ -50,6 +50,7 @@ import { OsSzlakiComponent } from './serwis-mapowy/komponenty/boczna-belka/os-sz
 import { OsTagiComponent } from './serwis-mapowy/komponenty/boczna-belka/os-tagi/os-tagi.component';
 import { OsInfoComponent } from './serwis-mapowy/komponenty/boczna-belka/os-info/os-info.component';
 import { lewyPanelWidokReducer } from './stan/lewy-panel-widok/lewy-panel-widok.reducer';
+import { BelkaKartaMapyComponent } from './serwis-mapowy/komponenty/boczna-belka/belka-karta-mapy/belka-karta-mapy.component';
 
 
 
@@ -75,7 +76,8 @@ import { lewyPanelWidokReducer } from './stan/lewy-panel-widok/lewy-panel-widok.
     OsTematyComponent,
     OsSzlakiComponent,
     OsTagiComponent,
-    OsInfoComponent
+    OsInfoComponent,
+    BelkaKartaMapyComponent
   ],
   imports: [
     CommonModule,

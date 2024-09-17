@@ -7,8 +7,6 @@ import { Widok } from 'src/app/modul-mapowy/stan/lewy-panel-widok/lewy-panel-wid
 import { WIDOKI_ID } from 'src/app/modul-mapowy/stan/lewy-panel-widok/lewy-panel-widok.const';
 import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/mm-tlumaczenia.service';
 import { RODZAJ_MAPY } from '../../../modele/rodzajMapy';
-// import {NarzedziaState, NarzedzieSterujace} from '../../../../stan/narzedzia/narzedzia.reducer';
-// import {NARZEDZIA_STERUJACE_ID} from '../../../../stan/narzedzia/narzedzia.const';
 
 export const POZ_ZNACZNIK_BELKA_BOCZNA = ['poz-1', 'poz-2', 'poz-3', 'poz-4', 'poz-5', 'poz-6', 'poz-7', 'poz-8', 'poz-9', 'poz-10'];
 
@@ -29,12 +27,12 @@ export class BocznaBelkaKontenerComponent implements OnInit, OnChanges, OnDestro
 
   subscriptions$ = new Subscription();
 
-
   // widokNaWierzchu$: Observable<Widok>;
   widok$: Observable<{ top: string, widok: Widok, widoki: Widok[] }>;
   listaWidokow: Widok[] = [];
   topId: string = '';
   topWidok: Widok | undefined;
+
   /**
    * Konstruktor
    */
@@ -52,18 +50,16 @@ export class BocznaBelkaKontenerComponent implements OnInit, OnChanges, OnDestro
         this.topWidok = stan.widok;
       // console.log(stan);
     }));
-    console.log('belka-boczna-kontener', this.topId);
-    console.log('belka-boczna-kontener', this.listaWidokow);
-    console.log('belka-boczna-kontener', this.topWidok);
-    // this.store.dispatch(ObszaryActions.uruchomObszar({identyfikator:OBSZARY_STERUJACE_ID.TEMATY}));
-    // this.store.dispatch(ObszaryActions.uruchomObszar({identyfikator:OBSZARY_STERUJACE_ID.SZLAKI}));
+    console.log('belka-boczna-kontener oninit', this.topId);
+    console.log('belka-boczna-kontener oninit', this.listaWidokow);
+    console.log('belka-boczna-kontener oninit', this.topWidok);
   }
   /**
    * Cykl życia komponentu zmiana danych
    * @param changes
    */
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('belka-boczna-kontener', this.listaWidokow);
+    console.log('belka-boczna-kontener on changes', this.listaWidokow);
   }
 
   /**

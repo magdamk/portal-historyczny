@@ -1,0 +1,26 @@
+<div class="belka-karta-mapy h-full w-full"
+[class.miniaturka-ukryta]="miniaturkaUkryta"
+[ngClass]="{'szczegoly': szczegoly }">
+<div class="tytul uppercase p-2">
+  <span class="um-tytul-mapa">{{temat.nazwaMapy}}</span>
+</div>
+<div class="miniaturka um-desktop:miniaturka-desktop"
+  [style.backgroundImage]="'url(' + temat!.sciezkaDoPlikuZGrafika + ')'">
+</div>
+<div class="opis">
+  <div class="opis-tresc text-left p-3 um-desktop:px-1 um-desktop:pt-2 um-desktop:p-0 overflow-ellipsis overflow-hidden ...">
+    {{temat.opisKafelka}}
+  </div>
+  <div class="opis-przycisk w-full justify-center items-center">
+    <!-- <app-przycisk-okragly *ngIf="!zmianaMapy"
+                          tabindex="0" typ="PRIMARY"
+                          ikona="prawa-strzalka" [link]="'/mapa/'+mapa?.uuidMapy" [href]="adresUrl"
+                          label="{{'codes.strona-startowa.etykieta-przejdz-do-mapy' | translate}}">
+    </app-przycisk-okragly>
+    <app-przycisk-okragly *ngIf="zmianaMapy"
+                          tabindex="0" typ="PRIMARY"
+                          ikona="prawa-strzalka"
+                          label="{{'codes.strona-startowa.etykieta-przejdz-do-mapy' | translate}}">
+    </app-przycisk-okragly> -->
+  </div>
+</div>
