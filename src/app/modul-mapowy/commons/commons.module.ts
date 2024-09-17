@@ -7,6 +7,9 @@ import { IkonaSvgDirective } from './directives/ikona-svg.directive';
 import { PrzewijanyKomponentComponent } from './komponenty/przewijany-komponent/przewijany-komponent.component';
 import { RerenderDirective } from './directives/rerender.directive';
 import { PrzyciskMydloComponent } from './komponenty/przycisk-mydlo/przycisk-mydlo.component';
+import { PrzyciskOkraglyComponent } from './komponenty/przycisk-okragly/przycisk-okragly.component';
+import { MatIconModule } from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -16,18 +19,23 @@ import { PrzyciskMydloComponent } from './komponenty/przycisk-mydlo/przycisk-myd
     IkonaSvgDirective,
     PrzewijanyKomponentComponent,
     RerenderDirective,
-    PrzyciskMydloComponent
+    PrzyciskMydloComponent,
+    PrzyciskOkraglyComponent
   ],
   imports: [
     CommonModule,
+    MatIconModule,
     MatLegacySliderModule,
-    MatTooltipModule
+
+    MatTooltipModule,
+    RouterModule
   ],
   exports:[
     IkonaSvgDirective,
     MatLegacySliderModule,
     PrzyciskIkonaComponent,
     PrzyciskMydloComponent,
+    PrzyciskOkraglyComponent,
     PrzewijanyKomponentComponent,
     RerenderDirective
   ]

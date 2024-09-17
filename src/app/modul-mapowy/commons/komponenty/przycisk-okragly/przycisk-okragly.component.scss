@@ -1,0 +1,26 @@
+@import "../../../../../style/konfiguracja-szablonu";
+
+$wysokosc-przycisku: 63px;
+
+a, button{
+  height: $wysokosc-przycisku;
+  width: $wysokosc-przycisku;
+  text-decoration: none !important;
+}
+
+.basic {
+  border: 2px solid $miasto-bialy;
+  background-color: $miasto-blekit-30p;
+  color: $miasto-bialy;
+}
+
+.primary {
+  border: 2px solid $miasto-blekit;
+  background-color: $miasto-blekit-20p;
+  color: $miasto-blekit;
+}
+
+.okragly-przycisk-ikona{
+  width: 28px !important;
+  height: 28px !important;
+}

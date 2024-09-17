@@ -3,12 +3,12 @@
 $karta-mapy-wysokosc: 270px;
 $karta-mapy-tytul-wysokosc: 90px;
 $karta-mapy-opis-tresc-wysokosc: 90px;
-$karta-mapy-przycisk-wysokosc: 90px;
+$karta-mapy-przycisk-wysokosc: 100px;
 
 .belka-karta-mapy {
-  height: auto;
-  width: calc(50vw - 76px);
-  margin: 3px;
+  height: 270px;
+  // width: calc(50vw - 76px);
+  margin: 5px;
   background: white;
   border: 1px solid #e8e8e8;
   cursor: pointer;
@@ -29,7 +29,8 @@ $karta-mapy-przycisk-wysokosc: 90px;
 .belka-karta-mapy.szczegoly,
 .belka-karta-mapy:focus,
 .belka-karta-mapy.szczegoly {
-  box-shadow: 0px 0px 0px 8px $miasto-pomarancz;
+  box-shadow: 0px 0px 0px 4px $miasto-pomarancz;
+  // border: 1px solid $miasto-pomarancz;
   outline: none;
 }
 
@@ -68,12 +69,14 @@ $karta-mapy-przycisk-wysokosc: 90px;
 }
 
 .miniaturka {
-  height: $karta-mapy-przycisk-wysokosc;
+  // height: $karta-mapy-przycisk-wysokosc;
+  height: 178px;
   background-size: cover;
 }
 
 .opis {
-  height: calc(#{$karta-mapy-wysokosc} - #{$karta-mapy-tytul-wysokosc});
+  // height: calc(#{$karta-mapy-wysokosc} - #{$karta-mapy-tytul-wysokosc});
+  height: 190px;
   display: none;
 }
 
@@ -88,20 +91,19 @@ $karta-mapy-przycisk-wysokosc: 90px;
 }
 
 
-@tailwind utilities;
+// @tailwind utilities;
 
-@layer utilities {
-  @variants responsive {
+// @layer utilities {
+//   @variants responsive {
     .miniaturka-desktop {
-      height: calc(#{$karta-mapy-przycisk-wysokosc} + #{$karta-mapy-opis-tresc-wysokosc});
+      // height: calc(#{$karta-mapy-przycisk-wysokosc} + #{$karta-mapy-opis-tresc-wysokosc});
+      height: 190px;
     }
-  }
-}
+//   }
+// }
 
 @media (min-width: 900px) {
-.belka-karta-mapy{
-  width: 180px;
-}
+
   .belka-karta-mapy:active .tytul,
   .belka-karta-mapy:hover .tytul,
   .belka-karta-mapy:focus .tytul {

@@ -8,7 +8,7 @@ import { KategoriaGrupaMapOpenDto } from 'src/app/core/modele/kategoria-grupa-ma
 })
 export class BelkaKartaMapyComponent {
   @Input({ required: true }) temat!: KategoriaGrupaMapOpenDto;
-
+  @Input() zmianaMapy = false;
   szczegoly = false;
   adresUrl?: string;
   miniaturkaUkryta = false;
