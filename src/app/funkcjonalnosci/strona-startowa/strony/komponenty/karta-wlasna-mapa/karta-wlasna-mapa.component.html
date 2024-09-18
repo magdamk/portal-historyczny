@@ -9,10 +9,10 @@
       {{'codes.strona-startowa.stworz-mape-opis' | translate}}
     </div>
     <div class="opis-przycisk flex w-full justify-center items-center">
-      <app-przycisk-okragly *ngIf="!wyborMapyDoPorownania" typ="BASIC" ikona="plus" link="/mapa"
-                            label="{{'codes.strona-startowa.etykieta-stworz-mape' | translate}}"></app-przycisk-okragly>
-      <app-przycisk-okragly *ngIf="wyborMapyDoPorownania" typ="BASIC" ikona="plus" (click)="wybranoMape()"
-                            label="{{'codes.strona-startowa.etykieta-stworz-mape' | translate}}"></app-przycisk-okragly>
+      <mm-przycisk-okragly *ngIf="!wyborMapyDoPorownania" typ="BASIC" ikona="plus" link="/mapa"
+                            label="{{'codes.strona-startowa.etykieta-stworz-mape' | translate}}"></mm-przycisk-okragly>
+      <mm-przycisk-okragly *ngIf="wyborMapyDoPorownania" typ="BASIC" ikona="plus" (click)="wybranoMape()"
+                            label="{{'codes.strona-startowa.etykieta-stworz-mape' | translate}}"></mm-przycisk-okragly>
     </div>
   </div>
 </div>

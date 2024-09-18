@@ -17,16 +17,16 @@
       {{mapa?.opisKafelka}}
     </div>
     <div class="opis-przycisk w-full justify-center items-center">
-      <app-przycisk-okragly *ngIf="!zmianaMapy"
+      <mm-przycisk-okragly *ngIf="!zmianaMapy"
                             tabindex="0" typ="PRIMARY"
                             ikona="prawa-strzalka" [link]="'/mapa/'+mapa?.uuidMapy" [href]="adresUrl"
                             label="{{'codes.strona-startowa.etykieta-przejdz-do-mapy' | translate}}">
-      </app-przycisk-okragly>
-      <app-przycisk-okragly *ngIf="zmianaMapy"
+      </mm-przycisk-okragly>
+      <mm-przycisk-okragly *ngIf="zmianaMapy"
                             tabindex="0" typ="PRIMARY"
                             ikona="prawa-strzalka"
                             label="{{'codes.strona-startowa.etykieta-przejdz-do-mapy' | translate}}">
-      </app-przycisk-okragly>
+      </mm-przycisk-okragly>
     </div>
   </div>
 </div>

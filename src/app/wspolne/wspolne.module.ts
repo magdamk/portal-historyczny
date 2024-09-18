@@ -9,19 +9,13 @@ import { RouterModule } from '@angular/router';
 import { ObserversModule } from '@angular/cdk/observers';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { TranslateModule } from "@ngx-translate/core";
-// import { MatSliderModule } from '@angular/material/slider';
 import { StylizowanyKursorDirective } from './dyrektywy/stylizowany-kursor.directive';
 import { SnackbarKomunikatComponent } from './komponenty/snackbar-komunikat/snackbar-komunikat.component';
 import { PrzyciskProstokatnyComponent } from './komponenty/przyciski/przycisk-prostokatny/przycisk-prostokatny.component';
-import { PrzyciskOkraglyComponent } from './komponenty/przyciski/przycisk-okragly/przycisk-okragly.component';
 import { KomunikatCookieComponent } from './komponenty/cookie/komunikat-cookie/komunikat-cookie.component';
 import { InformacjaPopupComponent } from './komponenty/informacja-popup/informacja-popup.component';
 import { PotwierdzeniePopupComponent } from './komponenty/potwierdzenie-popup/potwierdzenie-popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
-// import { PrzewijanyKomponentComponent } from './components/przewijany-komponent/przewijany-komponent.component';
-// import { MatSliderChange, MatSliderModule } from '@angular/material/slider';
-// import { MatLegacySliderModule } from '@angular/material/legacy-slider';
-// import { PrzewijanyKomponentComponent } from './komponenty/przewijany-komponent/przewijany-komponent.component';
 import { KontaktFormularzComponent } from './komponenty/kontakt-formularz/kontakt-formularz.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
@@ -39,12 +33,10 @@ import { ModulMapowyModule } from '../modul-mapowy/modul-mapowy.module';
     StylizowanyKursorDirective,
     SnackbarKomunikatComponent,
     PrzyciskProstokatnyComponent,
-    PrzyciskOkraglyComponent,
     KomunikatCookieComponent,
     KomponentHostDirective,
     InformacjaPopupComponent,
     PotwierdzeniePopupComponent,
-    // PrzewijanyKomponentComponent,
     KontaktFormularzComponent,
     ZamienNaKbMbPipe,
   ],
@@ -53,12 +45,10 @@ import { ModulMapowyModule } from '../modul-mapowy/modul-mapowy.module';
     MatTooltipModule,
     MatIconModule,
     RouterModule,
-    // MatSliderModule,
     ObserversModule,
     MatDialogModule,
     TranslateModule,
     MatSnackBarModule,
-    // MatLegacySliderModule,
     MatFormFieldModule,
     ReactiveFormsModule,
     MatCheckboxModule,
@@ -68,7 +58,6 @@ import { ModulMapowyModule } from '../modul-mapowy/modul-mapowy.module';
     ModulMapowyModule
   ],
   exports: [
-    PrzyciskOkraglyComponent,
     KomunikatCookieComponent,
     PrzyciskProstokatnyComponent,
     PrzyciskMydloComponent,
@@ -77,8 +66,6 @@ import { ModulMapowyModule } from '../modul-mapowy/modul-mapowy.module';
     StylizowanyKursorDirective,
     SnackbarKomunikatComponent,
     PotwierdzeniePopupComponent,
-    // PrzewijanyKomponentComponent,
-    // MatLegacySliderModule,
     ZamienNaKbMbPipe,
     KontaktFormularzComponent,
     KomponentHostDirective
