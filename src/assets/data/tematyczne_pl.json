@@ -12,6 +12,7 @@
         {
           "nazwaMapy": "WARSZAWA ZAPAMIĘTANA",
           "typ": "SERWIS_ZEWNETRZNY",
+          "rodzaj":"temat",
           "adresUrl": "https://testmapa.um.warszawa.pl/mapa/6c516f13-7fc7-43e8-b60f-acddea75406d?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
           "opisKafelka": "Zapraszamy na wirtualną wycieczkę po dawnej Warszawie. Przedstawiamy stolicę we wspomnieniach wybranych z ponad 6tysięcy relacji i setek archiwalnych zdjęć znaszych zbiorów. Mapa pozwala odwiedzić miejsca tworzące historię Warszawy -miasta, jakie zapamiętali jego mieszkańcy.",
           "status": "OPUBLIKOWANA",
@@ -25,6 +26,7 @@
         {
           "nazwaMapy": "PLANY LINDLEYA",
           "typ": "SERWIS_ZEWNETRZNY",
+          "rodzaj":"mapa_plan",
           "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
           "opisKafelka": "Plany miasta z przełomu XIX i XX z zasobów Archiwum Państwowego w Warszawie.",
           "status": "OPUBLIKOWANA",
@@ -38,6 +40,7 @@
         {
           "nazwaMapy": "Pierwsze dni powstania",
           "typ": "SERWIS_ZEWNETRZNY",
+          "rodzaj":"szlak",
           "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
           "opisKafelka": "1 sierpnia 1944 r. wybuchło powstanie. Przez 63 dni prowadzono heroiczne walki z Niemcami.",
           "status": "OPUBLIKOWANA",
@@ -63,6 +66,7 @@
           {
             "nazwaMapy": "WARSZAWA ZAPAMIĘTANA",
             "typ": "SERWIS_ZEWNETRZNY",
+            "rodzaj":"temat",
             "adresUrl": "",
             "opisKafelka": "Zapraszamy na wirtualną wycieczkę po dawnej Warszawie. Przedstawiamy stolicę we wspomnieniach wybranych z ponad 6tysięcy relacji i setek archiwalnych zdjęć znaszych zbiorów. Mapa pozwala odwiedzić miejsca tworzące historię Warszawy -miasta, jakie zapamiętali jego mieszkańcy.",
             "status": "OPUBLIKOWANA",
@@ -76,6 +80,7 @@
           {
             "nazwaMapy": "WARSZAWA MIĘDZYWOJENNA",
             "typ": "SERWIS_ZEWNETRZNY",
+            "rodzaj":"temat",
             "adresUrl": "",
             "opisKafelka": "Plany i mapy z okresu. Ciekawe miejsca powiązane z okresem międzywojennym.",
             "status": "OPUBLIKOWANA",
@@ -89,6 +94,63 @@
           {
             "nazwaMapy": "ODBUDOWA WARSZAWY",
             "typ": "SERWIS_ZEWNETRZNY",
+            "rodzaj":"temat",
+            "adresUrl": "",
+            "opisKafelka": "Cały naród buduje swoją stolicę. Krótka historia zniszczeń i odbudowy Warszawy na mapie.",
+            "status": "OPUBLIKOWANA",
+            "wersja": "OBIE",
+            "dostepnoscDlaWersjiDesktopowej": false,
+            "dostepnoscDlaWersjiResponsywnej": false,
+            "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/odbudowa.jfif",
+            "numerWTabeli": 3,
+            "uuidMapy": "c70ee36b-a41c-41f0-b44f-4393f7f6d7b4"
+          },
+          {
+            "nazwaMapy": "STAN WOJENNY",
+            "typ": "SERWIS_ZEWNETRZNY",
+            "rodzaj":"temat",
+            "adresUrl": "",
+            "opisKafelka": "Stan wprowadzony 13 grudnia 1981 roku na terenie całej PRL niezgodnie z Konstytucją.",
+            "status": "OPUBLIKOWANA",
+            "wersja": "OBIE",
+            "dostepnoscDlaWersjiDesktopowej": false,
+            "dostepnoscDlaWersjiResponsywnej": false,
+            "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/stanwojenny.png",
+            "numerWTabeli": 4,
+            "uuidMapy": "23032696-0462-4458-befd-8636bbc2ef8b"
+          },
+          {
+            "nazwaMapy": "WARSZAWA ZAPAMIĘTANA",
+            "typ": "SERWIS_ZEWNETRZNY",
+            "rodzaj":"temat",
+            "adresUrl": "",
+            "opisKafelka": "Zapraszamy na wirtualną wycieczkę po dawnej Warszawie. Przedstawiamy stolicę we wspomnieniach wybranych z ponad 6tysięcy relacji i setek archiwalnych zdjęć znaszych zbiorów. Mapa pozwala odwiedzić miejsca tworzące historię Warszawy -miasta, jakie zapamiętali jego mieszkańcy.",
+            "status": "OPUBLIKOWANA",
+            "wersja": "OBIE",
+            "dostepnoscDlaWersjiDesktopowej": true,
+            "dostepnoscDlaWersjiResponsywnej": true,
+            "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/wawzap.png",
+            "numerWTabeli": 1,
+            "uuidMapy": "6c516f13-7fc7-43e8-b60f-acddea75406d"
+          },
+          {
+            "nazwaMapy": "WARSZAWA MIĘDZYWOJENNA",
+            "typ": "SERWIS_ZEWNETRZNY",
+            "rodzaj":"temat",
+            "adresUrl": "",
+            "opisKafelka": "Plany i mapy z okresu. Ciekawe miejsca powiązane z okresem międzywojennym.",
+            "status": "OPUBLIKOWANA",
+            "wersja": "DESKTOPOWA",
+            "dostepnoscDlaWersjiDesktopowej": false,
+            "dostepnoscDlaWersjiResponsywnej": false,
+            "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/saski.jpg",
+            "numerWTabeli": 2,
+            "uuidMapy": "bbf024f0-bbdb-4a3b-8c93-b9555d94142e"
+          },
+          {
+            "nazwaMapy": "ODBUDOWA WARSZAWY",
+            "typ": "SERWIS_ZEWNETRZNY",
+            "rodzaj":"temat",
             "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
             "opisKafelka": "Cały naród buduje swoją stolicę. Krótka historia zniszczeń i odbudowy Warszawy na mapie.",
             "status": "OPUBLIKOWANA",
@@ -102,6 +164,7 @@
           {
             "nazwaMapy": "STAN WOJENNY",
             "typ": "SERWIS_ZEWNETRZNY",
+            "rodzaj":"temat",
             "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
             "opisKafelka": "Stan wprowadzony 13 grudnia 1981 roku na terenie całej PRL niezgodnie z Konstytucją.",
             "status": "OPUBLIKOWANA",
@@ -115,6 +178,7 @@
           {
             "nazwaMapy": "WARSZAWA ZAPAMIĘTANA",
             "typ": "SERWIS_ZEWNETRZNY",
+            "rodzaj":"temat",
             "adresUrl": "",
             "opisKafelka": "Zapraszamy na wirtualną wycieczkę po dawnej Warszawie. Przedstawiamy stolicę we wspomnieniach wybranych z ponad 6tysięcy relacji i setek archiwalnych zdjęć znaszych zbiorów. Mapa pozwala odwiedzić miejsca tworzące historię Warszawy -miasta, jakie zapamiętali jego mieszkańcy.",
             "status": "OPUBLIKOWANA",
@@ -128,6 +192,7 @@
           {
             "nazwaMapy": "WARSZAWA MIĘDZYWOJENNA",
             "typ": "SERWIS_ZEWNETRZNY",
+            "rodzaj":"temat",
             "adresUrl": "",
             "opisKafelka": "Plany i mapy z okresu. Ciekawe miejsca powiązane z okresem międzywojennym.",
             "status": "OPUBLIKOWANA",
@@ -141,6 +206,7 @@
           {
             "nazwaMapy": "ODBUDOWA WARSZAWY",
             "typ": "SERWIS_ZEWNETRZNY",
+            "rodzaj":"temat",
             "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
             "opisKafelka": "Cały naród buduje swoją stolicę. Krótka historia zniszczeń i odbudowy Warszawy na mapie.",
             "status": "OPUBLIKOWANA",
@@ -154,6 +220,7 @@
           {
             "nazwaMapy": "STAN WOJENNY",
             "typ": "SERWIS_ZEWNETRZNY",
+            "rodzaj":"temat",
             "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
             "opisKafelka": "Stan wprowadzony 13 grudnia 1981 roku na terenie całej PRL niezgodnie z Konstytucją.",
             "status": "OPUBLIKOWANA",
@@ -167,6 +234,7 @@
           {
             "nazwaMapy": "WARSZAWA ZAPAMIĘTANA",
             "typ": "SERWIS_ZEWNETRZNY",
+            "rodzaj":"temat",
             "adresUrl": "",
             "opisKafelka": "Zapraszamy na wirtualną wycieczkę po dawnej Warszawie. Przedstawiamy stolicę we wspomnieniach wybranych z ponad 6tysięcy relacji i setek archiwalnych zdjęć znaszych zbiorów. Mapa pozwala odwiedzić miejsca tworzące historię Warszawy -miasta, jakie zapamiętali jego mieszkańcy.",
             "status": "OPUBLIKOWANA",
@@ -180,6 +248,7 @@
           {
             "nazwaMapy": "WARSZAWA MIĘDZYWOJENNA",
             "typ": "SERWIS_ZEWNETRZNY",
+            "rodzaj":"temat",
             "adresUrl": "",
             "opisKafelka": "Plany i mapy z okresu. Ciekawe miejsca powiązane z okresem międzywojennym.",
             "status": "OPUBLIKOWANA",
@@ -193,6 +262,7 @@
           {
             "nazwaMapy": "ODBUDOWA WARSZAWY",
             "typ": "SERWIS_ZEWNETRZNY",
+            "rodzaj":"temat",
             "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
             "opisKafelka": "Cały naród buduje swoją stolicę. Krótka historia zniszczeń i odbudowy Warszawy na mapie.",
             "status": "OPUBLIKOWANA",
@@ -206,58 +276,7 @@
           {
             "nazwaMapy": "STAN WOJENNY",
             "typ": "SERWIS_ZEWNETRZNY",
-            "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
-            "opisKafelka": "Stan wprowadzony 13 grudnia 1981 roku na terenie całej PRL niezgodnie z Konstytucją.",
-            "status": "OPUBLIKOWANA",
-            "wersja": "OBIE",
-            "dostepnoscDlaWersjiDesktopowej": false,
-            "dostepnoscDlaWersjiResponsywnej": false,
-            "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/stanwojenny.png",
-            "numerWTabeli": 4,
-            "uuidMapy": "23032696-0462-4458-befd-8636bbc2ef8b"
-          },
-          {
-            "nazwaMapy": "WARSZAWA ZAPAMIĘTANA",
-            "typ": "SERWIS_ZEWNETRZNY",
-            "adresUrl": "",
-            "opisKafelka": "Zapraszamy na wirtualną wycieczkę po dawnej Warszawie. Przedstawiamy stolicę we wspomnieniach wybranych z ponad 6tysięcy relacji i setek archiwalnych zdjęć znaszych zbiorów. Mapa pozwala odwiedzić miejsca tworzące historię Warszawy -miasta, jakie zapamiętali jego mieszkańcy.",
-            "status": "OPUBLIKOWANA",
-            "wersja": "OBIE",
-            "dostepnoscDlaWersjiDesktopowej": true,
-            "dostepnoscDlaWersjiResponsywnej": true,
-            "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/wawzap.png",
-            "numerWTabeli": 1,
-            "uuidMapy": "6c516f13-7fc7-43e8-b60f-acddea75406d"
-          },
-          {
-            "nazwaMapy": "WARSZAWA MIĘDZYWOJENNA",
-            "typ": "SERWIS_ZEWNETRZNY",
-            "adresUrl": "",
-            "opisKafelka": "Plany i mapy z okresu. Ciekawe miejsca powiązane z okresem międzywojennym.",
-            "status": "OPUBLIKOWANA",
-            "wersja": "DESKTOPOWA",
-            "dostepnoscDlaWersjiDesktopowej": false,
-            "dostepnoscDlaWersjiResponsywnej": false,
-            "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/saski.jpg",
-            "numerWTabeli": 2,
-            "uuidMapy": "bbf024f0-bbdb-4a3b-8c93-b9555d94142e"
-          },
-          {
-            "nazwaMapy": "ODBUDOWA WARSZAWY",
-            "typ": "SERWIS_ZEWNETRZNY",
-            "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
-            "opisKafelka": "Cały naród buduje swoją stolicę. Krótka historia zniszczeń i odbudowy Warszawy na mapie.",
-            "status": "OPUBLIKOWANA",
-            "wersja": "OBIE",
-            "dostepnoscDlaWersjiDesktopowej": false,
-            "dostepnoscDlaWersjiResponsywnej": false,
-            "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/odbudowa.jfif",
-            "numerWTabeli": 3,
-            "uuidMapy": "c3373daf-e4b2-47c5-aa2c-639c1f6a0ab2"
-          },
-          {
-            "nazwaMapy": "STAN WOJENNY",
-            "typ": "SERWIS_ZEWNETRZNY",
+            "rodzaj":"temat",
             "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
             "opisKafelka": "Stan wprowadzony 13 grudnia 1981 roku na terenie całej PRL niezgodnie z Konstytucją.",
             "status": "OPUBLIKOWANA",
@@ -282,7 +301,8 @@
           {
             "nazwaMapy": "PLANY LINDLEYA",
             "typ": "SERWIS_ZEWNETRZNY",
-            "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
+            "rodzaj":"mapa_plan",
+            "adresUrl": "",
             "opisKafelka": "Plany miasta z przełomu XIX i XX z zasobów Archiwum Państwowego w Warszawie.",
             "status": "OPUBLIKOWANA",
             "wersja": "OBIE",
@@ -290,11 +310,12 @@
             "dostepnoscDlaWersjiResponsywnej": true,
             "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/planyL.png",
             "numerWTabeli": 2,
-            "uuidMapy": "ad28f9d8-5e08-4385-a3ea-d340ec5d2d3e"
+            "uuidMapy": "3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0"
           },
           {
             "nazwaMapy": "PLAN LE ROUGE’A",
             "typ": "SERWIS_ZEWNETRZNY",
+            "rodzaj":"mapa_plan",
             "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
             "opisKafelka": "Plan Le Rouge’aw skali ok. 1:6900 z 1768 roku - obraz miasta z epoki saskiej.",
             "status": "OPUBLIKOWANA",
@@ -308,6 +329,7 @@
           {
             "nazwaMapy": "FOTOPLAN 1945r.",
             "typ": "SERWIS_ZEWNETRZNY",
+            "rodzaj":"mapa_plan",
             "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
             "opisKafelka": "Warszawa po wojnie. Fotoplan opracowany na podstawie zdjęć wykonanych w czerwcu 1945 r.",
             "status": "OPUBLIKOWANA",
@@ -321,6 +343,7 @@
           {
             "nazwaMapy": "PLAN 1939r.",
             "typ": "SERWIS_ZEWNETRZNY",
+            "rodzaj":"mapa_plan",
             "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
             "opisKafelka": "Plan z lat 1936-1940 w skali 1:1000 pozyskany poprzez Biuro Architektury.",
             "status": "OPUBLIKOWANA",
@@ -345,7 +368,8 @@
           {
             "nazwaMapy": "STAN WOJENNY RELACJE MIESZKAŃCÓW WARSZAWY",
             "typ": "SERWIS_ZEWNETRZNY",
-            "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
+            "rodzaj":"szlak",
+            "adresUrl": "",
             "opisKafelka": "",
             "status": "OPUBLIKOWANA",
             "wersja": "OBIE",
@@ -358,6 +382,7 @@
           {
             "nazwaMapy": "WYBORY 4 CZERWCA 1989",
             "typ": "SERWIS_ZEWNETRZNY",
+            "rodzaj":"szlak",
             "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
             "opisKafelka": "Elementy mapy zasadniczej",
             "status": "OPUBLIKOWANA",
@@ -371,6 +396,7 @@
           {
             "nazwaMapy": "JAN ROZMARYNOWSKI O WARSZAWIE",
             "typ": "SERWIS_ZEWNETRZNY",
+            "rodzaj":"szlak",
             "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
             "opisKafelka": "",
             "status": "OPUBLIKOWANA",
@@ -384,6 +410,7 @@
           {
             "nazwaMapy": "BAJKI I LEGENDY WARSZAWY",
             "typ": "SERWIS_ZEWNETRZNY",
+            "rodzaj":"szlak",
             "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
             "opisKafelka": "Miejsca związane ze znanymi i mniej znanymi legendami i bajkami o Warszawie.",
             "status": "OPUBLIKOWANA",

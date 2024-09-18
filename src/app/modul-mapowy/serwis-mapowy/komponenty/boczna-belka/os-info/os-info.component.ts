@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/mm-tlumaczenia.service';
 import { WIDOKI_ID } from 'src/app/modul-mapowy/stan/lewy-panel-widok/lewy-panel-widok.const';
@@ -10,7 +10,7 @@ import { LewyPanelWidokActions } from 'src/app/modul-mapowy/stan/lewy-panel-wido
 @Component({
   selector: 'mm-os-info',
   templateUrl: './os-info.component.html',
-  styleUrls: ['./os-info.component.scss']
+  styleUrls: ['./os-info.component.scss'],
 })
 export class OsInfoComponent implements OnInit {
   widokIdentyfikator = WIDOKI_ID.INFO;
@@ -18,7 +18,6 @@ export class OsInfoComponent implements OnInit {
   @Input() widok?: Widok;
   @Input() mapa?: Mapa;
   @Input() obszarWidoczny?: boolean | undefined;
-  @Input() rodzaj?: string ='';
 
   aktualnyJezyk = 'pl';
 
