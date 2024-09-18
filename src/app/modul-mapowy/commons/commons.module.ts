@@ -10,13 +10,13 @@ import { PrzyciskMydloComponent } from './komponenty/przycisk-mydlo/przycisk-myd
 import { PrzyciskOkraglyComponent } from './komponenty/przycisk-okragly/przycisk-okragly.component';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
-
-
+import { MMOdkazHtmlPipe } from './pipes/mm-odkaz-html.pipe';
 
 @NgModule({
   declarations: [
     PrzyciskIkonaComponent,
     IkonaSvgDirective,
+    MMOdkazHtmlPipe,
     PrzewijanyKomponentComponent,
     RerenderDirective,
     PrzyciskMydloComponent,
@@ -33,6 +33,7 @@ import { RouterModule } from '@angular/router';
   exports:[
     IkonaSvgDirective,
     MatLegacySliderModule,
+    MMOdkazHtmlPipe,
     PrzyciskIkonaComponent,
     PrzyciskMydloComponent,
     PrzyciskOkraglyComponent,

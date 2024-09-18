@@ -20,6 +20,7 @@ export class PrzyciskOkraglyComponent {
   @Input() label = '';
   @Input() typ = TYP_PRZYCISU.BASIC;
   @Input() link?: string;
+  @Input() linkParams?: {};
   @Input() href?: string;
 
 }

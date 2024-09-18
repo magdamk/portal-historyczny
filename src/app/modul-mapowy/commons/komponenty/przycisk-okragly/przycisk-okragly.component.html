@@ -5,7 +5,7 @@
 >
   <mat-icon class="okragly-przycisk-ikona" [svgIcon]="ikona"></mat-icon>
 </button>
-<a *ngIf="link && !href" [routerLink]="[link]" matTooltip="{{label}}" attr.aria-label="{{label}}"
+<a *ngIf="link && !href" [routerLink]="[link,linkParams]" matTooltip="{{label}}" attr.aria-label="{{label}}"
    class="rounded-full inline-flex justify-center items-center"
    [ngClass]="{'primary': typ==='PRIMARY', 'basic': typ==='BASIC'}"
 >
