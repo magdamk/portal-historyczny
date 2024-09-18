@@ -13,17 +13,14 @@ import { ResponsywnoscUtils } from 'src/app/modul-mapowy/mm-core/responsywnosc/u
 })
 export class KategorieMapComponent {
 
-  @Input()
-  kategoriiMap: KategoriaMapOpenDto|undefined;
+  @Input() kategoriiMap: KategoriaMapOpenDto|undefined;
 
-  @Input()
-  zmianaMapy = false;
+  @Input() zmianaMapy = false;
 
   zawartoscWidoczna = false;
   czyTrybDesktop = ResponsywnoscUtils.czyTrybDesktop();
 
-  @Output()
-  mapaWybrana = new EventEmitter<WyborMapyEvent>();
+  @Output() mapaWybrana = new EventEmitter<WyborMapyEvent>();
 
   /**
    * Funkcja rozwija kategorię mapy
@@ -48,6 +45,7 @@ export class KategorieMapComponent {
    * Funkcja sygnalizuje wybraniwMapy
    */
   wybranoMape(event: WyborMapyEvent): void {
+    console.log('|||||||||||||kategorie map wybrano mape event: ',event);
     this.mapaWybrana.emit(event);
   }
 

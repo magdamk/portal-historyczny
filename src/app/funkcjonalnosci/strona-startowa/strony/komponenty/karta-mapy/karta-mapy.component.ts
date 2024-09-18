@@ -4,10 +4,12 @@ import { KategoriaGrupaMapOpenDto } from "../../../../../core/modele/kategoria-g
 import { TypMapyObiektDto } from "../../../../../core/modele/typ-mapy-obiekt-dto";
 import { ZmianaMapyUtils } from "../../../../../core/modele/zmiana-mapy-utils";
 import { ResponsywnoscUtils } from 'src/app/modul-mapowy/mm-core/responsywnosc/utils/responsywnosc-utils';
+import { Store } from '@ngrx/store';
 
 export interface WyborMapyEvent {
   url?: string;
   uuidMapy?: string;
+  rodzaj?: string;
   typ?: TypMapyObiektDto.ObiektEnumEnum;
 }
 
@@ -21,26 +23,20 @@ export interface WyborMapyEvent {
 })
 export class KartaMapyComponent implements OnInit {
 
-  @Input()
-  mapa: KategoriaGrupaMapOpenDto|undefined;
+  @Input() mapa: KategoriaGrupaMapOpenDto | undefined;
+  @Input() zmianaMapy = false;
 
-  @Input()
-  zmianaMapy = false;
-
-  @Output()
-  mapaWybrana = new EventEmitter<WyborMapyEvent>();
+  @Output() mapaWybrana = new EventEmitter<WyborMapyEvent>();
 
   szczegoly = false;
-
   adresUrl?: string;
-
   miniaturkaUkryta = false;
 
   /**
    * Konstruktor
    * @param router - natywny serwis routingu
    */
-  constructor(private router: Router) {
+  constructor(private router: Router, private store: Store) {
   }
 
   /**
@@ -57,7 +53,7 @@ export class KartaMapyComponent implements OnInit {
   klikEnter(event: any): void {
     event.stopPropagation();
     event.preventDefault();
-
+    // console.log(`/mapa/${this.mapa?.uuidMapy}`+encodeURI(`?rodzaj=${this.mapa?.rodzaj}`));
     if (this.zmianaMapy) {
       this.wybranoMape();
       return;
@@ -69,6 +65,8 @@ export class KartaMapyComponent implements OnInit {
       );
       return;
     }
+    // this.wybranoMape();
+    // console.log(`/mapa/${this.mapa?.uuidMapy}`+encodeURI(`?rodzaj=${this.mapa?.rodzaj}`));
     this.router.navigate([`/mapa/${this.mapa?.uuidMapy}`]);
   }
 
@@ -77,7 +75,7 @@ export class KartaMapyComponent implements OnInit {
    */
   wybranoMape(): void {
     if (this.mapa!.adresUrl || this.zmianaMapy) {
-      this.mapaWybrana.emit({ url: this.mapa!.adresUrl, uuidMapy: this.mapa!.uuidMapy, typ: this.mapa!.typ?.obiektEnum });
+      this.mapaWybrana.emit({ url: this.mapa!.adresUrl, uuidMapy: this.mapa!.uuidMapy, typ: this.mapa!.typ?.obiektEnum, rodzaj: this.mapa!.rodzaj });
     }
   }
 
@@ -122,4 +120,9 @@ export class KartaMapyComponent implements OnInit {
     }
   }
 
+
+  zapiszParametryWLocalStorage() {
+    localStorage.setItem('rodzaj', this.mapa?.rodzaj ? this.mapa.rodzaj : '');
+    localStorage.setItem('imgPath', this.mapa?.sciezkaDoPlikuZGrafika ? this.mapa.sciezkaDoPlikuZGrafika : '');
+  }
 }

@@ -20,6 +20,9 @@
       <mm-przycisk-okragly *ngIf="!zmianaMapy"
                             tabindex="0" typ="PRIMARY"
                             ikona="prawa-strzalka" [link]="'/mapa/'+mapa?.uuidMapy" [href]="adresUrl"
+                            (click)="zapiszParametryWLocalStorage()"
+                            (tap)="zapiszParametryWLocalStorage()"
+                            (keyup.enter)="zapiszParametryWLocalStorage()"
                             label="{{'codes.strona-startowa.etykieta-przejdz-do-mapy' | translate}}">
       </mm-przycisk-okragly>
       <mm-przycisk-okragly *ngIf="zmianaMapy"
