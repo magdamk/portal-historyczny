@@ -1,4 +1,4 @@
-<div class="belka-karta-mapy h-full w-full"
+<div class="belka-karta-mapy"
 [class.miniaturka-ukryta]="miniaturkaUkryta"
 [ngClass]="{'szczegoly': szczegoly }">
 <div class="tytul uppercase p-2">
@@ -8,11 +8,11 @@
   [style.backgroundImage]="'url(' + temat!.sciezkaDoPlikuZGrafika + ')'">
 </div>
 <div class="opis">
-  <div class="opis-tresc text-left p-3 um-desktop:px-1 um-desktop:pt-2 um-desktop:p-0 overflow-ellipsis overflow-hidden ...">
+  <div class="opis-tresc tekst-d text-left p-2 pb-5 ...">
     {{temat.opisKafelka}}
   </div>
   <div class="opis-przycisk w-full justify-center items-center">
-    <mm-przycisk-okragly *ngIf="!zmianaMapy"
+    <!-- <mm-przycisk-okragly *ngIf="!zmianaMapy"
                           tabindex="0" typ="PRIMARY"
                           ikona="prawa-strzalka" [link]="'/mapa/'+temat.uuidMapy" [href]="adresUrl"
                           label="{{'codes.strona-startowa.etykieta-przejdz-do-mapy' | translate}}">
@@ -21,6 +21,9 @@
                           tabindex="0" typ="PRIMARY"
                           ikona="prawa-strzalka"
                           label="{{'codes.strona-startowa.etykieta-przejdz-do-mapy' | translate}}">
-    </mm-przycisk-okragly>
+    </mm-przycisk-okragly> -->
   </div>
+</div>
+<div class="rodzaj-mapy tekst-d">
+ {{'codes.modul-mapowy.belka-boczna.'+temat.rodzaj | translate | lowercase}}
 </div>

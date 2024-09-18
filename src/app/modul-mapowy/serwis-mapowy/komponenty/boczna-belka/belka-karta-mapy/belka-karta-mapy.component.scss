@@ -1,14 +1,15 @@
 @import "../../../../../../style/mm-style/mm-konfiguracja-szablonu.scss";
 
-$karta-mapy-wysokosc: 270px;
+$karta-mapy-wysokosc: 204px;
 $karta-mapy-tytul-wysokosc: 90px;
 $karta-mapy-opis-tresc-wysokosc: 90px;
-$karta-mapy-przycisk-wysokosc: 100px;
+$karta-mapy-przycisk-wysokosc: 90px;
+$karta-mapy-rodzaj-wysokosc: 1.5rem;
 
 .belka-karta-mapy {
-  height: 270px;
+  height: #{$karta-mapy-wysokosc}+#{$karta-mapy-rodzaj-wysokosc};
   // width: calc(50vw - 76px);
-  margin: 5px;
+  margin: 4px;
   background: white;
   border: 1px solid #e8e8e8;
   cursor: pointer;
@@ -70,18 +71,23 @@ $karta-mapy-przycisk-wysokosc: 100px;
 
 .miniaturka {
   // height: $karta-mapy-przycisk-wysokosc;
-  height: 178px;
+  height: calc(#{$karta-mapy-wysokosc} + #{$karta-mapy-rodzaj-wysokosc} - #{$karta-mapy-tytul-wysokosc});
   background-size: cover;
+  // display: none;
 }
 
 .opis {
-  // height: calc(#{$karta-mapy-wysokosc} - #{$karta-mapy-tytul-wysokosc});
-  height: 190px;
+  height: calc(#{$karta-mapy-wysokosc} + #{$karta-mapy-rodzaj-wysokosc} - #{$karta-mapy-tytul-wysokosc});
+  // height: 190px;
   display: none;
 }
 
 .opis-tresc {
-  height: 80px;
+
+  height: calc(#{$karta-mapy-wysokosc} + #{$karta-mapy-rodzaj-wysokosc} - #{$karta-mapy-tytul-wysokosc} - 5px);
+  text-overflow: ellipsis;
+  overflow: hidden ;
+  // height: 80px;
 }
 
 .opis-przycisk {
@@ -90,15 +96,26 @@ $karta-mapy-przycisk-wysokosc: 100px;
   height: $karta-mapy-przycisk-wysokosc;
 }
 
+.rodzaj-mapy {
+  color: $miasto-bialy;
+  background-color: $miasto-blekit;
+  // background-color: $miasto-blekit-dark;
+  // color: $miasto-blekit-dark;
+  // background-color: $miasto-blekit-20p;
+  text-align: center;
+  height: $karta-mapy-rodzaj-wysokosc;
+}
 
 // @tailwind utilities;
 
 // @layer utilities {
 //   @variants responsive {
-    .miniaturka-desktop {
-      // height: calc(#{$karta-mapy-przycisk-wysokosc} + #{$karta-mapy-opis-tresc-wysokosc});
-      height: 190px;
-    }
+.miniaturka-desktop {
+  // height: calc(#{$karta-mapy-przycisk-wysokosc} + #{$karta-mapy-opis-tresc-wysokosc});
+  height: calc(#{$karta-mapy-wysokosc} + #{$karta-mapy-rodzaj-wysokosc} - #{$karta-mapy-tytul-wysokosc});
+  // height: 190px;
+}
+
 //   }
 // }
 
