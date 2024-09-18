@@ -34,7 +34,15 @@
       margin-top: 20px;
     }
   }
-
+  .miniaturka {
+    // height: $karta-mapy-przycisk-wysokosc;
+margin-top: 10px;
+    margin-left: -20px;
+    margin-right: -60px;
+    max-width: 450px!important;
+    height: min-content;
+    background-repeat: no-repeat;
+  }
   // .legenda {
   //   height: 100%;
   //   width: 100%;
@@ -55,4 +63,7 @@
 
 
   // }
+  mm-przewijany-komponent{
+    // max-height: calc(100vh - 320px);
+  }
 }

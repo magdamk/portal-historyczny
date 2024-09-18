@@ -14,7 +14,7 @@
       <mm-os-tagi *ngIf="widok.id===WIDOKI_ID.TAGI" [obszarWidoczny]="widok.id===topId"
         [style.zIndex]="widok.id===topId ? widok.zIndex+1 : widok.zIndex">
       </mm-os-tagi>
-      <mm-os-info *ngIf="mapa && widok.id===WIDOKI_ID.INFO" [rodzaj]="RODZAJ_MAPY.TEMAT"
+      <mm-os-info *ngIf="mapa && widok.id===WIDOKI_ID.INFO"
         [obszarWidoczny]="widok.id===topId" [style.zIndex]="widok.id===topId ? widok.zIndex+1 : widok.zIndex"
         [mapa]="mapa">
       </mm-os-info>
