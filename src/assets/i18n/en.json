@@ -586,7 +586,8 @@
         "temat": "Themes",
         "szlak": "Trails",
         "mapa_plan": "Maps, plans",
-        "liczba-obiektow": "Items: "
+        "liczba-obiektow": "Items: ",
+        "zdjecie": "Photo illustrating the map of: "
       }
     }
   }

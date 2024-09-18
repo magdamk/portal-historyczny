@@ -584,7 +584,8 @@
         "temat": "Tematy",
         "szlak": "Szlaki",
         "mapa_plan": "Mapy, plany",
-        "liczba-obiektow": "Liczba obiektów: "
+        "liczba-obiektow": "Liczba obiektów: ",
+        "zdjecie": "Zdjęcie ilustrujące mapę: "
       }
     }
   }
