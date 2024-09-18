@@ -14,6 +14,7 @@ import { TypMapyObiektDto } from './typ-mapy-obiekt-dto';
 
 export interface KategoriaGrupaMapOpenDto {
     nazwaMapy?: string;
+    rodzaj?: string;
     typ?: TypMapyObiektDto;
     adresUrl?: string;
     opisKafelka?: string;
