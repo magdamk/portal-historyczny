@@ -81,6 +81,7 @@ export class StronaMapyComponent implements OnInit, OnDestroy {
         lang: params['lang'] ? params['lang'].toString() : undefined
       };
       this.uuidMapy = this.route.snapshot.paramMap.get('uuid') || undefined;
+
       this.zaladujMape();
     });
     this.subscription$.add(this.tlumaczeniaSerwis.getZmianaJezykaSubject().subscribe(jezyk => this.jezyk = jezyk));
@@ -105,6 +106,9 @@ export class StronaMapyComponent implements OnInit, OnDestroy {
             this.pobierzKomunikatIWyswietl();
             this.pokazKomunikatOBrakujacychWarstwach(response.content?.definicjaMapy);
             this.zmianaNaMapie = false;
+            this.mapa ? this.mapa.rodzaj = this.pobierzRodzajZLocalStorage() : null;
+            this.mapa ? this.mapa.sciezkaDoPlikuZGrafika = encodeURI(this.pobierzImgPathZLocalStorage()) : null;
+            this.wyczyscParamZLocalStorage();
           }
         }, error1 => {
           if (error1.error.content) {
@@ -219,4 +223,18 @@ export class StronaMapyComponent implements OnInit, OnDestroy {
     this.zmianaNaMapie = false;
   }
 
+
+
+  pobierzRodzajZLocalStorage():string {
+    return localStorage.getItem('rodzaj') || '';
+  }
+
+  pobierzImgPathZLocalStorage():string {
+    return localStorage.getItem('imgPath') || '';
+  }
+
+  wyczyscParamZLocalStorage(){
+    localStorage.removeItem('rodzaj');
+    localStorage.removeItem('imgPath');
+  }
 }
