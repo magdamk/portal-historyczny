@@ -3,16 +3,17 @@
 .kontroler-warstw-podkladowych {
 
   .podklad-kafelek {
-    width: 120px;
-    height: 120px;
+    width: 60px;
+    height: 60px;
     padding: 2px;
     background-color: white;
     cursor: pointer;
     position: relative;
     display: inline-block;
+
     .obrazek {
       height: 100%;
-      box-shadow:  5px 5px 15px $miasto-granat-shadow;
+      box-shadow: 5px 5px 15px $miasto-granat-shadow;
     }
 
     img {
@@ -42,7 +43,7 @@
     width: auto;
     min-width: 300px;
     background-color: $miasto-bialy-przezroczysty;
-    box-shadow:  5px 5px 15px $miasto-granat-shadow;
+    box-shadow: 5px 5px 15px $miasto-granat-shadow;
 
     .lista-warstw {
       display: flex;
@@ -79,11 +80,21 @@
   }
 }
 
-.kontroler-warstw-podkladowych.prawa{
+.kontroler-warstw-podkladowych.prawa {
   .tryb-zaawansoany {
-    .lista-warstw{
+    .lista-warstw {
       left: auto;
       right: 0;
+    }
+  }
+}
+
+@media (min-width: $prog-przelaczenia) {
+  .kontroler-warstw-podkladowych {
+
+    .podklad-kafelek {
+      width: 120px;
+      height: 120px;
     }
   }
 }

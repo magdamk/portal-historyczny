@@ -6,7 +6,7 @@
         [src]="kolejnaGrupa.warstwy[kolejnaGrupa.wybranaWarstwa?kolejnaGrupa.wybranaWarstwa:0].sciezkaDoPlikuGrafiki" />
     </div>
     <!--sekcja włączania trybu zawansowanego-->
-    <div class="przelacznik-trybu">
+    <div class="przelacznik-trybu" *mmTylkoDesktop>
       <mm-przycisk-ikona ikona="ustawienia_czarne" *mmTylkoDesktop
         label="{{'codes.modul-mapowy.obsluga-map.zaawansowane-opcje-zmiany-mapy' | translate}}"
         (onClick)="ustawTrybZawnsowany($event)" [typ]="PRZYCISK_IKONA_TYP.CZARNO_BIALY"></mm-przycisk-ikona>
