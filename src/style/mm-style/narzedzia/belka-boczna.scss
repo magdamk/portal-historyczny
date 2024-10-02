@@ -3,6 +3,7 @@
 mm-os-przegladanie,
 mm-os-szlaki,
 mm-os-tematy,
+mm-os-mapy-plany,
 mm-os-info,
 mm-os-tagi,
 lib-ns-legenda,
@@ -47,6 +48,7 @@ lib-ns-selekcja {
       z-index: $obszar-boczny-z-index-start;
       cursor: pointer;
       fill: $miasto-bialy;
+      // margin-bottom: 1px;
 
       .ikona {
         display: inline-block;
@@ -67,31 +69,31 @@ lib-ns-selekcja {
     }
 
     .kontroler.poz-1 {
-      top: calc(1 * #{$legenda-kontrolki-romiar});
+      top: calc(1 * #{$legenda-kontrolki-romiar + 1px});
     }
 
     .kontroler.poz-2 {
-      top: calc(2 * #{$legenda-kontrolki-romiar});
+      top: calc(2 * #{$legenda-kontrolki-romiar + 1px});
     }
 
     .kontroler.poz-3 {
-      top: calc(3 * #{$legenda-kontrolki-romiar});
+      top: calc(3 * #{$legenda-kontrolki-romiar + 1px});
     }
 
     .kontroler.poz-4 {
-      top: calc(4 * #{$legenda-kontrolki-romiar});
+      top: calc(4 * #{$legenda-kontrolki-romiar + 1px});
     }
 
     .kontroler.poz-5 {
-      top: calc(5 * #{$legenda-kontrolki-romiar});
+      top: calc(5 * #{$legenda-kontrolki-romiar + 1px});
     }
 
     .kontroler.poz-6 {
-      top: calc(6 * #{$legenda-kontrolki-romiar});
+      top: calc(6 * #{$legenda-kontrolki-romiar + 1px});
     }
 
     .kontroler.poz-7 {
-      top: calc(7 * #{$legenda-kontrolki-romiar});
+      top: calc(7 * #{$legenda-kontrolki-romiar + 1px});
     }
 
     .kontroler.poz-8 {
@@ -113,6 +115,7 @@ lib-ns-selekcja {
   mm-os-przegladanie,
   mm-os-szlaki,
   mm-os-tematy,
+  mm-os-mapy-plany,
   mm-os-info,
   mm-os-tagi,
   lib-ns-legenda,
@@ -132,27 +135,27 @@ lib-ns-selekcja {
       }
 
       .kontroler.poz-1 {
-        top: calc(2 * #{$legenda-kontrolki-romiar});
+        top: calc(2 * #{$legenda-kontrolki-romiar + 1px});
       }
 
       .kontroler.poz-2 {
-        top: calc(3 * #{$legenda-kontrolki-romiar});
+        top: calc(3 * #{$legenda-kontrolki-romiar + 1px} );
       }
 
       .kontroler.poz-3 {
-        top: calc(4 * #{$legenda-kontrolki-romiar});
+        top: calc(4 * #{$legenda-kontrolki-romiar + 1px});
       }
 
       .kontroler.poz-4 {
-        top: calc(5 * #{$legenda-kontrolki-romiar});
+        top: calc(5 * #{$legenda-kontrolki-romiar + 1px});
       }
 
       .kontroler.poz-5 {
-        top: calc(6 * #{$legenda-kontrolki-romiar});
+        top: calc(6 * #{$legenda-kontrolki-romiar + 1px});
       }
 
       .kontroler.poz-6 {
-        top: calc(7 * #{$legenda-kontrolki-romiar});
+        top: calc(7 * #{$legenda-kontrolki-romiar + 1px});
       }
 
       .kontroler.poz-7 {

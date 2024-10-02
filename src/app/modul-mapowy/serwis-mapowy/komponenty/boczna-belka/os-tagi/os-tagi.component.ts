@@ -15,7 +15,7 @@ import { Mapa } from '../../../modele/mapa';
 })
 export class OsTagiComponent implements OnInit, OnDestroy{
   widokIdentyfikator = WIDOKI_ID.TAGI;
-  @Input() widok?: Widok;
+  @Input() widok!: Widok;
 
   @Input()
   mapa?: Mapa;

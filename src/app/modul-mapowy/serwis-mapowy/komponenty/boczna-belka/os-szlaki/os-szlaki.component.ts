@@ -15,7 +15,7 @@ import { Mapa } from '../../../modele/mapa';
 })
 export class OsSzlakiComponent implements OnInit, OnDestroy{
   widokIdentyfikator = WIDOKI_ID.SZLAKI;
-  @Input() widok?: Widok;
+  @Input() widok!: Widok;
 
   @Input()
   mapa?: Mapa;

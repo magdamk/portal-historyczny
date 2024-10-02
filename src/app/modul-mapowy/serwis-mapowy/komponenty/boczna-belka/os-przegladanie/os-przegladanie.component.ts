@@ -17,7 +17,7 @@ import { LewyPanelWidokActions } from 'src/app/modul-mapowy/stan/lewy-panel-wido
 export class OsPrzegladanieComponent implements OnInit, OnDestroy {
 
   widokIdentyfikator = WIDOKI_ID.PRZEGLADANIE;
-  @Input() widok?: Widok;
+  @Input() widok!: Widok;
 
   @Input()
   mapa?: Mapa;

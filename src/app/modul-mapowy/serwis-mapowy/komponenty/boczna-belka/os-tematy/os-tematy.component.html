@@ -5,16 +5,16 @@
         {{'codes.modul-mapowy.belka-boczna.tematy' | translate}}
       </div>
       <div class="grid grid-cols-2 gap-4 mr-4">
-      <div class="lista-kategorii" *ngFor="let temat of zbiorTematow">
-        <mm-belka-karta-mapy [temat]="temat"></mm-belka-karta-mapy>
-        <!-- <app-kategorie-map (mapaWybrana)="wybranoMape($event)" [zmianaMapy]="zmianaMapy || wyborMapyDoPorownania"
+        <div class="lista-kategorii" *ngFor="let temat of zbiorTematow">
+          <mm-belka-karta-mapy [temat]="temat"></mm-belka-karta-mapy>
+          <!-- <app-kategorie-map (mapaWybrana)="wybranoMape($event)" [zmianaMapy]="zmianaMapy || wyborMapyDoPorownania"
         [kategoriiMap]="kategoria">
       </app-kategorie-map> -->
-      </div>
+        </div>
       </div>
     </div>
-    <div class="kontroler poz-2" [class.widoczna]="obszarWidoczny" [tabindex]="0" (keyup.enter)="przeniesNaWierzch()"
-      (click)="przeniesNaWierzch()" matTooltipPosition="right"
+    <div class="kontroler" [class.widoczna]="obszarWidoczny" [ngClass]="'poz-'+widok!.kolejnosc" [tabindex]="0"
+      (keyup.enter)="przeniesNaWierzch()" (click)="przeniesNaWierzch()" matTooltipPosition="right"
       matTooltip="{{'codes.modul-mapowy.belka-boczna.tematy' | translate}}">
       <span mmIkonaSvg="tematy24" class="ikona"></span>
     </div>

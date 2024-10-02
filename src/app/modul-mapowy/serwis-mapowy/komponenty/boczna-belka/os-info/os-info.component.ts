@@ -15,7 +15,7 @@ import { LewyPanelWidokActions } from 'src/app/modul-mapowy/stan/lewy-panel-wido
 export class OsInfoComponent implements OnInit {
   widokIdentyfikator = WIDOKI_ID.INFO;
 
-  @Input() widok?: Widok;
+  @Input() widok!: Widok;
   @Input() mapa?: Mapa;
   @Input() obszarWidoczny?: boolean | undefined;
 

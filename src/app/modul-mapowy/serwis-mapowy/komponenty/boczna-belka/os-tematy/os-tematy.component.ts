@@ -23,7 +23,7 @@ import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/mm-tlumacze
 export class OsTematyComponent implements OnInit, OnDestroy {
 
   widokIdentyfikator = WIDOKI_ID.TEMATY;
-  @Input() widok?: Widok;
+  @Input() widok!: Widok;
   @Input()  mapa?: Mapa;
   @Input() obszarWidoczny?:boolean | undefined;
   @Output() mapaWybrana = new EventEmitter<WyborMapyEvent>();
