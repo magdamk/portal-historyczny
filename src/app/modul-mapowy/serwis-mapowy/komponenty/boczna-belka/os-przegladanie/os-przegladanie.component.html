@@ -1,9 +1,9 @@
 <div class="kontener-narzedzia">
   <div *ngIf="mapa" class="przegladanie" [class.hidden]="!obszarWidoczny">
-    <div class="tytul naglowek-a">
+    <div class="tytul naglowek-c">
       {{'codes.modul-mapowy.belka-boczna.przegladaj-w-obszarze' | translate}}
     </div>
-    <div class="tekst-b">test</div>
+    <div class="tekst-d"> W przygotowaniu</div>
   </div>
   <div class="kontroler" [ngClass]="'poz-'+widok.kolejnosc" [class.widoczna]="obszarWidoczny" [tabindex]="0"
     (keyup.enter)="przeniesNaWierzch()" (click)="przeniesNaWierzch()" matTooltipPosition="right"
