@@ -67,6 +67,7 @@ export class KartaMapyComponent implements OnInit {
     }
     // this.wybranoMape();
     // console.log(`/mapa/${this.mapa?.uuidMapy}`+encodeURI(`?rodzaj=${this.mapa?.rodzaj}`));
+    this.zapiszParametryWLocalStorage();
     this.router.navigate([`/mapa/${this.mapa?.uuidMapy}`]);
   }
 
@@ -83,6 +84,7 @@ export class KartaMapyComponent implements OnInit {
    * Funkcja obsługuje tapnięcie na kafelku mapy
    */
   tap(event: any) {
+    this.zapiszParametryWLocalStorage();
     if (ResponsywnoscUtils.czyTrybDesktop()) {
       return;
     }
