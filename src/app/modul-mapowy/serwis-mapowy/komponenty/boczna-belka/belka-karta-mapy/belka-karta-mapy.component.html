@@ -1,4 +1,8 @@
 <div class="belka-karta-mapy"
+(tap)="tap($event)"
+(pressup)="press()"
+(click)="klikEnter($event)"
+(keyup.enter)="klikEnter($event)"
 [class.miniaturka-ukryta]="miniaturkaUkryta"
 [ngClass]="{'szczegoly': szczegoly }">
 <div class="tytul uppercase p-2">
@@ -11,7 +15,7 @@
   <div class="opis-tresc tekst-d text-left p-2 pb-5 ...">
     {{temat.opisKafelka}}
   </div>
-  <div class="opis-przycisk w-full justify-center items-center">
+  <!-- <div class="opis-przycisk w-full justify-center items-center"> -->
     <!-- <mm-przycisk-okragly *ngIf="!zmianaMapy"
                           tabindex="0" typ="PRIMARY"
                           ikona="prawa-strzalka" [link]="'/mapa/'+temat.uuidMapy" [href]="adresUrl"
@@ -22,7 +26,7 @@
                           ikona="prawa-strzalka"
                           label="{{'codes.strona-startowa.etykieta-przejdz-do-mapy' | translate}}">
     </mm-przycisk-okragly> -->
-  </div>
+  <!-- </div> -->
 </div>
 <div class="tekst-d rodzaj-mapy">
  {{'codes.modul-mapowy.belka-boczna.'+temat.rodzaj | translate | uppercase}}

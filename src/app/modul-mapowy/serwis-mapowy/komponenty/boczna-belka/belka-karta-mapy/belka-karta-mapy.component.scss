@@ -35,8 +35,9 @@ $karta-mapy-rodzaj-wysokosc: 1.5rem;
   outline: none;
 }
 
-.belka-karta-mapy.miniaturka-ukryta>.miniaturka,
-.belka-karta-mapy.miniaturka-ukryta>.tytul {
+.belka-karta-mapy.miniaturka-ukryta>.miniaturka
+// ,.belka-karta-mapy.miniaturka-ukryta>.tytul
+{
   display: none;
 }
 
@@ -44,7 +45,7 @@ $karta-mapy-rodzaj-wysokosc: 1.5rem;
   display: block;
 }
 
-.belka-karta-mapy.miniaturka-ukryta .opis-przycisk {
+.belka-karta-mapy.miniaturka-ukryta.opis-przycisk {
   display: flex;
   z-index: 1;
 }
@@ -86,7 +87,7 @@ $karta-mapy-rodzaj-wysokosc: 1.5rem;
 
   height: calc(#{$karta-mapy-wysokosc} + #{$karta-mapy-rodzaj-wysokosc} - #{$karta-mapy-tytul-wysokosc} - 5px);
   text-overflow: ellipsis;
-  overflow: hidden ;
+  overflow: hidden;
   // height: 80px;
 }
 
