@@ -6,7 +6,7 @@
       </div>
       <div class="grid grid-cols-2 gap-4 mr-4">
         <div class="lista-kategorii" *ngFor="let temat of zbiorTematow">
-          <mm-belka-karta-mapy [temat]="temat"></mm-belka-karta-mapy>
+          <mm-belka-karta-mapy [temat]="temat" (mapaWybrana)="wybranoMape($event)"></mm-belka-karta-mapy>
           <!-- <app-kategorie-map (mapaWybrana)="wybranoMape($event)" [zmianaMapy]="zmianaMapy || wyborMapyDoPorownania"
         [kategoriiMap]="kategoria">
       </app-kategorie-map> -->

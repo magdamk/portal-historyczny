@@ -14,6 +14,8 @@ import { KategoriaMapOpenDto } from 'src/app/core/modele/kategoria-map-open-dto'
 import { MapaSzczegolyDto } from 'src/app/core/modele/mapa-szczegoly-dto';
 import { KategoriaGrupaMapOpenDto } from 'src/app/core/modele/kategoria-grupa-map-open-dto';
 import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/mm-tlumaczenia.service';
+import { TypMapyObiektDto } from 'src/app/core/modele/typ-mapy-obiekt-dto';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'mm-os-tematy',
@@ -24,11 +26,11 @@ export class OsTematyComponent implements OnInit, OnDestroy {
 
   widokIdentyfikator = WIDOKI_ID.TEMATY;
   @Input() widok!: Widok;
-  @Input()  mapa?: Mapa;
-  @Input() obszarWidoczny?:boolean | undefined;
+  @Input() mapa?: Mapa;
+  @Input() obszarWidoczny?: boolean | undefined;
   @Output() mapaWybrana = new EventEmitter<WyborMapyEvent>();
 
-  zbiorTematow: Array<KategoriaGrupaMapOpenDto>=[];
+  zbiorTematow: Array<KategoriaGrupaMapOpenDto> = [];
   aktualnyJezyk = 'pl';
   subscription$ = new Subscription();
   /**
@@ -37,7 +39,7 @@ export class OsTematyComponent implements OnInit, OnDestroy {
   constructor(private tlumaczenia: TlumaczeniaService,
     private serviceKategoriiMap: ControllerKategorieMapService,
     private konfiguracja: KonfiguracjaModulMapowyAdapter,
-    private store: Store<{ modulMapowy: any }>) {
+    private store: Store<{ modulMapowy: any }>, private router: Router) {
   }
 
 
@@ -68,34 +70,46 @@ export class OsTematyComponent implements OnInit, OnDestroy {
     this.subscription$.unsubscribe();
   }
 
-   /**
-   * Funkcja przenosi narzędzie na wierzch
-   */
-   przeniesNaWierzch(): void {
-    this.store.dispatch(LewyPanelWidokActions.pokazObszar({widokId: this.widokIdentyfikator}));
+  /**
+  * Funkcja przenosi narzędzie na wierzch
+  */
+  przeniesNaWierzch(): void {
+    this.store.dispatch(LewyPanelWidokActions.pokazObszar({ widokId: this.widokIdentyfikator }));
     // this.pobierzObszarySerwis().dispatch(InterfejsUzytkownikaActions.rozwinLewaBelke());
   }
 
 
-    /**
-   * Funkcja do pobierania listy kategorii map
-   */
-    private pobierzListeTematow(): void {
+  /**
+ * Funkcja do pobierania listy kategorii map
+ */
+  private pobierzListeTematow(): void {
 
-      this.serviceKategoriiMap.getKategorieMap()
-        .subscribe((result: any) => {
-          console.log('pobierzListeKategoriiMap: ', result.content.kategorieTematyczne[0].grupyMap);
-          // if (result.content.typ.ObiektEnum==='KATEGORIA_TEMATYCZNA') {
-            this.zbiorTematow = Array.from(result.content.kategorieTematyczne[0].grupyMap);
-            console.log('!!!!pobierzListeKategoriiMap: ',  this.zbiorTematow);
-          // }
-        });
-      // this.serviceKategoriiMap.pobierzListeKategorieMapDlaPortalu(wersja)
-      //   .subscribe((result: any) => {
-      //     if (result.content) {
-      //       this.zbiorKategoriiMap = result.content;
-      //     }
-      //   });
-      // this.zbiorTematow=[];
+    this.serviceKategoriiMap.getKategorieMap()
+      .subscribe((result: any) => {
+        console.log('pobierzListeKategoriiMap: ', result.content.kategorieTematyczne[0].grupyMap);
+        // if (result.content.typ.ObiektEnum==='KATEGORIA_TEMATYCZNA') {
+        this.zbiorTematow = Array.from(result.content.kategorieTematyczne[0].grupyMap);
+        console.log('!!!!pobierzListeKategoriiMap: ', this.zbiorTematow);
+        // }
+      });
+    // this.serviceKategoriiMap.pobierzListeKategorieMapDlaPortalu(wersja)
+    //   .subscribe((result: any) => {
+    //     if (result.content) {
+    //       this.zbiorKategoriiMap = result.content;
+    //     }
+    //   });
+    // this.zbiorTematow=[];
+  }
+
+
+  /**
+* Funkcja sygnalizuje wybraniwMapy
+*/
+  wybranoMape(event: WyborMapyEvent): void {
+    if (event.typ === TypMapyObiektDto.ObiektEnumEnum.SerwisZewnetrzny) {
+      // this.komunikaty.pokazKomunikatBledu('codes.narzedzie-porownywania-map.blad-wyboru-mapy-komunikat', {});
+      return;
     }
+    this.mapaWybrana.emit(event);
+  }
 }
