@@ -34,7 +34,7 @@
     <div class="kontroler" [tabindex]="0" [class.widoczna]="obszarWidoczny" (keyup.enter)="przeniesNaWierzch()"
     [ngClass]="'poz-'+widok.kolejnosc"
       (click)="przeniesNaWierzch()" matTooltipPosition="right"
-      matTooltip="{{'codes.modul-mapowy.belka-boczna.info' | translate}}">
+      [matTooltip]="this.tooltip">
       <span mmIkonaSvg="info24" class="ikona"></span>
     </div>
   </mm-przewijany-komponent>

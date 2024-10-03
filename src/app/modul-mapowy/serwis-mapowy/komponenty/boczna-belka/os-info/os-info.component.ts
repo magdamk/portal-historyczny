@@ -20,7 +20,7 @@ export class OsInfoComponent implements OnInit {
   @Input() obszarWidoczny?: boolean | undefined;
 
   aktualnyJezyk = 'pl';
-
+tooltip:string='';
   subscription$ = new Subscription();
   constructor(private tlumaczenia: TlumaczeniaService,
     private store: Store<{ modulMapowy: any }>) {
@@ -30,6 +30,8 @@ export class OsInfoComponent implements OnInit {
     this.subscription$.add(this.tlumaczenia.getZmianaJezykaSubject().subscribe(jezyk => {
       this.aktualnyJezyk = jezyk;
     }));
+    this.aktualnyJezyk=='pl' ? this.tooltip = this.mapa?.nazwa?.pl+'' : this.tooltip = this.mapa?.nazwa?.en+'';
+
   }
 
 
