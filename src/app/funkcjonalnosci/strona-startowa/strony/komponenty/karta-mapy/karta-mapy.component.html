@@ -6,7 +6,7 @@
      (click)="klikEnter($event)"
      (keyup.enter)="klikEnter($event)" tabindex="0">
   <div class="tytul uppercase p-2">
-    <span class="um-tytul-mapa">{{mapa?.nazwaMapy}}</span>
+    <span class="um-tytul-mapa">{{mapa?.nazwaMapy }}</span>
   </div>
   <div class="miniaturka um-desktop:miniaturka-desktop"
        [style.backgroundImage]="'url(' + mapa!.sciezkaDoPlikuZGrafika + ')'">
