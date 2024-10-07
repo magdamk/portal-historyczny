@@ -1,19 +1,25 @@
 <div class="kontener-narzedzia">
-
-  <div class="tagi" [class.hidden]="!obszarWidoczny" >
-    <div class="tytul naglowek-c" [class.hidden]="!obszarWidoczny">
-      {{'codes.modul-mapowy.belka-boczna.tagi' | translate}}
+  <mm-przewijany-komponent>
+    <div class="tagi" [class.hidden]="!obszarWidoczny">
+      <div class="tytul naglowek-c" [class.hidden]="!obszarWidoczny">
+        {{'codes.modul-mapowy.belka-boczna.tagi' | translate}}
+      </div>
+      <div class="tekst-d"> {{'codes.generyczne.w-przygotowaniu' | translate}}</div>
+      <div class="mr-4 mt-5 flex-wrap flex gap-1">
+        <mat-chip-listbox  multiple="false"  disableRipple="true" [value]="selectedTag"
+        hideSingleSelectionIndicator="true" class="lista-kategorii" *ngFor="let tag of tagi">
+          <mat-chip-option class="chip" (click)="changeChip(tag)" [value]="tag">{{tag.tag}}</mat-chip-option>
+        <!-- <mm-tag [tag]="tag"></mm-tag> -->
+          <!-- <app-kategorie-map (mapaWybrana)="wybranoMape($event)" [zmianaMapy]="zmianaMapy || wyborMapyDoPorownania"
+    [kategoriiMap]="kategoria">
+  </app-kategorie-map> -->
+        </mat-chip-listbox>>
+      </div>
     </div>
-    <div class="tekst-d"> W przygotowaniu</div>
-  </div>
-  <div class="kontroler"
-  [class.widoczna]="obszarWidoczny"
-  [ngClass]="'poz-'+widok.kolejnosc"
-      [tabindex]="1"
-      (keyup.enter)="przeniesNaWierzch()"
-      (click)="przeniesNaWierzch()"
-      matTooltipPosition="right"
+    <div class="kontroler" [class.widoczna]="obszarWidoczny" [ngClass]="'poz-'+widok.kolejnosc" [tabindex]="1"
+      (keyup.enter)="przeniesNaWierzch()" (click)="przeniesNaWierzch()" matTooltipPosition="right"
       matTooltip="{{'codes.modul-mapowy.belka-boczna.tagi' | translate}}">
-    <span mmIkonaSvg="tagi24" class="ikona"></span>
-  </div>
+      <span mmIkonaSvg="tagi24" class="ikona"></span>
+    </div>
+  </mm-przewijany-komponent>
 </div>

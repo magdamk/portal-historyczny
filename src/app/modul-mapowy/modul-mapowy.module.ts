@@ -53,7 +53,8 @@ import { lewyPanelWidokReducer } from './stan/lewy-panel-widok/lewy-panel-widok.
 import { BelkaKartaMapyComponent } from './serwis-mapowy/komponenty/boczna-belka/belka-karta-mapy/belka-karta-mapy.component';
 import { PrzyciskOkraglyComponent } from './commons/komponenty/przycisk-okragly/przycisk-okragly.component';
 import { OsMapyPlanyComponent } from './serwis-mapowy/komponenty/boczna-belka/os-mapy-plany/os-mapy-plany.component';
-
+import { TagComponent } from './serwis-mapowy/komponenty/boczna-belka/tag/tag.component';
+import {MatChipsModule} from '@angular/material/chips';
 
 
 @NgModule({
@@ -80,11 +81,13 @@ import { OsMapyPlanyComponent } from './serwis-mapowy/komponenty/boczna-belka/os
     OsTagiComponent,
     OsInfoComponent,
     BelkaKartaMapyComponent,
-    OsMapyPlanyComponent
+    OsMapyPlanyComponent,
+    TagComponent
   ],
   imports: [
     CommonModule,
     CommonsModule,
+    MatChipsModule,
     MatProgressSpinnerModule,
     MatTooltipModule,
     OracleMapsModule,
