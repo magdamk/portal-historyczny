@@ -2,9 +2,9 @@ import { Component, ElementRef, EventEmitter, HostListener, Input, OnDestroy, On
 import { GrupaWarstwPodkladowych } from '../../../modele/grupa-warstw-podkladowych';
 import { Subscription } from "rxjs";
 import { Mapa } from '../../../modele/mapa';
-import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/mm-tlumaczenia.service';
 import { PRZYCISK_IKONA_TYP } from 'src/app/modul-mapowy/commons/komponenty/przycisk-ikona/przycisk-ikona.component';
 import { GlobalneZdarzeniaService } from '../../../serwisy/globalne-zdarzenia.service';
+import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/tlumaczenia.service';
 
 /**
  * Komponent wyboru warstw podkladowych

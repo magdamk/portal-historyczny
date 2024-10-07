@@ -1,5 +1,5 @@
-import {Pipe, PipeTransform} from '@angular/core';
-import {TlumaczeniaNazw} from '../../serwis-mapowy/modele/tlumaczenia-nazw';
+import { Pipe, PipeTransform } from '@angular/core';
+import { TlumaczeniaNazw } from '../../serwis-mapowy/modele/tlumaczenia-nazw';
 
 /**
  * Pipse służy do wyboru tłumaczenia elementu mapy

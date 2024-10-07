@@ -3,14 +3,13 @@ import { SzablonyService } from '../../../../../core/szablony/serwisy/szablony.s
 import { MapaSzczegolyDto } from '../../../../../core/modele/mapa-szczegoly-dto';
 import { TypMapyObiektDto } from '../../../../../core/modele/typ-mapy-obiekt-dto';
 import { ZbiorKategoriiMapOpenDto } from '../../../../../core/modele/zbior-kategorii-map-open-dto';
-// import { TlumaczeniaService } from "../../../../../core/tlumaczenia/serwisy/tlumaczenia.service";
+import { TlumaczeniaService } from "../../../../../core/tlumaczenia/serwisy/tlumaczenia.service";
 import { Subscription } from "rxjs";
 import { WyborMapyEvent } from '../../komponenty/karta-mapy/karta-mapy.component';
 import WersjaEnum = MapaSzczegolyDto.WersjaEnum;
 import { KomunikatyProviderService } from '../../../../../wspolne/serwisy/komunikaty-provider.service';
 import { ControllerKategorieMapService } from 'src/app/core/api/controller-kategorie-map.service';
 import { ResponsywnoscUtils } from 'src/app/modul-mapowy/mm-core/responsywnosc/utils/responsywnosc-utils';
-import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/mm-tlumaczenia.service';
 /**
  * Komponent strona startowa
  */
@@ -22,7 +21,7 @@ import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/mm-tlumacze
 export class StronaStartowaComponent implements OnInit, OnDestroy {
   zbiorKategoriiMap = {} as ZbiorKategoriiMapOpenDto;
   subskrybcje = new Subscription();
-
+  jezyk = '';
   @Input()
   zmianaMapy = false;
 
@@ -85,7 +84,7 @@ export class StronaStartowaComponent implements OnInit, OnDestroy {
     //       this.zbiorKategoriiMap = result.content;
     //     }
     //   });
-    this.zbiorKategoriiMap={};
+    this.zbiorKategoriiMap = {};
   }
 
   /**

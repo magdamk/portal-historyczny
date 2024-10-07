@@ -1,8 +1,8 @@
-import {Injectable} from '@angular/core';
-import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {TranslateService} from '@ngx-translate/core';
-import {LANGS} from '../tlumaczenia/serwisy/tlumaczenia.service';
+import { Injectable } from '@angular/core';
+import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
+import { LANGS } from '../tlumaczenia/serwisy/tlumaczenia.service';
 
 /**
  * Interceptor dla ustawiania języka

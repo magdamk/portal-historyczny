@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 // import {TranslateService} from "@ngx-translate/core";
-import {LANGS, TlumaczeniaService} from './core/tlumaczenia/serwisy/tlumaczenia.service';
-import {DOCUMENT} from '@angular/common';
+import { LANGS, TlumaczeniaService } from './core/tlumaczenia/serwisy/tlumaczenia.service';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -14,12 +14,12 @@ export class AppComponent {
   constructor(private tlumaczeniaService: TlumaczeniaService,
     // private komunikatyService: KomunikatyService,
     @Inject(DOCUMENT) private document: Document) {
-      this.inicjujJezyk();
-      // komunikatyService.init();
-      this.tlumaczeniaService.getZmianaJezykaSubject().subscribe(jezyk => {
-        document.getElementsByTagName('html')[0].setAttribute('lang', jezyk);
-      });
-      this.wypiszWersjeAplikacji();
+    this.inicjujJezyk();
+    // komunikatyService.init();
+    this.tlumaczeniaService.getZmianaJezykaSubject().subscribe(jezyk => {
+      document.getElementsByTagName('html')[0].setAttribute('lang', jezyk);
+    });
+    this.wypiszWersjeAplikacji();
   }
 
   /**

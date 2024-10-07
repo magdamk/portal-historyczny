@@ -5,10 +5,11 @@
       <div class="tytul naglowek-a">
         {{mapa.nazwa | wyborTlumaczenia:aktualnyJezyk}}
       </div>
-
-      <div *ngIf="mapa.rodzaj; else default_content" class="rodzaj-mapy">{{'codes.modul-mapowy.belka-boczna.'+mapa.rodzaj | translate}}
+      <div *ngIf="mapa.rodzaj; else default_content" class="rodzaj-mapy">
+        {{'codes.modul-mapowy.belka-boczna.'+mapa.rodzaj | translate}}
+        <span *ngIf="mapa.rodzaj==='temat'">
         <span class="text-gray-300">|</span>
-        {{'codes.modul-mapowy.belka-boczna.liczba-obiektow' | translate}}
+        {{'codes.modul-mapowy.belka-boczna.liczba-obiektow' | translate}}</span>
       </div>
 <ng-template #default_content>
   <div class="rodzaj-mapy">{{'codes.strona-startowa.mapy' | translate}}

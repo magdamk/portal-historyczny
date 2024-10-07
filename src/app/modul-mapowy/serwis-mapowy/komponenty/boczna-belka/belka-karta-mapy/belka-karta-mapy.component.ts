@@ -10,13 +10,14 @@ import { Subscription } from 'rxjs';
 import { LewyPanelWidokInitialState } from 'src/app/modul-mapowy/stan/lewy-panel-widok/lewy-panel-widok.reducer';
 import { LewyPanelWidokActions } from 'src/app/modul-mapowy/stan/lewy-panel-widok/lewy-panel-widok.actions';
 import { WIDOK_INFO } from 'src/app/modul-mapowy/stan/lewy-panel-widok/lewy-panel-widok.const';
+import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/tlumaczenia.service';
 
 @Component({
   selector: 'mm-belka-karta-mapy',
   templateUrl: './belka-karta-mapy.component.html',
   styleUrls: ['./belka-karta-mapy.component.scss']
 })
-export class BelkaKartaMapyComponent implements OnInit, OnDestroy{
+export class BelkaKartaMapyComponent implements OnInit, OnDestroy {
   @Input({ required: true }) temat!: KategoriaGrupaMapOpenDto;
   @Input() zmianaMapy = false;
 
@@ -27,22 +28,28 @@ export class BelkaKartaMapyComponent implements OnInit, OnDestroy{
   miniaturkaUkryta = false;
 
   subskrybcje$ = new Subscription();
-
+  jezyk = '';
+  suffix = '';
   /**
    * Konstruktor
    * @param router - natywny serwis routingu
    */
-  constructor(private router: Router,  private store: Store<{ modulMapowy: any }>) {
+  constructor(private router: Router, private store: Store<{ modulMapowy: any }>,
+    private tlumaczeniaSerwis: TlumaczeniaService
+  ) {
   }
 
   /**
    * Cykl życia komponentu inicjalizacja
    */
   ngOnInit(): void {
-    // this.wyczyscZbedneParametrySerwisuZewnetrznego();
+    this.wyczyscZbedneParametrySerwisuZewnetrznego();
+    this.subskrybcje$.add(this.tlumaczeniaSerwis.getZmianaJezykaSubject().subscribe(jezyk => this.jezyk = jezyk));
     this.subskrybcje$.add(this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        window.location.href = event.urlAfterRedirects;
+
+        this.jezyk == 'en' ? this.suffix = '?lang=' + this.jezyk : null;
+        window.location.href = event.urlAfterRedirects + this.suffix;
       }
     }));
   }
@@ -54,30 +61,33 @@ export class BelkaKartaMapyComponent implements OnInit, OnDestroy{
    * Funkcja reaguje na przycisk enter i wywołuje przekierowanie
    */
   klikEnter(event: any): void {
-    this.zapiszParametryWLocalStorage();
-    console.log(this.router.url.includes(this.temat.uuidMapy+''));
-    if (this.router.url.includes(this.temat.uuidMapy+'')){
-      this.store.dispatch(LewyPanelWidokActions.pokazObszar({widokId:WIDOK_INFO.id}));
-    }
-    // if (this.router.getCurrentNavigation() ==`/mapa/${this.temat.uuidMapy}` ){}
     event.stopPropagation();
     event.preventDefault();
-    console.log(`/mapa/${this.temat.uuidMapy}`+encodeURI(`?rodzaj=${this.temat.rodzaj}`));
-    if (this.zmianaMapy) {
-      this.wybranoMape();
-      console.log('zmiana mapy');
-      return;
+    this.zapiszParametryWLocalStorage();
+    console.log(this.router.url.includes(this.temat.uuidMapy + ''));
+    if (this.router.url.includes(this.temat.uuidMapy + '')) {
+      this.store.dispatch(LewyPanelWidokActions.pokazObszar({ widokId: WIDOK_INFO.id }));
+      this.wyczyscZbedneParametrySerwisuZewnetrznego();
+    } else {
+      // if (this.router.getCurrentNavigation() ==`/mapa/${this.temat.uuidMapy}` ){}
+
+      // console.log(`/mapa/${this.temat.uuidMapy}` + encodeURI(`?rodzaj=${this.temat.rodzaj}`));
+      if (this.zmianaMapy) {
+        this.wybranoMape();
+        console.log('zmiana mapy');
+        return;
+      }
+      if (this.adresUrl) {
+        window.open(
+          this.adresUrl,
+          '_blank'
+        );
+        return;
+      }
+      // this.wybranoMape();
+      // console.log(`/mapa/${this.mapa?.uuidMapy}`+encodeURI(`?rodzaj=${this.mapa?.rodzaj}`));
+      this.router.navigate([`/mapa/${this.temat.uuidMapy}`]);
     }
-    if (this.adresUrl) {
-      window.open(
-        this.adresUrl,
-        '_blank'
-      );
-      return;
-    }
-    // this.wybranoMape();
-    // console.log(`/mapa/${this.mapa?.uuidMapy}`+encodeURI(`?rodzaj=${this.mapa?.rodzaj}`));
-    this.router.navigate([`/mapa/${this.temat.uuidMapy}`]);
   }
 
   /**
@@ -137,7 +147,9 @@ export class BelkaKartaMapyComponent implements OnInit, OnDestroy{
     localStorage.setItem('rodzaj', this.temat?.rodzaj ? this.temat.rodzaj : '');
     localStorage.setItem('imgPath', this.temat?.sciezkaDoPlikuZGrafika ? this.temat.sciezkaDoPlikuZGrafika : '');
   }
-
+  zapiszJezykWLocalStorage() {
+    localStorage.setItem('lang', this.jezyk);
+  }
   // private aktualizujUrl(url: string): string {
   //   if (url.includes('?')) {
   //     if(!url.includes('zoom')){

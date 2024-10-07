@@ -1,6 +1,6 @@
-import {TranslateLoader} from '@ngx-translate/core';
-import {Observable} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
+import { TranslateLoader } from '@ngx-translate/core';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 /**
  * Klasa sluzy do łączenia tłumaczeń w jeden zestaw
@@ -33,7 +33,7 @@ export class CustomTranslationLoader implements TranslateLoader {
         this.http.get(`/assets/modul-mapowy/i18n/${lang}.json`).subscribe((mres: any) => {
           Object.keys(mres.codes).forEach(k => {
             if (gres.codes[k]) {
-              gres.codes[k] = {...gres.codes[k], ...mres.codes[k]}
+              gres.codes[k] = { ...gres.codes[k], ...mres.codes[k] }
             } else {
               gres.codes[k] = mres.codes[k];
             }

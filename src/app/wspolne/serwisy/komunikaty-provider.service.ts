@@ -1,12 +1,12 @@
-import {Injectable} from '@angular/core';
-import {TlumaczeniaService} from "../../core/tlumaczenia/serwisy/tlumaczenia.service";
+import { Injectable } from '@angular/core';
+import { TlumaczeniaService } from "../../core/tlumaczenia/serwisy/tlumaczenia.service";
 import {
   KomunikatyAdapter,
   OpcjeKomunikatu
 } from "../../core/adaptery/komunikaty-adapter";
-import {MatSnackBar, MatSnackBarRef} from "@angular/material/snack-bar";
-import {SnackbarData, SnackbarKomunikatComponent} from "../komponenty/snackbar-komunikat/snackbar-komunikat.component";
-import {NavigationStart, Router} from '@angular/router';
+import { MatSnackBar, MatSnackBarRef } from "@angular/material/snack-bar";
+import { SnackbarData, SnackbarKomunikatComponent } from "../komponenty/snackbar-komunikat/snackbar-komunikat.component";
+import { NavigationStart, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'

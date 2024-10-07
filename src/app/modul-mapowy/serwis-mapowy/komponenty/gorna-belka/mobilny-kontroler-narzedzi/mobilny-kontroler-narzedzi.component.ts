@@ -20,12 +20,12 @@ import {MapaService} from "../../../serwisy/mapa.service";
 import {KolekcjeUtils} from "../../../utils/kolekcje-utils";
 import { PRZYCISK_IKONA_TYP } from 'src/app/modul-mapowy/commons/komponenty/przycisk-ikona/przycisk-ikona.component';
 import { KomponentHostDirective } from 'src/app/wspolne/dyrektywy/komponent-host.directive';
-import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/mm-tlumaczenia.service';
 import { KonfiguracjaModulMapowyAdapter } from 'src/app/modul-mapowy/mm-core/providers/konfiguracja-adapter';
 import { MapyModulMapowyAdapter } from 'src/app/modul-mapowy/mm-core/providers/mapy-adapter';
 import { Store } from '@ngrx/store';
 import { MobilnyKontrolerNarzedziService } from '../../../serwisy/mobilny-kontroler-narzedzi.service';
 import { MobilnyKontrolerNarzedziInterface } from 'src/app/modul-mapowy/commons/interfejsy/mobilny-kontroler-narzedzi-interface';
+import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/tlumaczenia.service';
 
 /**
  * Komponent służy do wyświetlania narzędzi w trybie mobilnym

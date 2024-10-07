@@ -36,7 +36,7 @@ export class StronaMapyComponent implements OnInit, OnDestroy {
   // zmianaMapyWidoczna = false;
 
   subscription$ = new Subscription();
-  jezyk = 'pl';
+  jezyk = '';
 
 
 
@@ -66,6 +66,8 @@ export class StronaMapyComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    console.log("strona mapy TEST",this.tlumaczeniaSerwis.pobierzAktualnyJezyk());
+    this.subscription$.add(this.tlumaczeniaSerwis.getZmianaJezykaSubject().subscribe(jezyk => this.jezyk = jezyk));
     this.route.queryParams.subscribe(params => {
       this.parametryStartoweMapy = {
         zoom: params['zoom'] ? parseInt(params['zoom'], 10) : undefined,
@@ -84,7 +86,7 @@ export class StronaMapyComponent implements OnInit, OnDestroy {
 
       this.zaladujMape();
     });
-    this.subscription$.add(this.tlumaczeniaSerwis.getZmianaJezykaSubject().subscribe(jezyk => this.jezyk = jezyk));
+
   }
 
   ngOnDestroy() {
@@ -225,15 +227,15 @@ export class StronaMapyComponent implements OnInit, OnDestroy {
 
 
 
-  pobierzRodzajZLocalStorage():string {
+  pobierzRodzajZLocalStorage(): string {
     return localStorage.getItem('rodzaj') || '';
   }
 
-  pobierzImgPathZLocalStorage():string {
+  pobierzImgPathZLocalStorage(): string {
     return localStorage.getItem('imgPath') || '';
   }
 
-  wyczyscParamZLocalStorage(){
+  wyczyscParamZLocalStorage() {
     localStorage.removeItem('rodzaj');
     localStorage.removeItem('imgPath');
   }

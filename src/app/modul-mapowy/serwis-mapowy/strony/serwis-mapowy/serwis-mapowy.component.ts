@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PRZYCISK_IKONA_TYP } from 'src/app/modul-mapowy/commons/komponenty/przycisk-ikona/przycisk-ikona.component';
 import { Router, RouterLink } from '@angular/router';
-import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/mm-tlumaczenia.service';
 import { Mapa } from '../../modele/mapa';
 import { ParametryStartoweMapy } from '../../modele/parametry-startowe-mapy';
 import { GrupaWarstwPodkladowych } from '../../modele/grupa-warstw-podkladowych';
@@ -17,6 +16,7 @@ import { InterfejsUzytkownikaInitialState, InterfejsUzytkownikaStan, WYSZUKIWARK
 import { InterfejsUzytkownikaActions } from 'src/app/modul-mapowy/stan/interfejs-uzytkownika/interfejs-uzytkownika.actions';
 import { LewyPanelWidokActions } from 'src/app/modul-mapowy/stan/lewy-panel-widok/lewy-panel-widok.actions';
 import { WIDOKI_ID } from 'src/app/modul-mapowy/stan/lewy-panel-widok/lewy-panel-widok.const';
+import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/tlumaczenia.service';
 // import { OBSZARY_STERUJACE_ID } from 'src/app/modul-mapowy/stan/obszary/obszary.const';
 // import { ObszaryActions } from 'src/app/modul-mapowy/stan/obszary/obszary.actions';
 
@@ -73,7 +73,7 @@ export class SerwisMapowyComponent implements OnInit {
     this.aktualizacjaMapy();
     this.aktualizujStanInterfejsuUzytkownika();
     // this.obslugaWyboruMapyDoPorownania();
-    this.tlumaczenia.spawdzPoprawnoscJezyka();
+    // this.tlumaczenia.spawdzPoprawnoscJezyka();
   }
 
 
@@ -232,4 +232,5 @@ export class SerwisMapowyComponent implements OnInit {
   schowajWyszukiwarke() {
     this.store.dispatch(InterfejsUzytkownikaActions.zwinWyszukiwarke());
   }
+
 }

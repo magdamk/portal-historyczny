@@ -1,8 +1,8 @@
-import {Injectable} from '@angular/core';
-import {TranslateService} from '@ngx-translate/core';
-import {BehaviorSubject} from 'rxjs';
-import {filter, take} from 'rxjs/operators';
-import {NavigationEnd, Router} from "@angular/router";
+import { Injectable } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { BehaviorSubject } from 'rxjs';
+import { filter, take } from 'rxjs/operators';
+import { NavigationEnd, Router } from "@angular/router";
 
 export const LANGS = {
   PL: 'pl',
@@ -20,13 +20,15 @@ export class TlumaczeniaService {
   private zmianaJezykaSubject$ = new BehaviorSubject<string>(LANGS.PL);
 
   constructor(private translate: TranslateService, private router: Router) {
+    console.log('tumaczenia service constructor start: ', this.pobierzAktualnyJezyk());
     this.router.events
       .pipe(filter((e): e is NavigationEnd => e instanceof NavigationEnd))
       .subscribe(() => {
-      if (this.translate.currentLang !== this.pobierzAktualnyJezyk()) {
-        this.zmianaJezykaSubject$.next(this.translate.currentLang);
-      }
-    });
+        if (this.translate.currentLang !== this.pobierzAktualnyJezyk()) {
+          this.zmianaJezykaSubject$.next(this.translate.currentLang);
+        }
+      });
+      console.log('tumaczenia serwice constructor end: ',this.pobierzAktualnyJezyk());
   }
 
   /**
@@ -34,6 +36,8 @@ export class TlumaczeniaService {
    */
   init(lang: string): void {
     this.translate.use(lang);
+    console.log('tumaczenia serwice init: ', lang);
+
   }
 
   /**
@@ -63,8 +67,8 @@ export class TlumaczeniaService {
     if (jezyk !== this.translate.currentLang) {
       this.translate.use(jezyk)
         .pipe(take(1)).subscribe(() => {
-        this.zmianaJezykaSubject$.next(jezyk);
-      });
+          this.zmianaJezykaSubject$.next(jezyk);
+        });
     }
   }
 

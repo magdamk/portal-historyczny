@@ -1,6 +1,6 @@
-import {KeyStringObject} from './key-string-object';
+import { KeyStringObject } from './key-string-object';
 
-export interface TlumaczeniaNazw extends KeyStringObject{
+export interface TlumaczeniaNazw extends KeyStringObject {
   pl?: string;
   en?: string;
 }

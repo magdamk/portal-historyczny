@@ -20,12 +20,13 @@ import { MatPaginatorIntl } from '@angular/material/paginator';
 import { MapyProviderService } from './adaptery/mapy-provider.service';
 import { TlumaczeniaProviderService } from './adaptery/tlumaczenia-provider.service';
 import { GrupaWarstwPodkladowychProviderService } from './adaptery/grupa-warstw-podkladowych-provider.service';
-import { PaginacjaTlumaczeniaService } from 'src/app/core/service/paginacja-tlumaczenia.service';
+// import { PaginacjaTlumaczeniaService } from 'src/app/core/service/paginacja-tlumaczenia.service';
 import { KontaktZAdministratoremProviderService } from '../kontakt/serwisy/kontakt-z-administratorem-provider.service';
 import { WidoczneWarstwyProviderService } from './adaptery/widoczne-warstwy-provider.service';
 import { WyszukiwarkaProviderService } from 'src/app/wspolne/serwisy/wyszukiwarka-provider.service';
 // import { MultimediaIZalacznikiProviderService } from './adaptery/multimedia-i-zalaczniki-provider.service';
 import { KonfiguracjaModulMapowyProviderService } from './adaptery/konfiguracja-modul-mapowy-provider.service';
+import { PaginacjaTlumaczeniaService } from 'src/app/core/service/paginacja-tlumaczenia.service';
 
 
 
