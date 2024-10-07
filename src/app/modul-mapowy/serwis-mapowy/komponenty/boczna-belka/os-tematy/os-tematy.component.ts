@@ -2,20 +2,19 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 import { Subscription } from 'rxjs';
 import { Mapa } from '../../../modele/mapa';
 import { Store } from '@ngrx/store';
-// import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/tlumaczenia.service';
 import { KonfiguracjaModulMapowyAdapter } from 'src/app/modul-mapowy/mm-core/providers/konfiguracja-adapter';
 import { Widok } from 'src/app/modul-mapowy/stan/lewy-panel-widok/lewy-panel-widok.reducer';
 import { WIDOKI_ID } from 'src/app/modul-mapowy/stan/lewy-panel-widok/lewy-panel-widok.const';
 import { LewyPanelWidokActions } from 'src/app/modul-mapowy/stan/lewy-panel-widok/lewy-panel-widok.actions';
 import { ZbiorKategoriiMapOpenDto } from 'src/app/core/modele/zbior-kategorii-map-open-dto';
 import { WyborMapyEvent } from 'src/app/funkcjonalnosci/strona-startowa/strony/komponenty/karta-mapy/karta-mapy.component';
-import { ControllerKategorieMapService } from 'src/app/core/api/controller-kategorie-map.service';
 import { KategoriaMapOpenDto } from 'src/app/core/modele/kategoria-map-open-dto';
 import { MapaSzczegolyDto } from 'src/app/core/modele/mapa-szczegoly-dto';
 import { KategoriaGrupaMapOpenDto } from 'src/app/core/modele/kategoria-grupa-map-open-dto';
-import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/mm-tlumaczenia.service';
 import { TypMapyObiektDto } from 'src/app/core/modele/typ-mapy-obiekt-dto';
 import { Router } from '@angular/router';
+import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/tlumaczenia.service';
+import { ControllerKategorieMapService } from 'src/app/core/api/controller-kategorie-map.service';
 
 @Component({
   selector: 'mm-os-tematy',
@@ -31,7 +30,7 @@ export class OsTematyComponent implements OnInit, OnDestroy {
   @Output() mapaWybrana = new EventEmitter<WyborMapyEvent>();
 
   zbiorTematow: Array<KategoriaGrupaMapOpenDto> = [];
-  aktualnyJezyk = 'pl';
+  aktualnyJezyk='';
   subscription$ = new Subscription();
   /**
    * Konstruktor
@@ -48,7 +47,7 @@ export class OsTematyComponent implements OnInit, OnDestroy {
   * Cykl życia komponentu inicjalizacja
   */
   ngOnInit(): void {
-    this.pobierzListeTematow();
+    // // this.pobierzListeTematow();
     // this.subscription$.add(this.tlumaczenia.getZmianaJezykaSubject()
     //   .subscribe(() => this.pobierzListeTematow()));
 
@@ -110,6 +109,6 @@ export class OsTematyComponent implements OnInit, OnDestroy {
       // this.komunikaty.pokazKomunikatBledu('codes.narzedzie-porownywania-map.blad-wyboru-mapy-komunikat', {});
       return;
     }
-    this.mapaWybrana.emit(event);
+    // this.mapaWybrana.emit(event);
   }
 }

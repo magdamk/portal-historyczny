@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 // import {KontaktZAdministratoremDialogComponent} from '../../kontakt/kontakt-z-administratorem-dialog/kontakt-z-administratorem-dialog.component';
 import { BehaviorSubject } from 'rxjs';
-import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/mm-tlumaczenia.service';
+import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/tlumaczenia.service';
 // import {PomocDialogComponent} from '../../pomoc/pomoc-dialog/pomoc-dialog.component';
 
 @Component({
