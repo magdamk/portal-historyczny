@@ -42,7 +42,8 @@
       "wyslano-pomyslnie": "Message sent",
       "nieoczekiwany-blad": "An unexpected error occurred. Try again later.",
       "niepoprawny-link-do-mapy": "Incorrect link to the map. The default map is displayed.",
-      "zamknij": "Close"
+      "zamknij": "Close",
+       "w-przygotowaniu":"Under construction"
     },
     "strona-startowa": {
       "tytul": "The historical map service of the Capital City of Warsaw contains free historic maps and contribute stories, memories and histories about their area.",
@@ -581,6 +582,7 @@
         "przegladaj-w-obszarze": "Browse in this area",
         "tematy":"Browse historic themes",
         "szlaki":"Browse historic trails",
+        "mapy-plany": "Browse maps and plans",
         "tagi":"Search by tags",
         "info":"Information",
         "temat": "Themes",

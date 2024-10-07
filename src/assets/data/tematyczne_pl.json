@@ -10,24 +10,25 @@
       },
       "grupyMap": [
         {
-          "nazwaMapy": "WARSZAWA ZAPAMIĘTANA",
-          "typ": "SERWIS_ZEWNETRZNY",
-          "rodzaj":"temat",
-          "adresUrl": "https://testmapa.um.warszawa.pl/mapa/6c516f13-7fc7-43e8-b60f-acddea75406d?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
-          "opisKafelka": "Zapraszamy na wirtualną wycieczkę po dawnej Warszawie. Przedstawiamy stolicę we wspomnieniach wybranych z ponad 6tysięcy relacji i setek archiwalnych zdjęć znaszych zbiorów. Mapa pozwala odwiedzić miejsca tworzące historię Warszawy -miasta, jakie zapamiętali jego mieszkańcy.",
-          "status": "OPUBLIKOWANA",
-          "wersja": "OBIE",
-          "dostepnoscDlaWersjiDesktopowej": true,
-          "dostepnoscDlaWersjiResponsywnej": true,
-          "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/wawzap.png",
-          "numerWTabeli": 1,
-          "uuidMapy": "cfa5eca1-b68d-4b84-a8bf-2dc33879aa20"
+            "nazwaMapy": "WARSZAWA ZAPAMIĘTANA",
+            "typ": "SERWIS_ZEWNETRZNY",
+            "rodzaj":"temat",
+            "adresUrl": "",
+            "opisKafelka": "Zapraszamy na wirtualną wycieczkę po dawnej Warszawie. Przedstawiamy stolicę we wspomnieniach wybranych z ponad 6tysięcy relacji i setek archiwalnych zdjęć znaszych zbiorów. Mapa pozwala odwiedzić miejsca tworzące historię Warszawy -miasta, jakie zapamiętali jego mieszkańcy.",
+            "status": "OPUBLIKOWANA",
+            "wersja": "OBIE",
+            "dostepnoscDlaWersjiDesktopowej": true,
+            "dostepnoscDlaWersjiResponsywnej": true,
+            "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/wawzap.png",
+            "numerWTabeli": 1,
+            "uuidMapy": "6c516f13-7fc7-43e8-b60f-acddea75406d"
+
         },
         {
           "nazwaMapy": "PLANY LINDLEYA",
           "typ": "SERWIS_ZEWNETRZNY",
-          "rodzaj":"mapa_plan",
-          "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
+          "rodzaj":"mapa-plan",
+          "adresUrl": "",
           "opisKafelka": "Plany miasta z przełomu XIX i XX z zasobów Archiwum Państwowego w Warszawie.",
           "status": "OPUBLIKOWANA",
           "wersja": "OBIE",
@@ -35,7 +36,7 @@
           "dostepnoscDlaWersjiResponsywnej": true,
           "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/planyL.png",
           "numerWTabeli": 2,
-          "uuidMapy": "ad28f9d8-5e08-4385-a3ea-d340ec5d2d3e"
+          "uuidMapy": "8ad1ca85-f541-4e8c-8cd9-7e5fb425cf3c"
         },
         {
           "nazwaMapy": "Pierwsze dni powstania",
@@ -299,23 +300,23 @@
         },
         "grupyMap": [
           {
-            "nazwaMapy": "PLANY LINDLEYA",
-            "typ": "SERWIS_ZEWNETRZNY",
-            "rodzaj":"mapa_plan",
-            "adresUrl": "",
-            "opisKafelka": "Plany miasta z przełomu XIX i XX z zasobów Archiwum Państwowego w Warszawie.",
-            "status": "OPUBLIKOWANA",
-            "wersja": "OBIE",
-            "dostepnoscDlaWersjiDesktopowej": true,
-            "dostepnoscDlaWersjiResponsywnej": true,
-            "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/planyL.png",
-            "numerWTabeli": 2,
-            "uuidMapy": "3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0"
+           "nazwaMapy": "Plany Lindleya z lat 1897-1901",
+          "typ": "SERWIS_ZEWNETRZNY",
+          "rodzaj":"mapa-plan",
+          "adresUrl": "",
+          "opisKafelka": "Plany miasta z przełomu XIX i XX z zasobów Archiwum Państwowego w Warszawie.",
+          "status": "OPUBLIKOWANA",
+          "wersja": "OBIE",
+          "dostepnoscDlaWersjiDesktopowej": true,
+          "dostepnoscDlaWersjiResponsywnej": true,
+          "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/planyL.png",
+          "numerWTabeli": 2,
+          "uuidMapy": "8ad1ca85-f541-4e8c-8cd9-7e5fb425cf3c"
           },
           {
             "nazwaMapy": "PLAN LE ROUGE’A",
             "typ": "SERWIS_ZEWNETRZNY",
-            "rodzaj":"mapa_plan",
+            "rodzaj":"mapa-plan",
             "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
             "opisKafelka": "Plan Le Rouge’aw skali ok. 1:6900 z 1768 roku - obraz miasta z epoki saskiej.",
             "status": "OPUBLIKOWANA",
@@ -329,7 +330,7 @@
           {
             "nazwaMapy": "FOTOPLAN 1945r.",
             "typ": "SERWIS_ZEWNETRZNY",
-            "rodzaj":"mapa_plan",
+            "rodzaj":"mapa-plan",
             "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
             "opisKafelka": "Warszawa po wojnie. Fotoplan opracowany na podstawie zdjęć wykonanych w czerwcu 1945 r.",
             "status": "OPUBLIKOWANA",
@@ -343,7 +344,7 @@
           {
             "nazwaMapy": "PLAN 1939r.",
             "typ": "SERWIS_ZEWNETRZNY",
-            "rodzaj":"mapa_plan",
+            "rodzaj":"mapa-plan",
             "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=pl",
             "opisKafelka": "Plan z lat 1936-1940 w skali 1:1000 pozyskany poprzez Biuro Architektury.",
             "status": "OPUBLIKOWANA",

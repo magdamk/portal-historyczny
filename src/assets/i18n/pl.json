@@ -40,7 +40,8 @@
       "wyslano-pomyslnie": "Wysłano pomyślnie",
       "nieoczekiwany-blad": "Wystąpił nieoczekiwany błąd. Spróbuj ponownie później.",
       "niepoprawny-link-do-mapy": "Niepoprawny link do mapy. Wyświetlono domyślną mapę.",
-      "zamknij": "Zamknij"
+      "zamknij": "Zamknij",
+      "w-przygotowaniu":"W przygotowaniu"
     },
     "strona-startowa": {
       "tytul": "Historyczny Serwis Mapowy Warszawy zawiera mapy historyczne, informacje o obiektach historycznych oraz relacje biograficzne.",
@@ -579,6 +580,7 @@
         "przegladaj-w-obszarze": "Przeglądaj w widocznym obszarze",
         "tematy": "Przeglądaj tematy historyczne",
         "szlaki": "Przeglądaj szlaki historii",
+        "mapy-plany": "Przeglądaj mapy i plany",
         "tagi": "Przeglądaj tagi",
         "info": "Panel informacyjny",
         "temat": "Tematy historyczne",

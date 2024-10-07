@@ -12,8 +12,8 @@
         {
           "nazwaMapy": "WARSAW REMEMBERED",
           "typ": "SERWIS_ZEWNETRZNY",
-          "rodzaj":"temat",
-          "adresUrl": "https://testmapa.um.warszawa.pl/mapa/6c516f13-7fc7-43e8-b60f-acddea75406d?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
+          "rodzaj": "temat",
+          "adresUrl": "",
           "opisKafelka": "We invite you for a virtual tour of old Warsaw. We present the capital in memories selected from over 6,000 reports and hundreds of archival photos from known collections. The map allows you to visit places that create the history of Warsaw - the city as remembered by its inhabitants.",
           "status": "OPUBLIKOWANA",
           "wersja": "OBIE",
@@ -21,13 +21,13 @@
           "dostepnoscDlaWersjiResponsywnej": true,
           "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/wawzap.png",
           "numerWTabeli": 1,
-          "uuidMapy": "cfa5eca1-b68d-4b84-a8bf-2dc33879aa20"
+          "uuidMapy": "6c516f13-7fc7-43e8-b60f-acddea75406d"
         },
         {
           "nazwaMapy": "Lindley's plans",
           "typ": "SERWIS_ZEWNETRZNY",
-          "rodzaj":"mapa_plan",
-          "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
+          "rodzaj": "mapa-plan",
+          "adresUrl": "",
           "opisKafelka": "City plans from the turn of the 19th and 20th century from the resources of the State Archives in Warsaw.",
           "status": "OPUBLIKOWANA",
           "wersja": "OBIE",
@@ -35,12 +35,12 @@
           "dostepnoscDlaWersjiResponsywnej": true,
           "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/planyL.png",
           "numerWTabeli": 2,
-          "uuidMapy": "ad28f9d8-5e08-4385-a3ea-d340ec5d2d3e"
+          "uuidMapy": "8ad1ca85-f541-4e8c-8cd9-7e5fb425cf3c"
         },
         {
           "nazwaMapy": "The first days of the uprising",
           "typ": "SERWIS_ZEWNETRZNY",
-          "rodzaj":"szlak",
+          "rodzaj": "szlak",
           "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
           "opisKafelka": "On August 1, 1944, the uprising broke out. Heroic fighting against the Germans took place for 63 days.",
           "status": "OPUBLIKOWANA",
@@ -66,7 +66,7 @@
           {
             "nazwaMapy": "WARSAW REMEMBERED",
             "typ": "SERWIS_ZEWNETRZNY",
-            "rodzaj":"temat",
+            "rodzaj": "temat",
             "adresUrl": "",
             "opisKafelka": "We invite you for a virtual tour of old Warsaw. We present the capital in memories selected from over 6,000 reports and hundreds of archival photos from known collections. The map allows you to visit places that create the history of Warsaw - the city as remembered by its inhabitants.",
             "status": "OPUBLIKOWANA",
@@ -80,7 +80,7 @@
           {
             "nazwaMapy": "INTERWAR WARSAW",
             "typ": "SERWIS_ZEWNETRZNY",
-            "rodzaj":"temat",
+            "rodzaj": "temat",
             "adresUrl": "",
             "opisKafelka": "Plans and maps from the period. Interesting places related to the interwar period.",
             "status": "OPUBLIKOWANA",
@@ -94,7 +94,7 @@
           {
             "nazwaMapy": "REBUILDING WARSAW",
             "typ": "SERWIS_ZEWNETRZNY",
-            "rodzaj":"temat",
+            "rodzaj": "temat",
             "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
             "opisKafelka": "The whole nation is building its capital. A short history of the destruction and reconstruction of Warsaw on a map.",
             "status": "OPUBLIKOWANA",
@@ -108,7 +108,7 @@
           {
             "nazwaMapy": "MARTIAL LAW",
             "typ": "SERWIS_ZEWNETRZNY",
-            "rodzaj":"temat",
+            "rodzaj": "temat",
             "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
             "opisKafelka": "The state was introduced on December 13, 1981 throughout the Polish People's Republic, contrary to the Constitution.",
             "status": "OPUBLIKOWANA",
@@ -131,10 +131,10 @@
         },
         "grupyMap": [
           {
-            "nazwaMapy": "Lindley's plans",
+            "nazwaMapy": "Lindley's plans 1897-1901",
             "typ": "SERWIS_ZEWNETRZNY",
-            "rodzaj":"mapa_plan",
-            "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
+            "rodzaj": "mapa-plan",
+            "adresUrl": "",
             "opisKafelka": "City plans from the turn of the 19th and 20th century from the resources of the State Archives in Warsaw.",
             "status": "OPUBLIKOWANA",
             "wersja": "OBIE",
@@ -142,12 +142,12 @@
             "dostepnoscDlaWersjiResponsywnej": true,
             "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/planyL.png",
             "numerWTabeli": 2,
-            "uuidMapy": "ad28f9d8-5e08-4385-a3ea-d340ec5d2d3e"
+            "uuidMapy": "8ad1ca85-f541-4e8c-8cd9-7e5fb425cf3c"
           },
           {
             "nazwaMapy": "LE ROUGE'S PLAN",
             "typ": "SERWIS_ZEWNETRZNY",
-            "rodzaj":"mapa_plan",
+            "rodzaj":"mapa-plan",
             "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
             "opisKafelka": "Le Rouge's plan on a scale of approx. 1:6900 from 1768 - an image of the city from the Saxon era.",
             "status": "OPUBLIKOWANA",
@@ -161,7 +161,7 @@
           {
             "nazwaMapy": "PHOTO PLAN 1945",
             "typ": "SERWIS_ZEWNETRZNY",
-            "rodzaj":"mapa_plan",
+            "rodzaj":"mapa-plan",
             "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
             "opisKafelka": "Warsaw after the war. A photo plan based on photos taken in June 1945.",
             "status": "OPUBLIKOWANA",
@@ -175,7 +175,7 @@
           {
             "nazwaMapy": "PLAN 1939r.",
             "typ": "SERWIS_ZEWNETRZNY",
-            "rodzaj":"mapa_plan",
+            "rodzaj":"mapa-plan",
             "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
             "opisKafelka": "Plan from 1936-1940 on a scale of 1:1000 obtained through the Architecture Office.",
             "status": "OPUBLIKOWANA",
@@ -200,7 +200,7 @@
           {
             "nazwaMapy": "MARTIAL LAW REPORTS FROM WARSAW RESIDENTS",
             "typ": "SERWIS_ZEWNETRZNY",
-            "rodzaj":"szlak",
+            "rodzaj": "szlak",
             "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
             "opisKafelka": "Mapa z granicami działek oraz obrysami budynków pochodzącymi z bazy EGiB",
             "status": "OPUBLIKOWANA",
@@ -214,7 +214,7 @@
           {
             "nazwaMapy": "ELECTIONS OF JUNE 4, 1989",
             "typ": "SERWIS_ZEWNETRZNY",
-            "rodzaj":"szlak",
+            "rodzaj": "szlak",
             "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
             "opisKafelka": "",
             "status": "OPUBLIKOWANA",
@@ -228,7 +228,7 @@
           {
             "nazwaMapy": "JAN ROZMARYNOWSKI ABOUT WARSAW",
             "typ": "SERWIS_ZEWNETRZNY",
-            "rodzaj":"szlak",
+            "rodzaj": "szlak",
             "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
             "opisKafelka": "",
             "status": "OPUBLIKOWANA",
@@ -242,7 +242,7 @@
           {
             "nazwaMapy": "FABLES AND LEGENDS OF WARSAW",
             "typ": "SERWIS_ZEWNETRZNY",
-            "rodzaj":"szlak",
+            "rodzaj": "szlak",
             "adresUrl": "https://testmapa.um.warszawa.pl/mapa/3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0?zoom=4&srodekX=7501975&srodekY=5789023&lang=en",
             "opisKafelka": "Places related to known and less known legends and fairy tales about Warsaw.",
             "status": "OPUBLIKOWANA",
