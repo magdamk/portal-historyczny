@@ -1,18 +1,22 @@
 <div class="kontener-narzedzia">
-
-  <div class="mapy-plany" [class.hidden]="!obszarWidoczny">
-    <div class="tytul naglowek-c" [class.hidden]="!obszarWidoczny">
-      {{'codes.modul-mapowy.belka-boczna.mapa-plan' | translate}}
+  <mm-przewijany-komponent>
+    <div class="mapy-plany" [class.hidden]="!obszarWidoczny">
+      <div class="tytul naglowek-c" [class.hidden]="!obszarWidoczny">
+        {{'codes.modul-mapowy.belka-boczna.mapy-plany' | translate}}
+      </div>
+      <div class="grid grid-cols-2 gap-4 mr-4">
+        <div class="lista-kategorii" *ngFor="let mapa_plan of zbiorMapPlanow">
+          <mm-belka-karta-mapy [temat]="mapa_plan" (mapaWybrana)="wybranoMape($event)"></mm-belka-karta-mapy>
+          <!-- <app-kategorie-map (mapaWybrana)="wybranoMape($event)" [zmianaMapy]="zmianaMapy || wyborMapyDoPorownania"
+      [kategoriiMap]="kategoria">
+    </app-kategorie-map> -->
+        </div>
+      </div>
     </div>
-    <div class="tekst-d"> W przygotowaniu</div>
-  </div>
-  <div class="kontroler" [tabindex]="1" [class.widoczna]="obszarWidoczny"
-  [ngClass]="'poz-'+widok?.kolejnosc"
-  (keyup.enter)="przeniesNaWierzch()"
-  (click)="przeniesNaWierzch()"
-  matTooltipPosition="right"
-    matTooltip="{{'codes.modul-mapowy.belka-boczna.mapa-plan' | translate}}">
-    <span mmIkonaSvg="layers24" class="ikona"></span>
-  </div>
-
+    <div class="kontroler" [tabindex]="1" [class.widoczna]="obszarWidoczny" [ngClass]="'poz-'+widok!.kolejnosc"
+      (keyup.enter)="przeniesNaWierzch()" (click)="przeniesNaWierzch()" matTooltipPosition="right"
+      matTooltip="{{'codes.modul-mapowy.belka-boczna.mapy-plany' | translate}}">
+      <span mmIkonaSvg="layers24" class="ikona"></span>
+    </div>
+  </mm-przewijany-komponent>
 </div>
