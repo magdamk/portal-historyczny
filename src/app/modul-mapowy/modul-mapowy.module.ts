@@ -53,7 +53,6 @@ import { lewyPanelWidokReducer } from './stan/lewy-panel-widok/lewy-panel-widok.
 import { BelkaKartaMapyComponent } from './serwis-mapowy/komponenty/boczna-belka/belka-karta-mapy/belka-karta-mapy.component';
 import { PrzyciskOkraglyComponent } from './commons/komponenty/przycisk-okragly/przycisk-okragly.component';
 import { OsMapyPlanyComponent } from './serwis-mapowy/komponenty/boczna-belka/os-mapy-plany/os-mapy-plany.component';
-import { TagComponent } from './serwis-mapowy/komponenty/boczna-belka/tag/tag.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -84,7 +83,6 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     OsInfoComponent,
     BelkaKartaMapyComponent,
     OsMapyPlanyComponent,
-    TagComponent
   ],
   imports: [
     CommonModule,
@@ -114,11 +112,9 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     PrzewijanyKomponentComponent,
     PrzyciskIkonaComponent,
     PrzyciskOkraglyComponent,
-
     TylkoDesktopDirective,
     TylkoMobileDirective,
     RerenderDirective,
-
   ],
   providers: [
     { provide: TlumaczeiaModulMapowyAdapter, useClass: DomyslnyTlumaczeniaModulMapowyAdapter },
