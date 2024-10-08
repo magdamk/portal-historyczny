@@ -1,51 +1,42 @@
-<div class="informaje-o-obiekcie obiekt"
-     *ngIf="informacjeOKliknietejPozycji"
-     [style.left]="polozenieOknaOdLewej+'px'"
-     [style.top]="polozenieOknaOdGory+'px'">
-  <div class="naglowek"
-       (swipeleft)="nastepnyObiekt()"
-       (swiperight)="poprzedniObiekt()"
-       *ngIf="wybranaWarstwaDoWyswietlenia && wybranaWarstwaDoWyswietlenia.obiekty[wybranaWarstwaDoWyswietlenia.aktualnyObiekt]">
+<div class="informaje-o-obiekcie obiekt" *ngIf="informacjeOKliknietejPozycji" [style.left]="polozenieOknaOdLewej+'px'"
+  [style.top]="polozenieOknaOdGory+'px'">
+  <div class="naglowek" (swipeleft)="nastepnyObiekt()" (swiperight)="poprzedniObiekt()"
+    *ngIf="wybranaWarstwaDoWyswietlenia && wybranaWarstwaDoWyswietlenia.obiekty[wybranaWarstwaDoWyswietlenia.aktualnyObiekt]">
 
-  <span class="naglowek-c" #dlugaNazwa mmDlugieNazwy>
-    <span class="naglowek-nazwa">
-      {{wybranaWarstwaDoWyswietlenia.obiekty[wybranaWarstwaDoWyswietlenia.aktualnyObiekt].tytul}}
+    <span class="naglowek-c" #dlugaNazwa mmDlugieNazwy>
+      <span class="naglowek-nazwa">
+        {{wybranaWarstwaDoWyswietlenia.obiekty[wybranaWarstwaDoWyswietlenia.aktualnyObiekt].tytul}}
+      </span>
+      <span class="naglowek-warstwa">
+        ({{wybranaWarstwaDoWyswietlenia.warstwa.nazwaOficjalna | wyborTlumaczenia:aktualnyJezyk}})
+      </span>
     </span>
-    <span class="naglowek-warstwa">
-      ({{wybranaWarstwaDoWyswietlenia.warstwa.nazwaOficjalna | wyborTlumaczenia:aktualnyJezyk}})
-    </span>
-  </span>
   </div>
 
-  <div class="zawartosc"
-       [class.z-nawigacja]="liczbaObiektow>1">
+  <div class="zawartosc" [class.z-nawigacja]="liczbaObiektow>1">
     <mm-przewijany-komponent>
-      <div
-        (swipeleft)="nastepnyObiekt()"
-        (swiperight)="poprzedniObiekt()"
-      >
+      <div (swipeleft)="nastepnyObiekt()" (swiperight)="poprzedniObiekt()">
         <mm-obiekt-opis *ngIf="sekcjeOkna && sekcjeOkna.opis.widoczna && wybranaWarstwaDoWyswietlenia"
-                         [obiekt]="wybranaWarstwaDoWyswietlenia.obiekty[wybranaWarstwaDoWyswietlenia.aktualnyObiekt]"
-                         [nazwaWarstwy]="wybranaWarstwaDoWyswietlenia.warstwa.nazwaOficjalna">
+          [obiekt]="wybranaWarstwaDoWyswietlenia.obiekty[wybranaWarstwaDoWyswietlenia.aktualnyObiekt]"
+          [nazwaWarstwy]="wybranaWarstwaDoWyswietlenia.warstwa.nazwaOficjalna">
         </mm-obiekt-opis>
       </div>
       <!-- <lib-obiekt-zalaczniki-i-zdjecia *ngIf="sekcjeOkna && wybranaWarstwaDoWyswietlenia"
                                        [warstwa]="wybranaWarstwaDoWyswietlenia.warstwa"
                                        [sekcjeOkna]="sekcjeOkna"
                                        [obiekt]="wybranaWarstwaDoWyswietlenia.obiekty[wybranaWarstwaDoWyswietlenia.aktualnyObiekt]">
-      </lib-obiekt-zalaczniki-i-zdjecia>
-      <div class="informacje-o-lokalizacji"
-           (swipeleft)="nastepnyObiekt()"
-           (swiperight)="poprzedniObiekt()"
-           *ngIf="sekcjeOkna && sekcjeOkna.infoOPozycji.widoczna && wybranaWarstwaDoWyswietlenia">
-        <lib-lokalizacja-opis
+      </lib-obiekt-zalaczniki-i-zdjecia> -->
+      <div class="informacje-o-lokalizacji" (swipeleft)="nastepnyObiekt()" (swiperight)="poprzedniObiekt()"
+        *ngIf="sekcjeOkna && sekcjeOkna.infoOPozycji.widoczna && wybranaWarstwaDoWyswietlenia">
+        <mm-lokalizacja-opis
           [pozycjaGeograficzna]="wybranaWarstwaDoWyswietlenia.obiekty[wybranaWarstwaDoWyswietlenia.aktualnyObiekt].pozycja"
-          [obiekt]="true"></lib-lokalizacja-opis> -->
-      <!-- </div> -->
+          [obiekt]="true"></mm-lokalizacja-opis>
+      </div>
     </mm-przewijany-komponent>
   </div>
   <div class="nawigacja-po-obiektach" *ngIf="liczbaObiektow>1">
-    <div class="licznik">{{numerAktualnegoObiektu}} {{'codes.modul-mapowy.generyczne.paginacja-z' | translate}} {{liczbaObiektow}}
+    <div class="licznik">{{numerAktualnegoObiektu}} {{'codes.modul-mapowy.generyczne.paginacja-z' | translate}}
+      {{liczbaObiektow}}
     </div>
     <div class="nawigacja" (click)="poprzedniObiekt()">
       <mm-przycisk-ikona ikona="poprzedni" typ="'czarno-bialy'"></mm-przycisk-ikona>
@@ -55,7 +46,7 @@
     </div>
   </div>
   <div class="zamknij" *ngIf="informacjeOKliknietejPozycji?.zadokowane">
-    <mm-przycisk-ikona label="{{'codes.modul-mapowy.generyczne.zamknij' | translate}}" ikona="zamknij" typ="przezroczysty"
-                        (click)="zamknij()"></mm-przycisk-ikona>
+    <mm-przycisk-ikona label="{{'codes.modul-mapowy.generyczne.zamknij' | translate}}" ikona="zamknij"
+      typ="przezroczysty" (click)="zamknij()"></mm-przycisk-ikona>
   </div>
 </div>

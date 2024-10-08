@@ -1,0 +1,27 @@
+<div class="informacje-o-pozycji">
+  <div class="pozycja">
+    <div class="dane">
+      X: {{pozycjaKursoraEPSG2178Y}}<br/>
+      Y: {{pozycjaKursoraEPSG2178X}}
+    </div>
+    <div class="udostepnij">
+      <mm-przycisk-ikona ikona="udostepnij"
+                          (click)="udostepnijLokalizacjeEPSG2178()"
+                          label="{{'codes.modul-mapowy.przegladanie-obiektow.udostepnij-wspolrzedne-pl-2000' | translate}}"></mm-przycisk-ikona>
+    </div>
+  </div>
+  <div class="pozycja">
+    <div class="dane">
+      B: {{pozycjaKursoraEPSG4326Y}}<br/>
+      L: {{pozycjaKursoraEPSG4326X}}
+    </div>
+    <div class="udostepnij">
+      <mm-przycisk-ikona ikona="udostepnij"
+                          (click)="udostepnijLokalizacjeEPSG4326()"
+                          label="{{'codes.modul-mapowy.przegladanie-obiektow.udostepnij-wspolrzedne-wsg-84' | translate}}"></mm-przycisk-ikona>
+    </div>
+  </div>
+</div>
+<div class="informacje-o-wysokosci" *ngIf="!obiekt">
+  H: {{wysokosc}} m n.p.m.
+</div>

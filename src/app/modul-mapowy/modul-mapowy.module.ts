@@ -58,6 +58,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ObiektOpisComponent } from './serwis-mapowy/komponenty/mapa/obiekt-opis/obiekt-opis.component';
+import { LokalizacjaOpisComponent } from './serwis-mapowy/komponenty/mapa/lokalizacja-opis/lokalizacja-opis.component';
 
 @NgModule({
   declarations: [
@@ -85,6 +86,7 @@ import { ObiektOpisComponent } from './serwis-mapowy/komponenty/mapa/obiekt-opis
     BelkaKartaMapyComponent,
     OsMapyPlanyComponent,
     ObiektOpisComponent,
+    LokalizacjaOpisComponent,
   ],
   imports: [
     CommonModule,

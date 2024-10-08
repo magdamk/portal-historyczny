@@ -1,0 +1,51 @@
+@import "../../../../../../style/mm-style/mm-konfiguracja-szablonu.scss";
+
+.informacje-o-pozycji {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .pozycja {
+    display: flex;
+    justify-content: space-between;
+
+    .dane {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+
+    .udostepnij {
+      margin-left: 5px;
+      margin-right: 5px;
+      height: 62px;
+      width: 62px;
+    }
+  }
+}
+
+@media (min-width: 400px) {
+
+  .informacje-o-pozycji {
+    .pozycja {
+      .udostepnij {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+    }
+  }
+}
+
+@media (min-width: $prog-przelaczenia) {
+
+  .informacje-o-pozycji {
+    .pozycja {
+      .udostepnij {
+        margin-left: 40px;
+        margin-right: 40px;
+      }
+    }
+  }
+}
+
