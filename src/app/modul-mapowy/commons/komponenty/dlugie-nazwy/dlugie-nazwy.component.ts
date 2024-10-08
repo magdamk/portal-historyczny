@@ -12,9 +12,7 @@ export class DlugieNazwyComponent implements AfterViewInit {
   tooltip = '';
 
   @Input() nazwa!: string;
-
-  @Input()
-  liczbaWierszy: 1 | 2 = 2;
+  @Input() liczbaWierszy: 1 | 2 = 2;
 
   constructor() { }
 

@@ -1,7 +1,6 @@
-import {Style} from '../../oracle-maps/types/style';
-import {OM} from '../../oracle-maps/types/om';
-// import {KonfiguracjaAdapter} from '../../core/providers/konfiguracja-adapter';
-import {Observable} from 'rxjs';
+import { Style } from '../../oracle-maps/types/style';
+import { OM } from '../../oracle-maps/types/om';
+import { Observable } from 'rxjs';
 import { KonfiguracjaAdapter } from '../../mm-core/providers/konfiguracja-adapter';
 
 declare var OM: OM;
@@ -47,7 +46,7 @@ export class StyleZaznaczaniaObiektowUtils {
   }
 
   static pobierzStylZaznaczaniaObiektuZServera(typ: string, konfiguracja: KonfiguracjaAdapter): Observable<Style> {
-    return new Observable<Style>(observer=>{
+    return new Observable<Style>(observer => {
       const konfiguracjStyli = konfiguracja.pobierzDefinicjeStyluWszystkieObiektyDlaSelekcji(typ);
       OM.style.StyleStore.getServerSideStyle(
         konfiguracjStyli.zrodlo,
@@ -66,7 +65,7 @@ export class StyleZaznaczaniaObiektowUtils {
    * Funkcja zwraca predefiniowany styl dla zaznaczonych obiektow
    */
   static pobierzStylWybieraniaObiektuZServera(typ: string, konfiguracja: KonfiguracjaAdapter): Observable<Style> {
-    return new Observable<Style>(observer=>{
+    return new Observable<Style>(observer => {
       const konfiguracjStyli = konfiguracja.pobierzDefinicjeStyluWybraneObiektyDlaSelekcji(typ);
       OM.style.StyleStore.getServerSideStyle(
         konfiguracjStyli.zrodlo,

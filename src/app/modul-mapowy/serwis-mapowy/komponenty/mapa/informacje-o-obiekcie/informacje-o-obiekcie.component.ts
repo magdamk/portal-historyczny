@@ -73,7 +73,8 @@ const WARSTWA_INFORMACJI_O_OBIEKCIE = 'warstwa-informacji-o-obiekcie';
 
 
 export class InformacjeOObiekcieComponent implements OnInit, OnDestroy {
-  @ViewChild('dlugaNazwa') dlugaNazwa?: DlugieNazwyComponent;
+
+  @ViewChild('dlugaNazwa') dlugaNazwa: DlugieNazwyComponent | undefined;
 
   polozenieOknaOdLewej = 62;
   polozenieOknaOdGory = 50;
@@ -102,13 +103,10 @@ export class InformacjeOObiekcieComponent implements OnInit, OnDestroy {
   markerObiektu?: Feature;
 
   widokGotowy = false;
-
   warstwy?: Map<string, Warstwa>;
 
-  @Input()  mapView?: OMap;
-
-  @Input()
-  mapa?: Mapa;
+  @Input() mapView?: OMap;
+  @Input() mapa?: Mapa;
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
@@ -250,7 +248,7 @@ nastepnyObiekt(): void {
   this.aktualizujLicznikObiektow();
   this.ustawParametryOkna();
   this.zmianaPolozeniaPinezki();
-  this.dlugaNazwa!.aktualizuj();
+  this.dlugaNazwa!.aktualizuj;
 }
 
 /**
@@ -277,7 +275,7 @@ poprzedniObiekt(): void {
   this.aktualizujLicznikObiektow();
   this.ustawParametryOkna();
   this.zmianaPolozeniaPinezki();
-  this.dlugaNazwa!.aktualizuj();
+  this.dlugaNazwa!.aktualizuj;
 }
 
 /**
@@ -538,7 +536,7 @@ private zanzaczWybranyObiekt(geometry?: Geometry): void {
     this.markerObiektu = new OM.MapMarker({
       id: 'marker-obiektu',
       renderingStyle: new OM.style.Marker({
-        src: 'assets/modul-mapowy/ikony/moja_lokalizacja.svg',
+        src: 'assets/ikony/moja_lokalizacja.svg',
         width: 42,
         height: 52,
         yOffset: -26,
