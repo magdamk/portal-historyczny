@@ -11,6 +11,7 @@ import { PrzyciskOkraglyComponent } from './komponenty/przycisk-okragly/przycisk
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { MMOdkazHtmlPipe } from './pipes/mm-odkaz-html.pipe';
+import { DlugieNazwyComponent } from './komponenty/dlugie-nazwy/dlugie-nazwy.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MMOdkazHtmlPipe } from './pipes/mm-odkaz-html.pipe';
     PrzewijanyKomponentComponent,
     RerenderDirective,
     PrzyciskMydloComponent,
-    PrzyciskOkraglyComponent
+    PrzyciskOkraglyComponent,
+    DlugieNazwyComponent
   ],
   imports: [
     CommonModule,

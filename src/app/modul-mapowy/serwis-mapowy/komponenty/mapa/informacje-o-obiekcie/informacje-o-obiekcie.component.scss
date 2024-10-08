@@ -1,0 +1,126 @@
+@import "../../../../../../style/mm-style/mm-konfiguracja-szablonu.scss";
+
+.informaje-o-obiekcie {
+  position: absolute;
+  bottom: 0;
+  z-index: $obszar-widoku-z-index-start+4;
+  width: 100%;
+  height: 100%;
+  background: white;
+  padding: 20px 20px 20px 30px;
+
+  .naglowek {
+    margin-bottom: 15px;
+    padding-right: 30px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    height: 58px;
+    .naglowek-nazwa{
+      color: $miasto-zielony;
+    }
+    .naglowek-warstwa {
+      color: $miasto-czarny;
+    }
+  }
+
+  .zawartosc{
+    display: flex;
+    height: calc(100% - 75px);
+    lib-przewijany-komponent{
+      width: 100%;
+      div{
+        touch-action: pan-y !important;
+      }
+    }
+  }
+
+  .zawartosc.z-nawigacja{
+    height: calc(100% - 110px);
+  }
+
+  .informacje-o-lokalizacji{
+    touch-action: pan-y !important;
+    margin-top: 15px;
+    border-top: 1px solid $miasto-szary;
+    border-bottom: 1px solid $miasto-szary;
+  }
+
+  .nawigacja-po-obiektach {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-top: 5px;
+    .licznik {
+      margin-right: 15px;
+    }
+
+    .nawigacja {
+      display: inline-block;
+      height: 44px;
+      width: 24px;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+  }
+
+  .zamknij {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 61px;
+    height: 61px;
+  }
+}
+
+.informaje-o-obiekcie.obiekt {
+  height: 100%;
+  z-index: $obszar-zawsze-widoczny-z-index-start;
+  .informacje-o-pozycji{
+    border-top: 1px solid $miasto-szary;
+    border-bottom: 1px solid $miasto-szary;
+  }
+}
+
+@media(max-width: $prog-przelaczenia) {
+  .informaje-o-obiekcie {
+    left: 0 !important;
+    top: auto !important;
+  }
+}
+
+@media (min-width: $prog-przelaczenia) {
+
+  .informaje-o-obiekcie {
+    bottom: auto;
+    top: 10px;
+    left: 62px;
+    width: 550px;
+
+    .naglowek{
+      height: 80px;
+    }
+
+    .zawartosc{
+      max-height: calc(500px - 90px - 40px);
+    }
+
+    .zawartosc.z-nawigacja{
+      max-height: calc(500px - 130px - 40px);
+    }
+
+    .nawigacja-po-obiektach{
+
+      .nawigacja{
+        margin-right: 0;
+      }
+    }
+  }
+
+  .informaje-o-obiekcie.obiekt {
+    height: auto;
+    max-height: 500px;
+  }
+}

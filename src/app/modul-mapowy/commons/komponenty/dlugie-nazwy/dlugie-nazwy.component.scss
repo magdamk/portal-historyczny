@@ -1,0 +1,27 @@
+.zawartosc{
+  display: -webkit-box;
+  position: relative;
+  flex-wrap: nowrap;
+  align-items: center;
+  overflow: hidden;
+  word-wrap: break-word;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  &.dwa-wiersze{
+    -webkit-line-clamp: 2;
+  }
+}
+
+
+.zawartosc-pomiarowa {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  overflow-y: auto;
+  height: auto;
+  visibility: hidden;
+}
+

@@ -7,5 +7,7 @@
     [synchronizujZoomISrodek]="false"
     [grupyWarstwPodkladowych]="grupyWarstwPodkladowych">
   </mm-widok-mapy>
+  <mm-informacje-o-obiekcie  *ngIf="mapView && mapa"
+  [mapView]="mapView" [mapa]="mapa"></mm-informacje-o-obiekcie>
 </div>
 </div>
