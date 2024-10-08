@@ -54,8 +54,10 @@ import { BelkaKartaMapyComponent } from './serwis-mapowy/komponenty/boczna-belka
 import { PrzyciskOkraglyComponent } from './commons/komponenty/przycisk-okragly/przycisk-okragly.component';
 import { OsMapyPlanyComponent } from './serwis-mapowy/komponenty/boczna-belka/os-mapy-plany/os-mapy-plany.component';
 import { TagComponent } from './serwis-mapowy/komponenty/boczna-belka/tag/tag.component';
-import {MatChipsModule} from '@angular/material/chips';
-
+import { MatChipsModule } from '@angular/material/chips';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [
@@ -87,10 +89,14 @@ import {MatChipsModule} from '@angular/material/chips';
   imports: [
     CommonModule,
     CommonsModule,
+    FormsModule,
+    MatAutocompleteModule,
     MatChipsModule,
+    MatFormFieldModule,
     MatProgressSpinnerModule,
     MatTooltipModule,
     OracleMapsModule,
+    ReactiveFormsModule,
     RouterModule,
     TranslateModule,
     StoreModule.forFeature('modulMapowy', {
@@ -108,6 +114,7 @@ import {MatChipsModule} from '@angular/material/chips';
     PrzewijanyKomponentComponent,
     PrzyciskIkonaComponent,
     PrzyciskOkraglyComponent,
+
     TylkoDesktopDirective,
     TylkoMobileDirective,
     RerenderDirective,

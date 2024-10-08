@@ -15,12 +15,13 @@ export class TagiService {
   constructor(private http: HttpClient, private tlumaczeniaService: TlumaczeniaService) { }
 
   getTagi(): Observable<TagiDto[]> {
-    // console.log('!!!!!!!!!!!!!!!!!! teraz: ', this.tlumaczeniaService.pobierzAktualnyJezyk());
-    if (this.tlumaczeniaService.pobierzAktualnyJezyk() !== 'pl') {
-      return this.http.get<TagiDto[]>('./assets/data/tagi_en.json')
+    console.log('!!! getTagi !!!!!!!!!!!!!!! teraz: ', this.tlumaczeniaService.pobierzAktualnyJezyk());
+
+    if (this.tlumaczeniaService.pobierzAktualnyJezyk() === 'pl') {
+      return this.http.get<TagiDto[]>('assets/data/tagi_pl.json')
     }
     else {
-      return this.http.get<TagiDto[]>('./assets/data/tagi_pl.json')
+      return this.http.get<TagiDto[]>('assets/data/tagi_en.json')
     }
   }
 

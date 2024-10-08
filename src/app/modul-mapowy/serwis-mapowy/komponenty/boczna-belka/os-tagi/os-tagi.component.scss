@@ -16,15 +16,22 @@
       -webkit-line-clamp: 3;
       -webkit-line-clamp: 2;
 
+
+
       &.hidden {
         display: none;
       }
 
-      .lista-kategorii{
+
+
+      .lista-kategorii {
         flex-wrap: wrap;
 
       }
     }
   }
 }
-
+.filter-input {
+  border: 1px solid $miasto-pomarancz !important;
+  border-radius: 4px !important;
+}
