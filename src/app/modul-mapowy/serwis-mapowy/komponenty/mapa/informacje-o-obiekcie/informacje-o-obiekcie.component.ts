@@ -248,7 +248,7 @@ nastepnyObiekt(): void {
   this.aktualizujLicznikObiektow();
   this.ustawParametryOkna();
   this.zmianaPolozeniaPinezki();
-  this.dlugaNazwa!.aktualizuj;
+  this.dlugaNazwa!.aktualizuj();
 }
 
 /**
@@ -275,7 +275,7 @@ poprzedniObiekt(): void {
   this.aktualizujLicznikObiektow();
   this.ustawParametryOkna();
   this.zmianaPolozeniaPinezki();
-  this.dlugaNazwa!.aktualizuj;
+  this.dlugaNazwa!.aktualizuj();
 }
 
 /**

@@ -1,0 +1,11 @@
+@import "../../../../../../style/mm-style/mm-konfiguracja-szablonu.scss";
+
+.dane-obiektu {
+  display: flex;
+  div{
+    max-width: 100%;
+  }
+  span, a{
+    word-wrap: break-word;
+  }
+}

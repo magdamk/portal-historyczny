@@ -12,7 +12,7 @@
       {{wybranaWarstwaDoWyswietlenia.obiekty[wybranaWarstwaDoWyswietlenia.aktualnyObiekt].tytul}}
     </span>
     <span class="naglowek-warstwa">
-      ({{wybranaWarstwaDoWyswietlenia.warstwa?.nazwaOficjalna | wyborTlumaczenia:aktualnyJezyk}})
+      ({{wybranaWarstwaDoWyswietlenia.warstwa.nazwaOficjalna | wyborTlumaczenia:aktualnyJezyk}})
     </span>
   </span>
   </div>
@@ -24,10 +24,10 @@
         (swipeleft)="nastepnyObiekt()"
         (swiperight)="poprzedniObiekt()"
       >
-        <!-- <lib-obiekt-opis *ngIf="sekcjeOkna && sekcjeOkna.opis.widoczna && wybranaWarstwaDoWyswietlenia"
+        <mm-obiekt-opis *ngIf="sekcjeOkna && sekcjeOkna.opis.widoczna && wybranaWarstwaDoWyswietlenia"
                          [obiekt]="wybranaWarstwaDoWyswietlenia.obiekty[wybranaWarstwaDoWyswietlenia.aktualnyObiekt]"
                          [nazwaWarstwy]="wybranaWarstwaDoWyswietlenia.warstwa.nazwaOficjalna">
-        </lib-obiekt-opis> -->
+        </mm-obiekt-opis>
       </div>
       <!-- <lib-obiekt-zalaczniki-i-zdjecia *ngIf="sekcjeOkna && wybranaWarstwaDoWyswietlenia"
                                        [warstwa]="wybranaWarstwaDoWyswietlenia.warstwa"

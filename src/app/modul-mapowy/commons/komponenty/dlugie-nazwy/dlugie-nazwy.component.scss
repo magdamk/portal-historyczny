@@ -25,3 +25,27 @@
   visibility: hidden;
 }
 
+// :host ::ng-deep .tooltip-legenda {
+//   background: white!important;
+//   font-size: 1rem !important;
+//   color:black;
+//   // color: $miasto-czarny !important;
+//   border-radius: 0 !important;
+//   border: 2px solid lightgreen !important;
+// }
+::ng-deep mat-tooltip-component{
+  & .tooltip-legenda2{
+    .mdc-tooltip__surface {
+      // max-width: 350px;
+      // padding: 5px;
+
+      background: white;
+      font-size: 1rem;
+      line-height: 1.2rem;
+      color: black;
+      border-radius: 0;
+      border: 2px solid brown;
+    }
+
+  }
+}

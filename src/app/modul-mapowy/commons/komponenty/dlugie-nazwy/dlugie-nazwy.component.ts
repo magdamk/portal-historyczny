@@ -14,9 +14,12 @@ export class DlugieNazwyComponent implements AfterViewInit {
   @Input() nazwa!: string;
   @Input() liczbaWierszy: 1 | 2 = 2;
 
-  constructor() { }
+  constructor() {
+    console.log('XXXXXXXXXXXXXX');
+   }
 
   ngAfterViewInit(): void {
+    console.log('dlugieNazwy ngAfterViewInit:', this.liczbaWierszy);
     this.aktualizuj();
   }
 
@@ -24,7 +27,9 @@ export class DlugieNazwyComponent implements AfterViewInit {
    * Funkcja aktualizuje tooltip dla długiej nazwy
    */
   aktualizuj(){
+    console.log("tooltip okno window");
     setTimeout(()=>{
+      console.log("tooltip okno window");
       this.zawartoscPomiarowa.nativeElement.innerHTML = this.zawartosc.nativeElement.innerHTML;
       this.generujTooltip();
     }, 200)
@@ -48,7 +53,7 @@ export class DlugieNazwyComponent implements AfterViewInit {
    * Funkcja sprawdza czy nazwa warstwy jest zbyt długa
    */
   private nazwaZbytDluga(): boolean {
-    if (!this.zawartoscPomiarowa?.nativeElement) {
+    if (!this.zawartoscPomiarowa.nativeElement) {
       return false;
     }
     const zawartoscPomiarowaWysokosc = this.zawartoscPomiarowa.nativeElement.getBoundingClientRect().height;

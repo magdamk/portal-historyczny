@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { MMOdkazHtmlPipe } from './pipes/mm-odkaz-html.pipe';
 import { DlugieNazwyComponent } from './komponenty/dlugie-nazwy/dlugie-nazwy.component';
+import { FormatowanieInformacjiOObiekcieDirective } from './directives/formatowanie-informacji-o-obiekcie.directive';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DlugieNazwyComponent } from './komponenty/dlugie-nazwy/dlugie-nazwy.com
     RerenderDirective,
     PrzyciskMydloComponent,
     PrzyciskOkraglyComponent,
-    DlugieNazwyComponent
+    DlugieNazwyComponent,
+    FormatowanieInformacjiOObiekcieDirective
   ],
   imports: [
     CommonModule,
@@ -33,6 +35,8 @@ import { DlugieNazwyComponent } from './komponenty/dlugie-nazwy/dlugie-nazwy.com
     RouterModule
   ],
   exports:[
+    DlugieNazwyComponent,
+    FormatowanieInformacjiOObiekcieDirective,
     IkonaSvgDirective,
     MatLegacySliderModule,
     MMOdkazHtmlPipe,
