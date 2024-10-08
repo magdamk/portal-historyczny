@@ -21,11 +21,10 @@
           [nazwaWarstwy]="wybranaWarstwaDoWyswietlenia.warstwa.nazwaOficjalna">
         </mm-obiekt-opis>
       </div>
-      <!-- <lib-obiekt-zalaczniki-i-zdjecia *ngIf="sekcjeOkna && wybranaWarstwaDoWyswietlenia"
-                                       [warstwa]="wybranaWarstwaDoWyswietlenia.warstwa"
-                                       [sekcjeOkna]="sekcjeOkna"
-                                       [obiekt]="wybranaWarstwaDoWyswietlenia.obiekty[wybranaWarstwaDoWyswietlenia.aktualnyObiekt]">
-      </lib-obiekt-zalaczniki-i-zdjecia> -->
+      <mm-obiekt-zalaczniki-i-zdjecia *ngIf="sekcjeOkna && wybranaWarstwaDoWyswietlenia"
+        [warstwa]="wybranaWarstwaDoWyswietlenia.warstwa" [sekcjeOkna]="sekcjeOkna"
+        [obiekt]="wybranaWarstwaDoWyswietlenia.obiekty[wybranaWarstwaDoWyswietlenia.aktualnyObiekt]">
+      </mm-obiekt-zalaczniki-i-zdjecia>
       <div class="informacje-o-lokalizacji" (swipeleft)="nastepnyObiekt()" (swiperight)="poprzedniObiekt()"
         *ngIf="sekcjeOkna && sekcjeOkna.infoOPozycji.widoczna && wybranaWarstwaDoWyswietlenia">
         <mm-lokalizacja-opis

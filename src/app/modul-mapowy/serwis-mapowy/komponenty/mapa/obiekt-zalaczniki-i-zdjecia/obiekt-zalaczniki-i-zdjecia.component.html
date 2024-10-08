@@ -1,0 +1,54 @@
+<div class="multimedia-i-zalaczniki">
+  <div class="multimedia" *ngIf="multimedia && multimedia.pliki.length>0">
+    <div class="pojedyncze" *ngIf="multimedia?.pliki?.length===1">
+      <div *ngFor="let img of multimedia?.pliki">
+      <img *mmImg="img?.rozszerzenie" [src]="img.sciezka" (click)="pokazGaleriePelnoekranowa()"/>
+        <video *mmWideo="img?.rozszerzenie" [src]="img.sciezka" controls ></video>
+        <audio *mmAudio="img?.rozszerzenie" [src]="img.sciezka" controls  ></audio>
+      </div>
+    </div>
+    <div class="wielokrotne" *ngIf="multimedia?.pliki && multimedia?.pliki!.length>1">
+      <div class="widok">
+        <img *mmImg="wybraneZdjecie?.rozszerzenie"
+            [src]="wybraneZdjecie?.sciezka"
+             (swipeleft)="nastepneZdjecie()"
+             (swiperight)="poprzednieZdjecie()"
+             (click)="pokazGaleriePelnoekranowa()"/>
+        <video *mmVideo="wybraneZdjecie?.rozszerzenie" src="{{wybraneZdjecie?.sciezka}}" controls></video>
+        <audio *mmAudio="wybraneZdjecie?.rozszerzenie" src="{{wybraneZdjecie?.sciezka}}" controls></audio>
+      </div>
+      <div class="karuzela">
+        <div *ngFor="let miniaturka of plikiWKaruzeli" [style.backgroundImage]="'url('+miniaturka.plik.sciezkaMiniaturki+')'"
+             [class.zaznaczone]="wybraneZdjecieIndeks===miniaturka.index"
+             (click)="ustawZdjecie(miniaturka.index)"></div>
+      </div>
+      <div class="karuzela-nawigacja">
+        <div class="poprzednie">
+          <mm-przycisk-ikona label="{{'codes.modul-mapowy.przegladanie-obiektow.poprzednie-multimedium' | translate}}"
+                              ikona="poprzedni" typ="'blekitny'"
+                              (click)="poprzednieZdjecie()"></mm-przycisk-ikona>
+        </div>
+        <div class="nastepne">
+          <mm-przycisk-ikona label="{{'codes.modul-mapowy.przegladanie-obiektow.nastepne-multimedium' | translate}}"
+                              ikona="nastepny" typ="'blekitny'"
+                              (click)="nastepneZdjecie()"></mm-przycisk-ikona>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="zalaczniki" *ngIf="zalaczniki && zalaczniki.pliki.length>0">
+    <div class="lista" *ngIf="zalaczniki?.pliki && zalaczniki?.pliki!.length>0">
+      <a class="naglowek-d" target="_blank" [href]="zalacznik.sciezka"
+         *ngFor="let zalacznik of zalaczniki?.pliki" download>{{zalacznik.nazwa}}</a>
+    </div>
+  </div>
+  <div class="galeria-pelen-ekran" *ngIf="widocznaGaleriaPelnoekranowa && wybraneZdjecie">
+    <img [src]="wybraneZdjecie.sciezka"/>
+    <div class="zamknij">
+      <mm-przycisk-ikona label="{{'codes.generyczne.zamknij' | translate}}"
+                          typ="przezroczysty"
+                          ikona="zamknij"
+                          (click)="zamknijGaleriePelnoekranowa()"></mm-przycisk-ikona>
+    </div>
+  </div>
+</div>

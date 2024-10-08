@@ -59,6 +59,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ObiektOpisComponent } from './serwis-mapowy/komponenty/mapa/obiekt-opis/obiekt-opis.component';
 import { LokalizacjaOpisComponent } from './serwis-mapowy/komponenty/mapa/lokalizacja-opis/lokalizacja-opis.component';
+import { ObiektZalacznikiIZdjeciaComponent } from './serwis-mapowy/komponenty/mapa/obiekt-zalaczniki-i-zdjecia/obiekt-zalaczniki-i-zdjecia.component';
 
 @NgModule({
   declarations: [
@@ -87,6 +88,7 @@ import { LokalizacjaOpisComponent } from './serwis-mapowy/komponenty/mapa/lokali
     OsMapyPlanyComponent,
     ObiektOpisComponent,
     LokalizacjaOpisComponent,
+    ObiektZalacznikiIZdjeciaComponent,
   ],
   imports: [
     CommonModule,

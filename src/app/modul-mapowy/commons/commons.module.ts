@@ -13,6 +13,9 @@ import { RouterModule } from '@angular/router';
 import { MMOdkazHtmlPipe } from './pipes/mm-odkaz-html.pipe';
 import { DlugieNazwyComponent } from './komponenty/dlugie-nazwy/dlugie-nazwy.component';
 import { FormatowanieInformacjiOObiekcieDirective } from './directives/formatowanie-informacji-o-obiekcie.directive';
+import { ImgDirective } from './directives/img.directive';
+import { AudioDirective } from './directives/audio.directive';
+import { VideoDirective } from './directives/video.directive';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { FormatowanieInformacjiOObiekcieDirective } from './directives/formatowa
     PrzyciskMydloComponent,
     PrzyciskOkraglyComponent,
     DlugieNazwyComponent,
-    FormatowanieInformacjiOObiekcieDirective
+    FormatowanieInformacjiOObiekcieDirective,
+    ImgDirective,
+    AudioDirective,
+    VideoDirective
   ],
   imports: [
     CommonModule,
@@ -35,16 +41,19 @@ import { FormatowanieInformacjiOObiekcieDirective } from './directives/formatowa
     RouterModule
   ],
   exports:[
+    AudioDirective,
     DlugieNazwyComponent,
     FormatowanieInformacjiOObiekcieDirective,
     IkonaSvgDirective,
+    ImgDirective,
     MatLegacySliderModule,
     MMOdkazHtmlPipe,
     PrzyciskIkonaComponent,
     PrzyciskMydloComponent,
     PrzyciskOkraglyComponent,
     PrzewijanyKomponentComponent,
-    RerenderDirective
+    RerenderDirective,
+    VideoDirective
   ]
 })
 export class CommonsModule { }
