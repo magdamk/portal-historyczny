@@ -29,6 +29,7 @@ export class OsInfoComponent implements OnInit {
   ngOnInit() {
     this.subscription$.add(this.tlumaczenia.getZmianaJezykaSubject().subscribe(jezyk => {
       this.aktualnyJezyk = jezyk;
+      this.aktualnyJezyk == 'pl' ? this.tooltip = this.mapa?.nazwa?.pl + '' : this.tooltip = this.mapa?.nazwa?.en + '';
     }));
     this.aktualnyJezyk == 'pl' ? this.tooltip = this.mapa?.nazwa?.pl + '' : this.tooltip = this.mapa?.nazwa?.en + '';
 
