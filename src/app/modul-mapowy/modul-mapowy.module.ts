@@ -131,7 +131,7 @@ import { ObiektZalacznikiIZdjeciaComponent } from './serwis-mapowy/komponenty/ma
     { provide: KontaktZAdministratoremModulMapowyAdapter, useClass: DomyslnyKontaktZAdministratoremAdapter },
     { provide: KonfiguracjaModulMapowyAdapter, useClass: DomyslnaKonfiguracjaModulMapowyAdapter },
     { provide: WyszukiwarkaModulMapowyAdapter, useClass: DomyslnyWszukiwarkaAdapter },
-    { provide: MultimediaIZalacznikiModulMapowyAdapter, useClass: DomyslnyMultimediaIZalacznikiAdapter },
+    // { provide: MultimediaIZalacznikiModulMapowyAdapter, useClass: DomyslnyMultimediaIZalacznikiAdapter },
     { provide: PobieranieDanychModulMapowyAdapter, useClass: DomyslnyPobieranieDanychAdapter },
     // {provide: CmentarzeModulMapowyAdapter, useClass: DomyslneCmentarzeAdapter},
     // {provide: NieruchomosciModulMapowyAdapter, useClass: DomyslneNieruchomosciAdapter},

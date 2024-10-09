@@ -34,7 +34,7 @@ import { ModulMultimediowPublicConfiguration } from './configuration-modul-multi
 })
 export class ControllerMultimediaOpenService {
 
-    protected basePath = 'https://testmapa.um.warszawa.pl/api/modul-multimediow';
+    protected basePath = 'https://testmapa.um.warszawa.pl/api/modul-multimediow/';
     public defaultHeaders = new HttpHeaders();
     public configuration = new ModulMultimediowPublicConfiguration();
     public encoder: HttpParameterCodec;

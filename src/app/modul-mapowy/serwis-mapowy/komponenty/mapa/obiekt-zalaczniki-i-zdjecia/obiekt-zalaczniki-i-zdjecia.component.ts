@@ -1,8 +1,9 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ListaPlikow, Plik, MultimediaIZalacznikiModulMapowyAdapter } from 'src/app/modul-mapowy/mm-core/providers/multimedia-i-zalaczniki-adapter';
 import { Warstwa } from '../../../modele/warstwa';
 import { InformacjeOObiekcie } from '../../../utils/obiekty-mapy-utils';
 import { SekcjeOkna } from '../informacje-o-obiekcie/informacje-o-obiekcie.component';
+import { ControllerMultimediaOpenService } from 'src/app/core/api/controller-multimedia-open.service';
 
 interface ElementKaruzeli {
   index: number;
@@ -12,7 +13,8 @@ interface ElementKaruzeli {
 @Component({
   selector: 'mm-obiekt-zalaczniki-i-zdjecia',
   templateUrl: './obiekt-zalaczniki-i-zdjecia.component.html',
-  styleUrls: ['./obiekt-zalaczniki-i-zdjecia.component.scss']
+  styleUrls: ['./obiekt-zalaczniki-i-zdjecia.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class ObiektZalacznikiIZdjeciaComponent implements OnInit, OnChanges {
 
@@ -29,13 +31,16 @@ export class ObiektZalacznikiIZdjeciaComponent implements OnInit, OnChanges {
   widocznaGaleriaPelnoekranowa = false;
 
   plikiWKaruzeli?: ElementKaruzeli[];
-
+  url: string = "https://testmapa.um.warszawa.pl";
   /**
    * Konstruktor
    * @param multimediaIZalaczniki
    */
-  constructor(private multimediaIZalaczniki:
-    MultimediaIZalacznikiModulMapowyAdapter
+  constructor(
+    // private multimediaIZalaczniki:
+    // MultimediaIZalacznikiModulMapowyAdapter
+    private multimediaIZalaczniki:
+      ControllerMultimediaOpenService
   ) {
   }
 
@@ -59,21 +64,50 @@ export class ObiektZalacznikiIZdjeciaComponent implements OnInit, OnChanges {
    * Funkcja pobiera załączniki i multimedia
    */
   zaladujPliki() {
+    // if (this.warstwa && this.obiekt) {
+    //   if (this.sekcjeOkna?.galeria.widoczna) {
+    //     console.log('multimediaIZalaczniki.pobierzMultimedia: ',this.warstwa.szczegolyWarstwy?.zrodloMVC,
+    //       this.warstwa.szczegolyWarstwy?.nazwaMVC, this.obiekt.id);
+    //     this.multimediaIZalaczniki.pobierzMultimedia(this.warstwa.szczegolyWarstwy?.zrodloMVC,
+    //       this.warstwa.szczegolyWarstwy?.nazwaMVC, this.obiekt.id)
+    //       .subscribe(pliki => {
+    //         this.multimedia = pliki;
+    //         this.inicjujGalerie();
+    //       });
+    //   }
+    //   if (this.sekcjeOkna?.zalaczniki.widoczna) {
+    //     this.multimediaIZalaczniki.pobierzZalaczniki(this.warstwa.szczegolyWarstwy?.zrodloMVC,
+    //       this.warstwa.szczegolyWarstwy?.nazwaMVC, this.obiekt.id)
+    //       .subscribe(pliki => {
+    //         this.zalaczniki = pliki;
+    //       });
+    //   }
+    // }
     if (this.warstwa && this.obiekt) {
       if (this.sekcjeOkna?.galeria.widoczna) {
-        this.multimediaIZalaczniki.pobierzMultimedia(this.warstwa.szczegolyWarstwy?.zrodloMVC,
-          this.warstwa.szczegolyWarstwy?.nazwaMVC, this.obiekt.id)
-          .subscribe(pliki => {
-            this.multimedia = pliki;
+        console.log('multimediaIZalaczniki.pobierzMultimedia: ', this.warstwa.szczegolyWarstwy?.zrodloMVC,
+          this.warstwa.szczegolyWarstwy?.nazwaMVC, this.obiekt.id);
+        this.multimediaIZalaczniki.pobierzListePlikowPoZrodleDanychIMVC(this.warstwa.szczegolyWarstwy?.zrodloMVC as string,
+          this.warstwa.szczegolyWarstwy?.nazwaMVC as string, +this.obiekt.id)
+          .subscribe(result => {
+            this.multimedia = { pliki: [] };
+            this.multimedia.pliki = result.content as Plik[];
+            // this.multimedia = result as ListaPlikow;
+            console.log('subscribe: ', result)
+            console.log('subscribe: ', result.content);
+            console.log('subscribe: ', this.multimedia);
             this.inicjujGalerie();
           });
       }
       if (this.sekcjeOkna?.zalaczniki.widoczna) {
-        this.multimediaIZalaczniki.pobierzZalaczniki(this.warstwa.szczegolyWarstwy?.zrodloMVC,
-          this.warstwa.szczegolyWarstwy?.nazwaMVC, this.obiekt.id)
-          .subscribe(pliki => {
-            this.zalaczniki = pliki;
-          });
+        this.multimediaIZalaczniki.pobierzListePlikowPoZrodleDanychIMVC(this.warstwa.szczegolyWarstwy?.zrodloMVC as string,
+          this.warstwa.szczegolyWarstwy?.nazwaMVC as string, +this.obiekt.id)
+          .subscribe(
+            result => {
+              this.zalaczniki = { pliki: [] };
+              this.zalaczniki.pliki = result.content as Plik[];
+
+            });
       }
     }
   }
@@ -159,6 +193,7 @@ export class ObiektZalacznikiIZdjeciaComponent implements OnInit, OnChanges {
    * Funkcja inicjuje galerie
    */
   private inicjujGalerie() {
+    console.log('inicjujGalerie: ', this.multimedia!.pliki.toString());
     if (this.multimedia && this.multimedia.pliki?.length > 0) {
       this.wybraneZdjecieIndeks = 0;
       this.wybraneZdjecie = this.multimedia.pliki[this.wybraneZdjecieIndeks];
@@ -168,7 +203,7 @@ export class ObiektZalacznikiIZdjeciaComponent implements OnInit, OnChanges {
         this.plikiWKaruzeli.push({ plik: this.multimedia.pliki[1], index: 1 });
         this.plikiWKaruzeli.push({ plik: this.multimedia.pliki[2], index: 2 });
       } else {
-        this.multimedia.pliki?.forEach((p, i) => {
+        this.multimedia.pliki.forEach((p, i) => {
           this.plikiWKaruzeli?.push({ plik: p, index: i });
         });
       }
