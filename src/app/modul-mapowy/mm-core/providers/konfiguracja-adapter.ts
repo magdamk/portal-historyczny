@@ -1,5 +1,5 @@
 import {Observable} from 'rxjs';
-
+import { environment } from 'src/environments/environment';
 
 /**
  * Interfejs do przesyłania danych konfiguracyjnych
@@ -186,7 +186,7 @@ export class DomyslnaKonfiguracjaModulMapowyAdapter extends KonfiguracjaModulMap
    * Funkcja zwraca adres serwera mapviewer
    */
   pobierzMapViewerUrl(): string {
-    return 'https://testmapa.um.warszawa.pl/mapviewer';
+    return environment.mapViewerUrl;
   }
 
   /**

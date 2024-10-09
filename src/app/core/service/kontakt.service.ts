@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-
+import { environment } from 'src/environments/environment';
 interface DaneKontakt {
   wyslaneOd:string,
   zawartosc:string,
@@ -18,7 +18,7 @@ const httpOptions={
   providedIn: 'root'
 })
 export class KontaktService {
-  private apiUrl = 'https://testmapa.um.warszawa.pl/api/modul-mapowy/open/kontakt-z-adminem';
+  private apiUrl = environment.baseUrl+'/api/modul-mapowy/open/kontakt-z-adminem';
   constructor(private httpClient:HttpClient) { }
 
 

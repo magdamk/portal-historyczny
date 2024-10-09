@@ -23,7 +23,7 @@ import { Observable }                                        from 'rxjs';
 import { BASE_PATH, COLLECTION_FORMATS }                     from './variables';
 import { Configuration }                                     from './configuration';
 import { JsonListContainerWidokMapyGrupaMapPodkladowychDto } from '../modele/json-list-container-widok-mapy-grupa-map-podkladowych-dto';
-
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -31,7 +31,7 @@ import { JsonListContainerWidokMapyGrupaMapPodkladowychDto } from '../modele/jso
 })
 export class ControllerGrupyMapPodkladowychOpenService {
 
-    protected basePath = 'https://testmapa.um.warszawa.pl/api/modul-mapowy';
+    protected basePath = environment.portalMapowyApiUrl;
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
     public encoder: HttpParameterCodec;

@@ -28,7 +28,7 @@ import { JsonObjectContainerMultimediaSzczegolyDto } from 'src/app/core/modele/j
 
 // import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables';
 // import { ModulMultimediowPublicConfiguration }                                     from '../configuration';
-
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -36,7 +36,7 @@ import { JsonObjectContainerMultimediaSzczegolyDto } from 'src/app/core/modele/j
 })
 export class ControllerMultimediaOpenService {
 
-    protected basePath = 'https://testmapa.um.warszawa.pl/api/modul-multimediow/';
+    protected basePath = environment.portalMultimediaApiUrl;
     public defaultHeaders = new HttpHeaders();
     public configuration = new ModulMultimediowPublicConfiguration();
     public encoder: HttpParameterCodec;
@@ -133,7 +133,7 @@ export class ControllerMultimediaOpenService {
             responseType = 'text';
         }
 
-        return this.httpClient.get<JsonListContainerPlikDto>(`${this.configuration.basePath}/open/multimedia/${encodeURIComponent(String(zrodloDanychMVC))}/${encodeURIComponent(String(nazwaMVC))}/${encodeURIComponent(String(idObiektu))}`,
+        return this.httpClient.get<JsonListContainerPlikDto>(`${this.basePath}/open/multimedia/${encodeURIComponent(String(zrodloDanychMVC))}/${encodeURIComponent(String(nazwaMVC))}/${encodeURIComponent(String(idObiektu))}`,
             {
                 responseType: <any>responseType,
                 withCredentials: this.configuration.withCredentials,
@@ -189,7 +189,7 @@ export class ControllerMultimediaOpenService {
             responseType = 'text';
         }
 
-        return this.httpClient.get<Array<string>>(`${this.configuration.basePath}/open/multimedia/pliki/${encodeURIComponent(String(zrodloDanychMVC))}/${encodeURIComponent(String(nazwaMVC))}/${encodeURIComponent(String(idObiektu))}/${encodeURIComponent(String(nazwa))}`,
+        return this.httpClient.get<Array<string>>(`${this.basePath}/open/multimedia/pliki/${encodeURIComponent(String(zrodloDanychMVC))}/${encodeURIComponent(String(nazwaMVC))}/${encodeURIComponent(String(idObiektu))}/${encodeURIComponent(String(nazwa))}`,
             {
                 responseType: <any>responseType,
                 withCredentials: this.configuration.withCredentials,
@@ -238,7 +238,7 @@ export class ControllerMultimediaOpenService {
             responseType = 'text';
         }
 
-        return this.httpClient.get<JsonObjectContainerMultimediaSzczegolyDto>(`${this.configuration.basePath}/open/multimedia/${encodeURIComponent(String(zrodloDanychMVC))}/${encodeURIComponent(String(nazwaMVC))}`,
+        return this.httpClient.get<JsonObjectContainerMultimediaSzczegolyDto>(`${this.basePath}/open/multimedia/${encodeURIComponent(String(zrodloDanychMVC))}/${encodeURIComponent(String(nazwaMVC))}`,
             {
                 responseType: <any>responseType,
                 withCredentials: this.configuration.withCredentials,

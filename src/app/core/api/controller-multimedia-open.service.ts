@@ -26,7 +26,7 @@ import { BASE_PATH, COLLECTION_FORMATS }                     from './variables';
 import { JsonListContainerPlikDto } from '../modele/json-list-container-plik-dto';
 import { JsonObjectContainerMultimediaSzczegolyDto } from '../modele/json-object-container-multimedia-szczegoly-dto';
 import { ModulMultimediowPublicConfiguration } from './configuration-modul-multimediow';
-
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -34,21 +34,22 @@ import { ModulMultimediowPublicConfiguration } from './configuration-modul-multi
 })
 export class ControllerMultimediaOpenService {
 
-    protected basePath = 'https://testmapa.um.warszawa.pl/api/modul-multimediow/';
+    protected basePath = environment.portalMultimediaApiUrl+'';
     public defaultHeaders = new HttpHeaders();
     public configuration = new ModulMultimediowPublicConfiguration();
     public encoder: HttpParameterCodec;
 
     constructor(protected httpClient: HttpClient, @Optional()@Inject(BASE_PATH) basePath: string, @Optional() configuration: ModulMultimediowPublicConfiguration) {
-        if (configuration) {
-            this.configuration = configuration;
-        }
-        if (typeof this.configuration.basePath !== 'string') {
-            if (typeof basePath !== 'string') {
-                basePath = this.basePath;
-            }
-            this.configuration.basePath = basePath;
-        }
+        // if (configuration) {
+        //     this.configuration = configuration;
+        // }
+        // if (typeof this.configuration.basePath !== 'string') {
+        //     if (typeof basePath !== 'string') {
+        //         basePath = this.basePath;
+        //     }
+        //     this.configuration.basePath = basePath;
+        // }
+        this.configuration.basePath = basePath;
         this.encoder = this.configuration.encoder || new CustomHttpParameterCodec();
     }
 
@@ -131,7 +132,7 @@ export class ControllerMultimediaOpenService {
             responseType = 'text';
         }
 
-        return this.httpClient.get<JsonListContainerPlikDto>(`${this.configuration.basePath}/open/multimedia/${encodeURIComponent(String(zrodloDanychMVC))}/${encodeURIComponent(String(nazwaMVC))}/${encodeURIComponent(String(idObiektu))}`,
+        return this.httpClient.get<JsonListContainerPlikDto>(`${this.basePath}/open/multimedia/${encodeURIComponent(String(zrodloDanychMVC))}/${encodeURIComponent(String(nazwaMVC))}/${encodeURIComponent(String(idObiektu))}`,
             {
                 responseType: <any>responseType,
                 withCredentials: this.configuration.withCredentials,
@@ -236,7 +237,7 @@ export class ControllerMultimediaOpenService {
             responseType = 'text';
         }
 
-        return this.httpClient.get<JsonObjectContainerMultimediaSzczegolyDto>(`${this.configuration.basePath}/open/multimedia/${encodeURIComponent(String(zrodloDanychMVC))}/${encodeURIComponent(String(nazwaMVC))}`,
+        return this.httpClient.get<JsonObjectContainerMultimediaSzczegolyDto>(`${this.basePath}/open/multimedia/${encodeURIComponent(String(zrodloDanychMVC))}/${encodeURIComponent(String(nazwaMVC))}`,
             {
                 responseType: <any>responseType,
                 withCredentials: this.configuration.withCredentials,

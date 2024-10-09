@@ -31,7 +31,7 @@ import { WynikWyszukiwaniaDtoObiektDto, WynikWyszukiwaniaDtoDzialkaDto, WynikWys
 import { WynikWyszukiwaniaDtoAdresDto } from '../modele/wynik-wyszukiwania-dto-adres-dto';
 import { WynikWyszukiwaniaDtoMapaWynikDto } from '../modele/wynik-wyszukiwania-dto-mapa-wynik-dto';
 import { WynikWyszukiwaniaDtoWarstwaWynikDto } from '../modele/wynik-wyszukiwania-dto-warstwa-wynik-dto';
-
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -39,7 +39,7 @@ import { WynikWyszukiwaniaDtoWarstwaWynikDto } from '../modele/wynik-wyszukiwani
 })
 export class ControllerWyszukiwarkaOpenService {
 
-    protected basePath = 'https://testmapa.um.warszawa.pl/api/modul-mapowy';
+    protected basePath = environment.portalMapowyApiUrl;
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
     public encoder: HttpParameterCodec;

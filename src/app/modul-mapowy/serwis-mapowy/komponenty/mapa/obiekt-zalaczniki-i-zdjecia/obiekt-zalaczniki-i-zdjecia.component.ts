@@ -4,6 +4,7 @@ import { Warstwa } from '../../../modele/warstwa';
 import { InformacjeOObiekcie } from '../../../utils/obiekty-mapy-utils';
 import { SekcjeOkna } from '../informacje-o-obiekcie/informacje-o-obiekcie.component';
 import { ControllerMultimediaOpenService } from 'src/app/core/api/controller-multimedia-open.service';
+import { environment } from 'src/environments/environment';
 
 interface ElementKaruzeli {
   index: number;
@@ -14,7 +15,6 @@ interface ElementKaruzeli {
   selector: 'mm-obiekt-zalaczniki-i-zdjecia',
   templateUrl: './obiekt-zalaczniki-i-zdjecia.component.html',
   styleUrls: ['./obiekt-zalaczniki-i-zdjecia.component.scss'],
-  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class ObiektZalacznikiIZdjeciaComponent implements OnInit, OnChanges {
 
@@ -31,7 +31,7 @@ export class ObiektZalacznikiIZdjeciaComponent implements OnInit, OnChanges {
   widocznaGaleriaPelnoekranowa = false;
 
   plikiWKaruzeli?: ElementKaruzeli[];
-  url: string = "https://testmapa.um.warszawa.pl";
+  url: string = environment.baseUrl;
   /**
    * Konstruktor
    * @param multimediaIZalaczniki
@@ -85,17 +85,17 @@ export class ObiektZalacznikiIZdjeciaComponent implements OnInit, OnChanges {
     // }
     if (this.warstwa && this.obiekt) {
       if (this.sekcjeOkna?.galeria.widoczna) {
-        console.log('multimediaIZalaczniki.pobierzMultimedia: ', this.warstwa.szczegolyWarstwy?.zrodloMVC,
-          this.warstwa.szczegolyWarstwy?.nazwaMVC, this.obiekt.id);
+        // console.log('multimediaIZalaczniki.pobierzMultimedia: ', this.warstwa.szczegolyWarstwy?.zrodloMVC,
+        //   this.warstwa.szczegolyWarstwy?.nazwaMVC, this.obiekt.id);
         this.multimediaIZalaczniki.pobierzListePlikowPoZrodleDanychIMVC(this.warstwa.szczegolyWarstwy?.zrodloMVC as string,
           this.warstwa.szczegolyWarstwy?.nazwaMVC as string, +this.obiekt.id)
           .subscribe(result => {
             this.multimedia = { pliki: [] };
             this.multimedia.pliki = result.content as Plik[];
             // this.multimedia = result as ListaPlikow;
-            console.log('subscribe: ', result)
-            console.log('subscribe: ', result.content);
-            console.log('subscribe: ', this.multimedia);
+            // console.log('subscribe: ', result)
+            // console.log('subscribe: ', result.content);
+            // console.log('subscribe: ', this.multimedia);
             this.inicjujGalerie();
           });
       }
@@ -193,7 +193,7 @@ export class ObiektZalacznikiIZdjeciaComponent implements OnInit, OnChanges {
    * Funkcja inicjuje galerie
    */
   private inicjujGalerie() {
-    console.log('inicjujGalerie: ', this.multimedia!.pliki.toString());
+    // console.log('inicjujGalerie: ', this.multimedia!.pliki.toString());
     if (this.multimedia && this.multimedia.pliki?.length > 0) {
       this.wybraneZdjecieIndeks = 0;
       this.wybraneZdjecie = this.multimedia.pliki[this.wybraneZdjecieIndeks];
@@ -220,10 +220,11 @@ export class ObiektZalacznikiIZdjeciaComponent implements OnInit, OnChanges {
       this.plikiWKaruzeli?.forEach((p, i) => {
         p.index = this.znajdzIndexDlaKaruzeli(this.wybraneZdjecieIndeks + i);
         p.plik = this.multimedia!.pliki[p.index];
-        console.log('ustawMiniaturki',p.plik);
+        // console.log('ustawMiniaturki',p.plik);
         // p.plik.sciezkaMiniaturki ? p.plik.sciezkaMiniaturki = this.url+p.plik.sciezkaMiniaturki : p.plik.sciezkaMiniaturki = this.url+p.plik.sciezka;
         p.plik.rozszerzenie && (['mp3', 'ogg', 'wav', 'flac'].indexOf(p.plik.rozszerzenie) > -1) ? p.plik.sciezkaMiniaturki = 'assets/images/audio.png' : p.plik.sciezkaMiniaturki = this.url+p.plik.sciezka;
-        console.log('ustawMiniaturki',p.plik);
+        p.plik.rozszerzenie && (['mp4', 'ogv', 'webm','m4v'].indexOf(p.plik.rozszerzenie) > -1) ? p.plik.sciezkaMiniaturki = 'assets/images/wideo.png' : null;
+        // console.log('ustawMiniaturki',p.plik);
       });
     }
   }

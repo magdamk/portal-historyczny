@@ -25,7 +25,7 @@ import { BASE_PATH, COLLECTION_FORMATS }                     from './variables';
 import { Configuration }                                     from './configuration';
 import { JsonObjectContainerMapaSzczegolyDto } from '../modele/json-object-container-mapa-szczegoly-dto';
 import { WidokMapyMapaSzczegolyDto } from '../modele/widok-mapy-mapa-szczegoly-dto';
-
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -33,7 +33,7 @@ import { WidokMapyMapaSzczegolyDto } from '../modele/widok-mapy-mapa-szczegoly-d
 })
 export class ControllerMapyOpenService {
 
-    protected basePath = 'https://testmapa.um.warszawa.pl/api/modul-mapowy';
+    protected basePath = environment.portalMapowyApiUrl;
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
     public encoder: HttpParameterCodec;

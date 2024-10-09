@@ -25,7 +25,7 @@ import { BASE_PATH, COLLECTION_FORMATS }                     from './variables';
 import { Configuration }                                     from './configuration';
 import { JsonObjectContainerWidokMapyWarstwaDto } from '../modele/json-object-container-widok-mapy-warstwa-dto';
 import { PageWidokMapyWarstwaDto } from '../modele/page-widok-mapy-warstwa-dto';
-
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -33,7 +33,7 @@ import { PageWidokMapyWarstwaDto } from '../modele/page-widok-mapy-warstwa-dto';
 })
 export class ControllerWidoczneWarstwyOpenService {
 
-    protected basePath = 'https://testmapa.um.warszawa.pl/api/modul-mapowy';
+    protected basePath = environment.portalMapowyApiUrl;
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
     public encoder: HttpParameterCodec;

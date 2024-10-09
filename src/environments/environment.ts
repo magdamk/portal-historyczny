@@ -5,9 +5,10 @@
 export const environment = {
   production: true,
 
+  baseUrl: 'https://testmapa.um.warszawa.pl',
   portalKonwersjiApiUrl: 'https://testmapa.um.warszawa.pl/api/modul-konwersji',
   portalMapowyApiUrl: 'https://testmapa.um.warszawa.pl/api/modul-mapowy',
-  portalMultimediaApiUrl: 'http://testmapa.um.warszawa.pl/api/modul-multimediow',
+  portalMultimediaApiUrl: 'https://testmapa.um.warszawa.pl/api/modul-multimediow',
   mapViewerUrl: 'https://testmapa.um.warszawa.pl/mapviewer',
   // mapViewerUrl: 'http://localhost/mapviewer',
 
