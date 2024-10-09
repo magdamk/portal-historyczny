@@ -2,7 +2,7 @@
   <div class="multimedia" *ngIf="multimedia && multimedia.pliki.length>0">
     <div class="pojedyncze" *ngIf="multimedia?.pliki?.length===1">
       <div *ngFor="let img of multimedia?.pliki">
-      <img *mmImg="img?.rozszerzenie" [src]="url+img.sciezka" (click)="pokazGaleriePelnoekranowa()"/>
+      <img *mmImg="img?.rozszerzenie" [src]="url+img.sciezka" (click)="pokazGaleriePelnoekranowa()" loading="lazy"/>
         <video *mmVideo="img?.rozszerzenie" [src]="url+img.sciezka" controls ></video>
         <audio *mmAudio="img?.rozszerzenie" [src]="url+img.sciezka" controls  ></audio>
       </div>
@@ -13,15 +13,15 @@
             [src]="url+wybraneZdjecie?.sciezka"
              (swipeleft)="nastepneZdjecie()"
              (swiperight)="poprzednieZdjecie()"
-             (click)="pokazGaleriePelnoekranowa()"/>
+             (click)="pokazGaleriePelnoekranowa()" loading="lazy"/>
         <video *mmVideo="wybraneZdjecie?.rozszerzenie" src="{{url+wybraneZdjecie?.sciezka}}" controls></video>
         <audio *mmAudio="wybraneZdjecie?.rozszerzenie" src="{{url+wybraneZdjecie?.sciezka}}" controls></audio>
       </div>
-      <!-- <div class="karuzela">
-        <div *ngFor="let miniaturka of plikiWKaruzeli" [style.backgroundImage]="'url('+miniaturka.plik.sciezkaMiniaturki+')'"
+      <div class="karuzela">
+        <div *ngFor="let miniaturka of plikiWKaruzeli" [style.backgroundImage]="'url('+ miniaturka.plik.sciezkaMiniaturki+')'"
              [class.zaznaczone]="wybraneZdjecieIndeks===miniaturka.index"
              (click)="ustawZdjecie(miniaturka.index)"></div>
-      </div> -->
+      </div>
       <div class="karuzela-nawigacja">
         <div class="poprzednie">
           <mm-przycisk-ikona label="{{'codes.modul-mapowy.przegladanie-obiektow.poprzednie-multimedium' | translate}}"
@@ -43,7 +43,7 @@
     </div>
   </div>
   <div class="galeria-pelen-ekran" *ngIf="widocznaGaleriaPelnoekranowa && wybraneZdjecie">
-    <img [src]="url+wybraneZdjecie.sciezka"/>
+    <img [src]="url+wybraneZdjecie.sciezka" loading="lazy"/>
     <div class="zamknij">
       <mm-przycisk-ikona label="{{'codes.generyczne.zamknij' | translate}}"
                           typ="przezroczysty"

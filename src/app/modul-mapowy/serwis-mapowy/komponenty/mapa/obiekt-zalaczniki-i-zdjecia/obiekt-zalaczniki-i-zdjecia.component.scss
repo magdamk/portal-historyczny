@@ -24,6 +24,8 @@
         position: relative;
         display: flex;
         height: 200px;
+        max-height:max-content;
+        width: auto;
         margin-bottom: 10px;
         justify-content: center;
         img {
@@ -40,10 +42,12 @@
         width: auto;
         max-width: 100%;
         div {
-          width: 30%;
-          height: 60px;
-          background-size: cover;
+          width: 60px;
+          max-height: 60px;
+          // background-size: cover;
+          background-size: contain;
           background-repeat: no-repeat;
+          background-position: center;
           cursor: pointer;
         }
         .zaznaczone {
@@ -57,7 +61,7 @@
         div{
           display: inline-block;
           height: 44px;
-          width: 24px;
+          width: auto;
         }
         .nastepne {
           fill: $miasto-blekit;

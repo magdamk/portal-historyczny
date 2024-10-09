@@ -202,9 +202,11 @@ export class ObiektZalacznikiIZdjeciaComponent implements OnInit, OnChanges {
         this.plikiWKaruzeli.push({ plik: this.multimedia.pliki[0], index: 0 });
         this.plikiWKaruzeli.push({ plik: this.multimedia.pliki[1], index: 1 });
         this.plikiWKaruzeli.push({ plik: this.multimedia.pliki[2], index: 2 });
+        this.ustawMiniaturki();
       } else {
         this.multimedia.pliki.forEach((p, i) => {
           this.plikiWKaruzeli?.push({ plik: p, index: i });
+          this.ustawMiniaturki();
         });
       }
     }
@@ -218,6 +220,10 @@ export class ObiektZalacznikiIZdjeciaComponent implements OnInit, OnChanges {
       this.plikiWKaruzeli?.forEach((p, i) => {
         p.index = this.znajdzIndexDlaKaruzeli(this.wybraneZdjecieIndeks + i);
         p.plik = this.multimedia!.pliki[p.index];
+        console.log('ustawMiniaturki',p.plik);
+        // p.plik.sciezkaMiniaturki ? p.plik.sciezkaMiniaturki = this.url+p.plik.sciezkaMiniaturki : p.plik.sciezkaMiniaturki = this.url+p.plik.sciezka;
+        p.plik.rozszerzenie && (['mp3', 'ogg', 'wav', 'flac'].indexOf(p.plik.rozszerzenie) > -1) ? p.plik.sciezkaMiniaturki = 'assets/images/audio.png' : p.plik.sciezkaMiniaturki = this.url+p.plik.sciezka;
+        console.log('ustawMiniaturki',p.plik);
       });
     }
   }
