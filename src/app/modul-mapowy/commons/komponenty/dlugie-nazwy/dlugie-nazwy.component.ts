@@ -15,11 +15,11 @@ export class DlugieNazwyComponent implements AfterViewInit {
   @Input() liczbaWierszy: 1 | 2 = 2;
 
   constructor() {
-    console.log('XXXXXXXXXXXXXX');
+    // console.log('XXXXXXXXXXXXXX');
    }
 
   ngAfterViewInit(): void {
-    console.log('dlugieNazwy ngAfterViewInit:', this.liczbaWierszy);
+    // console.log('dlugieNazwy ngAfterViewInit:', this.liczbaWierszy);
     this.aktualizuj();
   }
 
@@ -27,9 +27,9 @@ export class DlugieNazwyComponent implements AfterViewInit {
    * Funkcja aktualizuje tooltip dla długiej nazwy
    */
   aktualizuj(){
-    console.log("tooltip okno window");
+    // console.log("tooltip okno window");
     setTimeout(()=>{
-      console.log("tooltip okno window");
+      // console.log("tooltip okno window");
       this.zawartoscPomiarowa.nativeElement.innerHTML = this.zawartosc.nativeElement.innerHTML;
       this.generujTooltip();
     }, 200)

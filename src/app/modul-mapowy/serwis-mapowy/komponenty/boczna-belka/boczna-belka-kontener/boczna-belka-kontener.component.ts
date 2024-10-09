@@ -51,16 +51,16 @@ export class BocznaBelkaKontenerComponent implements OnInit, OnChanges, OnDestro
         this.topWidok = stan.widok;
       // console.log(stan);
     }));
-    console.log('belka-boczna-kontener oninit', this.topId);
-    console.log('belka-boczna-kontener oninit', this.listaWidokow);
-    console.log('belka-boczna-kontener oninit', this.topWidok);
+    // console.log('belka-boczna-kontener oninit', this.topId);
+    // console.log('belka-boczna-kontener oninit', this.listaWidokow);
+    // console.log('belka-boczna-kontener oninit', this.topWidok);
   }
   /**
    * Cykl życia komponentu zmiana danych
    * @param changes
    */
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('belka-boczna-kontener on changes', this.listaWidokow);
+    // console.log('belka-boczna-kontener on changes', this.listaWidokow);
   }
 
   /**

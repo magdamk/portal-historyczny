@@ -64,7 +64,7 @@ export class BelkaKartaMapyComponent implements OnInit, OnDestroy {
     event.stopPropagation();
     event.preventDefault();
     this.zapiszParametryWLocalStorage();
-    console.log(this.router.url.includes(this.temat.uuidMapy + ''));
+    // console.log(this.router.url.includes(this.temat.uuidMapy + ''));
     if (this.router.url.includes(this.temat.uuidMapy + '')) {
       this.store.dispatch(LewyPanelWidokActions.pokazObszar({ widokId: WIDOK_INFO.id }));
       this.wyczyscZbedneParametrySerwisuZewnetrznego();
@@ -74,7 +74,7 @@ export class BelkaKartaMapyComponent implements OnInit, OnDestroy {
       // console.log(`/mapa/${this.temat.uuidMapy}` + encodeURI(`?rodzaj=${this.temat.rodzaj}`));
       if (this.zmianaMapy) {
         this.wybranoMape();
-        console.log('zmiana mapy');
+        // console.log('zmiana mapy');
         return;
       }
       if (this.adresUrl) {
@@ -95,7 +95,7 @@ export class BelkaKartaMapyComponent implements OnInit, OnDestroy {
    */
   wybranoMape(): void {
     if (this.temat!.adresUrl || this.zmianaMapy) {
-      console.log('wybrano mapę: ');
+      // console.log('wybrano mapę: ');
       this.mapaWybrana.emit({ url: this.temat!.adresUrl, uuidMapy: this.temat!.uuidMapy, typ: this.temat!.typ?.obiektEnum, rodzaj: this.temat!.rodzaj });
     }
   }

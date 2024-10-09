@@ -66,7 +66,7 @@ export class StronaMapyComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    console.log("strona mapy TEST",this.tlumaczeniaSerwis.pobierzAktualnyJezyk());
+    // console.log("strona mapy TEST",this.tlumaczeniaSerwis.pobierzAktualnyJezyk());
     this.subscription$.add(this.tlumaczeniaSerwis.getZmianaJezykaSubject().subscribe(jezyk => this.jezyk = jezyk));
     this.route.queryParams.subscribe(params => {
       this.parametryStartoweMapy = {
@@ -103,7 +103,7 @@ export class StronaMapyComponent implements OnInit, OnDestroy {
         .subscribe(response => {
           if (response.content?.definicjaMapy) {
             this.mapa = response.content.definicjaMapy;
-            console.log('strona mapy definicja mapy: ', response.content.definicjaMapy);
+            // console.log('strona mapy definicja mapy: ', response.content.definicjaMapy);
             this.ustawParametryStartoweMapy(response.content.definicjaMapy);
             this.pobierzKomunikatIWyswietl();
             this.pokazKomunikatOBrakujacychWarstwach(response.content?.definicjaMapy);

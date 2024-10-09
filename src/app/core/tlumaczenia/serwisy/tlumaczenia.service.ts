@@ -20,7 +20,7 @@ export class TlumaczeniaService {
   private zmianaJezykaSubject$ = new BehaviorSubject<string>(LANGS.PL);
 
   constructor(private translate: TranslateService, private router: Router) {
-    console.log('tumaczenia service constructor start: ', this.pobierzAktualnyJezyk());
+    // console.log('tumaczenia service constructor start: ', this.pobierzAktualnyJezyk());
     this.router.events
       .pipe(filter((e): e is NavigationEnd => e instanceof NavigationEnd))
       .subscribe(() => {
@@ -28,7 +28,7 @@ export class TlumaczeniaService {
           this.zmianaJezykaSubject$.next(this.translate.currentLang);
         }
       });
-      console.log('tumaczenia serwice constructor end: ',this.pobierzAktualnyJezyk());
+      // console.log('tumaczenia serwice constructor end: ',this.pobierzAktualnyJezyk());
   }
 
   /**
@@ -36,7 +36,7 @@ export class TlumaczeniaService {
    */
   init(lang: string): void {
     this.translate.use(lang);
-    console.log('tumaczenia serwice init: ', lang);
+    // console.log('tumaczenia serwice init: ', lang);
 
   }
 

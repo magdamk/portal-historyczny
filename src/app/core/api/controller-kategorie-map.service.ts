@@ -23,7 +23,7 @@ export class ControllerKategorieMapService {
   constructor(private http: HttpClient,private tlumaczeniaService:TlumaczeniaService) { }
 
   getKategorieMap(): Observable<ZbiorKategoriiMapOpenDto[]> {
-    console.log('!!!!!!!!!!!!!!!!!! teraz: ',this.tlumaczeniaService.pobierzAktualnyJezyk());
+    // console.log('!!!!!!!!!!!!!!!!!! teraz: ',this.tlumaczeniaService.pobierzAktualnyJezyk());
     if (this.tlumaczeniaService.pobierzAktualnyJezyk()!=='pl'){
     return this.http.get<ZbiorKategoriiMapOpenDto[]>('./assets/data/tematyczne_en.json')}
     else {

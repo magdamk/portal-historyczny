@@ -31,21 +31,21 @@ export class OracleMapsDirective implements AfterViewInit, OnInit, OnDestroy {
   constructor(private el: ElementRef,
     private konfiguracja: KonfiguracjaModulMapowyAdapter,
     private oracleMapsService: OracleMapsService) {
-      console.log('oracle-maps directive constructor');
+      // console.log('oracle-maps directive constructor');
   }
 
   /**
    * Cykl życia kompnentu inicjalizacja
    */
   ngOnInit(): void {
-    console.log('oracle-maps directive oninit');
+    // console.log('oracle-maps directive oninit');
   }
 
   /**
    * Cykl życia komponentu po załadowaniu widoku
    */
   ngAfterViewInit(): void {
-    console.log('oracle-maps directive after view init');
+    // console.log('oracle-maps directive after view init');
     this.ladowanieBibliotekiSubscription = this.oracleMapsService.pobierzLadowanieBibliotekiSubject().subscribe((zaladowana) => {
       if (zaladowana) {
         this.zaladujMape();
@@ -70,7 +70,7 @@ export class OracleMapsDirective implements AfterViewInit, OnInit, OnDestroy {
    * Funkcja ładująca mapę
    */
   private zaladujMape(): void {
-    console.log('oracle-maps directive zaladujMape');
+    // console.log('oracle-maps directive zaladujMape');
     OM.gv.setResourcePath(this.konfiguracja.pobierzMapViewerUrl() + MAPVIEWER_KONFIGURACJA.ZASOBY_SCIEZKA);
     OM.gv.setLogLevel('severe');
     const myUniverse = new OM.universe.Universe(
@@ -89,7 +89,7 @@ export class OracleMapsDirective implements AfterViewInit, OnInit, OnDestroy {
     });
     this.mapView.enableZoomAnimation(false);
     this.mapView.setZoomLevelRange(0, 18);
-    console.log('oracle-maps directive zaladujMape',this.mapView);
+    // console.log('oracle-maps directive zaladujMape',this.mapView);
     this.mapaUtworzonaZmiana.emit(this.mapView);
   }
 }

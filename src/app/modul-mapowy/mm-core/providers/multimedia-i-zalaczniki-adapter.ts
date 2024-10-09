@@ -96,7 +96,6 @@ export class DomyslnyMultimediaIZalacznikiAdapter implements MultimediaIZalaczni
    * @param uuidWarstwy
    * @param idObiektu
    */
-  // https://testmapa.um.warszawa.pl/api/modul-multimediow/open/multimedia/edytor/DSH_TEMAT_MIEJSCE/118
   pobierzMultimedia(uuidWarstwy: string, idObiektu: string): Observable<ListaPlikow> {
     return new Observable(subscriber => {
       subscriber.next({

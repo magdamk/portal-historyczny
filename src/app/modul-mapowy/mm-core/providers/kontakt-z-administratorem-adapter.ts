@@ -50,7 +50,7 @@ export class DomyslnyKontaktZAdministratoremAdapter extends KontaktZAdministrato
    */
   dodajWiadomoscDlaAdministratora(wiadomosc: WidomoscDoAdministratora): Observable<any> {
     return new Observable<any>(subscriber => {
-      console.log('DomyslnyKontaktZAdministratoremAdapter::dodajwiadomoscDlaAdministratora', wiadomosc);
+      // console.log('DomyslnyKontaktZAdministratoremAdapter::dodajwiadomoscDlaAdministratora', wiadomosc);
       subscriber.next('');
     });
   }

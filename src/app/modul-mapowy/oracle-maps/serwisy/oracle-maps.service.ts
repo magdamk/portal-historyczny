@@ -36,7 +36,7 @@ export class OracleMapsService {
    * @param url - url do biblioteki
    */
   zaladujBiblioteke(url: string): void {
-    console.log('oracle-maps service, ładowanie biblioteki');
+    // console.log('oracle-maps service, ładowanie biblioteki');
     if (this.laduje) {
       return;
     }
@@ -64,7 +64,7 @@ export class OracleMapsService {
    * Funkcja dezaktywuje bibliotekę mapviewer
    */
   zniszczBiblioteke(): void {
-    console.log('oracle-maps service, zniszczBiblioteke');
+    // console.log('oracle-maps service, zniszczBiblioteke');
     this.ladowanieBiblitekiSubject.next(false);
   }
 
@@ -72,7 +72,7 @@ export class OracleMapsService {
    * Funkcja pozwala pobrać event załadowania biblioteki
    */
   pobierzLadowanieBibliotekiSubject(): BehaviorSubject<boolean> {
-    console.log('oracle-maps service, pobierzLadowanieBibliotekiSubject');
+    // console.log('oracle-maps service, pobierzLadowanieBibliotekiSubject');
     return this.ladowanieBiblitekiSubject;
   }
 

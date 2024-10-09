@@ -115,20 +115,20 @@ export class OsTagiComponent implements OnInit, OnDestroy {
 
   selected(event: MatAutocompleteSelectedEvent): void {
     // this.fruits.push(event.option.viewValue);
-    console.log('MatAutocompleteSelectedEvent viewValue: ', event.option.viewValue)
+    // console.log('MatAutocompleteSelectedEvent viewValue: ', event.option.viewValue)
     this.selectedTag = this.tagi.find(tag => tag.tag == event.option.viewValue);
     this.tagInput!.nativeElement.value = '';
     this.tagiFormControl.setValue(null);
   }
   filter(value: string) {
-    console.log('filter:<' + value + '>');
+    // console.log('filter:<' + value + '>');
     this.filteredTagi = this._filter(value);
-    console.log('filteredTagi:', this.filteredTagi.toString());
+    // console.log('filteredTagi:', this.filteredTagi.toString());
     this.filteredTagi$ = of(this.filteredTagi);
   }
   private _filter(value: string): TagiDto[] {
     const filterValue = value.toLowerCase();
-    console.log('_filter: ' + filterValue);
+    // console.log('_filter: ' + filterValue);
     let filteredTagiTemp: TagiDto[] = [];
     this.tagi.forEach((tag) => { if (tag.tag.toLowerCase().includes(filterValue)) { filteredTagiTemp.push(tag) }; });
     return filteredTagiTemp;

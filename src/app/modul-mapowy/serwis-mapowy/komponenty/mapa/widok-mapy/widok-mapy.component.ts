@@ -60,7 +60,7 @@ export class WidokMapyComponent implements OnInit, OnDestroy {
    * Cykl życia komponentu inicjalizacja
    */
   ngOnInit(): void {
-    console.log('widok mapy on init:', this.mapaService.mapaZaladowane);
+    // console.log('widok mapy on init:', this.mapaService.mapaZaladowane);
     this.konfigurujSynchronizacjeMap();
     this.subskryocje$.add(this.mapaService.pobierzSubjectAktualizacjiWarstwy().subscribe(mapa => {
       if (mapa && this.mapa && mapa.uuid === this.mapa.uuid) {
@@ -104,9 +104,9 @@ export class WidokMapyComponent implements OnInit, OnDestroy {
       this.mapView?.addScaleBar();
       this.mapView?.setMouseWheelZoomBehavior(OM.Map.ZOOM_KEEP_MOUSE_POINT);
       this.inicjujWarstwePodkladowa();
-      console.log('widok-mapy inicjuj mape');
+      // console.log('widok-mapy inicjuj mape');
       this.mapView?.init();
-      console.log('widok-mapy inicjuj mape', this.mapView);
+      // console.log('widok-mapy inicjuj mape', this.mapView);
       this.zarejestrujObslugeZdarzenMapy();
       this.wymusAktualizacjeKomponentu();
       this.dodajTekstLicencji();

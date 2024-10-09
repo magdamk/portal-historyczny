@@ -45,7 +45,7 @@ export class KategorieMapComponent {
    * Funkcja sygnalizuje wybraniwMapy
    */
   wybranoMape(event: WyborMapyEvent): void {
-    console.log('|||||||||||||kategorie map wybrano mape event: ',event);
+    // console.log('|||||||||||||kategorie map wybrano mape event: ',event);
     this.mapaWybrana.emit(event);
   }
 

@@ -48,14 +48,14 @@ export class SzablonStronyGlownejComponent implements OnInit, AfterViewInit, OnD
               private router: Router,
               private cd: ChangeDetectorRef,
               private componentFactoryResolver: ComponentFactoryResolver) {
-console.log('constructor: ', componentFactoryResolver);
+// console.log('constructor: ', componentFactoryResolver);
   }
 
   /**
    * Cykl życia komponentu inicjalizacja
    */
   ngOnInit(): void {
-    console.log('ngOnInit');
+    // console.log('ngOnInit');
     this.szablonyService.zwinBelkeBoczna();
     this.zmianaBelkiBocznejSubscription$ = this.szablonyService.getZmianaZawartosciBelkiBocznejSubject()
       .subscribe((komponent) => this.zmianaKomponentuBelkiBocznej(komponent));
@@ -71,7 +71,7 @@ console.log('constructor: ', componentFactoryResolver);
    * Cykl życia komponentu niszczenie
    */
   ngOnDestroy(): void {
-    console.log('ngOnDestroy');
+    // console.log('ngOnDestroy');
     this.zmianaBelkiBocznejSubscription$.unsubscribe();
     this.zmianaRozwinieciaBelkiBocznejSubscription$.unsubscribe();
     this.tytulStronySubscription$.unsubscribe();
@@ -82,7 +82,7 @@ console.log('constructor: ', componentFactoryResolver);
    * Cykl życia komponentu renderowanie widoku
    */
   ngAfterViewInit(): void {
-    console.log('ngAfterViewInit: ', AktualnosciBelkaBocznaComponent,this.appKomponentHost);
+    // console.log('ngAfterViewInit: ', AktualnosciBelkaBocznaComponent,this.appKomponentHost);
     this.zaladujKomponentBelkiBocznej(AktualnosciBelkaBocznaComponent);
   }
 
@@ -90,7 +90,7 @@ console.log('constructor: ', componentFactoryResolver);
    * Funkcja rowija belkę boczną
    */
   rozwinBocznaNawigacje(): void {
-    console.log('rozwinBocznaNawigacje');
+    // console.log('rozwinBocznaNawigacje');
     this.szablonyService.rozwinBelkeBoczna();
   }
 
@@ -98,7 +98,7 @@ console.log('constructor: ', componentFactoryResolver);
    * Funkcja zwija belkę boczną
    */
   zwinBocznaNawigacje(): void {
-    console.log('zwinBocznaNawigacje');
+    // console.log('zwinBocznaNawigacje');
     this.zaladujKomponentBelkiBocznej(AktualnosciBelkaBocznaComponent);
     this.szablonyService.zwinBelkeBoczna();
   }
@@ -108,7 +108,7 @@ console.log('constructor: ', componentFactoryResolver);
    * @param komponent - komponent powinien implementować interfejs BelkaBocznaKomponent
    */
   private zmianaKomponentuBelkiBocznej(komponent: Type<BelkaBocznaKomponent> | undefined): void {
-    console.log('zmianaKomponentuBelkiBocznej');
+    // console.log('zmianaKomponentuBelkiBocznej');
     if (komponent !== undefined) {
       this.zaladujKomponentBelkiBocznej(komponent);
     } else {
@@ -121,12 +121,12 @@ console.log('constructor: ', componentFactoryResolver);
    * @param komponent - komponent powinien implementować interfejs BelkaBocznaKomponent
    */
   private zaladujKomponentBelkiBocznej(komponent: Type<BelkaBocznaKomponent>): void {
-    console.log('zaladujKomponentBelkiBocznej: ',komponent);
+    // console.log('zaladujKomponentBelkiBocznej: ',komponent);
     if (!this.appKomponentHost) {
-      console.log('!this.hmapKomponentHost return: ',this.appKomponentHost);
+      // console.log('!this.hmapKomponentHost return: ',this.appKomponentHost);
       return;
     }
-    console.log('this.hmapKomponentHost pass: ',this.appKomponentHost);
+    // console.log('this.hmapKomponentHost pass: ',this.appKomponentHost);
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(komponent);
     const viewContainerRef = this.appKomponentHost.viewContainerRef;
     viewContainerRef.clear();

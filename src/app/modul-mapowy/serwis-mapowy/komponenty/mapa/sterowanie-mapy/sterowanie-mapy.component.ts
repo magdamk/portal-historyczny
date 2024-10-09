@@ -67,7 +67,7 @@ export class SterowanieMapyComponent implements OnInit, OnDestroy {
     private komunikaty: KomunikatyModulMapowyAdapter,
     private aktualizacjaKomponentu: AktualizacjaKomponentuService,
     private eref: ElementRef) {
-      console.log('sterowanie-mapy konstruktor',this.mapView);
+      // console.log('sterowanie-mapy konstruktor',this.mapView);
     // this.interfejsUzytkownika$ = store.select('modulMapowy', 'interfejsUzytkownika');
     // this.narzedzia$ = store.select('modulMapowy', 'narzedzia');
   }
@@ -76,7 +76,7 @@ export class SterowanieMapyComponent implements OnInit, OnDestroy {
    * Cykl życia komponentu inicjalizacja
    */
   ngOnInit(): void {
-    console.log('sterowanie-mapy ngOnInit',this.mapView);
+    // console.log('sterowanie-mapy ngOnInit',this.mapView);
     this.przygotujWarstweDlaLokalizacjiUzytkowika();
     this.obslugaSpinnera();
     this.subscriptions$.add(this.sterowanieMapy.pobierszSubjectZmianyLokalizacjiUzytkownika().subscribe(punkt => {

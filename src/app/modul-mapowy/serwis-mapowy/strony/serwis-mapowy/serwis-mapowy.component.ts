@@ -207,7 +207,7 @@ export class SerwisMapowyComponent implements OnInit {
    * Funkcja zmienia stan legendy zwija/rozwija
    */
   zmienStanPaskaBocznego(): void {
-    console.log('zmienStanPaskaBocznego');
+    // console.log('zmienStanPaskaBocznego');
     this.store.dispatch(InterfejsUzytkownikaActions.odwrocRozwiniecieLewaBelka());
   }
 
@@ -215,7 +215,7 @@ export class SerwisMapowyComponent implements OnInit {
    * Funkcja rozsuwa pasek boczny
    */
   pokazPasekBoczny(): void {
-    console.log('pokazPasekBoczny');
+    // console.log('pokazPasekBoczny');
     this.store.dispatch(InterfejsUzytkownikaActions.rozwinLewaBelke());
   }
 

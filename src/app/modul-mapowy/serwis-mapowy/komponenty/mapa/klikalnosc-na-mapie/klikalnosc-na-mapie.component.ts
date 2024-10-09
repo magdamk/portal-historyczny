@@ -44,7 +44,7 @@ export class KlikalnoscNaMapieComponent implements OnInit, OnDestroy {
     private konfiguracja: KonfiguracjaModulMapowyAdapter,
     private aktualizacjaKomponentuService: AktualizacjaKomponentuService,
     private mapaSerwis: MapaService) {
-      console.log('klikalnosc na mapie konstruktor');
+      // console.log('klikalnosc na mapie konstruktor');
   }
 
   /**

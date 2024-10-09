@@ -79,10 +79,10 @@ private pobierzListeMapPLanow(): void {
 
   this.serviceKategoriiMap.getKategorieMap()
     .subscribe((result: any) => {
-      console.log('pobierzListeKategoriiMap: ', result.content.kategorieTematyczne[1].grupyMap);
+      // console.log('pobierzListeKategoriiMap: ', result.content.kategorieTematyczne[1].grupyMap);
       // if (result.content.typ.ObiektEnum==='KATEGORIA_TEMATYCZNA') {
       this.zbiorMapPlanow = Array.from(result.content.kategorieTematyczne[1].grupyMap);
-      console.log('!!!!pobierzListeKategoriiMap: ', this.zbiorMapPlanow);
+      // console.log('!!!!pobierzListeKategoriiMap: ', this.zbiorMapPlanow);
       // }
     });
   // this.serviceKategoriiMap.pobierzListeKategorieMapDlaPortalu(wersja)
