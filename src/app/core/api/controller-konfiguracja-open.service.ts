@@ -23,7 +23,7 @@ import { Observable }                                        from 'rxjs';
 import { BASE_PATH, COLLECTION_FORMATS }                     from './variables';
 import { Configuration }                                     from './configuration';
 import { JsonObjectContainerKonfiguracjaGrupaDto } from '../modele/json-object-container-konfiguracja-grupa-dto';
-
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -31,7 +31,7 @@ import { JsonObjectContainerKonfiguracjaGrupaDto } from '../modele/json-object-c
 })
 export class ControllerKonfiguracjaOpenService {
 
-    protected basePath = 'http://testmapa.um.warszawa.pl/api/modul-mapowy';
+    protected basePath = environment.portalMapowyApiUrl;
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
     public encoder: HttpParameterCodec;

@@ -21,7 +21,7 @@ import { Observable }                                        from 'rxjs';
 
 import { BASE_PATH, COLLECTION_FORMATS }                     from './variables';
 import { Configuration }                                     from './configuration';
-
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -29,7 +29,7 @@ import { Configuration }                                     from './configurati
 })
 export class ControllerDostepnoscSerwisuOpenService {
 
-    protected basePath = 'http://testmapa.um.warszawa.pl/api/modul-mapowy';
+    protected basePath = environment.portalMapowyApiUrl;
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
     public encoder: HttpParameterCodec;
