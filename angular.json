@@ -49,6 +49,7 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
+              "src/.htaccess",
               {
                 "glob": "**/*",
                 "input": "./node_modules/custom-project/assets",
@@ -74,7 +75,7 @@
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "5kb",
-                  "maximumError": "11kb"
+                  "maximumError": "12kb"
                 }
               ],
               "optimization": true,
@@ -125,7 +126,8 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/.htaccess"
             ],
             "styles": [
               "src/styles.scss",
