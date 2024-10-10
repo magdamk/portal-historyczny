@@ -49,7 +49,7 @@ export class BelkaKartaMapyComponent implements OnInit, OnDestroy {
       if (event instanceof NavigationEnd) {
 
         this.jezyk == 'en' ? this.suffix = '?lang=' + this.jezyk : null;
-        console.log(window.location.href," ",event.urlAfterRedirects);
+        // console.log(window.location.href," ",event.urlAfterRedirects);
         window.location.href = event.urlAfterRedirects + this.suffix;
       }
     }));
@@ -97,7 +97,7 @@ export class BelkaKartaMapyComponent implements OnInit, OnDestroy {
    */
   wybranoMape(): void {
     if (this.temat!.adresUrl || this.zmianaMapy) {
-      console.log('wybrano mapę: ');
+      // console.log('wybrano mapę: ');
       this.mapaWybrana.emit({ url: this.temat!.adresUrl, uuidMapy: this.temat!.uuidMapy, typ: this.temat!.typ?.obiektEnum, rodzaj: this.temat!.rodzaj });
     }
   }
