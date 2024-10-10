@@ -5,6 +5,7 @@ import { InformacjeOObiekcie } from '../../../utils/obiekty-mapy-utils';
 import { SekcjeOkna } from '../informacje-o-obiekcie/informacje-o-obiekcie.component';
 import { ControllerMultimediaOpenService } from 'src/app/core/api/controller-multimedia-open.service';
 import { environment } from 'src/environments/environment';
+import { HttpUrlEncodingCodec } from '@angular/common/http';
 
 interface ElementKaruzeli {
   index: number;
@@ -202,12 +203,13 @@ export class ObiektZalacznikiIZdjeciaComponent implements OnInit, OnChanges {
         this.plikiWKaruzeli.push({ plik: this.multimedia.pliki[0], index: 0 });
         this.plikiWKaruzeli.push({ plik: this.multimedia.pliki[1], index: 1 });
         this.plikiWKaruzeli.push({ plik: this.multimedia.pliki[2], index: 2 });
-        this.ustawMiniaturki();
+        // this.ustawMiniaturki();
       } else {
         this.multimedia.pliki.forEach((p, i) => {
           this.plikiWKaruzeli?.push({ plik: p, index: i });
-          this.ustawMiniaturki();
+
         });
+        this.ustawMiniaturki();
       }
     }
   }
@@ -221,9 +223,15 @@ export class ObiektZalacznikiIZdjeciaComponent implements OnInit, OnChanges {
         p.index = this.znajdzIndexDlaKaruzeli(this.wybraneZdjecieIndeks + i);
         p.plik = this.multimedia!.pliki[p.index];
         // console.log('ustawMiniaturki',p.plik);
-        // p.plik.sciezkaMiniaturki ? p.plik.sciezkaMiniaturki = this.url+p.plik.sciezkaMiniaturki : p.plik.sciezkaMiniaturki = this.url+p.plik.sciezka;
-        p.plik.rozszerzenie && (['mp3', 'ogg', 'wav', 'flac'].indexOf(p.plik.rozszerzenie) > -1) ? p.plik.sciezkaMiniaturki = 'assets/images/audio.png' : p.plik.sciezkaMiniaturki = this.url+p.plik.sciezka;
-        p.plik.rozszerzenie && (['mp4', 'ogv', 'webm','m4v'].indexOf(p.plik.rozszerzenie) > -1) ? p.plik.sciezkaMiniaturki = 'assets/images/wideo.png' : null;
+        console.log(p.plik.rozszerzenie,p.plik.rozszerzenie && (['mp3', 'ogg', 'wav', 'flac'].indexOf(p.plik.rozszerzenie) > -1),p.plik.sciezkaMiniaturki);
+        if (p.plik.rozszerzenie && (['mp3', 'ogg', 'wav', 'flac'].indexOf(p.plik.rozszerzenie) > -1)) { p.plik.sciezkaMiniaturki = 'assets/images/audio.png' };
+        if (p.plik.rozszerzenie && (['mp4', 'ogv', 'webm', 'm4v'].indexOf(p.plik.rozszerzenie) > -1)) {
+          p.plik.sciezkaMiniaturki = 'assets/images/wideo.png'
+        };
+        if (p.plik.rozszerzenie && (['apng', 'avif', 'gif', 'jpg', 'jpeg', 'jfif', 'pjpeg', 'pjp', 'png', 'svg', 'webp','tif','tiff'].indexOf(p.plik.rozszerzenie) > -1)) {
+          if (!p.plik.sciezkaMiniaturki) { p.plik.sciezkaMiniaturki = new HttpUrlEncodingCodec().encodeValue(this.url + p.plik.sciezka) };
+        };
+        console.log(p.plik.rozszerzenie,p.plik.sciezkaMiniaturki);
         // console.log('ustawMiniaturki',p.plik);
       });
     }
