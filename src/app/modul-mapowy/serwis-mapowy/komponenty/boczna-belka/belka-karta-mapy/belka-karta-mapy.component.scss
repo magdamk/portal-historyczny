@@ -8,6 +8,7 @@ $karta-mapy-rodzaj-wysokosc: 1.5rem;
 
 .belka-karta-mapy {
   height: #{$karta-mapy-wysokosc}+#{$karta-mapy-rodzaj-wysokosc};
+  // min-width: 150px;
   // width: calc(50vw - 76px);
   margin: 4px;
   background: white;

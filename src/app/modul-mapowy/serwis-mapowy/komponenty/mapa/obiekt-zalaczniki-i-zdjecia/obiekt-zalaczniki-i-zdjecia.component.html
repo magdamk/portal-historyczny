@@ -18,6 +18,33 @@
         <audio *mmAudio="wybraneZdjecie?.rozszerzenie" src="{{url+wybraneZdjecie?.sciezka}}" controls></audio>
       </div>
       <div class="karuzela">
+        <div class="poprzednie">
+          <mm-przycisk-ikona label="{{'codes.modul-mapowy.przegladanie-obiektow.poprzednie-multimedium' | translate}}"
+                              ikona="poprzedni" typ="'blekitny'"
+                              (click)="poprzednieZdjecie()"></mm-przycisk-ikona>
+        </div>
+        <div *ngFor="let miniaturka of plikiWKaruzeli" [style.backgroundImage]="'url('+ miniaturka.plik.sciezkaMiniaturki+')'"
+             [class.zaznaczone]="wybraneZdjecieIndeks===miniaturka.index"
+             (click)="ustawZdjecie(miniaturka.index)"></div>
+             <div class="nastepne">
+              <mm-przycisk-ikona label="{{'codes.modul-mapowy.przegladanie-obiektow.nastepne-multimedium' | translate}}"
+                                  ikona="nastepny" typ="'blekitny'"
+                                  (click)="nastepneZdjecie()"></mm-przycisk-ikona>
+            </div>
+      </div>
+      <!-- <div class="karuzela-nawigacja"> -->
+        <!-- <div class="poprzednie">
+          <mm-przycisk-ikona label="{{'codes.modul-mapowy.przegladanie-obiektow.poprzednie-multimedium' | translate}}"
+                              ikona="poprzedni" typ="'blekitny'"
+                              (click)="poprzednieZdjecie()"></mm-przycisk-ikona>
+        </div>
+        <div class="nastepne">
+          <mm-przycisk-ikona label="{{'codes.modul-mapowy.przegladanie-obiektow.nastepne-multimedium' | translate}}"
+                              ikona="nastepny" typ="'blekitny'"
+                              (click)="nastepneZdjecie()"></mm-przycisk-ikona>
+        </div> -->
+      <!-- </div> -->
+      <!-- <div class="karuzela">
         <div *ngFor="let miniaturka of plikiWKaruzeli" [style.backgroundImage]="'url('+ miniaturka.plik.sciezkaMiniaturki+')'"
              [class.zaznaczone]="wybraneZdjecieIndeks===miniaturka.index"
              (click)="ustawZdjecie(miniaturka.index)"></div>
@@ -33,7 +60,7 @@
                               ikona="nastepny" typ="'blekitny'"
                               (click)="nastepneZdjecie()"></mm-przycisk-ikona>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
   <div class="zalaczniki" *ngIf="zalaczniki && zalaczniki.pliki.length>0">

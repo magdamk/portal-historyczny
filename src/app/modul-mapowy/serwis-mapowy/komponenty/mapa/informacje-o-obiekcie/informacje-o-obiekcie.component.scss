@@ -7,10 +7,11 @@
   width: 100%;
   height: 100%;
   background: white;
-  padding: 20px 20px 20px 30px;
+  // padding: 20px 20px 20px 30px;
+  padding: 10px 10px 10px 15px;
 
   .naglowek {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     padding-right: 30px;
     overflow: hidden;
     display: -webkit-box;
@@ -21,7 +22,7 @@
     max-height: 58px;
     min-height: fit-content;
     .naglowek-nazwa{
-      color: $miasto-zielony;
+      color: $miasto-pomarancz;
     }
     .naglowek-warstwa {
       color: $miasto-czarny;
