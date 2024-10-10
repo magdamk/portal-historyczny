@@ -49,6 +49,7 @@ export class BelkaKartaMapyComponent implements OnInit, OnDestroy {
       if (event instanceof NavigationEnd) {
 
         this.jezyk == 'en' ? this.suffix = '?lang=' + this.jezyk : null;
+        console.log(window.location.href," ",event.urlAfterRedirects);
         window.location.href = event.urlAfterRedirects + this.suffix;
       }
     }));
@@ -86,7 +87,8 @@ export class BelkaKartaMapyComponent implements OnInit, OnDestroy {
       }
       // this.wybranoMape();
       // console.log(`/mapa/${this.mapa?.uuidMapy}`+encodeURI(`?rodzaj=${this.mapa?.rodzaj}`));
-      this.router.navigate([`/mapa/${this.temat.uuidMapy}`]);
+      // console.log(window.location.href," ",event.urlAfterRedirects);
+      this.router.navigate([`portal-historyczny/mapa/${this.temat.uuidMapy}`]);
     }
   }
 
@@ -95,7 +97,7 @@ export class BelkaKartaMapyComponent implements OnInit, OnDestroy {
    */
   wybranoMape(): void {
     if (this.temat!.adresUrl || this.zmianaMapy) {
-      // console.log('wybrano mapę: ');
+      console.log('wybrano mapę: ');
       this.mapaWybrana.emit({ url: this.temat!.adresUrl, uuidMapy: this.temat!.uuidMapy, typ: this.temat!.typ?.obiektEnum, rodzaj: this.temat!.rodzaj });
     }
   }
@@ -122,7 +124,7 @@ export class BelkaKartaMapyComponent implements OnInit, OnDestroy {
       window.open(this.adresUrl, '_blank');
       return;
     }
-    this.router.navigate(['/mapa/' + this.temat?.uuidMapy]);
+    this.router.navigate(['portal-historyczny/mapa/'+this.temat?.uuidMapy]);
   }
 
   /**

@@ -19,7 +19,7 @@
     <div class="opis-przycisk w-full justify-center items-center">
       <mm-przycisk-okragly *ngIf="!zmianaMapy"
                             tabindex="0" typ="PRIMARY"
-                            ikona="prawa-strzalka" [link]="'/mapa/'+mapa?.uuidMapy" [href]="adresUrl"
+                            ikona="prawa-strzalka" [link]="'mapa/'+mapa?.uuidMapy" [href]="adresUrl"
                             (click)="zapiszParametryWLocalStorage()"
                             (tap)="zapiszParametryWLocalStorage()"
                             (keyup.enter)="zapiszParametryWLocalStorage()"

@@ -10,6 +10,7 @@ import { JezykInterceptor } from './core/interceptory/jezyk.interceptor';
 import { AppRoutingModule } from './app-routing.module';
 import { WspolneModule } from './wspolne/wspolne.module';
 import { StoreModule } from '@ngrx/store';
+import { APP_BASE_HREF } from '@angular/common';
 // import { TylkoDesktopDirective } from './core/responsywnosc/dyrektywy/tylko-desktop.directive';
 // import { TylkoMobileDirective } from './core/responsywnosc/dyrektywy/tylko-mobile.directive';
 
@@ -48,7 +49,9 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     WspolneModule,
   ],
 
-  providers: [{
+  providers: [
+    // {provide: APP_BASE_HREF, useValue: '/portal-historyczny/'},
+    {
     provide: HTTP_INTERCEPTORS,
     useClass: JezykInterceptor,
     multi: true,

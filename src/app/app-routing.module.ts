@@ -7,10 +7,14 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./funkcjonalnosci/strona-startowa/strona-startowa.module').then((m) => m.StronaStartowaModule),
   },
-  {
-    path: 'mapa',
-    loadChildren: () => import('./funkcjonalnosci/map/map.module').then((m) => m.MapModule),
-  },
+  // {
+  //   path: 'mapa',
+  //   loadChildren: () => import('./funkcjonalnosci/map/map.module').then((m) => m.MapModule),
+  // },
+  // {
+  //   path: 'portal-historyczny/mapa',
+  //   loadChildren: () => import('./funkcjonalnosci/map/map.module').then((m) => m.MapModule),
+  // },
   {
     path: 'komunikat',
     loadChildren: () => import('./funkcjonalnosci/komunikaty/komunikaty.module').then((m) => m.KomunikatyModule)
@@ -19,6 +23,14 @@ const routes: Routes = [
     path: 'aktualnosci',
     component: SzablonStronyGlownejComponent,
     loadChildren: () => import('./funkcjonalnosci/aktualnosci/aktualnosci.module').then((m) => m.AktualnosciModule)
+  },
+  {
+    path: 'mapa',
+    loadChildren: () => import('./funkcjonalnosci/map/map.module').then((m) => m.MapModule),
+  },
+  {
+    path: 'portal-historyczny/mapa',
+    loadChildren: () => import('./funkcjonalnosci/map/map.module').then((m) => m.MapModule),
   },
   {
     path: '**', redirectTo: ''

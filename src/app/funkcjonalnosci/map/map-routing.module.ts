@@ -4,6 +4,7 @@ import {StronaMapyComponent} from './strony/strona-mapy/strona-mapy.component';
 import {SzablonMapaComponent} from "../../core/szablony/szablon-mapa/szablon-mapa.component";
 // import {StronaMapyGuard} from "./guards/strona-mapy.guard";
 import {StronaPodgladuMapyComponent} from "./strony/strona-podgladu-mapy/strona-podgladu-mapy.component";
+import { BelkaKartaMapyComponent } from 'src/app/modul-mapowy/serwis-mapowy/komponenty/boczna-belka/belka-karta-mapy/belka-karta-mapy.component';
 
 // loadChildren: () => import('./funkcjonalnosci/komunikaty/komunikaty.module').then((m) => m.KomunikatyModule)
 const routes: Routes = [
@@ -12,18 +13,17 @@ const routes: Routes = [
 
     component: SzablonMapaComponent,
     children: [
-      {path: ':uuid', component: StronaPodgladuMapyComponent}
+      {path: ':uuid', component: StronaPodgladuMapyComponent,pathMatch: 'full',}
     ]
   },
   {
     path: '',
     component: SzablonMapaComponent,
     children: [
-      {path: '', component: StronaMapyComponent},
-      {path: ':uuid', component: StronaMapyComponent}
+      {path: '', component: StronaMapyComponent,pathMatch: 'full',},
+      {path: ':uuid', component: StronaMapyComponent,pathMatch: 'full',}
     ],
   },
-
 ];
 
 /**
