@@ -1,5 +1,5 @@
-import {Geometry} from './geometry';
-import {Style} from './style';
+import { Geometry } from './geometry';
+import { Style } from './style';
 
 export interface FeatureOptions {
   attributes?: any;
@@ -19,7 +19,7 @@ export interface Feature {
   options: FeatureOptions;
 
   getGeometry(): Geometry;
-
+  getAttributes(): any;
   getAttributeValue(name: string): any;
 
   setRenderingStyle(style: Style): void;

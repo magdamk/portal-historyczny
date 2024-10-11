@@ -26,7 +26,7 @@ export interface Layer {
    * An optional configuration object for the new layer.
    */
   config: any;
-
+filterArray?:[];
   /**
    * Bring the layer to the front by one step (closer to the top of the map).
    * @return The new z-index
@@ -170,6 +170,8 @@ export interface Layer {
   setZoomLevelRange(minLevel: number, maxLevel: number): void;
 
   getAllFeatures(): Feature[];
+
+  getFeaturesByAttribute(attribute:string,attrValues:any): Feature[];
 
   setQueryParameters(...params: any[]): void;
 

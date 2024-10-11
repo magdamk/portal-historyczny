@@ -41,6 +41,8 @@ import {WMSTileLayer} from './wms-tile-layer';
 import {WMTSTileLayer} from './wmts-tile-layer';
 import {Line} from './line';
 import {TileLayerConfig} from './tile-layer-config';
+import { Like } from './like';
+import { Equals } from './equals';
 
 export interface LayerNameSpace {
   TileLayer: TileLayer;
@@ -94,6 +96,8 @@ export interface FilterNamespace {
   AnyInteract: AnyInteract;
   InsidePolygon: InsidePolygon;
   Or: Or;
+  Like: Like;
+  Equals: Equals;
 }
 
 export interface ServerNamespace {
