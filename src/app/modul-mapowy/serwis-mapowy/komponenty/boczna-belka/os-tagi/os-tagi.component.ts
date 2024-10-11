@@ -11,7 +11,11 @@ import { TagiService } from '../../../serwisy/tagi.service';
 import { TagiDto } from '../../../modele/tagi';
 import { FormBuilder, FormControl } from '@angular/forms';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
+import { OM } from '../../../../oracle-maps/types/om';
+import { Map as OMap } from '../../../../oracle-maps/types/map';
 import { MatChipInputEvent } from '@angular/material/chips';
+
+declare var OM: OM;
 
 @Component({
   selector: 'mm-os-tagi',
@@ -23,6 +27,7 @@ export class OsTagiComponent implements OnInit, OnDestroy {
   widokIdentyfikator = WIDOKI_ID.TAGI;
   @Input() widok!: Widok;
   @Input() mapa?: Mapa;
+  @Input() mapView!: OMap;
   @Input() obszarWidoczny?: boolean | undefined;
 
   @ViewChild('tagInput') tagInput!: ElementRef<HTMLInputElement>;
@@ -32,9 +37,10 @@ export class OsTagiComponent implements OnInit, OnDestroy {
   tagi: TagiDto[] = [];
   filterValue: string = '';
   filteredTagi?: TagiDto[];
-  filteredTagi$?:Observable<TagiDto[]>;
+  filteredTagi$?: Observable<TagiDto[]>;
   tagiFormControl = new FormControl('');
   selectedTag?: TagiDto;
+  selectedTagValue: string = '';
   subscription$ = new Subscription();
   /**
    * Konstruktor
@@ -57,7 +63,6 @@ export class OsTagiComponent implements OnInit, OnDestroy {
       this.pobierzTagi();
 
     }));
-
     this.pobierzTagi();
 
     // this.subscription$.add(this.obszary$.subscribe(stan => {
@@ -74,7 +79,7 @@ export class OsTagiComponent implements OnInit, OnDestroy {
     //   console.log('!!!!pobierzListeKategoriiMap: ', this.zbiorMapPlanow);
     //   // }
     // });
-    this.serviceTagi.getTagi().subscribe((result: any) => { this.tagi = Array.from(result);this.filteredTagi = this._filter(this.filterValue);  this.filteredTagi$ = of(this.filteredTagi);});
+    this.serviceTagi.getTagi().subscribe((result: any) => { this.tagi = Array.from(result); this.filteredTagi = this._filter(this.filterValue); this.filteredTagi$ = of(this.filteredTagi); });
 
   }
 
@@ -96,9 +101,38 @@ export class OsTagiComponent implements OnInit, OnDestroy {
 
   changeChip(val: TagiDto) {
     this.selectedTag = val;
+    console.log(this.mapView);
+    console.log(this.mapView?.getFeatureLayers().filter((layer) => layer.isVisible(this.mapView!.getMapZoomLevel())));
+
+    // this.mapView!.refreshMap();
+    if (this.selectedTagValue !== val.tag) {
+      // this.setFilter();
+      // setTimeout(() => {
+      let layers = this.mapView!.getFeatureLayers().filter((layer) => layer.isVisible(this.mapView!.getMapZoomLevel()));
+      layers!.forEach((layer) => {
+        layer.filterArray = [];
+        layer.refresh();
+        layer.applyFilter(new OM.filter.Like('TAGI', '%' + val.tag + '%'), true)
+      });
+      // }, 300);
+      this.selectedTagValue = val.tag;
+    } else {
+      let layers = this.mapView!.getFeatureLayers().filter((layer) => layer.isVisible(this.mapView!.getMapZoomLevel()));
+      layers!.forEach((layer) => {
+        layer.filterArray = [];
+        layer.refresh();
+      });
+      this.selectedTagValue = '';
+    }
     // this.filteredTagi = this._filter(this.filterValue);
   }
-
+  // setFilter() {
+  //   let layers = this.mapView!.getFeatureLayers().filter((layer) => layer.isVisible(this.mapView!.getMapZoomLevel()));
+  //   layers!.forEach((layer) =>
+  //     layer.applyFilter(new OM.filter.Like('TAGI', this.selectedTag!.tag), true));
+  //   // this.mapView!.addLayer(layer.applyFilter(new OM.filter.Like('TAGI', this.selectedTag!.tag), true))
+  //   // );
+  // }
   // add(event: MatChipInputEvent): void {
   //   const value = (event.value || '').trim();
 
