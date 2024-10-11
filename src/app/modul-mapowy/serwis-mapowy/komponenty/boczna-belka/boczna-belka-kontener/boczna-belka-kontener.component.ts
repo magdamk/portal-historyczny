@@ -7,6 +7,7 @@ import { Widok } from 'src/app/modul-mapowy/stan/lewy-panel-widok/lewy-panel-wid
 import { WIDOKI_ID } from 'src/app/modul-mapowy/stan/lewy-panel-widok/lewy-panel-widok.const';
 import { RODZAJ_MAPY } from '../../../modele/rodzaj-mapy';
 import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/tlumaczenia.service';
+import { Map } from 'src/app/modul-mapowy/oracle-maps/types/map';
 
 export const POZ_ZNACZNIK_BELKA_BOCZNA = ['poz-1', 'poz-2', 'poz-3', 'poz-4', 'poz-5', 'poz-6', 'poz-7', 'poz-8', 'poz-9', 'poz-10'];
 
@@ -25,6 +26,7 @@ export class BocznaBelkaKontenerComponent implements OnInit, OnChanges, OnDestro
 
   @Input() mapy?: Mapa[];
   @Input() mapa?: Mapa;
+  @Input() mapView?: Map;
 
   subscriptions$ = new Subscription();
 

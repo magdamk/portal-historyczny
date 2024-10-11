@@ -14,7 +14,7 @@
     <mm-os-szlaki *ngIf="widok.id===WIDOKI_ID.SZLAKI" [obszarWidoczny]="widok.id===topId" [widok]="widok"
       [style.zIndex]="widok.id===topId ? widok.zIndex+1 : widok.zIndex">
     </mm-os-szlaki>
-    <mm-os-tagi *ngIf="widok.id===WIDOKI_ID.TAGI" [obszarWidoczny]="widok.id===topId" [widok]="widok"
+    <mm-os-tagi *ngIf="widok.id===WIDOKI_ID.TAGI" [obszarWidoczny]="widok.id===topId" [widok]="widok" [mapView]="mapView!"
       [style.zIndex]="widok.id===topId ? widok.zIndex+1 : widok.zIndex">
     </mm-os-tagi>
     <mm-os-info *ngIf="mapa && widok.id===WIDOKI_ID.INFO" [obszarWidoczny]="widok.id===topId" [widok]="widok"

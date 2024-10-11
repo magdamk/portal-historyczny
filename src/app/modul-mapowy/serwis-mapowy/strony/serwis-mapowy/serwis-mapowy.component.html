@@ -32,13 +32,14 @@
       <mm-boczna-belka-kontener
         [mapy]="mapy"
         [mapa]="mapa"
+        [mapView]="mapView"
         [class.hidden]="interfejsUzytkownikaStan.belkaBocznaLewa.zwinieta"
         (zmianaStanuNarzedzia)="pokazPasekBoczny()"
         >
       </mm-boczna-belka-kontener>
     </div>
     <div class="obszar-widokow">
-      <mm-widok-mapy-narzedzia-sekcja [mapa]="mapa" [grupyWarstwPodkladowych]="grupyWarstwPodkladowych">
+      <mm-widok-mapy-narzedzia-sekcja [mapa]="mapa" [grupyWarstwPodkladowych]="grupyWarstwPodkladowych" (mapViewInitiallised)="passMapView($event)">
       </mm-widok-mapy-narzedzia-sekcja>
     </div>
   </div>

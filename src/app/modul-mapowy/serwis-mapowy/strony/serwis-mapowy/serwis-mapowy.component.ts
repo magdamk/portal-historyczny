@@ -17,6 +17,7 @@ import { InterfejsUzytkownikaActions } from 'src/app/modul-mapowy/stan/interfejs
 import { LewyPanelWidokActions } from 'src/app/modul-mapowy/stan/lewy-panel-widok/lewy-panel-widok.actions';
 import { WIDOKI_ID } from 'src/app/modul-mapowy/stan/lewy-panel-widok/lewy-panel-widok.const';
 import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/tlumaczenia.service';
+import { Map } from 'src/app/modul-mapowy/oracle-maps/types/map';
 // import { OBSZARY_STERUJACE_ID } from 'src/app/modul-mapowy/stan/obszary/obszary.const';
 // import { ObszaryActions } from 'src/app/modul-mapowy/stan/obszary/obszary.actions';
 
@@ -32,6 +33,7 @@ export class SerwisMapowyComponent implements OnInit {
   interfejsUzytkownikaStan: InterfejsUzytkownikaStan;
 
   PRZYCISK_IKONA_TYP = PRZYCISK_IKONA_TYP;
+  mapView?: Map;
   @Input() uuidMapy?: string;
   @Input() mapa?: Mapa;
   @Input() parametryStartoweMapy?: ParametryStartoweMapy;
@@ -233,4 +235,7 @@ export class SerwisMapowyComponent implements OnInit {
     this.store.dispatch(InterfejsUzytkownikaActions.zwinWyszukiwarke());
   }
 
+  passMapView(mapView: Map) {
+    this.mapView = mapView!;
+  }
 }

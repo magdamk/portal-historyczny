@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { GrupaWarstwPodkladowych } from '../../../modele/grupa-warstw-podkladowych';
 import { Mapa } from '../../../modele/mapa';
 import { Store } from '@ngrx/store';
@@ -34,7 +34,7 @@ export class WidokMapyNarzedziaSekcjaComponent implements OnInit, OnDestroy {
 
   @Input()
   grupyWarstwPodkladowych: GrupaWarstwPodkladowych[] = [];
-
+@Output() mapViewInitiallised = new EventEmitter<Map>();
   /**
    * Konstruktor
    * @param narzedziaSerwis
@@ -83,6 +83,7 @@ export class WidokMapyNarzedziaSekcjaComponent implements OnInit, OnDestroy {
    */
   inicjalizacjaMapy(mapa: Map) {
     this.mapView = mapa;
+    this.mapViewInitiallised.emit(this.mapView!);
   }
 
   /**
