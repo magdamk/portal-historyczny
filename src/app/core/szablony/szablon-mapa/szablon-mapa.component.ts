@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import { Router } from '@angular/router';
 
 /**
  * Szablon widoku mapy
@@ -10,7 +11,12 @@ import {Component} from '@angular/core';
 })
 export class SzablonMapaComponent {
 
-  constructor() {
+  constructor(private router: Router) {
+    console.log('Szablon mapa component constructor');
+    console.log('router.url',router.url);
+    console.log('router.getCurrentNavigation',router.getCurrentNavigation());
+    console.log('router.initialNavigation()',router.initialNavigation());
+    console.log('router.lastSuccessfulNavigation',router.lastSuccessfulNavigation);
   }
 
 }
