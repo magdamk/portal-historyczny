@@ -14,6 +14,7 @@ import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { OM } from '../../../../oracle-maps/types/om';
 import { Map as OMap } from '../../../../oracle-maps/types/map';
 import { MatChipInputEvent } from '@angular/material/chips';
+import { TlumaczeniaNazw } from '../../../modele/tlumaczenia-nazw';
 
 declare var OM: OM;
 
@@ -35,12 +36,15 @@ export class OsTagiComponent implements OnInit, OnDestroy {
 
   aktualnyJezyk = 'pl';
   tagi: TagiDto[] = [];
+  tagi_pl: any[] = [];
+  tagi_en: any[] = [];
+  tagi_all: any[] = [];
   filterValue: string = '';
   filteredTagi?: TagiDto[];
   filteredTagi$?: Observable<TagiDto[]>;
   tagiFormControl = new FormControl('');
   selectedTag?: TagiDto;
-  selectedTagValue: string = '';
+  selectedTagValue?: TlumaczeniaNazw;
   subscription$ = new Subscription();
   /**
    * Konstruktor
@@ -60,10 +64,10 @@ export class OsTagiComponent implements OnInit, OnDestroy {
     this.pobierzTagi();
     this.subscription$.add(this.tlumaczenia.getZmianaJezykaSubject().subscribe(jezyk => {
       this.aktualnyJezyk = jezyk;
-      this.pobierzTagi();
+      // this.pobierzTagi();
 
     }));
-    this.pobierzTagi();
+    // this.pobierzTagi();
 
     // this.subscription$.add(this.obszary$.subscribe(stan => {
     //   this.obszarySterujace = stan.obszarySterujace.filter(n => n.wirtualne === false);
@@ -80,7 +84,6 @@ export class OsTagiComponent implements OnInit, OnDestroy {
     //   // }
     // });
     this.serviceTagi.getTagi().subscribe((result: any) => { this.tagi = Array.from(result); this.filteredTagi = this._filter(this.filterValue); this.filteredTagi$ = of(this.filteredTagi); });
-
   }
 
 
@@ -88,6 +91,7 @@ export class OsTagiComponent implements OnInit, OnDestroy {
    * Cykl życia komponentu niszczenie
    */
   ngOnDestroy(): void {
+    { }
     this.subscription$.unsubscribe();
   }
 
@@ -103,7 +107,25 @@ export class OsTagiComponent implements OnInit, OnDestroy {
     this.selectedTag = val;
     console.log(this.mapView);
     console.log(this.mapView?.getFeatureLayers().filter((layer) => layer.isVisible(this.mapView!.getMapZoomLevel())));
+    // console.log(this.tagi_pl);
+    // console.log(this.tagi_en);
+    // this.tagi_pl.forEach((tagpl) => {
+    //   console.log('tagpl: ',tagpl);
+    //   let tagAll = { tagid: 0, tag: '' };
+    //   tagAll = this.tagi_en.find((t) =>{
+    //     //  console.log(t,tagpl);
+    //     if( t.id == tagpl.id){this.tagi_all.push({tagid:tagpl.id, tag:{pl:tagpl.tag,en:t.tag}})};});
+    //   // console.log('tag all: ',this.tagi_en.find((t) =>{ t.id == tagpl.id;})!);
+    //   // this.tagi_all.push({ tagid: tagpl.id, tag: { en: tagAll.tag, pl: tagpl.tag } });
+    // }); console.log(JSON.stringify(this.tagi_all));
+    // this.tagi_all.forEach((t)=> console.log())
+    //     const writeStream = fs.createWriteStream('filename.txt')
+    // const encoder = new TextEncoder
+    // let data = 'a'.repeat(1024)
+    // let uint8array = encoder.encode(data + "\n\n")
 
+    // writeStream.write(uint8array)
+    // writeStream.close()
     // this.mapView!.refreshMap();
     if (this.selectedTagValue !== val.tag) {
       // this.setFilter();
@@ -112,7 +134,7 @@ export class OsTagiComponent implements OnInit, OnDestroy {
       layers!.forEach((layer) => {
         layer.filterArray = [];
         layer.refresh();
-        layer.applyFilter(new OM.filter.Like('TAGI', '%' + val.tag + '%'), true)
+        layer.applyFilter(new OM.filter.Like('TAGI', '%' + val.tag.pl!.toUpperCase() + '%'), true);
       });
       // }, 300);
       this.selectedTagValue = val.tag;
@@ -122,7 +144,7 @@ export class OsTagiComponent implements OnInit, OnDestroy {
         layer.filterArray = [];
         layer.refresh();
       });
-      this.selectedTagValue = '';
+      this.selectedTagValue = undefined;
     }
     // this.filteredTagi = this._filter(this.filterValue);
   }
@@ -150,7 +172,13 @@ export class OsTagiComponent implements OnInit, OnDestroy {
   selected(event: MatAutocompleteSelectedEvent): void {
     // this.fruits.push(event.option.viewValue);
     // console.log('MatAutocompleteSelectedEvent viewValue: ', event.option.viewValue)
-    this.selectedTag = this.tagi.find(tag => tag.tag == event.option.viewValue);
+    if (this.aktualnyJezyk === 'pl') {
+      this.selectedTag = this.tagi.find(tag => tag.tag.pl === event.option.viewValue);
+    }
+    else {
+      this.selectedTag = this.tagi.find(tag => tag.tag.en === event.option.viewValue);
+    }
+
     this.tagInput!.nativeElement.value = '';
     this.tagiFormControl.setValue(null);
   }
@@ -164,8 +192,13 @@ export class OsTagiComponent implements OnInit, OnDestroy {
     const filterValue = value.toLowerCase();
     // console.log('_filter: ' + filterValue);
     let filteredTagiTemp: TagiDto[] = [];
-    this.tagi.forEach((tag) => { if (tag.tag.toLowerCase().includes(filterValue)) { filteredTagiTemp.push(tag) }; });
+    if (this.aktualnyJezyk === 'pl') {
+      this.tagi.forEach((tag) => { if (tag.tag.pl!.toLowerCase().includes(filterValue)) { filteredTagiTemp.push(tag) }; });
+    }
+    else { this.tagi.forEach((tag) => { if (tag.tag.en!.toLowerCase().includes(filterValue)) { filteredTagiTemp.push(tag) }; }); }
     return filteredTagiTemp;
   }
+
+
 
 }

@@ -53,7 +53,8 @@ export class OracleMapsDirective implements AfterViewInit, OnInit, OnDestroy {
     });
     if (!this.oracleMapsService.pobierzLadowanieBibliotekiSubject().getValue()) {
     // this.oracleMapsService.zaladujBiblioteke(this.konfiguracja.pobierzMapViewerUrl() + MAPVIEWER_KONFIGURACJA.BIBLIOTEKA_JS_PATH);
-    this.oracleMapsService.zaladujBiblioteke('assets/js/oraclemapsv2_svg.js');    } else {
+    this.oracleMapsService.zaladujBiblioteke('assets/js/oraclemapsv2_svg.js');
+     } else {
       this.zaladujMape();
     }
   }

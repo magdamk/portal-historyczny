@@ -12,7 +12,7 @@
       <div class="mr-4 mt-5 flex-wrap flex gap-1">
         <mat-chip-listbox  multiple="false"  disableRipple="true" [value]="selectedTag"
         hideSingleSelectionIndicator="true" class="lista-kategorii" *ngFor="let tag of filteredTagi$ | async">
-          <mat-chip-option class="chip" (click)="changeChip(tag)" [value]="tag">{{tag.tag}}</mat-chip-option>
+          <mat-chip-option class="chip" (click)="changeChip(tag)" [value]="tag">{{tag.tag | wyborTlumaczenia: aktualnyJezyk}}</mat-chip-option>
         <!-- <mm-tag [tag]="tag"></mm-tag> -->
           <!-- <app-kategorie-map (mapaWybrana)="wybranoMape($event)" [zmianaMapy]="zmianaMapy || wyborMapyDoPorownania"
     [kategoriiMap]="kategoria">

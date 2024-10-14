@@ -54966,14 +54966,27 @@ var ouilib;
 		executeLikeReg: function (b, c) {
 			if (b === c)
 				return !0;
-			var h = "" + b;
-			Gb = "" + c;
+			var h = ("" + b).toUpperCase();
+			Gb = ("" + c).toUpperCase();
 			-1 !== h.indexOf("_") && (h = h.replace(/\_/g,
 						"."));
 			-1 !== h.indexOf("%") && (h = h.replace(/\%/g, "[a-zA-Z0-9.@!#$^\x26*() \\s]*"));
 			h = new RegExp(h);
 			return a.notNull(Gb.match(h)) && 0 < Gb.match(h).length ? Gb.match(h).index >= 0 : !1
 		}
+  //    executeLikeReg: function(b, c) {
+  //           if (b === c)
+  //               return !0;
+  //           var h = "" + b
+  //             , Gb = "" + c;
+  //           -1 !== h.indexOf("_") && (h = h.replace(/\_/g, "."));
+  //           -1 !== h.indexOf("%") && (h = h.replace(/\%/g, "[a-zA-Z0-9.@!#$^\x26*() \\s]+"));
+  //           h = new RegExp(h);
+  //           a.notNull(Gb.match(h)) &&console.log('b: ',b,' c: ',c);
+  //           a.notNull(Gb.match(h)) &&console.log(Gb.match(h)[0]);
+  //           a.notNull(Gb.match(h)) &&console.log(Gb.match(h)[0] === c);
+  //           return a.notNull(Gb.match(h)) && 0 < Gb.match(h).length ? Gb.match(h)[0] === c : !1
+  //       }
 	});
 	a.filter.InsidePolygon = a.filter.Filter.extend({
 		initialize: function sb(a) {
