@@ -14,12 +14,15 @@ module.exports = {
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend:{
+    extend: {
       width: {
         inherit: 'inherit'
       }
     },
     screens: {
+      'um-desktop-xxxs': '1px',
+      'um-desktop-xxs': '399px',
+      'um-desktop-xs': '600px',
       'um-desktop': '900px',
       'um-desktop-s': '1366px',
       'um-desktop-m': '1600px',

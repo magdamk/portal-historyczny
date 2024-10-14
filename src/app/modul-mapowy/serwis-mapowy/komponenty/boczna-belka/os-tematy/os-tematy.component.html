@@ -4,7 +4,7 @@
       <div class="naglowek-c">
         {{'codes.modul-mapowy.belka-boczna.tematy' | translate}}
       </div>
-      <div class="grid grid-cols-2 gap-4 mr-4">
+      <div class="grid grid-cols-2 um-desktop-xxxs:grid-cols-1 um-desktop-xxs:grid-cols-2 um-desktop-xs:grid-cols-3 um-desktop:grid-cols-2 gap-4 mr-4">
         <div class="lista-kategorii" *ngFor="let temat of zbiorTematow">
           <mm-belka-karta-mapy [temat]="temat" (mapaWybrana)="wybranoMape($event)"></mm-belka-karta-mapy>
           <!-- <app-kategorie-map (mapaWybrana)="wybranoMape($event)" [zmianaMapy]="zmianaMapy || wyborMapyDoPorownania"
