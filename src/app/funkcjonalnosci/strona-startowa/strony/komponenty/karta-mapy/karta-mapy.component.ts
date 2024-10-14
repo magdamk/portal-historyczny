@@ -68,7 +68,7 @@ export class KartaMapyComponent implements OnInit {
     // this.wybranoMape();
     // console.log(`/mapa/${this.mapa?.uuidMapy}`+encodeURI(`?rodzaj=${this.mapa?.rodzaj}`));
     this.zapiszParametryWLocalStorage();
-    this.router.navigate([`mapa/${this.mapa?.uuidMapy}`]);
+    this.router.navigate([`portal-historyczny/mapa/${this.mapa?.uuidMapy}`]);
   }
 
   /**
@@ -102,7 +102,7 @@ export class KartaMapyComponent implements OnInit {
       window.open(this.adresUrl, '_blank');
       return;
     }
-    this.router.navigate(['mapa/' + this.mapa?.uuidMapy]);
+    this.router.navigate(['portal-historyczny/mapa/' + this.mapa?.uuidMapy]);
   }
 
   /**
