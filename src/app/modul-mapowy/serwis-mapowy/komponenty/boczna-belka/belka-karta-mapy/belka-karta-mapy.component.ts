@@ -60,6 +60,7 @@ export class BelkaKartaMapyComponent implements OnInit, OnDestroy {
 
   /**
    * Funkcja reaguje na przycisk enter i wywołuje przekierowanie
+   *   this.store.dispatch(LewyPanelWidokActions.pokazNastepnyObszar());
    */
   klikEnter(event: any): void {
     event.stopPropagation();

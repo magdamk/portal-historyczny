@@ -16,6 +16,7 @@ import { FormatowanieInformacjiOObiekcieDirective } from './directives/formatowa
 import { ImgDirective } from './directives/img.directive';
 import { AudioDirective } from './directives/audio.directive';
 import { VideoDirective } from './directives/video.directive';
+import { PrzyciskProstokatnyComponent } from './komponenty/przycisk-prostokatny/przycisk-prostokatny.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { VideoDirective } from './directives/video.directive';
     FormatowanieInformacjiOObiekcieDirective,
     ImgDirective,
     AudioDirective,
-    VideoDirective
+    VideoDirective,
+    PrzyciskProstokatnyComponent
   ],
   imports: [
     CommonModule,
@@ -51,6 +53,7 @@ import { VideoDirective } from './directives/video.directive';
     PrzyciskIkonaComponent,
     PrzyciskMydloComponent,
     PrzyciskOkraglyComponent,
+    PrzyciskProstokatnyComponent,
     PrzewijanyKomponentComponent,
     RerenderDirective,
     VideoDirective

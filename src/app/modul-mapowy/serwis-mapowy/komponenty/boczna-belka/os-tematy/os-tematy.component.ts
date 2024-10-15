@@ -30,8 +30,9 @@ export class OsTematyComponent implements OnInit, OnDestroy {
   @Output() mapaWybrana = new EventEmitter<WyborMapyEvent>();
 
   zbiorTematow: Array<KategoriaGrupaMapOpenDto> = [];
-  aktualnyJezyk='';
+  aktualnyJezyk = '';
   subscription$ = new Subscription();
+  // readonly nastepnyWidok: Widok;
   /**
    * Konstruktor
    */
@@ -50,11 +51,11 @@ export class OsTematyComponent implements OnInit, OnDestroy {
     // // this.pobierzListeTematow();
     // this.subscription$.add(this.tlumaczenia.getZmianaJezykaSubject()
     //   .subscribe(() => this.pobierzListeTematow()));
-
     this.subscription$.add(this.tlumaczenia.getZmianaJezykaSubject().subscribe(jezyk => {
       this.aktualnyJezyk = jezyk;
       this.pobierzListeTematow();
     }));
+    // this.nastepnyWidok = this.store.dispatch(LewyPanelWidokActions.)
     // this.subscription$.add(this.obszary$.subscribe(stan => {
     //   this.obszarySterujace = stan.obszarySterujace.filter(n => n.wirtualne === false);
     //   // this.przygotujListeNarzedziWarstw(stan.narzedziaSterujace)

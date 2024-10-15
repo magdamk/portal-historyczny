@@ -47,7 +47,7 @@ export class OsInfoComponent implements OnInit {
   * Funkcja przenosi narzędzie na wierzch
   */
   przeniesNaWierzch(): void {
-    this.store.dispatch(LewyPanelWidokActions.pokazObszar({ widokId: this.widokIdentyfikator }));
+    this.store.dispatch(LewyPanelWidokActions.pokazObszar({ widokId: this.widokIdentyfikator}));
     // this.pobierzObszarySerwis().dispatch(InterfejsUzytkownikaActions.rozwinLewaBelke());
   }
 

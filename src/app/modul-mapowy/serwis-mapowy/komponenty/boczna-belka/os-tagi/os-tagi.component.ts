@@ -198,7 +198,11 @@ export class OsTagiComponent implements OnInit, OnDestroy {
     else { this.tagi.forEach((tag) => { if (tag.tag.en!.toLowerCase().includes(filterValue)) { filteredTagiTemp.push(tag) }; }); }
     return filteredTagiTemp;
   }
-
+  przelaczNaTematy() {
+    console.log("Przełączam!");
+    this.store.dispatch(LewyPanelWidokActions.zapiszNastepnyObszar({ nastepnyWidok: WIDOKI_ID.TAGI }));
+    this.store.dispatch(LewyPanelWidokActions.pokazObszar({ widokId: WIDOKI_ID.TEMATY }));
+  }
 
 
 }

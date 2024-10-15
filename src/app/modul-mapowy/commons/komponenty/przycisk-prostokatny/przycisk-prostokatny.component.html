@@ -1,0 +1,7 @@
+<button class="przycisk-prostokat label"
+        [ngClass]="[typ, rodzaj]"
+        [class.disabled]="disabled" [disabled]="disabled">
+  <span class="ikona-na-poczatku" *ngIf="ikonaNaPoczatku" [mmIkonaSvg]="ikonaNaPoczatku"></span>
+  {{label}}
+  <span class="ikona-na-koncu" *ngIf="ikonaNaKoncu" [ngClass]="ikonaNaKoncu" [mmIkonaSvg]="ikonaNaKoncu"></span>
+</button>

@@ -1,23 +1,27 @@
 <div class="kontener-narzedzia">
   <mm-przewijany-komponent>
+
+
     <div class="tagi" [class.hidden]="!obszarWidoczny">
       <div class="tytul naglowek-c" [class.hidden]="!obszarWidoczny">
         {{'codes.modul-mapowy.belka-boczna.tagi' | translate}}
       </div>
       <div class="tekst-d"> {{'codes.generyczne.w-przygotowaniu' | translate}}</div>
-      <input
-      [(ngModel)]="filterValue"
-      #name="ngModel" class="filter-input px-3 py-1 w-full" (keyup)="filter(filterValue.trim())"
-      placeholder="{{'codes.modul-mapowy.belka-boczna.tagi-placeholder' | translate}}"/>
-      <div class="mr-4 mt-5 flex-wrap flex gap-1">
-        <mat-chip-listbox  multiple="false"  disableRipple="true" [value]="selectedTag"
-        hideSingleSelectionIndicator="true" class="lista-kategorii" *ngFor="let tag of filteredTagi$ | async">
-          <mat-chip-option class="chip" (click)="changeChip(tag)" [value]="tag">{{tag.tag | wyborTlumaczenia: aktualnyJezyk}}</mat-chip-option>
-        <!-- <mm-tag [tag]="tag"></mm-tag> -->
-          <!-- <app-kategorie-map (mapaWybrana)="wybranoMape($event)" [zmianaMapy]="zmianaMapy || wyborMapyDoPorownania"
+      <div *ngIf="mapa&&mapa.rodzaj==='temat';else noTags">
+        <input [(ngModel)]="filterValue" #name="ngModel" class="filter-input px-3 py-1 w-full"
+          (keyup)="filter(filterValue.trim())"
+          placeholder="{{'codes.modul-mapowy.belka-boczna.tagi-placeholder' | translate}}" />
+        <div class="mr-4 mt-5 flex-wrap flex gap-1">
+          <mat-chip-listbox multiple="false" disableRipple="true" [value]="selectedTag"
+            hideSingleSelectionIndicator="true" class="lista-kategorii" *ngFor="let tag of filteredTagi$ | async">
+            <mat-chip-option class="chip" (click)="changeChip(tag)" [value]="tag">{{tag.tag | wyborTlumaczenia:
+              aktualnyJezyk}}</mat-chip-option>
+            <!-- <mm-tag [tag]="tag"></mm-tag> -->
+            <!-- <app-kategorie-map (mapaWybrana)="wybranoMape($event)" [zmianaMapy]="zmianaMapy || wyborMapyDoPorownania"
     [kategoriiMap]="kategoria">
   </app-kategorie-map> -->
-        </mat-chip-listbox>
+          </mat-chip-listbox>
+        </div>
       </div>
     </div>
     <div class="kontroler" [class.widoczna]="obszarWidoczny" [ngClass]="'poz-'+widok.kolejnosc" [tabindex]="1"
@@ -25,5 +29,13 @@
       matTooltip="{{'codes.modul-mapowy.belka-boczna.tagi' | translate}}">
       <span mmIkonaSvg="tagi24" class="ikona"></span>
     </div>
+
+    <ng-template #noTags>
+      <br />
+      <br />
+      <mm-przycisk-prostokatny typ="maly" rodzaj="PRIMARY" label="{{'codes.modul-mapowy.belka-boczna.wybierz-temat' | translate}}"
+        (click)="przelaczNaTematy()"></mm-przycisk-prostokatny>
+      <!-- <button (click)="przelaczNaTematy()" class="button" type="button">Wybierz temat historyczny aby wyszukiwać</button> --->
+    </ng-template>
   </mm-przewijany-komponent>
 </div>

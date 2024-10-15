@@ -590,7 +590,8 @@
         "szlak": "Trails",
         "mapa-plan": "Maps, plans",
         "liczba-obiektow": "Items: ",
-        "zdjecie": "Photo illustrating the map of: "
+        "zdjecie": "Photo illustrating the map of: ",
+        "wybierz-temat": "Select a theme to search "
       }
     }
   }

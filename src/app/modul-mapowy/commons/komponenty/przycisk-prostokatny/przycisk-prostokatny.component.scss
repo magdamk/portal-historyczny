@@ -1,0 +1,134 @@
+@import "../../../../../style/mm-style/mm-konfiguracja-szablonu.scss";
+
+.przycisk-prostokat {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 25px;
+  border: 2px solid $miasto-blekit;
+
+  .ikona-na-poczatku{
+    display: flex;
+    margin-right: 10px;
+    fill: $miasto-blekit;
+    height: 40%;
+  }
+
+  .ikona-na-koncu{
+    display: flex;
+    margin-left: 10px;
+    fill: $miasto-blekit;
+    height: 40%;
+    &.usun2{
+      height: 70%;
+    }
+  }
+}
+
+.przycisk-prostokat.label {
+  overflow: hidden;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: $miasto-blekit;
+}
+
+.przycisk-prostokat.maly {
+  height: 38px;
+}
+
+.przycisk-prostokat.maly.label {
+  font-size: 1.2rem !important;
+  font-weight: bold;
+}
+
+.przycisk-prostokat.duzy {
+  height: 57px;
+}
+
+.przycisk-prostokat.duzy.label {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.przycisk-prostokat.disabled {
+  background: $miasto-szary;
+  border: 2px solid $miasto-szary;
+  cursor: not-allowed;
+}
+
+.przycisk-prostokat.disabled.label {
+  color: $miasto-bialy;
+  .ikona-na-poczatku{
+    fill: $miasto-bialy
+  }
+
+  .ikona-na-koncu{
+    fill: $miasto-bialy;
+  }
+}
+
+.przycisk-prostokat:not(.disabled):hover {
+  background: $miasto-blekit;
+}
+
+.przycisk-prostokat:not(.disabled).label:hover {
+  color: $miasto-bialy;
+  .ikona-na-poczatku{
+    fill: $miasto-bialy
+  }
+
+  .ikona-na-koncu{
+    fill: $miasto-bialy;
+  }
+}
+
+
+.przycisk-prostokat.primary {
+  background: $miasto-blekit;
+}
+
+.przycisk-prostokat.primary.disabled {
+  background: $miasto-szary;
+  .ikona-na-poczatku{
+    fill: $miasto-szary
+  }
+
+  .ikona-na-koncu{
+    fill: $miasto-szary;
+  }
+}
+
+.przycisk-prostokat.primary.label {
+  color: $miasto-bialy;
+  .ikona-na-poczatku{
+    fill: $miasto-bialy
+  }
+
+  .ikona-na-koncu{
+    fill: $miasto-bialy;
+  }
+}
+
+
+.przycisk-prostokat.primary:not(.disabled):hover {
+  background: $miasto-bialy;
+  .ikona-na-poczatku{
+    fill: $miasto-bialy
+  }
+
+  .ikona-na-koncu{
+    fill: $miasto-bialy;
+  }
+}
+
+.przycisk-prostokat.primary:not(.disabled).label:hover {
+  color: $miasto-blekit;
+  .ikona-na-poczatku{
+    fill: $miasto-bialy
+  }
+
+  .ikona-na-koncu{
+    fill: $miasto-bialy;
+  }
+}
