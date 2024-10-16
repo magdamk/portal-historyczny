@@ -147,11 +147,11 @@ export class BelkaKartaMapyComponent implements OnInit, OnDestroy {
 
 
   zapiszParametryWLocalStorage() {
-    localStorage.setItem('rodzaj', this.temat?.rodzaj ? this.temat.rodzaj : '');
-    localStorage.setItem('imgPath', this.temat?.sciezkaDoPlikuZGrafika ? this.temat.sciezkaDoPlikuZGrafika : '');
+    sessionStorage.setItem('rodzaj', this.temat?.rodzaj ? this.temat.rodzaj : '');
+    sessionStorage.setItem('imgPath', this.temat?.sciezkaDoPlikuZGrafika ? this.temat.sciezkaDoPlikuZGrafika : '');
   }
   zapiszJezykWLocalStorage() {
-    localStorage.setItem('lang', this.jezyk);
+    sessionStorage.setItem('lang', this.jezyk);
   }
   // private aktualizujUrl(url: string): string {
   //   if (url.includes('?')) {

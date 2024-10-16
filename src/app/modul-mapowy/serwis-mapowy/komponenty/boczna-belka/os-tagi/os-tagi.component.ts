@@ -105,8 +105,8 @@ export class OsTagiComponent implements OnInit, OnDestroy {
 
   changeChip(val: TagiDto) {
     this.selectedTag = val;
-    console.log(this.mapView);
-    console.log(this.mapView?.getFeatureLayers().filter((layer) => layer.isVisible(this.mapView!.getMapZoomLevel())));
+    // console.log(this.mapView);
+    // console.log(this.mapView?.getFeatureLayers().filter((layer) => layer.isVisible(this.mapView!.getMapZoomLevel())));
     // console.log(this.tagi_pl);
     // console.log(this.tagi_en);
     // this.tagi_pl.forEach((tagpl) => {
@@ -200,8 +200,9 @@ export class OsTagiComponent implements OnInit, OnDestroy {
   }
   przelaczNaTematy() {
     console.log("Przełączam!");
-    this.store.dispatch(LewyPanelWidokActions.zapiszNastepnyObszar({ nastepnyWidok: WIDOKI_ID.TAGI }));
+    // this.store.dispatch(LewyPanelWidokActions.zapiszNastepnyObszar({ nastepnyWidok: WIDOKI_ID.TAGI }));
     this.store.dispatch(LewyPanelWidokActions.pokazObszar({ widokId: WIDOKI_ID.TEMATY }));
+    sessionStorage.setItem('tagi','true');
   }
 
 

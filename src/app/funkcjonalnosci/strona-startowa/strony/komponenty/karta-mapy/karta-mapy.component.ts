@@ -124,7 +124,7 @@ export class KartaMapyComponent implements OnInit {
 
 
   zapiszParametryWLocalStorage() {
-    localStorage.setItem('rodzaj', this.mapa?.rodzaj ? this.mapa.rodzaj : '');
-    localStorage.setItem('imgPath', this.mapa?.sciezkaDoPlikuZGrafika ? this.mapa.sciezkaDoPlikuZGrafika : '');
+    sessionStorage.setItem('rodzaj', this.mapa?.rodzaj ? this.mapa.rodzaj : '');
+    sessionStorage.setItem('imgPath', this.mapa?.sciezkaDoPlikuZGrafika ? this.mapa.sciezkaDoPlikuZGrafika : '');
   }
 }

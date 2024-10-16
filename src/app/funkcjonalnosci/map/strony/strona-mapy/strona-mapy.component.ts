@@ -228,15 +228,15 @@ export class StronaMapyComponent implements OnInit, OnDestroy {
 
 
   pobierzRodzajZLocalStorage(): string {
-    return localStorage.getItem('rodzaj') || '';
+    return sessionStorage.getItem('rodzaj') || '';
   }
 
   pobierzImgPathZLocalStorage(): string {
-    return localStorage.getItem('imgPath') || '';
+    return sessionStorage.getItem('imgPath') || '';
   }
 
   wyczyscParamZLocalStorage() {
-    localStorage.removeItem('rodzaj');
-    localStorage.removeItem('imgPath');
+    sessionStorage.removeItem('rodzaj');
+    sessionStorage.removeItem('imgPath');
   }
 }
