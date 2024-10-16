@@ -60,7 +60,7 @@ export class SzablonStronyGlownejComponent implements OnInit, AfterViewInit, OnD
     this.zmianaBelkiBocznejSubscription$ = this.szablonyService.getZmianaZawartosciBelkiBocznejSubject()
       .subscribe((komponent) => this.zmianaKomponentuBelkiBocznej(komponent));
     this.tytulStronySubscription$ = this.szablonyService.getTytulStronySubject()
-      .subscribe((tytul) => this.ustawTytulStrony(tytul));
+      .subscribe((tytul) => {this.ustawTytulStrony(tytul);});
     this.zmianaRozwinieciaBelkiBocznejSubscription$ = this.szablonyService.getZmianaRozwinieciaBelkiBocznejSubject()
       .subscribe(rozwinieta => this.ustawRozwiniecieBelkiBocznej(rozwinieta));
     this.routerSubscription$ = this.router.events

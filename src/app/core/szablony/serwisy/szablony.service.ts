@@ -1,6 +1,6 @@
-import {Injectable, Type} from '@angular/core';
-import {BehaviorSubject} from 'rxjs';
-import {BelkaBocznaKomponent} from '../../../wspolne/interfejsy/belka-boczna-komponent';
+import { Injectable, Type } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { BelkaBocznaKomponent } from '../../../wspolne/interfejsy/belka-boczna-komponent';
 
 /**
  * Serwis szablonów
