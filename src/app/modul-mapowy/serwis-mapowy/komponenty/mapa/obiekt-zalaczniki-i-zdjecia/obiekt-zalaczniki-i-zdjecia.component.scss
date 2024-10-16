@@ -12,15 +12,17 @@
 
     .pojedyncze {
 
+      // height: 270px;
       div {
         position: relative;
         display: flex;
-        height: 270px;
+        height: auto;
         align-items: center;
         // max-height:max-content;
-        width: auto;
+        width: fit-content;
         margin-bottom: 10px;
         justify-content: center;
+        vertical-align: middle;
 
         img {
           height: 100%;
@@ -140,6 +142,34 @@
       right: 0;
       width: 61px;
       height: 61px;
+    }
+  }
+
+}
+
+@media (min-width: $prog-przelaczenia) {
+  .pojedyncze {
+    height: 270px;
+    justify-content: center;
+    justify-items: center;
+    display: flex;
+    div {
+      position: relative;
+      display: flex;
+      height: auto;
+      align-items: center;
+      // max-height:max-content;
+      width: fit-content;
+      margin-bottom: 10px;
+      justify-content: center;
+      vertical-align: middle;
+
+
+      img {
+        height: 100%;
+        touch-action: pan-y !important;
+        cursor: pointer;
+      }
     }
   }
 }
