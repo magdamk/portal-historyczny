@@ -68,6 +68,7 @@ $karta-mapy-przycisk-wysokosc: 90px;
 .miniaturka {
   height: $karta-mapy-przycisk-wysokosc;
   background-size: cover;
+  background-position: center;
 }
 
 .opis {

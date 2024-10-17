@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {SzablonStronyGlownejComponent} from './core/szablony/szablon-strony-glownej/szablon-strony-glownej.component';
+import { SzablonMapaComponent } from './core/szablony/szablon-mapa/szablon-mapa.component';
 
 const routes: Routes = [
   {
@@ -26,10 +27,12 @@ const routes: Routes = [
   },
   {
     path: 'mapa',
+    component: SzablonMapaComponent,
     loadChildren: () => import('./funkcjonalnosci/map/map.module').then((m) => m.MapModule),
   },
   {
     path: 'portal-historyczny/mapa',
+    component: SzablonMapaComponent,
     loadChildren: () => import('./funkcjonalnosci/map/map.module').then((m) => m.MapModule),
   },
   {

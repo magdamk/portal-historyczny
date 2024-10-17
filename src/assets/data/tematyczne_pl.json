@@ -48,7 +48,7 @@
           "wersja": "OBIE",
           "dostepnoscDlaWersjiDesktopowej": true,
           "dostepnoscDlaWersjiResponsywnej": true,
-          "sciezkaDoPlikuZGrafika": "",
+          "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/mapa_sport_srodek_braz.svg",
           "numerWTabeli": 3,
           "uuidMapy": ""
         }
@@ -184,7 +184,7 @@
             "wersja": "OBIE",
             "dostepnoscDlaWersjiDesktopowej": false,
             "dostepnoscDlaWersjiResponsywnej": false,
-            "sciezkaDoPlikuZGrafika": "",
+            "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/mapa_sport_srodek_braz2.svg",
             "numerWTabeli": 2,
             "uuidMapy": ""
           },

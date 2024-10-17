@@ -50,7 +50,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   ],
 
   providers: [
-    // {provide: APP_BASE_HREF, useValue: '/portal-historyczny/'},
+    {provide: APP_BASE_HREF, useValue: '/portal-historyczny/'},
     {
     provide: HTTP_INTERCEPTORS,
     useClass: JezykInterceptor,

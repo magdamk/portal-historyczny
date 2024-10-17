@@ -1,7 +1,7 @@
 <app-glowna-wyszukiwarka *ngIf="!wyborMapyDoPorownania"></app-glowna-wyszukiwarka>
 <div class="width-green">
   <div
-    class="mt-8 grid grid-cols-2 gap-4 um-desktop:grid-cols-3 um-desktop-s:grid-cols-3 um-desktop-m:grid-cols-4 um-desktop:gap-8">
+    class="mt-8 grid grid-cols-2 gap-4 um-desktop-xxxs:grid-cols-1 um-desktop-xxs:grid-cols-2 um-desktop-xs:grid-cols-3 um-desktop-s:grid-cols-3 um-desktop-m:grid-cols-4 um-desktop:gap-8">
     <div *ngFor="let mapa of zbiorKategoriiMap?.wyroznioneMapy?.grupyMap">
       <app-karta-mapy [zmianaMapy]="zmianaMapy || wyborMapyDoPorownania" (mapaWybrana)="wybranoMape($event)"
         [mapa]="mapa"></app-karta-mapy>
