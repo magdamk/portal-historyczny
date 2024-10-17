@@ -60,6 +60,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ObiektOpisComponent } from './serwis-mapowy/komponenty/mapa/obiekt-opis/obiekt-opis.component';
 import { LokalizacjaOpisComponent } from './serwis-mapowy/komponenty/mapa/lokalizacja-opis/lokalizacja-opis.component';
 import { ObiektZalacznikiIZdjeciaComponent } from './serwis-mapowy/komponenty/mapa/obiekt-zalaczniki-i-zdjecia/obiekt-zalaczniki-i-zdjecia.component';
+import { OsPasekCzasuComponent } from './serwis-mapowy/komponenty/boczna-belka/os-pasek-czasu/os-pasek-czasu.component';
 
 @NgModule({
   declarations: [
@@ -89,6 +90,7 @@ import { ObiektZalacznikiIZdjeciaComponent } from './serwis-mapowy/komponenty/ma
     ObiektOpisComponent,
     LokalizacjaOpisComponent,
     ObiektZalacznikiIZdjeciaComponent,
+    OsPasekCzasuComponent,
   ],
   imports: [
     CommonModule,

@@ -1,9 +1,9 @@
 <ng-container>
   <ng-container *ngFor="let widok of listaWidokow;trackBy: trackByFn; let i = index; ">
-    <mm-os-przegladanie *ngIf="widok.id===WIDOKI_ID.PRZEGLADANIE"
+    <!-- <mm-os-przegladanie *ngIf="widok.id===WIDOKI_ID.PRZEGLADANIE"
       [style.zIndex]="widok.id===topId ? widok.zIndex+1 : widok.zIndex" [widok]="widok"
       [obszarWidoczny]="widok.id===topId" [mapa]="mapa">
-    </mm-os-przegladanie>
+    </mm-os-przegladanie> -->
     <mm-os-tematy *ngIf="widok.id===WIDOKI_ID.TEMATY" [style.zIndex]="widok.id===topId ? widok.zIndex+1 : widok.zIndex"
       [widok]="widok" [obszarWidoczny]="widok.id===topId" [mapa]="mapa">
     </mm-os-tematy>
@@ -14,8 +14,10 @@
     <mm-os-szlaki *ngIf="widok.id===WIDOKI_ID.SZLAKI" [obszarWidoczny]="widok.id===topId" [widok]="widok"
       [style.zIndex]="widok.id===topId ? widok.zIndex+1 : widok.zIndex">
     </mm-os-szlaki>
-    <mm-os-tagi *ngIf="widok.id===WIDOKI_ID.TAGI" [obszarWidoczny]="widok.id===topId" [widok]="widok" [mapView]="mapView!"
-      [style.zIndex]="widok.id===topId ? widok.zIndex+1 : widok.zIndex" [mapa]="mapa!">
+    <mm-os-pasek-czasu *ngIf="widok.id===WIDOKI_ID.PASKI_CZASU" [obszarWidoczny]="widok.id===topId" [widok]="widok"
+      [style.zIndex]="widok.id===topId ? widok.zIndex+1 : widok.zIndex" [mapa]="mapa"></mm-os-pasek-czasu>
+    <mm-os-tagi *ngIf="widok.id===WIDOKI_ID.TAGI" [obszarWidoczny]="widok.id===topId" [widok]="widok"
+      [mapView]="mapView!" [style.zIndex]="widok.id===topId ? widok.zIndex+1 : widok.zIndex" [mapa]="mapa!">
     </mm-os-tagi>
     <mm-os-info *ngIf="mapa && widok.id===WIDOKI_ID.INFO" [obszarWidoczny]="widok.id===topId" [widok]="widok"
       [style.zIndex]="widok.id===topId ? widok.zIndex+1 : widok.zIndex" [mapa]="mapa">

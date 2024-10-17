@@ -32,6 +32,7 @@ export const UM_IKONY = {
   komunikatPozytywny: 'komunikat_pozytywny',
   wyznaczLokalizajce: 'wyznacz_lokalizacje',
   warstwy: 'warstwy',
+  pasek_czasu: 'pasek-czasu'
 }
 
 /**
@@ -81,6 +82,7 @@ export class IkonySvgComponent{
     iconRegistry.addSvgIcon('komunikat-pozytywny', sanitizer.bypassSecurityTrustResourceUrl('assets/ikony/komunikat_pozytywny.svg'));
     iconRegistry.addSvgIcon('wyznacz_lokalizacje', sanitizer.bypassSecurityTrustResourceUrl('assets/ikony/wyznacz_lokalizacje.svg'));
     iconRegistry.addSvgIcon('warstwy', sanitizer.bypassSecurityTrustResourceUrl('assets/ikony/warstwy.svg'));
+    iconRegistry.addSvgIcon('pasek-czasu', sanitizer.bypassSecurityTrustResourceUrl('assets/ikony/pasek-czasu.svg'));
   }
 
 }

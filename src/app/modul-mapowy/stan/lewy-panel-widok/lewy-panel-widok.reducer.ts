@@ -14,8 +14,8 @@ export interface Widok {
 }
 
 export const LewyPanelWidokInitialState: WidokState = {
-  top: WIDOKI_ID.INFO,
-  widok: DEFINICJA_WIDOKOW.get(WIDOKI_ID.INFO)!,
+  top: WIDOKI_ID.PASKI_CZASU,
+  widok: DEFINICJA_WIDOKOW.get(WIDOKI_ID.PASKI_CZASU)!,
   nastepnyWidok: DEFINICJA_WIDOKOW.get(WIDOKI_ID.TAGI)!,
   widoki: WIDOKI_ARR
 };

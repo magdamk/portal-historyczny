@@ -16,7 +16,7 @@ import { LewyPanelWidokActions } from 'src/app/modul-mapowy/stan/lewy-panel-wido
 })
 export class OsPrzegladanieComponent implements OnInit, OnDestroy {
 
-  widokIdentyfikator = WIDOKI_ID.PRZEGLADANIE;
+  // widokIdentyfikator = WIDOKI_ID.PRZEGLADANIE;
   @Input() widok!: Widok;
 
   @Input()
@@ -62,7 +62,7 @@ export class OsPrzegladanieComponent implements OnInit, OnDestroy {
    * Funkcja przenosi narzędzie na wierzch
    */
    przeniesNaWierzch(): void {
-    this.store.dispatch(LewyPanelWidokActions.pokazObszar({widokId: this.widokIdentyfikator}));
+    // this.store.dispatch(LewyPanelWidokActions.pokazObszar({widokId: this.widokIdentyfikator}));
     // this.pobierzObszarySerwis().dispatch(InterfejsUzytkownikaActions.rozwinLewaBelke());
   }
 

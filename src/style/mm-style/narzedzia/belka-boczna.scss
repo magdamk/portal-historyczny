@@ -4,18 +4,9 @@ mm-os-przegladanie,
 mm-os-szlaki,
 mm-os-tematy,
 mm-os-mapy-plany,
+mm-os-pasek-czasu,
 mm-os-info,
-mm-os-tagi,
-lib-ns-legenda,
-lib-informacje-o-mapie,
-lib-ns-dokonaj-pomiaru,
-lib-ns-porownaj-mapy,
-lib-ns-pasek-czasu,
-lib-ns-przejdz-do-wspolrzednych,
-lib-ns-dodaj-usluge-zewnetrzna,
-lib-ns-analizy-przestrzenne,
-lib-wyszukiwarka-grobow,
-lib-ns-selekcja {
+mm-os-tagi {
   top: 0;
   left: 0;
   position: absolute;
@@ -116,18 +107,9 @@ lib-ns-selekcja {
   mm-os-szlaki,
   mm-os-tematy,
   mm-os-mapy-plany,
+  mm-os-pasek-czasu,
   mm-os-info,
-  mm-os-tagi,
-  lib-ns-legenda,
-  lib-informacje-o-mapie,
-  lib-ns-dokonaj-pomiaru,
-  lib-ns-pasek-czasu,
-  lib-ns-porownaj-mapy,
-  lib-ns-przejdz-do-wspolrzednych,
-  lib-ns-dodaj-usluge-zewnetrzna,
-  lib-ns-analizy-przestrzenne,
-  lib-wyszukiwarka-grobow,
-  lib-ns-selekcja {
+  mm-os-tagi {
     .kontener-narzedzia {
 
       .kontroler {
@@ -139,7 +121,7 @@ lib-ns-selekcja {
       }
 
       .kontroler.poz-2 {
-        top: calc(3 * #{$legenda-kontrolki-romiar + 1px} );
+        top: calc(3 * #{$legenda-kontrolki-romiar + 1px});
       }
 
       .kontroler.poz-3 {
