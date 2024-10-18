@@ -80,6 +80,7 @@ export interface EventNameSpace {
 export interface ControlNameSpace {
   ScaleBar: ScaleBar;
   MapDecoration: MapDecoration;
+  LayerControl?: any
 }
 
 export interface StyleNamespace {

@@ -16,8 +16,8 @@ import { WidokiMapyState } from 'src/app/modul-mapowy/stan/mapa-widok/mapa-widok
 })
 export class WidokMapyNarzedziaSekcjaComponent implements OnInit, OnDestroy {
 
-  WIDOK_MAPY_ID = WIDOKI_MAPY_ID;
-
+  WIDOKI_MAPY_ID = WIDOKI_MAPY_ID;
+  widokMapyId?:string;
   wspoldzielone = false;
   rozwiniety = true;
   widokMapy$: Observable<WidokiMapyState>;
@@ -56,6 +56,7 @@ export class WidokMapyNarzedziaSekcjaComponent implements OnInit, OnDestroy {
    */
   ngOnInit(): void {
     this.subskryocje$.add(this.widokMapy$.subscribe(stan => {
+      this.widokMapyId = stan.widokMapyId
       // this.zarzadzajInstancjaMapa(stan);
       // this.wspoldzielone = stan.narzedziaSterujace[0].id === NARZEDZIA_STERUJACE_ID.NIERUCHOMOSCI;
     }));
@@ -102,7 +103,7 @@ export class WidokMapyNarzedziaSekcjaComponent implements OnInit, OnDestroy {
    * @param stan
    */
   zarzadzajInstancjaMapa(stan: WidokiMapyState) {
-    if (stan.widokMapyId === this.WIDOK_MAPY_ID.WIDOK_PASKA_CZASU) {
+    if (stan.widokMapyId === this.WIDOKI_MAPY_ID.WIDOK_PASKA_CZASU) {
       this.mapView = undefined;
     }
   }

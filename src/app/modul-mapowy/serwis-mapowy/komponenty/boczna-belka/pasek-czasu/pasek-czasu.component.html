@@ -1,1 +1,16 @@
-<p>pasek-czasu works!</p>
+<div class="pasek-czasu" >
+  <div class="tekst-b">{{'codes.modul-mapowy.narzedzie-paska-czasu.pasek-czasu' | translate}} {{'!!!'+(wybranaGrupaPaskaCzasu?.nazwa | wyborTlumaczenia: aktualnyJezyk)+'!!!'}}</div>
+  <div class="slider">
+    <!-- <ngx-slider #ngxSlider [(value)]="aktualnaWartosc" [options]="options" (valueChange)="zmianaPaskaCzasu()"></ngx-slider> -->
+     <div *ngFor="let warstwa of wybranaGrupaPaskaCzasu?.warstwy" (click)="aktualnaWartoscUp()">{{warstwa.nazwa | wyborTlumaczenia: aktualnyJezyk}}</div>
+    <span class="w-lewo" mmIkonaSvg="poprzedni" (click)="poprzedni()"></span>
+    <span class="w-prawo" mmIkonaSvg="nastepny" (click)="nastepny()"></span>
+  </div>
+  <div class="zamknij">
+    <mm-przycisk-ikona ikona="zamknij"
+                        typ="przezroczysty"
+                        (click)="zamknijOkno()"
+                        label="{{'codes.generyczne.zamknij' | translate}}">
+    </mm-przycisk-ikona>
+  </div>
+</div>

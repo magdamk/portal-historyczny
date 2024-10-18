@@ -10,7 +10,9 @@
         <!-- <div class="naglowek-a">
           {{'codes.modul-mapowy.narzedzie-paska-czasu.wybierz-dane-do-porownania' | translate}}
         </div> -->
-        <div class="grupa" *ngFor="let grupa of grupaDanychPaskaCzasu" tabindex="0">
+        <div class="grupa" *ngFor="let grupa of grupaDanychPaskaCzasu" tabindex="0" (click)="wybierzGrupe(grupa)"
+          (keyup.enter)="wybierzGrupe(grupa)">
+
           <div class="grupa-top">
             <div class="nazwa">{{grupa.nazwa | wyborTlumaczenia:aktualnyJezyk }}</div>
           </div>
@@ -18,7 +20,7 @@
             {{'codes.modul-mapowy.belka-boczna.pasek-czasu' | translate | titlecase}}
           </div>
         </div>
-        {{ grupaDanychPaskaCzasu | json}}
+
         <!-- <div class="grupa" *ngFor="let grupa of grupaDanychPaskaCzasu" tabindex="0"
                (click)="wybierzGrupe(grupa)" (keyup.enter)="wybierzGrupe(grupa)">
             <span class="naglowek-d">{{grupa.nazwa | wyborTlumaczenia:aktualnyJezyk}}</span>
@@ -31,6 +33,7 @@
           </mm-przycisk-ikona>
         </div> -->
       </div>
+      {{ grupaDanychPaskaCzasu | json}}
       <!-- <div class="grid grid-cols-2 um-desktop-xxxs:grid-cols-1 um-desktop-xxs:grid-cols-2 um-desktop-xs:grid-cols-3 um-desktop:grid-cols-2 gap-4 mr-4">
         <div class="lista-kategorii" *ngFor="let pasekCzasu of zbiorPaskowCzasu">
           <mm-belka-karta-mapy [temat]="pasekCzasu" (mapaWybrana)="wybranoMape($event)"></mm-belka-karta-mapy> -->

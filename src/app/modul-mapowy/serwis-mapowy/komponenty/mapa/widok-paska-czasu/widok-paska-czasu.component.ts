@@ -16,6 +16,8 @@ import { MapaUtils } from '../../../utils/mapa-utils';
 import { WarstwaUtils } from '../../../utils/warstwa-utils';
 import { OM } from "../../../../oracle-maps/types/om";
 import { WidokiMapyState } from 'src/app/modul-mapowy/stan/mapa-widok/mapa-widok.reducer';
+import { WIDOKI_MAPY_ID } from 'src/app/modul-mapowy/stan/mapa-widok/mapa-widok.const';
+import { MapaWidokActions } from 'src/app/modul-mapowy/stan/mapa-widok/mapa-widok.actions';
 
 declare var OM: OM;
 
@@ -65,7 +67,7 @@ export class WidokPaskaCzasuComponent implements OnInit, OnDestroy {
     private store: Store<{ modulMapowy: any }>,
     private aktualizacjaKomponentuService: AktualizacjaKomponentuService,
     private konfiguracja: KonfiguracjaModulMapowyAdapter) {
-    this.widokMapy$ = store.select('modulMapowy', 'widok-mapy');
+    this.widokMapy$ = store.select('modulMapowy', 'widokMapy');
     this.widokAdministratora = konfiguracja.widokAdministratora();
   }
 
@@ -73,18 +75,23 @@ export class WidokPaskaCzasuComponent implements OnInit, OnDestroy {
    * Cykl życia komponentu inicjalizacja
    */
   ngOnInit(): void {
-    // this.subskryocje$.add(this.widokMapy$
-    //   .pipe(filter(n => n.narzedziaSterujace[0].id === NARZEDZIA_STERUJACE_ID.PASEK_CZASU))
-    //   .pipe(filter(n => n.narzedziaSterujace[0].dane))
-    //   .subscribe(state => {
-    //     if (!this.wybranaGrupaPaskaCzasu) {
-    //       this.wybranaGrupaPaskaCzasu = state.narzedziaSterujace[0].dane;
-    //       this.zaladujWarstwy();
-    //       return;
-    //     }
-    //     this.wybranaGrupaPaskaCzasu = state.narzedziaSterujace[0].dane;
-    //     this.ustawWidocznoscWarstw();
-    //   }));
+    this.subskryocje$.add(this.widokMapy$
+      // .pipe(filter(n => n.widokMapyId === WIDOKI_MAPY_ID.WIDOK_PASKA_CZASU))
+      // .pipe(filter(n => n.dane))
+      .subscribe(state => {
+        if (this.mapView) {
+          this.wybranaGrupaPaskaCzasu = state.dane;
+// this.inicjujMape();
+          this.zaladujWarstwy();
+          this.ustawWidocznoscWarstw();
+          return;
+        }
+        this.wybranaGrupaPaskaCzasu = state.dane;
+        console.log("onInit: MAPVIEW ", this.mapView);
+        // this.zaladujWarstwy();
+        // this.ustawWidocznoscWarstw();
+      }));
+
   }
 
   /**
@@ -92,7 +99,8 @@ export class WidokPaskaCzasuComponent implements OnInit, OnDestroy {
    */
   ngOnDestroy(): void {
     this.subskryocje$.unsubscribe();
-    // this.store.dispatch(NarzedziaActions.zamknijNarzedzie({ identyfikator: NARZEDZIA_STERUJACE_ID.PASEK_CZASU }));
+
+    this.store.dispatch(MapaWidokActions.zamknijMapaWidok({ widokMapyId: WIDOKI_MAPY_ID.WIDOK_PASKA_CZASU }));
   }
 
   /**
@@ -138,6 +146,14 @@ export class WidokPaskaCzasuComponent implements OnInit, OnDestroy {
     this.mapView?.setMapCenterAndZoomLevel(
       new OM.geometry.Point(srodekMapy.x, srodekMapy.y, srodekMapy.srid),
       domyslnyZoom!, true);
+      var optionsLayerControl = {anchorPosition: 6
+        ,
+        contentStyle: {minWidth: 310, maxHeight: 400, font_size: 11, font_family: "Arial"}
+        ,titleStyle: {font_size: 14, font_family: "Arial"}
+    };
+    let layerControl = new OM.control.LayerControl(optionsLayerControl);
+    layerControl.setDraggable(true);
+    this.mapView?.addMapDecoration(layerControl);
   }
 
 
@@ -192,10 +208,12 @@ export class WidokPaskaCzasuComponent implements OnInit, OnDestroy {
    */
   private inicjujMape(): void {
     if (this.grupyWarstwPodkladowych.length && this.mapa && this.bibliotekaOracleZaladoana && !this.mapaZainicjowana) {
-      this.mapView?.addScaleBar();
-      this.mapView?.setMouseWheelZoomBehavior(OM.Map.ZOOM_KEEP_MOUSE_POINT);
+      this.mapView!.addScaleBar();
+      this.mapView!.setMouseWheelZoomBehavior(OM.Map.ZOOM_KEEP_MOUSE_POINT);
       this.inicjujWarstwePodkladowa();
-      this.mapView?.init();
+      this.mapView!.init();
+      this.zaladujWarstwy();
+        this.ustawWidocznoscWarstw();
       this.zarejestrujObslugeZdarzenMapy();
       this.wymusAktualizacjeKomponentu();
     }
@@ -329,7 +347,8 @@ export class WidokPaskaCzasuComponent implements OnInit, OnDestroy {
    * Funkcja ładuje warstwy
    */
   zaladujWarstwy() {
-    this.wybranaGrupaPaskaCzasu?.warstwy.forEach(w => {
+    this.mapView?.removeAllFeatureLayers();
+    this.wybranaGrupaPaskaCzasu!.warstwy.forEach(w => {
       this.zaladujWarstweTematyczna(w.warstwa);
     })
   }
@@ -338,9 +357,11 @@ export class WidokPaskaCzasuComponent implements OnInit, OnDestroy {
    * Funkcja ustawia widocznosc warstw
    */
   ustawWidocznoscWarstw() {
-    this.wybranaGrupaPaskaCzasu?.warstwy.forEach(w => {
-      const layer = this.mapView?.getLayerByName(w.warstwa.uuid);
+    console.log(this.wybranaGrupaPaskaCzasu!.warstwy);
+    this.wybranaGrupaPaskaCzasu!.warstwy.forEach(w => {
+      const layer = this.mapView!.getLayerByName(w.warstwa.uuid);
       if (layer) {
+        // layer.setVisible(false);
         layer.setVisible(w.warstwa.parametrySterujace!.widoczna)
       }
     })
