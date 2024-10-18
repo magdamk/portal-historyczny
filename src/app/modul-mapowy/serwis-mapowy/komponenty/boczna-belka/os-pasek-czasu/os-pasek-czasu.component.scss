@@ -1,4 +1,5 @@
 @import "../../../../../../style/mm-style/mm-konfiguracja-szablonu.scss";
+$karta-mapy-rodzaj-wysokosc: 1.5rem;
 
 .kontener-narzedzia {
   height: 100%;
@@ -30,49 +31,77 @@
 
 
       .grupa {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 150px;
-        width: auto;
-        background-color: $miasto-bialy;
-        color: $miasto-blekit;
-        cursor: pointer;
-        border: 2px solid $miasto-blekit;
-        text-align: center;
+        height: calc(1.5rem + 150px);
+        // border-top: 2px solid $miasto-blekit;
+        // border-left: 2px solid $miasto-blekit;
+        // border-right: 2px solid $miasto-blekit;
+        .grupa-top {
+          border-top: 2px solid $miasto-blekit;
+          border-left: 2px solid $miasto-blekit;
+          border-right: 2px solid $miasto-blekit;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 150px;
+          width: auto;
+          background-color: $miasto-bialy;
+          color: $miasto-blekit;
+          cursor: pointer;
 
-        // height: 150px;
-        // background-color: $miasto-bialy;
-        // border: 2px solid $miasto-blekit;
-        // color: $miasto-blekit;
-        // display: flex;
-        // /* justify-items: center; */
-        // padding: 10px;
-        // cursor: pointer;
+          text-align: center;
 
-        div {
-          text-transform: uppercase;
-          // color: #09c;
-          font-family: "Optimum";
-          font-size: 1.2rem;
-          font-weight: 700;
-          min-height: unset;
+          // height: 150px;
+          // background-color: $miasto-bialy;
+          // border: 2px solid $miasto-blekit;
+          // color: $miasto-blekit;
+          // display: flex;
+          // /* justify-items: center; */
+          // padding: 10px;
+          // cursor: pointer;
 
-          // width: 100%;
-          // height: 100%;
-          // text-align: center;
-          // /* vertical-align: middle; */
-          // font-family: "Optimum";
-          // font-size: 1.3rem;
-          // margin: auto;
-          // text-transform: uppercase;
+          div.nazwa {
+            text-transform: uppercase;
+            // color: #09c;
+            font-family: "Optimum";
+            font-size: 1.2rem;
+            font-weight: 700;
+            min-height: unset;
+
+            // width: 100%;
+            // height: 100%;
+            // text-align: center;
+            // /* vertical-align: middle; */
+            // font-family: "Optimum";
+            // font-size: 1.3rem;
+            // margin: auto;
+            // text-transform: uppercase;
+          }
+        }
+
+        div.rodzaj-mapy {
+          color: $miasto-bialy;
+          // background-color: $miasto-blekit;
+          background-color: #C22F25;
+          // background-color: $miasto-blekit-dark;
+          // color: $miasto-blekit-dark;
+          // background-color: $miasto-blekit-20p;
+          // font-family: 'LinuxBiolinumORegular';
+          font-family: 'Optimum';
+          font-weight: normal;
+          font-style: normal;
+          text-align: center;
+          // padding-top: 2px;
+          font-size: 1rem;
+          height: $karta-mapy-rodzaj-wysokosc;
         }
       }
 
       :hover {
-        color: $miasto-bialy;
-        font-weight: 700;
-        background-color: $miasto-blekit;
+        .grupa-top {
+          color: $miasto-bialy;
+          font-weight: 700;
+          background-color: $miasto-blekit;
+        }
       }
     }
   }

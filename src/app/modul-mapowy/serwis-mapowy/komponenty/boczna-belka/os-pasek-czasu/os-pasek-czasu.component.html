@@ -11,7 +11,12 @@
           {{'codes.modul-mapowy.narzedzie-paska-czasu.wybierz-dane-do-porownania' | translate}}
         </div> -->
         <div class="grupa" *ngFor="let grupa of grupaDanychPaskaCzasu" tabindex="0">
-          <div class="tytul">{{grupa.nazwa | wyborTlumaczenia:aktualnyJezyk }}</div>
+          <div class="grupa-top">
+            <div class="nazwa">{{grupa.nazwa | wyborTlumaczenia:aktualnyJezyk }}</div>
+          </div>
+          <div class="tekst-d rodzaj-mapy">
+            {{'codes.modul-mapowy.belka-boczna.pasek-czasu' | translate | titlecase}}
+          </div>
         </div>
         {{ grupaDanychPaskaCzasu | json}}
         <!-- <div class="grupa" *ngFor="let grupa of grupaDanychPaskaCzasu" tabindex="0"
