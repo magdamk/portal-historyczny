@@ -12,6 +12,10 @@ import { LewyPanelWidokActions } from 'src/app/modul-mapowy/stan/lewy-panel-wido
 import { WIDOKI_ID } from 'src/app/modul-mapowy/stan/lewy-panel-widok/lewy-panel-widok.const';
 import { Widok } from 'src/app/modul-mapowy/stan/lewy-panel-widok/lewy-panel-widok.reducer';
 import { Mapa } from '../../../modele/mapa';
+import { GrupaWarstwPaskaCzasu } from '../../../modele/grupa-warstw-paska-czasu';
+import { PasekCzasuModulMapowyAdapter } from 'src/app/modul-mapowy/mm-core/providers/pasek-czasu-adapter';
+import { ControllerPasekCzasuOpenService } from '../../../serwisy/controller-pasek-czasu-open.service';
+import { WidokMapyGrupaDanychPaskaCzasuDto } from 'src/app/core/modele/widok-mapy-grupa-danych-paska-czasu-dto';
 
 @Component({
   selector: 'mm-os-pasek-czasu',
@@ -25,8 +29,10 @@ export class OsPasekCzasuComponent implements OnInit, OnDestroy {
   @Input() obszarWidoczny?: boolean | undefined;
   @Output() mapaWybrana = new EventEmitter<WyborMapyEvent>();
 
+  grupaDanychPaskaCzasu?: WidokMapyGrupaDanychPaskaCzasuDto[];
+
+  aktualnyJezyk = 'pl';
   zbiorPaskowCzasu: Array<KategoriaGrupaMapOpenDto> = [];
-  aktualnyJezyk='';
   subscription$ = new Subscription();
   /**
    * Konstruktor
@@ -34,6 +40,7 @@ export class OsPasekCzasuComponent implements OnInit, OnDestroy {
   constructor(private tlumaczenia: TlumaczeniaService,
     private serviceKategoriiMap: ControllerKategorieMapService,
     private konfiguracja: KonfiguracjaModulMapowyAdapter,
+private serwisPaskaCzasu: ControllerPasekCzasuOpenService,
     private store: Store<{ modulMapowy: any }>, private router: Router) {
   }
 
@@ -44,7 +51,10 @@ export class OsPasekCzasuComponent implements OnInit, OnDestroy {
   // // this.pobierzListeTematow();
   // this.subscription$.add(this.tlumaczenia.getZmianaJezykaSubject()
   //   .subscribe(() => this.pobierzListeTematow()));
-
+  // this.pasekCzasu.pobierzGrupyWarstwPaskaCzasu().subscribe(dane => {
+  //   this.grupaDanychPaskaCzasu = dane;
+  //   console.log('Pasek czasu, dane: ',dane);
+  // })
   this.subscription$.add(this.tlumaczenia.getZmianaJezykaSubject().subscribe(jezyk => {
     this.aktualnyJezyk = jezyk;
     this.pobierzListePaskówCzasu();
@@ -70,21 +80,30 @@ przeniesNaWierzch(): void {
   this.store.dispatch(LewyPanelWidokActions.pokazObszar({ widokId: this.widokIdentyfikator }));
   // this.pobierzObszarySerwis().dispatch(InterfejsUzytkownikaActions.rozwinLewaBelke());
 }
+// wybierzGrupe(grupa: GrupaWarstwPaskaCzasu) {
+//   this.dialogRef.close(grupa);
+// }
 
+// /**
+//  * Funkcja zamyka okno
+//  */
+// zamknijOkno() {
+//   this.dialogRef.close();
+// }
 
 /**
 * Funkcja do pobierania listy kategorii map
 */
 private pobierzListePaskówCzasu(): void {
-
-  this.serviceKategoriiMap.getKategorieMap()
-    .subscribe((result: any) => {
-      // console.log('pobierzListeKategoriiMap: ', result.content.kategorieTematyczne[1].grupyMap);
-      // if (result.content.typ.ObiektEnum==='KATEGORIA_TEMATYCZNA') {
-      this.zbiorPaskowCzasu = Array.from(result.content.kategorieTematyczne[1].grupyMap);
-      // console.log('!!!!pobierzListeKategoriiMap: ', this.zbiorMapPlanow);
-      // }
-    });
+this.serwisPaskaCzasu.pobierzListeGrupDanychPaskaCzasu().subscribe((data)=> {console.log('PASEK: ',data);this.grupaDanychPaskaCzasu=data!.content!;});
+  // this.serviceKategoriiMap.getKategorieMap()
+  //   .subscribe((result: any) => {
+  //     // console.log('pobierzListeKategoriiMap: ', result.content.kategorieTematyczne[1].grupyMap);
+  //     // if (result.content.typ.ObiektEnum==='KATEGORIA_TEMATYCZNA') {
+  //     // this.zbiorPaskowCzasu = Array.from(result.content.kategorieTematyczne[1].grupyMap);
+  //     // console.log('!!!!pobierzListeKategoriiMap: ', this.zbiorMapPlanow);
+  //     // }
+  //   });
   // this.serviceKategoriiMap.pobierzListeKategorieMapDlaPortalu(wersja)
   //   .subscribe((result: any) => {
   //     if (result.content) {
@@ -105,5 +124,18 @@ wybranoMape(event: WyborMapyEvent): void {
   }
   // this.mapaWybrana.emit(event);
 }
+ /**
+   * Fukcja ładuje wybraną grupę
+   * @param grupa
+   */
+ wybierzGrupe(grupa: GrupaWarstwPaskaCzasu) {
+  // this.dialogRef.close(grupa);
+}
 
+/**
+ * Funkcja zamyka okno
+ */
+zamknijOkno() {
+  // this.dialogRef.close();
+}
 }

@@ -1,0 +1,24 @@
+import { WidokiMapy } from "./mapa-widok.reducer";
+
+export const WIDOKI_MAPY_ID = {
+  WIDOK_MAPY: 'WIDOK_MAPY',
+  WIDOK_PASKA_CZASU: 'WIDOK_PASKA_CZASU',
+  PRZEJDZ_DO_WSPOLRZEDNYCH: 'PRZEJDZ_DO_WSPOLRZEDNYCH',
+};
+
+
+const WIDOKI_MAPY_WIDOK_MAPY = {
+  id: WIDOKI_MAPY_ID.WIDOK_MAPY, desktop: true, mobile: true
+} as WidokiMapy;
+const WIDOKI_MAPY_WIDOK_PASKA_CZASU = {
+  id: WIDOKI_MAPY_ID.WIDOK_PASKA_CZASU,
+  desktop: true,
+  mobile: true
+} as WidokiMapy;
+
+export const DEFINICJA_WIDOKOW_MAPY = new Map<string, WidokiMapy>([
+  [WIDOKI_MAPY_ID.WIDOK_MAPY, WIDOKI_MAPY_WIDOK_MAPY],
+  [WIDOKI_MAPY_ID.WIDOK_PASKA_CZASU, WIDOKI_MAPY_WIDOK_PASKA_CZASU],
+  // [WIDOKI_MAPY_ID.WIDOK_MAPY, WIDOKI_MAPY_WIDOK_MAPY],
+
+]);

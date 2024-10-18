@@ -1,0 +1,22 @@
+<div class="mapa">
+  <div #pasekSkali></div>
+  <div class="widok-mapy" *ngIf="mapa && grupyWarstwPodkladowych?.length"
+       mmOracleMaps (mapaUtworzonaZmiana)="widokMapyUtworzony($event)">
+  </div>
+  <div class="podklady" [class.prawa]="lokalizacjaMapPodkladowych!=='LEWA'"
+       *ngIf="grupyWarstwPodkladowych?.length && zmianaMapPodkladowychWidoczna">
+    <mm-kontroler-warstw-podkladowych [grupyWarstwPodkladowych]="grupyWarstwPodkladowych"
+                                       [mapa]="mapa"
+                                       [lokalizacjaMapPodkladowych]="lokalizacjaMapPodkladowych"
+                                       (zmianaPodkladu)="przelaczonoMapePodkladowa($event)">
+    </mm-kontroler-warstw-podkladowych>
+  </div>
+  <div class="sterowanie-mapy">
+    <mm-sterowanie-mapy *ngIf="mapView"
+                         [sterowanieMapyWidoczne]="sterowanieMapyWidoczne"
+                         [udostepnionaLokalizacja]="mapa?.udostepnionaLokalizacja"
+                         [mapView]="mapView">
+    </mm-sterowanie-mapy>
+  </div>
+</div>
+

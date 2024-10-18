@@ -24,7 +24,7 @@ import { KontaktZAdministratoremModulMapowyAdapter, DomyslnyKontaktZAdministrato
 // import { CmentarzeModulMapowyAdapter, DomyslneCmentarzeAdapter } from './mm-core/providers/cmentarze-adapter';
 import { MapyModulMapowyAdapter, DomyslneMapyModulMapowyAdapter } from './mm-core/providers/mapy-adapter';
 import { MultimediaIZalacznikiModulMapowyAdapter, DomyslnyMultimediaIZalacznikiAdapter } from './mm-core/providers/multimedia-i-zalaczniki-adapter';
-// import { PasekCzasuModulMapowyAdapter, DomyslnyPasekCzasuModulMapowyAdapter } from './mm-core/providers/pasek-czasu-adapter';
+import { PasekCzasuModulMapowyAdapter, DomyslnyPasekCzasuModulMapowyAdapter } from './mm-core/providers/pasek-czasu-adapter';
 import { PobieranieDanychModulMapowyAdapter, DomyslnyPobieranieDanychAdapter } from './mm-core/providers/pobieranie-danych-adapter';
 import { PomocModulMapowyAdapter, DomyslnaPomocModulMapowyAdapter } from './mm-core/providers/pomoc-adapter';
 // import { UslugiZewnetrzneModulMapowyAdapter, DomyslneUslugiZewnetrzneAdapter } from './mm-core/providers/uslugi-zewnetrzne-adapter';
@@ -61,6 +61,9 @@ import { ObiektOpisComponent } from './serwis-mapowy/komponenty/mapa/obiekt-opis
 import { LokalizacjaOpisComponent } from './serwis-mapowy/komponenty/mapa/lokalizacja-opis/lokalizacja-opis.component';
 import { ObiektZalacznikiIZdjeciaComponent } from './serwis-mapowy/komponenty/mapa/obiekt-zalaczniki-i-zdjecia/obiekt-zalaczniki-i-zdjecia.component';
 import { OsPasekCzasuComponent } from './serwis-mapowy/komponenty/boczna-belka/os-pasek-czasu/os-pasek-czasu.component';
+import { PasekCzasuComponent } from './serwis-mapowy/komponenty/boczna-belka/pasek-czasu/pasek-czasu.component';
+import { WidokPaskaCzasuComponent } from './serwis-mapowy/komponenty/mapa/widok-paska-czasu/widok-paska-czasu.component';
+import { mapaWidokReducer } from './stan/mapa-widok/mapa-widok.reducer';
 
 @NgModule({
   declarations: [
@@ -91,6 +94,8 @@ import { OsPasekCzasuComponent } from './serwis-mapowy/komponenty/boczna-belka/o
     LokalizacjaOpisComponent,
     ObiektZalacznikiIZdjeciaComponent,
     OsPasekCzasuComponent,
+    PasekCzasuComponent,
+    WidokPaskaCzasuComponent,
   ],
   imports: [
     CommonModule,
@@ -107,7 +112,8 @@ import { OsPasekCzasuComponent } from './serwis-mapowy/komponenty/boczna-belka/o
     TranslateModule,
     StoreModule.forFeature('modulMapowy', {
       interfejsUzytkownika: interfejsUzytkowikaReducer,
-      widoki: lewyPanelWidokReducer
+      widoki: lewyPanelWidokReducer,
+      widokMapy: mapaWidokReducer
     }
     ),
   ],
@@ -138,7 +144,7 @@ import { OsPasekCzasuComponent } from './serwis-mapowy/komponenty/boczna-belka/o
     // {provide: CmentarzeModulMapowyAdapter, useClass: DomyslneCmentarzeAdapter},
     // {provide: NieruchomosciModulMapowyAdapter, useClass: DomyslneNieruchomosciAdapter},
     // {provide: UslugiZewnetrzneModulMapowyAdapter, useClass: DomyslneUslugiZewnetrzneAdapter},
-    // {provide: PasekCzasuModulMapowyAdapter, useClass: DomyslnyPasekCzasuModulMapowyAdapter},
+    {provide: PasekCzasuModulMapowyAdapter, useClass: DomyslnyPasekCzasuModulMapowyAdapter},
     { provide: PomocModulMapowyAdapter, useClass: DomyslnaPomocModulMapowyAdapter },
     // {provide: AnalizyPrzestrzenneModulMapowyAdapter, useClass: DomyslneAnalizyPrzstrzenneAdapter},
     { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { disableClose: true, hasBackdrop: true } },

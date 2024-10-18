@@ -14,6 +14,7 @@ import { KolekcjeUtils } from '../../../utils/kolekcje-utils';
 import { Layer } from 'src/app/modul-mapowy/oracle-maps/types/layer';
 import { MapaUtils } from '../../../utils/mapa-utils';
 import { EmptyUtils } from '../../../utils/empty-utils';
+import { WIDOKI_MAPY_ID } from 'src/app/modul-mapowy/stan/mapa-widok/mapa-widok.const';
 
 declare var OM: OM;
 
@@ -24,8 +25,10 @@ declare var OM: OM;
 })
 
 
-
 export class WidokMapyComponent implements OnInit, OnDestroy {
+
+  WIDOKI_MAPY_ID = WIDOKI_MAPY_ID;
+
   @Input() grupyWarstwPodkladowych: GrupaWarstwPodkladowych[] = [];
   @Input() mapa?: Mapa;
   @Input() synchronizujZoomISrodek = true;
@@ -462,21 +465,21 @@ export class WidokMapyComponent implements OnInit, OnDestroy {
     this.mapaService.aktualizacjaWarstwyPodkladowej(this.mapa!);
   }
 
-    /**
-   * Funkcja konfiguruje funckjonalność synchronizacji map
-   */
-    private konfigurujSynchronizacjeMap() {
-      if (this.synchronizujZoomISrodek) {
-        this.subskryocje$.add(this.mapaService.pobierzSubjectAktualizacjiZoomISrodek()
-          .subscribe((event) => {
-            if (event && event.srodek && event.identyfikatorMapy !== this.mapa?.uuid && this.czyZoomISrodekDoAktualizacji(event)) {
-              this.mapView?.setMapCenterAndZoomLevel(event.srodek,
-                event.zoom ? event.zoom : 0, false
-              );
-            }
-          }));
-      }
+  /**
+ * Funkcja konfiguruje funckjonalność synchronizacji map
+ */
+  private konfigurujSynchronizacjeMap() {
+    if (this.synchronizujZoomISrodek) {
+      this.subskryocje$.add(this.mapaService.pobierzSubjectAktualizacjiZoomISrodek()
+        .subscribe((event) => {
+          if (event && event.srodek && event.identyfikatorMapy !== this.mapa?.uuid && this.czyZoomISrodekDoAktualizacji(event)) {
+            this.mapView?.setMapCenterAndZoomLevel(event.srodek,
+              event.zoom ? event.zoom : 0, false
+            );
+          }
+        }));
     }
+  }
 
   /**
    * Funkcja sprawdza czy nowy wartości zoom i położenie środka są inne niż aktualne
@@ -510,13 +513,13 @@ export class WidokMapyComponent implements OnInit, OnDestroy {
       return;
     }
     switch (warstwa.typWyswietlania) {
-      case TypWyswietlania.KATALOG : {
+      case TypWyswietlania.KATALOG: {
         KolekcjeUtils.forEachRevers(warstwa.warstwy, (w) => {
           this.aktualizujWarstweWWidokuMapy(w);
         });
         break;
       }
-      case TypWyswietlania.WARSTWA : {
+      case TypWyswietlania.WARSTWA: {
         this.ustawParametryWarstwyWwidoku(warstwa);
         break;
       }
@@ -562,12 +565,12 @@ export class WidokMapyComponent implements OnInit, OnDestroy {
     }
     const licencjaTekst = new OM.control.MapDecoration(
       `<span>Właściciel Portalu - © Prezydent M. St. Warszawy</span>`, {
-        contentStyle: {
-          'font-size': '16px',
-          'font-family': 'Roboto Condensed'
-        },
-        draggable: false
-      });
+      contentStyle: {
+        'font-size': '16px',
+        'font-family': 'Roboto Condensed'
+      },
+      draggable: false
+    });
     licencjaTekst?.setPosition(10, (this.mapView as any).$oracleMapDiv[0].clientHeight - 50);
     licencjaTekst?.setVisible(true);
     this.mapView?.addMapDecoration(licencjaTekst);

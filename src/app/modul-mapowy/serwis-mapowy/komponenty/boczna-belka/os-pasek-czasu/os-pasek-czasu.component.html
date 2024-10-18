@@ -5,13 +5,34 @@
         {{'codes.modul-mapowy.belka-boczna.paski-czasu' | translate}}
       </div>
       <div class="tekst-d"> {{'codes.generyczne.w-przygotowaniu' | translate}}</div>
+      <div
+        class="grupy-paska-czasu grid grid-cols-2 um-desktop-xxxs:grid-cols-1 um-desktop-xxs:grid-cols-2 um-desktop-xs:grid-cols-3 um-desktop:grid-cols-2 gap-4 mr-4">
+        <!-- <div class="naglowek-a">
+          {{'codes.modul-mapowy.narzedzie-paska-czasu.wybierz-dane-do-porownania' | translate}}
+        </div> -->
+        <div class="grupa" *ngFor="let grupa of grupaDanychPaskaCzasu" tabindex="0">
+          <div class="tytul">{{grupa.nazwa | wyborTlumaczenia:aktualnyJezyk }}</div>
+        </div>
+        {{ grupaDanychPaskaCzasu | json}}
+        <!-- <div class="grupa" *ngFor="let grupa of grupaDanychPaskaCzasu" tabindex="0"
+               (click)="wybierzGrupe(grupa)" (keyup.enter)="wybierzGrupe(grupa)">
+            <span class="naglowek-d">{{grupa.nazwa | wyborTlumaczenia:aktualnyJezyk}}</span>
+          </div> -->
+        <!-- <div class="zamknij">
+          <mm-przycisk-ikona ikona="zamknij"
+                              typ="przezroczysty"
+                              (click)="zamknijOkno()"
+                              label="{{'codes.generyczne.zamknij' | translate}}">
+          </mm-przycisk-ikona>
+        </div> -->
+      </div>
       <!-- <div class="grid grid-cols-2 um-desktop-xxxs:grid-cols-1 um-desktop-xxs:grid-cols-2 um-desktop-xs:grid-cols-3 um-desktop:grid-cols-2 gap-4 mr-4">
         <div class="lista-kategorii" *ngFor="let pasekCzasu of zbiorPaskowCzasu">
           <mm-belka-karta-mapy [temat]="pasekCzasu" (mapaWybrana)="wybranoMape($event)"></mm-belka-karta-mapy> -->
-          <!-- <app-kategorie-map (mapaWybrana)="wybranoMape($event)" [zmianaMapy]="zmianaMapy || wyborMapyDoPorownania"
+      <!-- <app-kategorie-map (mapaWybrana)="wybranoMape($event)" [zmianaMapy]="zmianaMapy || wyborMapyDoPorownania"
       [kategoriiMap]="kategoria">
     </app-kategorie-map> -->
-        <!-- </div>
+      <!-- </div>
       </div> -->
     </div>
     <div class="kontroler" [tabindex]="1" [class.widoczna]="obszarWidoczny" [ngClass]="'poz-'+widok!.kolejnosc"

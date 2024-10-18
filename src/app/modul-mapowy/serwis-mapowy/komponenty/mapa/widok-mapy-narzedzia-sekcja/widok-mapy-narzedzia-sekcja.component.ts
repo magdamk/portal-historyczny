@@ -6,6 +6,8 @@ import { Observable, Subscription } from 'rxjs';
 import { KonfiguracjaModulMapowyAdapter } from 'src/app/modul-mapowy/mm-core/providers/konfiguracja-adapter';
 import { MapaService } from '../../../serwisy/mapa.service';
 import {Map} from '../../../../oracle-maps/types/map';
+import { WIDOKI_MAPY_ID } from 'src/app/modul-mapowy/stan/mapa-widok/mapa-widok.const';
+import { WidokiMapyState } from 'src/app/modul-mapowy/stan/mapa-widok/mapa-widok.reducer';
 
 @Component({
   selector: 'mm-widok-mapy-narzedzia-sekcja',
@@ -14,11 +16,11 @@ import {Map} from '../../../../oracle-maps/types/map';
 })
 export class WidokMapyNarzedziaSekcjaComponent implements OnInit, OnDestroy {
 
-  // NARZEDZIA_IDENTYFIKATORY = NARZEDZIA_WYKONAWCZE_ID;
+  WIDOK_MAPY_ID = WIDOKI_MAPY_ID;
 
   wspoldzielone = false;
   rozwiniety = true;
-  // narzedzia$: Observable<NarzedziaState>;
+  widokMapy$: Observable<WidokiMapyState>;
   // interfejsUzytkownika$: Observable<InterfejsUzytkownikaStan>;
 
   subskryocje$ = new Subscription();
@@ -41,11 +43,11 @@ export class WidokMapyNarzedziaSekcjaComponent implements OnInit, OnDestroy {
    * @param changeDetector
    */
   constructor(
-    // private store: Store<{ modulMapowy: any }>,
+    private store: Store<{ modulMapowy: any }>,
               private mapaService: MapaService,
               private konfiguracja: KonfiguracjaModulMapowyAdapter) {
     // this.widokAdministratora = this.konfiguracja.widokAdministratora();
-    // this.narzedzia$ = store.select('modulMapowy', 'narzedzia');
+    this.widokMapy$ = store.select('modulMapowy', 'widokMapy');
     // this.interfejsUzytkownika$ = store.select('modulMapowy', 'interfejsUzytkownika');
   }
 
@@ -53,10 +55,10 @@ export class WidokMapyNarzedziaSekcjaComponent implements OnInit, OnDestroy {
    * Cykl życia komponentu inicjalizacja
    */
   ngOnInit(): void {
-    // this.subskryocje$.add(this.narzedzia$.subscribe(stan => {
-    //   this.zarzadzajInstancjaMapa(stan);
-    //   this.wspoldzielone = stan.narzedziaSterujace[0].id === NARZEDZIA_STERUJACE_ID.NIERUCHOMOSCI;
-    // }));
+    this.subskryocje$.add(this.widokMapy$.subscribe(stan => {
+      // this.zarzadzajInstancjaMapa(stan);
+      // this.wspoldzielone = stan.narzedziaSterujace[0].id === NARZEDZIA_STERUJACE_ID.NIERUCHOMOSCI;
+    }));
     this.subskryocje$.add(this.mapaService.pobierzSubjectRerenderowaniaMapyGlownej().subscribe(() => {
       this.mapView = undefined;
       this.rerenderuj++;
@@ -99,10 +101,9 @@ export class WidokMapyNarzedziaSekcjaComponent implements OnInit, OnDestroy {
    * Funkcja cysci instancje mapy przy zmianie narzedzia
    * @param stan
    */
-  // zarzadzajInstancjaMapa(stan: NarzedziaState) {
-  //   if (stan.narzedziaSterujace[0].id === NARZEDZIA_STERUJACE_ID.POROWNAJ_MAPY ||
-  //     stan.narzedziaSterujace[0].id === NARZEDZIA_STERUJACE_ID.PASEK_CZASU) {
-  //     this.mapView = undefined;
-  //   }
-  // }
+  zarzadzajInstancjaMapa(stan: WidokiMapyState) {
+    if (stan.widokMapyId === this.WIDOK_MAPY_ID.WIDOK_PASKA_CZASU) {
+      this.mapView = undefined;
+    }
+  }
 }
