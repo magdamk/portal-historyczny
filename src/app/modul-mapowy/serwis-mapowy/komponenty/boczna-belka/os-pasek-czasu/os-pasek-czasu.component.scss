@@ -30,28 +30,48 @@
 
 
       .grupa {
-        height: 150px;
-        background-color: $miasto-bialy;
-        border: 2px solid $miasto-blekit;
-        color: $miasto-blekit;
         display: flex;
-        /* justify-items: center; */
-        padding: 10px;
+        align-items: center;
+        justify-content: center;
+        height: 150px;
+        width: auto;
+        background-color: $miasto-bialy;
+        color: $miasto-blekit;
         cursor: pointer;
+        border: 2px solid $miasto-blekit;
+        text-align: center;
+
+        // height: 150px;
+        // background-color: $miasto-bialy;
+        // border: 2px solid $miasto-blekit;
+        // color: $miasto-blekit;
+        // display: flex;
+        // /* justify-items: center; */
+        // padding: 10px;
+        // cursor: pointer;
 
         div {
+          text-transform: uppercase;
+          // color: #09c;
+          font-family: "Optimum";
+          font-size: 1.2rem;
+          font-weight: 700;
+          min-height: unset;
+
           // width: 100%;
           // height: 100%;
-          text-align: center;
-          /* vertical-align: middle; */
-          font-family: "Optimum";
-          font-size: 1.3rem;
-          margin: auto;
-          text-transform: uppercase;
+          // text-align: center;
+          // /* vertical-align: middle; */
+          // font-family: "Optimum";
+          // font-size: 1.3rem;
+          // margin: auto;
+          // text-transform: uppercase;
         }
       }
-      :hover{
+
+      :hover {
         color: $miasto-bialy;
+        font-weight: 700;
         background-color: $miasto-blekit;
       }
     }
