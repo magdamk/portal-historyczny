@@ -133,6 +133,9 @@ export class OsPasekCzasuComponent implements OnInit, OnDestroy {
     * @param grupa
     */
   wybierzGrupe(grupa: GrupaWarstwPaskaCzasu) {
+    // this.store.dispatch(MapaWidokActions.zamknijMapaWidok({ widokMapyId: this.widokMapyIdentyfikator }))
+    this.store.dispatch(MapaWidokActions.reset());
+    // this.store.dispatch(LewyPanelWidokActions.pokazObszar({ widokId: WIDOKI_ID.INFO }));
     this.store.dispatch(MapaWidokActions.aktualizujDane({ widokMapyId: this.widokMapyIdentyfikator, dane:  KolekcjeUtils.klonowanieObiektu(grupa) }))
     this.store.dispatch(MapaWidokActions.uruchomMapaWidok({ widokMapyId: this.widokMapyIdentyfikator }))
     // this.dialogRef.close(grupa);

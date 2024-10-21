@@ -28,6 +28,7 @@ export class WarstwaUtils {
    */
   static utworzWarstweMapy(uuid: string | undefined, warstwa: Warstwa, konfiguracja: KonfiguracjaAdapter, map: Mapp): Layer {
     if (warstwa.szczegolyWarstwy?.typ === TypWarstwy.TILE_LAYER) {
+      // console.log('raster: ',warstwa.szczegolyWarstwy.typ);
       return this.utworzWarstweRastrowa(uuid, warstwa, konfiguracja);
     }
     if (warstwa.szczegolyWarstwy?.typ === TypWarstwy.ANAL_LAYER) {
@@ -41,8 +42,10 @@ export class WarstwaUtils {
     //   return this.utworzWarstweWmts(uuid, warstwa, konfiguracja, map);
     // }
     if (warstwa.szczegolyWarstwy?.dynamicTileLayer) {
+      // console.log('dtl: ',warstwa.szczegolyWarstwy.typ);
       return this.utworzWarstweDynamic(uuid, warstwa, konfiguracja, map);
     }
+    // console.log('wektor: ',warstwa.szczegolyWarstwy?.typ);
     return this.utworzWarstweWektorowa(uuid, warstwa, konfiguracja);
   }
 

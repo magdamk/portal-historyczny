@@ -11,6 +11,8 @@ import { LewyPanelWidokInitialState } from 'src/app/modul-mapowy/stan/lewy-panel
 import { LewyPanelWidokActions } from 'src/app/modul-mapowy/stan/lewy-panel-widok/lewy-panel-widok.actions';
 import { WIDOK_INFO } from 'src/app/modul-mapowy/stan/lewy-panel-widok/lewy-panel-widok.const';
 import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/tlumaczenia.service';
+import { MapaWidokActions } from 'src/app/modul-mapowy/stan/mapa-widok/mapa-widok.actions';
+import { WIDOKI_MAPY_ID } from 'src/app/modul-mapowy/stan/mapa-widok/mapa-widok.const';
 
 @Component({
   selector: 'mm-belka-karta-mapy',
@@ -66,7 +68,9 @@ export class BelkaKartaMapyComponent implements OnInit, OnDestroy {
     event.stopPropagation();
     event.preventDefault();
     this.zapiszParametryWLocalStorage();
+    this.store.dispatch(MapaWidokActions.uruchomMapaWidok({widokMapyId:WIDOKI_MAPY_ID.WIDOK_MAPY}));
     // console.log(this.router.url.includes(this.temat.uuidMapy + ''));
+
     if (this.router.url.includes(this.temat.uuidMapy + '')) {
       this.store.dispatch(LewyPanelWidokActions.pokazObszar({ widokId: WIDOK_INFO.id }));
       this.wyczyscZbedneParametrySerwisuZewnetrznego();

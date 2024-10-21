@@ -16,10 +16,10 @@
     </mm-os-szlaki>
     <mm-os-pasek-czasu *ngIf="widok.id===WIDOKI_ID.PASKI_CZASU" [obszarWidoczny]="widok.id===topId" [widok]="widok"
       [style.zIndex]="widok.id===topId ? widok.zIndex+1 : widok.zIndex" [mapa]="mapa"></mm-os-pasek-czasu>
-    <mm-os-tagi *ngIf="widok.id===WIDOKI_ID.TAGI" [obszarWidoczny]="widok.id===topId" [widok]="widok"
+    <mm-os-tagi *ngIf="widok.id===WIDOKI_ID.TAGI  && widokMapyId===WIDOKI_MAPY_ID.WIDOK_MAPY" [obszarWidoczny]="widok.id===topId" [widok]="widok"
       [mapView]="mapView!" [style.zIndex]="widok.id===topId ? widok.zIndex+1 : widok.zIndex" [mapa]="mapa!">
     </mm-os-tagi>
-    <mm-os-info *ngIf="mapa && widok.id===WIDOKI_ID.INFO" [obszarWidoczny]="widok.id===topId" [widok]="widok"
+    <mm-os-info *ngIf="mapa && widok.id===WIDOKI_ID.INFO && widokMapyId===WIDOKI_MAPY_ID.WIDOK_MAPY" [obszarWidoczny]="widok.id===topId" [widok]="widok"
       [style.zIndex]="widok.id===topId ? widok.zIndex+1 : widok.zIndex" [mapa]="mapa">
     </mm-os-info>
   </ng-container>

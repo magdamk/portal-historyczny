@@ -105,6 +105,7 @@ import { mapaWidokReducer } from './stan/mapa-widok/mapa-widok.reducer';
     MatChipsModule,
     MatFormFieldModule,
     MatProgressSpinnerModule,
+    // MatSliderModule,
     MatTooltipModule,
     OracleMapsModule,
     ReactiveFormsModule,

@@ -8,6 +8,7 @@ import { MapaService } from '../../../serwisy/mapa.service';
 import {Map} from '../../../../oracle-maps/types/map';
 import { WIDOKI_MAPY_ID } from 'src/app/modul-mapowy/stan/mapa-widok/mapa-widok.const';
 import { WidokiMapyState } from 'src/app/modul-mapowy/stan/mapa-widok/mapa-widok.reducer';
+import { InterfejsUzytkownikaStan } from 'src/app/modul-mapowy/stan/interfejs-uzytkownika/interfejs-uzytkownika.reducer';
 
 @Component({
   selector: 'mm-widok-mapy-narzedzia-sekcja',
@@ -21,7 +22,7 @@ export class WidokMapyNarzedziaSekcjaComponent implements OnInit, OnDestroy {
   wspoldzielone = false;
   rozwiniety = true;
   widokMapy$: Observable<WidokiMapyState>;
-  // interfejsUzytkownika$: Observable<InterfejsUzytkownikaStan>;
+  interfejsUzytkownika$: Observable<InterfejsUzytkownikaStan>;
 
   subskryocje$ = new Subscription();
 
@@ -48,7 +49,7 @@ export class WidokMapyNarzedziaSekcjaComponent implements OnInit, OnDestroy {
               private konfiguracja: KonfiguracjaModulMapowyAdapter) {
     // this.widokAdministratora = this.konfiguracja.widokAdministratora();
     this.widokMapy$ = store.select('modulMapowy', 'widokMapy');
-    // this.interfejsUzytkownika$ = store.select('modulMapowy', 'interfejsUzytkownika');
+    this.interfejsUzytkownika$ = store.select('modulMapowy', 'interfejsUzytkownika');
   }
 
   /**
@@ -105,6 +106,7 @@ export class WidokMapyNarzedziaSekcjaComponent implements OnInit, OnDestroy {
   zarzadzajInstancjaMapa(stan: WidokiMapyState) {
     if (stan.widokMapyId === this.WIDOKI_MAPY_ID.WIDOK_PASKA_CZASU) {
       this.mapView = undefined;
+      // this.rerenderuj++;
     }
   }
 }

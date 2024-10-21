@@ -11,6 +11,8 @@ import { WIDOKI_MAPY_ID } from 'src/app/modul-mapowy/stan/mapa-widok/mapa-widok.
 import { MapaWidokActions } from 'src/app/modul-mapowy/stan/mapa-widok/mapa-widok.actions';
 import { WidokiMapyState } from 'src/app/modul-mapowy/stan/mapa-widok/mapa-widok.reducer';
 import { LegendaUtils } from '../../../utils/legenda-utils';
+import { WIDOK_PASKI_CZASU, WIDOKI_ID } from 'src/app/modul-mapowy/stan/lewy-panel-widok/lewy-panel-widok.const';
+import { LewyPanelWidokActions } from 'src/app/modul-mapowy/stan/lewy-panel-widok/lewy-panel-widok.actions';
 // import {Options} from "@angular-slider/ngx-slider";
 export enum KEY_CODE {
   UP_ARROW = 38,
@@ -62,8 +64,8 @@ export class PasekCzasuComponent implements OnInit, OnDestroy, AfterViewChecked 
     this.obslugaZmianInterfejsuUzytownika();
     this.obslugaZmianJezyka();
     this.mapaWidok$.subscribe(stan=> {this.wybranaGrupaPaskaCzasu= KolekcjeUtils.klonowanieObiektu(stan.dane); this.akywujPasekCzasu(this.wybranaGrupaPaskaCzasu!)});
-    // this.store.dispatch['widokMapy'](MapaWidokActions.aktualizujDane)
-    // this.pokazWyborPaskaCzasu();
+    // this.store.dispatch(MapaWidokActions.aktualizujDane)
+    this.pokazWyborPaskaCzasu();
   }
 
   /**
@@ -72,6 +74,7 @@ export class PasekCzasuComponent implements OnInit, OnDestroy, AfterViewChecked 
   ngOnDestroy(): void {
     this.subscrybcje$.unsubscribe();
     this.store.dispatch(InterfejsUzytkownikaActions.rozwinLewaBelke());
+    this.store.dispatch(LewyPanelWidokActions.pokazObszar({widokId:WIDOKI_ID.INFO}))
   }
 
   /**
@@ -111,14 +114,14 @@ export class PasekCzasuComponent implements OnInit, OnDestroy, AfterViewChecked 
    * Funkcja obsluguje zmiany interfejsu uzytkownika
    */
   private obslugaZmianInterfejsuUzytownika() {
-    // this.subscrybcje$.add(this.interfejsUzytkownika$.subscribe(stan => {
-    //   if (stan.belkaBocznaLewa.zwinieta === false) {
-    //     this.store.dispatch(NarzedziaActions.zamknijNarzedzie({identyfikator: NARZEDZIA_STERUJACE_ID.PASEK_CZASU}));
-    //   }
-    //   if (stan.wyszukiwarka.zwinieta === false) {
-    //     this.store.dispatch(NarzedziaActions.zamknijNarzedzie({identyfikator: NARZEDZIA_STERUJACE_ID.PASEK_CZASU}));
-    //   }
-    // }));
+    this.subscrybcje$.add(this.interfejsUzytkownika$.subscribe(stan => {
+      if (stan.belkaBocznaLewa.zwinieta === false) {
+        this.store.dispatch(MapaWidokActions.zamknijMapaWidok({widokMapyId: WIDOKI_MAPY_ID.WIDOK_PASKA_CZASU}));
+      }
+      if (stan.wyszukiwarka.zwinieta === false) {
+        this.store.dispatch(MapaWidokActions.zamknijMapaWidok({widokMapyId: WIDOKI_MAPY_ID.WIDOK_PASKA_CZASU}));
+      }
+    }));
   }
 
   /**
@@ -149,20 +152,20 @@ export class PasekCzasuComponent implements OnInit, OnDestroy, AfterViewChecked 
    * Funkcja reaguje na zmiane paska czasu
    */
   zmianaPaskaCzasu() {
-    // this.wybranaGrupaPaskaCzasu?.warstwy.forEach((w, k) => {
-    //   w.warstwa.parametrySterujace!.widoczna = this.aktualnaWartosc >= k ? true : false;
-    // });
-    // this.store.dispatch(NarzedziaActions.aktualizujDane({
-    //   identyfikator: NARZEDZIA_STERUJACE_ID.PASEK_CZASU,
-    //   dane: KolekcjeUtils.klonowanieObiektu(this.wybranaGrupaPaskaCzasu)
-    // }));
+    this.wybranaGrupaPaskaCzasu?.warstwy.forEach((w, k) => {
+      w.warstwa.parametrySterujace!.widoczna = this.aktualnaWartosc >= k ? true : false;
+    });
+    this.store.dispatch(MapaWidokActions.aktualizujDane({
+      widokMapyId: WIDOKI_MAPY_ID.WIDOK_PASKA_CZASU,
+      dane: KolekcjeUtils.klonowanieObiektu(this.wybranaGrupaPaskaCzasu)
+    }));
   }
 
   /**
    * Funkcja zamyka okno paska czasu
    */
   zamknijOkno() {
-    // this.store.dispatch(NarzedziaActions.zamknijNarzedzie({identyfikator: NARZEDZIA_STERUJACE_ID.PASEK_CZASU}))
+    this.store.dispatch(MapaWidokActions.reset());
   }
 
   /**

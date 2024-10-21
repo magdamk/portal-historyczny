@@ -76,18 +76,20 @@ export class WidokPaskaCzasuComponent implements OnInit, OnDestroy {
    */
   ngOnInit(): void {
     this.subskryocje$.add(this.widokMapy$
-      // .pipe(filter(n => n.widokMapyId === WIDOKI_MAPY_ID.WIDOK_PASKA_CZASU))
-      // .pipe(filter(n => n.dane))
+      .pipe(filter(n => n.widokMapyId === WIDOKI_MAPY_ID.WIDOK_PASKA_CZASU))
+      .pipe(filter(n => n.dane))
       .subscribe(state => {
         if (this.mapView) {
+          console.log("onInit: MAPVIEW 1 ", this.mapView);
           this.wybranaGrupaPaskaCzasu = state.dane;
-// this.inicjujMape();
+          // this.inicjujMape();
           this.zaladujWarstwy();
           this.ustawWidocznoscWarstw();
           return;
         }
         this.wybranaGrupaPaskaCzasu = state.dane;
-        console.log("onInit: MAPVIEW ", this.mapView);
+        console.log("onInit: MAPVIEW 2", this.mapView);
+        this.inicjujMape();
         // this.zaladujWarstwy();
         // this.ustawWidocznoscWarstw();
       }));
@@ -99,8 +101,8 @@ export class WidokPaskaCzasuComponent implements OnInit, OnDestroy {
    */
   ngOnDestroy(): void {
     this.subskryocje$.unsubscribe();
-
-    this.store.dispatch(MapaWidokActions.zamknijMapaWidok({ widokMapyId: WIDOKI_MAPY_ID.WIDOK_PASKA_CZASU }));
+    this.store.dispatch(MapaWidokActions.reset());
+    // this.store.dispatch(MapaWidokActions.zamknijMapaWidok({ widokMapyId: WIDOKI_MAPY_ID.WIDOK_PASKA_CZASU }));
   }
 
   /**
@@ -146,10 +148,11 @@ export class WidokPaskaCzasuComponent implements OnInit, OnDestroy {
     this.mapView?.setMapCenterAndZoomLevel(
       new OM.geometry.Point(srodekMapy.x, srodekMapy.y, srodekMapy.srid),
       domyslnyZoom!, true);
-      var optionsLayerControl = {anchorPosition: 6
-        ,
-        contentStyle: {minWidth: 310, maxHeight: 400, font_size: 11, font_family: "Arial"}
-        ,titleStyle: {font_size: 14, font_family: "Arial"}
+    var optionsLayerControl = {
+      anchorPosition: 6
+      ,
+      contentStyle: { minWidth: 310, maxHeight: 400, font_size: 11, font_family: "Arial" }
+      , titleStyle: { font_size: 14, font_family: "Arial" }
     };
     let layerControl = new OM.control.LayerControl(optionsLayerControl);
     layerControl.setDraggable(true);
@@ -207,13 +210,14 @@ export class WidokPaskaCzasuComponent implements OnInit, OnDestroy {
    * Funkcja inicjuje warstwy podkaldowe i tematyczne
    */
   private inicjujMape(): void {
+    console.log('INICJUJ MAPĘ');
     if (this.grupyWarstwPodkladowych.length && this.mapa && this.bibliotekaOracleZaladoana && !this.mapaZainicjowana) {
-      this.mapView!.addScaleBar();
-      this.mapView!.setMouseWheelZoomBehavior(OM.Map.ZOOM_KEEP_MOUSE_POINT);
+      this.mapView?.addScaleBar();
+      this.mapView?.setMouseWheelZoomBehavior(OM.Map.ZOOM_KEEP_MOUSE_POINT);
       this.inicjujWarstwePodkladowa();
-      this.mapView!.init();
+      this.mapView?.init();
       this.zaladujWarstwy();
-        this.ustawWidocznoscWarstw();
+      this.ustawWidocznoscWarstw();
       this.zarejestrujObslugeZdarzenMapy();
       this.wymusAktualizacjeKomponentu();
     }
@@ -348,9 +352,22 @@ export class WidokPaskaCzasuComponent implements OnInit, OnDestroy {
    */
   zaladujWarstwy() {
     this.mapView?.removeAllFeatureLayers();
+    // console.log('załaduj warstwy przed: '+ (this.mapView?.getTileLayers())?.toString());
+    let dtls: Layer[] = [];
+    this.mapView?.getTileLayers().forEach((l) => { console.log(l.name); if (l.name && l.name !== 'podklad') { dtls.push(l) } });
+    for (let i = 0; i < dtls.length; i++) {
+      this.mapView?.removeLayer(dtls[i]);
+    }
     this.wybranaGrupaPaskaCzasu!.warstwy.forEach(w => {
       this.zaladujWarstweTematyczna(w.warstwa);
     })
+
+    // setTimeout(() => {
+    //   this.wybranaGrupaPaskaCzasu!.warstwy.forEach(w => {
+    //     this.zaladujWarstweTematyczna(w.warstwa);
+    //   })
+    // }, 500);
+    setTimeout(() => console.log('załaduj warstwy po: ', this.mapView?.getTileLayers()), 500);
   }
 
   /**
@@ -359,7 +376,7 @@ export class WidokPaskaCzasuComponent implements OnInit, OnDestroy {
   ustawWidocznoscWarstw() {
     console.log(this.wybranaGrupaPaskaCzasu!.warstwy);
     this.wybranaGrupaPaskaCzasu!.warstwy.forEach(w => {
-      const layer = this.mapView!.getLayerByName(w.warstwa.uuid);
+      const layer = this.mapView?.getLayerByName(w.warstwa.uuid);
       if (layer) {
         // layer.setVisible(false);
         layer.setVisible(w.warstwa.parametrySterujace!.widoczna)
