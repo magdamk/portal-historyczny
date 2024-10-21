@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import { KonfiguracjaModulMapowyAdapter } from 'src/app/modul-mapowy/mm-core/providers/konfiguracja-adapter';
 import { MapaService } from '../../../serwisy/mapa.service';
-import {Map} from '../../../../oracle-maps/types/map';
+import { Map } from '../../../../oracle-maps/types/map';
 import { WIDOKI_MAPY_ID } from 'src/app/modul-mapowy/stan/mapa-widok/mapa-widok.const';
 import { WidokiMapyState } from 'src/app/modul-mapowy/stan/mapa-widok/mapa-widok.reducer';
 import { InterfejsUzytkownikaStan } from 'src/app/modul-mapowy/stan/interfejs-uzytkownika/interfejs-uzytkownika.reducer';
@@ -18,14 +18,14 @@ import { InterfejsUzytkownikaStan } from 'src/app/modul-mapowy/stan/interfejs-uz
 export class WidokMapyNarzedziaSekcjaComponent implements OnInit, OnDestroy {
 
   WIDOKI_MAPY_ID = WIDOKI_MAPY_ID;
-  widokMapyId?:string;
+  widokMapyId?: string;
   wspoldzielone = false;
   rozwiniety = true;
   widokMapy$: Observable<WidokiMapyState>;
   interfejsUzytkownika$: Observable<InterfejsUzytkownikaStan>;
 
   subskryocje$ = new Subscription();
-
+  pasekGotowy: boolean = false;
   // widokAdministratora: boolean;
 
   rerenderuj = 0;
@@ -37,7 +37,7 @@ export class WidokMapyNarzedziaSekcjaComponent implements OnInit, OnDestroy {
 
   @Input()
   grupyWarstwPodkladowych: GrupaWarstwPodkladowych[] = [];
-@Output() mapViewInitiallised = new EventEmitter<Map>();
+  @Output() mapViewInitiallised = new EventEmitter<Map>();
   /**
    * Konstruktor
    * @param narzedziaSerwis
@@ -45,8 +45,8 @@ export class WidokMapyNarzedziaSekcjaComponent implements OnInit, OnDestroy {
    */
   constructor(
     private store: Store<{ modulMapowy: any }>,
-              private mapaService: MapaService,
-              private konfiguracja: KonfiguracjaModulMapowyAdapter) {
+    private mapaService: MapaService,
+    private konfiguracja: KonfiguracjaModulMapowyAdapter) {
     // this.widokAdministratora = this.konfiguracja.widokAdministratora();
     this.widokMapy$ = store.select('modulMapowy', 'widokMapy');
     this.interfejsUzytkownika$ = store.select('modulMapowy', 'interfejsUzytkownika');
@@ -56,6 +56,7 @@ export class WidokMapyNarzedziaSekcjaComponent implements OnInit, OnDestroy {
    * Cykl życia komponentu inicjalizacja
    */
   ngOnInit(): void {
+    this.pasekGotowy=false;
     this.subskryocje$.add(this.widokMapy$.subscribe(stan => {
       this.widokMapyId = stan.widokMapyId
       // this.zarzadzajInstancjaMapa(stan);
@@ -108,5 +109,12 @@ export class WidokMapyNarzedziaSekcjaComponent implements OnInit, OnDestroy {
       this.mapView = undefined;
       // this.rerenderuj++;
     }
+  }
+
+  skonfigurowanoPasek(
+    event: boolean
+  ) {
+    console.log(event);
+    this.pasekGotowy=event;
   }
 }

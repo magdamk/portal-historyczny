@@ -509,6 +509,7 @@ export class WidokMapyComponent implements OnInit, OnDestroy {
    * @param warstwa - warstwa lub katalog
    */
   private aktualizujWarstweWWidokuMapy(warstwa: Warstwa): void {
+    console.log(warstwa.nazwaOficjalna?.pl);
     if (warstwa.usunieta) {
       return;
     }

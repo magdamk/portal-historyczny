@@ -1,14 +1,7 @@
 <div class="pasek-czasu" >
-  <div class="tekst-b">{{'codes.modul-mapowy.narzedzie-paska-czasu.pasek-czasu' | translate}} {{'!!!'+(wybranaGrupaPaskaCzasu?.nazwa | wyborTlumaczenia: aktualnyJezyk)+'!!!'}}</div>
+  <div class="tekst-b">{{'codes.modul-mapowy.narzedzie-paska-czasu.pasek-czasu' | translate}} {{ wybranaGrupaPaskaCzasu?.nazwa | wyborTlumaczenia: aktualnyJezyk}}</div>
   <div class="slider">
-    <mat-slider  min="0" max="10" step="2" showTickMarks discrete >
-      <input matSliderThumb>
-    </mat-slider>
-    <!-- <mat-slider #ngxSlider min="0" max="10" step="1" showTickMarks="true" value="5" (valueChange)="zmianaPaskaCzasu()">
-      <input matSliderThumb  #ngxSlider>
-    </mat-slider> -->
-    <!-- <ngx-slider #ngxSlider [(value)]="aktualnaWartosc" [options]="options" (valueChange)="zmianaPaskaCzasu()"></ngx-slider> -->
-     <!-- <div *ngFor="let warstwa of wybranaGrupaPaskaCzasu?.warstwy" (click)="aktualnaWartoscUp()">{{warstwa.nazwa | wyborTlumaczenia: aktualnyJezyk}}</div> -->
+    <ngx-slider #ngxSlider [(value)]="aktualnaWartosc" [options]="options" (valueChange)="zmianaPaskaCzasu()"></ngx-slider>
     <span class="w-lewo" mmIkonaSvg="poprzedni" (click)="poprzedni()"></span>
     <span class="w-prawo" mmIkonaSvg="nastepny" (click)="nastepny()"></span>
   </div>

@@ -85,11 +85,15 @@ export class WidokPaskaCzasuComponent implements OnInit, OnDestroy {
           // this.inicjujMape();
           this.zaladujWarstwy();
           this.ustawWidocznoscWarstw();
+
+          // this.aktullizujZoomISrodekMapyWDefinicjiMapy();
           return;
         }
         this.wybranaGrupaPaskaCzasu = state.dane;
         console.log("onInit: MAPVIEW 2", this.mapView);
         this.inicjujMape();
+
+        // this.aktullizujZoomISrodekMapyWDefinicjiMapy();
         // this.zaladujWarstwy();
         // this.ustawWidocznoscWarstw();
       }));
@@ -212,8 +216,11 @@ export class WidokPaskaCzasuComponent implements OnInit, OnDestroy {
   private inicjujMape(): void {
     console.log('INICJUJ MAPĘ');
     if (this.grupyWarstwPodkladowych.length && this.mapa && this.bibliotekaOracleZaladoana && !this.mapaZainicjowana) {
+      console.log('INICJUJ MAPĘ INSIDE');
       this.mapView?.addScaleBar();
       this.mapView?.setMouseWheelZoomBehavior(OM.Map.ZOOM_KEEP_MOUSE_POINT);
+      this.mapView?.setMapCenter(new OM.geometry.Point(7502805.127594725, 5788955.369500488, 2178), true);
+      this.mapView?.setMapZoomLevel(3);
       this.inicjujWarstwePodkladowa();
       this.mapView?.init();
       this.zaladujWarstwy();
@@ -247,13 +254,13 @@ export class WidokPaskaCzasuComponent implements OnInit, OnDestroy {
       });
       this.mapView.addListener(OM.event.MapEvent.MAP_INITIALIZED, (event) => {
         this.mapaZainicjowana = true;
-        this.inicjujZoomISrodekWWidokuMapy();
+        // this.inicjujZoomISrodekWWidokuMapy();
         this.konfigurujPasekSkaliWWidokuMapy(event.target.ScaleBar);
-        this.aktullizujZoomISrodekMapyWDefinicjiMapy();
+        // this.aktullizujZoomISrodekMapyWDefinicjiMapy();
       });
       this.mapView.addListener(OM.event.MapEvent.MAP_AFTER_REFRESH, (event) => {
         if (this.mapaZainicjowana) {
-          this.aktullizujZoomISrodekMapyWDefinicjiMapy();
+          // this.aktullizujZoomISrodekMapyWDefinicjiMapy();
         }
       });
     }
@@ -354,14 +361,15 @@ export class WidokPaskaCzasuComponent implements OnInit, OnDestroy {
     this.mapView?.removeAllFeatureLayers();
     // console.log('załaduj warstwy przed: '+ (this.mapView?.getTileLayers())?.toString());
     let dtls: Layer[] = [];
-    this.mapView?.getTileLayers().forEach((l) => { console.log(l.name); if (l.name && l.name !== 'podklad') { dtls.push(l) } });
+    this.mapView?.getTileLayers().forEach((l) => { console.log(l.name); if (l.name !== 'podklad') { dtls.push(l) } else { } });
     for (let i = 0; i < dtls.length; i++) {
       this.mapView?.removeLayer(dtls[i]);
     }
     this.wybranaGrupaPaskaCzasu!.warstwy.forEach(w => {
       this.zaladujWarstweTematyczna(w.warstwa);
     })
-
+    let podklad = this.mapView?.getLayerByName('podklad');
+    if (podklad) { podklad.setZIndex(10); }
     // setTimeout(() => {
     //   this.wybranaGrupaPaskaCzasu!.warstwy.forEach(w => {
     //     this.zaladujWarstweTematyczna(w.warstwa);
@@ -375,13 +383,23 @@ export class WidokPaskaCzasuComponent implements OnInit, OnDestroy {
    */
   ustawWidocznoscWarstw() {
     console.log(this.wybranaGrupaPaskaCzasu!.warstwy);
-    this.wybranaGrupaPaskaCzasu!.warstwy.forEach(w => {
+    this.wybranaGrupaPaskaCzasu!.warstwy.forEach((w, k) => {
+
+
       const layer = this.mapView?.getLayerByName(w.warstwa.uuid);
+
       if (layer) {
         // layer.setVisible(false);
         layer.setVisible(w.warstwa.parametrySterujace!.widoczna)
       }
-    })
+      // if (k === 0 && layer) {
+      //   layer.setVisible(true)
+      // } else if (layer){
+      //   layer.setVisible(false)
+      // }
+    });
+
+    // })
   }
 
   /**

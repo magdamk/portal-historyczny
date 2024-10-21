@@ -5,11 +5,11 @@
       [sterowanieMapyWidoczne]="true" [synchronizujZoomISrodek]="false"
       [grupyWarstwPodkladowych]="grupyWarstwPodkladowych">
     </mm-widok-mapy>
-    <mm-widok-paska-czasu *ngIf="mapa&&(widokMapy$ | async)?.widokMapyId===WIDOKI_MAPY_ID.WIDOK_PASKA_CZASU" [mapa]="mapa"
-      [grupyWarstwPodkladowych]="grupyWarstwPodkladowych">
+    <mm-widok-paska-czasu *ngIf="mapa && (widokMapy$ | async)?.widokMapyId===WIDOKI_MAPY_ID.WIDOK_PASKA_CZASU " [mapa]="mapa"
+      [grupyWarstwPodkladowych]="grupyWarstwPodkladowych" [sterowanieMapyWidoczne]="true" >
     </mm-widok-paska-czasu>
     <mm-informacje-o-obiekcie *ngIf="mapView && mapa" [mapView]="mapView" [mapa]="mapa"></mm-informacje-o-obiekcie>
-    <mm-pasek-czasu *ngIf="mapa&&(widokMapy$ | async)?.widokMapyId===WIDOKI_MAPY_ID.WIDOK_PASKA_CZASU">
+    <mm-pasek-czasu *ngIf="mapa && (widokMapy$ | async)?.widokMapyId===WIDOKI_MAPY_ID.WIDOK_PASKA_CZASU" (skonfigurowanoPasek)="skonfigurowanoPasek($event)">
     </mm-pasek-czasu>
   </div>
 </div>

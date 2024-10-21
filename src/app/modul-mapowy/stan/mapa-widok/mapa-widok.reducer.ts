@@ -10,12 +10,15 @@ export interface WidokiMapy {
 
 
 export const WidokiMapyInitialState: WidokiMapyState = {
-  widokMapyId: WIDOKI_MAPY_ID.WIDOK_MAPY
+  widokMapyId: WIDOKI_MAPY_ID.WIDOK_MAPY,
+  dane:undefined,
+  daneInicjujacePasekCzasu:undefined
 }
 
 export interface WidokiMapyState {
   widokMapyId: string,
-  dane?: any
+  dane?: any,
+  daneInicjujacePasekCzasu?: any;
 }
 
 export const mapaWidokReducer = createReducer(
@@ -23,6 +26,7 @@ export const mapaWidokReducer = createReducer(
   on(MapaWidokActions.uruchomMapaWidok, (state, { widokMapyId }) => state = { ...state, widokMapyId: DEFINICJA_WIDOKOW_MAPY.get(widokMapyId)!.id }),
   on(MapaWidokActions.zamknijMapaWidok, (state, { widokMapyId }) => state = { ...state, widokMapyId: DEFINICJA_WIDOKOW_MAPY.get(widokMapyId)!.id }),
   on(MapaWidokActions.aktualizujDane, (state, { widokMapyId, dane }) => state = { ...state, widokMapyId: DEFINICJA_WIDOKOW_MAPY.get(widokMapyId)!.id, dane: dane }),
+  on(MapaWidokActions.zapiszGrupePaskaCzasu, (state, { widokMapyId, daneInicjujacePasekCzasu }) => state = { ...state, widokMapyId: DEFINICJA_WIDOKOW_MAPY.get(widokMapyId)!.id, daneInicjujacePasekCzasu: daneInicjujacePasekCzasu }),
   on(MapaWidokActions.reset, (state) => {
     return WidokiMapyInitialState
   })

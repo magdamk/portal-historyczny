@@ -64,6 +64,7 @@ import { OsPasekCzasuComponent } from './serwis-mapowy/komponenty/boczna-belka/o
 import { PasekCzasuComponent } from './serwis-mapowy/komponenty/boczna-belka/pasek-czasu/pasek-czasu.component';
 import { WidokPaskaCzasuComponent } from './serwis-mapowy/komponenty/mapa/widok-paska-czasu/widok-paska-czasu.component';
 import { mapaWidokReducer } from './stan/mapa-widok/mapa-widok.reducer';
+import { NgxSliderModule } from 'ngx-slider-v2';
 
 @NgModule({
   declarations: [
@@ -107,6 +108,7 @@ import { mapaWidokReducer } from './stan/mapa-widok/mapa-widok.reducer';
     MatProgressSpinnerModule,
     // MatSliderModule,
     MatTooltipModule,
+    NgxSliderModule,
     OracleMapsModule,
     ReactiveFormsModule,
     RouterModule,
