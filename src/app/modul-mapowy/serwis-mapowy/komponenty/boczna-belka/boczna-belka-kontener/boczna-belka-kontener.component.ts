@@ -57,7 +57,7 @@ export class BocznaBelkaKontenerComponent implements OnInit, OnChanges, OnDestro
       this.topId = stan.top;
       this.listaWidokow = stan.widoki,
         this.topWidok = stan.widok;
-      console.log(stan);
+      // console.log(stan);
     }));
     this.subscriptions$.add(this.widokMapy$.subscribe((stan) => this.widokMapyId = stan.widokMapyId));
     if (sessionStorage.getItem('tagi')) {

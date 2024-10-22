@@ -19,6 +19,7 @@ import { WidokMapyGrupaDanychPaskaCzasuDto } from 'src/app/core/modele/widok-map
 import { MapaWidokActions } from 'src/app/modul-mapowy/stan/mapa-widok/mapa-widok.actions';
 import { WIDOKI_MAPY_ID } from 'src/app/modul-mapowy/stan/mapa-widok/mapa-widok.const';
 import { KolekcjeUtils } from '../../../utils/kolekcje-utils';
+import { InterfejsUzytkownikaActions } from 'src/app/modul-mapowy/stan/interfejs-uzytkownika/interfejs-uzytkownika.actions';
 
 @Component({
   selector: 'mm-os-pasek-czasu',
@@ -99,7 +100,7 @@ export class OsPasekCzasuComponent implements OnInit, OnDestroy {
   * Funkcja do pobierania listy kategorii map
   */
   private pobierzListePaskowCzasu(): void {
-    this.serwisPaskaCzasu.pobierzListeGrupDanychPaskaCzasu().subscribe((data) => { console.log('PASEK: ', data); this.grupaDanychPaskaCzasu = (data!.content! as GrupaWarstwPaskaCzasu[]); });
+    this.serwisPaskaCzasu.pobierzListeGrupDanychPaskaCzasu().subscribe((data) => { this.grupaDanychPaskaCzasu = (data!.content! as GrupaWarstwPaskaCzasu[]); });
     // this.serviceKategoriiMap.getKategorieMap()
     //   .subscribe((result: any) => {
     //     // console.log('pobierzListeKategoriiMap: ', result.content.kategorieTematyczne[1].grupyMap);
@@ -134,15 +135,16 @@ export class OsPasekCzasuComponent implements OnInit, OnDestroy {
     */
   wybierzGrupe(grupa: GrupaWarstwPaskaCzasu) {
     // this.store.dispatch(MapaWidokActions.zamknijMapaWidok({ widokMapyId: this.widokMapyIdentyfikator }))
-    this.store.dispatch(MapaWidokActions.reset());
+    // this.store.dispatch(MapaWidokActions.reset());
 
-    setTimeout(() => {
+    // setTimeout(() => {
       this.store.dispatch(MapaWidokActions.aktualizujDane({ widokMapyId: this.widokMapyIdentyfikator, dane: grupa }));
       // this.store.dispatch(MapaWidokActions.zapiszGrupePaskaCzasu({ widokMapyId: this.widokMapyIdentyfikator, daneInicjujacePasekCzasu:  grupa }));
-      this.store.dispatch(MapaWidokActions.uruchomMapaWidok({ widokMapyId: WIDOKI_MAPY_ID.WIDOK_PASKA_CZASU }));
-      this.store.dispatch(LewyPanelWidokActions.pokazObszar({ widokId: WIDOKI_ID.PASKI_CZASU }));
+      // this.store.dispatch(MapaWidokActions.uruchomMapaWidok({ widokMapyId: WIDOKI_MAPY_ID.WIDOK_PASKA_CZASU }));
+      // this.store.dispatch(LewyPanelWidokActions.pokazObszar({ widokId: WIDOKI_ID.PASKI_CZASU }));
+      this.store.dispatch(InterfejsUzytkownikaActions.zwinLewaBelke());
       // this.dialogRef.close(grupa);
-    }, 100);
+    // }, 100);
   }
 
   /**

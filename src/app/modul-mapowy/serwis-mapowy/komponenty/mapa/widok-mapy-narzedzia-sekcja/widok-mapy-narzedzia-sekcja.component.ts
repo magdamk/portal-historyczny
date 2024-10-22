@@ -114,7 +114,7 @@ export class WidokMapyNarzedziaSekcjaComponent implements OnInit, OnDestroy {
   skonfigurowanoPasek(
     event: boolean
   ) {
-    console.log(event);
+    // console.log(event);
     this.pasekGotowy=event;
   }
 }

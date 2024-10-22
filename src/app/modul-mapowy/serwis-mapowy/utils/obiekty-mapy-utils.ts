@@ -151,7 +151,7 @@ export class ObiektyMapyUtils {
   static utworzInformacjeOObiekcie(obiekt: Feature): InformacjeOObiekcie {
     const opisyDoWyswietlenia = this.przygotujOpisyDlaObiektu(obiekt);
     const tytul = obiekt.getAttributeValue('NAZWA_SERWIS');
-    console.log('obiekt kliknięty: ',obiekt,JSON.stringify(obiekt.getAttributes()));
+    // console.log('obiekt kliknięty: ',obiekt,JSON.stringify(obiekt.getAttributes()));
     return {
       tytul: tytul ? tytul.toString() : '',
       opis: obiekt.getAttributeValue('_LABEL_'), id: obiekt.id,

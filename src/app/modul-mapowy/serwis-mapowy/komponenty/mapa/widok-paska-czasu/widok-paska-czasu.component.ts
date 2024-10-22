@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, Input, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription, Observable, filter } from 'rxjs';
 import { AktualizacjaKomponentuService } from 'src/app/modul-mapowy/commons/serwisy/aktualizacja-komponentu.service';
@@ -18,18 +18,20 @@ import { OM } from "../../../../oracle-maps/types/om";
 import { WidokiMapyState } from 'src/app/modul-mapowy/stan/mapa-widok/mapa-widok.reducer';
 import { WIDOKI_MAPY_ID } from 'src/app/modul-mapowy/stan/mapa-widok/mapa-widok.const';
 import { MapaWidokActions } from 'src/app/modul-mapowy/stan/mapa-widok/mapa-widok.actions';
+import { TileLayer } from 'src/app/modul-mapowy/oracle-maps/types/tile-layer';
 
 declare var OM: OM;
 
 @Component({
   selector: 'mm-widok-paska-czasu',
   templateUrl: './widok-paska-czasu.component.html',
-  styleUrls: ['./widok-paska-czasu.component.scss']
+  styleUrls: ['./widok-paska-czasu.component.scss'],
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WidokPaskaCzasuComponent implements OnInit, OnDestroy {
 
-  @Input()
-  grupyWarstwPodkladowych: GrupaWarstwPodkladowych[] = [];
+  @Input({required:true})
+  grupyWarstwPodkladowych!: GrupaWarstwPodkladowych[];
 
   @Input()
   mapa?: Mapa;
@@ -50,13 +52,13 @@ export class WidokPaskaCzasuComponent implements OnInit, OnDestroy {
   bibliotekaOracleZaladoana = true;
   subskryocje$ = new Subscription();
 
-  widokAdministratora: boolean;
+  // widokAdministratora: boolean;
   podstawoweWarstwyPodkladoweDlaMapy: GrupaWarstwPodkladowych[] = [];
 
   widokMapy$: Observable<WidokiMapyState>;
 
   wybranaGrupaPaskaCzasu?: GrupaWarstwPaskaCzasu;
-
+  podklad?: TileLayer;
 
   /**
    * Konstruktor
@@ -68,7 +70,7 @@ export class WidokPaskaCzasuComponent implements OnInit, OnDestroy {
     private aktualizacjaKomponentuService: AktualizacjaKomponentuService,
     private konfiguracja: KonfiguracjaModulMapowyAdapter) {
     this.widokMapy$ = store.select('modulMapowy', 'widokMapy');
-    this.widokAdministratora = konfiguracja.widokAdministratora();
+    // this.widokAdministratora = konfiguracja.widokAdministratora();
   }
 
   /**
@@ -79,23 +81,25 @@ export class WidokPaskaCzasuComponent implements OnInit, OnDestroy {
       .pipe(filter(n => n.widokMapyId === WIDOKI_MAPY_ID.WIDOK_PASKA_CZASU))
       .pipe(filter(n => n.dane))
       .subscribe(state => {
-        if (this.mapView) {
-          console.log("onInit: MAPVIEW 1 ", this.mapView);
+        if (!this.wybranaGrupaPaskaCzasu) {
+          // console.log("onInit: MAPVIEW 1 ", this.mapView);
+          // console.log("onInit: MAPVIEW 1 ", this.mapView?.getTileLayers()?.at(0)?.name);
           this.wybranaGrupaPaskaCzasu = state.dane;
           // this.inicjujMape();
-          this.zaladujWarstwy();
-          this.ustawWidocznoscWarstw();
-
+          // this.zaladujWarstwy();
+          // this.ustawWidocznoscWarstw();
+          // let podklad = this.mapView?.getLayerByName('podklad');
+          // if (podklad) { podklad.bringToTop(); }
           // this.aktullizujZoomISrodekMapyWDefinicjiMapy();
           return;
         }
         this.wybranaGrupaPaskaCzasu = state.dane;
-        console.log("onInit: MAPVIEW 2", this.mapView);
-        this.inicjujMape();
+        // console.log("onInit: MAPVIEW 2", this.mapView);
+        // this.inicjujMape();
 
         // this.aktullizujZoomISrodekMapyWDefinicjiMapy();
         // this.zaladujWarstwy();
-        // this.ustawWidocznoscWarstw();
+        this.ustawWidocznoscWarstw();
       }));
 
   }
@@ -113,8 +117,8 @@ export class WidokPaskaCzasuComponent implements OnInit, OnDestroy {
    * Funkcja wywoływana po prawidłowej inicjalizacji mapy
    * @param mapa - obiekt mapy
    */
-  widokMapyUtworzony(mapa: Map): void {
-    this.mapView = mapa;
+  widokMapyUtworzony(mapView: Map): void {
+    this.mapView = mapView;
     this.inicjujMape();
   }
 
@@ -135,7 +139,7 @@ export class WidokPaskaCzasuComponent implements OnInit, OnDestroy {
     const wybranaWarstwaPodkladowa = warstwa.warstwy[warstwa.wybranaWarstwa ? warstwa.wybranaWarstwa : 0].warstwa;
     const nowaWarstwaPodkladowa =
       WarstwaUtils.utworzWarstweMapy('podklad', wybranaWarstwaPodkladowa, this.konfiguracja, this.mapView!);
-    this.mapView?.addLayer(nowaWarstwaPodkladowa);
+    this.mapView!.addLayer(nowaWarstwaPodkladowa);
     this.zapiszWybranaWarstwePodkladowaWdefinicjiMapy(warstwa);
     this.przeniesWarstweNaSpod('podklad');
     this.przeniesWarstweNaWierzch('warstwa-markerow');
@@ -214,9 +218,9 @@ export class WidokPaskaCzasuComponent implements OnInit, OnDestroy {
    * Funkcja inicjuje warstwy podkaldowe i tematyczne
    */
   private inicjujMape(): void {
-    console.log('INICJUJ MAPĘ');
+    // console.log('INICJUJ MAPĘ');
     if (this.grupyWarstwPodkladowych.length && this.mapa && this.bibliotekaOracleZaladoana && !this.mapaZainicjowana) {
-      console.log('INICJUJ MAPĘ INSIDE');
+      // console.log('INICJUJ MAPĘ INSIDE');
       this.mapView?.addScaleBar();
       this.mapView?.setMouseWheelZoomBehavior(OM.Map.ZOOM_KEEP_MOUSE_POINT);
       this.mapView?.setMapCenter(new OM.geometry.Point(7502805.127594725, 5788955.369500488, 2178), true);
@@ -358,31 +362,54 @@ export class WidokPaskaCzasuComponent implements OnInit, OnDestroy {
    * Funkcja ładuje warstwy
    */
   zaladujWarstwy() {
-    this.mapView?.removeAllFeatureLayers();
-    // console.log('załaduj warstwy przed: '+ (this.mapView?.getTileLayers())?.toString());
-    let dtls: Layer[] = [];
-    this.mapView?.getTileLayers().forEach((l) => { console.log(l.name); if (l.name !== 'podklad') { dtls.push(l) } else { } });
-    for (let i = 0; i < dtls.length; i++) {
-      this.mapView?.removeLayer(dtls[i]);
-    }
+    // this.mapView?.removeAllFeatureLayers();
+
+    // if (!this.podklad) {
+    //   if (this.mapView?.getLayerByName('podklad')) { this.podklad = this.mapView?.getLayerByName('podklad'); this.podklad!.sendToBottom(); }
+    // }
+    // else {
+    //   if (!this.mapView?.getLayerByName('podklad')) {
+    //     this.mapView?.addLayer(this.podklad!);
+    //     this.podklad!.sendToBottom();
+    //   }
+    // }
+    // console.log('załaduj warstwy przed: ' + (this.mapView?.getTileLayers().at(0))?.name);
+    // let dtls: Layer[] = [];
+    // this.mapView?.getTileLayers().forEach((l) => { console.log('all tile layers: ' + l.name); if (l.name !== 'podklad') { console.log('not podkład: ' + l.name), dtls.push(l) } else { console.log('podkład: ' + l.name) } });
+    // for (let i = 0; i < dtls.length; i++) {
+      // this.mapView?.removeLayer(dtls[i]);
+    // }
     this.wybranaGrupaPaskaCzasu!.warstwy.forEach(w => {
       this.zaladujWarstweTematyczna(w.warstwa);
     })
-    let podklad = this.mapView?.getLayerByName('podklad');
-    if (podklad) { podklad.setZIndex(10); }
+    // let podklad = this.mapView?.getLayerByName('podklad');
+    // if (podklad) { podklad.bringToTop(); }
     // setTimeout(() => {
     //   this.wybranaGrupaPaskaCzasu!.warstwy.forEach(w => {
     //     this.zaladujWarstweTematyczna(w.warstwa);
     //   })
     // }, 500);
-    setTimeout(() => console.log('załaduj warstwy po: ', this.mapView?.getTileLayers()), 500);
+    // setTimeout(() => console.log('załaduj warstwy po: ', this.mapView?.getTileLayers()), 500);
   }
 
   /**
    * Funkcja ustawia widocznosc warstw
    */
   ustawWidocznoscWarstw() {
-    console.log(this.wybranaGrupaPaskaCzasu!.warstwy);
+    // console.log(this.wybranaGrupaPaskaCzasu!.warstwy);
+    // if (!this.podklad) {
+    //   if (this.mapView?.getLayerByName('podklad')) {
+    //     this.podklad = this.mapView?.getLayerByName('podklad'); this.podklad!.sendToBottom();
+
+    //   }
+    // }
+    // else {
+    //   if (!this.mapView?.getLayerByName('podklad')) {
+    //     this.mapView?.addLayer(this.podklad!);
+    //     this.podklad!.sendToBottom();
+    //   }
+    // }
+    // console.log(this.podklad);
     this.wybranaGrupaPaskaCzasu!.warstwy.forEach((w, k) => {
 
 
@@ -392,6 +419,9 @@ export class WidokPaskaCzasuComponent implements OnInit, OnDestroy {
         // layer.setVisible(false);
         layer.setVisible(w.warstwa.parametrySterujace!.widoczna)
       }
+
+      // podklad?.setVisible(true);
+      // this.podklad!.setZIndex(0);
       // if (k === 0 && layer) {
       //   layer.setVisible(true)
       // } else if (layer){

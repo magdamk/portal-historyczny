@@ -14,6 +14,7 @@ import { KonwerterGeometriUtils } from './konwerter-geometri-utils';
 //@ts-ignore
 import { v4 as uuidv4 } from 'uuid';
 import { KonfiguracjaAdapter } from '../../mm-core/providers/konfiguracja-adapter';
+import { environment } from 'src/environments/environment';
 
 
 declare var OM: OM;
@@ -57,19 +58,133 @@ export class WarstwaUtils {
    * @map
    */
   static utworzWarstweDynamic(id: string | undefined, warstwa: Warstwa, konfiguracja: KonfiguracjaAdapter, map: Mapp): VectorLayer {
-    const req = new OM.server.ServerMapRequest(konfiguracja.pobierzMapViewerUrl());
+    const req = new OM.server.ServerMapRequest(environment.mapViewerUrl);
+    // console.log('tworzę dtl: '+warstwa.szczegolyWarstwy?.zrodloMVC+" "+warstwa.nazwaOficjalna?.pl)
     req.setProperties({
       dataSource: warstwa.szczegolyWarstwy?.zrodloMVC,
       transparent: true,  // map image is set to be transparent
+      // antialiase: warstwa.szczegolyWarstwy?.antyaliasing ? "true" : "false"
       antialiase: warstwa.szczegolyWarstwy?.antyaliasing ? "true" : "false"
     });
     req.addTheme(new OM.server.ServerPredefinedTheme(warstwa.szczegolyWarstwy?.nazwaMVC!));
+    var ngSrid = 2178;
+    var config = {
+        srid: ngSrid,
+        bounds: new OM.geometry.Rectangle(7340000.0, 5700000.0, 7670000.0, 5890000.0, ngSrid),
+        zoomLevels: [
+            {
+                "resolution": 270.9333333333333,
+                "stretchRatio": 1,
+                "infotip": ""
+            },
+            {
+                "resolution": 135.46666666666664,
+                "stretchRatio": 1,
+                "infotip": ""
+            },
+            {
+                "resolution": 67.73333333333332,
+                "stretchRatio": 1,
+                "infotip": ""
+            },
+            {
+                "resolution": 33.86666666666666,
+                "stretchRatio": 1,
+                "infotip": ""
+            },
+            {
+                "resolution": 16.93333333333333,
+                "stretchRatio": 1,
+                "infotip": ""
+            },
+            {
+                "resolution": 8.466666666666665,
+                "stretchRatio": 1,
+                "infotip": ""
+            },
+            {
+                "resolution": 6.614583333333333,
+                "stretchRatio": 1,
+                "infotip": ""
+            },
+            {
+                "resolution": 4.2333333333333325,
+                "stretchRatio": 1,
+                "infotip": ""
+            },
+            {
+                "resolution": 3.175,
+                "stretchRatio": 1,
+                "infotip": ""
+            },
+            {
+                "resolution": 2.1166666666666663,
+                "stretchRatio": 1,
+                "infotip": "",
+                "distancePerPixel": 2.1166666666666663
+            },
+            {
+                "resolution": 1.5875,
+                "stretchRatio": 1,
+                "infotip": ""
+            },
+            {
+                "resolution": 1.3229166666666667,
+                "stretchRatio": 1,
+                "infotip": ""
+            },
+            {
+                "resolution": 1.0583333333333331,
+                "stretchRatio": 1,
+                "infotip": ""
+            },
+            {
+                "resolution": 0.79375,
+                "stretchRatio": 1,
+                "infotip": ""
+            },
+            {
+                "resolution": 0.5291666666666666,
+                "stretchRatio": 1,
+                "infotip": ""
+            },
+            {
+                "resolution": 0.2645833333333333,
+                "stretchRatio": 1,
+                "infotip": ""
+            },
+            {
+                "resolution": 0.13229166666666664,
+                "stretchRatio": 1,
+                "infotip": ""
+            },
+            {
+                "resolution": 0.06614583333333332,
+                "stretchRatio": 1,
+                "infotip": ""
+            },
+            {
+                "resolution": 0.03307291666666665,
+                "stretchRatio": 1,
+                "infotip": ""
+            }
+        ],
+        numberOfZoomLevels: 19
+    };
+    const myUniverse = new OM.universe.Universe(
+      // {
+      //   srid: 2178,
+      //   bounds: new OM.geometry.Rectangle(7489860.71, 5773789.51, 7518549.17, 5803861.96, 2178),
+      //   numberOfZoomLevels: 18
+      // }
+      config
+    );
     const dtl_props = {
-      universe: map.getUniverse(),
-      tileLayerConfig: new OM.layer.TileLayerConfig({ tileImageWidth: 512, tileImageHeight: 512 }),
-      tileServerURL: konfiguracja.pobierzMapViewerUrl() + MAPVIEWER_KONFIGURACJA.WARSTWY_DYNAMICZNE_SCIEZKA,
-      enableUTFGrid: true,
-      enableUTFGridInfoWindow: true,
+      universe: myUniverse,
+      tileLayerConfig: new OM.layer.TileLayerConfig({ tileImageWidth: 256, tileImageHeight: 256 }),
+      tileServerURL: environment.mapViewerUrl + MAPVIEWER_KONFIGURACJA.WARSTWY_DYNAMICZNE_SCIEZKA,
+      enableUTFGrid: false,
+      enableUTFGridInfoWindow: false,
       utfGridResolution: 4
     };
     const nowaWarstwa = new OM.layer.DynamicTileLayer(id ? id : uuidv4(), dtl_props, req);

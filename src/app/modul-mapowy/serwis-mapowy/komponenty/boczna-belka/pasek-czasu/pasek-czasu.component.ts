@@ -1,4 +1,4 @@
-import { AfterViewChecked, Component, EventEmitter, HostListener, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
+import { AfterViewChecked, ChangeDetectionStrategy, Component, EventEmitter, HostListener, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
@@ -25,7 +25,8 @@ export enum KEY_CODE {
 @Component({
   selector: 'mm-pasek-czasu',
   templateUrl: './pasek-czasu.component.html',
-  styleUrls: ['./pasek-czasu.component.scss']
+  styleUrls: ['./pasek-czasu.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PasekCzasuComponent implements OnInit, OnDestroy, AfterViewChecked {
 
@@ -66,8 +67,8 @@ export class PasekCzasuComponent implements OnInit, OnDestroy, AfterViewChecked 
     this.obslugaZmianInterfejsuUzytownika();
     this.obslugaZmianJezyka();
     // this.mapaWidok$.subscribe(stan => { this.wybranaGrupaPaskaCzasu = KolekcjeUtils.klonowanieObiektu(stan.daneInicjujacePasekCzasu); this.akywujPasekCzasu(this.wybranaGrupaPaskaCzasu!) });
-    this.mapaWidok$.subscribe(stan => { this.wybranaGrupaPaskaCzasu = KolekcjeUtils.klonowanieObiektu(stan.dane); this.akywujPasekCzasu(this.wybranaGrupaPaskaCzasu!) });
-    setTimeout(() => this.zmianaPaskaCzasu(), 200);
+    this.mapaWidok$.subscribe(stan => { this.wybranaGrupaPaskaCzasu = KolekcjeUtils.klonowanieObiektu(stan.dane); this.akywujPasekCzasu(this.wybranaGrupaPaskaCzasu!); });
+    setTimeout(() => this.zmianaPaskaCzasu(), 150);
     // this.store.dispatch(MapaWidokActions.aktualizujDane)
     // this.pokazWyborPaskaCzasu();
   }
@@ -120,10 +121,10 @@ export class PasekCzasuComponent implements OnInit, OnDestroy, AfterViewChecked 
   private obslugaZmianInterfejsuUzytownika() {
     this.subscrybcje$.add(this.interfejsUzytkownika$.subscribe(stan => {
       if (stan.belkaBocznaLewa.zwinieta === false) {
-        this.store.dispatch(MapaWidokActions.zamknijMapaWidok({ widokMapyId: WIDOKI_MAPY_ID.WIDOK_PASKA_CZASU }));
+        this.store.dispatch(MapaWidokActions.reset());
       }
       if (stan.wyszukiwarka.zwinieta === false) {
-        this.store.dispatch(MapaWidokActions.zamknijMapaWidok({ widokMapyId: WIDOKI_MAPY_ID.WIDOK_PASKA_CZASU }));
+        this.store.dispatch(MapaWidokActions.reset());
       }
     }));
   }
@@ -148,7 +149,7 @@ export class PasekCzasuComponent implements OnInit, OnDestroy, AfterViewChecked 
     this.konfigurujPasekCzasu();
     this.inicjujWarstwy();
     // this.store.dispatch(MapaWidokActions.)
-    console.log('akywujPasekCzasu: ', this.aktualnaWartosc);
+    // console.log('akywujPasekCzasu: ', this.aktualnaWartosc);
 
     // this.store.dispatch(MapaWidokActions.aktualizujDane({
     //   widokMapyId: WIDOKI_MAPY_ID.WIDOK_PASKA_CZASU,
@@ -221,7 +222,7 @@ export class PasekCzasuComponent implements OnInit, OnDestroy, AfterViewChecked 
       return;
     }
     this.wybranaGrupaPaskaCzasu.warstwy.forEach((w, k) => {
-      console.log('inicjuj warstwy: ', w, k);
+      // console.log('inicjuj warstwy: ', w, k);
       LegendaUtils.dodajParametrySterujace(w.warstwa);
       if (k === 0) {
         w.warstwa.parametrySterujace!.widoczna = true;

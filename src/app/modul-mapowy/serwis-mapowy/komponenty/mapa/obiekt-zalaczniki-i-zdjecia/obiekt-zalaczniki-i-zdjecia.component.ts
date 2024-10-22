@@ -231,8 +231,8 @@ export class ObiektZalacznikiIZdjeciaComponent implements OnInit, OnChanges {
         if (p.plik.rozszerzenie && (['apng', 'avif', 'gif', 'jpg', 'jpeg', 'jfif', 'pjpeg', 'pjp', 'png', 'svg', 'webp','tif','tiff'].indexOf(p.plik.rozszerzenie) > -1)) {
           if (!p.plik.sciezkaMiniaturki) { p.plik.sciezkaMiniaturki = new HttpUrlEncodingCodec().encodeValue(this.url + p.plik.sciezka) };
         };
-        console.log(p.plik.rozszerzenie,p.plik.sciezkaMiniaturki);
-        console.log('ustawMiniaturki',p.plik);
+        // console.log(p.plik.rozszerzenie,p.plik.sciezkaMiniaturki);
+        // console.log('ustawMiniaturki',p.plik);
       });
     }
   }
