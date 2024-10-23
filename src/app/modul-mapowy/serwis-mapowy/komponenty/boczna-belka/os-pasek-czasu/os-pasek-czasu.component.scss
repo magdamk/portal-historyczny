@@ -42,7 +42,7 @@ $karta-mapy-rodzaj-wysokosc: 1.5rem;
           justify-content: center;
           height: 150px;
           width: auto;
-          color: $miasto-bialy;
+          color: #EDEEF4;
           background-color: $miasto-blekit;
           cursor: pointer;
 
@@ -96,8 +96,8 @@ $karta-mapy-rodzaj-wysokosc: 1.5rem;
 
       :hover {
         .grupa-top {
-          background-color: $miasto-bialy;
-          font-weight: 700;
+          background-color:  #EDEEF4;
+          // font-weight: 700;
           color: $miasto-blekit;
         }
       }

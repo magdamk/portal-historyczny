@@ -20,6 +20,7 @@ import { MapaWidokActions } from 'src/app/modul-mapowy/stan/mapa-widok/mapa-wido
 import { WIDOKI_MAPY_ID } from 'src/app/modul-mapowy/stan/mapa-widok/mapa-widok.const';
 import { KolekcjeUtils } from '../../../utils/kolekcje-utils';
 import { InterfejsUzytkownikaActions } from 'src/app/modul-mapowy/stan/interfejs-uzytkownika/interfejs-uzytkownika.actions';
+import { LegendaUtils } from '../../../utils/legenda-utils';
 
 @Component({
   selector: 'mm-os-pasek-czasu',
@@ -136,9 +137,18 @@ export class OsPasekCzasuComponent implements OnInit, OnDestroy {
   wybierzGrupe(grupa: GrupaWarstwPaskaCzasu) {
     // this.store.dispatch(MapaWidokActions.zamknijMapaWidok({ widokMapyId: this.widokMapyIdentyfikator }))
     // this.store.dispatch(MapaWidokActions.reset());
-
+    console.log('grupa.warstwy ',grupa.warstwy);
+    grupa.warstwy.forEach((w, k) => {
+      console.log('wybierzGrupe: ', w, k);
+      LegendaUtils.dodajParametrySterujace(w.warstwa);
+      if (k === 0) {
+        w.warstwa.parametrySterujace!.widoczna = true;
+      } else {
+        w.warstwa.parametrySterujace!.widoczna = false;
+      }
+    });
     // setTimeout(() => {
-      this.store.dispatch(MapaWidokActions.aktualizujDane({ widokMapyId: this.widokMapyIdentyfikator, dane: grupa }));
+      this.store.dispatch(MapaWidokActions.aktualizujDane({ widokMapyId: this.widokMapyIdentyfikator, dane: KolekcjeUtils.klonowanieObiektu(grupa) }));
       // this.store.dispatch(MapaWidokActions.zapiszGrupePaskaCzasu({ widokMapyId: this.widokMapyIdentyfikator, daneInicjujacePasekCzasu:  grupa }));
       // this.store.dispatch(MapaWidokActions.uruchomMapaWidok({ widokMapyId: WIDOKI_MAPY_ID.WIDOK_PASKA_CZASU }));
       // this.store.dispatch(LewyPanelWidokActions.pokazObszar({ widokId: WIDOKI_ID.PASKI_CZASU }));
