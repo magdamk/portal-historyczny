@@ -38,7 +38,7 @@
         display: flex;
         height: 200px;
         align-items: center;
-        // max-height:max-content;
+
         width: auto;
         margin-bottom: 10px;
         justify-content: center;
@@ -168,6 +168,11 @@
         touch-action: pan-y !important;
         cursor: pointer;
       }
+    }
+  }
+  .wielokrotne{
+    .widok{
+      max-height:max-content;
     }
   }
 }
