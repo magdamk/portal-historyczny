@@ -1,15 +1,25 @@
-<div class="pasek-czasu" >
-  <div class="tekst-b">{{'codes.modul-mapowy.narzedzie-paska-czasu.pasek-czasu' | translate}} {{ wybranaGrupaPaskaCzasu?.nazwa | wyborTlumaczenia: aktualnyJezyk}}</div>
-  <div class="slider">
-    <ngx-slider #ngxSlider [(value)]="aktualnaWartosc" [options]="options" (valueChange)="zmianaPaskaCzasu()"></ngx-slider>
+<div class="pasek-czasu">
+  <div class="tytul-wrapper">
+    <span class="tytul-desktop" *mmTylkoDesktop>{{'codes.modul-mapowy.narzedzie-paska-czasu.pasek-czasu' |
+      translate}}:</span>
+    <span class="tytul-all font-bold"> {{ wybranaGrupaPaskaCzasu?.nazwa | wyborTlumaczenia: aktualnyJezyk}}</span>
+  </div>
+  <div class="slider-desktop" *mmTylkoDesktop>
+    <ngx-slider #ngxSlider [(value)]="aktualnaWartosc" [options]="options"
+      (valueChange)="zmianaPaskaCzasu()"></ngx-slider>
     <span class="w-lewo" mmIkonaSvg="poprzedni" (click)="poprzedni()"></span>
     <span class="w-prawo" mmIkonaSvg="nastepny" (click)="nastepny()"></span>
   </div>
+  <div class="slider-mobile" *mmTylkoMobile>
+    <ngx-slider #ngxSlider [(value)]="aktualnaWartosc" [options]="options"
+      (valueChange)="zmianaPaskaCzasu()"></ngx-slider>
+    <span class="w-lewo" mmIkonaSvg="poprzedni" (click)="poprzedni()"></span>
+    <span class="w-prawo" mmIkonaSvg="nastepny" (click)="nastepny()"></span>
+    <span class="mobile-legend" *ngIf="options.stepsArray">{{options.stepsArray[aktualnaWartosc].legend}}</span>
+  </div>
   <div class="zamknij">
-    <mm-przycisk-ikona ikona="zamknij"
-                        typ="przezroczysty"
-                        (click)="zamknijOkno()"
-                        label="{{'codes.generyczne.zamknij' | translate}}">
+    <mm-przycisk-ikona ikona="zamknij" typ="przezroczysty" (click)="zamknijOkno()"
+      label="{{'codes.generyczne.zamknij' | translate}}">
     </mm-przycisk-ikona>
   </div>
 </div>
