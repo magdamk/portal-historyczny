@@ -32,6 +32,7 @@ $karta-mapy-rodzaj-wysokosc: 1.5rem;
 
       .grupa {
         height: calc(1.5rem + 150px);
+        box-shadow: 5px 10px 8px #333;
         .grupa-top {
           border-top: 2px solid $miasto-blekit;
           border-left: 2px solid $miasto-blekit;
@@ -41,8 +42,8 @@ $karta-mapy-rodzaj-wysokosc: 1.5rem;
           justify-content: center;
           height: 150px;
           width: auto;
-          background-color: $miasto-bialy;
-          color: $miasto-blekit;
+          color: $miasto-bialy;
+          background-color: $miasto-blekit;
           cursor: pointer;
 
           text-align: center;
@@ -61,7 +62,7 @@ $karta-mapy-rodzaj-wysokosc: 1.5rem;
             // color: #09c;
             font-family: "Optimum";
             font-size: 1.2rem;
-            font-weight: 700;
+            // font-weight: 700;
             min-height: unset;
 
             // width: 100%;
@@ -95,9 +96,9 @@ $karta-mapy-rodzaj-wysokosc: 1.5rem;
 
       :hover {
         .grupa-top {
-          color: $miasto-bialy;
+          background-color: $miasto-bialy;
           font-weight: 700;
-          background-color: $miasto-blekit;
+          color: $miasto-blekit;
         }
       }
     }

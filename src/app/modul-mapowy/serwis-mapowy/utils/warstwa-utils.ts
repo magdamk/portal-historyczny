@@ -171,17 +171,18 @@ export class WarstwaUtils {
         ],
         numberOfZoomLevels: 19
     };
-    const myUniverse = new OM.universe.Universe(
-      // {
-      //   srid: 2178,
-      //   bounds: new OM.geometry.Rectangle(7489860.71, 5773789.51, 7518549.17, 5803861.96, 2178),
-      //   numberOfZoomLevels: 18
-      // }
-      config
-    );
+    const myUniverse = map.getUniverse();
+    // const myUniverse = new OM.universe.Universe(
+    //   // {
+    //   //   srid: 2178,
+    //   //   bounds: new OM.geometry.Rectangle(7489860.71, 5773789.51, 7518549.17, 5803861.96, 2178),
+    //   //   numberOfZoomLevels: 18
+    //   // }
+    //   config
+    // );
     const dtl_props = {
       universe: myUniverse,
-      tileLayerConfig: new OM.layer.TileLayerConfig({ tileImageWidth: 256, tileImageHeight: 256 }),
+      tileLayerConfig: new OM.layer.TileLayerConfig({ tileImageWidth: 512, tileImageHeight: 512 }),
       tileServerURL: environment.mapViewerUrl + MAPVIEWER_KONFIGURACJA.WARSTWY_DYNAMICZNE_SCIEZKA,
       enableUTFGrid: false,
       enableUTFGridInfoWindow: false,
