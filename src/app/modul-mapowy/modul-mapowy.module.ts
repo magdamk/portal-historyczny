@@ -65,6 +65,8 @@ import { PasekCzasuComponent } from './serwis-mapowy/komponenty/boczna-belka/pas
 import { WidokPaskaCzasuComponent } from './serwis-mapowy/komponenty/mapa/widok-paska-czasu/widok-paska-czasu.component';
 import { mapaWidokReducer } from './stan/mapa-widok/mapa-widok.reducer';
 import { NgxSliderModule } from 'ngx-slider-v2';
+import { KontaktFormularzComponent } from './commons/komponenty/kontakt-formularz/kontakt-formularz.component';
+import { KontaktZAdministratoremDialogComponent } from './serwis-mapowy/komponenty/kontakt/kontakt-z-administratorem-dialog/kontakt-z-administratorem-dialog.component';
 
 @NgModule({
   declarations: [
@@ -97,6 +99,7 @@ import { NgxSliderModule } from 'ngx-slider-v2';
     OsPasekCzasuComponent,
     PasekCzasuComponent,
     WidokPaskaCzasuComponent,
+    KontaktZAdministratoremDialogComponent
   ],
   imports: [
     CommonModule,
@@ -123,6 +126,7 @@ import { NgxSliderModule } from 'ngx-slider-v2';
   exports: [
     SerwisMapowyComponent,
     IkonaSvgDirective,
+    KontaktFormularzComponent,
     OracleMapsModule,
     MatLegacySliderModule,
     MatProgressSpinnerModule,

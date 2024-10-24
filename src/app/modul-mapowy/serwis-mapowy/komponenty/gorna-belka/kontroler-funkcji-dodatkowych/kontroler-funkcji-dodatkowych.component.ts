@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 // import {KontaktZAdministratoremDialogComponent} from '../../kontakt/kontakt-z-administratorem-dialog/kontakt-z-administratorem-dialog.component';
 import { BehaviorSubject } from 'rxjs';
 import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/tlumaczenia.service';
+import { KontaktZAdministratoremDialogComponent } from '../../kontakt/kontakt-z-administratorem-dialog/kontakt-z-administratorem-dialog.component';
 // import {PomocDialogComponent} from '../../pomoc/pomoc-dialog/pomoc-dialog.component';
 
 @Component({
@@ -34,10 +35,10 @@ export class KontrolerFunkcjiDodatkowychComponent implements OnInit {
    * Funkcja ładuje okno formularza kontaktowego z admnistratorem
    */
   pokazFormularzKontaktowy(): void {
-    // const dialogRef = this.dialog.open(KontaktZAdministratoremDialogComponent, {
-    //   width: '642px',
-    //   panelClass: 'um-dialog'
-    // });
+    const dialogRef = this.dialog.open(KontaktZAdministratoremDialogComponent, {
+      width: '642px',
+      panelClass: 'um-dialog'
+    });
   }
 
   /**

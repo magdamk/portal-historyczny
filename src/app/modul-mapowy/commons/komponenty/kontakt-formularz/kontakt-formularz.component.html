@@ -56,8 +56,8 @@
                       [disabled]="zaladowanePliki.length>=2"
                       [typyPlikowMime]="'application/zip,application/pdf,image/jpeg,image/png'"
                       (zaladowanoPlik)="dodajPlik($event)"></lib-upload-pliku> -->
-    <app-przycisk-prostokatny class="przycisk"
+    <mm-przycisk-prostokatny class="przycisk"
                               label="{{'codes.generyczne.wyslij' | translate}}" (click)="addWiadomosc()"
-                              [disabled]="form.status==='INVALID' || czyNiepoprawnyFormat"></app-przycisk-prostokatny>
+                              [disabled]="form.status==='INVALID' || czyNiepoprawnyFormat"></mm-przycisk-prostokatny>
   </div>
 </form>

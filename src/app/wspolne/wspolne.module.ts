@@ -16,7 +16,7 @@ import { KomunikatCookieComponent } from './komponenty/cookie/komunikat-cookie/k
 import { InformacjaPopupComponent } from './komponenty/informacja-popup/informacja-popup.component';
 import { PotwierdzeniePopupComponent } from './komponenty/potwierdzenie-popup/potwierdzenie-popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { KontaktFormularzComponent } from './komponenty/kontakt-formularz/kontakt-formularz.component';
+// import { KontaktFormularzComponent } from './komponenty/kontakt-formularz/kontakt-formularz.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -37,7 +37,7 @@ import { ModulMapowyModule } from '../modul-mapowy/modul-mapowy.module';
     KomponentHostDirective,
     InformacjaPopupComponent,
     PotwierdzeniePopupComponent,
-    KontaktFormularzComponent,
+    // KontaktFormularzComponent,
     ZamienNaKbMbPipe,
   ],
   imports: [
@@ -67,7 +67,7 @@ import { ModulMapowyModule } from '../modul-mapowy/modul-mapowy.module';
     SnackbarKomunikatComponent,
     PotwierdzeniePopupComponent,
     ZamienNaKbMbPipe,
-    KontaktFormularzComponent,
+    // KontaktFormularzComponent,
     KomponentHostDirective
   ]
 })

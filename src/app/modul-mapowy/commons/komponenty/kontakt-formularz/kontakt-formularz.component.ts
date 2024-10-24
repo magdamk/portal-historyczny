@@ -1,25 +1,10 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {Observable} from 'rxjs';
-import {bufferCount, take} from 'rxjs/operators';
-import {KontaktZAdministratoremModulMapowyAdapter, WidomoscDoAdministratora, ZalacznikWiadomosci} from '../../../core/adaptery/kontakt-z-administratorem-adapter';
-import {Router} from '@angular/router';
-import {KomunikatyModulMapowyAdapter} from '../../../core/adaptery/komunikaty-adapter';
-import { MatSnackBar, MatSnackBarHorizontalPosition,
-  MatSnackBarModule,
-  MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
-// import {MapyModulMapowyAdapter} from '../../../core/providers/mapy-adapter';
-// import {MapaService} from '../../../serwis-mapowy/serwisy/mapa.service';
-import {KolekcjeUtils} from "../../../core/utils/kolekcje-utils";
+import { Component, EventEmitter, Output } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { KontaktService } from 'src/app/core/service/kontakt.service';
 
-export const DOPUSZCZALNE_FORMATY_ZALACZNIKOW = ['application/pdf', 'application/x-zip-compressed', 'image/jpeg', 'image/png','application/zip'];
-
-/**
- * Komponent formularz kontaktowy
- */
 @Component({
-  selector: 'app-kontakt-formularz',
+  selector: 'mm-kontakt-formularz',
   templateUrl: './kontakt-formularz.component.html',
   styleUrls: ['./kontakt-formularz.component.scss']
 })

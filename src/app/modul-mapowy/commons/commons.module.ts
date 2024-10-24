@@ -17,6 +17,14 @@ import { ImgDirective } from './directives/img.directive';
 import { AudioDirective } from './directives/audio.directive';
 import { VideoDirective } from './directives/video.directive';
 import { PrzyciskProstokatnyComponent } from './komponenty/przycisk-prostokatny/przycisk-prostokatny.component';
+import { KontaktFormularzComponent } from './komponenty/kontakt-formularz/kontakt-formularz.component';
+import { TranslateModule } from "@ngx-translate/core";
+import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -32,15 +40,26 @@ import { PrzyciskProstokatnyComponent } from './komponenty/przycisk-prostokatny/
     ImgDirective,
     AudioDirective,
     VideoDirective,
-    PrzyciskProstokatnyComponent
+    PrzyciskProstokatnyComponent,
+    KontaktFormularzComponent
   ],
   imports: [
     CommonModule,
+    MatDialogModule,
     MatIconModule,
+    MatInputModule,
     MatLegacySliderModule,
-
     MatTooltipModule,
-    RouterModule
+    TranslateModule,
+    RouterModule,
+    MatTooltipModule,
+    // ObserversModule,
+    MatSnackBarModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatCheckboxModule,
+    FormsModule,
+    // MatSelectModule,
   ],
   exports:[
     AudioDirective,
@@ -48,7 +67,12 @@ import { PrzyciskProstokatnyComponent } from './komponenty/przycisk-prostokatny/
     FormatowanieInformacjiOObiekcieDirective,
     IkonaSvgDirective,
     ImgDirective,
-    MatLegacySliderModule,
+    KontaktFormularzComponent,
+    // MatLegacySliderModule,
+    // MatFormFieldModule,
+    // ReactiveFormsModule,
+    // MatCheckboxModule,
+    // FormsModule,
     MMOdkazHtmlPipe,
     PrzyciskIkonaComponent,
     PrzyciskMydloComponent,

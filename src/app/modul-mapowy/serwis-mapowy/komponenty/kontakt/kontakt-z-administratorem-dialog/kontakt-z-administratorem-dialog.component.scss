@@ -1,0 +1,13 @@
+@import "../../../../../../style/mm-style/mm-konfiguracja-szablonu.scss";
+
+.kontakt-dialog {
+  position: relative;
+  background: white;
+  .przycisk-zamknij {
+    position: absolute;
+    height: $legenda-kontrolki-romiar;
+    width: $legenda-kontrolki-romiar;
+    top: 0;
+    right: 0;
+  }
+}

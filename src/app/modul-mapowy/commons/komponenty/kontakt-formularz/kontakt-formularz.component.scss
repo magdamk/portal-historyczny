@@ -1,50 +1,52 @@
-@import "../../../../style/konfiguracja-szablonu";
+@import "../../../../../style/mm-style/mm-konfiguracja-szablonu.scss";
 
-.kontakt-form{
+
+.kontakt-form {
   background: white;
 }
 
-.licznik{
+.licznik {
   color: $miasto-czarny;
 
-  .liczba-znakow{
+  .liczba-znakow {
     margin-left: 10px;
   }
 }
 
-.nazwa-pliku{
+.nazwa-pliku {
   color: $miasto-blekit;
   font-weight: bold;
 }
 
-.blad-walidacji{
+.blad-walidacji {
   color: $miasto-kolor-blad;
 }
 
-.przyciski{
+.przyciski {
   margin-top: 15px;
   display: flex;
   flex-direction: column;
-  .przycisk{
+
+  .przycisk {
     width: 100%;
   }
 
-  app-przycisk-prostokatny{
+  mm-przycisk-prostokatny {
     margin-top: 15px;
   }
 }
 
 
 @media (min-width: $prog-przelaczenia) {
-  .przyciski{
+  .przyciski {
     flex-direction: row;
     justify-content: space-between;
 
-    .przycisk{
+    .przycisk {
       width: auto;
     }
 
-    app-przycisk-prostokatny{
+    mm-przycisk-prostokatny {
       margin-top: 0;
     }
   }
