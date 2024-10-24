@@ -14,6 +14,7 @@ import { PrzyciskPokazKontaktComponent } from './komponenty/przycisk-pokaz-konta
 import { PrzyciskPokazPomocComponent } from './komponenty/przycisk-pokaz-pomoc/przycisk-pokaz-pomoc.component';
 import { AktualnosciModule } from 'src/app/funkcjonalnosci/aktualnosci/aktualnosci.module';
 import { SzablonMapaComponent } from './szablon-mapa/szablon-mapa.component';
+import { PomocModule } from 'src/app/funkcjonalnosci/pomoc/pomoc.module';
 // import { ModulMapowyModule } from '@modul-mapowy';
 
 @NgModule({
@@ -35,7 +36,7 @@ import { SzablonMapaComponent } from './szablon-mapa/szablon-mapa.component';
     RouterModule,
     AktualnosciModule,
     WspolneModule,
-    // PomocModule,
+    PomocModule,
     MatIconModule,
     MatTooltipModule,
     // ModulMapowyModule,

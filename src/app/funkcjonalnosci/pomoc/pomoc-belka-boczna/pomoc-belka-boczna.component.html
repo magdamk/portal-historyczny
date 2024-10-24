@@ -1,13 +1,14 @@
-<div class="pomoc-belka-boczna">
+<div class="pomoc-belka-boczna p-4">
   <mm-przycisk-ikona
     class="przycisk-zamknij"
     typ="przezroczysty"
     ikona="ukryj"
-    (click)="zamknijKontakt()">
+    (click)="zamknijPomoc()">
   </mm-przycisk-ikona>
   <div class="text-3xl m-auto"> {{'codes.generyczne.w-przygotowaniu' | translate}}</div>
   <!-- <mm-pomoc-formularz #formularzWyszukiwarki [czyUkrytaWyszukiwarka]="szczegolyKomponent.ukrytaWyszukiwarkaMobilna"></mm-pomoc-formularz>
-  <mm-pomoc-szczegoly #szczegolyKomponent [wyszukiwarka]="formularzWyszukiwarki.wyszukiwarka">
+  <mm-pomoc-szczegoly #szczegolyKomponent
+                       [wyszukiwarka]="formularzWyszukiwarki.wyszukiwarka">
   </mm-pomoc-szczegoly> -->
 </div>
 

@@ -1,0 +1,18 @@
+@import "../../../../../../style/mm-style/mm-konfiguracja-szablonu.scss";
+
+.pomoc-belka-boczna{
+  background: $miasto-bialy;
+  padding: 16px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  .przycisk-zamknij{
+    position: absolute;
+    height: $legenda-kontrolki-romiar;
+    width: $legenda-kontrolki-romiar;
+    top: 0;
+    right: 0;
+  }
+}

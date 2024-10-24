@@ -1,1 +1,13 @@
-<p>pomoc-dialog works!</p>
+<div class="pomoc-dialog" style="min-height: 700px">
+  <div class="tekst-d text-3xl m-auto"> {{'codes.generyczne.w-przygotowaniu' | translate}}</div>
+  <!-- <mm-pomoc-formularz #formularzWyszukiwarki>
+  </mm-pomoc-formularz>
+  <mm-pomoc-szczegoly #szczegolyKomponent [wyszukiwarka]="formularzWyszukiwarki.wyszukiwarka">
+  </mm-pomoc-szczegoly> -->
+  <mm-przycisk-ikona class="przycisk-zamknij"
+                      ikona="zamknij"
+                      typ="przezroczysty"
+                      label="{{'codes.generyczne.zamknij' | translate}}"
+                      (click)="zamknijDialog()"></mm-przycisk-ikona>
+</div>
+

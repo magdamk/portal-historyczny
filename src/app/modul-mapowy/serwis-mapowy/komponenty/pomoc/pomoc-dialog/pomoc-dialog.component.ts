@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'mm-pomoc-dialog',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./pomoc-dialog.component.scss']
 })
 export class PomocDialogComponent {
+  /**
+   * Konstruktor
+   * @param dialogRef
+   */
+  constructor(public dialogRef: MatDialogRef<PomocDialogComponent>) {
+  }
 
+  /**
+   * Funkcja pozwala zamknąć dialog
+   */
+  zamknijDialog(): void {
+    this.dialogRef.close();
+  }
 }

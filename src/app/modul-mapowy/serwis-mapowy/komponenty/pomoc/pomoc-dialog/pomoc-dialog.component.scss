@@ -1,0 +1,16 @@
+@import "../../../../../../style/mm-style/mm-konfiguracja-szablonu.scss";
+
+.pomoc-dialog {
+  position: relative;
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  .przycisk-zamknij {
+    position: absolute;
+    height: $legenda-kontrolki-romiar;
+    width: $legenda-kontrolki-romiar;
+    top: 0;
+    right: 0;
+  }
+}
