@@ -20,7 +20,6 @@ export class KontaktZAdministratoremBelkaBocznaComponent implements OnInit, Mobi
    * Cykl życia komponentu inicjalizacja
    */
   ngOnInit(): void {
-    console.log('kontakt');
   }
 
   /**
