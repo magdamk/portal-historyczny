@@ -25,6 +25,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MMKomponentHostDirective } from './directives/mm-komponent-host.directive';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     AudioDirective,
     VideoDirective,
     PrzyciskProstokatnyComponent,
-    KontaktFormularzComponent
+    KontaktFormularzComponent,
+    MMKomponentHostDirective
   ],
   imports: [
     CommonModule,
@@ -73,6 +75,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     // ReactiveFormsModule,
     // MatCheckboxModule,
     // FormsModule,
+    MMKomponentHostDirective,
     MMOdkazHtmlPipe,
     PrzyciskIkonaComponent,
     PrzyciskMydloComponent,

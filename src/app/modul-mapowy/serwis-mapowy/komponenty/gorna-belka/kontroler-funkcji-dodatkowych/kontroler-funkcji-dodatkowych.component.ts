@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { BehaviorSubject } from 'rxjs';
 import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/tlumaczenia.service';
 import { KontaktZAdministratoremDialogComponent } from '../../kontakt/kontakt-z-administratorem-dialog/kontakt-z-administratorem-dialog.component';
+import { PomocDialogComponent } from '../../pomoc/pomoc-dialog/pomoc-dialog.component';
 // import {PomocDialogComponent} from '../../pomoc/pomoc-dialog/pomoc-dialog.component';
 
 @Component({
@@ -45,10 +46,10 @@ export class KontrolerFunkcjiDodatkowychComponent implements OnInit {
    * Funkcja wywołuje formularz pomocy w oknie
    */
   pokazPomocDialog(): void {
-    // const dialogRef = this.dialog.open(PomocDialogComponent, {
-    //   width: '1170px',
-    //   panelClass: 'um-dialog'
-    // });
+    const dialogRef = this.dialog.open(PomocDialogComponent, {
+      width: '1170px',
+      panelClass: 'um-dialog'
+    });
   }
 
   /**

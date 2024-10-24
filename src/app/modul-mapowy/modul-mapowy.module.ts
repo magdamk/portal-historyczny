@@ -67,6 +67,9 @@ import { mapaWidokReducer } from './stan/mapa-widok/mapa-widok.reducer';
 import { NgxSliderModule } from 'ngx-slider-v2';
 import { KontaktFormularzComponent } from './commons/komponenty/kontakt-formularz/kontakt-formularz.component';
 import { KontaktZAdministratoremDialogComponent } from './serwis-mapowy/komponenty/kontakt/kontakt-z-administratorem-dialog/kontakt-z-administratorem-dialog.component';
+import { PomocBelkaBocznaComponent } from './serwis-mapowy/komponenty/pomoc/pomoc-belka-boczna/pomoc-belka-boczna.component';
+import { PomocDialogComponent } from './serwis-mapowy/komponenty/pomoc/pomoc-dialog/pomoc-dialog.component';
+import { KontaktZAdministratoremBelkaBocznaComponent } from './serwis-mapowy/komponenty/kontakt/kontakt-z-administratorem-belka-boczna/kontakt-z-administratorem-belka-boczna.component';
 
 @NgModule({
   declarations: [
@@ -99,7 +102,10 @@ import { KontaktZAdministratoremDialogComponent } from './serwis-mapowy/komponen
     OsPasekCzasuComponent,
     PasekCzasuComponent,
     WidokPaskaCzasuComponent,
-    KontaktZAdministratoremDialogComponent
+    KontaktZAdministratoremDialogComponent,
+    PomocBelkaBocznaComponent,
+    PomocDialogComponent,
+    KontaktZAdministratoremBelkaBocznaComponent
   ],
   imports: [
     CommonModule,

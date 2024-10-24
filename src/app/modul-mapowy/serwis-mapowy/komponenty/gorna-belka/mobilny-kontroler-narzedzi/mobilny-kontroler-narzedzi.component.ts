@@ -19,13 +19,16 @@ import {MapaService} from "../../../serwisy/mapa.service";
 // } from "../../../../stan/wyszukiwarka-zaawansowana/wyszukiwarka-zaawansowana.actions";
 import {KolekcjeUtils} from "../../../utils/kolekcje-utils";
 import { PRZYCISK_IKONA_TYP } from 'src/app/modul-mapowy/commons/komponenty/przycisk-ikona/przycisk-ikona.component';
-import { KomponentHostDirective } from 'src/app/wspolne/dyrektywy/komponent-host.directive';
+// import { KomponentHostDirective } from 'src/app/wspolne/dyrektywy/komponent-host.directive';
 import { KonfiguracjaModulMapowyAdapter } from 'src/app/modul-mapowy/mm-core/providers/konfiguracja-adapter';
 import { MapyModulMapowyAdapter } from 'src/app/modul-mapowy/mm-core/providers/mapy-adapter';
 import { Store } from '@ngrx/store';
 import { MobilnyKontrolerNarzedziService } from '../../../serwisy/mobilny-kontroler-narzedzi.service';
 import { MobilnyKontrolerNarzedziInterface } from 'src/app/modul-mapowy/commons/interfejsy/mobilny-kontroler-narzedzi-interface';
 import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/tlumaczenia.service';
+import { MMKomponentHostDirective } from 'src/app/modul-mapowy/commons/directives/mm-komponent-host.directive';
+import { KontaktZAdministratoremBelkaBocznaComponent } from '../../kontakt/kontakt-z-administratorem-belka-boczna/kontakt-z-administratorem-belka-boczna.component';
+import { PomocBelkaBocznaComponent } from '../../pomoc/pomoc-belka-boczna/pomoc-belka-boczna.component';
 
 /**
  * Komponent służy do wyświetlania narzędzi w trybie mobilnym
@@ -36,7 +39,7 @@ import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/tlumaczenia
   styleUrls: ['./mobilny-kontroler-narzedzi.component.scss']
 })
 export class MobilnyKontrolerNarzedziComponent implements OnInit, OnDestroy {
-  @ViewChild(KomponentHostDirective, {static: true}) appKomponentHost!: KomponentHostDirective;
+  @ViewChild(MMKomponentHostDirective, {static: true}) mmKomponentHost!: MMKomponentHostDirective;
 
   PRZYCISK = PRZYCISK_IKONA_TYP;
 
@@ -148,14 +151,14 @@ export class MobilnyKontrolerNarzedziComponent implements OnInit, OnDestroy {
    * Funkcja ładuje formularz kontaktu z administratorem
    */
   pokazFormlarzKontaktuZAdministratorem(): void {
-    // this.zaladujKomponent(KontaktZAdministratoremBelkaBocznaComponent);
+    this.zaladujKomponent(KontaktZAdministratoremBelkaBocznaComponent);
   }
 
   /**
    * Funkcja wywołuje formularz pomocy
    */
   pokazFormularzPomocy(){
-    // this.zaladujKomponent(PomocBelkaBocznaComponent);
+    this.zaladujKomponent(PomocBelkaBocznaComponent);
   }
 
 
@@ -191,11 +194,11 @@ export class MobilnyKontrolerNarzedziComponent implements OnInit, OnDestroy {
    * @param komponent - komponent powinien implementować interfejs BelkaBocznaKomponent
    */
   private zaladujKomponent(komponent: Type<MobilnyKontrolerNarzedziInterface>): void {
-    if (!this.appKomponentHost) {
+    if (!this.mmKomponentHost) {
       return;
     }
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(komponent);
-    const viewContainerRef = this.appKomponentHost.viewContainerRef;
+    const viewContainerRef = this.mmKomponentHost.viewContainerRef;
     viewContainerRef.clear();
     viewContainerRef.createComponent<MobilnyKontrolerNarzedziInterface>(componentFactory);
   }
@@ -204,6 +207,6 @@ export class MobilnyKontrolerNarzedziComponent implements OnInit, OnDestroy {
    * Funkcja zamyka komponent
    */
   private zamknijKomponent(): void {
-    this.appKomponentHost.viewContainerRef.clear();
+    this.mmKomponentHost.viewContainerRef.clear();
   }
 }
