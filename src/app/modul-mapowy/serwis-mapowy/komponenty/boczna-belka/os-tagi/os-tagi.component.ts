@@ -83,7 +83,7 @@ export class OsTagiComponent implements OnInit, OnDestroy {
     //   console.log('!!!!pobierzListeKategoriiMap: ', this.zbiorMapPlanow);
     //   // }
     // });
-    this.serviceTagi.getTagi().subscribe((result: any) => { this.tagi = Array.from(result); this.filteredTagi = this._filter(this.filterValue); this.filteredTagi$ = of(this.filteredTagi); });
+    this.serviceTagi.getTagi().subscribe((result: any) => { this.tagi = this.shuffle(Array.from(result)); this.filteredTagi = this._filter(this.filterValue); this.filteredTagi$ = of(this.filteredTagi); });
   }
 
 
@@ -204,6 +204,21 @@ export class OsTagiComponent implements OnInit, OnDestroy {
     this.store.dispatch(LewyPanelWidokActions.pokazObszar({ widokId: WIDOKI_ID.TEMATY }));
     sessionStorage.setItem('tagi','true');
   }
+   shuffle(array:TagiDto[]):TagiDto[] {
+    let currentIndex = array.length;
 
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+
+      // Pick a remaining element...
+      let randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+    return array;
+  }
 
 }
