@@ -80,8 +80,8 @@
               ],
               "optimization": true,
               "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": true,
+              "sourceMap": true,
+              "namedChunks": false,
               "extractLicenses": false,
               "vendorChunk": true,
               "buildOptimizer": true
