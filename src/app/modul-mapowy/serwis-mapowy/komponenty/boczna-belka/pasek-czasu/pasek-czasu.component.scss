@@ -3,17 +3,21 @@
 
 .pasek-czasu {
   position: absolute;
-  bottom: 50px;
-  height: 180px;
-  width: 60%;
-  left: calc(50% - 30%);
+  bottom: 60px;
+  // height: 180px;
+  // width: 60%;
+  // left: calc(50% - 30%);
+
+  height: 150px;
+  width: 98%;
+  left: 1%;
   background: white;
   z-index: 15;
 
   .tytul-wrapper {
     font-size: 1.5rem;
     margin-top: 2rem;
-    margin-left: 2rem;
+    margin-left: 0.5rem;
     line-height: 2rem;
     margin-right: 60px;
     display: flex;
@@ -105,17 +109,31 @@
   }
 }
 
-// @media (min-width: $prog-przelaczenia) {
-//   .pasek-czasu {
+@media (min-width: $prog-przelaczenia) {
+  .pasek-czasu {
+    bottom: 20px;
+    height: 180px;
+    width: calc(100% - 230px);
+    // left: calc(50% - 30%);
+    left: 160px;
 
+    .tytul-wrapper {
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      margin-left: 2rem;
+      line-height: 2rem;
+      margin-right: 60px;
+      display: flex;
+      justify-content: center;
 
-//     .tytul-wrapper {
+      .tytul-desktop {
+        color: $miasto-czarny;
+        margin-right: 10px;
+      }
 
-
-//       .tytul-all {
-//         justify-self:center;
-//         color: $miasto-pomarancz;
-//       }
-//     }
-//   }
-// }
+      .tytul-all {
+        color: $miasto-pomarancz;
+      }
+    }
+  }
+}
