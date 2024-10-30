@@ -14,6 +14,7 @@ import { KomunikatPortaluMapowegoService } from '../../serwisy/komunikat-portalu
 import { KomunikatSzczegolyOpenDto } from 'src/app/core/modele/komunikat-szczegoly-open-dto';
 import { InformacjaPopupComponent } from 'src/app/wspolne/komponenty/informacja-popup/informacja-popup.component';
 import { WidokMapyMapaSzczegolyDto } from 'src/app/core/modele/widok-mapy-mapa-szczegoly-dto';
+import { ControllerMapyService } from 'src/app/core/api/controller-mapy.service';
 
 @Component({
   selector: 'app-strona-mapy',
@@ -60,7 +61,8 @@ export class StronaMapyComponent implements OnInit, OnDestroy {
     private komunikaty: KomunikatyModulMapowyAdapter,
     private modulMapowyService: ModulMapowyService,
     private komunikatService: KomunikatPortaluMapowegoService,
-    private routingUtils: RoutingUtilsService
+    private routingUtils: RoutingUtilsService,
+    private serwisMapy: ControllerMapyService
   ) {
     // this.ustawOstrzezenieOUtracieDanych();
   }
@@ -108,8 +110,18 @@ export class StronaMapyComponent implements OnInit, OnDestroy {
             this.pobierzKomunikatIWyswietl();
             this.pokazKomunikatOBrakujacychWarstwach(response.content?.definicjaMapy);
             this.zmianaNaMapie = false;
-            this.mapa ? this.mapa.rodzaj = this.pobierzRodzajZLocalStorage() : null;
-            this.mapa ? this.mapa.sciezkaDoPlikuZGrafika = encodeURI(this.pobierzImgPathZLocalStorage()) : null;
+            // this.mapa ? this.mapa.rodzaj = this.pobierzRodzajZLocalStorage() : null;
+            // if(!this.mapa.rodzaj){
+            ///!!!!!!!!!!!!!!!!!! PO ZROBIENIU BACKeNDU ZMIENIĆ!!!!!!!!!!!!!!!
+              this.serwisMapy.getRodzajISciezkaDoPlikuZGrafika(this.uuidMapy!).subscribe(r=>{console.log(r.content!);
+
+                this.mapa!.rodzaj=r.content.find((m)=> m.uuidMapy===this.uuidMapy)?.rodzaj;
+                this.mapa!.sciezkaDoPlikuZGrafika=r.content.find((m)=> m.uuidMapy===this.uuidMapy)?.sciezkaDoPlikuZGrafika;
+                console.log(this.mapa!.rodzaj);
+              })
+              // .then((rresult)=>{console.log('rrrresult: ',rresult);console.log(rresult.content!.filter((m)=>m.uuidMapy===this.uuidMapy))});
+            // }
+            // this.mapa ? this.mapa.sciezkaDoPlikuZGrafika = encodeURI(this.pobierzImgPathZLocalStorage()) : null;
             this.wyczyscParamZLocalStorage();
           }
         }, error1 => {

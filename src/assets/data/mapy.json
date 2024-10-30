@@ -1,0 +1,60 @@
+{
+  "content": [
+    {
+      "nazwaMapy": "WARSZAWA ZAPAMIĘTANA",
+      "typ": "SERWIS_ZEWNETRZNY",
+      "rodzaj": "temat",
+      "adresUrl": "",
+      "opisKafelka": "Zapraszamy na wirtualną wycieczkę po dawnej Warszawie. Przedstawiamy stolicę we wspomnieniach wybranych z ponad 6tysięcy relacji i setek archiwalnych zdjęć znaszych zbiorów. Mapa pozwala odwiedzić miejsca tworzące historię Warszawy -miasta, jakie zapamiętali jego mieszkańcy.",
+      "status": "OPUBLIKOWANA",
+      "wersja": "OBIE",
+      "dostepnoscDlaWersjiDesktopowej": true,
+      "dostepnoscDlaWersjiResponsywnej": true,
+      "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/wawzap.png",
+      "numerWTabeli": 1,
+      "uuidMapy": "6c516f13-7fc7-43e8-b60f-acddea75406d"
+    },
+    {
+      "nazwaMapy": "ODBUDOWA WARSZAWY",
+      "typ": "SERWIS_ZEWNETRZNY",
+      "rodzaj": "temat",
+      "adresUrl": "",
+      "opisKafelka": "Cały naród buduje swoją stolicę. Krótka historia zniszczeń i odbudowy Warszawy na mapie.",
+      "status": "OPUBLIKOWANA",
+      "wersja": "OBIE",
+      "dostepnoscDlaWersjiDesktopowej": false,
+      "dostepnoscDlaWersjiResponsywnej": false,
+      "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/odbudowa.jfif",
+      "numerWTabeli": 3,
+      "uuidMapy": "c70ee36b-a41c-41f0-b44f-4393f7f6d7b4"
+    },
+    {
+      "nazwaMapy": "STAN WOJENNY",
+      "typ": "SERWIS_ZEWNETRZNY",
+      "rodzaj": "temat",
+      "adresUrl": "",
+      "opisKafelka": "Stan wprowadzony 13 grudnia 1981 roku na terenie całej PRL niezgodnie z Konstytucją.",
+      "status": "OPUBLIKOWANA",
+      "wersja": "OBIE",
+      "dostepnoscDlaWersjiDesktopowej": false,
+      "dostepnoscDlaWersjiResponsywnej": false,
+      "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/stanwojenny.png",
+      "numerWTabeli": 4,
+      "uuidMapy": "3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0"
+    },
+    {
+      "nazwaMapy": "Plany Lindleya z lat 1897-1901",
+      "typ": "SERWIS_ZEWNETRZNY",
+      "rodzaj": "mapa-plan",
+      "adresUrl": "",
+      "opisKafelka": "Plany miasta z przełomu XIX i XX z zasobów Archiwum Państwowego w Warszawie.",
+      "status": "OPUBLIKOWANA",
+      "wersja": "OBIE",
+      "dostepnoscDlaWersjiDesktopowej": true,
+      "dostepnoscDlaWersjiResponsywnej": true,
+      "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/planyL.png",
+      "numerWTabeli": 2,
+      "uuidMapy": "8ad1ca85-f541-4e8c-8cd9-7e5fb425cf3c"
+    }
+  ]
+}
