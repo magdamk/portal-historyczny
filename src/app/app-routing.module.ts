@@ -27,12 +27,10 @@ const routes: Routes = [
   },
   {
     path: 'mapa',
-    component: SzablonMapaComponent,
     loadChildren: () => import('./funkcjonalnosci/map/map.module').then((m) => m.MapModule),
   },
   {
     path: 'portal-historyczny/mapa',
-    component: SzablonMapaComponent,
     loadChildren: () => import('./funkcjonalnosci/map/map.module').then((m) => m.MapModule),
   },
   {
