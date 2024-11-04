@@ -37,10 +37,8 @@
   .miniaturka {
     // height: $karta-mapy-przycisk-wysokosc;
 margin-top: 10px;
-    margin-left: -20px;
-    margin-right: -60px;
-    max-width: 450px!important;
-    height: min-content;
+
+    height: auto;
     background-repeat: no-repeat;
   }
   // .legenda {
