@@ -1,53 +1,33 @@
 {
   "content": {
     "wyroznioneMapy": {
-      "uuid": "e30f8b9c-8d7d-64b2-e053-1110c80a4e9e",
       "nazwa": "Wyróżnione mapy",
       "numerWTabeli": 0,
-      "typ": {
-        "obiektEnum": "WYROZNIONE_MAPY",
-        "tlumaczenie": "Wyróżnione mapy"
-      },
+      "typ": "WYROZNIONE_MAPY",
       "grupyMap": [
         {
-            "nazwaMapy": "WARSZAWA ZAPAMIĘTANA",
-            "typ": "SERWIS_ZEWNETRZNY",
-            "rodzaj":"temat",
-            "adresUrl": "",
-            "opisKafelka": "Zapraszamy na wirtualną wycieczkę po dawnej Warszawie. Przedstawiamy stolicę we wspomnieniach wybranych z ponad 6tysięcy relacji i setek archiwalnych zdjęć znaszych zbiorów. Mapa pozwala odwiedzić miejsca tworzące historię Warszawy -miasta, jakie zapamiętali jego mieszkańcy.",
-            "status": "OPUBLIKOWANA",
-            "wersja": "OBIE",
-            "dostepnoscDlaWersjiDesktopowej": true,
-            "dostepnoscDlaWersjiResponsywnej": true,
-            "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/wawzap.png",
-            "numerWTabeli": 1,
-            "uuidMapy": "6c516f13-7fc7-43e8-b60f-acddea75406d"
-
+          "nazwaMapy": "WARSZAWA ZAPAMIĘTANA",
+          "rodzaj": "temat",
+          "adresUrl": "",
+          "opisKafelka": "Zapraszamy na wirtualną wycieczkę po dawnej Warszawie. Przedstawiamy stolicę we wspomnieniach wybranych z ponad 6tysięcy relacji i setek archiwalnych zdjęć znaszych zbiorów. Mapa pozwala odwiedzić miejsca tworzące historię Warszawy -miasta, jakie zapamiętali jego mieszkańcy.",
+          "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/wawzap.png",
+          "numerWTabeli": 1,
+          "uuidMapy": "6c516f13-7fc7-43e8-b60f-acddea75406d"
         },
         {
           "nazwaMapy": "PLANY LINDLEYA",
-          "typ": "SERWIS_ZEWNETRZNY",
-          "rodzaj":"mapa-plan",
+          "rodzaj": "mapa-plan",
           "adresUrl": "",
           "opisKafelka": "Plany miasta z przełomu XIX i XX z zasobów Archiwum Państwowego w Warszawie.",
-          "status": "OPUBLIKOWANA",
-          "wersja": "OBIE",
-          "dostepnoscDlaWersjiDesktopowej": true,
-          "dostepnoscDlaWersjiResponsywnej": true,
           "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/planyL.png",
           "numerWTabeli": 2,
           "uuidMapy": "8ad1ca85-f541-4e8c-8cd9-7e5fb425cf3c"
         },
         {
           "nazwaMapy": "Miejsce na nowy temat, plan lub szlak historyczny",
-          "typ": "SERWIS_ZEWNETRZNY",
-          "rodzaj":"mapa-plan",
+          "rodzaj": "mapa-plan",
           "adresUrl": "",
           "opisKafelka": "Tu będzie nowy temat, plan lub szlak historyczny",
-          "status": "OPUBLIKOWANA",
-          "wersja": "OBIE",
-          "dostepnoscDlaWersjiDesktopowej": true,
-          "dostepnoscDlaWersjiResponsywnej": true,
           "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/mapa_sport_srodek_braz.svg",
           "numerWTabeli": 3,
           "uuidMapy": ""
@@ -56,162 +36,103 @@
     },
     "kategorieTematyczne": [
       {
-        "uuid": "338ac088-2aed-4538-a81c-373301525098",
         "nazwa": "Tematy historyczne",
         "numerWTabeli": 1,
-        "typ": {
-          "obiektEnum": "KATEGORIA_TEMATYCZNA",
-          "tlumaczenie": "Kategoria tematyczna"
-        },
+        "typ": "KATEGORIA_TEMATYCZNA",
         "grupyMap": [
-           {
+          {
             "nazwaMapy": "WARSZAWA ZAPAMIĘTANA",
-            "typ": "SERWIS_ZEWNETRZNY",
-            "rodzaj":"temat",
+            "rodzaj": "temat",
             "adresUrl": "",
             "opisKafelka": "Zapraszamy na wirtualną wycieczkę po dawnej Warszawie. Przedstawiamy stolicę we wspomnieniach wybranych z ponad 6tysięcy relacji i setek archiwalnych zdjęć znaszych zbiorów. Mapa pozwala odwiedzić miejsca tworzące historię Warszawy -miasta, jakie zapamiętali jego mieszkańcy.",
-            "status": "OPUBLIKOWANA",
-            "wersja": "OBIE",
-            "dostepnoscDlaWersjiDesktopowej": true,
-            "dostepnoscDlaWersjiResponsywnej": true,
             "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/wawzap.png",
             "numerWTabeli": 1,
             "uuidMapy": "6c516f13-7fc7-43e8-b60f-acddea75406d"
           },
           {
             "nazwaMapy": "ODBUDOWA WARSZAWY",
-            "typ": "SERWIS_ZEWNETRZNY",
-            "rodzaj":"temat",
+            "rodzaj": "temat",
             "adresUrl": "",
             "opisKafelka": "Cały naród buduje swoją stolicę. Krótka historia zniszczeń i odbudowy Warszawy na mapie.",
-            "status": "OPUBLIKOWANA",
-            "wersja": "OBIE",
-            "dostepnoscDlaWersjiDesktopowej": false,
-            "dostepnoscDlaWersjiResponsywnej": false,
             "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/odbudowa.jfif",
             "numerWTabeli": 3,
             "uuidMapy": "c70ee36b-a41c-41f0-b44f-4393f7f6d7b4"
           },
           {
             "nazwaMapy": "STAN WOJENNY",
-            "typ": "SERWIS_ZEWNETRZNY",
-            "rodzaj":"temat",
+            "rodzaj": "temat",
             "adresUrl": "",
             "opisKafelka": "Stan wprowadzony 13 grudnia 1981 roku na terenie całej PRL niezgodnie z Konstytucją.",
-            "status": "OPUBLIKOWANA",
-            "wersja": "OBIE",
-            "dostepnoscDlaWersjiDesktopowej": false,
-            "dostepnoscDlaWersjiResponsywnej": false,
             "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/stanwojenny.png",
             "numerWTabeli": 4,
             "uuidMapy": "3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0"
           },
-        {
-          "nazwaMapy": "Miejsce na nowy temat",
-          "typ": "SERWIS_ZEWNETRZNY",
-          "adresUrl": "",
-          "rodzaj":"temat",
-          "opisKafelka": "Tu będzie nowy temat historyczny",
-          "status": "OPUBLIKOWANA",
-          "wersja": "OBIE",
-          "dostepnoscDlaWersjiDesktopowej": true,
-          "dostepnoscDlaWersjiResponsywnej": true,
-          "sciezkaDoPlikuZGrafika": "",
-          "numerWTabeli": 5,
-          "uuidMapy": ""
-        },
-        {
-          "nazwaMapy": "Miejsce na nowy temat",
-          "typ": "SERWIS_ZEWNETRZNY",
-          "adresUrl": "",
-          "rodzaj":"temat",
-          "opisKafelka": "Tu będzie nowy temat historyczny",
-          "status": "OPUBLIKOWANA",
-          "wersja": "OBIE",
-          "dostepnoscDlaWersjiDesktopowej": true,
-          "dostepnoscDlaWersjiResponsywnej": true,
-          "sciezkaDoPlikuZGrafika": "",
-          "numerWTabeli": 36,
-          "uuidMapy": ""
-        },
-        {
-          "nazwaMapy": "Miejsce na nowy temat",
-          "typ": "SERWIS_ZEWNETRZNY",
-          "adresUrl": "",
-          "rodzaj":"temat",
-          "opisKafelka": "Tu będzie nowy temat historyczny",
-          "status": "OPUBLIKOWANA",
-          "wersja": "OBIE",
-          "dostepnoscDlaWersjiDesktopowej": true,
-          "dostepnoscDlaWersjiResponsywnej": true,
-          "sciezkaDoPlikuZGrafika": "",
-          "numerWTabeli": 3,
-          "uuidMapy": ""
-        }
-
+          {
+            "nazwaMapy": "Miejsce na nowy temat",
+            "adresUrl": "",
+            "rodzaj": "temat",
+            "opisKafelka": "Tu będzie nowy temat historyczny",
+            "sciezkaDoPlikuZGrafika": "",
+            "numerWTabeli": 5,
+            "uuidMapy": ""
+          },
+          {
+            "nazwaMapy": "Miejsce na nowy temat",
+            "adresUrl": "",
+            "rodzaj": "temat",
+            "opisKafelka": "Tu będzie nowy temat historyczny",
+            "sciezkaDoPlikuZGrafika": "",
+            "numerWTabeli": 36,
+            "uuidMapy": ""
+          },
+          {
+            "nazwaMapy": "Miejsce na nowy temat",
+            "adresUrl": "",
+            "rodzaj": "temat",
+            "opisKafelka": "Tu będzie nowy temat historyczny",
+            "sciezkaDoPlikuZGrafika": "",
+            "numerWTabeli": 3,
+            "uuidMapy": ""
+          }
         ]
       },
       {
-        "uuid": "82154485-8f5a-4273-98d5-b554a1b4db8b",
         "nazwa": "Historyczne wizerunki map i planów",
         "numerWTabeli": 2,
-        "typ": {
-          "obiektEnum": "KATEGORIA_TEMATYCZNA",
-          "tlumaczenie": "Kategoria tematyczna"
-        },
+        "typ": "KATEGORIA_TEMATYCZNA",
         "grupyMap": [
-         {
-           "nazwaMapy": "Plany Lindleya z lat 1897-1901",
-          "typ": "SERWIS_ZEWNETRZNY",
-          "rodzaj":"mapa-plan",
-          "adresUrl": "",
-          "opisKafelka": "Plany miasta z przełomu XIX i XX z zasobów Archiwum Państwowego w Warszawie.",
-          "status": "OPUBLIKOWANA",
-          "wersja": "OBIE",
-          "dostepnoscDlaWersjiDesktopowej": true,
-          "dostepnoscDlaWersjiResponsywnej": true,
-          "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/planyL.png",
-          "numerWTabeli": 2,
-          "uuidMapy": "8ad1ca85-f541-4e8c-8cd9-7e5fb425cf3c"
+          {
+            "nazwaMapy": "Plany Lindleya z lat 1897-1901",
+            "rodzaj": "mapa-plan",
+            "adresUrl": "",
+            "opisKafelka": "Plany miasta z przełomu XIX i XX z zasobów Archiwum Państwowego w Warszawie.",
+            "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/planyL.png",
+            "numerWTabeli": 2,
+            "uuidMapy": "8ad1ca85-f541-4e8c-8cd9-7e5fb425cf3c"
           },
           {
             "nazwaMapy": "Miejsce na nowy plan",
-            "typ": "SERWIS_ZEWNETRZNY",
             "adresUrl": "",
-            "rodzaj":"mapa-plan",
+            "rodzaj": "mapa-plan",
             "opisKafelka": "Tu będzie nowy plan historyczny",
-            "status": "OPUBLIKOWANA",
-            "wersja": "OBIE",
-            "dostepnoscDlaWersjiDesktopowej": false,
-            "dostepnoscDlaWersjiResponsywnej": false,
             "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/mapa_sport_srodek_braz2.svg",
             "numerWTabeli": 2,
             "uuidMapy": ""
           },
           {
             "nazwaMapy": "Miejsce na nowy plan",
-            "typ": "SERWIS_ZEWNETRZNY",
             "adresUrl": "",
-            "rodzaj":"mapa-plan",
+            "rodzaj": "mapa-plan",
             "opisKafelka": "Tu będzie nowy plan historyczny",
-            "status": "OPUBLIKOWANA",
-            "wersja": "OBIE",
-            "dostepnoscDlaWersjiDesktopowej": false,
-            "dostepnoscDlaWersjiResponsywnej": false,
             "sciezkaDoPlikuZGrafika": "",
             "numerWTabeli": 2,
             "uuidMapy": ""
           },
-           {
+          {
             "nazwaMapy": "Miejsce na nowy plan",
-            "typ": "SERWIS_ZEWNETRZNY",
             "adresUrl": "",
-            "rodzaj":"mapa-plan",
+            "rodzaj": "mapa-plan",
             "opisKafelka": "Tu będzie nowy plan historyczny",
-            "status": "OPUBLIKOWANA",
-            "wersja": "OBIE",
-            "dostepnoscDlaWersjiDesktopowej": false,
-            "dostepnoscDlaWersjiResponsywnej": false,
             "sciezkaDoPlikuZGrafika": "",
             "numerWTabeli": 2,
             "uuidMapy": ""
@@ -219,66 +140,42 @@
         ]
       },
       {
-        "uuid": "ce2f588b-0008-49db-a6ea-a6dd3170c919",
         "nazwa": "Szlakami historii",
         "numerWTabeli": 3,
-        "typ": {
-          "obiektEnum": "KATEGORIA_TEMATYCZNA",
-          "tlumaczenie": "Kategoria tematyczna"
-        },
+        "typ": "KATEGORIA_TEMATYCZNA",
         "grupyMap": [
           {
             "nazwaMapy": "Miejsce na nowy szlak historyczny",
-            "typ": "SERWIS_ZEWNETRZNY",
             "adresUrl": "",
-            "rodzaj":"szlak",
+            "rodzaj": "szlak",
             "opisKafelka": "Tu będzie nowy szlak historyczny",
-            "status": "OPUBLIKOWANA",
-            "wersja": "OBIE",
-            "dostepnoscDlaWersjiDesktopowej": false,
-            "dostepnoscDlaWersjiResponsywnej": false,
             "sciezkaDoPlikuZGrafika": "",
             "numerWTabeli": 1,
             "uuidMapy": ""
           },
-         {
+          {
             "nazwaMapy": "Miejsce na nowy szlak historyczny",
-            "typ": "SERWIS_ZEWNETRZNY",
             "adresUrl": "",
-            "rodzaj":"szlak",
+            "rodzaj": "szlak",
             "opisKafelka": "Tu będzie nowy szlak historyczny",
-            "status": "OPUBLIKOWANA",
-            "wersja": "OBIE",
-            "dostepnoscDlaWersjiDesktopowej": false,
-            "dostepnoscDlaWersjiResponsywnej": false,
             "sciezkaDoPlikuZGrafika": "",
             "numerWTabeli": 1,
             "uuidMapy": ""
           },
-         {
+          {
             "nazwaMapy": "Miejsce na nowy szlak historyczny",
-            "typ": "SERWIS_ZEWNETRZNY",
             "adresUrl": "",
-            "rodzaj":"szlak",
+            "rodzaj": "szlak",
             "opisKafelka": "Tu będzie nowy szlak historyczny",
-            "status": "OPUBLIKOWANA",
-            "wersja": "OBIE",
-            "dostepnoscDlaWersjiDesktopowej": false,
-            "dostepnoscDlaWersjiResponsywnej": false,
             "sciezkaDoPlikuZGrafika": "",
             "numerWTabeli": 1,
             "uuidMapy": ""
           },
-         {
+          {
             "nazwaMapy": "Miejsce na nowy szlak historyczny",
-            "typ": "SERWIS_ZEWNETRZNY",
             "adresUrl": "",
-            "rodzaj":"szlak",
+            "rodzaj": "szlak",
             "opisKafelka": "Tu będzie nowy szlak historyczny",
-            "status": "OPUBLIKOWANA",
-            "wersja": "OBIE",
-            "dostepnoscDlaWersjiDesktopowej": false,
-            "dostepnoscDlaWersjiResponsywnej": false,
             "sciezkaDoPlikuZGrafika": "",
             "numerWTabeli": 1,
             "uuidMapy": ""
@@ -286,13 +183,9 @@
         ]
       },
       {
-        "uuid": "1f1f9513-4dde-4392-a503-4ddbba8dd98d",
         "nazwa": "Serwisy zewnętrzne",
         "numerWTabeli": 4,
-        "typ": {
-          "obiektEnum": "KATEGORIA_TEMATYCZNA",
-          "tlumaczenie": "Kategoria tematyczna"
-        },
+        "typ": "KATEGORIA_TEMATYCZNA",
         "grupyMap": []
       }
     ]

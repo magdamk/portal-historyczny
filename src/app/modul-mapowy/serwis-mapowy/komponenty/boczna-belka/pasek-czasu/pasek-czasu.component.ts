@@ -97,24 +97,6 @@ export class PasekCzasuComponent implements OnInit, OnDestroy, AfterViewChecked 
     }
   }
 
-  /**
-   * Funkja wyswietla okno wyboru paska czasu
-   * @param dane
-   * @param adres
-   * @param typ
-   */
-  private pokazWyborPaskaCzasu() {
-    // const dialogRef = this.dialog.open(PasekCzasuDialogComponent, {
-    //   width: '1170px',
-    //   panelClass: 'modul-mapowy-dialog'
-    // });
-    // dialogRef.afterClosed().subscribe(result => {
-    //   if (!result) {
-    //     this.store.dispatch(NarzedziaActions.zamknijNarzedzie({identyfikator: NARZEDZIA_STERUJACE_ID.PASEK_CZASU}));
-    //   }
-    //   this.akywujPasekCzasu(result);
-    // });
-  }
 
   /**
    * Funkcja obsluguje zmiany interfejsu uzytkownika

@@ -100,7 +100,7 @@ export class StronaMapyComponent implements OnInit, OnDestroy {
    * Funkcja ładuje mapę
    */
   private zaladujMape(): void {
-    if (this.uuidMapy) {
+    if (this.uuidMapy&&this.uuidMapy!='null') {
       this.mapySerwis.pobierzOpublikowanaMape(this.uuidMapy)
         .subscribe(response => {
           if (response.content?.definicjaMapy) {
@@ -112,14 +112,11 @@ export class StronaMapyComponent implements OnInit, OnDestroy {
             this.zmianaNaMapie = false;
             // this.mapa ? this.mapa.rodzaj = this.pobierzRodzajZLocalStorage() : null;
             // if(!this.mapa.rodzaj){
-            ///!!!!!!!!!!!!!!!!!! PO ZROBIENIU BACKeNDU ZMIENIĆ!!!!!!!!!!!!!!!
-              this.serwisMapy.getRodzajISciezkaDoPlikuZGrafika(this.uuidMapy!).subscribe(r=>{console.log(r.content!);
-
-                this.mapa!.rodzaj=r.content.find((m)=> m.uuidMapy===this.uuidMapy)?.rodzaj;
-                this.mapa!.sciezkaDoPlikuZGrafika=r.content.find((m)=> m.uuidMapy===this.uuidMapy)?.sciezkaDoPlikuZGrafika;
-                console.log(this.mapa!.rodzaj);
-              })
-              // .then((rresult)=>{console.log('rrrresult: ',rresult);console.log(rresult.content!.filter((m)=>m.uuidMapy===this.uuidMapy))});
+            this.serwisMapy.getRodzajISciezkaDoPlikuZGrafika(this.uuidMapy!).subscribe(r => {
+              this.mapa!.rodzaj = r.rodzaj;
+              this.mapa!.sciezkaDoPlikuZGrafika = r.sciezkaDoPlikuZGrafika;
+            })
+            // .then((rresult)=>{console.log('rrrresult: ',rresult);console.log(rresult.content!.filter((m)=>m.uuidMapy===this.uuidMapy))});
             // }
             // this.mapa ? this.mapa.sciezkaDoPlikuZGrafika = encodeURI(this.pobierzImgPathZLocalStorage()) : null;
             this.wyczyscParamZLocalStorage();

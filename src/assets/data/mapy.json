@@ -2,17 +2,15 @@
   "content": [
     {
       "nazwaMapy": "WARSZAWA ZAPAMIĘTANA",
-      "typ": "SERWIS_ZEWNETRZNY",
+      "nazwaMapyEn": "WARSZAWA ZAPAMIĘTANA",
       "rodzaj": "temat",
       "adresUrl": "",
       "opisKafelka": "Zapraszamy na wirtualną wycieczkę po dawnej Warszawie. Przedstawiamy stolicę we wspomnieniach wybranych z ponad 6tysięcy relacji i setek archiwalnych zdjęć znaszych zbiorów. Mapa pozwala odwiedzić miejsca tworzące historię Warszawy -miasta, jakie zapamiętali jego mieszkańcy.",
-      "status": "OPUBLIKOWANA",
-      "wersja": "OBIE",
-      "dostepnoscDlaWersjiDesktopowej": true,
-      "dostepnoscDlaWersjiResponsywnej": true,
+      "opisKafelkaEn": "Zapraszamy na wirtualną wycieczkę po dawnej Warszawie. Przedstawiamy stolicę we wspomnieniach wybranych z ponad 6tysięcy relacji i setek archiwalnych zdjęć znaszych zbiorów. Mapa pozwala odwiedzić miejsca tworzące historię Warszawy -miasta, jakie zapamiętali jego mieszkańcy.",
       "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/wawzap.png",
       "numerWTabeli": 1,
-      "uuidMapy": "6c516f13-7fc7-43e8-b60f-acddea75406d"
+      "uuidMapy": "6c516f13-7fc7-43e8-b60f-acddea75406d",
+      "kategoriaMapId":"2"
     },
     {
       "nazwaMapy": "ODBUDOWA WARSZAWY",
@@ -20,10 +18,6 @@
       "rodzaj": "temat",
       "adresUrl": "",
       "opisKafelka": "Cały naród buduje swoją stolicę. Krótka historia zniszczeń i odbudowy Warszawy na mapie.",
-      "status": "OPUBLIKOWANA",
-      "wersja": "OBIE",
-      "dostepnoscDlaWersjiDesktopowej": false,
-      "dostepnoscDlaWersjiResponsywnej": false,
       "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/odbudowa.jfif",
       "numerWTabeli": 3,
       "uuidMapy": "c70ee36b-a41c-41f0-b44f-4393f7f6d7b4"

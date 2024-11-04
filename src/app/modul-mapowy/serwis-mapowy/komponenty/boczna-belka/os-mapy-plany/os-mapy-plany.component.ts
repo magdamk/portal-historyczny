@@ -81,7 +81,7 @@ private pobierzListeMapPLanow(): void {
     .subscribe((result: any) => {
       // console.log('pobierzListeKategoriiMap: ', result.content.kategorieTematyczne[1].grupyMap);
       // if (result.content.typ.ObiektEnum==='KATEGORIA_TEMATYCZNA') {
-      this.zbiorMapPlanow = Array.from(result.content.kategorieTematyczne[1].grupyMap);
+      this.zbiorMapPlanow = Array.from(result[2].grupyMap);
       // console.log('!!!!pobierzListeKategoriiMap: ', this.zbiorMapPlanow);
       // }
     });
@@ -99,10 +99,10 @@ private pobierzListeMapPLanow(): void {
 * Funkcja sygnalizuje wybraniwMapy
 */
 wybranoMape(event: WyborMapyEvent): void {
-  if (event.typ === TypMapyObiektDto.ObiektEnumEnum.SerwisZewnetrzny) {
-    // this.komunikaty.pokazKomunikatBledu('codes.narzedzie-porownywania-map.blad-wyboru-mapy-komunikat', {});
-    return;
-  }
+  // if (event.typ === TypMapyObiektDto.ObiektEnumEnum.SerwisZewnetrzny) {
+  //   // this.komunikaty.pokazKomunikatBledu('codes.narzedzie-porownywania-map.blad-wyboru-mapy-komunikat', {});
+  //   return;
+  // }
   // this.mapaWybrana.emit(event);
 }
 

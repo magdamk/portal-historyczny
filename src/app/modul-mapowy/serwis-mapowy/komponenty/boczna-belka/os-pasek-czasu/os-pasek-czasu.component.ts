@@ -124,10 +124,10 @@ export class OsPasekCzasuComponent implements OnInit, OnDestroy {
   * Funkcja sygnalizuje wybraniwMapy
   */
   wybranoMape(event: WyborMapyEvent): void {
-    if (event.typ === TypMapyObiektDto.ObiektEnumEnum.SerwisZewnetrzny) {
-      // this.komunikaty.pokazKomunikatBledu('codes.narzedzie-porownywania-map.blad-wyboru-mapy-komunikat', {});
-      return;
-    }
+    // if (event.typ === TypMapyObiektDto.ObiektEnumEnum.SerwisZewnetrzny) {
+    //   // this.komunikaty.pokazKomunikatBledu('codes.narzedzie-porownywania-map.blad-wyboru-mapy-komunikat', {});
+    //   return;
+    // }
     // this.mapaWybrana.emit(event);
   }
   /**

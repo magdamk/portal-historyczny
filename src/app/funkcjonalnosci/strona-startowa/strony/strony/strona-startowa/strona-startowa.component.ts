@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { SzablonyService } from '../../../../../core/szablony/serwisy/szablony.service';
 import { MapaSzczegolyDto } from '../../../../../core/modele/mapa-szczegoly-dto';
 import { TypMapyObiektDto } from '../../../../../core/modele/typ-mapy-obiekt-dto';
@@ -10,16 +10,18 @@ import WersjaEnum = MapaSzczegolyDto.WersjaEnum;
 import { KomunikatyProviderService } from '../../../../../wspolne/serwisy/komunikaty-provider.service';
 import { ControllerKategorieMapService } from 'src/app/core/api/controller-kategorie-map.service';
 import { ResponsywnoscUtils } from 'src/app/modul-mapowy/mm-core/responsywnosc/utils/responsywnosc-utils';
+import { KategoriaMapOpenDto } from 'src/app/core/modele/kategoria-map-open-dto';
 /**
  * Komponent strona startowa
  */
 @Component({
   selector: 'app-strona-startowa',
   templateUrl: './strona-startowa.component.html',
-  styleUrls: ['./strona-startowa.component.scss']
+  styleUrls: ['./strona-startowa.component.scss'],
 })
 export class StronaStartowaComponent implements OnInit, OnDestroy {
   zbiorKategoriiMap = {} as ZbiorKategoriiMapOpenDto;
+  zbiorKategoriiMapRaw = [] as KategoriaMapOpenDto[];
   subskrybcje = new Subscription();
   jezyk = '';
   @Input()
@@ -53,12 +55,12 @@ export class StronaStartowaComponent implements OnInit, OnDestroy {
       .subscribe(() => this.pobierzListeKategoriiMap()));
   }
 
-  // /**
-  //  * Cykl życia komponentu o wyrenderowaniu widoku
-  //  */
-  // ngAfterViewInit(): void {
-  //   this.szablonyService.ustawTytulStrony('codes.strona-startowa.tytul');
-  // }
+  /**
+   * Cykl życia komponentu o wyrenderowaniu widoku
+   */
+  ngAfterViewInit(): void {
+    this.szablonyService.ustawTytulStrony('codes.strona-startowa.tytul');
+  }
 
   /**
    * Cykl życia komponentu destrukcja komponentu
@@ -71,11 +73,20 @@ export class StronaStartowaComponent implements OnInit, OnDestroy {
    * Funkcja do pobierania listy kategorii map
    */
   private pobierzListeKategoriiMap(): void {
-    let wersja = ResponsywnoscUtils.czyTrybDesktop() ? WersjaEnum.Desktopowa : WersjaEnum.Mobilna;
-    this.serviceKategoriiMap.getKategorieMap()
+    // let wersja = ResponsywnoscUtils.czyTrybDesktop() ? WersjaEnum.Desktopowa : WersjaEnum.Mobilna;
+    // this.serviceKategoriiMap.getKategorieMap()
+    //   .subscribe((result: any) => {
+    //     if (result.content) {
+    //       this.zbiorKategoriiMap = result.content;
+    //     }
+    //   });
+      this.serviceKategoriiMap.getKategorieMap()
       .subscribe((result: any) => {
-        if (result.content) {
-          this.zbiorKategoriiMap = result.content;
+        if (result) {
+          this.zbiorKategoriiMapRaw = result;
+          this.zbiorKategoriiMap.wyroznioneMapy = result[0];
+          this.zbiorKategoriiMapRaw.shift();
+          this.zbiorKategoriiMap.kategorieTematyczne = this.zbiorKategoriiMapRaw;
         }
       });
     // this.serviceKategoriiMap.pobierzListeKategorieMapDlaPortalu(wersja)
@@ -91,10 +102,10 @@ export class StronaStartowaComponent implements OnInit, OnDestroy {
    * Funkcja sygnalizuje wybraniwMapy
    */
   wybranoMape(event: WyborMapyEvent): void {
-    if (this.wyborMapyDoPorownania && event.typ === TypMapyObiektDto.ObiektEnumEnum.SerwisZewnetrzny) {
-      this.komunikaty.pokazKomunikatBledu('codes.narzedzie-porownywania-map.blad-wyboru-mapy-komunikat', {});
-      return;
-    }
+    // if (this.wyborMapyDoPorownania && event.typ === TypMapyObiektDto.ObiektEnumEnum.SerwisZewnetrzny) {
+    //   this.komunikaty.pokazKomunikatBledu('codes.narzedzie-porownywania-map.blad-wyboru-mapy-komunikat', {});
+    //   return;
+    // }
     this.mapaWybrana.emit(event);
   }
 

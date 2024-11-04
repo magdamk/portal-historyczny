@@ -103,7 +103,7 @@ export class BelkaKartaMapyComponent implements OnInit, OnDestroy {
   wybranoMape(): void {
     if (this.temat!.adresUrl || this.zmianaMapy) {
       // console.log('wybrano mapę: ');
-      this.mapaWybrana.emit({ url: this.temat!.adresUrl, uuidMapy: this.temat!.uuidMapy, typ: this.temat!.typ?.obiektEnum, rodzaj: this.temat!.rodzaj });
+      this.mapaWybrana.emit({ url: this.temat!.adresUrl, uuidMapy: this.temat!.uuidMapy, rodzaj: this.temat!.rodzaj });
     }
   }
 
@@ -125,7 +125,7 @@ export class BelkaKartaMapyComponent implements OnInit, OnDestroy {
       this.wybranoMape();
       return;
     }
-    if (this.temat!.typ?.obiektEnum === TypMapyObiektDto.ObiektEnumEnum.SerwisZewnetrzny && this.adresUrl) {
+    if (this.temat!.adresUrl && this.adresUrl) {
       window.open(this.adresUrl, '_blank');
       return;
     }

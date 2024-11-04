@@ -88,7 +88,7 @@ export class OsTematyComponent implements OnInit, OnDestroy {
       .subscribe((result: any) => {
         // console.log('pobierzListeKategoriiMap: ', result.content.kategorieTematyczne[0].grupyMap);
         // if (result.content.typ.ObiektEnum==='KATEGORIA_TEMATYCZNA') {
-        this.zbiorTematow = Array.from(result.content.kategorieTematyczne[0].grupyMap);
+        this.zbiorTematow = Array.from(result[1].grupyMap);
         // console.log('!!!!pobierzListeKategoriiMap: ', this.zbiorTematow);
         // }
       });
@@ -106,10 +106,10 @@ export class OsTematyComponent implements OnInit, OnDestroy {
 * Funkcja sygnalizuje wybraniwMapy
 */
   wybranoMape(event: WyborMapyEvent): void {
-    if (event.typ === TypMapyObiektDto.ObiektEnumEnum.SerwisZewnetrzny) {
-      // this.komunikaty.pokazKomunikatBledu('codes.narzedzie-porownywania-map.blad-wyboru-mapy-komunikat', {});
-      return;
-    }
+    // if (event.typ === TypMapyObiektDto.ObiektEnumEnum.SerwisZewnetrzny) {
+    //   // this.komunikaty.pokazKomunikatBledu('codes.narzedzie-porownywania-map.blad-wyboru-mapy-komunikat', {});
+    //   return;
+    // }
     // this.mapaWybrana.emit(event);
   }
 }

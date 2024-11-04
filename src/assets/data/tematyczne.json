@@ -1,0 +1,135 @@
+[
+  {
+  "nazwa": "Wyróżnione mapy",
+  "nazwaEn": "Featured maps",
+  "typ": "WYROZNIONE_MAPY",
+  "numerWTabeli": 0,
+  "grupyMap": [
+  {
+  "rodzaj": "temat",
+  "nazwaMapy": "WARSZAWA ZAPAMIĘTANA",
+  "nazwaMapyEn": "WARSAW REMEMBERED",
+  "uuidMapy": "6c516f13-7fc7-43e8-b60f-acddea75406d",
+  "adresUrl": null,
+  "opisKafelka": "Zapraszamy na wirtualną wycieczkę po dawnej Warszawie. Przedstawiamy stolicę we wspomnieniach wybranych z ponad 6 tysięcy relacji i setek archiwalnych zdjęć znaszych zbiorów. Historia Warszawy - miasta, jakie zapamiętali jego mieszkańcy.",
+  "opisKafelkaMapyEn": "We invite you for a virtual tour of old Warsaw. We present the capital in memories selected from over 6,000 reports and hundreds of archival photos from known collections. The history of Warsaw - the city as remembered by its inhabitants.",
+  "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/wawzap.png",
+  "numerWTabeli": 1
+  },
+  {
+  "rodzaj": "mapa-plan",
+  "nazwaMapy": "Plany Lindleya z lat 1897-1901",
+  "nazwaMapyEn": "Lindley's plans 1897-1901",
+  "uuidMapy": "8ad1ca85-f541-4e8c-8cd9-7e5fb425cf3c",
+  "adresUrl": null,
+  "opisKafelka": "Plany miasta z przełomu XIX i XX z zasobów Archiwum Państwowego w Warszawie.",
+  "opisKafelkaMapyEn": "City plans from the turn of the 19th and 20th century from the resources of the State Archives in Warsaw.",
+  "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/planyL.png",
+  "numerWTabeli": 2
+  }
+  ]
+  },
+  {
+  "nazwa": "Tematy historyczne",
+  "nazwaEn": "Historical topics",
+  "typ": "KATEGORIA_TEMATYCZNA",
+  "numerWTabeli": 1,
+  "grupyMap": [
+  {
+  "rodzaj": "temat",
+  "nazwaMapy": "WARSZAWA ZAPAMIĘTANA",
+  "nazwaMapyEn": "WARSAW REMEMBERED",
+  "uuidMapy": "6c516f13-7fc7-43e8-b60f-acddea75406d",
+  "adresUrl": null,
+  "opisKafelka": "Zapraszamy na wirtualną wycieczkę po dawnej Warszawie. Przedstawiamy stolicę we wspomnieniach wybranych z ponad 6 tysięcy relacji i setek archiwalnych zdjęć znaszych zbiorów. Historia Warszawy - miasta, jakie zapamiętali jego mieszkańcy.",
+  "opisKafelkaMapyEn": "We invite you for a virtual tour of old Warsaw. We present the capital in memories selected from over 6,000 reports and hundreds of archival photos from known collections. The history of Warsaw - the city as remembered by its inhabitants.",
+  "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/wawzap.png",
+  "numerWTabeli": 1
+  },
+  {
+  "rodzaj": "temat",
+  "nazwaMapy": "ODBUDOWA WARSZAWY",
+  "nazwaMapyEn": "REBUILDING WARSAW",
+  "uuidMapy": "c70ee36b-a41c-41f0-b44f-4393f7f6d7b4",
+  "adresUrl": null,
+  "opisKafelka": "Cały naród buduje swoją stolicę. Krótka historia zniszczeń i odbudowy Warszawy na mapie.",
+  "opisKafelkaMapyEn": "The whole nation is building its capital. A short history of the destruction and reconstruction of Warsaw on a map.",
+  "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/odbudowa.jfif",
+  "numerWTabeli": 3
+  },
+  {
+  "rodzaj": "temat",
+  "nazwaMapy": "STAN WOJENNY",
+  "nazwaMapyEn": "MARTIAL LAW",
+  "uuidMapy": "3cb0ad03-bc9e-4db0-809a-0185ffa1e9c0",
+  "adresUrl": null,
+  "opisKafelka": "Stan wprowadzony 13 grudnia 1981 roku na terenie całej PRL niezgodnie z Konstytucją.",
+  "opisKafelkaMapyEn": "The state was introduced on December 13, 1981 throughout the Polish People's Republic, contrary to the Constitution.",
+  "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/stanwojenny.png",
+  "numerWTabeli": 2
+  }
+  ]
+  },
+  {
+  "nazwa": "Historyczne wizerunki map i planów",
+  "nazwaEn": "Historical images of maps and plans",
+  "typ": "KATEGORIA_TEMATYCZNA",
+  "numerWTabeli": 2,
+  "grupyMap": [
+  {
+  "rodzaj": "mapa-plan",
+  "nazwaMapy": "Plan Le Rouge'a z 1768 roku",
+  "nazwaMapyEn": "Le Rouge's plan from 1768",
+  "uuidMapy": "c11e81f6-6cb0-4431-a7d7-2d611d5a7d99",
+  "adresUrl": null,
+  "opisKafelka": "Plan Le Rouge'a z 1768 roku.",
+  "opisKafelkaMapyEn": "Le Rouge's plan from 1768.",
+  "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/larouge.png",
+  "numerWTabeli": 2
+  },
+  {
+  "rodzaj": "mapa-plan",
+  "nazwaMapy": "Plan inwentaryzacji zniszczeń z lat 1945-1946",
+  "nazwaMapyEn": "Damage inventory plan for 1945-1946",
+  "uuidMapy": "7a9b2c53-5567-4910-85ff-617788694fb2",
+  "adresUrl": null,
+  "opisKafelka": "Plan inwentaryzacji zniszczeń z lat 1945-1946",
+  "opisKafelkaMapyEn": "Damage inventory plan for 1945-1946",
+  "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/mapaApp/Styles/Img/bos_plan_legenda/bos_plan_legenda.jpg",
+  "numerWTabeli": 3
+  },
+  {
+  "rodzaj": "mapa-plan",
+  "nazwaMapy": "Plany Lindleya z lat 1897-1901",
+  "nazwaMapyEn": "Lindley's plans 1897-1901",
+  "uuidMapy": "8ad1ca85-f541-4e8c-8cd9-7e5fb425cf3c",
+  "adresUrl": null,
+  "opisKafelka": "Plany miasta z przełomu XIX i XX z zasobów Archiwum Państwowego w Warszawie.",
+  "opisKafelkaMapyEn": "City plans from the turn of the 19th and 20th century from the resources of the State Archives in Warsaw.",
+  "sciezkaDoPlikuZGrafika": "https://mapa.um.warszawa.pl/img/gallery/historyczna/planyL.png",
+  "numerWTabeli": 2
+  }
+  ]
+  },
+  {
+  "nazwa": "Szlakami historii",
+  "nazwaEn": "On the trails of history",
+  "typ": "KATEGORIA_TEMATYCZNA",
+  "numerWTabeli": 3,
+  "grupyMap": []
+  },
+  {
+  "nazwa": "Serwisy zewnętrzne",
+  "nazwaEn": "External services",
+  "typ": "KATEGORIA_TEMATYCZNA",
+  "numerWTabeli": 1,
+  "grupyMap": []
+  },
+  {
+  "nazwa": "Paski czasu",
+  "nazwaEn": "Time bars",
+  "typ": "KATEGORIA_TEMATYCZNA",
+  "numerWTabeli": 5,
+  "grupyMap": []
+  }
+  ]

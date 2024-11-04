@@ -10,7 +10,7 @@ export interface WyborMapyEvent {
   url?: string;
   uuidMapy?: string;
   rodzaj?: string;
-  typ?: TypMapyObiektDto.ObiektEnumEnum;
+  // typ?: TypMapyObiektDto.ObiektEnumEnum;
 }
 
 /**
@@ -76,7 +76,7 @@ export class KartaMapyComponent implements OnInit {
    */
   wybranoMape(): void {
     if (this.mapa!.adresUrl || this.zmianaMapy) {
-      this.mapaWybrana.emit({ url: this.mapa!.adresUrl, uuidMapy: this.mapa!.uuidMapy, typ: this.mapa!.typ?.obiektEnum, rodzaj: this.mapa!.rodzaj });
+      this.mapaWybrana.emit({ url: this.mapa!.adresUrl, uuidMapy: this.mapa!.uuidMapy, rodzaj: this.mapa!.rodzaj });
     }
   }
 
@@ -98,7 +98,11 @@ export class KartaMapyComponent implements OnInit {
       this.wybranoMape();
       return;
     }
-    if (this.mapa!.typ?.obiektEnum === TypMapyObiektDto.ObiektEnumEnum.SerwisZewnetrzny && this.adresUrl) {
+    // if (this.mapa!.typ?.obiektEnum === TypMapyObiektDto.ObiektEnumEnum.SerwisZewnetrzny && this.adresUrl) {
+    //   window.open(this.adresUrl, '_blank');
+    //   return;
+    // }
+    if (this.mapa!.adresUrl&& this.adresUrl) {
       window.open(this.adresUrl, '_blank');
       return;
     }
