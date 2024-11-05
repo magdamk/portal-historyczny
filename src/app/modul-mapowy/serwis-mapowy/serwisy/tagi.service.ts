@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ZbiorKategoriiMapOpenDto } from 'src/app/core/modele/zbior-kategorii-map-open-dto';
 import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/tlumaczenia.service';
 import { TagiDto } from '../modele/tagi';
+import { environment } from 'src/environments/environment';
 
 /**
  * Serwis służący do okreslania wysokości nad poziomem moża dla współżędnych
@@ -12,10 +13,12 @@ import { TagiDto } from '../modele/tagi';
   providedIn: 'root'
 })
 export class TagiService {
+  basePHAPIUrl = environment.basePHAPIUrl;
   constructor(private http: HttpClient, private tlumaczeniaService: TlumaczeniaService) { }
 
   getTagi(): Observable<TagiDto[]> {
-    return this.http.get<TagiDto[]>('assets/data/tagi.json')
+    // return this.http.get<TagiDto[]>('assets/data/tagi.json')
+    return this.http.get<TagiDto[]>(this.basePHAPIUrl+'/tagi/findAll');
   }
 
 }

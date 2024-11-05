@@ -2,5 +2,6 @@ import { TlumaczeniaNazw } from "./tlumaczenia-nazw";
 
 export interface TagiDto {
   tagid: number,
-  tag: TlumaczeniaNazw
+  tag: TlumaczeniaNazw,
+  kategoria?: TlumaczeniaNazw
 }
