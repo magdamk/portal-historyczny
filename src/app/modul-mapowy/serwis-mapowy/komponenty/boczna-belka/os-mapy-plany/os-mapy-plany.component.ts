@@ -12,6 +12,8 @@ import { KonfiguracjaModulMapowyAdapter } from 'src/app/modul-mapowy/mm-core/pro
 import { LewyPanelWidokActions } from 'src/app/modul-mapowy/stan/lewy-panel-widok/lewy-panel-widok.actions';
 import { Router } from '@angular/router';
 import { TypMapyObiektDto } from 'src/app/core/modele/typ-mapy-obiekt-dto';
+import { ZbiorKategoriiMapOpenDto } from 'src/app/core/modele/zbior-kategorii-map-open-dto';
+import { KategoriaMapOpenDto } from 'src/app/core/modele/kategoria-map-open-dto';
 
 @Component({
   selector: 'mm-os-mapy-plany',
@@ -26,7 +28,7 @@ export class OsMapyPlanyComponent implements OnInit, OnDestroy {
   @Output() mapaWybrana = new EventEmitter<WyborMapyEvent>();
 
   zbiorMapPlanow: Array<KategoriaGrupaMapOpenDto> = [];
-  aktualnyJezyk='';
+  aktualnyJezyk = '';
   subscription$ = new Subscription();
   /**
    * Konstruktor
@@ -37,74 +39,76 @@ export class OsMapyPlanyComponent implements OnInit, OnDestroy {
     private store: Store<{ modulMapowy: any }>, private router: Router) {
   }
 
- /**
-  * Cykl życia komponentu inicjalizacja
+  /**
+   * Cykl życia komponentu inicjalizacja
+   */
+  ngOnInit(): void {
+    // // this.pobierzListeTematow();
+    // this.subscription$.add(this.tlumaczenia.getZmianaJezykaSubject()
+    //   .subscribe(() => this.pobierzListeTematow()));
+
+    this.subscription$.add(this.tlumaczenia.getZmianaJezykaSubject().subscribe(jezyk => {
+      this.aktualnyJezyk = jezyk;
+      this.pobierzListeMapPLanow();
+    }));
+    // this.subscription$.add(this.obszary$.subscribe(stan => {
+    //   this.obszarySterujace = stan.obszarySterujace.filter(n => n.wirtualne === false);
+    //   // this.przygotujListeNarzedziWarstw(stan.narzedziaSterujace)
+    // }));
+  }
+
+
+  /**
+   * Cykl życia komponentu niszczenie
+   */
+  ngOnDestroy(): void {
+    this.subscription$.unsubscribe();
+  }
+
+  /**
+  * Funkcja przenosi narzędzie na wierzch
   */
- ngOnInit(): void {
-  // // this.pobierzListeTematow();
-  // this.subscription$.add(this.tlumaczenia.getZmianaJezykaSubject()
-  //   .subscribe(() => this.pobierzListeTematow()));
-
-  this.subscription$.add(this.tlumaczenia.getZmianaJezykaSubject().subscribe(jezyk => {
-    this.aktualnyJezyk = jezyk;
-    this.pobierzListeMapPLanow();
-  }));
-  // this.subscription$.add(this.obszary$.subscribe(stan => {
-  //   this.obszarySterujace = stan.obszarySterujace.filter(n => n.wirtualne === false);
-  //   // this.przygotujListeNarzedziWarstw(stan.narzedziaSterujace)
-  // }));
-}
+  przeniesNaWierzch(): void {
+    this.store.dispatch(LewyPanelWidokActions.pokazObszar({ widokId: this.widokIdentyfikator }));
+    // this.pobierzObszarySerwis().dispatch(InterfejsUzytkownikaActions.rozwinLewaBelke());
+  }
 
 
-/**
- * Cykl życia komponentu niszczenie
- */
-ngOnDestroy(): void {
-  this.subscription$.unsubscribe();
-}
+  /**
+  * Funkcja do pobierania listy kategorii map
+  */
+  private pobierzListeMapPLanow(): void {
 
-/**
-* Funkcja przenosi narzędzie na wierzch
-*/
-przeniesNaWierzch(): void {
-  this.store.dispatch(LewyPanelWidokActions.pokazObszar({ widokId: this.widokIdentyfikator }));
-  // this.pobierzObszarySerwis().dispatch(InterfejsUzytkownikaActions.rozwinLewaBelke());
-}
+    this.serviceKategoriiMap.getKategorieMap()
+      .subscribe((result: any) => {
+        // console.log('pobierzListeKategoriiMap: ', result.content.kategorieTematyczne[1].grupyMap);
+        // if (result.content.typ.ObiektEnum==='KATEGORIA_TEMATYCZNA') {
+        let kategoria: KategoriaMapOpenDto = (result as ZbiorKategoriiMapOpenDto).kategorieTematyczne!.find((kategoria) => kategoria.rodzaj === 'mapa-plan')!;
 
-
-/**
-* Funkcja do pobierania listy kategorii map
-*/
-private pobierzListeMapPLanow(): void {
-
-  this.serviceKategoriiMap.getKategorieMap()
-    .subscribe((result: any) => {
-      // console.log('pobierzListeKategoriiMap: ', result.content.kategorieTematyczne[1].grupyMap);
-      // if (result.content.typ.ObiektEnum==='KATEGORIA_TEMATYCZNA') {
-        this.zbiorMapPlanow = Array.from(result.kategorieTematyczne[1].grupyMap);
-      // this.zbiorMapPlanow = Array.from(result[2].grupyMap);
-      // console.log('!!!!pobierzListeKategoriiMap: ', this.zbiorMapPlanow);
-      // }
-    });
-  // this.serviceKategoriiMap.pobierzListeKategorieMapDlaPortalu(wersja)
-  //   .subscribe((result: any) => {
-  //     if (result.content) {
-  //       this.zbiorKategoriiMap = result.content;
-  //     }
-  //   });
-  // this.zbiorTematow=[];
-}
+        this.zbiorMapPlanow = kategoria.grupyMap!;
+        // this.zbiorMapPlanow = Array.from(result[2].grupyMap);
+        // console.log('!!!!pobierzListeKategoriiMap: ', this.zbiorMapPlanow);
+        // }
+      });
+    // this.serviceKategoriiMap.pobierzListeKategorieMapDlaPortalu(wersja)
+    //   .subscribe((result: any) => {
+    //     if (result.content) {
+    //       this.zbiorKategoriiMap = result.content;
+    //     }
+    //   });
+    // this.zbiorTematow=[];
+  }
 
 
-/**
-* Funkcja sygnalizuje wybraniwMapy
-*/
-wybranoMape(event: WyborMapyEvent): void {
-  // if (event.typ === TypMapyObiektDto.ObiektEnumEnum.SerwisZewnetrzny) {
-  //   // this.komunikaty.pokazKomunikatBledu('codes.narzedzie-porownywania-map.blad-wyboru-mapy-komunikat', {});
-  //   return;
-  // }
-  // this.mapaWybrana.emit(event);
-}
+  /**
+  * Funkcja sygnalizuje wybraniwMapy
+  */
+  wybranoMape(event: WyborMapyEvent): void {
+    // if (event.typ === TypMapyObiektDto.ObiektEnumEnum.SerwisZewnetrzny) {
+    //   // this.komunikaty.pokazKomunikatBledu('codes.narzedzie-porownywania-map.blad-wyboru-mapy-komunikat', {});
+    //   return;
+    // }
+    // this.mapaWybrana.emit(event);
+  }
 
 }

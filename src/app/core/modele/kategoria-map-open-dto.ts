@@ -19,6 +19,7 @@ export interface KategoriaMapOpenDto {
     // nazwaEn?: string;
     numerWTabeli?: number;
     typ?: TypKategoriiMapObiektDto;
+    rodzaj?: string;
     grupyMap?: Array<KategoriaGrupaMapOpenDto>;
 }
 

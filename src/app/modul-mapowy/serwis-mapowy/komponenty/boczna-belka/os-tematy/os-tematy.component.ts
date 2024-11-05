@@ -88,7 +88,10 @@ export class OsTematyComponent implements OnInit, OnDestroy {
       .subscribe((result: any) => {
         // console.log('pobierzListeKategoriiMap: ', result.content.kategorieTematyczne[0].grupyMap);
         // if (result.content.typ.ObiektEnum==='KATEGORIA_TEMATYCZNA') {
-          this.zbiorTematow = Array.from(result.kategorieTematyczne[0].grupyMap);
+
+         let kategoria: KategoriaMapOpenDto = (result as ZbiorKategoriiMapOpenDto).kategorieTematyczne!.find((kategoria) => kategoria.rodzaj === 'temat')!;
+
+        this.zbiorTematow = kategoria.grupyMap!;
         // this.zbiorTematow = Array.from(result[1].grupyMap);
         // console.log('!!!!pobierzListeKategoriiMap: ', this.zbiorTematow);
         // }
