@@ -16,7 +16,7 @@ import { TypKategoriiMapObiektDto } from './typ-kategorii-map-obiekt-dto';
 export interface KategoriaMapOpenDto {
     uuid?: string;
     nazwa?: string;
-    nazwaEn?: string;
+    // nazwaEn?: string;
     numerWTabeli?: number;
     typ?: TypKategoriiMapObiektDto;
     grupyMap?: Array<KategoriaGrupaMapOpenDto>;

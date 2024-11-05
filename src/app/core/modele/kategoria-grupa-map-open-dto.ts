@@ -14,12 +14,12 @@ import { TypMapyObiektDto } from './typ-mapy-obiekt-dto';
 
 export interface KategoriaGrupaMapOpenDto {
     nazwaMapy?: string;
-    nazwaMapyEn?: string;
+    // nazwaMapyEn?: string;
     rodzaj?: string;
     // typ?: TypMapyObiektDto;
     adresUrl?: string;
     opisKafelka?: string;
-    opisKafelkaEn?: string;
+    // opisKafelkaEn?: string;
     // status?: KategoriaGrupaMapOpenDto.StatusEnum;
     // wersja?: KategoriaGrupaMapOpenDto.WersjaEnum;
     // dostepnoscDlaWersjiDesktopowej?: boolean;

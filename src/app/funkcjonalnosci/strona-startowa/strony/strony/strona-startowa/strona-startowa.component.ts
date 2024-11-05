@@ -83,10 +83,11 @@ export class StronaStartowaComponent implements OnInit, OnDestroy {
       this.serviceKategoriiMap.getKategorieMap()
       .subscribe((result: any) => {
         if (result) {
-          this.zbiorKategoriiMapRaw = result;
-          this.zbiorKategoriiMap.wyroznioneMapy = result[0];
-          this.zbiorKategoriiMapRaw.shift();
-          this.zbiorKategoriiMap.kategorieTematyczne = this.zbiorKategoriiMapRaw;
+          this.zbiorKategoriiMap = result;
+          // this.zbiorKategoriiMapRaw = result;
+          // this.zbiorKategoriiMap.wyroznioneMapy = result[0];
+          // this.zbiorKategoriiMapRaw.shift();
+          // this.zbiorKategoriiMap.kategorieTematyczne = this.zbiorKategoriiMapRaw;
         }
       });
     // this.serviceKategoriiMap.pobierzListeKategorieMapDlaPortalu(wersja)
