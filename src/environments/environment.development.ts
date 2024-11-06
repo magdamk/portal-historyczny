@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   baseUrl: 'https://testmapa.um.warszawa.pl',
-  basePHAPIUrl: 'http://localhost:7001/portalhistorycznyAPI/API',
+  // basePHAPIUrl: 'http://localhost:7001/portalhistorycznyAPI/API',
+  basePHAPIUrl: 'https://mapa.um.warszawa.pl/portalhistorycznyAPI/API',
   portalKonwersjiApiUrl: 'https://testmapa.um.warszawa.pl/api/modul-konwersji',
   portalMapowyApiUrl: 'https://testmapa.um.warszawa.pl/api/modul-mapowy',
   portalMultimediaApiUrl: 'https://testmapa.um.warszawa.pl/api/modul-multimediow',

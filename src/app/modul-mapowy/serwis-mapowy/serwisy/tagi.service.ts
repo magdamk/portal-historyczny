@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ZbiorKategoriiMapOpenDto } from 'src/app/core/modele/zbior-kategorii-map-open-dto';
@@ -6,9 +6,13 @@ import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/tlumaczenia
 import { TagiDto } from '../modele/tagi';
 import { environment } from 'src/environments/environment';
 
-/**
- * Serwis służący do okreslania wysokości nad poziomem moża dla współżędnych
- */
+
+const httpOptions={
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+}
+
 @Injectable({
   providedIn: 'root'
 })

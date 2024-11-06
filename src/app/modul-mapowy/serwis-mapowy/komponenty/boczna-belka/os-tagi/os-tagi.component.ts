@@ -131,6 +131,7 @@ export class OsTagiComponent implements OnInit, OnDestroy {
       // this.setFilter();
       // setTimeout(() => {
       let layers = this.mapView!.getFeatureLayers().filter((layer) => layer.isVisible(this.mapView!.getMapZoomLevel()));
+      console.log(layers);
       layers!.forEach((layer) => {
         layer.filterArray = [];
         layer.refresh();

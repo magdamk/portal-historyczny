@@ -16,7 +16,13 @@ import { ZbiorKategoriiMapOpenDto } from '../modele/zbior-kategorii-map-open-dto
 import { TlumaczeniaService } from '../tlumaczenia/serwisy/tlumaczenia.service';
 import { environment } from 'src/environments/environment';
 import { KategoriaMapOpenDto } from '../modele/kategoria-map-open-dto';
-
+const httpOptions = {
+  headers: new HttpHeaders({
+     'Content-Type': 'application/json',
+    //  'Sec-Fetch-Mode': 'no-cors',
+    //  'Sec-Fetch-Site':'localhost:7001',
+    //  'Access-Control-Allow-Origin': 'http://localhost:4200'
+  })}
 
 @Injectable({
   providedIn: 'root'

@@ -13,13 +13,23 @@ import { JsonObjectContainerAktualnosciSzczegolyDto } from '../modele/json-objec
 import { BASE_PATH, COLLECTION_FORMATS } from './variables';
 import { Configuration } from './configuration';
 import { environment } from 'src/environments/environment';
-
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json',
+    // 'Connection': 'keep-alive',
+    // 'Response-Type': 'application/json',
+    // 'Sec-Fetch-Mode': 'no-cors',
+    // 'Sec-Fetch-Dest':'application/json',
+    // 'Sec-Fetch-Site':'https://mapa.um.warszawa.pl',
+    // 'Access-Control-Allow-Origin': '*'
+  })
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class ControllerAktualnosciService {
-  basePHAPIUrl:string=environment.basePHAPIUrl;
+  basePHAPIUrl: string = environment.basePHAPIUrl;
   constructor(private http: HttpClient) { }
 
   // getArchiwum(): Observable<AktualnosciListaDto[]> {
@@ -30,9 +40,9 @@ export class ControllerAktualnosciService {
   //   return this.http.get<AktualnosciListaDto[]>('./assets/data/aktualnosci.json');
   // }
   getArchiwum(): Observable<AktualnosciListaDto[]> {
-    return this.http.get<AktualnosciListaDto[]>(this.basePHAPIUrl+'/aktualnosci/findAllArchive/');
+    return this.http.get<AktualnosciListaDto[]>(this.basePHAPIUrl + '/aktualnosci/findAllArchive');
   }
   getAktualnosci(): Observable<AktualnosciListaDto[]> {
-    return this.http.get<AktualnosciListaDto[]>(this.basePHAPIUrl+'/aktualnosci/findAll/');
+    return this.http.get<AktualnosciListaDto[]>(this.basePHAPIUrl + '/aktualnosci/findAll');
   }
 }
