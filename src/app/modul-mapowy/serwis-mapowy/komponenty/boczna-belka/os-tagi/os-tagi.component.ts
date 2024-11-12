@@ -15,6 +15,7 @@ import { OM } from '../../../../oracle-maps/types/om';
 import { Map as OMap } from '../../../../oracle-maps/types/map';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { TlumaczeniaNazw } from '../../../modele/tlumaczenia-nazw';
+import { MapaService } from '../../../serwisy/mapa.service';
 
 declare var OM: OM;
 
@@ -52,6 +53,7 @@ export class OsTagiComponent implements OnInit, OnDestroy {
   constructor(private tlumaczenia: TlumaczeniaService,
     private serviceTagi: TagiService,
     private formBuilder: FormBuilder,
+    private mapService: MapaService,
     private konfiguracja: KonfiguracjaModulMapowyAdapter,
     private store: Store<{ modulMapowy: any }>) {
   }
@@ -61,14 +63,18 @@ export class OsTagiComponent implements OnInit, OnDestroy {
   * Cykl życia komponentu inicjalizacja
   */
   ngOnInit(): void {
-    this.pobierzTagi();
+    // this.pobierzTagi();
     this.subscription$.add(this.tlumaczenia.getZmianaJezykaSubject().subscribe(jezyk => {
       this.aktualnyJezyk = jezyk;
-      // this.pobierzTagi();
+      this.pobierzTagi();
+      // this.tagi = this.sortujTagi(this.tagi);
 
     }));
+    this.subscription$.add(this.mapService.pobierzSubjectAktualizacjiZoomISrodek().subscribe(() => {
+      //  console.log('selectedTagValue: ' + this.selectedTagValue?.pl);
+      if (this.selectedTagValue?.pl) { this.filtruj(this.selectedTag!) }
+    }));
     // this.pobierzTagi();
-
     // this.subscription$.add(this.obszary$.subscribe(stan => {
     //   this.obszarySterujace = stan.obszarySterujace.filter(n => n.wirtualne === false);
     //   // this.przygotujListeNarzedziWarstw(stan.narzedziaSterujace)
@@ -83,7 +89,13 @@ export class OsTagiComponent implements OnInit, OnDestroy {
     //   console.log('!!!!pobierzListeKategoriiMap: ', this.zbiorMapPlanow);
     //   // }
     // });
-    this.serviceTagi.getTagi().subscribe((result: any) => { this.tagi = this.shuffle(Array.from(result)); this.filteredTagi = this._filter(this.filterValue); this.filteredTagi$ = of(this.filteredTagi); });
+    this.serviceTagi.getTagi().subscribe((result: any) => {
+      // this.tagi = this.shuffle(Array.from(result));
+      this.tagi = this.sortujTagi(Array.from(result));
+      // this.sortujTagi();
+      this.filteredTagi = this._filter(this.filterValue);
+      this.filteredTagi$ = of(this.filteredTagi);
+    });
   }
 
 
@@ -128,23 +140,23 @@ export class OsTagiComponent implements OnInit, OnDestroy {
     // writeStream.close()
     // this.mapView!.refreshMap();
     if (this.selectedTagValue !== val.tag) {
-      // this.setFilter();
-      // setTimeout(() => {
-      let layers = this.mapView!.getFeatureLayers().filter((layer) => layer.isVisible(this.mapView!.getMapZoomLevel()));
-      console.log(layers);
-      layers!.forEach((layer) => {
-        layer.filterArray = [];
-        layer.refresh();
-        layer.applyFilter(new OM.filter.Like('TAGI', '%' + val.tag.pl!.toUpperCase() + '%'), true);
-      });
-      // }, 300);
+      this.filtruj(val);
+      // let layers = this.mapView!.getFeatureLayers().filter((layer) => layer.isVisible(this.mapView!.getMapZoomLevel()));
+      // console.log(layers);
+      // layers!.forEach((layer) => {
+      //   layer.filterArray = [];
+      //   layer.refresh();
+      //   layer.applyFilter(new OM.filter.Like('TAGI', '%' + val.tag.pl!.toUpperCase() + '%'), true);
+      //   layer.refresh();
+      // });
       this.selectedTagValue = val.tag;
     } else {
-      let layers = this.mapView!.getFeatureLayers().filter((layer) => layer.isVisible(this.mapView!.getMapZoomLevel()));
-      layers!.forEach((layer) => {
-        layer.filterArray = [];
-        layer.refresh();
-      });
+      this.wyczyscFiltry();
+      // let layers = this.mapView!.getFeatureLayers().filter((layer) => layer.isVisible(this.mapView!.getMapZoomLevel()));
+      // layers!.forEach((layer) => {
+      //   layer.filterArray = [];
+      //   layer.refresh();
+      // });
       this.selectedTagValue = undefined;
     }
     // this.filteredTagi = this._filter(this.filterValue);
@@ -169,7 +181,24 @@ export class OsTagiComponent implements OnInit, OnDestroy {
 
   //   this.fruitCtrl.setValue(null);
   // }
+  filtruj(val: TagiDto) {
+    let layers = this.mapView!.getFeatureLayers().filter((layer) => layer.isVisible(this.mapView!.getMapZoomLevel()));
+    // console.log(layers);
+    layers!.forEach((layer) => {
+      layer.filterArray = [];
+      layer.refresh();
+      layer.applyFilter(new OM.filter.Like('TAGI', '%' + val.tag.pl!.toUpperCase() + '%'), true);
+      layer.refresh();
+    });
+  }
 
+  wyczyscFiltry() {
+    let layers = this.mapView!.getFeatureLayers().filter((layer) => layer.isVisible(this.mapView!.getMapZoomLevel()));
+    layers!.forEach((layer) => {
+      layer.filterArray = [];
+      layer.refresh();
+    });
+  }
   selected(event: MatAutocompleteSelectedEvent): void {
     // this.fruits.push(event.option.viewValue);
     // console.log('MatAutocompleteSelectedEvent viewValue: ', event.option.viewValue)
@@ -200,12 +229,11 @@ export class OsTagiComponent implements OnInit, OnDestroy {
     return filteredTagiTemp;
   }
   przelaczNaTematy() {
-    console.log("Przełączam!");
     // this.store.dispatch(LewyPanelWidokActions.zapiszNastepnyObszar({ nastepnyWidok: WIDOKI_ID.TAGI }));
     this.store.dispatch(LewyPanelWidokActions.pokazObszar({ widokId: WIDOKI_ID.TEMATY }));
-    sessionStorage.setItem('tagi','true');
+    sessionStorage.setItem('tagi', 'true');
   }
-   shuffle(array:TagiDto[]):TagiDto[] {
+  shuffle(array: TagiDto[]): TagiDto[] {
     let currentIndex = array.length;
 
     // While there remain elements to shuffle...
@@ -221,5 +249,25 @@ export class OsTagiComponent implements OnInit, OnDestroy {
     }
     return array;
   }
+  sortujTagi(array: TagiDto[]) {
 
+    // console.log(this.aktualnyJezyk);
+    if (this.aktualnyJezyk === 'pl') {
+      // console.log('sortuję polskie');
+      array.sort((a, b) => {
+        // let wynik: number = a.tag.pl! < b.tag.pl! ? -1 : a.tag.pl! > b.tag.pl! ? 1 : 0;
+        // return wynik;
+        return a.tag.pl!.localeCompare(b.tag.pl!, 'pl');
+      })
+    }
+    else {
+      // console.log('sortuję angielskie');
+      array.sort((a, b) => {
+        // let wynik: number = a.tag.en! < b.tag.en! ? -1 : a.tag.en! > b.tag.en! ? 1 : 0;
+        // return wynik;
+        return a.tag.en!.localeCompare(b.tag.en!, 'pl');
+      })
+    }
+    return array;
+  }
 }
