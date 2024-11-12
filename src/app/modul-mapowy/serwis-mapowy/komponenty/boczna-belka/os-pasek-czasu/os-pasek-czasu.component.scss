@@ -32,11 +32,11 @@ $karta-mapy-rodzaj-wysokosc: 1.5rem;
 
       .grupa {
         height: calc(1.5rem + 150px);
-        box-shadow: 5px 10px 8px #333;
+        // box-shadow: 5px 10px 8px #333;
         .grupa-top {
-          border-top: 2px solid $miasto-blekit;
-          border-left: 2px solid $miasto-blekit;
-          border-right: 2px solid $miasto-blekit;
+          border-top: 1px solid $miasto-blekit;
+          border-left: 1px solid $miasto-blekit;
+          border-right: 1px solid $miasto-blekit;
           display: flex;
           align-items: center;
           justify-content: center;

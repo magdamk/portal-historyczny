@@ -27,7 +27,8 @@ $karta-mapy-przycisk-wysokosc: 90px;
 .karta-mapy.szczegoly,
 .karta-mapy:focus,
 .karta-mapy.szczegoly {
-  box-shadow: 0px 0px 0px 8px $miasto-pomarancz;
+  // box-shadow: 0px 0px 0px 8px $miasto-pomarancz;
+  border: 1px solid $miasto-blekit;
   outline: none;
 }
 

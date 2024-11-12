@@ -40,8 +40,8 @@ $karta-mapy-rodzaj-wysokosc: 1.5rem;
 .belka-karta-mapy.szczegoly,
 .belka-karta-mapy:focus,
 .belka-karta-mapy.szczegoly {
-  box-shadow: 0px 0px 0px 4px $miasto-pomarancz;
-  // border: 1px solid $miasto-pomarancz;
+  // box-shadow: 0px 0px 0px 4px $miasto-pomarancz;
+  border: 1px solid $miasto-blekit;
   outline: none;
 }
 
