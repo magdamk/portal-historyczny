@@ -1,0 +1,44 @@
+<div class="wyszukiwarka-obiekty">
+  <div class="formularz">
+    <input class="w-full duzy-font" [ngModel]="fraza" (ngModelChange)="zmianaFrazy($event)"
+      placeholder="{{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.np-kino' | translate}}"
+      attr.aria-label="{{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.np-kino' | translate}}" />
+    <mm-przycisk-prostokatny (click)="resetujWyszukiwarke()" *mmTylkoDesktop class="przycisk-wyczysc"
+      [ikonaNaKoncu]="'usun2'" label="{{'codes.modul-mapowy.generyczne.wyczysc' | translate}}">
+    </mm-przycisk-prostokatny>
+    <mm-przycisk-prostokatny (click)="szukajObiektow(fraza)" *mmTylkoMobile [disabled]="!fraza || fraza.length < 3"
+      class="przycisk-szukaj" label="{{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.szukaj' | translate}}">
+    </mm-przycisk-prostokatny>
+  </div>
+
+  <ng-template mmTylkoDesktop>
+    <!-- <lib-wyniki-obiekty-desktop *ngIf="!!fraza && fraza.length >= 3 && wynikiWyszukiwania"
+                                [wyniki]="wynikiWyszukiwania"
+                                [pokazWiecej]="(stanWyszukiwarki$ | async)?.daneWyszukiwarkiObiektow?.pokazWiecej?true:false"
+                                [mapaWarstw]="mapaWarstw"
+                                [dostepnePokazWiecej]="true"
+                                (wyswietlWszystkieClick)="wyswietlWszystkie()"
+                                (zmianaWyszukiwarkaObiektowPokazWiecej)="zmianaWyszukiwarkiObiektowPokazWiecej($event)"
+                                class="wyniki"
+    >
+    </lib-wyniki-obiekty-desktop> -->
+  </ng-template>
+</div>
+
+<ng-template mmTylkoMobile>
+  <!-- <lib-wyniki-obiekty-mobile *ngIf="wynikiWyszukiwania && wynikiWyszukiwania.liczbaWynikow > 0"
+                             [wynikWyszukiwania]="wynikiWyszukiwania"
+                             [mapaWarstw]="mapaWarstw"
+                             (zamknijClick)="wyczyscWyniki()"
+                             (wyswietlWszystkieClick)="wyswietlWszystkieMobile()"
+  >
+  </lib-wyniki-obiekty-mobile> -->
+</ng-template>
+
+<ng-template mmTylkoMobile>
+  <div *ngIf="wynikiWyszukiwania && wynikiWyszukiwania.liczbaWynikow === 0" class="brak-wynikow">
+    <mm-wyniki-brak class="nie-znaleziono-wynikow-template"
+      nazwaFunkcjonalnosciKod="codes.modul-mapowy.generyczne.brak-wynikow-wyszukiwania">
+    </mm-wyniki-brak>
+  </div>
+</ng-template>

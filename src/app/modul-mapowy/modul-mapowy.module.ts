@@ -71,6 +71,9 @@ import { PomocBelkaBocznaComponent } from './serwis-mapowy/komponenty/pomoc/pomo
 import { PomocDialogComponent } from './serwis-mapowy/komponenty/pomoc/pomoc-dialog/pomoc-dialog.component';
 import { KontaktZAdministratoremBelkaBocznaComponent } from './serwis-mapowy/komponenty/kontakt/kontakt-z-administratorem-belka-boczna/kontakt-z-administratorem-belka-boczna.component';
 import { WyszukiwarkaMapowaComponent } from './serwis-mapowy/komponenty/wyszukiwarka/wyszukiwarka-mapowa/wyszukiwarka-mapowa.component';
+import { WyszukiwarkaObiektyTabComponent } from './serwis-mapowy/komponenty/wyszukiwarka/obiekty/wyszukiwarka-obiekty-tab/wyszukiwarka-obiekty-tab.component';
+import { wyszukiwarkaReducer } from './stan/wyszukiwarka/wyszukiwarka.reducer';
+import { WynikiBrakComponent } from './serwis-mapowy/komponenty/wyszukiwarka/wspolne/wyniki-brak/wyniki-brak.component';
 
 @NgModule({
   declarations: [
@@ -107,7 +110,9 @@ import { WyszukiwarkaMapowaComponent } from './serwis-mapowy/komponenty/wyszukiw
     PomocBelkaBocznaComponent,
     PomocDialogComponent,
     KontaktZAdministratoremBelkaBocznaComponent,
-    WyszukiwarkaMapowaComponent
+    WyszukiwarkaMapowaComponent,
+    WyszukiwarkaObiektyTabComponent,
+    WynikiBrakComponent
   ],
   imports: [
     CommonModule,
@@ -127,7 +132,8 @@ import { WyszukiwarkaMapowaComponent } from './serwis-mapowy/komponenty/wyszukiw
     StoreModule.forFeature('modulMapowy', {
       interfejsUzytkownika: interfejsUzytkowikaReducer,
       widoki: lewyPanelWidokReducer,
-      widokMapy: mapaWidokReducer
+      widokMapy: mapaWidokReducer,
+      wyszukiwarka: wyszukiwarkaReducer,
     }
     ),
   ],

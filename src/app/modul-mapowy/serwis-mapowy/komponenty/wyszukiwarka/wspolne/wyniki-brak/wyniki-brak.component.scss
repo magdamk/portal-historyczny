@@ -1,0 +1,34 @@
+@import "../../../../../../../style/mm-style/mm-konfiguracja-szablonu.scss";
+
+.brak-wynikow-template {
+  display: flex;
+  flex-direction: column;
+
+  .kontener-z-ikonka {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .przycisk-info {
+      width: $wyszukiwarka-mapowa-kontrolki-romiar-maly;
+      height: $wyszukiwarka-mapowa-kontrolki-romiar-maly;
+    }
+
+    .nazwa-funkcjonalnosci {
+      font-weight: bold;
+      margin-left: 0.5rem;
+    }
+  }
+
+  .kontener-z-ikonka.center {
+    justify-content: center;
+  }
+
+  .opis-funkcjionalnosci {
+    margin-top: 0.5rem;
+  }
+}
+
+.margines-gorny {
+  padding-top: 1rem;
+}

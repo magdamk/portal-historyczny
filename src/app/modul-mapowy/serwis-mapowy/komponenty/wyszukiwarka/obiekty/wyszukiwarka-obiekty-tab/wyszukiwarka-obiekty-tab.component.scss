@@ -1,0 +1,44 @@
+@import "../../../../../../../style/mm-style/mm-konfiguracja-szablonu.scss";
+
+.wyszukiwarka-obiekty {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+  .formularz {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .przycisk-wyczysc {
+      width: 240px;
+      text-transform: uppercase;
+      border-radius: 0;
+      font-weight: bold;
+    }
+
+    .przycisk-szukaj {
+      width: 240px;
+      text-transform: uppercase;
+      border-radius: 0;
+      font-weight: bold;
+    }
+  }
+
+  .wyniki {
+    padding-top: 1rem;
+  }
+}
+
+.brak-wynikow {
+  background-color: $miasto-bialy;
+  padding: 1rem;
+  padding-top: 0;
+  outline: 1px solid $miasto-szary;
+
+  .nie-znaleziono-wynikow-template {
+    fill: $miasto-czerwony;
+    color: $miasto-czerwony;
+  }
+}
