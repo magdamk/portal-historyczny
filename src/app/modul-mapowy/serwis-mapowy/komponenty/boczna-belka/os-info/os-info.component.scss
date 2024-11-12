@@ -25,22 +25,26 @@
       padding: 10px;
       color: $miasto-pomarancz;
       border-bottom: 1px solid #D1D5DB;
-      span{
+
+      span {
         margin-left: 10px;
         margin-right: 10px;
       }
     }
-    .opis{
+
+    .opis {
       margin-top: 20px;
     }
   }
+
   .miniaturka {
     // height: $karta-mapy-przycisk-wysokosc;
-margin-top: 10px;
-
+    margin-top: 10px;
+    cursor: pointer;
     height: auto;
     background-repeat: no-repeat;
   }
+
   // .legenda {
   //   height: 100%;
   //   width: 100%;
@@ -61,10 +65,11 @@ margin-top: 10px;
 
 
   // }
-  mm-przewijany-komponent{
+  mm-przewijany-komponent {
     // max-height: calc(100vh - 320px);
   }
 }
+
 .galeria-pelen-ekran {
   background: rgba(0, 0, 0, 0.9);
   position: fixed;
@@ -79,8 +84,8 @@ margin-top: 10px;
 
   img {
     width: 100%;
-    height:100%;
-    object-fit:contain;
+    height: 100%;
+    object-fit: contain;
 
   }
 
