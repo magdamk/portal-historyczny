@@ -1,5 +1,5 @@
 <div class="wyniki-wyszukiwania" [class.full]="pokazWiecej" *ngIf="wynikiWyszukiwania.content.length > 0; else nieZnalezionoWynikowTemplate">
-  <!-- <mat-divider></mat-divider> -->
+  <mat-divider></mat-divider>
   <div *ngIf="wynikiNaMapie.length > 0"
        [class.pelna-wysokosc]="wynikiPozaMapa.length === 0"
        class="wyniki">
@@ -14,7 +14,7 @@
       </div>
     </mm-przewijany-komponent>
   </div>
-  <!-- <mat-divider></mat-divider> -->
+  <mat-divider></mat-divider>
   <div *ngIf="wynikiPozaMapa.length > 0"
        [class.pelna-wysokosc]="wynikiNaMapie.length === 0"
        class="wyniki">
@@ -34,7 +34,7 @@
       </div>
     </mm-przewijany-komponent>
   </div>
-  <!-- <mat-divider></mat-divider> -->
+  <mat-divider></mat-divider>
   <div class="info-o-wynikach">
     <div>{{wynikiWyszukiwania.content.length}} {{'codes.modul-mapowy.generyczne.paginacja-z' | translate}}
       {{wynikiWyszukiwania.liczbaWynikow}}
@@ -53,7 +53,7 @@
   </div>
 </div>
 <ng-template #nieZnalezionoWynikowTemplate>
-  <!-- <mat-divider></mat-divider> -->
+  <mat-divider></mat-divider>
   <mm-wyniki-brak class="nie-znaleziono-wynikow-template"
                    nazwaFunkcjonalnosciKod="codes.modul-mapowy.generyczne.brak-wynikow-wyszukiwania">
   </mm-wyniki-brak>

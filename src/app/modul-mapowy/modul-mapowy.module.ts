@@ -57,6 +57,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import {MatDividerModule} from '@angular/material/divider';
 import { ObiektOpisComponent } from './serwis-mapowy/komponenty/mapa/obiekt-opis/obiekt-opis.component';
 import { LokalizacjaOpisComponent } from './serwis-mapowy/komponenty/mapa/lokalizacja-opis/lokalizacja-opis.component';
 import { ObiektZalacznikiIZdjeciaComponent } from './serwis-mapowy/komponenty/mapa/obiekt-zalaczniki-i-zdjecia/obiekt-zalaczniki-i-zdjecia.component';
@@ -122,6 +123,7 @@ import { WynikiObiektyDesktopComponent } from './serwis-mapowy/komponenty/wyszuk
     FormsModule,
     MatAutocompleteModule,
     MatChipsModule,
+    MatDividerModule,
     MatFormFieldModule,
     MatProgressSpinnerModule,
     // MatSliderModule,
