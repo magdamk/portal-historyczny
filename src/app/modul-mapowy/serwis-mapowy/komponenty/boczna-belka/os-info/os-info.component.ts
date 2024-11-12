@@ -21,6 +21,8 @@ export class OsInfoComponent implements OnInit {
 
   aktualnyJezyk = '';
   tooltip: string = '';
+  widocznaGaleriaPelnoekranowa = false;
+
   subscription$ = new Subscription();
   constructor(private tlumaczenia: TlumaczeniaService,
     private store: Store<{ modulMapowy: any }>) {
@@ -50,5 +52,21 @@ export class OsInfoComponent implements OnInit {
     this.store.dispatch(LewyPanelWidokActions.pokazObszar({ widokId: this.widokIdentyfikator}));
     // this.pobierzObszarySerwis().dispatch(InterfejsUzytkownikaActions.rozwinLewaBelke());
   }
+
+  /**
+   * Funkcja pokazuje pełnoekranowa galerie
+   */
+  pokazGaleriePelnoekranowa() {
+    this.widocznaGaleriaPelnoekranowa = true;
+  }
+
+  /**
+   * Funkcja zamyka pełnoekranowa galerie
+   */
+  zamknijGaleriePelnoekranowa() {
+    this.widocznaGaleriaPelnoekranowa = false;
+  }
+
+
 
 }

@@ -19,6 +19,7 @@
 </ng-template>
 
       <img *ngIf="mapa.sciezkaDoPlikuZGrafika" width="450px" class="miniaturka" [src]="mapa.sciezkaDoPlikuZGrafika"
+      (click)="pokazGaleriePelnoekranowa()"
         [alt]="('codes.modul-mapowy.belka-boczna.zdjecie' | translate) + (mapa.nazwa | wyborTlumaczenia:aktualnyJezyk)"
         loading="lazy">
       <div class="opis tekst-b">
@@ -34,4 +35,13 @@
       <span mmIkonaSvg="info24" class="ikona"></span>
     </div>
   </mm-przewijany-komponent>
+  <div class="galeria-pelen-ekran" *ngIf="widocznaGaleriaPelnoekranowa">
+    <img *ngIf="mapa?.sciezkaDoPlikuZGrafika" [src]="mapa?.sciezkaDoPlikuZGrafika" loading="lazy"/>
+    <div class="zamknij">
+      <mm-przycisk-ikona label="{{'codes.generyczne.zamknij' | translate}}"
+                          typ="przezroczysty"
+                          ikona="zamknij"
+                          (click)="zamknijGaleriePelnoekranowa()"></mm-przycisk-ikona>
+    </div>
+  </div>
 </div>
