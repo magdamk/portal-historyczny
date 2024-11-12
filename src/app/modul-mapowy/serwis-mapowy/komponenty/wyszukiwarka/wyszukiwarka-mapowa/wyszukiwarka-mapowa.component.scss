@@ -1,0 +1,73 @@
+@import "../../../../../../style/mm-style/mm-konfiguracja-szablonu.scss";
+
+.wyszukiwarka-mapowa{
+  &.ukryta{
+    display: none;
+  }
+}
+
+.zakladki {
+  display: flex;
+  flex-direction: row;
+  height: $wyszukiwarka-mapowa-kontrolki-romiar - 1px;
+}
+
+.zakladka {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 1px solid $miasto-szary;
+}
+
+.zakladka.dzialki {
+  width: 33.333333333%;
+  border-right: 1px solid $miasto-szary;
+}
+
+.zakladka.obiekty {
+  width: 66.666666%;
+  text-align: center;
+}
+
+.zakladka.aktywna {
+  background-color: $miasto-pomarancz;
+  color: $miasto-czarny;
+}
+
+.wyszukiwarka-mapowa {
+  width: 100%;
+  background-color: $miasto-bialy;
+  border: 1px solid $miasto-szary;
+  height: 100%;
+}
+
+.dzialki-wysokosc {
+  height: calc(100% - #{$wyszukiwarka-mapowa-kontrolki-romiar});
+}
+
+.obiekty-odleglosc-wysokosc {
+  height: calc(100% - #{$wyszukiwarka-mapowa-kontrolki-romiar});
+
+}
+
+.wysokosc-domyslna {
+  min-height: 2 * $wyszukiwarka-mapowa-kontrolki-romiar;
+  height: 2 * $wyszukiwarka-mapowa-kontrolki-romiar;
+}
+
+@media (min-width: $prog-przelaczenia) {
+  .dzialki-wysokosc {
+    height: auto;
+  }
+  .obiekty-odleglosc-wysokosc {
+    height: auto;
+  }
+  .wysokosc-domyslna {
+    height: auto;
+  }
+}

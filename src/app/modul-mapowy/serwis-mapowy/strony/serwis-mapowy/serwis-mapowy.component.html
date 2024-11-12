@@ -20,8 +20,7 @@
   </div>
   <div class="kontener">
 
-    <div class="belka-boczna"
-      [class.hidden]="interfejsUzytkownikaStan.belkaBocznaLewa.ukryta"
+    <div class="belka-boczna" [class.hidden]="interfejsUzytkownikaStan.belkaBocznaLewa.ukryta"
       [class.pokaz]="!interfejsUzytkownikaStan.belkaBocznaLewa.zwinieta">
       <div class="belka-boczna-kontroler-widocznosci" (click)="zmienStanPaskaBocznego()">
         <mm-przycisk-ikona *ngIf="!interfejsUzytkownikaStan.belkaBocznaLewa.zwinieta"
@@ -29,22 +28,43 @@
         <mm-przycisk-ikona *ngIf="interfejsUzytkownikaStan.belkaBocznaLewa.zwinieta"
           label="{{'codes.modul-mapowy.generyczne.pokaz' | translate}}" ikona="pokaz"></mm-przycisk-ikona>
       </div>
-      <mm-boczna-belka-kontener
-        [mapy]="mapy"
-        [mapa]="mapa"
-        [mapView]="mapView"
-        [class.hidden]="interfejsUzytkownikaStan.belkaBocznaLewa.zwinieta"
-        (zmianaStanuNarzedzia)="pokazPasekBoczny()"
-        >
+      <mm-boczna-belka-kontener [mapy]="mapy" [mapa]="mapa" [mapView]="mapView"
+        [class.hidden]="interfejsUzytkownikaStan.belkaBocznaLewa.zwinieta" (zmianaStanuNarzedzia)="pokazPasekBoczny()">
       </mm-boczna-belka-kontener>
     </div>
     <div class="obszar-widokow">
-      <mm-widok-mapy-narzedzia-sekcja [mapa]="mapa" [grupyWarstwPodkladowych]="grupyWarstwPodkladowych" (mapViewInitiallised)="passMapView($event)">
+      <mm-widok-mapy-narzedzia-sekcja [mapa]="mapa" [grupyWarstwPodkladowych]="grupyWarstwPodkladowych"
+        (mapViewInitiallised)="passMapView($event)">
       </mm-widok-mapy-narzedzia-sekcja>
+    </div>
+
+
+    <div class="przyciski" *ngIf="!interfejsUzytkownikaStan.wyszukiwarka.ukryta"
+      [class.pokaz]="!interfejsUzytkownikaStan.wyszukiwarka.zwinieta">
+      <div class="przycisk-wyszukaj" (click)="aktywujWyszukiwarkeDomyslna()">
+        <mm-przycisk-ikona
+          typ="{{interfejsUzytkownikaStan.wyszukiwarka.aktywna == WYSZUKIWARKI.DOMYSLNA ? 'pomaranczowy' : 'bialy-pomarancz'}}"
+          label="{{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.szukaj' | translate}}" ikona="wyszukaj"></mm-przycisk-ikona>
+      </div>
+      <ng-template mmTylkoMobile>
+        <div class="przycisk-pokaz" [class.ukryty]="interfejsUzytkownikaStan.wyszukiwarka.zwinieta"
+          (click)="schowajWyszukiwarke()">
+          <mm-przycisk-ikona label="{{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.szukaj' | translate}}"
+            ikona="pokaz"></mm-przycisk-ikona>
+        </div>
+      </ng-template>
+    </div>
+    <div *ngIf="!interfejsUzytkownikaStan.wyszukiwarka.ukryta"
+      [class.mala-wysokosc]="((wyszukiwarkaMapowa?.obiektyAdresySkrzyzowania === null ||
+          wyszukiwarkaMapowa?.obiektyAdresySkrzyzowania?.content?.length === 0) &&
+          interfejsUzytkownikaStan.wyszukiwarka.aktywna === WYSZUKIWARKI.DOMYSLNA) || interfejsUzytkownikaStan.wyszukiwarka.zwinieta"
+      [class.pokaz]="!interfejsUzytkownikaStan.wyszukiwarka.zwinieta" class="wyszukiwarka-mapowa-kontener">
+      <mm-wyszukiwarka-mapowa #wyszukiwarkaMapowa [ukryta]="interfejsUzytkownikaStan.wyszukiwarka.zwinieta"
+        class="w-full">
+      </mm-wyszukiwarka-mapowa>
     </div>
   </div>
   <div class="pasek-stanu" *mmTylkoDesktop>
     <mm-pasek-stanu></mm-pasek-stanu>
   </div>
 </div>
-

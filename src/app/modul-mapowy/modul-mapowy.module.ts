@@ -70,6 +70,7 @@ import { KontaktZAdministratoremDialogComponent } from './serwis-mapowy/komponen
 import { PomocBelkaBocznaComponent } from './serwis-mapowy/komponenty/pomoc/pomoc-belka-boczna/pomoc-belka-boczna.component';
 import { PomocDialogComponent } from './serwis-mapowy/komponenty/pomoc/pomoc-dialog/pomoc-dialog.component';
 import { KontaktZAdministratoremBelkaBocznaComponent } from './serwis-mapowy/komponenty/kontakt/kontakt-z-administratorem-belka-boczna/kontakt-z-administratorem-belka-boczna.component';
+import { WyszukiwarkaMapowaComponent } from './serwis-mapowy/komponenty/wyszukiwarka/wyszukiwarka-mapowa/wyszukiwarka-mapowa.component';
 
 @NgModule({
   declarations: [
@@ -105,7 +106,8 @@ import { KontaktZAdministratoremBelkaBocznaComponent } from './serwis-mapowy/kom
     KontaktZAdministratoremDialogComponent,
     PomocBelkaBocznaComponent,
     PomocDialogComponent,
-    KontaktZAdministratoremBelkaBocznaComponent
+    KontaktZAdministratoremBelkaBocznaComponent,
+    WyszukiwarkaMapowaComponent
   ],
   imports: [
     CommonModule,

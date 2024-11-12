@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { PRZYCISK_IKONA_TYP } from 'src/app/modul-mapowy/commons/komponenty/przycisk-ikona/przycisk-ikona.component';
 import { Router, RouterLink } from '@angular/router';
 import { Mapa } from '../../modele/mapa';
@@ -18,6 +18,7 @@ import { LewyPanelWidokActions } from 'src/app/modul-mapowy/stan/lewy-panel-wido
 import { WIDOKI_ID } from 'src/app/modul-mapowy/stan/lewy-panel-widok/lewy-panel-widok.const';
 import { TlumaczeniaService } from 'src/app/core/tlumaczenia/serwisy/tlumaczenia.service';
 import { Map } from 'src/app/modul-mapowy/oracle-maps/types/map';
+import { WyszukiwarkaMapowaComponent } from '../../komponenty/wyszukiwarka/wyszukiwarka-mapowa/wyszukiwarka-mapowa.component';
 // import { OBSZARY_STERUJACE_ID } from 'src/app/modul-mapowy/stan/obszary/obszary.const';
 // import { ObszaryActions } from 'src/app/modul-mapowy/stan/obszary/obszary.actions';
 
@@ -34,6 +35,9 @@ export class SerwisMapowyComponent implements OnInit {
 
   PRZYCISK_IKONA_TYP = PRZYCISK_IKONA_TYP;
   mapView?: Map;
+
+  @ViewChild('wyszukiwarkaMapowa') wyszukiwarkaMapowa: WyszukiwarkaMapowaComponent | undefined;
+
   @Input() uuidMapy?: string;
   @Input() mapa?: Mapa;
   @Input() parametryStartoweMapy?: ParametryStartoweMapy;
@@ -49,6 +53,8 @@ export class SerwisMapowyComponent implements OnInit {
   mapy: Mapa[] = [];
   grupyWarstwPodkladowych: GrupaWarstwPodkladowych[] = [];
   subskrypcje$ = new Subscription();
+
+  WYSZUKIWARKI = WYSZUKIWARKI;
 
   /**
   * Konstruktor

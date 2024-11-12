@@ -1,0 +1,36 @@
+<div class="flex flex-row h-full" >
+  <div class="wyszukiwarka-mapowa" [class.wysokosc-domyslna]="aktywnaWyszukiwarka === 1" [class.ukryta]="_ukryta">
+    <div class="zakladki">
+      <div (click)="aktywujWyszukiwarkeDzialek()" (keyup.enter)="aktywujWyszukiwarkeDzialek()"
+           [class.aktywna]="aktywnaWyszukiwarka == 2" class="zakladka dzialki" tabindex="0">
+        {{ 'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.dzialki' | translate }}
+      </div>
+      <div (click)="aktywujWyszukiwarkeObiektow()" (keyup.enter)="aktywujWyszukiwarkeObiektow()"
+           [class.aktywna]="aktywnaWyszukiwarka == 3" class="zakladka obiekty" tabindex="0">
+        {{ 'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.obiekty-w-odleglosci' | translate }}
+      </div>
+    </div>
+
+    <div *ngIf="aktywnaWyszukiwarka == 1">
+      <!-- <lib-wyszukiwarka-obiekty-tab
+        (wyczyscWyszukiwanieClick)="obiektyAdresySkrzyzowania = null"
+        (wyszukajObiektyClick)="wyszukajAdresyObiektySkrzyzowania($event)"
+        [wynikiWyszukiwania]="obiektyAdresySkrzyzowania"
+      ></lib-wyszukiwarka-obiekty-tab> -->
+    </div>
+    <div *ngIf="aktywnaWyszukiwarka == 2" class="dzialki-wysokosc">
+      <!-- <lib-wyszukiwarka-dzialki-tab
+        (wyczyscWyszukiwanieClick)="dzialki = null"
+        (szukajDzialkiClick)="wyszukajDzialki($event)"
+        [wynikiWyszukiwania]="dzialki">
+      </lib-wyszukiwarka-dzialki-tab> -->
+    </div>
+    <div *ngIf="aktywnaWyszukiwarka == 3"  class="obiekty-odleglosc-wysokosc">
+      <!-- <lib-wyszukiwarka-obiekty-odleglosc-tab
+        (wyczyscWyszukiwanieClick)="obiektyZLokalizacja = null"
+        (wyszukajObiektyClick)="wyszukajObiekty($event)"
+        [wynikiWyszukiwania]="obiektyZLokalizacja"
+      ></lib-wyszukiwarka-obiekty-odleglosc-tab> -->
+    </div>
+  </div>
+</div>
