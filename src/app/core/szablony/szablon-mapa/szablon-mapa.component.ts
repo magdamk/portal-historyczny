@@ -12,11 +12,11 @@ import { Router } from '@angular/router';
 export class SzablonMapaComponent {
 
   constructor(private router: Router) {
-    console.log('Szablon mapa component constructor');
-    console.log('router.url',router.url);
-    console.log('router.getCurrentNavigation',router.getCurrentNavigation());
-    console.log('router.initialNavigation()',router.initialNavigation());
-    console.log('router.lastSuccessfulNavigation',router.lastSuccessfulNavigation);
+    // console.log('Szablon mapa component constructor');
+    // console.log('router.url',router.url);
+    // console.log('router.getCurrentNavigation',router.getCurrentNavigation());
+    // console.log('router.initialNavigation()',router.initialNavigation());
+    // console.log('router.lastSuccessfulNavigation',router.lastSuccessfulNavigation);
   }
 
 }

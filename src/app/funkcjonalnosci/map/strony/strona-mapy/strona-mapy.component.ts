@@ -15,6 +15,7 @@ import { KomunikatSzczegolyOpenDto } from 'src/app/core/modele/komunikat-szczego
 import { InformacjaPopupComponent } from 'src/app/wspolne/komponenty/informacja-popup/informacja-popup.component';
 import { WidokMapyMapaSzczegolyDto } from 'src/app/core/modele/widok-mapy-mapa-szczegoly-dto';
 import { ControllerMapyService } from 'src/app/core/api/controller-mapy.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-strona-mapy',
@@ -62,7 +63,9 @@ export class StronaMapyComponent implements OnInit, OnDestroy {
     private modulMapowyService: ModulMapowyService,
     private komunikatService: KomunikatPortaluMapowegoService,
     private routingUtils: RoutingUtilsService,
-    private serwisMapy: ControllerMapyService
+    private serwisMapy: ControllerMapyService,
+    private location: Location
+    // private location:Location
   ) {
     // this.ustawOstrzezenieOUtracieDanych();
   }
@@ -85,10 +88,13 @@ export class StronaMapyComponent implements OnInit, OnDestroy {
         lang: params['lang'] ? params['lang'].toString() : undefined
       };
       this.uuidMapy = this.route.snapshot.paramMap.get('uuid') || undefined;
-
       this.zaladujMape();
     });
+    if (location.pathname.includes('portal-historyczny/portal-historyczny')) {
+      // this.location.replaceState(location.pathname.substring(19));
+      window.history.replaceState({}, '', location.pathname.substring(19));
 
+    }
   }
 
   ngOnDestroy() {
@@ -100,7 +106,7 @@ export class StronaMapyComponent implements OnInit, OnDestroy {
    * Funkcja ładuje mapę
    */
   private zaladujMape(): void {
-    if (this.uuidMapy&&this.uuidMapy!='null') {
+    if (this.uuidMapy && this.uuidMapy != 'null') {
       this.mapySerwis.pobierzOpublikowanaMape(this.uuidMapy)
         .subscribe(response => {
           if (response.content?.definicjaMapy) {

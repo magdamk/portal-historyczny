@@ -65,6 +65,7 @@ export class BelkaKartaMapyComponent implements OnInit, OnDestroy {
    *   this.store.dispatch(LewyPanelWidokActions.pokazNastepnyObszar());
    */
   klikEnter(event: any): void {
+    // console.log('URL: ', this.router.url);
     event.stopPropagation();
     event.preventDefault();
     this.zapiszParametryWLocalStorage();
@@ -92,8 +93,16 @@ export class BelkaKartaMapyComponent implements OnInit, OnDestroy {
       }
       // this.wybranoMape();
       // console.log(`/mapa/${this.mapa?.uuidMapy}`+encodeURI(`?rodzaj=${this.mapa?.rodzaj}`));
-      // console.log(window.location.href," ",event.urlAfterRedirects);
-      this.router.navigate([`portal-historyczny/mapa/${this.temat.uuidMapy}`]);
+      // console.log('uuu ',window.location.href," ",event.urlAfterRedirects);
+      if (this.router.url.includes('portal-historyczny')){
+        this.router.navigate([`/mapa/${this.temat.uuidMapy}`]);
+      }
+      else {
+      this.router.navigate([`/portal-historyczny/mapa/${this.temat.uuidMapy}`]);
+    }
+
+
+
     }
   }
 
@@ -129,7 +138,13 @@ export class BelkaKartaMapyComponent implements OnInit, OnDestroy {
       window.open(this.adresUrl, '_blank');
       return;
     }
-    this.router.navigate(['portal-historyczny/mapa/'+this.temat?.uuidMapy]);
+    // this.router.navigate(['/portal-historyczny/mapa/'+this.temat?.uuidMapy]);
+    if (this.router.url.includes('portal-historyczny')){
+      this.router.navigate([`/mapa/${this.temat.uuidMapy}`]);
+    }
+    else {
+    this.router.navigate([`/portal-historyczny/mapa/${this.temat.uuidMapy}`]);
+  }
   }
 
   /**
