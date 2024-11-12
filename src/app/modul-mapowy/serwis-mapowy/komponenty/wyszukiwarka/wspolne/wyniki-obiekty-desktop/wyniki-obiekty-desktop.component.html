@@ -1,0 +1,60 @@
+<div class="wyniki-wyszukiwania" [class.full]="pokazWiecej" *ngIf="wynikiWyszukiwania.content.length > 0; else nieZnalezionoWynikowTemplate">
+  <!-- <mat-divider></mat-divider> -->
+  <div *ngIf="wynikiNaMapie.length > 0"
+       [class.pelna-wysokosc]="wynikiPozaMapa.length === 0"
+       class="wyniki">
+    <mm-przewijany-komponent class="w-full">
+      <div *ngFor="let wynik of wynikiNaMapie" class="duzy-font wynik-wyszukiwania" tabindex="0"
+           (click)="wyswietlObiektNaMapie(wynik)" (keyup.enter)="wyswietlObiektNaMapie(wynik)">
+        <div>
+          <span class="color-primary-bold">{{wynik.etykieta}}</span>
+          <span *ngIf="wynik.uuidWarstwy && wynik.index!=='skrzyzowania-index'"> ({{ aktualnyJezyk === 'pl' ? wynik.nazwaWarstwy : wynik.nazwaWarstwyEn}})</span>
+          <span *ngIf="wynik.index=='skrzyzowania-index'"> ({{'codes.modul-mapowy.generyczne.skrzyzowania' | translate}})</span>
+        </div>
+      </div>
+    </mm-przewijany-komponent>
+  </div>
+  <!-- <mat-divider></mat-divider> -->
+  <div *ngIf="wynikiPozaMapa.length > 0"
+       [class.pelna-wysokosc]="wynikiNaMapie.length === 0"
+       class="wyniki">
+    <mm-przewijany-komponent class="w-full">
+      <div *ngFor="let wynik of wynikiPozaMapa" class="duzy-font wynik-wyszukiwania" tabindex="0"
+           (click)="wyswietlObiektNaMapie(wynik)" (keyup.enter)="wyswietlObiektNaMapie(wynik)">
+        <div class="wynik-poza-mapa-etykieta">
+          <span class="color-zielony-bold">{{wynik.etykieta}}</span>
+          <span *ngIf="wynik.uuidWarstwy && wynik.index!=='skrzyzowania-index'"> ({{ aktualnyJezyk === 'pl' ? wynik.nazwaWarstwy : wynik.nazwaWarstwyEn}})</span>
+          <span *ngIf="wynik.index==='skrzyzowania-index'"> ({{'codes.modul-mapowy.generyczne.skrzyzowania' | translate}})</span>
+        </div>
+        <div *ngIf="wynik.widocznoscWarstwy" class="wynik-poza-mapa-ikona">
+          <span mmIkonaSvg="dodaj" class="ikona-dodaj"
+                matTooltip="{{'codes.modul-mapowy.obsluga-legendy.dodaj-warstwe-do-legendy' | translate}}"
+                (click)="dodajObiektDoMapy(wynik)" (keyup.enter)="dodajObiektDoMapy(wynik)" tabindex="0"></span>
+        </div>
+      </div>
+    </mm-przewijany-komponent>
+  </div>
+  <!-- <mat-divider></mat-divider> -->
+  <div class="info-o-wynikach">
+    <div>{{wynikiWyszukiwania.content.length}} {{'codes.modul-mapowy.generyczne.paginacja-z' | translate}}
+      {{wynikiWyszukiwania.liczbaWynikow}}
+    </div>
+    <mm-przycisk-prostokatny *ngIf="!pokazWiecej && dostepnePokazWiecej" (click)="zaminPokazWiecej()"
+                              label="{{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.pokaz-wiecej' | translate }}"
+                              [ikonaNaKoncu]="'rozwin2'">
+    </mm-przycisk-prostokatny>
+    <mm-przycisk-prostokatny *ngIf="pokazWiecej && dostepnePokazWiecej" (click)="zaminPokazWiecej()"
+                              label="{{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.pokaz-mniej' | translate }}"
+                              [ikonaNaKoncu]="'zwin2'">
+    </mm-przycisk-prostokatny>
+    <mm-przycisk-prostokatny (click)="wyswietlWszystkieClick.emit()"
+                              label="{{ 'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.wyswietl-wszystkie' | translate }}">
+    </mm-przycisk-prostokatny>
+  </div>
+</div>
+<ng-template #nieZnalezionoWynikowTemplate>
+  <!-- <mat-divider></mat-divider> -->
+  <mm-wyniki-brak class="nie-znaleziono-wynikow-template"
+                   nazwaFunkcjonalnosciKod="codes.modul-mapowy.generyczne.brak-wynikow-wyszukiwania">
+  </mm-wyniki-brak>
+</ng-template>

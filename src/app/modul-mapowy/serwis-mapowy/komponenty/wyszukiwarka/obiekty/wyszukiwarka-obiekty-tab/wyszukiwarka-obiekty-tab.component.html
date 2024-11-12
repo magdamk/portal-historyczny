@@ -12,7 +12,7 @@
   </div>
 
   <ng-template mmTylkoDesktop>
-    <!-- <lib-wyniki-obiekty-desktop *ngIf="!!fraza && fraza.length >= 3 && wynikiWyszukiwania"
+    <mm-wyniki-obiekty-desktop *ngIf="!!fraza && fraza.length >= 3 && wynikiWyszukiwania"
                                 [wyniki]="wynikiWyszukiwania"
                                 [pokazWiecej]="(stanWyszukiwarki$ | async)?.daneWyszukiwarkiObiektow?.pokazWiecej?true:false"
                                 [mapaWarstw]="mapaWarstw"
@@ -21,7 +21,7 @@
                                 (zmianaWyszukiwarkaObiektowPokazWiecej)="zmianaWyszukiwarkiObiektowPokazWiecej($event)"
                                 class="wyniki"
     >
-    </lib-wyniki-obiekty-desktop> -->
+    </mm-wyniki-obiekty-desktop>
   </ng-template>
 </div>
 

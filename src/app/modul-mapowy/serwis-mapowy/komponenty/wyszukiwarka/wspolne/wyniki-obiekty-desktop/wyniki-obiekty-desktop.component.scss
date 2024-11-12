@@ -1,0 +1,78 @@
+@import "../../../../../../../style/mm-style/mm-konfiguracja-szablonu.scss";
+
+.wyniki-wyszukiwania {
+  background-color: white;
+  height: 260px;
+  &.full{
+      height: calc(100vh - 249px);
+  }
+
+  .wyniki {
+    height: calc(50% - 29px);
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+
+    .wynik-wyszukiwania {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      margin-top: 0.5rem;
+      cursor: pointer;
+
+      .ikona-dodaj {
+        display: flex;
+        width: 18px;
+        height: 18px;
+        fill: $miasto-zielony;
+        stroke: $miasto-zielony;
+      }
+
+      .color-primary-bold {
+        color: $miasto-blekit;
+        font-weight: bold;
+      }
+
+      .color-zielony-bold {
+        color: $miasto-zielony;
+        font-weight: bold;
+      }
+
+      .wynik-poza-mapa-etykieta {
+        width: 80%;
+      }
+
+      .wynik-poza-mapa-ikona {
+        width: 10%;
+      }
+    }
+  }
+
+  .wyniki.pelna-wysokosc {
+    height: calc(100% - 58px);
+  }
+
+  .info-o-wynikach {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+  }
+}
+
+.nie-znaleziono-wynikow-template {
+  fill: $miasto-czerwony;
+  color: $miasto-czerwony;
+}
+
+@media (min-width: 1367px) {
+  .wyniki-wyszukiwania {
+    height: 330px;
+    &.full {
+      height: calc(100vh - 261px);
+    }
+
+  }
+}

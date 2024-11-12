@@ -74,6 +74,7 @@ import { WyszukiwarkaMapowaComponent } from './serwis-mapowy/komponenty/wyszukiw
 import { WyszukiwarkaObiektyTabComponent } from './serwis-mapowy/komponenty/wyszukiwarka/obiekty/wyszukiwarka-obiekty-tab/wyszukiwarka-obiekty-tab.component';
 import { wyszukiwarkaReducer } from './stan/wyszukiwarka/wyszukiwarka.reducer';
 import { WynikiBrakComponent } from './serwis-mapowy/komponenty/wyszukiwarka/wspolne/wyniki-brak/wyniki-brak.component';
+import { WynikiObiektyDesktopComponent } from './serwis-mapowy/komponenty/wyszukiwarka/wspolne/wyniki-obiekty-desktop/wyniki-obiekty-desktop.component';
 
 @NgModule({
   declarations: [
@@ -112,7 +113,8 @@ import { WynikiBrakComponent } from './serwis-mapowy/komponenty/wyszukiwarka/wsp
     KontaktZAdministratoremBelkaBocznaComponent,
     WyszukiwarkaMapowaComponent,
     WyszukiwarkaObiektyTabComponent,
-    WynikiBrakComponent
+    WynikiBrakComponent,
+    WynikiObiektyDesktopComponent
   ],
   imports: [
     CommonModule,
