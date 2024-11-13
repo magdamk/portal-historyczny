@@ -1,0 +1,115 @@
+<mm-przewijany-komponent>
+  <div class="wyszukiwarka-obiekty-odleglosc" #wyszukiwarka>
+    <div class="formularz">
+      <div>
+        <div class="pole-formularza">
+          <div class="duzy-font pole-wyszukiwania-label">{{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.szukaj' | translate}}:
+          </div>
+          <input class="w-full duzy-font" (keyup)="wyszukajJesliEnter($event)" [ngModel]="fraza"
+                 (ngModelChange)="frazaChange($event)"
+                 placeholder="{{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.np-kino' | translate}}"
+                 attr.aria-label="{{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.np-kino' | translate}}"/>
+        </div>
+        <div class="pole-formularza">
+          <div class="duzy-font pole-wyszukiwania-label">
+            {{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.w-odleglosci' | translate}}:
+          </div>
+          <div class="error-input">
+            <div class="flex flex-col w-full">
+
+              <mat-slider (input)="ustawZasieg($event)" [ngModel]="zasieg" aria-label="odleglosc" class="w-full"
+                          color="primary"
+                          max="{{maxZasieg}}" min="10"></mat-slider>
+
+              <div class="flex flex-row">
+                <input class="etykieta-input" type="number" [(ngModel)]="zasieg"
+                       (ngModelChange)="ustawZasiegRecznie($event)"
+                       (keyup)="wyszukajJesliEnter($event)"
+                       attr.aria-label="{{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.w-odleglosci' | translate}}"/>
+                <span class="text-grey-center"> m / {{zasieg / 1000}} km</span>
+              </div>
+            </div>
+            <div
+              *ngIf="przekroczonyMaksymalnyZasieg"
+              class="komunikat-bledu">
+              {{ 'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.dopuszczalna-odleglosc' | translate }}
+            </div>
+          </div>
+        </div>
+        <div class="pole-formularza">
+          <div
+            class="duzy-font pole-wyszukiwania-label">{{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.od-punktu' | translate}}:
+          </div>
+          <div class="error-input">
+            <div class="flex flex-row w-full border-b-szary">
+              <input #input class="w-full duzy-font" (keyup)="wyszukajJesliEnter($event)"
+                     (blur)="lokalizacjaPoczatkowa.czyModyfikowana = true"
+                     [(ngModel)]="lokalizacjaPoczatkowa.wartosc" (ngModelChange)="lokalizacjaPoczatkowaChange($event)"
+                     placeholder="{{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.wskaz-na-mapie' | translate}}"
+                     attr.aria-label="{{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.wskaz-na-mapie' | translate}}"/>
+              <div class="wyznacz-lokalizacje-ikona" (click)="wyznaczLokalizacje(); input.focus()"
+                   (keyup.enter)="wyznaczLokalizacje(); input.focus()" tabindex="0">
+            <span mmIkonaSvg="wyznacz_lokalizacje"
+                  matTooltip="{{'codes.modul-mapowy.obsluga-map.wyznacz-lokalizacje' | translate}}"></span>
+              </div>
+            </div>
+            <div
+              *ngIf="!!lokalizacjaPoczatkowa.wartosc && !lokalizacjaPoczatkowa.czyPoprawna && lokalizacjaPoczatkowa.czyModyfikowana"
+              class="komunikat-bledu">
+              {{ 'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.lokalizacja-poza-serwisem' | translate }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="przyciski">
+      <span class="przycisk-kosz" mmIkonaSvg="usun"
+            matTooltip="{{'codes.modul-mapowy.generyczne.wyczysc' | translate}}"
+            (click)="wyczyscWyszukiwanie()" tabindex="0"
+            (keyup.enter)="wyczyscWyszukiwanie()"
+      ></span>
+        <mm-przycisk-prostokatny (click)="wyszukajObiekty()"
+                                  [disabled]="!fraza || fraza.length < 3 || !lokalizacjaPoczatkowa.wartosc ||
+                                !lokalizacjaPoczatkowa.czyPoprawna || przekroczonyMaksymalnyZasieg"
+                                  class="przycisk-szukaj"
+                                  label="{{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.szukaj' | translate}}">
+        </mm-przycisk-prostokatny>
+      </div>
+    </div>
+    <ng-template mmTylkoDesktop>
+      <mm-wyniki-obiekty-desktop
+        *ngIf="!!fraza && fraza.length >= 3 && !!lokalizacjaPoczatkowa && !!wynikiWyszukiwania; else brakWynikowTemplate"
+        [wyniki]="wynikiWyszukiwania"
+        [mapaWarstw]="mapaWarstw"
+        (wyswietlWszystkieClick)="wyswietlWszystkieWyniki()"
+      >
+      </mm-wyniki-obiekty-desktop>
+    </ng-template>
+    <ng-template mmTylkoMobile>
+      <mm-wyniki-obiekty-mobile
+        *ngIf="wynikiWyszukiwania && wynikiWyszukiwania.liczbaWynikow > 0; else brakWynikowTemplate"
+        [wynikWyszukiwania]="wynikiWyszukiwania"
+        [mapaWarstw]="mapaWarstw"
+        (zamknijClick)="wyczyscWyniki()"
+        (wyswietlWszystkieClick)="wyswietlWszystkieWynikiMobile()"
+      >
+      </mm-wyniki-obiekty-mobile>
+    </ng-template>
+  </div>
+
+
+  <ng-template #brakWynikowTemplate>
+    <mat-divider></mat-divider>
+    <mm-wyniki-brak
+      *ngIf="!(wynikiWyszukiwania && wynikiWyszukiwania.liczbaWynikow === 0); else nieZnalezionoWynikowTemplate"
+      class="brak-wynikow-template"
+      nazwaFunkcjonalnosciKod="codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.obiekty-w-odleglosci-nazwa-funkcjonalnosci"
+      opisFunkcjonalnosciKod="codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.obiekty-w-odleglosci-opis-funkcjonalnosci">
+    </mm-wyniki-brak>
+  </ng-template>
+
+  <ng-template #nieZnalezionoWynikowTemplate>
+    <mm-wyniki-brak class="nie-znaleziono-wynikow-template"
+                     nazwaFunkcjonalnosciKod="codes.modul-mapowy.generyczne.brak-wynikow-wyszukiwania">
+    </mm-wyniki-brak>
+  </ng-template>
+</mm-przewijany-komponent>

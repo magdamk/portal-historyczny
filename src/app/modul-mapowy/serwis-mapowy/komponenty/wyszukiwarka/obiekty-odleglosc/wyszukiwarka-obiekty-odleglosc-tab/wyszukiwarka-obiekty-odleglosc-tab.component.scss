@@ -1,0 +1,146 @@
+@import "../../../../../../../style/mm-style/mm-konfiguracja-szablonu.scss";
+
+
+.wyszukiwarka-obiekty-odleglosc {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  justify-content: space-between;
+  height: 100%;
+
+  .formularz {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 66.66666%;
+    min-height: 66.66666%;
+
+    .pole-formularza {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      .pole-wyszukiwania-label {
+        font-weight: bold;
+        margin-right: 1rem;
+        width: 50%;
+        text-transform: uppercase;
+      }
+
+      .error-input {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .komunikat-bledu {
+          align-self: center;
+          color: #CC3333;
+        }
+      }
+    }
+
+    .przyciski {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 2rem;
+
+      .przycisk-kosz {
+        width: $wyszukiwarka-mapowa-przycisk-wysokosc;
+        height: $wyszukiwarka-mapowa-przycisk-wysokosc;
+        cursor: pointer;
+      }
+
+      .przycisk-szukaj {
+        width: $wyszukiwarka-mapowa-przycisk-szerokosc;
+        height: $wyszukiwarka-mapowa-przycisk-wysokosc;
+        text-transform: uppercase;
+        border-radius: 0;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.h-1\/3 {
+  height: 33.333333333%;
+}
+
+.h-2\/3 {
+  height: 66.666666%;
+}
+
+
+.przycisk-zamknij {
+  width: $wyszukiwarka-mapowa-kontrolki-romiar;
+  height: $wyszukiwarka-mapowa-kontrolki-romiar;
+  align-self: end;
+}
+
+.color-primary {
+  color: $miasto-blekit;
+}
+
+.color-zielony {
+  color: $miasto-zielony;
+}
+
+.border-b-szary {
+  border-bottom: 2px solid $miasto-szary;
+}
+
+.wyznacz-lokalizacje-ikona span {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  fill: $miasto-blekit;
+  stroke: $miasto-blekit;
+}
+
+.text-grey-center {
+  text-align: center;
+  color: $miasto-szary;
+}
+
+.etykieta-input {
+  text-align: right;
+  color: $miasto-szary;
+  margin-right: 5px;
+  width: 30%;
+}
+
+.brak-wynikow-template {
+  padding-top: 1rem;
+}
+
+@media (min-width: $prog-przelaczenia) {
+  .wyszukiwarka-obiekty-odleglosc {
+    padding: 3rem 2rem 2rem 2rem;
+    min-height: $wyszukiwarka-obiektow-wysokosc - $wyszukiwarka-mapowa-kontrolki-romiar;
+
+    .formularz {
+      .pole-formularza {
+        .pole-wyszukiwania-label {
+          width: 40%;
+        }
+      }
+    }
+  }
+}
+.nie-znaleziono-wynikow-template {
+  fill: $miasto-czerwony;
+  color: $miasto-czerwony;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

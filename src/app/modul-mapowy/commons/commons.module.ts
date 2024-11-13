@@ -70,7 +70,7 @@ import { MMKomponentHostDirective } from './directives/mm-komponent-host.directi
     IkonaSvgDirective,
     ImgDirective,
     KontaktFormularzComponent,
-    // MatLegacySliderModule,
+    MatLegacySliderModule,
     // MatFormFieldModule,
     // ReactiveFormsModule,
     // MatCheckboxModule,

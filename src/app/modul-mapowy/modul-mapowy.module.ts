@@ -77,6 +77,7 @@ import { wyszukiwarkaReducer } from './stan/wyszukiwarka/wyszukiwarka.reducer';
 import { WynikiBrakComponent } from './serwis-mapowy/komponenty/wyszukiwarka/wspolne/wyniki-brak/wyniki-brak.component';
 import { WynikiObiektyDesktopComponent } from './serwis-mapowy/komponenty/wyszukiwarka/wspolne/wyniki-obiekty-desktop/wyniki-obiekty-desktop.component';
 import { WynikiObiektyMobileComponent } from './serwis-mapowy/komponenty/wyszukiwarka/wspolne/wyniki-obiekty-mobile/wyniki-obiekty-mobile.component';
+import { WyszukiwarkaObiektyOdlegloscTabComponent } from './serwis-mapowy/komponenty/wyszukiwarka/obiekty-odleglosc/wyszukiwarka-obiekty-odleglosc-tab/wyszukiwarka-obiekty-odleglosc-tab.component';
 
 @NgModule({
   declarations: [
@@ -117,7 +118,8 @@ import { WynikiObiektyMobileComponent } from './serwis-mapowy/komponenty/wyszuki
     WyszukiwarkaObiektyTabComponent,
     WynikiBrakComponent,
     WynikiObiektyDesktopComponent,
-    WynikiObiektyMobileComponent
+    WynikiObiektyMobileComponent,
+    WyszukiwarkaObiektyOdlegloscTabComponent
   ],
   imports: [
     CommonModule,
