@@ -25,12 +25,9 @@ export class WynikiObiektyDesktopComponent implements OnInit, OnDestroy {
   @Input() set wyniki(wynikiWyszukiwania: WynikWyszukiwaniaDtoObiektDto | null) {
     if (!wynikiWyszukiwania || wynikiWyszukiwania.liczbaWynikow === 0) {
       this.wynikiWyszukiwania = {liczbaWynikow: 0, content: []};
-      this.wynikiPozaMapa = [];
-      this.wynikiNaMapie = [];
       return;
     }
     this.wynikiWyszukiwania = wynikiWyszukiwania;
-    this.podzielWyniki(wynikiWyszukiwania.content);
   }
 
 
@@ -39,7 +36,6 @@ export class WynikiObiektyDesktopComponent implements OnInit, OnDestroy {
       return;
     }
     this._mapaWarstw = mapaWarstw;
-    this.podzielWyniki(this.wynikiWyszukiwania.content);
   }
 
   @Output() wyswietlWszystkieClick = new EventEmitter();
@@ -47,8 +43,6 @@ export class WynikiObiektyDesktopComponent implements OnInit, OnDestroy {
 
   private _mapaWarstw = new Map<string, Warstwa>();
   wynikiWyszukiwania: WynikWyszukiwaniaDtoObiektDto = {liczbaWynikow: 0, content: []};
-  wynikiNaMapie: ObiektDto[] = [];
-  wynikiPozaMapa: ObiektDto[] = [];
 
   /**
    * Konstruktor
@@ -64,48 +58,23 @@ export class WynikiObiektyDesktopComponent implements OnInit, OnDestroy {
    *
    * @param wynikiWyszukiwania - wyniki wyszukiwania
    */
-  podzielWyniki(wynikiWyszukiwania: ObiektDto[]) {
-    this.wynikiNaMapie = [];
-    this.wynikiPozaMapa = [];
-
-    wynikiWyszukiwania.forEach(wynik => {
-      this.ustawWidocznoscDodawaniaDoLegendy(wynik);
-    });
-
-    wynikiWyszukiwania.forEach(w => {
-      if (!w.uuidWarstwy || this.sprawdzCzyWarstwaNalezyDoMapy(w.uuidWarstwy)) {
-        this.wynikiNaMapie.push(w);
-        return;
-      }
-      this.wynikiPozaMapa.push(w);
-    });
-  }
 
   /**
    * Funkcja sprawdzająca czy obiekt należy do mapy
    *
    * @param uuidWarstwy - id warstwy
    */
-  sprawdzCzyWarstwaNalezyDoMapy(uuidWarstwy?: string) {
-    if (!uuidWarstwy) {
-      return true;
-    }
-    if (!this._mapaWarstw) {
-      return false;
-    }
-    return !!this._mapaWarstw?.get(uuidWarstwy);
-  }
 
   /**
    * Funkcja generująca zdarzenie wyswietlenia obiektu do mapy
    * @param wynik - obiekt dodawany
    */
   wyswietlObiektNaMapie(wynik: ObiektDto) {
-    if (!wynik.uuidWarstwy) {
+    // if (!wynik.uuidWarstwy) {
       this.obiektyMapySerwis.przekazLokalizacjeDoWyswietlenia(wynik);
-      return;
-    }
-    this.obiektyMapySerwis.przekazObiektDoWyswietlenia(wynik, this._mapaWarstw?.get(wynik.uuidWarstwy));
+      // return;
+    // }
+    // this.obiektyMapySerwis.przekazObiektDoWyswietlenia(wynik, this._mapaWarstw?.get(wynik.uuidWarstwy));
   }
 
   /**
@@ -148,12 +117,5 @@ export class WynikiObiektyDesktopComponent implements OnInit, OnDestroy {
    * Funkcja ustawia widoczność opcji dodawania warstwy do legendy
    * @param obiekt - wyszukana warstwa
    */
-  private ustawWidocznoscDodawaniaDoLegendy(obiekt: ObiektDto){
-    if (obiekt.uuidWarstwy != null) {
-      this.widoczneWarstwy.pobierzWidocznaWarstweLubKatalog(obiekt.uuidWarstwy)
-        .subscribe(warstwa =>{
-          warstwa?.widocznoscWLegendzie? obiekt.widocznoscWarstwy = true : obiekt.widocznoscWarstwy = false;
-        })
-    }
-  }
+
 }
