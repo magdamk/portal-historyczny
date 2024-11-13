@@ -5,7 +5,7 @@
   overflow: hidden;
 
   .multimedia {
-    height: 100%;
+    width: 100%;
     padding-top: 10px;
 
     .pojedyncze {
@@ -13,17 +13,18 @@
       // height: 270px;
       div {
         position: relative;
-        display: flex;
-        height: auto;
+        // display: flex;
+
         align-items: center;
         // max-height:max-content;
-        width: fit-content;
+        width: 100%;
+        height: auto;
         margin-bottom: 10px;
         justify-content: center;
         vertical-align: middle;
 
         img {
-          height: 100%;
+          width: 100%;
           touch-action: pan-y !important;
           cursor: pointer;
         }
@@ -31,27 +32,31 @@
     }
 
     .wielokrotne {
-      height: 274px;
+      height: auto;
+      // max-height: fit-content;
 
       .widok {
         position: relative;
         display: flex;
-        height: 200px;
+
         align-items: center;
 
-        width: auto;
+        // width: 360px;
+        height: auto;
         margin-bottom: 10px;
         justify-content: center;
+
         .nastepne {
-          visibility:hidden;
+          visibility: hidden;
         }
 
         .poprzednie {
-          visibility:hidden;
+          visibility: hidden;
         }
 
         img {
-          height: 100%;
+          width: 360px;
+          height: a;
           touch-action: pan-y !important;
           cursor: pointer;
         }
@@ -109,8 +114,98 @@
           margin-right: 15px;
         }
       }
+
+
+
+
     }
   }
+
+
+
+  .wielokrotne-desktop {
+    height: 240px;
+    // max-height: fit-content;
+
+    display: flex;
+    flex-direction: row;
+
+
+    .widok-desktop {
+      position: relative;
+      display: flex;
+      height: 100% !important;
+      width: calc(100% - 80px);
+      align-items: center;
+
+      // width: 421px!important;
+      justify-content: center;
+
+      .nastepne-desktop {
+        width: 40px;
+        margin-left: 20px;
+        visibility: visible !important;
+        fill: $miasto-blekit;
+      }
+
+      .poprzednie-desktop {
+        width: 40px;
+        margin-right: 20px;
+        visibility: visible !important;
+        fill: $miasto-blekit;
+      }
+
+      img {
+        height: 100%;
+        touch-action: pan-y !important;
+        cursor: pointer;
+      }
+    }
+
+    .karuzela-desktop {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 100% !important;
+      padding: 0 5px;
+      width: 80px;
+      // max-width: 100%;
+
+      div {
+        width: 100% !important;
+        height: 40px;
+        // min-height: fit-content !important;
+        // height: auto;
+        // background-size: cover !important;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+      }
+
+      .zaznaczone {
+        box-shadow: 0px 0px 4px 2px $miasto-blekit;
+      }
+
+      .nastepne-desktop {
+        width: 50px;
+        // max-height: 60px;
+        height: 50px;
+        fill: $miasto-blekit;
+        // visibility: hidden;
+      }
+
+      .poprzednie-desktop {
+        width: 50px;
+        // max-height: 60px;
+        height: 50px;
+        fill: $miasto-blekit;
+        // margin-right: 15px;
+        // visibility: hidden;
+      }
+    }
+  }
+
 
   .zalaczniki {
     display: flex;
@@ -158,6 +253,9 @@
     justify-content: center;
     justify-items: center;
     display: flex;
+    width: fit-content;
+    justify-self: center;
+
     div {
       position: relative;
       display: flex;
@@ -174,74 +272,6 @@
         height: 100%;
         touch-action: pan-y !important;
         cursor: pointer;
-      }
-    }
-  }
-  .wielokrotne {
-    height: 274px;
-
-    .widok {
-      position: relative;
-      display: flex;
-      height: 200px;
-      align-items: center;
-
-      width: auto;
-      margin-bottom: 10px;
-      justify-content: center;
-      .nastepne {
-        width: 40px;
-        margin-left: 20px;
-        visibility:visible!important;
-        fill: $miasto-blekit;
-      }
-
-      .poprzednie {
-        width: 40px;
-        margin-right: 20px;
-        visibility:visible!important;
-        fill: $miasto-blekit;
-      }
-
-      img {
-        height: 100%;
-        touch-action: pan-y !important;
-        cursor: pointer;
-      }
-    }
-
-    .karuzela {
-      display: flex;
-      justify-content: space-evenly;
-      height: 65px;
-      padding: 0 5px;
-      width: auto;
-      max-width: 100%;
-
-      div {
-        width: 60px;
-        // max-height: 60px;
-        height: 60px;
-        // background-size: cover;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        cursor: pointer;
-      }
-
-      .zaznaczone {
-        box-shadow: 0px 0px 4px 2px $miasto-blekit;
-      }
-
-      .nastepne {
-        fill: $miasto-blekit;
-        visibility: hidden;
-      }
-
-      .poprzednie {
-        fill: $miasto-blekit;
-        margin-right: 15px;
-        visibility: hidden;
       }
     }
   }
