@@ -11,7 +11,7 @@ $karta-mapy-rodzaj-wysokosc: 1.5rem;
 
     .tytul {
 
-      // color: $miasto-pomarancz;
+      color: $miasto-pomarancz;
       min-height: 80px;
       // max-height: 90px;
       // text-overflow: ellipsis;
@@ -27,11 +27,12 @@ $karta-mapy-rodzaj-wysokosc: 1.5rem;
     }
 
     .grupy-paska-czasu {
-      margin-top: 10px;
+
 
 
       .grupa {
         height: calc(1.5rem + 150px);
+        margin-top: 25px;
         // box-shadow: 5px 10px 8px #333;
         .grupa-top {
           border-top: 1px solid $miasto-blekit;
