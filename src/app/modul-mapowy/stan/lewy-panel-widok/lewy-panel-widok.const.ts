@@ -24,7 +24,7 @@ export const WIDOKI_ID = {
 
 export const WIDOK_TEMATY: Widok = {
   id: WIDOKI_ID.TEMATY,
-  zIndex: 51,
+  zIndex: 61,
   kolejnosc: 1,
   desktop: true,
   mobile: true,
@@ -35,7 +35,7 @@ export const WIDOK_TEMATY: Widok = {
 
 export const WIDOK_MAPY_PLANY: Widok = {
   id: WIDOKI_ID.MAPY_PLANY,
-  zIndex: 51,
+  zIndex: 61,
   kolejnosc: 2,
   desktop: true,
   mobile: true,
@@ -45,7 +45,7 @@ export const WIDOK_MAPY_PLANY: Widok = {
 }
 export const WIDOK_SZLAKI: Widok = {
   id: WIDOKI_ID.SZLAKI,
-  zIndex: 51,
+  zIndex: 61,
   kolejnosc: 3,
   desktop: true,
   mobile: true,
@@ -55,7 +55,7 @@ export const WIDOK_SZLAKI: Widok = {
 }
 export const WIDOK_PASKI_CZASU: Widok = {
   id: WIDOKI_ID.PASKI_CZASU,
-  zIndex: 51,
+  zIndex: 61,
   kolejnosc: 4,
   desktop: true,
   mobile: true,
@@ -65,7 +65,7 @@ export const WIDOK_PASKI_CZASU: Widok = {
 }
 export const WIDOK_TAGI: Widok = {
   id: WIDOKI_ID.TAGI,
-  zIndex: 51,
+  zIndex: 61,
   kolejnosc: 5,
   desktop: true,
   mobile: true,
@@ -75,7 +75,7 @@ export const WIDOK_TAGI: Widok = {
 }
 export const WIDOK_INFO: Widok = {
   id: WIDOKI_ID.INFO,
-  zIndex: 51,
+  zIndex: 61,
   kolejnosc: 6,
   desktop: true,
   mobile: true,
