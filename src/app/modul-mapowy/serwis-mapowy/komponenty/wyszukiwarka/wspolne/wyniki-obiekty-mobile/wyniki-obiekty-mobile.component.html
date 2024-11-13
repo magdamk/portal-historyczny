@@ -1,0 +1,30 @@
+<div *ngIf="wynikiWyszukiwania && wynikiWyszukiwania.content.length > 0" class="wyniki-wyszukiwania-mobile">
+  <mm-przycisk-ikona
+    class="przycisk-zamknij"
+    ikona="zamknij"
+    (click)="zamknijClick.emit()">
+  </mm-przycisk-ikona>
+  <div class="wyniki">
+    <mm-przewijany-komponent class="w-full">
+      <div *ngFor="let wynik of wynikiWyszukiwania.content">
+        <mat-divider></mat-divider>
+        <div class="wynik-wyszukiwania-mobile tekst-a" (click)="wyswietlObiektNaMapie(wynik)">
+          <div>
+            <div>
+              <span class="color-zielony naglowek-a">{{wynik.etykieta}}</span>
+            </div>
+            <div *ngIf="!!wynik.nazwaWarstwy && wynik.index!=='skrzyzowania-index'"> ({{ aktualnyJezyk === 'pl' ?
+              wynik.nazwaWarstwy : wynik.nazwaWarstwyEn}})
+            </div>
+            <div *ngIf="wynik.index==='skrzyzowania-index'"> ({{'codes.modul-mapowy.generyczne.skrzyzowania' | translate}})</div>
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+      </div>
+
+    </mm-przewijany-komponent>
+  </div>
+  <div class="liczba-wynikow tekst-a" *ngIf="wynikiWyszukiwania">
+    {{ wynikiWyszukiwania.content.length }} {{ 'codes.modul-mapowy.generyczne.z' | translate }} {{ wynikiWyszukiwania.liczbaWynikow }}
+  </div>
+</div>

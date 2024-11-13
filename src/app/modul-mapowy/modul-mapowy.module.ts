@@ -76,6 +76,7 @@ import { WyszukiwarkaObiektyTabComponent } from './serwis-mapowy/komponenty/wysz
 import { wyszukiwarkaReducer } from './stan/wyszukiwarka/wyszukiwarka.reducer';
 import { WynikiBrakComponent } from './serwis-mapowy/komponenty/wyszukiwarka/wspolne/wyniki-brak/wyniki-brak.component';
 import { WynikiObiektyDesktopComponent } from './serwis-mapowy/komponenty/wyszukiwarka/wspolne/wyniki-obiekty-desktop/wyniki-obiekty-desktop.component';
+import { WynikiObiektyMobileComponent } from './serwis-mapowy/komponenty/wyszukiwarka/wspolne/wyniki-obiekty-mobile/wyniki-obiekty-mobile.component';
 
 @NgModule({
   declarations: [
@@ -115,7 +116,8 @@ import { WynikiObiektyDesktopComponent } from './serwis-mapowy/komponenty/wyszuk
     WyszukiwarkaMapowaComponent,
     WyszukiwarkaObiektyTabComponent,
     WynikiBrakComponent,
-    WynikiObiektyDesktopComponent
+    WynikiObiektyDesktopComponent,
+    WynikiObiektyMobileComponent
   ],
   imports: [
     CommonModule,
