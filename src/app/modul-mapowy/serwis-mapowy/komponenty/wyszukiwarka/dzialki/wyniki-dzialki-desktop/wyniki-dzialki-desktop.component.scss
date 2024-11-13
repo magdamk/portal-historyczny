@@ -1,0 +1,60 @@
+@import "../../../../../../../style/mm-style/mm-konfiguracja-szablonu.scss";
+
+.wyniki-desktop {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  height: 100%;
+}
+
+.color-primary-bold {
+  color: $miasto-blekit;
+  font-weight: bold;
+}
+
+.color-zielony-bold {
+  color: $miasto-pomarancz;
+  font-weight: bold;
+}
+
+.wynik {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.wynik-poza-mapa-ikona {
+  width: 10%;
+}
+
+.ikona-dodaj {
+  display: flex;
+  width: 18px;
+  height: 18px;
+  fill: $miasto-zielony;
+  stroke: $miasto-zielony;
+}
+
+.info-o-wynikach {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+
+  .wyswietl-wysztkie-button {
+    border-radius: 0;
+    font-weight: bold;
+  }
+
+  button {
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+
+.nie-znaleziono-wynikow-template {
+  fill: $miasto-czerwony;
+  color: $miasto-czerwony;
+}

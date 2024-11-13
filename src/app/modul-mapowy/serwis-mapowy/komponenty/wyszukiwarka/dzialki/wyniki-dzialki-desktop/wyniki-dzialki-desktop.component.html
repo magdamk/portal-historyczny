@@ -1,0 +1,34 @@
+<div class="wyniki-desktop" *ngIf="wynikiWyszukiwania.content.length > 0; else nieZnalezionoWynikowTemplate">
+  <mat-divider></mat-divider>
+  <mm-przewijany-komponent class="w-full">
+    <div *ngFor="let wynik of wynikiWyszukiwania.content" [tabindex]="0"
+         class="duzy-font wynik" (click)="wyswietlObiektNaMapie(wynik)" (keyup.enter)="wyswietlObiektNaMapie(wynik)">
+      <div>
+        <span>{{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.obreb' | translate}}:</span>
+        <span
+          [ngClass]="dzialkiNalezaDoMapy ? 'color-primary-bold' : 'color-zielony-bold'">
+        {{wynik.numerObrebu}}
+      </span>
+        <span>{{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.dzialka' | translate}}:</span>
+        <span
+          [ngClass]="dzialkiNalezaDoMapy ? 'color-primary-bold' : 'color-zielony-bold'">
+        {{wynik.numerDzialki}}
+      </span>
+        <span *ngIf="wynik.nazwaWarstwy"> ({{ aktualnyJezyk === 'pl' ? wynik.nazwaWarstwy : wynik.nazwaWarstwyEn}})</span>
+      </div>
+    </div>
+  </mm-przewijany-komponent>
+  <mat-divider></mat-divider>
+  <div class="info-o-wynikach">
+    <div>{{wynikiWyszukiwania.content.length}} {{'codes.modul-mapowy.generyczne.paginacja-z' | translate}}
+      {{wynikiWyszukiwania.liczbaWynikow}}
+    </div>
+
+  </div>
+</div>
+<ng-template #nieZnalezionoWynikowTemplate>
+  <mat-divider></mat-divider>
+  <mm-wyniki-brak class="nie-znaleziono-wynikow-template"
+                   nazwaFunkcjonalnosciKod="codes.modul-mapowy.generyczne.brak-wynikow-wyszukiwania">
+  </mm-wyniki-brak>
+</ng-template>

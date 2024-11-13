@@ -1,0 +1,48 @@
+<div class="wyniki-dzialki-mobile">
+  <mm-przycisk-ikona
+    class="przycisk-zamknij"
+    ikona="zamknij"
+    (click)="zamknijClick.emit()"
+  ></mm-przycisk-ikona>
+  <div class="wyniki">
+    <mm-przewijany-komponent class="w-full">
+      <div *ngFor="let wynik of wynikiWyszukiwania.content">
+        <mat-divider></mat-divider>
+        <div class="wynik-wyszukiwania tekst-a" (click)="wyswietlObiektNaMapie(wynik)">
+          <div class="wynik-poziomy">
+            <div>
+              <div class="wynik-poziomy">
+              <div class="etykieta">
+                {{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.nr-obrebu' | translate}}:
+              </div>
+              <div class="naglowek-c" [ngClass]="dzialkiNalezaDoMapy ? 'color-primary' : 'color-zielony'">
+                {{wynik.numerObrebu}}
+              </div>
+              </div>
+              <div class="wynik-poziomy">
+                <div class="etykieta">
+                  {{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.nr-dzialki' | translate}}:
+                </div>
+                <div class="naglowek-c color-primary"
+                     [ngClass]="dzialkiNalezaDoMapy ? 'color-primary' : 'color-zielony'">
+                  {{wynik.numerDzialki}}
+                </div>
+              </div>
+              <div class="wynik-poziomy">
+                <div class="etykieta">
+                  {{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.warstwa' | translate}}:
+                </div>
+                <div class="tekst-a"> {{ aktualnyJezyk === 'pl' ? wynik.nazwaWarstwy : wynik.nazwaWarstwyEn}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+      </div>
+    </mm-przewijany-komponent>
+  </div>
+  <div class="liczba-wynikow tekst-a">
+    {{ wynikiWyszukiwania.content.length }} {{ 'codes.modul-mapowy.generyczne.z' | translate }} {{ wynikiWyszukiwania.liczbaWynikow
+    }}
+  </div>
+</div>

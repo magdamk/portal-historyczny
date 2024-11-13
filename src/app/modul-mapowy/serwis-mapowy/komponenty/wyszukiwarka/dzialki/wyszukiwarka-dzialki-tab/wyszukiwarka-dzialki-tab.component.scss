@@ -1,0 +1,93 @@
+@import "../../../../../../../style/mm-style/mm-konfiguracja-szablonu.scss";
+
+.wyszukiwarka-dzialki {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 2rem;
+
+  .formularz {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: start;
+
+    .pole-formularza {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 0.5rem;
+
+      .etykieta {
+        font-weight: bold;
+        margin-right: 1rem;
+        text-transform: uppercase;
+      }
+    }
+
+    .przyciski {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 2rem;
+
+      .przycisk-kosz {
+        width: $wyszukiwarka-mapowa-przycisk-wysokosc;
+        height: $wyszukiwarka-mapowa-przycisk-wysokosc;
+        cursor: pointer;
+      }
+
+      .przycisk-wyczysc {
+        width: $wyszukiwarka-mapowa-przycisk-szerokosc;
+        height: $wyszukiwarka-mapowa-przycisk-wysokosc;
+        text-transform: uppercase;
+        border-radius: 0;
+        font-weight: bold;
+      }
+
+      .przycisk-szukaj {
+        width: $wyszukiwarka-mapowa-przycisk-szerokosc;
+        height: $wyszukiwarka-mapowa-przycisk-wysokosc;
+        text-transform: uppercase;
+        border-radius: 0;
+        font-weight: bold;
+      }
+    }
+
+    .wyniki {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      height: 100%;
+      overflow: hidden;
+    }
+  }
+}
+
+.brak-wynikow-template {
+  padding-top: 1rem;
+}
+
+
+@media (min-width: $prog-przelaczenia) {
+  .wyszukiwarka-dzialki {
+    padding: 3rem 2rem 2rem 2rem;
+    min-height: 385px;
+    height: auto;
+
+    .formularz {
+      height: calc(260px - 3rem);
+      justify-content: space-between;
+    }
+
+    .wyniki {
+      height: 40%;
+    }
+  }
+  .wyszukiwarka-dzialki.aktywne-wyniki {
+    height: $wyszukiwarka-dzialek-wysokosc;
+  }
+}
+.nie-znaleziono-wynikow-template {
+  fill: $miasto-czerwony;
+  color: $miasto-czerwony;
+}

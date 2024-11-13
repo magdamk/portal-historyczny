@@ -1,0 +1,67 @@
+<div class="wyszukiwarka-dzialki" [class.aktywne-wyniki]="wynikiWyszukiwania && wynikiWyszukiwania.content.length > 0">
+  <div class="formularz">
+    <div class="pole-formularza">
+      <div class="etykieta duzy-font">{{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.obreb' | translate}}:</div>
+      <input class="w-full duzy-font" [ngModel]="obreb" (ngModelChange)="zmianaObrebu($event)"
+             placeholder="{{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.np-nr-obrebu' | translate}}"
+             attr.aria-label="{{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.np-nr-obrebu' | translate}}"/>
+    </div>
+    <div class="pole-formularza">
+      <div class="etykieta duzy-font">{{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.dzialka' | translate}}:</div>
+      <input class="w-full duzy-font" [ngModel]="dzialka" (ngModelChange)="zmianaDzialki($event)"
+             [disabled]="!obreb || obreb.length < 2"
+             placeholder="{{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.np-nr-dzialki' | translate}}"
+             attr.aria-label="{{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.np-nr-dzialki' | translate}}"/>
+    </div>
+    <div class="przyciski">
+      <span *mmTylkoDektop></span>
+      <span class="przycisk-kosz" mmIkonaSvg="usun" tabindex="0"
+            *mmTylkoMobile
+            (click)="wyczyscWyszukiwanie()" (keyup.enter)="wyczyscWyszukiwanie()"
+            matTooltip="{{'codes.modul-mapowy.generyczne.wyczysc' | translate}}"></span>
+      <mm-przycisk-prostokatny (click)="wyczyscWyszukiwanie()"
+                                *mmTylkoDesktop
+                                class="przycisk-wyczysc"
+                                [ikonaNaKoncu]="'usun2'"
+                                label="{{'codes.modul-mapowy.generyczne.wyczysc' | translate}}">
+      </mm-przycisk-prostokatny>
+      <mm-przycisk-prostokatny (click)="szukajDzialek()"
+                                *mmTylkoMobile
+                                [disabled]="!obreb || obreb.length < 2"
+                                class="przycisk-szukaj"
+                                label="{{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.szukaj' | translate}}">
+      </mm-przycisk-prostokatny>
+    </div>
+  </div>
+  <ng-template mmTylkoDesktop>
+    <mm-wyniki-dzialki-desktop *ngIf="!!obreb && obreb.length >= 2 && !!wynikiWyszukiwania; else brakWynikowTemplate"
+                                [wynikiWyszukiwania]="wynikiWyszukiwania"
+                                [mapaWarstw]="mapaWarstw"
+                                (wyswietlWszystkieClick)="wyswietlWszystkie()"
+                                class="wyniki">
+    </mm-wyniki-dzialki-desktop>
+  </ng-template>
+  <ng-template mmTylkoMobile>
+    <mm-wyniki-dzialki-mobile *ngIf="!!obreb && !!wynikiWyszukiwania; else brakWynikowTemplate"
+                               (zamknijClick)="wyczyscWyniki()"
+                               (brakWynikowKomunikat)="ustawBrakWynikow($event)"
+                               (wyswietlWszystkieClick)="wyswietlWszystkieMobile()"
+                               [wynikiWyszukiwania]="wynikiWyszukiwania"
+                               [mapaWarstw]="mapaWarstw">
+    </mm-wyniki-dzialki-mobile>
+  </ng-template>
+</div>
+
+<ng-template #brakWynikowTemplate>
+  <mat-divider></mat-divider>
+  <mm-wyniki-brak *ngIf="!(brakWynikowMobile$ | async) || !wynikiWyszukiwania; else nieZnalezionoWynikowTemplate" class="brak-wynikow-template"
+                   nazwaFunkcjonalnosciKod="codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.dzialki-nazwa-funkcjonalnosci"
+                   opisFunkcjonalnosciKod="codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.dzialki-opis-funkcjonalnosci">
+  </mm-wyniki-brak>
+</ng-template>
+
+<ng-template #nieZnalezionoWynikowTemplate>
+  <mm-wyniki-brak class="nie-znaleziono-wynikow-template"
+                   nazwaFunkcjonalnosciKod="codes.modul-mapowy.generyczne.brak-wynikow-wyszukiwania">
+  </mm-wyniki-brak>
+</ng-template>

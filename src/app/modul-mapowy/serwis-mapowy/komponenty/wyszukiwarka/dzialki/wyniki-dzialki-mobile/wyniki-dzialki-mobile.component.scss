@@ -1,0 +1,85 @@
+@import "../../../../../../../style/mm-style/mm-konfiguracja-szablonu.scss";
+
+.wyniki-dzialki-mobile {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  z-index: $obszar-zawsze-widoczny-z-index-start + 11;
+  height: 100%;
+  width: calc(100% + #{$wyszukiwarka-mapowa-kontrolki-romiar});
+  top: 0;
+  left: -$wyszukiwarka-mapowa-kontrolki-romiar;
+  justify-content: space-between;
+
+  .przycisk-zamknij {
+    width: $wyszukiwarka-mapowa-kontrolki-romiar;
+    height: $wyszukiwarka-mapowa-kontrolki-romiar;
+    align-self: end;
+  }
+
+  .wyniki {
+    overflow: hidden;
+    height: 70%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    .wynik-wyszukiwania {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      margin-top: 1.5rem;
+
+      .ikona-dodaj {
+        display: flex;
+        width: 36px;
+        height: 36px;
+        fill: $miasto-szary;
+        stroke: $miasto-szary;
+      }
+
+      &>div {
+        flex-direction: column;
+      }
+
+      .wynik-poziomy {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        cursor: pointer;
+
+        .etykieta {
+          margin-right: 1rem;
+        }
+
+        .color-primary {
+          color: $miasto-blekit;
+        }
+
+        .color-zielony {
+          color: $miasto-pomarancz;
+        }
+      }
+    }
+  }
+
+  .liczba-wynikow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .przycisk-wyswietl-wszystkie {
+    margin-top: 1rem;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+  }
+
+}
