@@ -9,6 +9,11 @@
     </div>
     <div class="wielokrotne" *ngIf="multimedia?.pliki && multimedia?.pliki!.length>1">
       <div class="widok">
+        <div class="poprzednie">
+          <mm-przycisk-ikona label="{{'codes.modul-mapowy.przegladanie-obiektow.poprzednie-multimedium' | translate}}"
+                              ikona="poprzedni" typ="'blekitny'"
+                              (click)="poprzednieZdjecie()"></mm-przycisk-ikona>
+        </div>
         <img *mmImg="wybraneZdjecie?.rozszerzenie"
             [src]="url+wybraneZdjecie?.sciezka"
              (swipeleft)="nastepneZdjecie()"
@@ -16,6 +21,11 @@
              (click)="pokazGaleriePelnoekranowa()" loading="lazy"/>
         <video *mmVideo="wybraneZdjecie?.rozszerzenie" src="{{url+wybraneZdjecie?.sciezka}}" controls></video>
         <audio *mmAudio="wybraneZdjecie?.rozszerzenie" src="{{url+wybraneZdjecie?.sciezka}}" controls></audio>
+        <div class="nastepne">
+          <mm-przycisk-ikona label="{{'codes.modul-mapowy.przegladanie-obiektow.nastepne-multimedium' | translate}}"
+                              ikona="nastepny" typ="'blekitny'"
+                              (click)="nastepneZdjecie()"></mm-przycisk-ikona>
+        </div>
       </div>
       <div class="karuzela">
         <div class="poprzednie">

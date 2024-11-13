@@ -31,7 +31,7 @@
     }
 
     .wielokrotne {
-      height: auto;
+      height: 274px;
 
       .widok {
         position: relative;
@@ -42,6 +42,13 @@
         width: auto;
         margin-bottom: 10px;
         justify-content: center;
+        .nastepne {
+          visibility:hidden;
+        }
+
+        .poprzednie {
+          visibility:hidden;
+        }
 
         img {
           height: 100%;
@@ -170,9 +177,72 @@
       }
     }
   }
-  .wielokrotne{
-    .widok{
-      max-height:max-content;
+  .wielokrotne {
+    height: 274px;
+
+    .widok {
+      position: relative;
+      display: flex;
+      height: 200px;
+      align-items: center;
+
+      width: auto;
+      margin-bottom: 10px;
+      justify-content: center;
+      .nastepne {
+        width: 40px;
+        margin-left: 20px;
+        visibility:visible!important;
+        fill: $miasto-blekit;
+      }
+
+      .poprzednie {
+        width: 40px;
+        margin-right: 20px;
+        visibility:visible!important;
+        fill: $miasto-blekit;
+      }
+
+      img {
+        height: 100%;
+        touch-action: pan-y !important;
+        cursor: pointer;
+      }
+    }
+
+    .karuzela {
+      display: flex;
+      justify-content: space-evenly;
+      height: 65px;
+      padding: 0 5px;
+      width: auto;
+      max-width: 100%;
+
+      div {
+        width: 60px;
+        // max-height: 60px;
+        height: 60px;
+        // background-size: cover;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+      }
+
+      .zaznaczone {
+        box-shadow: 0px 0px 4px 2px $miasto-blekit;
+      }
+
+      .nastepne {
+        fill: $miasto-blekit;
+        visibility: hidden;
+      }
+
+      .poprzednie {
+        fill: $miasto-blekit;
+        margin-right: 15px;
+        visibility: hidden;
+      }
     }
   }
 }
