@@ -264,6 +264,7 @@
         "np-nr-obrebu": "e.g. 10112",
         "np-nr-dzialki": "e.g. 27/1",
         "szukaj": "Search",
+        "zwin":"Collapse",
         "nazwa-obiektu": "Object name",
         "nazwa-warstwy": "Layer name",
         "nazwa-warstwy-obiektu": "Name of the layer of the object",

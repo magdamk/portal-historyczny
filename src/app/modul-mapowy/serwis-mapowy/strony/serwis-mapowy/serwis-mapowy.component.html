@@ -44,12 +44,13 @@
       <div class="przycisk-wyszukaj" (click)="aktywujWyszukiwarkeDomyslna()">
         <mm-przycisk-ikona
           typ="{{interfejsUzytkownikaStan.wyszukiwarka.aktywna == WYSZUKIWARKI.DOMYSLNA ? 'pomaranczowy' : 'bialy-pomarancz'}}"
-          label="{{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.szukaj' | translate}}" ikona="wyszukaj"></mm-przycisk-ikona>
+          label="{{(!interfejsUzytkownikaStan.wyszukiwarka.zwinieta)&&(interfejsUzytkownikaStan.wyszukiwarka.aktywna === WYSZUKIWARKI.DOMYSLNA) ?
+           ('codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.zwin' | translate) : ('codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.szukaj' | translate)}}" ikona="wyszukaj"></mm-przycisk-ikona>
       </div>
       <ng-template mmTylkoMobile>
         <div class="przycisk-pokaz" [class.ukryty]="interfejsUzytkownikaStan.wyszukiwarka.zwinieta"
           (click)="schowajWyszukiwarke()">
-          <mm-przycisk-ikona label="{{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.szukaj' | translate}}"
+          <mm-przycisk-ikona label="{{'codes.modul-mapowy.wyszukiwanie-w-portalu-mapowym.zwin' | translate}}"
             ikona="pokaz"></mm-przycisk-ikona>
         </div>
       </ng-template>
