@@ -70,11 +70,11 @@ export class WynikiObiektyDesktopComponent implements OnInit, OnDestroy {
    * @param wynik - obiekt dodawany
    */
   wyswietlObiektNaMapie(wynik: ObiektDto) {
-    // if (!wynik.uuidWarstwy) {
+    if (!wynik.uuidWarstwy) {
       this.obiektyMapySerwis.przekazLokalizacjeDoWyswietlenia(wynik);
-      // return;
-    // }
-    // this.obiektyMapySerwis.przekazObiektDoWyswietlenia(wynik, this._mapaWarstw?.get(wynik.uuidWarstwy));
+      return;
+    }
+    this.obiektyMapySerwis.przekazObiektDoWyswietlenia(wynik, this._mapaWarstw?.get(wynik.uuidWarstwy));
   }
 
   /**

@@ -23,4 +23,8 @@
                            [mapView]="mapView"
                            [mapa]="mapa"
   ></mm-klikalnosc-na-mapie>
+  <mm-wyszukane-obiekty-i-lokalizacje *ngIf="mapView && mapa"
+                                       [mapView]="mapView"
+                                       [mapa]="mapa"
+  ></mm-wyszukane-obiekty-i-lokalizacje>
 </div>
