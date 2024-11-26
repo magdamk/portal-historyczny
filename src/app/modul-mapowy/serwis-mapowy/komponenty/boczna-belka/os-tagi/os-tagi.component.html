@@ -26,6 +26,8 @@
     </div>
     <div class="kontroler" [class.widoczna]="obszarWidoczny" [ngClass]="'poz-'+widok.kolejnosc" [tabindex]="0"
       (keyup.enter)="przeniesNaWierzch()" (click)="przeniesNaWierzch()" matTooltipPosition="right"
+      aria-roledescription="zakładka"
+      role="tooltip"
       matTooltip="{{'codes.modul-mapowy.belka-boczna.tagi' | translate}}">
       <span mmIkonaSvg="tagi24" class="ikona"></span>
     </div>

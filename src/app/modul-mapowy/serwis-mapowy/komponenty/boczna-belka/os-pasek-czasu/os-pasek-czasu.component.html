@@ -44,6 +44,8 @@
     </div>
     <div class="kontroler" [tabindex]="0" [class.widoczna]="obszarWidoczny" [ngClass]="'poz-'+widok!.kolejnosc"
       (keyup.enter)="przeniesNaWierzch()" (click)="przeniesNaWierzch()" matTooltipPosition="right"
+      aria-roledescription="zakładka"
+      role="tooltip"
       matTooltip="{{'codes.modul-mapowy.belka-boczna.paski-czasu' | translate}}">
       <span mmIkonaSvg="pasek_czasu" class="ikona"></span>
     </div>

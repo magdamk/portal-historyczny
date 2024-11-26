@@ -31,6 +31,8 @@
     </div>
     <div class="kontroler" [tabindex]="0" [class.widoczna]="obszarWidoczny" (keyup.enter)="przeniesNaWierzch()"
     [ngClass]="'poz-'+widok.kolejnosc"
+    aria-roledescription="zakładka"
+    attr.aria-label="{{this.tooltip}}"
       (click)="przeniesNaWierzch()" matTooltipPosition="right"
       [matTooltip]="this.tooltip">
       <span mmIkonaSvg="info24" class="ikona"></span>

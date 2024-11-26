@@ -6,12 +6,20 @@
     <div class="mb-8">
       <input placeholder="{{'codes.kontakt.email' | translate}}" (keyup)="usunWiodacaSpacje($event)"
              aria-label="E-mail"
+             [tabindex]="0"
+             autofocus
              formControlName="email" value="" class="um-input w-full mb-2">
-      <div class="blad-walidacji" *ngIf="form.controls['email'].errors?.['required'] && !form.untouched">
+      <div class="blad-walidacji" *ngIf="form.controls['email'].errors?.['required'] && !form.untouched"
+      aria-roledescription="komunikat"
+      [tabindex]="0"
+      role="walidacja">
         E-mail
       </div>
-      <div class="blad-walidacji" *ngIf="form.controls['email'].errors?.['email'] && !form.untouched">
-        Pole jest wymagane, podaj porawny adres e-mail.
+      <div class="blad-walidacji" *ngIf="form.controls['email'].errors?.['email'] && !form.untouched"
+      aria-roledescription="komunikat"
+      [tabindex]="0"
+      role="walidacja">
+        Pole jest wymagane, podaj poprawny adres e-mail.
       </div>
     </div>
     <div>
@@ -19,11 +27,15 @@
                 aria-label="Treść wiadomości"
                 formControlName="wiadomosc"
                 maxlength="4000"
+                [tabindex]="0"
                 (keyup)="usunWiodacaSpacje($event)"
                 (input)="zmianaWiadomosci($event)"
                 style="height: 302px"
                 class="w-full um-textarea"></textarea>
-      <div class="blad-walidacji" *ngIf="form.controls['wiadomosc'].errors?.['required'] && !form.untouched">
+      <div class="blad-walidacji" *ngIf="form.controls['wiadomosc'].errors?.['required'] && !form.untouched"
+      aria-roledescription="komunikat"
+      [tabindex]="0"
+      role="walidacja">
         Pole jest wymagane
       </div>
     </div>
@@ -58,6 +70,8 @@
                       (zaladowanoPlik)="dodajPlik($event)"></lib-upload-pliku> -->
     <mm-przycisk-prostokatny class="przycisk"
                               label="{{'codes.generyczne.wyslij' | translate}}" (click)="addWiadomosc()"
+                              aria-roledescription="komunikat"
+      [tabindex]="0"
                               [disabled]="form.status==='INVALID' || czyNiepoprawnyFormat"></mm-przycisk-prostokatny>
   </div>
 </form>
