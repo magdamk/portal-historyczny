@@ -15,6 +15,7 @@ import { Layer } from 'src/app/modul-mapowy/oracle-maps/types/layer';
 import { MapaUtils } from '../../../utils/mapa-utils';
 import { EmptyUtils } from '../../../utils/empty-utils';
 import { WIDOKI_MAPY_ID } from 'src/app/modul-mapowy/stan/mapa-widok/mapa-widok.const';
+import { CopyRight } from 'src/app/modul-mapowy/oracle-maps/types/copy-right';
 
 declare var OM: OM;
 
@@ -36,7 +37,7 @@ export class WidokMapyComponent implements OnInit, OnDestroy {
   @Input() zmianaMapPodkladowychWidocna = true;
   @Input() sterowanieMapyWidoczne = true;
   @Input() generowanieZdarzenMyszy = true;
-  @Input() licencjaWidoczna = false;
+  @Input() licencjaWidoczna = true;
   @Output() inicjalizacjaMapy = new EventEmitter<Map>();
 
   mapView?: Map;
@@ -564,17 +565,46 @@ export class WidokMapyComponent implements OnInit, OnDestroy {
     if (!this.licencjaWidoczna) {
       return;
     }
-    const licencjaTekst = new OM.control.MapDecoration(
-      `<span>Właściciel Portalu - © Prezydent M. St. Warszawy</span>`, {
-      contentStyle: {
-        'font-size': '16px',
-        'font-family': 'Roboto Condensed'
-      },
-      draggable: false
-    });
-    licencjaTekst?.setPosition(10, (this.mapView as any).$oracleMapDiv[0].clientHeight - 50);
-    licencjaTekst?.setVisible(true);
-    this.mapView?.addMapDecoration(licencjaTekst);
+
+    const copyRights: CopyRight = new OM.control.CopyRight(
+      {
+        textValue: "&copy; Prezydent m.st. Warszawy",
+        anchorPosition: 6,
+        fontFamily: "Roboto Condensed",
+        fontColor: "Black",
+        fontSize: 12
+      });
+    copyRights.setVisible(true);
+    this.mapView?.addMapDecoration(copyRights);
+
+    // const copyRights = new OM.control.MapDecoration("&copy; Prezydent m.st. Warszawy", {
+    //   contentStyle: {
+
+    //     'fontFamily': "Roboto Condensed",
+    //     'fontColor': "Black",
+    //     'background-color': 'rgba(255,255,255,0.3)',
+    //     'border': 'none'
+    //   }, draggable: false, anchorPosition: 6
+    // },);
+    // copyRights.setVisible(true);
+    // this.mapView?.addMapDecoration(copyRights);
+    // const licencjaTekst = new OM.control.MapDecoration(
+    //   `<span>© Prezydent m. st. Warszawy</span>`, {
+    //   contentStyle: {
+    //     'font-size': '16px',
+    //     'font-family': 'Roboto Condensed',
+    //     'padding-top':'5px',
+    //     'padding-bottom':'5px',
+    //     'padding-left':'5px',
+    //     'margin-left':'-5px',
+    //     'background-color':'rgba(200,200,200,0.5)'
+    //   },
+    //   draggable: false,
+    //   anchorPosition:4
+    // });
+    // licencjaTekst?.setPosition(10, (this.mapView as any).$oracleMapDiv[0].clientHeight - 50);
+    // licencjaTekst?.setVisible(true);
+    // this.mapView?.addMapDecoration(licencjaTekst);
   }
 
 }

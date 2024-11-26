@@ -43,6 +43,7 @@ import {Line} from './line';
 import {TileLayerConfig} from './tile-layer-config';
 import { Like } from './like';
 import { Equals } from './equals';
+import { CopyRight } from './copy-right';
 
 export interface LayerNameSpace {
   TileLayer: TileLayer;
@@ -80,6 +81,7 @@ export interface EventNameSpace {
 export interface ControlNameSpace {
   ScaleBar: ScaleBar;
   MapDecoration: MapDecoration;
+  CopyRight: CopyRight;
   LayerControl?: any
 }
 
