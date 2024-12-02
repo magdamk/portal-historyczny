@@ -4,13 +4,13 @@
 
     <div class="tagi" [class.hidden]="!obszarWidoczny">
       <div class="tytul naglowek-c" [class.hidden]="!obszarWidoczny">
-        {{'codes.modul-mapowy.belka-boczna.tagi' | translate}}
+        <label for="searchField"> {{'codes.modul-mapowy.belka-boczna.tagi' | translate}}</label>
       </div>
       <!-- <div class="tekst-d"> {{'codes.generyczne.w-przygotowaniu' | translate}}</div> -->
       <div *ngIf="mapa&&mapa.rodzaj==='temat';else noTags">
         <input [(ngModel)]="filterValue" #name="ngModel" class="filter-input px-3 py-1 w-full mt-5" [tabIndex]="0"
           (keyup)="filter(filterValue.trim())"
-          placeholder="{{'codes.modul-mapowy.belka-boczna.tagi-placeholder' | translate}}" />
+          placeholder="{{'codes.modul-mapowy.belka-boczna.tagi-placeholder' | translate}}" id="searchField"/>
         <div class="mr-4 mt-5 flex-wrap flex gap-1">
           <mat-chip-listbox multiple="false" disableRipple="true" [value]="selectedTag"
             hideSingleSelectionIndicator="true" class="lista-kategorii" *ngFor="let tag of filteredTagi$ | async">
