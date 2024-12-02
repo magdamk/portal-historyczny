@@ -203,11 +203,11 @@ export class ObiektZalacznikiIZdjeciaComponent implements OnInit, OnChanges {
         this.plikiWKaruzeli.push({ plik: this.multimedia.pliki[0], index: 0 });
         this.plikiWKaruzeli.push({ plik: this.multimedia.pliki[1], index: 1 });
         this.plikiWKaruzeli.push({ plik: this.multimedia.pliki[2], index: 2 });
-        // this.ustawMiniaturki();
+        this.ustawMiniaturki();
       } else {
         this.multimedia.pliki.forEach((p, i) => {
           this.plikiWKaruzeli?.push({ plik: p, index: i });
-
+          // this.ustawMiniaturki();
         });
         this.ustawMiniaturki();
       }
