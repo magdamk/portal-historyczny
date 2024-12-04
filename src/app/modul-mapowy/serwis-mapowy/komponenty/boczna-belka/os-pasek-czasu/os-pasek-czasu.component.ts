@@ -137,9 +137,9 @@ export class OsPasekCzasuComponent implements OnInit, OnDestroy {
   wybierzGrupe(grupa: GrupaWarstwPaskaCzasu) {
     // this.store.dispatch(MapaWidokActions.zamknijMapaWidok({ widokMapyId: this.widokMapyIdentyfikator }))
     // this.store.dispatch(MapaWidokActions.reset());
-    console.log('grupa.warstwy ',grupa.warstwy);
+    // console.log('grupa.warstwy ',grupa.warstwy);
     grupa.warstwy.forEach((w, k) => {
-      console.log('wybierzGrupe: ', w, k);
+      // console.log('wybierzGrupe: ', w, k);
       LegendaUtils.dodajParametrySterujace(w.warstwa);
       if (k === 0) {
         w.warstwa.parametrySterujace!.widoczna = true;

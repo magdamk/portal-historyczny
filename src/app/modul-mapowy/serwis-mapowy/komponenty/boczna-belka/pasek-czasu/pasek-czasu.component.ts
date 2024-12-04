@@ -242,7 +242,7 @@ export class PasekCzasuComponent implements OnInit, OnDestroy, AfterViewChecked 
   }
   przeładujPasek() {
     if (this.counter === 0) {
-      console.log('counter: '+this.counter);
+      // console.log('counter: '+this.counter);
       this.counter++;
       this.store.dispatch(MapaWidokActions.aktualizujDane({
       widokMapyId: WIDOKI_MAPY_ID.WIDOK_PASKA_CZASU,
